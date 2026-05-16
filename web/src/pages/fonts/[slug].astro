@@ -1,0 +1,389 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { fontShowcaseFamily, getFontBySlug, getFonts } from '../../lib/encyclopedia.js';
+
+export function getStaticPaths() {
+  const seen = new Set<string>();
+  return getFonts()
+    .filter((f) => {
+      if (seen.has(f.slug)) return false;
+      seen.add(f.slug);
+      return true;
+    })
+    .map((f) => ({ params: { slug: f.slug } }));
+}
+
+const { slug } = Astro.params;
+const font = getFontBySlug(slug!);
+if (!font) {
+  return Astro.redirect('/fonts');
+}
+
+const { data } = font;
+const cssFamily = fontShowcaseFamily(font.slug);
+
+const stylesByWeight = new Map<number, Set<string>>();
+for (const s of data.availableStyles) {
+  if (!stylesByWeight.has(s.weight)) stylesByWeight.set(s.weight, new Set());
+  stylesByWeight.get(s.weight)!.add(s.style);
+}
+const sortedWeights = [...stylesByWeight.keys()].sort((a, b) => a - b);
+
+const weightName = (w: number): string => {
+  if (w <= 100) return 'Thin';
+  if (w <= 200) return 'ExtraLight';
+  if (w <= 300) return 'Light';
+  if (w <= 400) return 'Regular';
+  if (w <= 500) return 'Medium';
+  if (w <= 600) return 'SemiBold';
+  if (w <= 700) return 'Bold';
+  if (w <= 800) return 'ExtraBold';
+  return 'Black';
+};
+
+const pangram = 'The quick brown fox jumps over 13 lazy dogs.';
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz';
+const digits = '0123456789 — • · → ← ⇄ ✓ ✗ ! ? & @ # $ %';
+---
+
+<Layout
+  title={`${data.name} — Brand Atoms`}
+  description={data.description ?? ''}
+  section="fonts"
+>
+  <nav class="crumb">
+    <a href="/fonts">← Fonts</a>
+    <span>·</span>
+    <code>{font.slug}@{font.version}</code>
+  </nav>
+
+  <header class="detail-hero" style={`--font-showcase:${cssFamily}`}>
+    <p class="cls">{data.classification ?? 'font'}</p>
+    <h1 class="font-name">{data.name}</h1>
+    <p class="family-line"><code>{data.family}</code></p>
+    {data.description && <p class="lede">{data.description}</p>}
+  </header>
+
+  <section class="section showcase" style={`--font-showcase:${cssFamily}`}>
+    <div class="sample-block">
+      <p class="sample huge">Aa Bb Cc</p>
+      <p class="sample large">{pangram}</p>
+      <p class="sample medium">{alphabet}</p>
+      <p class="sample small">{digits}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Weights & styles</h2>
+    <div class="weights-grid" style={`--font-showcase:${cssFamily}`}>
+      {sortedWeights.map((w) => (
+        <div class="weight-row">
+          <div class="weight-meta">
+            <div class="weight-number">{w}</div>
+            <div class="weight-name">{weightName(w)}</div>
+          </div>
+          <div class="weight-samples">
+            {stylesByWeight.get(w)!.has('normal') && (
+              <span class="weight-sample" style={`font-weight:${w}`}>The quick brown fox</span>
+            )}
+            {stylesByWeight.get(w)!.has('italic') && (
+              <span class="weight-sample italic" style={`font-weight:${w};font-style:italic`}>The quick brown fox</span>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Source &amp; fallback</h2>
+    <div class="source-grid">
+      <div class="source-card">
+        <h3>Source</h3>
+        <dl>
+          <dt>Kind</dt>
+          <dd><code>{data.source.kind}</code></dd>
+          {'family' in data.source && data.source.family && (
+            <>
+              <dt>Family</dt>
+              <dd><code>{data.source.family}</code></dd>
+            </>
+          )}
+          {'url' in data.source && data.source.url && (
+            <>
+              <dt>URL</dt>
+              <dd><a href={data.source.url}>{data.source.url}</a></dd>
+            </>
+          )}
+          {'cssImportUrl' in data.source && data.source.cssImportUrl && (
+            <>
+              <dt>CSS import</dt>
+              <dd><a href={data.source.cssImportUrl}>{data.source.cssImportUrl}</a></dd>
+            </>
+          )}
+          {'notes' in data.source && data.source.notes && (
+            <>
+              <dt>Notes</dt>
+              <dd>{data.source.notes}</dd>
+            </>
+          )}
+        </dl>
+      </div>
+
+      <div class="source-card">
+        <h3>Fallback stack</h3>
+        <ol class="fallback-list">
+          <li><strong>{data.family}</strong> <span class="rank">primary</span></li>
+          {data.fallbackStack.map((fam, i) => (
+            <li><code>{fam}</code> <span class="rank">fallback {i + 1}</span></li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  {data.provenance && (
+    <section class="section">
+      <h2>Provenance</h2>
+      <dl class="provenance">
+        {data.provenance.source && (
+          <>
+            <dt>Source</dt>
+            <dd><a href={data.provenance.source}>{data.provenance.source}</a></dd>
+          </>
+        )}
+        <dt>License</dt>
+        <dd><code>{data.provenance.license}</code></dd>
+        {data.provenance.attribution && (
+          <>
+            <dt>Attribution</dt>
+            <dd>{data.provenance.attribution}</dd>
+          </>
+        )}
+        {data.provenance.importedDate && (
+          <>
+            <dt>Imported</dt>
+            <dd>
+              <code>{data.provenance.importedDate}</code>
+              {data.provenance.importedFromVersion && <span> (upstream version {data.provenance.importedFromVersion})</span>}
+            </dd>
+          </>
+        )}
+        {data.provenance.notes && (
+          <>
+            <dt>Notes</dt>
+            <dd>{data.provenance.notes}</dd>
+          </>
+        )}
+      </dl>
+    </section>
+  )}
+
+  <style>
+    .crumb {
+      padding: 16px 0 0;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-tertiary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .crumb a { color: var(--text-secondary); text-decoration: none; }
+    .crumb a:hover { color: var(--primary); }
+
+    .detail-hero {
+      padding: 24px 0 24px;
+    }
+    .cls {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-tertiary);
+      text-transform: lowercase;
+      margin: 0 0 8px;
+    }
+    .font-name {
+      font-family: var(--font-showcase);
+      font-size: 72px;
+      font-weight: 700;
+      margin: 0 0 12px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .family-line {
+      margin: 0 0 16px;
+      color: var(--text-tertiary);
+    }
+    .family-line code {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      background: var(--surface);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .lede {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 720px;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .section {
+      padding: 24px 0 32px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 16px;
+    }
+
+    .showcase {
+      background: var(--surface);
+      border-radius: 14px;
+      padding: 32px;
+      margin: 16px 0 32px;
+    }
+    .sample-block { font-family: var(--font-showcase); }
+    .sample { margin: 0 0 16px; color: var(--text-primary); line-height: 1.2; }
+    .sample:last-child { margin-bottom: 0; }
+    .sample.huge { font-size: 72px; font-weight: 600; letter-spacing: -0.02em; }
+    .sample.large { font-size: 28px; line-height: 1.35; color: var(--text-secondary); }
+    .sample.medium { font-size: 18px; line-height: 1.5; color: var(--text-secondary); word-break: break-all; }
+    .sample.small { font-size: 14px; color: var(--text-tertiary); }
+
+    .weights-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .weight-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 16px;
+      align-items: center;
+      padding: 14px 16px;
+      background: var(--surface);
+      border-radius: 10px;
+    }
+    .weight-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .weight-number {
+      font-family: var(--font-mono);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .weight-name {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+    .weight-samples {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-family: var(--font-showcase);
+    }
+    .weight-sample { font-size: 20px; color: var(--text-primary); }
+    .weight-sample.italic { color: var(--text-secondary); }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 880px) { .source-grid { grid-template-columns: 1fr; } }
+    .source-card {
+      background: var(--surface);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .source-card h3 { margin: 0 0 12px; font-size: 15px; font-weight: 600; }
+    .source-card dl {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 6px 16px;
+      margin: 0;
+    }
+    .source-card dt {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+    .source-card dd {
+      margin: 0;
+      font-size: 13px;
+    }
+    .source-card a {
+      color: var(--primary);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      word-break: break-all;
+    }
+    .source-card a:hover { text-decoration: underline; }
+    .source-card code {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      background: var(--bg);
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    .fallback-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      counter-reset: step;
+    }
+    .fallback-list li {
+      padding: 6px 0;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .fallback-list li + li { border-top: 1px solid var(--surface-elevated); }
+    .fallback-list strong { font-weight: 600; }
+    .fallback-list code {
+      font-family: var(--font-mono);
+      color: var(--text-secondary);
+    }
+    .rank {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-tertiary);
+      text-transform: lowercase;
+    }
+
+    .provenance {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 8px 16px;
+      background: var(--surface);
+      border-radius: 14px;
+      padding: 20px;
+      margin: 0;
+    }
+    .provenance dt {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+    .provenance dd { margin: 0; font-size: 14px; }
+    .provenance a {
+      color: var(--primary);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .provenance a:hover { text-decoration: underline; }
+  </style>
+</Layout>
