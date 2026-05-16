@@ -1,0 +1,672 @@
+---
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import Layout from '../../layouts/Layout.astro';
+import { fontShowcaseFamily, getBrands, getResolvedBrandBySlug } from '../../lib/encyclopedia.js';
+
+export function getStaticPaths() {
+  const seen = new Set<string>();
+  return getBrands()
+    .filter((b) => {
+      if (seen.has(b.slug)) return false;
+      seen.add(b.slug);
+      return true;
+    })
+    .map((b) => ({ params: { slug: b.slug } }));
+}
+
+const { slug } = Astro.params;
+const brand = getResolvedBrandBySlug(slug!);
+if (!brand) {
+  return Astro.redirect('/brands');
+}
+
+const repoRoot = resolve(
+  process.cwd(),
+  process.cwd().endsWith('/web') ? '..' : '.',
+);
+
+const readAssetSvg = (file: string): string | null => {
+  if (!file.toLowerCase().endsWith('.svg')) return null;
+  try {
+    const full = resolve(repoRoot, 'brands', brand.id, brand.version, file);
+    return readFileSync(full, 'utf8');
+  } catch {
+    return null;
+  }
+};
+
+const findSwatch = (id: string) =>
+  brand.palette.data.swatches.find((s) => s.id === id);
+
+const lightRoles = Object.entries(brand.palette.data.modes.light.roles).sort(([a], [b]) => a.localeCompare(b));
+const darkRoles = Object.entries(brand.palette.data.modes.dark.roles).sort(([a], [b]) => a.localeCompare(b));
+
+const brandColorRoles = brand.roles?.colors ? Object.entries(brand.roles.colors).sort(([a], [b]) => a.localeCompare(b)) : [];
+const brandTypeRoles = brand.roles?.typography ? Object.entries(brand.roles.typography).sort(([a], [b]) => a.localeCompare(b)) : [];
+
+const rulesBySeverity = {
+  error: brand.rules.filter((r) => r.severity === 'error'),
+  warning: brand.rules.filter((r) => r.severity === 'warning'),
+  recommendation: brand.rules.filter((r) => r.severity === 'recommendation'),
+};
+
+const severityColor = {
+  error: 'var(--nord11)',
+  warning: 'var(--nord13)',
+  recommendation: 'var(--nord8)',
+};
+
+const fontShowcase = (roleKey: string): string => {
+  const font = brand.fonts.find((f) => f.role === roleKey);
+  return font ? fontShowcaseFamily(font.slug) : 'var(--font-sans)';
+};
+
+const ruleDetails = (rule: typeof brand.rules[number]): { key: string; value: string }[] => {
+  const out: { key: string; value: string }[] = [];
+  if ('min' in rule && rule.min !== undefined) out.push({ key: 'min', value: String(rule.min) });
+  if ('max' in rule && rule.max !== undefined) out.push({ key: 'max', value: String(rule.max) });
+  if ('unit' in rule && rule.unit) out.push({ key: 'unit', value: rule.unit });
+  if ('against' in rule && rule.against) out.push({ key: 'against', value: rule.against });
+  if ('minRatio' in rule && rule.minRatio !== undefined) out.push({ key: 'minRatio', value: String(rule.minRatio) });
+  if ('standard' in rule && rule.standard) out.push({ key: 'standard', value: rule.standard });
+  if ('use' in rule && rule.use) out.push({ key: 'use', value: rule.use });
+  if ('treatments' in rule && rule.treatments) out.push({ key: 'treatments', value: rule.treatments.join(', ') });
+  if ('allowed' in rule && rule.allowed) out.push({ key: 'allowed', value: rule.allowed.join(', ') });
+  if ('forbidden' in rule && rule.forbidden) out.push({ key: 'forbidden', value: rule.forbidden.join(', ') });
+  if ('pairsWith' in rule && rule.pairsWith) out.push({ key: 'pairsWith', value: rule.pairsWith.join(', ') });
+  if ('doesNotPairWith' in rule && rule.doesNotPairWith) out.push({ key: 'doesNotPairWith', value: rule.doesNotPairWith.join(', ') });
+  if ('forbiddenContexts' in rule && rule.forbiddenContexts) out.push({ key: 'forbiddenContexts', value: rule.forbiddenContexts.join(', ') });
+  if ('allowedContexts' in rule && rule.allowedContexts) out.push({ key: 'allowedContexts', value: rule.allowedContexts.join(', ') });
+  if ('requires' in rule && rule.requires) out.push({ key: 'requires', value: rule.requires });
+  if ('minSizeRatio' in rule && rule.minSizeRatio !== undefined) out.push({ key: 'minSizeRatio', value: String(rule.minSizeRatio) });
+  if ('criterion' in rule && rule.criterion) out.push({ key: 'criterion', value: rule.criterion });
+  if (rule.when) {
+    out.push({ key: 'when', value: Object.entries(rule.when).map(([k, v]) => `${k}=${JSON.stringify(v)}`).join(', ') });
+  }
+  if (rule.appliesIn) {
+    out.push({ key: 'appliesIn', value: rule.appliesIn.join(', ') });
+  }
+  return out;
+};
+
+const pangram = 'The quick brown fox jumps over 13 lazy dogs.';
+---
+
+<Layout
+  title={`${brand.name} — Brand Atoms`}
+  description={brand.description ?? ''}
+  section="brands"
+>
+  <nav class="crumb">
+    <a href="/brands">← Brands</a>
+    <span>·</span>
+    <code>{brand.id}@{brand.version}</code>
+  </nav>
+
+  <header class="detail-hero">
+    <h1>{brand.name}</h1>
+    {brand.description && <p class="lede">{brand.description}</p>}
+    <div class="stats-inline">
+      <span><strong>1</strong> palette</span>
+      <span><strong>{brand.fonts.length}</strong> font{brand.fonts.length === 1 ? '' : 's'}</span>
+      <span><strong>{brand.assets.length}</strong> asset{brand.assets.length === 1 ? '' : 's'}</span>
+      <span><strong>{brand.rules.length}</strong> rule{brand.rules.length === 1 ? '' : 's'}</span>
+      {brand.tags && brand.tags.length > 0 && (
+        <span class="tags">{brand.tags.map((t) => <code class="tag">{t}</code>)}</span>
+      )}
+    </div>
+  </header>
+
+  <section class="section">
+    <h2>Atoms</h2>
+    <div class="atoms-grid">
+      <a class="atom-card" href={`/palettes/${brand.palette.slug}`}>
+        <div class="atom-kind">palette</div>
+        <div class="atom-name">{brand.palette.data.name}</div>
+        <div class="atom-ref"><code>{brand.palette.slug}@{brand.palette.resolvedVersion}</code></div>
+        <div class="swatch-strip">
+          {brand.palette.data.swatches.slice(0, 14).map((s) => (
+            <span class="swatch" style={`background:${s.value}`} title={`${s.id} ${s.value}`}></span>
+          ))}
+        </div>
+      </a>
+
+      {brand.fonts.map((f) => (
+        <a class="atom-card" href={`/fonts/${f.slug}`} style={`--font-showcase:${fontShowcaseFamily(f.slug)}`}>
+          <div class="atom-kind">font · {f.role}</div>
+          <div class="atom-name font-rendered">{f.data.name}</div>
+          <div class="atom-ref"><code>{f.slug}@{f.resolvedVersion}</code></div>
+          <div class="font-rendered sample">{pangram}</div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  {(brandColorRoles.length > 0 || brandTypeRoles.length > 0) && (
+    <section class="section">
+      <h2>Brand semantic roles</h2>
+      <p class="section-lede">Brand-level role overrides on top of palette-default mappings. Each role resolves to a concrete swatch or font reference.</p>
+
+      <div class="roles-grid">
+        {brandColorRoles.length > 0 && (
+          <div class="role-panel">
+            <h3>Colors</h3>
+            <div class="role-list">
+              {brandColorRoles.map(([role, swatchId]) => {
+                const sw = findSwatch(swatchId);
+                return (
+                  <div class="role-row">
+                    <span class="role-chip" style={`background:${sw?.value ?? '#888'}`}></span>
+                    <span class="role-name">{role}</span>
+                    <code class="role-arrow">→ {swatchId}</code>
+                    {sw && <code class="role-hex">{sw.value}</code>}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {brandTypeRoles.length > 0 && (
+          <div class="role-panel">
+            <h3>Typography</h3>
+            <div class="role-list">
+              {brandTypeRoles.map(([role, fontKey]) => {
+                const font = brand.fonts.find((f) => f.role === fontKey);
+                return (
+                  <div class="role-row type-row" style={`--font-showcase:${font ? fontShowcaseFamily(font.slug) : 'var(--font-sans)'}`}>
+                    <span class="role-name">{role}</span>
+                    <code class="role-arrow">→ {fontKey}</code>
+                    {font && <span class="role-fontname font-rendered">{font.data.name}</span>}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  )}
+
+  <section class="section">
+    <h2>Palette mode mappings <span class="section-aside">(from {brand.palette.slug})</span></h2>
+    <div class="modes-grid">
+      <div class="mode-panel">
+        <h3>Light mode <span class="mode-count">({lightRoles.length} roles)</span></h3>
+        <div class="role-list">
+          {lightRoles.map(([role, swatchId]) => {
+            const sw = findSwatch(swatchId);
+            return (
+              <div class="role-row">
+                <span class="role-chip" style={`background:${sw?.value ?? '#888'}`}></span>
+                <span class="role-name">{role}</span>
+                <code class="role-arrow">→ {swatchId}</code>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <div class="mode-panel">
+        <h3>Dark mode <span class="mode-count">({darkRoles.length} roles)</span></h3>
+        <div class="role-list">
+          {darkRoles.map(([role, swatchId]) => {
+            const sw = findSwatch(swatchId);
+            return (
+              <div class="role-row">
+                <span class="role-chip" style={`background:${sw?.value ?? '#888'}`}></span>
+                <span class="role-name">{role}</span>
+                <code class="role-arrow">→ {swatchId}</code>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {brand.assets.length > 0 && (
+    <section class="section">
+      <h2>Assets</h2>
+      <div class="assets-grid">
+        {brand.assets.map((asset) => (
+          <div class="asset-card">
+            <header class="asset-head">
+              <h3>{asset.name}</h3>
+              <span class="asset-category">{asset.category}</span>
+            </header>
+            {asset.description && <p class="asset-desc">{asset.description}</p>}
+            <div class="asset-variants">
+              {asset.variants.map((variant) => {
+                const svg = readAssetSvg(variant.file);
+                return (
+                  <div class={`asset-preview asset-${variant.intendedMode ?? 'any'}`}>
+                    {svg ? (
+                      <div class="asset-render" set:html={svg}></div>
+                    ) : (
+                      <div class="asset-fallback"><code>{variant.file}</code></div>
+                    )}
+                    <div class="asset-variant-meta">
+                      <code>{variant.id}</code>
+                      {variant.colorScheme && <span> · {variant.colorScheme}</span>}
+                      {variant.intendedMode && <span> · {variant.intendedMode}</span>}
+                      {variant.dimensions?.width && variant.dimensions?.height && (
+                        <span> · {variant.dimensions.width}×{variant.dimensions.height}</span>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {brand.rules.length > 0 && (
+    <section class="section">
+      <h2>Rules <span class="section-aside">({brand.rules.length} typed constraints)</span></h2>
+
+      {(['error', 'warning', 'recommendation'] as const).map((severity) => {
+        const list = rulesBySeverity[severity];
+        if (list.length === 0) return null;
+        return (
+          <div class="rule-group">
+            <h3 class="rule-group-head">
+              <span class="severity-badge" style={`background:${severityColor[severity]}`}></span>
+              {severity} · {list.length} rule{list.length === 1 ? '' : 's'}
+            </h3>
+            <div class="rule-list">
+              {list.map((rule) => (
+                <article class="rule-card">
+                  <header class="rule-head">
+                    <code class="rule-type">{rule.type}</code>
+                    <code class="rule-target">{rule.target}</code>
+                  </header>
+                  <div class="rule-details">
+                    {ruleDetails(rule).map((d) => (
+                      <div class="rule-detail">
+                        <code class="rule-key">{d.key}</code>
+                        <code class="rule-value">{d.value}</code>
+                      </div>
+                    ))}
+                  </div>
+                  {rule.rationale && <p class="rule-rationale">{rule.rationale}</p>}
+                </article>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </section>
+  )}
+
+  {brand.provenance && (
+    <section class="section">
+      <h2>Provenance</h2>
+      <dl class="provenance">
+        {brand.provenance.source && (
+          <>
+            <dt>Source</dt>
+            <dd><a href={brand.provenance.source}>{brand.provenance.source}</a></dd>
+          </>
+        )}
+        <dt>License</dt>
+        <dd><code>{brand.provenance.license}</code></dd>
+        {brand.provenance.attribution && (
+          <>
+            <dt>Attribution</dt>
+            <dd>{brand.provenance.attribution}</dd>
+          </>
+        )}
+        {brand.provenance.importedDate && (
+          <>
+            <dt>Imported</dt>
+            <dd><code>{brand.provenance.importedDate}</code></dd>
+          </>
+        )}
+        {brand.provenance.notes && (
+          <>
+            <dt>Notes</dt>
+            <dd>{brand.provenance.notes}</dd>
+          </>
+        )}
+      </dl>
+    </section>
+  )}
+
+  <style>
+    .crumb {
+      padding: 16px 0 0;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-tertiary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .crumb a { color: var(--text-secondary); text-decoration: none; }
+    .crumb a:hover { color: var(--primary); }
+
+    .detail-hero { padding: 24px 0 32px; }
+    .detail-hero h1 {
+      font-size: 56px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin: 0 0 12px;
+      line-height: 1;
+    }
+    .lede {
+      font-size: 17px;
+      color: var(--text-secondary);
+      max-width: 760px;
+      margin: 0 0 20px;
+    }
+    .stats-inline {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+    }
+    .stats-inline strong { color: var(--text-primary); font-weight: 700; }
+    .tags { display: inline-flex; gap: 6px; flex-wrap: wrap; }
+    .tag { background: var(--surface); padding: 2px 8px; border-radius: 4px; font-size: 12px; }
+
+    .section { padding: 24px 0 32px; }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 12px;
+    }
+    .section-aside {
+      font-weight: 400;
+      color: var(--text-tertiary);
+      font-family: var(--font-mono);
+      font-size: 14px;
+    }
+    .section-lede {
+      font-size: 14px;
+      color: var(--text-secondary);
+      max-width: 720px;
+      margin: 0 0 16px;
+    }
+
+    .atoms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px;
+    }
+    .atom-card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 18px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .atom-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px -16px rgba(46, 52, 64, 0.25);
+    }
+    .atom-kind {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-tertiary);
+      text-transform: lowercase;
+    }
+    .atom-name {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .atom-name.font-rendered { font-family: var(--font-showcase); font-weight: 600; font-size: 20px; }
+    .atom-ref code {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-tertiary);
+    }
+    .swatch-strip {
+      display: grid;
+      grid-template-columns: repeat(14, 1fr);
+      gap: 3px;
+      margin-top: 4px;
+    }
+    .swatch { aspect-ratio: 1; border-radius: 3px; }
+    .sample {
+      font-family: var(--font-showcase);
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      margin: 4px 0 0;
+    }
+    .font-rendered { font-family: var(--font-showcase); }
+
+    .roles-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 880px) { .roles-grid { grid-template-columns: 1fr; } }
+    .role-panel {
+      background: var(--surface);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .role-panel h3 { margin: 0 0 12px; font-size: 15px; font-weight: 600; }
+    .role-list { display: flex; flex-direction: column; gap: 4px; }
+    .role-row {
+      display: grid;
+      grid-template-columns: 16px 1fr auto auto;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 8px;
+      border-radius: 4px;
+    }
+    .role-row.type-row {
+      grid-template-columns: 1fr auto auto;
+    }
+    .role-row:hover { background: var(--surface-elevated); }
+    .role-chip { width: 16px; height: 16px; border-radius: 4px; }
+    .role-name { font-size: 13px; }
+    .role-arrow { font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); }
+    .role-hex { font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); }
+    .role-fontname {
+      font-family: var(--font-showcase);
+      font-size: 14px;
+      color: var(--text-primary);
+    }
+
+    .modes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 880px) { .modes-grid { grid-template-columns: 1fr; } }
+    .mode-panel { background: var(--surface); border-radius: 14px; padding: 20px; }
+    .mode-panel h3 { margin: 0 0 12px; font-size: 15px; font-weight: 600; }
+    .mode-count {
+      font-weight: 400;
+      color: var(--text-tertiary);
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+
+    .assets-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+    }
+    .asset-card {
+      background: var(--surface);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .asset-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .asset-card h3 { margin: 0; font-size: 16px; font-weight: 600; }
+    .asset-category {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-tertiary);
+      text-transform: lowercase;
+    }
+    .asset-desc {
+      margin: 0 0 12px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+    .asset-variants {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .asset-preview {
+      padding: 16px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .asset-preview.asset-light { background: #ECEFF4; }
+    .asset-preview.asset-dark { background: #2E3440; }
+    .asset-preview.asset-any { background: var(--surface-elevated); }
+    .asset-render {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 64px;
+    }
+    .asset-render :global(svg) {
+      max-width: 100%;
+      height: auto;
+      max-height: 120px;
+    }
+    .asset-fallback {
+      text-align: center;
+      color: var(--text-tertiary);
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+    .asset-variant-meta {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-tertiary);
+      text-align: center;
+    }
+    .asset-preview.asset-light .asset-variant-meta { color: #4C566A; }
+    .asset-preview.asset-dark .asset-variant-meta { color: #D8DEE9; }
+
+    .rule-group + .rule-group { margin-top: 24px; }
+    .rule-group-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-secondary);
+      margin: 0 0 12px;
+    }
+    .severity-badge {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .rule-list { display: flex; flex-direction: column; gap: 10px; }
+    .rule-card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 16px 20px;
+    }
+    .rule-head {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .rule-type {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      background: var(--bg);
+      padding: 2px 8px;
+      border-radius: 4px;
+      color: var(--primary);
+    }
+    .rule-target {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+    .rule-details {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .rule-detail {
+      display: inline-flex;
+      gap: 4px;
+      align-items: baseline;
+    }
+    .rule-key {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-tertiary);
+    }
+    .rule-value {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-primary);
+      background: var(--bg);
+      padding: 1px 6px;
+      border-radius: 3px;
+    }
+    .rule-rationale {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin: 8px 0 0;
+      padding-left: 12px;
+      border-left: 2px solid var(--surface-elevated);
+    }
+
+    .provenance {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 8px 16px;
+      background: var(--surface);
+      border-radius: 14px;
+      padding: 20px;
+      margin: 0;
+    }
+    .provenance dt {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+    .provenance dd { margin: 0; font-size: 14px; }
+    .provenance a {
+      color: var(--primary);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .provenance a:hover { text-decoration: underline; }
+  </style>
+</Layout>
