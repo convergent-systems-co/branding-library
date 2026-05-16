@@ -1,0 +1,81 @@
+import { z } from 'zod';
+import { AtomBase } from './atom.js';
+import { Url } from './common.js';
+
+export const FontWeight = z.number().int().min(100).max(900);
+export type FontWeight = z.infer<typeof FontWeight>;
+
+export const FontStyle = z.object({
+  weight: FontWeight,
+  style: z.enum(['normal', 'italic']).default('normal'),
+});
+export type FontStyle = z.infer<typeof FontStyle>;
+
+export const FontFileFormat = z.enum(['woff2', 'woff', 'ttf', 'otf']);
+
+export const FontFile = z.object({
+  weight: FontWeight,
+  style: z.enum(['normal', 'italic']).default('normal'),
+  formats: z
+    .array(
+      z.object({
+        format: FontFileFormat,
+        path: z.string().describe('Path relative to the atom directory'),
+      }),
+    )
+    .min(1),
+});
+
+export const FontSource = z.discriminatedUnion('kind', [
+  z.object({
+    kind: z.literal('google-fonts'),
+    family: z.string(),
+    url: Url.optional(),
+  }),
+  z.object({
+    kind: z.literal('adobe-fonts'),
+    family: z.string(),
+    kitId: z.string(),
+  }),
+  z.object({
+    kind: z.literal('self-hosted'),
+    family: z.string(),
+    files: z.array(FontFile).min(1),
+  }),
+  z.object({
+    kind: z.literal('system'),
+    stack: z
+      .array(z.string())
+      .min(1)
+      .describe('Ordered list of system font family names (e.g., ["-apple-system", "Segoe UI"])'),
+  }),
+  z.object({
+    kind: z.literal('external'),
+    family: z.string(),
+    cssImportUrl: Url.optional(),
+    notes: z.string().optional(),
+  }),
+]);
+export type FontSource = z.infer<typeof FontSource>;
+
+export const FontClassification = z.enum([
+  'serif',
+  'sans-serif',
+  'monospace',
+  'display',
+  'handwriting',
+  'slab-serif',
+]);
+
+export const Font = AtomBase.extend({
+  kind: z.literal('font'),
+  family: z.string().describe('Canonical font family name used in CSS font-family'),
+  source: FontSource,
+  fallbackStack: z
+    .array(z.string())
+    .default([])
+    .describe('Fallback font families to use if the primary fails to load'),
+  availableStyles: z.array(FontStyle).default([]),
+  classification: FontClassification.optional(),
+});
+export type Font = z.infer<typeof Font>;
