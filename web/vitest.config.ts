@@ -1,9 +1,14 @@
-import { defineConfig } from 'vitest/config';
+import { getViteConfig } from 'astro/config';
 
-export default defineConfig({
+export default getViteConfig({
   test: {
     environment: 'happy-dom',
-    include: ['src/**/*.test.ts', 'src/**/*.test.tsx', 'src/__tests__/**/*.test.ts', 'src/__tests__/**/*.test.tsx'],
+    include: [
+      'src/**/*.test.ts',
+      'src/**/*.test.tsx',
+      'src/__tests__/**/*.test.ts',
+      'src/__tests__/**/*.test.tsx',
+    ],
     globals: false,
   },
 });
