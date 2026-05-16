@@ -699,3 +699,27 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
 ### END: Node
+
+### START: branding-library project
+# Build outputs
+dist/
+
+# Astro
+.astro/
+
+# Cloudflare Wrangler
+.wrangler/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# pnpm
+.pnpm-store/
+### END: branding-library project
