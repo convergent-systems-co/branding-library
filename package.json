@@ -19,12 +19,9 @@
     "build": "tsx tools/build.ts",
     "lint": "biome check .",
     "format": "biome format --write .",
-<<<<<<< HEAD
-    "test:workflow": "tsx tools/__tests__/workflow.test.ts"
-=======
     "test": "node --import tsx --test tools/__tests__/*.test.ts",
+    "test:workflow": "tsx tools/__tests__/workflow.test.ts",
     "mirror:r2": "tsx tools/r2-mirror.ts"
->>>>>>> e602a52 (feat(cdn): tools/r2-mirror.ts + tests + fflate dep)
   },
   "dependencies": {
     "yaml": "^2.5.1",
