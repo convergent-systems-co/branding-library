@@ -1,0 +1,58 @@
+kind: font
+id: work-sans
+version: 2.0.0
+name: Work Sans
+description: >
+  Work Sans is an open-source workhorse grotesque sans-serif by Wei Huang, optimized for
+  on-screen text in the middle weights and slightly more flavorful in the lighter and
+  heavier ends of the spectrum. Variable weight axis (100–900) with matching italics.
+family: Work Sans
+classification: sans-serif
+tags: [ work-sans, sans-serif, grotesque, ui, body, variable-font ]
+
+provenance:
+  source: https://github.com/weiweihuanghuang/Work-Sans
+  license: OFL-1.1
+  attribution: >
+    Copyright © 2019 The Work Sans Project Authors
+    (https://github.com/weiweihuanghuang/Work-Sans). Licensed under the SIL Open Font
+    License, Version 1.1. Designed by Wei Huang.
+  importedDate: 2026-05-17
+  importedFromVersion: "2.000"
+  notes: >
+    Upstream: github.com/weiweihuanghuang/Work-Sans. Also published on Google Fonts as
+    "Work Sans".
+
+source:
+  kind: google-fonts
+  family: Work Sans
+  url: https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap
+
+fallbackStack:
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Roboto
+  - Helvetica Neue
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 100, style: normal }
+  - { weight: 100, style: italic }
+  - { weight: 200, style: normal }
+  - { weight: 200, style: italic }
+  - { weight: 300, style: normal }
+  - { weight: 300, style: italic }
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 500, style: normal }
+  - { weight: 500, style: italic }
+  - { weight: 600, style: normal }
+  - { weight: 600, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+  - { weight: 800, style: normal }
+  - { weight: 800, style: italic }
+  - { weight: 900, style: normal }
+  - { weight: 900, style: italic }

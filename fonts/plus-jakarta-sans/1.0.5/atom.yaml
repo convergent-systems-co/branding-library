@@ -1,0 +1,54 @@
+kind: font
+id: plus-jakarta-sans
+version: 1.0.5
+name: Plus Jakarta Sans
+description: >
+  Plus Jakarta Sans is a geometric humanist sans-serif by Gumpita Rahayu and Tokotype,
+  inspired by the cultural identity of Jakarta. Variable weight axis (200–800) with
+  matching italics. Popular in modern UI/branding work.
+family: Plus Jakarta Sans
+classification: sans-serif
+tags: [ plus-jakarta, sans-serif, geometric, humanist, variable-font, ui ]
+
+provenance:
+  source: https://github.com/tokotype/PlusJakartaSans
+  license: OFL-1.1
+  attribution: >
+    Copyright © 2020 The Plus Jakarta Sans Project Authors (Tokotype,
+    https://github.com/tokotype/PlusJakartaSans). Licensed under the SIL Open Font License,
+    Version 1.1. Designed by Gumpita Rahayu.
+  importedDate: 2026-05-17
+  importedFromVersion: "1.005"
+  notes: >
+    Upstream: github.com/tokotype/PlusJakartaSans. Also published on Google Fonts as
+    "Plus Jakarta Sans".
+
+source:
+  kind: google-fonts
+  family: Plus Jakarta Sans
+  url: https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap
+
+fallbackStack:
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Roboto
+  - Helvetica Neue
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 200, style: normal }
+  - { weight: 200, style: italic }
+  - { weight: 300, style: normal }
+  - { weight: 300, style: italic }
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 500, style: normal }
+  - { weight: 500, style: italic }
+  - { weight: 600, style: normal }
+  - { weight: 600, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+  - { weight: 800, style: normal }
+  - { weight: 800, style: italic }

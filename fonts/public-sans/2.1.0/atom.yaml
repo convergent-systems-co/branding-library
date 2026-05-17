@@ -1,0 +1,59 @@
+kind: font
+id: public-sans
+version: 2.1.0
+name: Public Sans
+description: >
+  Public Sans is the open-source neutral sans-serif of the United States Web Design System
+  (USWDS), derived from Steve Matteson's Libre Franklin. Engineered for legibility, broad
+  weight coverage, and government/civic UI.
+family: Public Sans
+classification: sans-serif
+tags: [ public-sans, uswds, sans-serif, ui, body, government ]
+
+provenance:
+  source: https://github.com/uswds/public-sans
+  license: OFL-1.1
+  attribution: >
+    Public Sans, a fork of the open-source typeface Libre Franklin. Copyright © 2015,
+    Impallari Type (www.impallari.com) for Libre Franklin; Public Sans modifications
+    Copyright © U.S. General Services Administration / United States Web Design System
+    contributors. Licensed under the SIL Open Font License, Version 1.1.
+  importedDate: 2026-05-17
+  importedFromVersion: "2.001"
+  notes: >
+    Upstream: github.com/uswds/public-sans. Re-licensed to OFL-1.1 in 2019 to align with
+    typeface-industry norms. Also published on Google Fonts as "Public Sans".
+
+source:
+  kind: google-fonts
+  family: Public Sans
+  url: https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap
+
+fallbackStack:
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Roboto
+  - Helvetica Neue
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 100, style: normal }
+  - { weight: 100, style: italic }
+  - { weight: 200, style: normal }
+  - { weight: 200, style: italic }
+  - { weight: 300, style: normal }
+  - { weight: 300, style: italic }
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 500, style: normal }
+  - { weight: 500, style: italic }
+  - { weight: 600, style: normal }
+  - { weight: 600, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+  - { weight: 800, style: normal }
+  - { weight: 800, style: italic }
+  - { weight: 900, style: normal }
+  - { weight: 900, style: italic }

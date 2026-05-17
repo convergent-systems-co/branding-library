@@ -1,0 +1,55 @@
+kind: font
+id: crimson-pro
+version: 2.0.0
+name: Crimson Pro
+description: >
+  Crimson Pro is an open-source serif typeface inspired by old-style book typography
+  (Garamond, Bembo, Minion). Originally by Sebastian Kosch as Crimson Text; Crimson Pro is
+  Jacques Le Bailly's modernized, variable-axis redrawing for screen and print. Body and
+  editorial workhorse.
+family: Crimson Pro
+classification: serif
+tags: [ crimson-pro, serif, body, editorial, variable-font, old-style ]
+
+provenance:
+  source: https://github.com/Fonthausen/CrimsonPro
+  license: OFL-1.1
+  attribution: >
+    Copyright © 2018 The Crimson Pro Project Authors (Jacques Le Bailly,
+    https://github.com/Fonthausen/CrimsonPro), based on Crimson Text by Sebastian Kosch.
+    Licensed under the SIL Open Font License, Version 1.1.
+  importedDate: 2026-05-17
+  importedFromVersion: "2.001"
+  notes: >
+    Upstream: github.com/Fonthausen/CrimsonPro. Also published on Google Fonts as
+    "Crimson Pro".
+
+source:
+  kind: google-fonts
+  family: Crimson Pro
+  url: https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap
+
+fallbackStack:
+  - Georgia
+  - Cambria
+  - Times New Roman
+  - Times
+  - serif
+
+availableStyles:
+  - { weight: 200, style: normal }
+  - { weight: 200, style: italic }
+  - { weight: 300, style: normal }
+  - { weight: 300, style: italic }
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 500, style: normal }
+  - { weight: 500, style: italic }
+  - { weight: 600, style: normal }
+  - { weight: 600, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+  - { weight: 800, style: normal }
+  - { weight: 800, style: italic }
+  - { weight: 900, style: normal }
+  - { weight: 900, style: italic }
