@@ -1,0 +1,30 @@
+kind: font
+id: bebas-neue
+version: 1.0.0
+name: Bebas Neue
+description: >
+  A tall, condensed, all-caps sans-serif descended from the original Bebas, widely used in posters, sport, and titling. Ships as a single regular weight — pick it for headlines, banners, and any surface that wants a confident uppercase punch.
+family: Bebas Neue
+classification: display
+tags: [ display, condensed, uppercase, headlines, posters ]
+
+provenance:
+  source: https://fonts.google.com/specimen/Bebas+Neue
+  license: OFL-1.1
+  attribution: >
+    Bebas Neue, Copyright 2018 The Bebas Neue Project Authors (Ryoichi Tsunekawa, Dharma Type), licensed under the SIL Open Font License, Version 1.1.
+  importedDate: 2026-05-17
+
+source:
+  kind: google-fonts
+  family: Bebas Neue
+  url: https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap
+
+fallbackStack:
+  - Impact
+  - Haettenschweiler
+  - Arial Narrow
+  - sans-serif
+
+availableStyles:
+  - { weight: 400, style: normal }

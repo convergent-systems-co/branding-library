@@ -1,0 +1,50 @@
+kind: font
+id: source-code-pro
+version: 1.0.0
+name: Source Code Pro
+description: >
+  Adobe's classic editorial monospace, the fixed-width member of the Source family. Variable font (weight 200–900) — pick it for code samples, terminal UIs, and technical documentation where Adobe-grade neutrality is required.
+family: Source Code Pro
+classification: monospace
+tags: [ variable-font, monospace, code, editorial, adobe ]
+
+provenance:
+  source: https://fonts.google.com/specimen/Source+Code+Pro
+  license: OFL-1.1
+  attribution: >
+    Source Code Pro, Copyright 2010–2021 Adobe (https://www.adobe.com/), with Reserved Font Name "Source", licensed under the SIL Open Font License, Version 1.1.
+  importedDate: 2026-05-17
+
+source:
+  kind: google-fonts
+  family: Source Code Pro
+  url: https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap
+
+fallbackStack:
+  - ui-monospace
+  - SFMono-Regular
+  - Menlo
+  - Consolas
+  - Liberation Mono
+  - monospace
+
+availableStyles:
+  - { weight: 200, style: normal }
+  - { weight: 200, style: italic }
+  - { weight: 300, style: normal }
+  - { weight: 300, style: italic }
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 500, style: normal }
+  - { weight: 500, style: italic }
+  - { weight: 600, style: normal }
+  - { weight: 600, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+  - { weight: 800, style: normal }
+  - { weight: 800, style: italic }
+  - { weight: 900, style: normal }
+  - { weight: 900, style: italic }
+
+variableAxes:
+  - { tag: wght, name: Weight, min: 200, max: 900, default: 400 }

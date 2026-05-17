@@ -1,0 +1,49 @@
+kind: font
+id: plus-jakarta-sans
+version: 1.0.0
+name: Plus Jakarta Sans
+description: >
+  A friendly geometric sans-serif with humanist proportions, designed in Indonesia and broadly localized. Variable font (weight 200–800) — pick it when you want softer, slightly playful UI without losing legibility at body sizes.
+family: Plus Jakarta Sans
+classification: sans-serif
+tags: [ variable-font, geometric, friendly, ui, body ]
+
+provenance:
+  source: https://fonts.google.com/specimen/Plus+Jakarta+Sans
+  license: OFL-1.1
+  attribution: >
+    Plus Jakarta Sans, Copyright 2020 The Plus Jakarta Sans Project Authors, licensed under the SIL Open Font License, Version 1.1.
+  importedDate: 2026-05-17
+
+source:
+  kind: google-fonts
+  family: Plus Jakarta Sans
+  url: https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap
+
+fallbackStack:
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Roboto
+  - Helvetica Neue
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 200, style: normal }
+  - { weight: 200, style: italic }
+  - { weight: 300, style: normal }
+  - { weight: 300, style: italic }
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 500, style: normal }
+  - { weight: 500, style: italic }
+  - { weight: 600, style: normal }
+  - { weight: 600, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+  - { weight: 800, style: normal }
+  - { weight: 800, style: italic }
+
+variableAxes:
+  - { tag: wght, name: Weight, min: 200, max: 800, default: 400 }

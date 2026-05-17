@@ -1,0 +1,44 @@
+kind: font
+id: roboto-slab
+version: 1.0.0
+name: Roboto Slab
+description: >
+  The slab-serif companion to the Roboto family, sharing skeleton with Roboto and Roboto Mono. Variable font (weight 100–900) — pick it for product surfaces that want a friendly slab voice that pairs with Roboto-family sans and mono.
+family: Roboto Slab
+classification: slab-serif
+tags: [ variable-font, slab, roboto, body, headings ]
+
+provenance:
+  source: https://fonts.google.com/specimen/Roboto+Slab
+  license: Apache-2.0
+  attribution: >
+    Roboto Slab, Copyright 2014 Google LLC, licensed under the Apache License, Version 2.0.
+  importedDate: 2026-05-17
+  notes: >
+    Unlike most Google Fonts, Roboto Slab is distributed under Apache-2.0 rather than the SIL Open Font License.
+
+source:
+  kind: google-fonts
+  family: Roboto Slab
+  url: https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap
+
+fallbackStack:
+  - Iowan Old Style
+  - Apple Garamond
+  - Baskerville
+  - Times New Roman
+  - serif
+
+availableStyles:
+  - { weight: 100, style: normal }
+  - { weight: 200, style: normal }
+  - { weight: 300, style: normal }
+  - { weight: 400, style: normal }
+  - { weight: 500, style: normal }
+  - { weight: 600, style: normal }
+  - { weight: 700, style: normal }
+  - { weight: 800, style: normal }
+  - { weight: 900, style: normal }
+
+variableAxes:
+  - { tag: wght, name: Weight, min: 100, max: 900, default: 400 }

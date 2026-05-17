@@ -1,0 +1,50 @@
+kind: font
+id: source-serif-4
+version: 1.0.0
+name: Source Serif 4
+description: >
+  Adobe's transitional serif companion to Source Sans, redrawn for the screen with an optical-size axis. Variable font with weight and optical-size — pick it for long-form reading, editorial, and documentation where a neutral serif is required.
+family: Source Serif 4
+classification: serif
+tags: [ variable-font, transitional, screen, body, editorial ]
+
+provenance:
+  source: https://fonts.google.com/specimen/Source+Serif+4
+  license: OFL-1.1
+  attribution: >
+    Source Serif 4, Copyright 2014–2021 Adobe (https://www.adobe.com/), with Reserved Font Name "Source", licensed under the SIL Open Font License, Version 1.1.
+  importedDate: 2026-05-17
+
+source:
+  kind: google-fonts
+  family: Source Serif 4
+  url: https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap
+
+fallbackStack:
+  - Iowan Old Style
+  - Apple Garamond
+  - Baskerville
+  - Times New Roman
+  - serif
+
+availableStyles:
+  - { weight: 200, style: normal }
+  - { weight: 200, style: italic }
+  - { weight: 300, style: normal }
+  - { weight: 300, style: italic }
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 500, style: normal }
+  - { weight: 500, style: italic }
+  - { weight: 600, style: normal }
+  - { weight: 600, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+  - { weight: 800, style: normal }
+  - { weight: 800, style: italic }
+  - { weight: 900, style: normal }
+  - { weight: 900, style: italic }
+
+variableAxes:
+  - { tag: wght, name: Weight, min: 200, max: 900, default: 400 }
+  - { tag: opsz, name: Optical Size, min: 8, max: 60, default: 14 }

@@ -1,0 +1,44 @@
+kind: font
+id: outfit
+version: 1.0.0
+name: Outfit
+description: >
+  A geometric sans-serif designed for fashion and display use that holds up at body sizes. Variable font (weight 100–900) — pick it when you want a clean, slightly elevated voice for marketing pages and headings.
+family: Outfit
+classification: sans-serif
+tags: [ variable-font, geometric, display, marketing, headings ]
+
+provenance:
+  source: https://fonts.google.com/specimen/Outfit
+  license: OFL-1.1
+  attribution: >
+    Outfit, Copyright 2021 The Outfit Project Authors, licensed under the SIL Open Font License, Version 1.1.
+  importedDate: 2026-05-17
+
+source:
+  kind: google-fonts
+  family: Outfit
+  url: https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+fallbackStack:
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Roboto
+  - Helvetica Neue
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 100, style: normal }
+  - { weight: 200, style: normal }
+  - { weight: 300, style: normal }
+  - { weight: 400, style: normal }
+  - { weight: 500, style: normal }
+  - { weight: 600, style: normal }
+  - { weight: 700, style: normal }
+  - { weight: 800, style: normal }
+  - { weight: 900, style: normal }
+
+variableAxes:
+  - { tag: wght, name: Weight, min: 100, max: 900, default: 400 }

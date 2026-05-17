@@ -1,0 +1,42 @@
+kind: font
+id: manrope
+version: 1.0.0
+name: Manrope
+description: >
+  A modern geometric sans-serif with semi-condensed proportions and soft contours. Variable font (weight 200–800) — pick it when you want a friendlier, slightly warmer alternative to Inter for UI and body copy.
+family: Manrope
+classification: sans-serif
+tags: [ variable-font, geometric, ui, body, modern ]
+
+provenance:
+  source: https://fonts.google.com/specimen/Manrope
+  license: OFL-1.1
+  attribution: >
+    Manrope, Copyright 2018 The Manrope Project Authors, licensed under the SIL Open Font License, Version 1.1.
+  importedDate: 2026-05-17
+
+source:
+  kind: google-fonts
+  family: Manrope
+  url: https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap
+
+fallbackStack:
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Roboto
+  - Helvetica Neue
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 200, style: normal }
+  - { weight: 300, style: normal }
+  - { weight: 400, style: normal }
+  - { weight: 500, style: normal }
+  - { weight: 600, style: normal }
+  - { weight: 700, style: normal }
+  - { weight: 800, style: normal }
+
+variableAxes:
+  - { tag: wght, name: Weight, min: 200, max: 800, default: 400 }

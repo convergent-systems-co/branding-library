@@ -1,0 +1,54 @@
+kind: font
+id: dm-sans
+version: 1.0.0
+name: DM Sans
+description: >
+  A low-contrast geometric sans designed for use at small sizes with broad language support. Variable font with optical-size and weight axes — pick it for editorial UI and product copy where a neutral, friendly tone matters.
+family: DM Sans
+classification: sans-serif
+tags: [ variable-font, geometric, low-contrast, ui, editorial ]
+
+provenance:
+  source: https://fonts.google.com/specimen/DM+Sans
+  license: OFL-1.1
+  attribution: >
+    DM Sans, Copyright 2014–2017 Indian Type Foundry, Copyright 2019 Google Inc., Copyright 2022 Colophon Foundry, licensed under the SIL Open Font License, Version 1.1.
+  importedDate: 2026-05-17
+
+source:
+  kind: google-fonts
+  family: DM Sans
+  url: https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..900;1,9..40,100..900&display=swap
+
+fallbackStack:
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Roboto
+  - Helvetica Neue
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 100, style: normal }
+  - { weight: 100, style: italic }
+  - { weight: 200, style: normal }
+  - { weight: 200, style: italic }
+  - { weight: 300, style: normal }
+  - { weight: 300, style: italic }
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 500, style: normal }
+  - { weight: 500, style: italic }
+  - { weight: 600, style: normal }
+  - { weight: 600, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+  - { weight: 800, style: normal }
+  - { weight: 800, style: italic }
+  - { weight: 900, style: normal }
+  - { weight: 900, style: italic }
+
+variableAxes:
+  - { tag: wght, name: Weight, min: 100, max: 900, default: 400 }
+  - { tag: opsz, name: Optical Size, min: 9, max: 40, default: 14 }

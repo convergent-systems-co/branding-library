@@ -1,0 +1,41 @@
+kind: font
+id: lora
+version: 1.0.0
+name: Lora
+description: >
+  A well-balanced contemporary serif with calligraphic roots and moderate contrast, optimized for body text. Variable font (weight 400–700) — pick it for editorial, blog, and long-form reading surfaces that want warmth without losing rigor.
+family: Lora
+classification: serif
+tags: [ variable-font, transitional, calligraphic, body, editorial ]
+
+provenance:
+  source: https://fonts.google.com/specimen/Lora
+  license: OFL-1.1
+  attribution: >
+    Lora, Copyright 2011 The Lora Project Authors (Cyreal), licensed under the SIL Open Font License, Version 1.1.
+  importedDate: 2026-05-17
+
+source:
+  kind: google-fonts
+  family: Lora
+  url: https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap
+
+fallbackStack:
+  - Iowan Old Style
+  - Apple Garamond
+  - Baskerville
+  - Times New Roman
+  - serif
+
+availableStyles:
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 500, style: normal }
+  - { weight: 500, style: italic }
+  - { weight: 600, style: normal }
+  - { weight: 600, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+
+variableAxes:
+  - { tag: wght, name: Weight, min: 400, max: 700, default: 400 }

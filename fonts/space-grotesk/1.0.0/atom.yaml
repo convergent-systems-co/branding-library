@@ -1,0 +1,40 @@
+kind: font
+id: space-grotesk
+version: 1.0.0
+name: Space Grotesk
+description: >
+  A neo-grotesque sans with proportional widths derived from Space Mono, keeping the original's quirky terminals at text scale. Variable font (weight 300–700) — pick it for tech, product, and editorial surfaces that want personality without ornament.
+family: Space Grotesk
+classification: sans-serif
+tags: [ variable-font, neo-grotesque, tech, editorial, distinctive ]
+
+provenance:
+  source: https://fonts.google.com/specimen/Space+Grotesk
+  license: OFL-1.1
+  attribution: >
+    Space Grotesk, Copyright 2020 The Space Grotesk Project Authors (Florian Karsten), licensed under the SIL Open Font License, Version 1.1. Derived from Space Mono by Colophon Foundry.
+  importedDate: 2026-05-17
+
+source:
+  kind: google-fonts
+  family: Space Grotesk
+  url: https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap
+
+fallbackStack:
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Roboto
+  - Helvetica Neue
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 300, style: normal }
+  - { weight: 400, style: normal }
+  - { weight: 500, style: normal }
+  - { weight: 600, style: normal }
+  - { weight: 700, style: normal }
+
+variableAxes:
+  - { tag: wght, name: Weight, min: 300, max: 700, default: 400 }

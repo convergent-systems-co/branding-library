@@ -1,0 +1,30 @@
+kind: font
+id: archivo-black
+version: 1.0.0
+name: Archivo Black
+description: >
+  A heavy grotesque sans cut as a single black weight, designed for high-impact headlines and titling. Ships as one weight — pick it for posters, hero headlines, and bold editorial display where weight is the design.
+family: Archivo Black
+classification: display
+tags: [ display, grotesque, black, headlines, posters ]
+
+provenance:
+  source: https://fonts.google.com/specimen/Archivo+Black
+  license: OFL-1.1
+  attribution: >
+    Archivo Black, Copyright 2017 The Archivo Black Project Authors (Omnibus-Type), licensed under the SIL Open Font License, Version 1.1.
+  importedDate: 2026-05-17
+
+source:
+  kind: google-fonts
+  family: Archivo Black
+  url: https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap
+
+fallbackStack:
+  - Impact
+  - Haettenschweiler
+  - Arial Black
+  - sans-serif
+
+availableStyles:
+  - { weight: 900, style: normal }

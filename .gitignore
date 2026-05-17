@@ -730,3 +730,6 @@ dist/
 
 # Playwright MCP screenshot artifacts
 .playwright-mcp/
+
+# Claude Code session state (scheduled_tasks.lock, etc.)
+.claude/
