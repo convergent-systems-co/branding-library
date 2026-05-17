@@ -50,6 +50,8 @@ const brands = getResolvedBrands()
           --row-text-tertiary: ${b.theme.textTertiary};
           --row-accent: ${b.theme.accent};
           --row-on-primary: ${b.theme.onPrimary};
+          --row-identity: ${b.theme.identity};
+          --row-on-identity: ${b.theme.onIdentity};
           --row-heading-font: ${b.theme.headingFont};
           --row-body-font: ${b.theme.bodyFont};
         `}
@@ -145,8 +147,8 @@ const brands = getResolvedBrands()
     }
 
     .card-head {
-      background: var(--row-primary);
-      color: var(--row-on-primary);
+      background: var(--row-identity);
+      color: var(--row-on-identity);
       padding: 20px 24px;
     }
     .card-head-row {
@@ -162,13 +164,13 @@ const brands = getResolvedBrands()
       font-weight: 700;
       margin: 0;
       letter-spacing: -0.02em;
-      color: var(--row-on-primary);
+      color: var(--row-on-identity);
       line-height: 1.1;
     }
     .ref {
       font-family: var(--font-mono);
       font-size: 12px;
-      color: var(--row-on-primary);
+      color: var(--row-on-identity);
       opacity: 0.75;
     }
 

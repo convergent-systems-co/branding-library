@@ -115,6 +115,8 @@ export type BrandTheme = {
   error: string;
   success: string;
   onPrimary: string;
+  identity: string;
+  onIdentity: string;
   headingFont: string;
   bodyFont: string;
 };
@@ -122,6 +124,26 @@ export type BrandTheme = {
 const PRIMARY_FALLBACK = '#5E81AC';
 const SURFACE_FALLBACK = '#ECEFF4';
 const TEXT_FALLBACK = '#2E3440';
+
+// sRGB relative luminance per WCAG 2.x; returns 0..1.
+const relativeLuminance = (hex: string): number => {
+  const m = hex.replace('#', '').padEnd(6, '0').slice(0, 6);
+  const channel = (v: number) => {
+    const s = v / 255;
+    return s <= 0.03928 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+  };
+  const r = channel(parseInt(m.slice(0, 2), 16));
+  const g = channel(parseInt(m.slice(2, 4), 16));
+  const b = channel(parseInt(m.slice(4, 6), 16));
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+};
+
+// Pick a readable foreground color over a given background. Threshold
+// 0.45 lands cyan (#5CD6FF, L≈0.66) on the dark-text side, which is
+// what AA requires — white on cyan fails 4.5:1.
+const readableForeground = (bg: string, dark = '#0B1020', light = '#FFFFFF'): string => {
+  return relativeLuminance(bg) > 0.45 ? dark : light;
+};
 
 export const brandTheme = (brand: ResolvedBrand): BrandTheme => {
   const primary = roleHex(brand, 'primary') ?? PRIMARY_FALLBACK;
@@ -137,6 +159,14 @@ export const brandTheme = (brand: ResolvedBrand): BrandTheme => {
   const warning = roleHex(brand, 'warning') ?? accent;
   const error = roleHex(brand, 'error') ?? '#BF616A';
   const success = roleHex(brand, 'success') ?? '#A3BE8C';
+
+  // identity = the brand's signature block color (the "this brand is
+  // X" color you'd put on a brand card). For Toyota / JM Lexus / JMFE
+  // this equals primary. For dark-first brands like Convergent Systems
+  // the identity is the deep canvas, not the interactive accent.
+  const identity = roleHex(brand, 'identity') ?? primary;
+  const onIdentity = roleHex(brand, 'on-identity') ?? readableForeground(identity);
+  const onPrimary = roleHex(brand, 'on-primary') ?? readableForeground(primary);
 
   const headingFontRole = brand.roles?.typography?.display ?? 'heading';
   const bodyFontRole = brand.roles?.typography?.prose ?? 'body';
@@ -157,7 +187,9 @@ export const brandTheme = (brand: ResolvedBrand): BrandTheme => {
     warning,
     error,
     success,
-    onPrimary: '#FFFFFF',
+    onPrimary,
+    identity,
+    onIdentity,
     headingFont: headingSlug ? fontShowcaseFamily(headingSlug) : 'var(--font-sans)',
     bodyFont: bodySlug ? fontShowcaseFamily(bodySlug) : 'var(--font-sans)',
   };

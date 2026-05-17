@@ -35,6 +35,24 @@ references:
 
 roles:
   colors:
+    # identity = the brand's signature block color. Convergent Systems
+    # is dark-first: the deep-space canvas IS the brand, with cyan and
+    # gold reading as accents on top. Setting identity here lets the
+    # /brands/ card head and other "brand badge" surfaces render in
+    # the brand's true voice rather than the interactive primary.
+    identity: deep-space-0
+    on-identity: snow-0
+
+    # Dark-first canvas roles. Override the palette's light-mode
+    # defaults so any consumer that asks for "the Convergent Systems
+    # background" gets deep space, not parchment.
+    background: deep-space-0
+    surface: deep-space-1
+    surface-elevated: deep-space-2
+    text-primary: snow-0
+    text-secondary: snow-1
+    text-tertiary: snow-2
+
     primary: frost-cyan
     primary-hover: frost-cyan-soft
     accent: solar-gold
