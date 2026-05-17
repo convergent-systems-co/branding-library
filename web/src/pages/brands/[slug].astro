@@ -110,6 +110,8 @@ const themeStyle = `
   --b-error: ${theme.error};
   --b-success: ${theme.success};
   --b-on-primary: ${theme.onPrimary};
+  --b-identity: ${theme.identity};
+  --b-on-identity: ${theme.onIdentity};
   --b-heading-font: ${theme.headingFont};
   --b-body-font: ${theme.bodyFont};
 `;
@@ -126,7 +128,7 @@ const themeStyle = `
     <code>{brand.id}@{brand.version}</code>
   </nav>
 
-  <header class="detail-hero">
+  <header class="detail-hero" style={themeStyle}>
     <h1>{brand.name}</h1>
     {brand.description && <p class="lede">{brand.description}</p>}
     <div class="stats-inline">
@@ -493,17 +495,27 @@ const themeStyle = `
     .crumb a { color: var(--text-secondary); text-decoration: none; }
     .crumb a:hover { color: var(--primary); }
 
-    .detail-hero { padding: 24px 0 32px; }
+    .detail-hero {
+      background: var(--b-identity);
+      color: var(--b-on-identity);
+      padding: 40px 36px 36px;
+      border-radius: 16px;
+      margin: 16px 0 24px;
+      font-family: var(--b-body-font);
+    }
     .detail-hero h1 {
+      font-family: var(--b-heading-font);
       font-size: 56px;
       font-weight: 800;
       letter-spacing: -0.03em;
       margin: 0 0 12px;
       line-height: 1;
+      color: var(--b-on-identity);
     }
     .lede {
       font-size: 17px;
-      color: var(--text-secondary);
+      color: var(--b-on-identity);
+      opacity: 0.82;
       max-width: 760px;
       margin: 0 0 20px;
     }
@@ -512,12 +524,19 @@ const themeStyle = `
       gap: 24px;
       flex-wrap: wrap;
       font-size: 14px;
-      color: var(--text-secondary);
+      color: var(--b-on-identity);
+      opacity: 0.78;
       font-family: var(--font-mono);
     }
-    .stats-inline strong { color: var(--text-primary); font-weight: 700; }
+    .stats-inline strong { color: var(--b-on-identity); font-weight: 700; opacity: 1; }
     .tags { display: inline-flex; gap: 6px; flex-wrap: wrap; }
-    .tag { background: var(--surface); padding: 2px 8px; border-radius: 4px; font-size: 12px; }
+    .tag {
+      background: color-mix(in srgb, var(--b-on-identity) 12%, transparent);
+      color: var(--b-on-identity);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
 
     .section { padding: 24px 0 32px; }
     .section h2 {
