@@ -1,0 +1,51 @@
+kind: font
+id: ibm-plex-serif
+version: 1.0.0
+name: IBM Plex Serif
+description: >
+  Transitional/slab-influenced serif companion to IBM Plex Sans. Warm, contemporary
+  serif designed for body copy, long-form reading, and editorial layouts within the IBM
+  brand system. Pairs naturally with IBM Plex Sans and IBM Plex Mono.
+family: IBM Plex Serif
+classification: serif
+tags: [ ibm-plex, serif, body, editorial, corporate ]
+
+provenance:
+  source: https://github.com/IBM/plex
+  license: OFL-1.1
+  attribution: >
+    Copyright © 2017 IBM Corp. with Reserved Font Name "Plex". Licensed under the SIL Open Font
+    License, Version 1.1. Designed by Mike Abbink and Bold Monday.
+  importedDate: 2026-05-17
+  importedFromVersion: "@ibm/plex-serif@1.1.0"
+  notes: >
+    Distributed via the IBM Plex monorepo at github.com/IBM/plex (packages/plex-serif).
+    Also published on Google Fonts as "IBM Plex Serif".
+
+source:
+  kind: google-fonts
+  family: IBM Plex Serif
+  url: https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap
+
+fallbackStack:
+  - Georgia
+  - Cambria
+  - Times New Roman
+  - Times
+  - serif
+
+availableStyles:
+  - { weight: 100, style: normal }
+  - { weight: 100, style: italic }
+  - { weight: 200, style: normal }
+  - { weight: 200, style: italic }
+  - { weight: 300, style: normal }
+  - { weight: 300, style: italic }
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 500, style: normal }
+  - { weight: 500, style: italic }
+  - { weight: 600, style: normal }
+  - { weight: 600, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
