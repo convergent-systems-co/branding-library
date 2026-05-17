@@ -1,0 +1,184 @@
+kind: palette
+id: bootstrap
+version: 1.0.0
+name: Bootstrap 5.3
+description: >
+  The Bootstrap 5.3 color system — gray-100..900 plus ten named accents
+  (blue, indigo, purple, pink, red, orange, yellow, green, teal, cyan)
+  and the eight theme colors (primary, secondary, success, info, warning,
+  danger, light, dark). Includes the full set of derived per-theme
+  emphasis/bg-subtle/border-subtle values for both light and dark modes.
+
+  Light mode is the default theme that ships when you load `bootstrap.css`;
+  dark mode is activated by setting `data-bs-theme="dark"` on the root and
+  overrides body bg, body color, secondary/tertiary surfaces, link color,
+  and every theme-color emphasis triplet.
+
+tags: [design-system, bootstrap, twbs, role-based]
+
+provenance:
+  source: https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss
+  license: MIT
+  attribution: >
+    Bootstrap, Copyright (c) 2011-2025 The Bootstrap Authors, licensed
+    under MIT. Light theme values from scss/_variables.scss; dark theme
+    overrides from scss/_variables-dark.scss. Hex values cross-checked
+    against the compiled dist/css/bootstrap.css.
+  importedDate: 2026-05-17
+  importedFromVersion: bootstrap@5.3.8
+
+swatches:
+  - { id: white, name: White, value: "#FFFFFF" }
+  - { id: black, name: Black, value: "#000000" }
+
+  # ─── Gray scale (light-mode tints, used in both themes) ─────────
+  - { id: gray-100, name: Gray 100, value: "#F8F9FA", description: "Lightest gray — same as $light." }
+  - { id: gray-200, name: Gray 200, value: "#E9ECEF" }
+  - { id: gray-300, name: Gray 300, value: "#DEE2E6" }
+  - { id: gray-400, name: Gray 400, value: "#CED4DA" }
+  - { id: gray-500, name: Gray 500, value: "#ADB5BD" }
+  - { id: gray-600, name: Gray 600, value: "#6C757D", description: "Default $secondary." }
+  - { id: gray-700, name: Gray 700, value: "#495057" }
+  - { id: gray-800, name: Gray 800, value: "#343A40", description: "$gray-dark." }
+  - { id: gray-900, name: Gray 900, value: "#212529", description: "Default body text / $dark." }
+
+  # ─── Named base hues ────────────────────────────────────────────
+  - { id: blue,    name: Blue,    value: "#0D6EFD", description: "$primary." }
+  - { id: indigo,  name: Indigo,  value: "#6610F2" }
+  - { id: purple,  name: Purple,  value: "#6F42C1" }
+  - { id: pink,    name: Pink,    value: "#D63384" }
+  - { id: red,     name: Red,     value: "#DC3545", description: "$danger." }
+  - { id: orange,  name: Orange,  value: "#FD7E14" }
+  - { id: yellow,  name: Yellow,  value: "#FFC107", description: "$warning." }
+  - { id: green,   name: Green,   value: "#198754", description: "$success." }
+  - { id: teal,    name: Teal,    value: "#20C997" }
+  - { id: cyan,    name: Cyan,    value: "#0DCAF0", description: "$info." }
+
+  # ─── Light-theme emphasis colors (text-on-light) ────────────────
+  - { id: light-primary-text-emphasis,   name: Light Primary Text Emphasis,   value: "#052C65" }
+  - { id: light-secondary-text-emphasis, name: Light Secondary Text Emphasis, value: "#2B2F32" }
+  - { id: light-success-text-emphasis,   name: Light Success Text Emphasis,   value: "#0A3622" }
+  - { id: light-info-text-emphasis,      name: Light Info Text Emphasis,      value: "#055160" }
+  - { id: light-warning-text-emphasis,   name: Light Warning Text Emphasis,   value: "#664D03" }
+  - { id: light-danger-text-emphasis,    name: Light Danger Text Emphasis,    value: "#58151C" }
+  - { id: light-light-text-emphasis,     name: Light Light Text Emphasis,     value: "#495057" }
+  - { id: light-dark-text-emphasis,      name: Light Dark Text Emphasis,      value: "#495057" }
+
+  # ─── Light-theme bg-subtle ──────────────────────────────────────
+  - { id: light-primary-bg-subtle,   name: Light Primary BG Subtle,   value: "#CFE2FF" }
+  - { id: light-secondary-bg-subtle, name: Light Secondary BG Subtle, value: "#E2E3E5" }
+  - { id: light-success-bg-subtle,   name: Light Success BG Subtle,   value: "#D1E7DD" }
+  - { id: light-info-bg-subtle,      name: Light Info BG Subtle,      value: "#CFF4FC" }
+  - { id: light-warning-bg-subtle,   name: Light Warning BG Subtle,   value: "#FFF3CD" }
+  - { id: light-danger-bg-subtle,    name: Light Danger BG Subtle,    value: "#F8D7DA" }
+  - { id: light-light-bg-subtle,     name: Light Light BG Subtle,     value: "#FCFCFD" }
+  - { id: light-dark-bg-subtle,      name: Light Dark BG Subtle,      value: "#CED4DA" }
+
+  # ─── Light-theme border-subtle ──────────────────────────────────
+  - { id: light-primary-border-subtle,   name: Light Primary Border Subtle,   value: "#9EC5FE" }
+  - { id: light-secondary-border-subtle, name: Light Secondary Border Subtle, value: "#C4C8CB" }
+  - { id: light-success-border-subtle,   name: Light Success Border Subtle,   value: "#A3CFBB" }
+  - { id: light-info-border-subtle,      name: Light Info Border Subtle,      value: "#9EEAF9" }
+  - { id: light-warning-border-subtle,   name: Light Warning Border Subtle,   value: "#FFE69C" }
+  - { id: light-danger-border-subtle,    name: Light Danger Border Subtle,    value: "#F1AEB5" }
+  - { id: light-light-border-subtle,     name: Light Light Border Subtle,     value: "#E9ECEF" }
+  - { id: light-dark-border-subtle,      name: Light Dark Border Subtle,      value: "#ADB5BD" }
+
+  # ─── Light-theme structural ─────────────────────────────────────
+  - { id: light-body-bg,         name: Light Body BG,         value: "#FFFFFF" }
+  - { id: light-body-color,      name: Light Body Color,      value: "#212529" }
+  - { id: light-secondary-bg,    name: Light Secondary BG,    value: "#E9ECEF" }
+  - { id: light-tertiary-bg,     name: Light Tertiary BG,     value: "#F8F9FA" }
+  - { id: light-border-color,    name: Light Border Color,    value: "#DEE2E6" }
+  - { id: light-link-color,      name: Light Link Color,      value: "#0D6EFD" }
+  - { id: light-link-hover,      name: Light Link Hover,      value: "#0A58CA" }
+  - { id: light-code-color,      name: Light Code Color,      value: "#D63384" }
+  - { id: light-highlight-bg,    name: Light Highlight BG,    value: "#FFF3CD" }
+
+  # ─── Dark-theme emphasis colors ─────────────────────────────────
+  - { id: dark-primary-text-emphasis,   name: Dark Primary Text Emphasis,   value: "#6EA8FE" }
+  - { id: dark-secondary-text-emphasis, name: Dark Secondary Text Emphasis, value: "#A7ACB1" }
+  - { id: dark-success-text-emphasis,   name: Dark Success Text Emphasis,   value: "#75B798" }
+  - { id: dark-info-text-emphasis,      name: Dark Info Text Emphasis,      value: "#6EDFF6" }
+  - { id: dark-warning-text-emphasis,   name: Dark Warning Text Emphasis,   value: "#FFDA6A" }
+  - { id: dark-danger-text-emphasis,    name: Dark Danger Text Emphasis,    value: "#EA868F" }
+  - { id: dark-light-text-emphasis,     name: Dark Light Text Emphasis,     value: "#F8F9FA" }
+  - { id: dark-dark-text-emphasis,      name: Dark Dark Text Emphasis,      value: "#DEE2E6" }
+
+  # ─── Dark-theme bg-subtle ───────────────────────────────────────
+  - { id: dark-primary-bg-subtle,   name: Dark Primary BG Subtle,   value: "#031633" }
+  - { id: dark-secondary-bg-subtle, name: Dark Secondary BG Subtle, value: "#161719" }
+  - { id: dark-success-bg-subtle,   name: Dark Success BG Subtle,   value: "#051B11" }
+  - { id: dark-info-bg-subtle,      name: Dark Info BG Subtle,      value: "#032830" }
+  - { id: dark-warning-bg-subtle,   name: Dark Warning BG Subtle,   value: "#332701" }
+  - { id: dark-danger-bg-subtle,    name: Dark Danger BG Subtle,    value: "#2C0B0E" }
+  - { id: dark-light-bg-subtle,     name: Dark Light BG Subtle,     value: "#343A40" }
+  - { id: dark-dark-bg-subtle,      name: Dark Dark BG Subtle,      value: "#1A1D20" }
+
+  # ─── Dark-theme border-subtle ───────────────────────────────────
+  - { id: dark-primary-border-subtle,   name: Dark Primary Border Subtle,   value: "#084298" }
+  - { id: dark-secondary-border-subtle, name: Dark Secondary Border Subtle, value: "#41464B" }
+  - { id: dark-success-border-subtle,   name: Dark Success Border Subtle,   value: "#0F5132" }
+  - { id: dark-info-border-subtle,      name: Dark Info Border Subtle,      value: "#087990" }
+  - { id: dark-warning-border-subtle,   name: Dark Warning Border Subtle,   value: "#997404" }
+  - { id: dark-danger-border-subtle,    name: Dark Danger Border Subtle,    value: "#842029" }
+  - { id: dark-light-border-subtle,     name: Dark Light Border Subtle,     value: "#495057" }
+  - { id: dark-dark-border-subtle,      name: Dark Dark Border Subtle,      value: "#343A40" }
+
+  # ─── Dark-theme structural ──────────────────────────────────────
+  - { id: dark-body-bg,         name: Dark Body BG,         value: "#212529" }
+  - { id: dark-body-color,      name: Dark Body Color,      value: "#DEE2E6" }
+  - { id: dark-secondary-bg,    name: Dark Secondary BG,    value: "#343A40" }
+  - { id: dark-tertiary-bg,     name: Dark Tertiary BG,     value: "#2B3035" }
+  - { id: dark-border-color,    name: Dark Border Color,    value: "#495057" }
+  - { id: dark-link-color,      name: Dark Link Color,      value: "#6EA8FE" }
+  - { id: dark-link-hover,      name: Dark Link Hover,      value: "#8BB9FE" }
+  - { id: dark-code-color,      name: Dark Code Color,      value: "#E685B5" }
+  - { id: dark-highlight-bg,    name: Dark Highlight BG,    value: "#664D03" }
+
+modes:
+  light:
+    roles:
+      background: light-body-bg
+      surface: light-tertiary-bg
+      surface-elevated: light-body-bg
+      text-primary: light-body-color
+      text-secondary: gray-700
+      text-tertiary: gray-600
+      primary: blue
+      primary-hover: light-link-hover
+      accent: indigo
+      accent-hover: purple
+      warning: yellow
+      warning-hover: orange
+      error: red
+      success: green
+      info: cyan
+      border: light-border-color
+      link: light-link-color
+      code: light-code-color
+      bg-subtle: light-primary-bg-subtle
+      text-emphasis: light-primary-text-emphasis
+
+  dark:
+    roles:
+      background: dark-body-bg
+      surface: dark-tertiary-bg
+      surface-elevated: dark-secondary-bg
+      text-primary: dark-body-color
+      text-secondary: gray-400
+      text-tertiary: gray-500
+      primary: dark-primary-text-emphasis
+      primary-hover: dark-link-hover
+      accent: dark-info-text-emphasis
+      accent-hover: cyan
+      warning: dark-warning-text-emphasis
+      warning-hover: yellow
+      error: dark-danger-text-emphasis
+      success: dark-success-text-emphasis
+      info: dark-info-text-emphasis
+      border: dark-border-color
+      link: dark-link-color
+      code: dark-code-color
+      bg-subtle: dark-primary-bg-subtle
+      text-emphasis: dark-primary-text-emphasis

@@ -1,0 +1,159 @@
+kind: palette
+id: rose-pine
+version: 1.0.0
+name: Rosé Pine
+description: >
+  All natural pine, faux fur, and a bit of soho vibes for the classy
+  minimalist. Two flavors ship upstream — Main (dark) and Dawn (light)
+  — sharing the same role taxonomy (base, surface, overlay, muted,
+  subtle, text plus six accents: love, gold, rose, pine, foam, iris).
+
+  Dark mode is sourced from the Main flavor; light mode is sourced
+  from the Dawn flavor. Both are official upstream variants.
+tags: [rose-pine, editor, dual-mode, warm, minimalist]
+
+provenance:
+  source: https://github.com/rose-pine/palette/blob/main/palette.json
+  license: MIT
+  attribution: Rosé Pine theme — github.com/rose-pine/rose-pine-theme
+  importedDate: 2026-05-17
+  notes: >
+    Hex values from the canonical Rosé Pine palette JSON. Main and Dawn
+    flavors map identical role names to flavor-specific hex; this atom
+    flattens both into a single swatch list with a flavor prefix.
+
+swatches:
+  # ─── Main (dark) ────────────────────────────────────────────────
+  - id: main-base
+    name: Main Base
+    value: "#191724"
+    description: Dark mode canvas.
+  - id: main-surface
+    name: Main Surface
+    value: "#1F1D2E"
+    description: Dark mode surface.
+  - id: main-overlay
+    name: Main Overlay
+    value: "#26233A"
+    description: Dark mode elevated overlay.
+  - id: main-muted
+    name: Main Muted
+    value: "#6E6A86"
+    description: Dark mode muted / tertiary text.
+  - id: main-subtle
+    name: Main Subtle
+    value: "#908CAA"
+    description: Dark mode subtle / secondary text.
+  - id: main-text
+    name: Main Text
+    value: "#E0DEF4"
+    description: Dark mode primary text.
+  - id: main-love
+    name: Main Love
+    value: "#EB6F92"
+    description: Dark error / love accent.
+  - id: main-gold
+    name: Main Gold
+    value: "#F6C177"
+    description: Dark warning / gold accent.
+  - id: main-rose
+    name: Main Rose
+    value: "#EBBCBA"
+    description: Dark warm accent.
+  - id: main-pine
+    name: Main Pine
+    value: "#31748F"
+    description: Dark primary / pine accent.
+  - id: main-foam
+    name: Main Foam
+    value: "#9CCFD8"
+    description: Dark cool secondary accent.
+  - id: main-iris
+    name: Main Iris
+    value: "#C4A7E7"
+    description: Dark purple accent.
+
+  # ─── Dawn (light) ───────────────────────────────────────────────
+  - id: dawn-base
+    name: Dawn Base
+    value: "#FAF4ED"
+    description: Light mode canvas.
+  - id: dawn-surface
+    name: Dawn Surface
+    value: "#FFFAF3"
+    description: Light mode surface.
+  - id: dawn-overlay
+    name: Dawn Overlay
+    value: "#F2E9E1"
+    description: Light mode elevated overlay.
+  - id: dawn-muted
+    name: Dawn Muted
+    value: "#9893A5"
+    description: Light mode muted / tertiary text.
+  - id: dawn-subtle
+    name: Dawn Subtle
+    value: "#797593"
+    description: Light mode subtle / secondary text.
+  - id: dawn-text
+    name: Dawn Text
+    value: "#464261"
+    description: Light mode primary text.
+  - id: dawn-love
+    name: Dawn Love
+    value: "#B4637A"
+    description: Light error / love accent.
+  - id: dawn-gold
+    name: Dawn Gold
+    value: "#EA9D34"
+    description: Light warning / gold accent.
+  - id: dawn-rose
+    name: Dawn Rose
+    value: "#D7827E"
+    description: Light warm accent.
+  - id: dawn-pine
+    name: Dawn Pine
+    value: "#286983"
+    description: Light primary / pine accent.
+  - id: dawn-foam
+    name: Dawn Foam
+    value: "#56949F"
+    description: Light cool secondary accent.
+  - id: dawn-iris
+    name: Dawn Iris
+    value: "#907AA9"
+    description: Light purple accent.
+
+modes:
+  light:
+    roles:
+      background: dawn-base
+      surface: dawn-surface
+      surface-elevated: dawn-overlay
+      text-primary: dawn-text
+      text-secondary: dawn-subtle
+      text-tertiary: dawn-muted
+      primary: dawn-pine
+      primary-hover: dawn-foam
+      accent: dawn-iris
+      accent-hover: dawn-rose
+      warning: dawn-gold
+      warning-hover: dawn-rose
+      error: dawn-love
+      success: dawn-foam
+
+  dark:
+    roles:
+      background: main-base
+      surface: main-surface
+      surface-elevated: main-overlay
+      text-primary: main-text
+      text-secondary: main-subtle
+      text-tertiary: main-muted
+      primary: main-pine
+      primary-hover: main-foam
+      accent: main-iris
+      accent-hover: main-rose
+      warning: main-gold
+      warning-hover: main-rose
+      error: main-love
+      success: main-foam

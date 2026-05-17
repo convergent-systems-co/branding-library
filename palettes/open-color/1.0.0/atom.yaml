@@ -1,0 +1,222 @@
+kind: palette
+id: open-color
+version: 1.0.0
+name: Open Color
+description: >
+  Open Color by yeun — a general-purpose UI color scheme of 13 hues
+  (gray, red, pink, grape, violet, indigo, blue, cyan, teal, green, lime,
+  yellow, orange), each at 10 evenly-spaced stops (0..9), plus pure white
+  and black. 132 swatches total.
+
+  Single-source palette: both light- and dark-mode role mappings select
+  from the same swatch list. Light mode uses low-stop neutrals for canvas
+  and high-stop hues for action color; dark mode uses high-stop neutrals
+  for canvas and lower-stop hues for action color to maintain contrast.
+
+tags: [design-system, open-color, scale, role-based]
+
+provenance:
+  source: https://github.com/yeun/open-color/blob/master/open-color.yaml
+  license: MIT
+  attribution: >
+    Open Color, Copyright (c) Yeun Park, licensed under MIT. Hex values
+    sourced from open-color.json in the canonical repository.
+  importedDate: 2026-05-17
+  importedFromVersion: open-color@1.9.1
+
+swatches:
+  - { id: white, name: White, value: "#FFFFFF" }
+  - { id: black, name: Black, value: "#000000" }
+
+  # ─── Gray (0..9) ────────────────────────────────────────────────
+  - { id: gray-0, name: Gray 0, value: "#F8F9FA" }
+  - { id: gray-1, name: Gray 1, value: "#F1F3F5" }
+  - { id: gray-2, name: Gray 2, value: "#E9ECEF" }
+  - { id: gray-3, name: Gray 3, value: "#DEE2E6" }
+  - { id: gray-4, name: Gray 4, value: "#CED4DA" }
+  - { id: gray-5, name: Gray 5, value: "#ADB5BD" }
+  - { id: gray-6, name: Gray 6, value: "#868E96" }
+  - { id: gray-7, name: Gray 7, value: "#495057" }
+  - { id: gray-8, name: Gray 8, value: "#343A40" }
+  - { id: gray-9, name: Gray 9, value: "#212529" }
+
+  # ─── Red (0..9) ─────────────────────────────────────────────────
+  - { id: red-0, name: Red 0, value: "#FFF5F5" }
+  - { id: red-1, name: Red 1, value: "#FFE3E3" }
+  - { id: red-2, name: Red 2, value: "#FFC9C9" }
+  - { id: red-3, name: Red 3, value: "#FFA8A8" }
+  - { id: red-4, name: Red 4, value: "#FF8787" }
+  - { id: red-5, name: Red 5, value: "#FF6B6B" }
+  - { id: red-6, name: Red 6, value: "#FA5252" }
+  - { id: red-7, name: Red 7, value: "#F03E3E" }
+  - { id: red-8, name: Red 8, value: "#E03131" }
+  - { id: red-9, name: Red 9, value: "#C92A2A" }
+
+  # ─── Pink (0..9) ────────────────────────────────────────────────
+  - { id: pink-0, name: Pink 0, value: "#FFF0F6" }
+  - { id: pink-1, name: Pink 1, value: "#FFDEEB" }
+  - { id: pink-2, name: Pink 2, value: "#FCC2D7" }
+  - { id: pink-3, name: Pink 3, value: "#FAA2C1" }
+  - { id: pink-4, name: Pink 4, value: "#F783AC" }
+  - { id: pink-5, name: Pink 5, value: "#F06595" }
+  - { id: pink-6, name: Pink 6, value: "#E64980" }
+  - { id: pink-7, name: Pink 7, value: "#D6336C" }
+  - { id: pink-8, name: Pink 8, value: "#C2255C" }
+  - { id: pink-9, name: Pink 9, value: "#A61E4D" }
+
+  # ─── Grape (0..9) ───────────────────────────────────────────────
+  - { id: grape-0, name: Grape 0, value: "#F8F0FC" }
+  - { id: grape-1, name: Grape 1, value: "#F3D9FA" }
+  - { id: grape-2, name: Grape 2, value: "#EEBEFA" }
+  - { id: grape-3, name: Grape 3, value: "#E599F7" }
+  - { id: grape-4, name: Grape 4, value: "#DA77F2" }
+  - { id: grape-5, name: Grape 5, value: "#CC5DE8" }
+  - { id: grape-6, name: Grape 6, value: "#BE4BDB" }
+  - { id: grape-7, name: Grape 7, value: "#AE3EC9" }
+  - { id: grape-8, name: Grape 8, value: "#9C36B5" }
+  - { id: grape-9, name: Grape 9, value: "#862E9C" }
+
+  # ─── Violet (0..9) ──────────────────────────────────────────────
+  - { id: violet-0, name: Violet 0, value: "#F3F0FF" }
+  - { id: violet-1, name: Violet 1, value: "#E5DBFF" }
+  - { id: violet-2, name: Violet 2, value: "#D0BFFF" }
+  - { id: violet-3, name: Violet 3, value: "#B197FC" }
+  - { id: violet-4, name: Violet 4, value: "#9775FA" }
+  - { id: violet-5, name: Violet 5, value: "#845EF7" }
+  - { id: violet-6, name: Violet 6, value: "#7950F2" }
+  - { id: violet-7, name: Violet 7, value: "#7048E8" }
+  - { id: violet-8, name: Violet 8, value: "#6741D9" }
+  - { id: violet-9, name: Violet 9, value: "#5F3DC4" }
+
+  # ─── Indigo (0..9) ──────────────────────────────────────────────
+  - { id: indigo-0, name: Indigo 0, value: "#EDF2FF" }
+  - { id: indigo-1, name: Indigo 1, value: "#DBE4FF" }
+  - { id: indigo-2, name: Indigo 2, value: "#BAC8FF" }
+  - { id: indigo-3, name: Indigo 3, value: "#91A7FF" }
+  - { id: indigo-4, name: Indigo 4, value: "#748FFC" }
+  - { id: indigo-5, name: Indigo 5, value: "#5C7CFA" }
+  - { id: indigo-6, name: Indigo 6, value: "#4C6EF5" }
+  - { id: indigo-7, name: Indigo 7, value: "#4263EB" }
+  - { id: indigo-8, name: Indigo 8, value: "#3B5BDB" }
+  - { id: indigo-9, name: Indigo 9, value: "#364FC7" }
+
+  # ─── Blue (0..9) ────────────────────────────────────────────────
+  - { id: blue-0, name: Blue 0, value: "#E7F5FF" }
+  - { id: blue-1, name: Blue 1, value: "#D0EBFF" }
+  - { id: blue-2, name: Blue 2, value: "#A5D8FF" }
+  - { id: blue-3, name: Blue 3, value: "#74C0FC" }
+  - { id: blue-4, name: Blue 4, value: "#4DABF7" }
+  - { id: blue-5, name: Blue 5, value: "#339AF0" }
+  - { id: blue-6, name: Blue 6, value: "#228BE6" }
+  - { id: blue-7, name: Blue 7, value: "#1C7ED6" }
+  - { id: blue-8, name: Blue 8, value: "#1971C2" }
+  - { id: blue-9, name: Blue 9, value: "#1864AB" }
+
+  # ─── Cyan (0..9) ────────────────────────────────────────────────
+  - { id: cyan-0, name: Cyan 0, value: "#E3FAFC" }
+  - { id: cyan-1, name: Cyan 1, value: "#C5F6FA" }
+  - { id: cyan-2, name: Cyan 2, value: "#99E9F2" }
+  - { id: cyan-3, name: Cyan 3, value: "#66D9E8" }
+  - { id: cyan-4, name: Cyan 4, value: "#3BC9DB" }
+  - { id: cyan-5, name: Cyan 5, value: "#22B8CF" }
+  - { id: cyan-6, name: Cyan 6, value: "#15AABF" }
+  - { id: cyan-7, name: Cyan 7, value: "#1098AD" }
+  - { id: cyan-8, name: Cyan 8, value: "#0C8599" }
+  - { id: cyan-9, name: Cyan 9, value: "#0B7285" }
+
+  # ─── Teal (0..9) ────────────────────────────────────────────────
+  - { id: teal-0, name: Teal 0, value: "#E6FCF5" }
+  - { id: teal-1, name: Teal 1, value: "#C3FAE8" }
+  - { id: teal-2, name: Teal 2, value: "#96F2D7" }
+  - { id: teal-3, name: Teal 3, value: "#63E6BE" }
+  - { id: teal-4, name: Teal 4, value: "#38D9A9" }
+  - { id: teal-5, name: Teal 5, value: "#20C997" }
+  - { id: teal-6, name: Teal 6, value: "#12B886" }
+  - { id: teal-7, name: Teal 7, value: "#0CA678" }
+  - { id: teal-8, name: Teal 8, value: "#099268" }
+  - { id: teal-9, name: Teal 9, value: "#087F5B" }
+
+  # ─── Green (0..9) ───────────────────────────────────────────────
+  - { id: green-0, name: Green 0, value: "#EBFBEE" }
+  - { id: green-1, name: Green 1, value: "#D3F9D8" }
+  - { id: green-2, name: Green 2, value: "#B2F2BB" }
+  - { id: green-3, name: Green 3, value: "#8CE99A" }
+  - { id: green-4, name: Green 4, value: "#69DB7C" }
+  - { id: green-5, name: Green 5, value: "#51CF66" }
+  - { id: green-6, name: Green 6, value: "#40C057" }
+  - { id: green-7, name: Green 7, value: "#37B24D" }
+  - { id: green-8, name: Green 8, value: "#2F9E44" }
+  - { id: green-9, name: Green 9, value: "#2B8A3E" }
+
+  # ─── Lime (0..9) ────────────────────────────────────────────────
+  - { id: lime-0, name: Lime 0, value: "#F4FCE3" }
+  - { id: lime-1, name: Lime 1, value: "#E9FAC8" }
+  - { id: lime-2, name: Lime 2, value: "#D8F5A2" }
+  - { id: lime-3, name: Lime 3, value: "#C0EB75" }
+  - { id: lime-4, name: Lime 4, value: "#A9E34B" }
+  - { id: lime-5, name: Lime 5, value: "#94D82D" }
+  - { id: lime-6, name: Lime 6, value: "#82C91E" }
+  - { id: lime-7, name: Lime 7, value: "#74B816" }
+  - { id: lime-8, name: Lime 8, value: "#66A80F" }
+  - { id: lime-9, name: Lime 9, value: "#5C940D" }
+
+  # ─── Yellow (0..9) ──────────────────────────────────────────────
+  - { id: yellow-0, name: Yellow 0, value: "#FFF9DB" }
+  - { id: yellow-1, name: Yellow 1, value: "#FFF3BF" }
+  - { id: yellow-2, name: Yellow 2, value: "#FFEC99" }
+  - { id: yellow-3, name: Yellow 3, value: "#FFE066" }
+  - { id: yellow-4, name: Yellow 4, value: "#FFD43B" }
+  - { id: yellow-5, name: Yellow 5, value: "#FCC419" }
+  - { id: yellow-6, name: Yellow 6, value: "#FAB005" }
+  - { id: yellow-7, name: Yellow 7, value: "#F59F00" }
+  - { id: yellow-8, name: Yellow 8, value: "#F08C00" }
+  - { id: yellow-9, name: Yellow 9, value: "#E67700" }
+
+  # ─── Orange (0..9) ──────────────────────────────────────────────
+  - { id: orange-0, name: Orange 0, value: "#FFF4E6" }
+  - { id: orange-1, name: Orange 1, value: "#FFE8CC" }
+  - { id: orange-2, name: Orange 2, value: "#FFD8A8" }
+  - { id: orange-3, name: Orange 3, value: "#FFC078" }
+  - { id: orange-4, name: Orange 4, value: "#FFA94D" }
+  - { id: orange-5, name: Orange 5, value: "#FF922B" }
+  - { id: orange-6, name: Orange 6, value: "#FD7E14" }
+  - { id: orange-7, name: Orange 7, value: "#F76707" }
+  - { id: orange-8, name: Orange 8, value: "#E8590C" }
+  - { id: orange-9, name: Orange 9, value: "#D9480F" }
+
+modes:
+  light:
+    roles:
+      background: white
+      surface: gray-0
+      surface-elevated: white
+      text-primary: gray-9
+      text-secondary: gray-7
+      text-tertiary: gray-6
+      primary: blue-7
+      primary-hover: blue-8
+      accent: violet-7
+      accent-hover: violet-8
+      warning: yellow-7
+      warning-hover: yellow-8
+      error: red-7
+      success: green-7
+      border: gray-3
+
+  dark:
+    roles:
+      background: gray-9
+      surface: gray-8
+      surface-elevated: gray-7
+      text-primary: gray-0
+      text-secondary: gray-3
+      text-tertiary: gray-5
+      primary: blue-4
+      primary-hover: blue-3
+      accent: violet-4
+      accent-hover: violet-3
+      warning: yellow-4
+      warning-hover: yellow-3
+      error: red-4
+      success: green-4
+      border: gray-7

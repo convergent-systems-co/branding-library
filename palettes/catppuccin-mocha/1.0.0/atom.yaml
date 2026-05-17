@@ -1,0 +1,172 @@
+kind: palette
+id: catppuccin-mocha
+version: 1.0.0
+name: Catppuccin Mocha
+description: >
+  The darkest flavor of Catppuccin — a community-driven pastel theme
+  with six accents and six surface tones. Mocha is the deep midnight
+  variant of the family (Latte / Frappé / Macchiato being the lighter
+  cousins).
+
+  Both light and dark mode role mappings draw exclusively from the
+  Mocha palette: dark maps the canonical role taxonomy (base/mantle/
+  crust + surfaces); light "mode" within Mocha is a role-shifted view
+  where the brighter text/subtext tones become the canvas.
+tags: [catppuccin, mocha, editor, dark-first, pastel]
+
+provenance:
+  source: https://github.com/catppuccin/palette/blob/main/palette.json
+  license: MIT
+  attribution: Catppuccin community — github.com/catppuccin
+  importedDate: 2026-05-17
+  importedFromVersion: "1.8.0"
+  notes: >
+    Hex values from the canonical Catppuccin palette.json (v1.8.0,
+    mocha flavor). Both modes.light and modes.dark draw from the same
+    Mocha palette — Mocha is a dark-first flavor, so the light mode
+    here is a within-Mocha role-shift (text becomes canvas), not the
+    Latte flavor.
+
+swatches:
+  # ─── Accents (mode-stable) ──────────────────────────────────────
+  - id: rosewater
+    name: Rosewater
+    value: "#F5E0DC"
+    description: Soft pink-tan accent.
+  - id: flamingo
+    name: Flamingo
+    value: "#F2CDCD"
+    description: Coral pink accent.
+  - id: pink
+    name: Pink
+    value: "#F5C2E7"
+    description: Vivid pink accent.
+  - id: mauve
+    name: Mauve
+    value: "#CBA6F7"
+    description: Purple accent (signature).
+  - id: red
+    name: Red
+    value: "#F38BA8"
+    description: Error / red accent.
+  - id: maroon
+    name: Maroon
+    value: "#EBA0AC"
+    description: Warm red accent.
+  - id: peach
+    name: Peach
+    value: "#FAB387"
+    description: Orange / peach accent.
+  - id: yellow
+    name: Yellow
+    value: "#F9E2AF"
+    description: Warning / yellow accent.
+  - id: green
+    name: Green
+    value: "#A6E3A1"
+    description: Success / green accent.
+  - id: teal
+    name: Teal
+    value: "#94E2D5"
+    description: Teal accent.
+  - id: sky
+    name: Sky
+    value: "#89DCEB"
+    description: Sky-blue accent.
+  - id: sapphire
+    name: Sapphire
+    value: "#74C7EC"
+    description: Sapphire accent.
+  - id: blue
+    name: Blue
+    value: "#89B4FA"
+    description: Primary / blue accent.
+  - id: lavender
+    name: Lavender
+    value: "#B4BEFE"
+    description: Lavender accent.
+
+  # ─── Neutrals (text + surfaces) ─────────────────────────────────
+  - id: text
+    name: Text
+    value: "#CDD6F4"
+    description: Primary text.
+  - id: subtext1
+    name: Subtext 1
+    value: "#BAC2DE"
+    description: Secondary text.
+  - id: subtext0
+    name: Subtext 0
+    value: "#A6ADC8"
+    description: Tertiary text.
+  - id: overlay2
+    name: Overlay 2
+    value: "#9399B2"
+    description: Brightest overlay.
+  - id: overlay1
+    name: Overlay 1
+    value: "#7F849C"
+    description: Mid overlay.
+  - id: overlay0
+    name: Overlay 0
+    value: "#6C7086"
+    description: Subtle overlay.
+  - id: surface2
+    name: Surface 2
+    value: "#585B70"
+    description: Brightest surface.
+  - id: surface1
+    name: Surface 1
+    value: "#45475A"
+    description: Mid surface.
+  - id: surface0
+    name: Surface 0
+    value: "#313244"
+    description: Subtle surface.
+  - id: base
+    name: Base
+    value: "#1E1E2E"
+    description: Canvas (dark).
+  - id: mantle
+    name: Mantle
+    value: "#181825"
+    description: Slightly darker than base.
+  - id: crust
+    name: Crust
+    value: "#11111B"
+    description: Darkest neutral.
+
+modes:
+  light:
+    roles:
+      background: text
+      surface: subtext1
+      surface-elevated: subtext0
+      text-primary: base
+      text-secondary: mantle
+      text-tertiary: surface2
+      primary: blue
+      primary-hover: sapphire
+      accent: mauve
+      accent-hover: pink
+      warning: yellow
+      warning-hover: peach
+      error: red
+      success: green
+
+  dark:
+    roles:
+      background: base
+      surface: mantle
+      surface-elevated: surface0
+      text-primary: text
+      text-secondary: subtext1
+      text-tertiary: subtext0
+      primary: blue
+      primary-hover: sapphire
+      accent: mauve
+      accent-hover: pink
+      warning: yellow
+      warning-hover: peach
+      error: red
+      success: green

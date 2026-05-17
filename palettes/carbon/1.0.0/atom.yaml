@@ -1,0 +1,211 @@
+kind: palette
+id: carbon
+version: 1.0.0
+name: IBM Carbon
+description: >
+  The IBM Carbon Design System color palette. Twelve scale families
+  (gray, cool gray, warm gray, red, magenta, purple, blue, cyan, teal,
+  green, yellow, orange) plus black and white. Each color family ships
+  ten stops at 10..100 in factors of ten — 10 is the lightest, 100 the
+  deepest.
+
+  Light mode (Carbon "White" / "g10" themes) uses gray-10 for the page
+  canvas; dark mode (Carbon "g90" / "g100" themes) uses gray-100 / gray-90.
+  Blue 60 is the canonical primary interactive color across all themes.
+
+tags: [design-system, ibm, carbon, role-based]
+
+provenance:
+  source: https://github.com/carbon-design-system/carbon/blob/main/packages/colors/src/colors.ts
+  license: Apache-2.0
+  attribution: >
+    IBM Carbon Design System colors, Copyright IBM Corp. 2018, 2026,
+    licensed under Apache-2.0. Hex values mirrored from
+    @carbon/colors source.
+  importedDate: 2026-05-17
+  importedFromVersion: "@carbon/colors@11.51.0"
+
+swatches:
+  - { id: black, name: Black, value: "#000000" }
+  - { id: white, name: White, value: "#FFFFFF" }
+
+  # ─── Gray (neutral) ─────────────────────────────────────────────
+  - { id: gray-10,  name: Gray 10,  value: "#F4F4F4" }
+  - { id: gray-20,  name: Gray 20,  value: "#E0E0E0" }
+  - { id: gray-30,  name: Gray 30,  value: "#C6C6C6" }
+  - { id: gray-40,  name: Gray 40,  value: "#A8A8A8" }
+  - { id: gray-50,  name: Gray 50,  value: "#8D8D8D" }
+  - { id: gray-60,  name: Gray 60,  value: "#6F6F6F" }
+  - { id: gray-70,  name: Gray 70,  value: "#525252" }
+  - { id: gray-80,  name: Gray 80,  value: "#393939" }
+  - { id: gray-90,  name: Gray 90,  value: "#262626", description: "g90 theme canvas." }
+  - { id: gray-100, name: Gray 100, value: "#161616", description: "g100 theme canvas." }
+
+  # ─── Cool Gray ──────────────────────────────────────────────────
+  - { id: cool-gray-10,  name: Cool Gray 10,  value: "#F2F4F8" }
+  - { id: cool-gray-20,  name: Cool Gray 20,  value: "#DDE1E6" }
+  - { id: cool-gray-30,  name: Cool Gray 30,  value: "#C1C7CD" }
+  - { id: cool-gray-40,  name: Cool Gray 40,  value: "#A2A9B0" }
+  - { id: cool-gray-50,  name: Cool Gray 50,  value: "#878D96" }
+  - { id: cool-gray-60,  name: Cool Gray 60,  value: "#697077" }
+  - { id: cool-gray-70,  name: Cool Gray 70,  value: "#4D5358" }
+  - { id: cool-gray-80,  name: Cool Gray 80,  value: "#343A3F" }
+  - { id: cool-gray-90,  name: Cool Gray 90,  value: "#21272A" }
+  - { id: cool-gray-100, name: Cool Gray 100, value: "#121619" }
+
+  # ─── Warm Gray ──────────────────────────────────────────────────
+  - { id: warm-gray-10,  name: Warm Gray 10,  value: "#F7F3F2" }
+  - { id: warm-gray-20,  name: Warm Gray 20,  value: "#E5E0DF" }
+  - { id: warm-gray-30,  name: Warm Gray 30,  value: "#CAC5C4" }
+  - { id: warm-gray-40,  name: Warm Gray 40,  value: "#ADA8A8" }
+  - { id: warm-gray-50,  name: Warm Gray 50,  value: "#8F8B8B" }
+  - { id: warm-gray-60,  name: Warm Gray 60,  value: "#726E6E" }
+  - { id: warm-gray-70,  name: Warm Gray 70,  value: "#565151" }
+  - { id: warm-gray-80,  name: Warm Gray 80,  value: "#3C3838" }
+  - { id: warm-gray-90,  name: Warm Gray 90,  value: "#272525" }
+  - { id: warm-gray-100, name: Warm Gray 100, value: "#171414" }
+
+  # ─── Blue ───────────────────────────────────────────────────────
+  - { id: blue-10,  name: Blue 10,  value: "#EDF5FF" }
+  - { id: blue-20,  name: Blue 20,  value: "#D0E2FF" }
+  - { id: blue-30,  name: Blue 30,  value: "#A6C8FF" }
+  - { id: blue-40,  name: Blue 40,  value: "#78A9FF" }
+  - { id: blue-50,  name: Blue 50,  value: "#4589FF" }
+  - { id: blue-60,  name: Blue 60,  value: "#0F62FE", description: "Carbon primary interactive color." }
+  - { id: blue-70,  name: Blue 70,  value: "#0043CE" }
+  - { id: blue-80,  name: Blue 80,  value: "#002D9C" }
+  - { id: blue-90,  name: Blue 90,  value: "#001D6C" }
+  - { id: blue-100, name: Blue 100, value: "#001141" }
+
+  # ─── Red ────────────────────────────────────────────────────────
+  - { id: red-10,  name: Red 10,  value: "#FFF1F1" }
+  - { id: red-20,  name: Red 20,  value: "#FFD7D9" }
+  - { id: red-30,  name: Red 30,  value: "#FFB3B8" }
+  - { id: red-40,  name: Red 40,  value: "#FF8389" }
+  - { id: red-50,  name: Red 50,  value: "#FA4D56" }
+  - { id: red-60,  name: Red 60,  value: "#DA1E28", description: "Danger / error." }
+  - { id: red-70,  name: Red 70,  value: "#A2191F" }
+  - { id: red-80,  name: Red 80,  value: "#750E13" }
+  - { id: red-90,  name: Red 90,  value: "#520408" }
+  - { id: red-100, name: Red 100, value: "#2D0709" }
+
+  # ─── Magenta ────────────────────────────────────────────────────
+  - { id: magenta-10,  name: Magenta 10,  value: "#FFF0F7" }
+  - { id: magenta-20,  name: Magenta 20,  value: "#FFD6E8" }
+  - { id: magenta-30,  name: Magenta 30,  value: "#FFAFD2" }
+  - { id: magenta-40,  name: Magenta 40,  value: "#FF7EB6" }
+  - { id: magenta-50,  name: Magenta 50,  value: "#EE5396" }
+  - { id: magenta-60,  name: Magenta 60,  value: "#D02670" }
+  - { id: magenta-70,  name: Magenta 70,  value: "#9F1853" }
+  - { id: magenta-80,  name: Magenta 80,  value: "#740937" }
+  - { id: magenta-90,  name: Magenta 90,  value: "#510224" }
+  - { id: magenta-100, name: Magenta 100, value: "#2A0A18" }
+
+  # ─── Purple ─────────────────────────────────────────────────────
+  - { id: purple-10,  name: Purple 10,  value: "#F6F2FF" }
+  - { id: purple-20,  name: Purple 20,  value: "#E8DAFF" }
+  - { id: purple-30,  name: Purple 30,  value: "#D4BBFF" }
+  - { id: purple-40,  name: Purple 40,  value: "#BE95FF" }
+  - { id: purple-50,  name: Purple 50,  value: "#A56EFF" }
+  - { id: purple-60,  name: Purple 60,  value: "#8A3FFC" }
+  - { id: purple-70,  name: Purple 70,  value: "#6929C4" }
+  - { id: purple-80,  name: Purple 80,  value: "#491D8B" }
+  - { id: purple-90,  name: Purple 90,  value: "#31135E" }
+  - { id: purple-100, name: Purple 100, value: "#1C0F30" }
+
+  # ─── Cyan ───────────────────────────────────────────────────────
+  - { id: cyan-10,  name: Cyan 10,  value: "#E5F6FF" }
+  - { id: cyan-20,  name: Cyan 20,  value: "#BAE6FF" }
+  - { id: cyan-30,  name: Cyan 30,  value: "#82CFFF" }
+  - { id: cyan-40,  name: Cyan 40,  value: "#33B1FF" }
+  - { id: cyan-50,  name: Cyan 50,  value: "#1192E8" }
+  - { id: cyan-60,  name: Cyan 60,  value: "#0072C3" }
+  - { id: cyan-70,  name: Cyan 70,  value: "#00539A" }
+  - { id: cyan-80,  name: Cyan 80,  value: "#003A6D" }
+  - { id: cyan-90,  name: Cyan 90,  value: "#012749" }
+  - { id: cyan-100, name: Cyan 100, value: "#061727" }
+
+  # ─── Teal ───────────────────────────────────────────────────────
+  - { id: teal-10,  name: Teal 10,  value: "#D9FBFB" }
+  - { id: teal-20,  name: Teal 20,  value: "#9EF0F0" }
+  - { id: teal-30,  name: Teal 30,  value: "#3DDBD9" }
+  - { id: teal-40,  name: Teal 40,  value: "#08BDBA" }
+  - { id: teal-50,  name: Teal 50,  value: "#009D9A" }
+  - { id: teal-60,  name: Teal 60,  value: "#007D79" }
+  - { id: teal-70,  name: Teal 70,  value: "#005D5D" }
+  - { id: teal-80,  name: Teal 80,  value: "#004144" }
+  - { id: teal-90,  name: Teal 90,  value: "#022B30" }
+  - { id: teal-100, name: Teal 100, value: "#081A1C" }
+
+  # ─── Green ──────────────────────────────────────────────────────
+  - { id: green-10,  name: Green 10,  value: "#DEFBE6" }
+  - { id: green-20,  name: Green 20,  value: "#A7F0BA" }
+  - { id: green-30,  name: Green 30,  value: "#6FDC8C" }
+  - { id: green-40,  name: Green 40,  value: "#42BE65" }
+  - { id: green-50,  name: Green 50,  value: "#24A148", description: "Success." }
+  - { id: green-60,  name: Green 60,  value: "#198038" }
+  - { id: green-70,  name: Green 70,  value: "#0E6027" }
+  - { id: green-80,  name: Green 80,  value: "#044317" }
+  - { id: green-90,  name: Green 90,  value: "#022D0D" }
+  - { id: green-100, name: Green 100, value: "#071908" }
+
+  # ─── Yellow ─────────────────────────────────────────────────────
+  - { id: yellow-10,  name: Yellow 10,  value: "#FCF4D6" }
+  - { id: yellow-20,  name: Yellow 20,  value: "#FDDC69" }
+  - { id: yellow-30,  name: Yellow 30,  value: "#F1C21B", description: "Warning." }
+  - { id: yellow-40,  name: Yellow 40,  value: "#D2A106" }
+  - { id: yellow-50,  name: Yellow 50,  value: "#B28600" }
+  - { id: yellow-60,  name: Yellow 60,  value: "#8E6A00" }
+  - { id: yellow-70,  name: Yellow 70,  value: "#684E00" }
+  - { id: yellow-80,  name: Yellow 80,  value: "#483700" }
+  - { id: yellow-90,  name: Yellow 90,  value: "#302400" }
+  - { id: yellow-100, name: Yellow 100, value: "#1C1500" }
+
+  # ─── Orange ─────────────────────────────────────────────────────
+  - { id: orange-10,  name: Orange 10,  value: "#FFF2E8" }
+  - { id: orange-20,  name: Orange 20,  value: "#FFD9BE" }
+  - { id: orange-30,  name: Orange 30,  value: "#FFB784" }
+  - { id: orange-40,  name: Orange 40,  value: "#FF832B" }
+  - { id: orange-50,  name: Orange 50,  value: "#EB6200" }
+  - { id: orange-60,  name: Orange 60,  value: "#BA4E00" }
+  - { id: orange-70,  name: Orange 70,  value: "#8A3800" }
+  - { id: orange-80,  name: Orange 80,  value: "#5E2900" }
+  - { id: orange-90,  name: Orange 90,  value: "#3E1A00" }
+  - { id: orange-100, name: Orange 100, value: "#231000" }
+
+modes:
+  light:
+    roles:
+      background: white
+      surface: gray-10
+      surface-elevated: white
+      text-primary: gray-100
+      text-secondary: gray-70
+      text-tertiary: gray-60
+      primary: blue-60
+      primary-hover: blue-70
+      accent: purple-60
+      accent-hover: purple-70
+      warning: yellow-30
+      warning-hover: yellow-40
+      error: red-60
+      success: green-50
+      border: gray-30
+
+  dark:
+    roles:
+      background: gray-100
+      surface: gray-90
+      surface-elevated: gray-80
+      text-primary: gray-10
+      text-secondary: gray-30
+      text-tertiary: gray-40
+      primary: blue-60
+      primary-hover: blue-50
+      accent: purple-50
+      accent-hover: purple-40
+      warning: yellow-30
+      warning-hover: yellow-20
+      error: red-50
+      success: green-40
+      border: gray-80

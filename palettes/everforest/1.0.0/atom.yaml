@@ -1,0 +1,214 @@
+kind: palette
+id: everforest
+version: 1.0.0
+name: Everforest (Hard)
+description: >
+  Comfortable, pleasant color scheme by sainnhe with a forest-inspired
+  green-warm-earth tonality. Designed to be gentle on the eyes during
+  long coding sessions. Three contrast tiers ship upstream — hard,
+  medium, soft — and this atom captures the hard contrast variant.
+
+  Dark mode is sourced from the dark hard palette; light mode is sourced
+  from the light hard palette. Accents are shared across both modes
+  (fg-mapped accent colors differ per mode).
+tags: [everforest, editor, dual-mode, warm, green, forest]
+
+provenance:
+  source: https://github.com/sainnhe/everforest/blob/master/autoload/everforest.vim
+  license: MIT
+  attribution: Everforest by sainnhe — github.com/sainnhe/everforest
+  importedDate: 2026-05-17
+  notes: >
+    Hex values extracted from the everforest#get_palette function in
+    autoload/everforest.vim, specifically the 'hard' branch. Background
+    ramp comes from palette1 (bg0..bg5); accents come from palette2.
+    The dark and light hard variants ship distinct accent hex values
+    upstream — both are captured here.
+
+swatches:
+  # ─── Dark hard — backgrounds ────────────────────────────────────
+  - id: dark-bg-dim
+    name: Dark Background Dim
+    value: "#1E2326"
+    description: Hard-dark dimmed surface (sidebar/popup).
+  - id: dark-bg0
+    name: Dark Background 0
+    value: "#272E33"
+    description: Hard-dark canvas.
+  - id: dark-bg1
+    name: Dark Background 1
+    value: "#2E383C"
+    description: Hard-dark elevated surface.
+  - id: dark-bg2
+    name: Dark Background 2
+    value: "#374145"
+    description: Hard-dark active line.
+  - id: dark-bg3
+    name: Dark Background 3
+    value: "#414B50"
+    description: Hard-dark statusline.
+  - id: dark-bg4
+    name: Dark Background 4
+    value: "#495156"
+    description: Hard-dark indent guide.
+  - id: dark-bg5
+    name: Dark Background 5
+    value: "#4F5B58"
+    description: Hard-dark fold column.
+
+  # ─── Dark hard — foregrounds & accents ──────────────────────────
+  - id: dark-fg
+    name: Dark Foreground
+    value: "#D3C6AA"
+    description: Dark mode primary text (warm cream).
+  - id: dark-grey0
+    name: Dark Grey 0
+    value: "#7A8478"
+    description: Dark mode comments.
+  - id: dark-grey1
+    name: Dark Grey 1
+    value: "#859289"
+    description: Dark mode secondary text.
+  - id: dark-grey2
+    name: Dark Grey 2
+    value: "#9DA9A0"
+    description: Dark mode brighter grey.
+  - id: dark-red
+    name: Dark Red
+    value: "#E67E80"
+    description: Dark error / red accent.
+  - id: dark-orange
+    name: Dark Orange
+    value: "#E69875"
+    description: Dark orange accent.
+  - id: dark-yellow
+    name: Dark Yellow
+    value: "#DBBC7F"
+    description: Dark warning / yellow accent.
+  - id: dark-green
+    name: Dark Green
+    value: "#A7C080"
+    description: Dark success / green accent (primary).
+  - id: dark-aqua
+    name: Dark Aqua
+    value: "#83C092"
+    description: Dark aqua accent.
+  - id: dark-blue
+    name: Dark Blue
+    value: "#7FBBB3"
+    description: Dark blue accent.
+  - id: dark-purple
+    name: Dark Purple
+    value: "#D699B6"
+    description: Dark purple accent.
+
+  # ─── Light hard — backgrounds ───────────────────────────────────
+  - id: light-bg-dim
+    name: Light Background Dim
+    value: "#F2EFDF"
+    description: Hard-light dimmed surface.
+  - id: light-bg0
+    name: Light Background 0
+    value: "#FFFBEF"
+    description: Hard-light canvas.
+  - id: light-bg1
+    name: Light Background 1
+    value: "#F8F5E4"
+    description: Hard-light elevated surface.
+  - id: light-bg2
+    name: Light Background 2
+    value: "#F2EFDF"
+    description: Hard-light active line.
+  - id: light-bg3
+    name: Light Background 3
+    value: "#EDEADA"
+    description: Hard-light statusline.
+  - id: light-bg4
+    name: Light Background 4
+    value: "#E8E5D5"
+    description: Hard-light indent guide.
+  - id: light-bg5
+    name: Light Background 5
+    value: "#BEC5B2"
+    description: Hard-light fold column.
+
+  # ─── Light hard — foregrounds & accents ─────────────────────────
+  - id: light-fg
+    name: Light Foreground
+    value: "#5C6A72"
+    description: Light mode primary text.
+  - id: light-grey0
+    name: Light Grey 0
+    value: "#A6B0A0"
+    description: Light mode comments.
+  - id: light-grey1
+    name: Light Grey 1
+    value: "#939F91"
+    description: Light mode secondary text.
+  - id: light-grey2
+    name: Light Grey 2
+    value: "#829181"
+    description: Light mode darker grey.
+  - id: light-red
+    name: Light Red
+    value: "#F85552"
+    description: Light error / red accent.
+  - id: light-orange
+    name: Light Orange
+    value: "#F57D26"
+    description: Light orange accent.
+  - id: light-yellow
+    name: Light Yellow
+    value: "#DFA000"
+    description: Light warning / yellow accent.
+  - id: light-green
+    name: Light Green
+    value: "#8DA101"
+    description: Light success / green accent (primary).
+  - id: light-aqua
+    name: Light Aqua
+    value: "#35A77C"
+    description: Light aqua accent.
+  - id: light-blue
+    name: Light Blue
+    value: "#3A94C5"
+    description: Light blue accent.
+  - id: light-purple
+    name: Light Purple
+    value: "#DF69BA"
+    description: Light purple accent.
+
+modes:
+  light:
+    roles:
+      background: light-bg0
+      surface: light-bg1
+      surface-elevated: light-bg-dim
+      text-primary: light-fg
+      text-secondary: light-grey2
+      text-tertiary: light-grey0
+      primary: light-green
+      primary-hover: light-aqua
+      accent: light-blue
+      accent-hover: light-purple
+      warning: light-yellow
+      warning-hover: light-orange
+      error: light-red
+      success: light-green
+
+  dark:
+    roles:
+      background: dark-bg0
+      surface: dark-bg1
+      surface-elevated: dark-bg2
+      text-primary: dark-fg
+      text-secondary: dark-grey2
+      text-tertiary: dark-grey0
+      primary: dark-green
+      primary-hover: dark-aqua
+      accent: dark-blue
+      accent-hover: dark-purple
+      warning: dark-yellow
+      warning-hover: dark-orange
+      error: dark-red
+      success: dark-green

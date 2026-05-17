@@ -1,0 +1,108 @@
+kind: palette
+id: tailwind-emerald
+version: 1.0.0
+name: Tailwind Emerald
+description: >
+  Tailwind CSS's emerald hue family — 11 stops from 50 (lightest) to
+  950 (darkest), forming a deep emerald-green chromatic scale. Use directly as a brand
+  palette or pair with an accent hue from another tailwind-* atom.
+tags: [tailwind, cool, chromatic]
+
+provenance:
+  source: https://tailwindcss.com/docs/colors
+  license: MIT
+  attribution: >
+    Tailwind CSS colors, Copyright Tailwind Labs Inc., MIT licensed.
+    Hex values derived from canonical OKLCH definitions in
+    packages/tailwindcss/theme.css via the W3C CSS Color Module Level 4
+    OKLCH → sRGB conversion.
+  importedDate: 2026-05-17
+  importedFromVersion: "4.3.0"
+
+swatches:
+  - id: emerald-50
+    name: Emerald 50
+    value: "#ECFDF5"
+    description: Lightest stop — page background in light mode.
+  - id: emerald-100
+    name: Emerald 100
+    value: "#D0FAE5"
+    description: Very light surface — cards and panels on light background.
+  - id: emerald-200
+    name: Emerald 200
+    value: "#A4F4CF"
+    description: Light divider, hairline, or subtle fill.
+  - id: emerald-300
+    name: Emerald 300
+    value: "#5EE9B5"
+    description: Muted accent or disabled-state foreground in light mode.
+  - id: emerald-400
+    name: Emerald 400
+    value: "#00D492"
+    description: Mid-light tint — soft accent, hover wash, decorative fill.
+  - id: emerald-500
+    name: Emerald 500
+    value: "#00BC7D"
+    description: Mid stop — the canonical brand hue for chromatic palettes.
+  - id: emerald-600
+    name: Emerald 600
+    value: "#009966"
+    description: Mid-dark stop — primary action in light mode for chromatic palettes.
+  - id: emerald-700
+    name: Emerald 700
+    value: "#007A55"
+    description: Dark stop — pressed states, deeper emphasis.
+  - id: emerald-800
+    name: Emerald 800
+    value: "#006045"
+    description: Very dark stop — heavy emphasis, secondary text on light.
+  - id: emerald-900
+    name: Emerald 900
+    value: "#004F3B"
+    description: Near-darkest stop — body text on light, surface on dark.
+  - id: emerald-950
+    name: Emerald 950
+    value: "#002C22"
+    description: Darkest stop — page background in dark mode.
+  - id: pure-white
+    name: Pure White
+    value: "#FFFFFF"
+    description: Maximum-elevation surface and high-contrast text in dark mode.
+  - id: pure-black
+    name: Pure Black
+    value: "#000000"
+    description: High-contrast text on light chromatic hues where the deepest stop reads as the hue, not black.
+
+modes:
+  light:
+    roles:
+      background: emerald-50
+      surface: emerald-100
+      surface-elevated: pure-white
+      text-primary: emerald-900
+      text-secondary: emerald-800
+      text-tertiary: emerald-600
+      primary: emerald-500
+      primary-hover: emerald-600
+      accent: emerald-700
+      accent-hover: emerald-600
+      warning: emerald-300
+      warning-hover: emerald-400
+      error: emerald-700
+      success: emerald-600
+  dark:
+    roles:
+      background: emerald-950
+      surface: emerald-900
+      surface-elevated: emerald-800
+      text-primary: emerald-50
+      text-secondary: emerald-200
+      text-tertiary: emerald-400
+      primary: emerald-400
+      primary-hover: emerald-300
+      accent: emerald-300
+      accent-hover: emerald-200
+      warning: emerald-600
+      warning-hover: emerald-500
+      error: emerald-300
+      success: emerald-400

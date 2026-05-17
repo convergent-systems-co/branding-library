@@ -1,0 +1,108 @@
+kind: palette
+id: tailwind-violet
+version: 1.0.0
+name: Tailwind Violet
+description: >
+  Tailwind CSS's violet hue family — 11 stops from 50 (lightest) to
+  950 (darkest), forming a vivid violet chromatic scale. Use directly as a brand
+  palette or pair with an accent hue from another tailwind-* atom.
+tags: [tailwind, cool, chromatic]
+
+provenance:
+  source: https://tailwindcss.com/docs/colors
+  license: MIT
+  attribution: >
+    Tailwind CSS colors, Copyright Tailwind Labs Inc., MIT licensed.
+    Hex values derived from canonical OKLCH definitions in
+    packages/tailwindcss/theme.css via the W3C CSS Color Module Level 4
+    OKLCH → sRGB conversion.
+  importedDate: 2026-05-17
+  importedFromVersion: "4.3.0"
+
+swatches:
+  - id: violet-50
+    name: Violet 50
+    value: "#F5F3FF"
+    description: Lightest stop — page background in light mode.
+  - id: violet-100
+    name: Violet 100
+    value: "#EDE9FE"
+    description: Very light surface — cards and panels on light background.
+  - id: violet-200
+    name: Violet 200
+    value: "#DDD6FF"
+    description: Light divider, hairline, or subtle fill.
+  - id: violet-300
+    name: Violet 300
+    value: "#C4B4FF"
+    description: Muted accent or disabled-state foreground in light mode.
+  - id: violet-400
+    name: Violet 400
+    value: "#A684FF"
+    description: Mid-light tint — soft accent, hover wash, decorative fill.
+  - id: violet-500
+    name: Violet 500
+    value: "#8E51FF"
+    description: Mid stop — the canonical brand hue for chromatic palettes.
+  - id: violet-600
+    name: Violet 600
+    value: "#7F22FE"
+    description: Mid-dark stop — primary action in light mode for chromatic palettes.
+  - id: violet-700
+    name: Violet 700
+    value: "#7008E7"
+    description: Dark stop — pressed states, deeper emphasis.
+  - id: violet-800
+    name: Violet 800
+    value: "#5D0EC0"
+    description: Very dark stop — heavy emphasis, secondary text on light.
+  - id: violet-900
+    name: Violet 900
+    value: "#4D179A"
+    description: Near-darkest stop — body text on light, surface on dark.
+  - id: violet-950
+    name: Violet 950
+    value: "#2F0D68"
+    description: Darkest stop — page background in dark mode.
+  - id: pure-white
+    name: Pure White
+    value: "#FFFFFF"
+    description: Maximum-elevation surface and high-contrast text in dark mode.
+  - id: pure-black
+    name: Pure Black
+    value: "#000000"
+    description: High-contrast text on light chromatic hues where the deepest stop reads as the hue, not black.
+
+modes:
+  light:
+    roles:
+      background: violet-50
+      surface: violet-100
+      surface-elevated: pure-white
+      text-primary: violet-900
+      text-secondary: violet-800
+      text-tertiary: violet-600
+      primary: violet-500
+      primary-hover: violet-600
+      accent: violet-700
+      accent-hover: violet-600
+      warning: violet-300
+      warning-hover: violet-400
+      error: violet-700
+      success: violet-600
+  dark:
+    roles:
+      background: violet-950
+      surface: violet-900
+      surface-elevated: violet-800
+      text-primary: violet-50
+      text-secondary: violet-200
+      text-tertiary: violet-400
+      primary: violet-400
+      primary-hover: violet-300
+      accent: violet-300
+      accent-hover: violet-200
+      warning: violet-600
+      warning-hover: violet-500
+      error: violet-300
+      success: violet-400

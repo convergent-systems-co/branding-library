@@ -1,0 +1,185 @@
+kind: palette
+id: radix-mint
+version: 1.0.0
+name: Radix Mint
+description: >
+  Radix UI's mint scale — 12 semantically labeled steps published in
+  both light and dark variants. A cool, slightly aqua mint green. Step 1 is app background,
+  step 9 is the solid brand color, step 12 is high-contrast text.
+  The same step number means the same semantic role across light and
+  dark, with different hex values per mode.
+tags: [radix, cool, design-system, scale, dual-mode]
+
+provenance:
+  source: https://www.radix-ui.com/colors/docs/palette-composition/scales
+  license: MIT
+  attribution: >
+    Radix Colors, Copyright WorkOS, Inc., MIT licensed. Imported from
+    the radix-ui/colors repository on GitHub.
+  importedDate: 2026-05-17
+  importedFromVersion: "3.0.0"
+  notes: >
+    Radix publishes distinct hex values for each scale in light and dark mode. This atom carries both as -light and -dark suffixed swatches; modes.light.roles points at -light swatches and modes.dark.roles at -dark swatches. Mint is a chromatic hue and makes a poor neutral for body text, so steps 11 and 12 of Radix Slate are imported as supplementary swatches and used for text-primary and text-secondary in both modes.
+
+swatches:
+  # ─── Light-mode steps ──────────────────────────────────────────
+  - id: mint-1-light
+    name: Mint 1 (light)
+    value: "#F9FEFD"
+    description: App background.
+  - id: mint-2-light
+    name: Mint 2 (light)
+    value: "#F2FBF9"
+    description: Subtle background.
+  - id: mint-3-light
+    name: Mint 3 (light)
+    value: "#DDF9F2"
+    description: UI element background.
+  - id: mint-4-light
+    name: Mint 4 (light)
+    value: "#C8F4E9"
+    description: Hovered UI element background.
+  - id: mint-5-light
+    name: Mint 5 (light)
+    value: "#B3ECDE"
+    description: Active / selected UI element background.
+  - id: mint-6-light
+    name: Mint 6 (light)
+    value: "#9CE0D0"
+    description: Subtle borders and separators.
+  - id: mint-7-light
+    name: Mint 7 (light)
+    value: "#7ECFBD"
+    description: UI element border and focus rings.
+  - id: mint-8-light
+    name: Mint 8 (light)
+    value: "#4CBBA5"
+    description: Hovered UI element border.
+  - id: mint-9-light
+    name: Mint 9 (light)
+    value: "#86EAD4"
+    description: Solid background — the brand color step.
+  - id: mint-10-light
+    name: Mint 10 (light)
+    value: "#7DE0CB"
+    description: Hovered solid background.
+  - id: mint-11-light
+    name: Mint 11 (light)
+    value: "#027864"
+    description: Low-contrast text.
+  - id: mint-12-light
+    name: Mint 12 (light)
+    value: "#16433C"
+    description: High-contrast text.
+  # ─── Dark-mode steps ───────────────────────────────────────────
+  - id: mint-1-dark
+    name: Mint 1 (dark)
+    value: "#0E1515"
+    description: App background.
+  - id: mint-2-dark
+    name: Mint 2 (dark)
+    value: "#0F1B1B"
+    description: Subtle background.
+  - id: mint-3-dark
+    name: Mint 3 (dark)
+    value: "#092C2B"
+    description: UI element background.
+  - id: mint-4-dark
+    name: Mint 4 (dark)
+    value: "#003A38"
+    description: Hovered UI element background.
+  - id: mint-5-dark
+    name: Mint 5 (dark)
+    value: "#004744"
+    description: Active / selected UI element background.
+  - id: mint-6-dark
+    name: Mint 6 (dark)
+    value: "#105650"
+    description: Subtle borders and separators.
+  - id: mint-7-dark
+    name: Mint 7 (dark)
+    value: "#1E685F"
+    description: UI element border and focus rings.
+  - id: mint-8-dark
+    name: Mint 8 (dark)
+    value: "#277F70"
+    description: Hovered UI element border.
+  - id: mint-9-dark
+    name: Mint 9 (dark)
+    value: "#86EAD4"
+    description: Solid background — the brand color step.
+  - id: mint-10-dark
+    name: Mint 10 (dark)
+    value: "#A8F5E5"
+    description: Hovered solid background.
+  - id: mint-11-dark
+    name: Mint 11 (dark)
+    value: "#58D5BA"
+    description: Low-contrast text.
+  - id: mint-12-dark
+    name: Mint 12 (dark)
+    value: "#C4F5E1"
+    description: High-contrast text.
+  # ─── Neutral text imported from Radix Slate for legibility ─────
+  # Body text on a chromatic scale's mid-tone backgrounds reads
+  # better in a near-neutral. Radix recommends pairing each
+  # chromatic scale with a matching gray scale; slate is the
+  # standard pairing for the cooler hues.
+  - id: slate-11-light
+    name: Slate 11 (light) — neutral text
+    value: "#60646C"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 11 is low-contrast text.
+  - id: slate-12-light
+    name: Slate 12 (light) — neutral text
+    value: "#1C2024"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 12 is high-contrast text.
+  - id: slate-11-dark
+    name: Slate 11 (dark) — neutral text
+    value: "#B0B4BA"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 11 is low-contrast text.
+  - id: slate-12-dark
+    name: Slate 12 (dark) — neutral text
+    value: "#EDEEF0"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 12 is high-contrast text.
+
+modes:
+  light:
+    roles:
+      background: mint-1-light
+      surface: mint-2-light
+      surface-elevated: mint-3-light
+      text-primary: slate-12-light
+      text-secondary: slate-11-light
+      text-tertiary: mint-9-light
+      primary: mint-9-light
+      primary-hover: mint-10-light
+      accent: mint-8-light
+      accent-hover: mint-7-light
+      warning: mint-9-light
+      warning-hover: mint-10-light
+      error: mint-12-light
+      success: mint-9-light
+  dark:
+    roles:
+      background: mint-1-dark
+      surface: mint-2-dark
+      surface-elevated: mint-3-dark
+      text-primary: slate-12-dark
+      text-secondary: slate-11-dark
+      text-tertiary: mint-9-dark
+      primary: mint-9-dark
+      primary-hover: mint-10-dark
+      accent: mint-8-dark
+      accent-hover: mint-7-dark
+      warning: mint-9-dark
+      warning-hover: mint-10-dark
+      error: mint-12-dark
+      success: mint-9-dark

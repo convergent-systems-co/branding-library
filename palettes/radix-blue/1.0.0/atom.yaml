@@ -1,0 +1,185 @@
+kind: palette
+id: radix-blue
+version: 1.0.0
+name: Radix Blue
+description: >
+  Radix UI's blue scale — 12 semantically labeled steps published in
+  both light and dark variants. A clean, slightly cool blue — Radix's default action color. Step 1 is app background,
+  step 9 is the solid brand color, step 12 is high-contrast text.
+  The same step number means the same semantic role across light and
+  dark, with different hex values per mode.
+tags: [radix, cool, design-system, scale, dual-mode]
+
+provenance:
+  source: https://www.radix-ui.com/colors/docs/palette-composition/scales
+  license: MIT
+  attribution: >
+    Radix Colors, Copyright WorkOS, Inc., MIT licensed. Imported from
+    the radix-ui/colors repository on GitHub.
+  importedDate: 2026-05-17
+  importedFromVersion: "3.0.0"
+  notes: >
+    Radix publishes distinct hex values for each scale in light and dark mode. This atom carries both as -light and -dark suffixed swatches; modes.light.roles points at -light swatches and modes.dark.roles at -dark swatches. Blue is a chromatic hue and makes a poor neutral for body text, so steps 11 and 12 of Radix Slate are imported as supplementary swatches and used for text-primary and text-secondary in both modes.
+
+swatches:
+  # ─── Light-mode steps ──────────────────────────────────────────
+  - id: blue-1-light
+    name: Blue 1 (light)
+    value: "#FBFDFF"
+    description: App background.
+  - id: blue-2-light
+    name: Blue 2 (light)
+    value: "#F4FAFF"
+    description: Subtle background.
+  - id: blue-3-light
+    name: Blue 3 (light)
+    value: "#E6F4FE"
+    description: UI element background.
+  - id: blue-4-light
+    name: Blue 4 (light)
+    value: "#D5EFFF"
+    description: Hovered UI element background.
+  - id: blue-5-light
+    name: Blue 5 (light)
+    value: "#C2E5FF"
+    description: Active / selected UI element background.
+  - id: blue-6-light
+    name: Blue 6 (light)
+    value: "#ACD8FC"
+    description: Subtle borders and separators.
+  - id: blue-7-light
+    name: Blue 7 (light)
+    value: "#8EC8F6"
+    description: UI element border and focus rings.
+  - id: blue-8-light
+    name: Blue 8 (light)
+    value: "#5EB1EF"
+    description: Hovered UI element border.
+  - id: blue-9-light
+    name: Blue 9 (light)
+    value: "#0090FF"
+    description: Solid background — the brand color step.
+  - id: blue-10-light
+    name: Blue 10 (light)
+    value: "#0588F0"
+    description: Hovered solid background.
+  - id: blue-11-light
+    name: Blue 11 (light)
+    value: "#0D74CE"
+    description: Low-contrast text.
+  - id: blue-12-light
+    name: Blue 12 (light)
+    value: "#113264"
+    description: High-contrast text.
+  # ─── Dark-mode steps ───────────────────────────────────────────
+  - id: blue-1-dark
+    name: Blue 1 (dark)
+    value: "#0D1520"
+    description: App background.
+  - id: blue-2-dark
+    name: Blue 2 (dark)
+    value: "#111927"
+    description: Subtle background.
+  - id: blue-3-dark
+    name: Blue 3 (dark)
+    value: "#0D2847"
+    description: UI element background.
+  - id: blue-4-dark
+    name: Blue 4 (dark)
+    value: "#003362"
+    description: Hovered UI element background.
+  - id: blue-5-dark
+    name: Blue 5 (dark)
+    value: "#004074"
+    description: Active / selected UI element background.
+  - id: blue-6-dark
+    name: Blue 6 (dark)
+    value: "#104D87"
+    description: Subtle borders and separators.
+  - id: blue-7-dark
+    name: Blue 7 (dark)
+    value: "#205D9E"
+    description: UI element border and focus rings.
+  - id: blue-8-dark
+    name: Blue 8 (dark)
+    value: "#2870BD"
+    description: Hovered UI element border.
+  - id: blue-9-dark
+    name: Blue 9 (dark)
+    value: "#0090FF"
+    description: Solid background — the brand color step.
+  - id: blue-10-dark
+    name: Blue 10 (dark)
+    value: "#3B9EFF"
+    description: Hovered solid background.
+  - id: blue-11-dark
+    name: Blue 11 (dark)
+    value: "#70B8FF"
+    description: Low-contrast text.
+  - id: blue-12-dark
+    name: Blue 12 (dark)
+    value: "#C2E6FF"
+    description: High-contrast text.
+  # ─── Neutral text imported from Radix Slate for legibility ─────
+  # Body text on a chromatic scale's mid-tone backgrounds reads
+  # better in a near-neutral. Radix recommends pairing each
+  # chromatic scale with a matching gray scale; slate is the
+  # standard pairing for the cooler hues.
+  - id: slate-11-light
+    name: Slate 11 (light) — neutral text
+    value: "#60646C"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 11 is low-contrast text.
+  - id: slate-12-light
+    name: Slate 12 (light) — neutral text
+    value: "#1C2024"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 12 is high-contrast text.
+  - id: slate-11-dark
+    name: Slate 11 (dark) — neutral text
+    value: "#B0B4BA"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 11 is low-contrast text.
+  - id: slate-12-dark
+    name: Slate 12 (dark) — neutral text
+    value: "#EDEEF0"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 12 is high-contrast text.
+
+modes:
+  light:
+    roles:
+      background: blue-1-light
+      surface: blue-2-light
+      surface-elevated: blue-3-light
+      text-primary: slate-12-light
+      text-secondary: slate-11-light
+      text-tertiary: blue-9-light
+      primary: blue-9-light
+      primary-hover: blue-10-light
+      accent: blue-8-light
+      accent-hover: blue-7-light
+      warning: blue-9-light
+      warning-hover: blue-10-light
+      error: blue-12-light
+      success: blue-9-light
+  dark:
+    roles:
+      background: blue-1-dark
+      surface: blue-2-dark
+      surface-elevated: blue-3-dark
+      text-primary: slate-12-dark
+      text-secondary: slate-11-dark
+      text-tertiary: blue-9-dark
+      primary: blue-9-dark
+      primary-hover: blue-10-dark
+      accent: blue-8-dark
+      accent-hover: blue-7-dark
+      warning: blue-9-dark
+      warning-hover: blue-10-dark
+      error: blue-12-dark
+      success: blue-9-dark

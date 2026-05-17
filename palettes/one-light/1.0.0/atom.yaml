@@ -1,0 +1,142 @@
+kind: palette
+id: one-light
+version: 1.0.0
+name: Atom One Light
+description: >
+  Atom's signature light theme — a near-white canvas (hue 230, sat 1%,
+  lightness 98%) with eight accents tuned for syntax highlighting
+  (cyan, blue, purple, green, two reds, two oranges). The companion
+  to One Dark; designed for daytime reading.
+
+  Light mode is sourced directly from one-light-syntax/styles/colors.less.
+  Dark mode is brand-atoms' authored inversion (upstream ships
+  light-only).
+tags: [one-light, atom, editor, light-first, balanced]
+
+provenance:
+  source: https://github.com/atom/atom/blob/master/packages/one-light-syntax/styles/colors.less
+  license: MIT
+  attribution: Atom One Light by GitHub (atom is archived) — github.com/atom/atom
+  importedDate: 2026-05-17
+  notes: >
+    Light-mode hex values computed from the HSL definitions in
+    one-light-syntax/styles/colors.less (syntax-hue 230, syntax-saturation
+    1%, syntax-brightness 98%; mono and hue values per the upstream
+    @-vars). The atom/ atom repo is archived; the one-light-ui
+    colors.less referenced in the source-of-truth path no longer
+    exists at that path, so we sourced from one-light-syntax (canonical
+    and stable).
+
+    Dark mode is brand-atoms' authored inversion; upstream One Light
+    ships light-only. Accent hex values are preserved unchanged across
+    modes (accents are mode-stable per One Light's design intent).
+    The dark canvas tones (dark-canvas, dark-surface, dark-elevated)
+    are derived by collapsing lightness on the syntax-hue (230, 8%)
+    to 12% / 16% / 20% — a clean cool-dark cast that mirrors the
+    light canvas's hue family.
+
+swatches:
+  # ─── Light canvas (from one-light-syntax) ───────────────────────
+  - id: syntax-bg
+    name: Syntax Background
+    value: "#FAFAFA"
+    description: Light canvas — syntax-hue 230, sat 1%, L 98%.
+  - id: mono-1
+    name: Mono 1 (primary text)
+    value: "#383A42"
+    description: Default foreground / primary text on light.
+  - id: mono-2
+    name: Mono 2
+    value: "#696C77"
+    description: Secondary text.
+  - id: mono-3
+    name: Mono 3
+    value: "#A0A1A7"
+    description: Tertiary text / comments.
+
+  # ─── Accents (mode-stable, from one-light-syntax) ───────────────
+  - id: hue-1
+    name: Hue 1 (cyan)
+    value: "#0184BC"
+    description: Cyan accent — support, regex.
+  - id: hue-2
+    name: Hue 2 (blue)
+    value: "#4078F2"
+    description: Blue accent — functions / primary.
+  - id: hue-3
+    name: Hue 3 (purple)
+    value: "#A626A4"
+    description: Purple accent — keywords.
+  - id: hue-4
+    name: Hue 4 (green)
+    value: "#50A14F"
+    description: Green accent — strings / success.
+  - id: hue-5
+    name: Hue 5 (red 1)
+    value: "#E45649"
+    description: Red accent — variables / error.
+  - id: hue-5-2
+    name: Hue 5-2 (red 2)
+    value: "#CA1243"
+    description: Deeper red accent.
+  - id: hue-6
+    name: Hue 6 (orange 1)
+    value: "#B76B01"
+    description: Orange accent — numbers / constants.
+  - id: hue-6-2
+    name: Hue 6-2 (orange 2)
+    value: "#CB7701"
+    description: Yellow-orange accent — types / warnings.
+  - id: syntax-accent
+    name: Syntax Accent (bright blue)
+    value: "#526FFF"
+    description: Cursor / focus accent.
+
+  # ─── Authored dark canvas tones (brand-atoms inversion) ─────────
+  - id: dark-canvas
+    name: Dark Canvas (authored)
+    value: "#1C1D21"
+    description: Authored dark bg — syntax-hue collapsed to L=12%.
+  - id: dark-surface
+    name: Dark Surface (authored)
+    value: "#26272C"
+    description: Authored dark surface — syntax-hue at L=16%.
+  - id: dark-elevated
+    name: Dark Elevated (authored)
+    value: "#2F3037"
+    description: Authored dark elevated — syntax-hue at L=20%.
+
+modes:
+  light:
+    roles:
+      background: syntax-bg
+      surface: syntax-bg
+      surface-elevated: mono-3
+      text-primary: mono-1
+      text-secondary: mono-2
+      text-tertiary: mono-3
+      primary: hue-2
+      primary-hover: hue-1
+      accent: hue-3
+      accent-hover: hue-4
+      warning: hue-6
+      warning-hover: hue-6-2
+      error: hue-5
+      success: hue-4
+
+  dark:
+    roles:
+      background: dark-canvas
+      surface: dark-surface
+      surface-elevated: dark-elevated
+      text-primary: syntax-bg
+      text-secondary: mono-3
+      text-tertiary: mono-2
+      primary: hue-2
+      primary-hover: hue-1
+      accent: hue-3
+      accent-hover: hue-4
+      warning: hue-6
+      warning-hover: hue-6-2
+      error: hue-5
+      success: hue-4

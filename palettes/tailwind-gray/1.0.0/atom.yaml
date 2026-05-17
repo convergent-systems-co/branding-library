@@ -1,0 +1,108 @@
+kind: palette
+id: tailwind-gray
+version: 1.0.0
+name: Tailwind Gray
+description: >
+  Tailwind CSS's gray hue family — 11 stops from 50 (lightest) to
+  950 (darkest), forming a true neutral gray scale. Use directly as a brand
+  palette or pair with an accent hue from another tailwind-* atom.
+tags: [tailwind, neutral]
+
+provenance:
+  source: https://tailwindcss.com/docs/colors
+  license: MIT
+  attribution: >
+    Tailwind CSS colors, Copyright Tailwind Labs Inc., MIT licensed.
+    Hex values derived from canonical OKLCH definitions in
+    packages/tailwindcss/theme.css via the W3C CSS Color Module Level 4
+    OKLCH → sRGB conversion.
+  importedDate: 2026-05-17
+  importedFromVersion: "4.3.0"
+
+swatches:
+  - id: gray-50
+    name: Gray 50
+    value: "#F9FAFB"
+    description: Lightest stop — page background in light mode.
+  - id: gray-100
+    name: Gray 100
+    value: "#F3F4F6"
+    description: Very light surface — cards and panels on light background.
+  - id: gray-200
+    name: Gray 200
+    value: "#E5E7EB"
+    description: Light divider, hairline, or subtle fill.
+  - id: gray-300
+    name: Gray 300
+    value: "#D1D5DC"
+    description: Muted accent or disabled-state foreground in light mode.
+  - id: gray-400
+    name: Gray 400
+    value: "#99A1AF"
+    description: Mid-light tint — soft accent, hover wash, decorative fill.
+  - id: gray-500
+    name: Gray 500
+    value: "#6A7282"
+    description: Mid stop — the canonical brand hue for chromatic palettes.
+  - id: gray-600
+    name: Gray 600
+    value: "#4A5565"
+    description: Mid-dark stop — primary action in light mode for chromatic palettes.
+  - id: gray-700
+    name: Gray 700
+    value: "#364153"
+    description: Dark stop — pressed states, deeper emphasis.
+  - id: gray-800
+    name: Gray 800
+    value: "#1E2939"
+    description: Very dark stop — heavy emphasis, secondary text on light.
+  - id: gray-900
+    name: Gray 900
+    value: "#101828"
+    description: Near-darkest stop — body text on light, surface on dark.
+  - id: gray-950
+    name: Gray 950
+    value: "#030712"
+    description: Darkest stop — page background in dark mode.
+  - id: pure-white
+    name: Pure White
+    value: "#FFFFFF"
+    description: Maximum-elevation surface and high-contrast text in dark mode.
+  - id: pure-black
+    name: Pure Black
+    value: "#000000"
+    description: High-contrast text on light chromatic hues where the deepest stop reads as the hue, not black.
+
+modes:
+  light:
+    roles:
+      background: gray-50
+      surface: gray-100
+      surface-elevated: pure-white
+      text-primary: gray-900
+      text-secondary: gray-700
+      text-tertiary: gray-500
+      primary: gray-900
+      primary-hover: gray-800
+      accent: gray-600
+      accent-hover: gray-500
+      warning: gray-500
+      warning-hover: gray-400
+      error: gray-700
+      success: gray-600
+  dark:
+    roles:
+      background: gray-950
+      surface: gray-900
+      surface-elevated: gray-800
+      text-primary: gray-50
+      text-secondary: gray-300
+      text-tertiary: gray-500
+      primary: gray-100
+      primary-hover: gray-200
+      accent: gray-400
+      accent-hover: gray-300
+      warning: gray-400
+      warning-hover: gray-500
+      error: gray-300
+      success: gray-400

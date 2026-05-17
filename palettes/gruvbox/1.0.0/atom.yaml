@@ -1,0 +1,217 @@
+kind: palette
+id: gruvbox
+version: 1.0.0
+name: Gruvbox
+description: >
+  Retro-groove color scheme by morhetz. Warm, low-saturation earth tones
+  organized into dark and light symmetric ramps (dark0..dark4, light0..
+  light4) plus three intensity tiers of seven accents (bright, neutral,
+  faded). Designed for prolonged reading with reduced eyestrain.
+
+  Dark mode uses dark0..dark4 as the canvas ramp with bright accents.
+  Light mode uses light0..light4 and pairs with faded accents for warm
+  paper-like contrast.
+tags: [gruvbox, editor, retro, warm, dual-mode]
+
+provenance:
+  source: https://github.com/morhetz/gruvbox/blob/master/colors/gruvbox.vim
+  license: MIT
+  attribution: Gruvbox by Pavel Pertsev (morhetz) — github.com/morhetz/gruvbox
+  importedDate: 2026-05-17
+  notes: >
+    Hex values extracted directly from the s:gb dictionary assignments
+    in gruvbox.vim. Three accent tiers (bright/neutral/faded) ship
+    upstream; dark mode uses bright, light mode uses faded — per
+    morhetz's relative-color mapping logic in the same file.
+
+swatches:
+  # ─── Dark ramp ──────────────────────────────────────────────────
+  - id: dark0-hard
+    name: Dark 0 Hard
+    value: "#1D2021"
+    description: Dark canvas, hard contrast variant.
+  - id: dark0
+    name: Dark 0 (medium)
+    value: "#282828"
+    description: Dark canvas, default medium contrast.
+  - id: dark0-soft
+    name: Dark 0 Soft
+    value: "#32302F"
+    description: Dark canvas, soft contrast variant.
+  - id: dark1
+    name: Dark 1
+    value: "#3C3836"
+    description: Dark elevated surface.
+  - id: dark2
+    name: Dark 2
+    value: "#504945"
+    description: Dark active line / selection.
+  - id: dark3
+    name: Dark 3
+    value: "#665C54"
+    description: Dark indent guides / muted.
+  - id: dark4
+    name: Dark 4
+    value: "#7C6F64"
+    description: Dark mode comments / tertiary text.
+
+  # ─── Gray ───────────────────────────────────────────────────────
+  - id: gray
+    name: Gray
+    value: "#928374"
+    description: Neutral gray — comments in both modes.
+
+  # ─── Light ramp ─────────────────────────────────────────────────
+  - id: light0-hard
+    name: Light 0 Hard
+    value: "#F9F5D7"
+    description: Light canvas, hard contrast variant.
+  - id: light0
+    name: Light 0 (medium)
+    value: "#FBF1C7"
+    description: Light canvas, default medium contrast.
+  - id: light0-soft
+    name: Light 0 Soft
+    value: "#F2E5BC"
+    description: Light canvas, soft contrast variant.
+  - id: light1
+    name: Light 1
+    value: "#EBDBB2"
+    description: Light elevated surface / dark mode primary text.
+  - id: light2
+    name: Light 2
+    value: "#D5C4A1"
+    description: Light active line / dark mode secondary text.
+  - id: light3
+    name: Light 3
+    value: "#BDAE93"
+    description: Light indent guides.
+  - id: light4
+    name: Light 4
+    value: "#A89984"
+    description: Light mode comments / tertiary text.
+
+  # ─── Bright accents (dark-mode default) ─────────────────────────
+  - id: bright-red
+    name: Bright Red
+    value: "#FB4934"
+    description: Errors, deletions (dark mode).
+  - id: bright-green
+    name: Bright Green
+    value: "#B8BB26"
+    description: Strings, successes (dark mode).
+  - id: bright-yellow
+    name: Bright Yellow
+    value: "#FABD2F"
+    description: Warnings, types (dark mode).
+  - id: bright-blue
+    name: Bright Blue
+    value: "#83A598"
+    description: Functions, info (dark mode).
+  - id: bright-purple
+    name: Bright Purple
+    value: "#D3869B"
+    description: Constants, numbers (dark mode).
+  - id: bright-aqua
+    name: Bright Aqua
+    value: "#8EC07C"
+    description: Operators, supports (dark mode).
+  - id: bright-orange
+    name: Bright Orange
+    value: "#FE8019"
+    description: Special, annotations (dark mode).
+
+  # ─── Neutral accents ────────────────────────────────────────────
+  - id: neutral-red
+    name: Neutral Red
+    value: "#CC241D"
+    description: Errors (neutral intensity).
+  - id: neutral-green
+    name: Neutral Green
+    value: "#98971A"
+    description: Successes (neutral intensity).
+  - id: neutral-yellow
+    name: Neutral Yellow
+    value: "#D79921"
+    description: Warnings (neutral intensity).
+  - id: neutral-blue
+    name: Neutral Blue
+    value: "#458588"
+    description: Info (neutral intensity).
+  - id: neutral-purple
+    name: Neutral Purple
+    value: "#B16286"
+    description: Constants (neutral intensity).
+  - id: neutral-aqua
+    name: Neutral Aqua
+    value: "#689D6A"
+    description: Operators (neutral intensity).
+  - id: neutral-orange
+    name: Neutral Orange
+    value: "#D65D0E"
+    description: Annotations (neutral intensity).
+
+  # ─── Faded accents (light-mode default) ─────────────────────────
+  - id: faded-red
+    name: Faded Red
+    value: "#9D0006"
+    description: Errors, deletions (light mode).
+  - id: faded-green
+    name: Faded Green
+    value: "#79740E"
+    description: Strings, successes (light mode).
+  - id: faded-yellow
+    name: Faded Yellow
+    value: "#B57614"
+    description: Warnings, types (light mode).
+  - id: faded-blue
+    name: Faded Blue
+    value: "#076678"
+    description: Functions, info (light mode).
+  - id: faded-purple
+    name: Faded Purple
+    value: "#8F3F71"
+    description: Constants, numbers (light mode).
+  - id: faded-aqua
+    name: Faded Aqua
+    value: "#427B58"
+    description: Operators, supports (light mode).
+  - id: faded-orange
+    name: Faded Orange
+    value: "#AF3A03"
+    description: Special, annotations (light mode).
+
+modes:
+  light:
+    roles:
+      background: light0
+      surface: light1
+      surface-elevated: light0-hard
+      text-primary: dark0
+      text-secondary: dark1
+      text-tertiary: light4
+      primary: faded-blue
+      primary-hover: faded-aqua
+      accent: faded-purple
+      accent-hover: faded-orange
+      warning: faded-yellow
+      warning-hover: faded-orange
+      error: faded-red
+      success: faded-green
+
+  dark:
+    roles:
+      background: dark0
+      surface: dark1
+      surface-elevated: dark2
+      text-primary: light1
+      text-secondary: light2
+      text-tertiary: dark4
+      primary: bright-blue
+      primary-hover: bright-aqua
+      accent: bright-purple
+      accent-hover: bright-orange
+      warning: bright-yellow
+      warning-hover: bright-orange
+      error: bright-red
+      success: bright-green

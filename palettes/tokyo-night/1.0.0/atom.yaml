@@ -1,0 +1,208 @@
+kind: palette
+id: tokyo-night
+version: 1.0.0
+name: Tokyo Night
+description: >
+  A clean, dark theme inspired by the lights of downtown Tokyo at night.
+  Soft blue-violet canvas with bright cool accents (blue, cyan, magenta,
+  green) and warm orange/yellow highlights. The Night style is the
+  default dark variant; Day is the inverted bright counterpart.
+
+  Dark mode is sourced from the Night style; light mode is sourced from
+  the Day style — both shipped officially upstream.
+tags: [tokyo-night, editor, dark-first, dual-mode, neon]
+
+provenance:
+  source: https://github.com/folke/tokyonight.nvim
+  license: MIT
+  attribution: TokyoNight.nvim by Folke Lemaitre (folke) — github.com/folke/tokyonight.nvim
+  importedDate: 2026-05-17
+  notes: >
+    Dark-mode hex values are from lua/tokyonight/colors/storm.lua with
+    the bg overrides from lua/tokyonight/colors/night.lua. Light-mode
+    hex values are from extras/lua/tokyonight_day.lua (the resolved
+    output of the day-mode invert pipeline shipped upstream).
+
+swatches:
+  # ─── Night (dark) — backgrounds ─────────────────────────────────
+  - id: night-bg
+    name: Night Background
+    value: "#1A1B26"
+    description: Dark mode canvas.
+  - id: night-bg-dark
+    name: Night Background Dark
+    value: "#16161E"
+    description: Dark mode sidebar / popup.
+  - id: night-bg-dark1
+    name: Night Background Dark 1
+    value: "#0C0E14"
+    description: Deepest dark mode surface.
+  - id: night-bg-highlight
+    name: Night Background Highlight
+    value: "#292E42"
+    description: Dark mode active line highlight.
+  - id: night-fg-gutter
+    name: Night Foreground Gutter
+    value: "#3B4261"
+    description: Dark mode gutter foreground.
+  - id: night-terminal-black
+    name: Night Terminal Black
+    value: "#414868"
+    description: Dark mode bright black / muted surface.
+
+  # ─── Night (dark) — foregrounds ─────────────────────────────────
+  - id: night-fg
+    name: Night Foreground
+    value: "#C0CAF5"
+    description: Dark mode primary text.
+  - id: night-fg-dark
+    name: Night Foreground Dark
+    value: "#A9B1D6"
+    description: Dark mode secondary text.
+  - id: night-dark5
+    name: Night Dark 5
+    value: "#737AA2"
+    description: Dark mode tertiary text.
+  - id: night-comment
+    name: Night Comment
+    value: "#565F89"
+    description: Dark mode comments.
+
+  # ─── Night (dark) — accents ─────────────────────────────────────
+  - id: night-blue
+    name: Night Blue
+    value: "#7AA2F7"
+    description: Primary accent (dark).
+  - id: night-cyan
+    name: Night Cyan
+    value: "#7DCFFF"
+    description: Cyan accent (dark).
+  - id: night-green
+    name: Night Green
+    value: "#9ECE6A"
+    description: Success / green (dark).
+  - id: night-magenta
+    name: Night Magenta
+    value: "#BB9AF7"
+    description: Magenta accent (dark).
+  - id: night-orange
+    name: Night Orange
+    value: "#FF9E64"
+    description: Orange accent (dark).
+  - id: night-red
+    name: Night Red
+    value: "#F7768E"
+    description: Red / error (dark).
+  - id: night-red1
+    name: Night Red 1
+    value: "#DB4B4B"
+    description: Stronger error red (dark).
+  - id: night-yellow
+    name: Night Yellow
+    value: "#E0AF68"
+    description: Warning / yellow (dark).
+
+  # ─── Day (light) — backgrounds ──────────────────────────────────
+  - id: day-bg
+    name: Day Background
+    value: "#E1E2E7"
+    description: Light mode canvas.
+  - id: day-bg-dark
+    name: Day Background Dark
+    value: "#D0D5E3"
+    description: Light mode sidebar / popup.
+  - id: day-bg-dark1
+    name: Day Background Dark 1
+    value: "#C1C9DF"
+    description: Light mode deepest surface.
+  - id: day-bg-highlight
+    name: Day Background Highlight
+    value: "#C4C8DA"
+    description: Light mode active line highlight.
+
+  # ─── Day (light) — foregrounds ──────────────────────────────────
+  - id: day-fg
+    name: Day Foreground
+    value: "#3760BF"
+    description: Light mode primary text.
+  - id: day-fg-dark
+    name: Day Foreground Dark
+    value: "#6172B0"
+    description: Light mode secondary text.
+  - id: day-dark5
+    name: Day Dark 5
+    value: "#68709A"
+    description: Light mode tertiary text.
+  - id: day-comment
+    name: Day Comment
+    value: "#848CB5"
+    description: Light mode comments.
+
+  # ─── Day (light) — accents ──────────────────────────────────────
+  - id: day-blue
+    name: Day Blue
+    value: "#2E7DE9"
+    description: Primary accent (light).
+  - id: day-cyan
+    name: Day Cyan
+    value: "#007197"
+    description: Cyan accent (light).
+  - id: day-green
+    name: Day Green
+    value: "#587539"
+    description: Success / green (light).
+  - id: day-magenta
+    name: Day Magenta
+    value: "#9854F1"
+    description: Magenta accent (light).
+  - id: day-orange
+    name: Day Orange
+    value: "#B15C00"
+    description: Orange accent (light).
+  - id: day-red
+    name: Day Red
+    value: "#F52A65"
+    description: Red / error (light).
+  - id: day-red1
+    name: Day Red 1
+    value: "#C64343"
+    description: Stronger error red (light).
+  - id: day-yellow
+    name: Day Yellow
+    value: "#8C6C3E"
+    description: Warning / yellow (light).
+
+modes:
+  light:
+    roles:
+      background: day-bg
+      surface: day-bg-dark
+      surface-elevated: day-bg-highlight
+      text-primary: day-fg
+      text-secondary: day-fg-dark
+      text-tertiary: day-comment
+      primary: day-blue
+      primary-hover: day-cyan
+      accent: day-magenta
+      accent-hover: day-orange
+      warning: day-yellow
+      warning-hover: day-orange
+      error: day-red
+      success: day-green
+
+  dark:
+    roles:
+      background: night-bg
+      surface: night-bg-dark
+      surface-elevated: night-bg-highlight
+      text-primary: night-fg
+      text-secondary: night-fg-dark
+      text-tertiary: night-comment
+      primary: night-blue
+      primary-hover: night-cyan
+      accent: night-magenta
+      accent-hover: night-orange
+      warning: night-yellow
+      warning-hover: night-orange
+      error: night-red
+      success: night-green

@@ -1,0 +1,108 @@
+kind: palette
+id: tailwind-red
+version: 1.0.0
+name: Tailwind Red
+description: >
+  Tailwind CSS's red hue family — 11 stops from 50 (lightest) to
+  950 (darkest), forming a warm red chromatic scale. Use directly as a brand
+  palette or pair with an accent hue from another tailwind-* atom.
+tags: [tailwind, warm, chromatic]
+
+provenance:
+  source: https://tailwindcss.com/docs/colors
+  license: MIT
+  attribution: >
+    Tailwind CSS colors, Copyright Tailwind Labs Inc., MIT licensed.
+    Hex values derived from canonical OKLCH definitions in
+    packages/tailwindcss/theme.css via the W3C CSS Color Module Level 4
+    OKLCH → sRGB conversion.
+  importedDate: 2026-05-17
+  importedFromVersion: "4.3.0"
+
+swatches:
+  - id: red-50
+    name: Red 50
+    value: "#FEF2F2"
+    description: Lightest stop — page background in light mode.
+  - id: red-100
+    name: Red 100
+    value: "#FFE2E2"
+    description: Very light surface — cards and panels on light background.
+  - id: red-200
+    name: Red 200
+    value: "#FFC9C9"
+    description: Light divider, hairline, or subtle fill.
+  - id: red-300
+    name: Red 300
+    value: "#FFA2A2"
+    description: Muted accent or disabled-state foreground in light mode.
+  - id: red-400
+    name: Red 400
+    value: "#FF6467"
+    description: Mid-light tint — soft accent, hover wash, decorative fill.
+  - id: red-500
+    name: Red 500
+    value: "#FB2C36"
+    description: Mid stop — the canonical brand hue for chromatic palettes.
+  - id: red-600
+    name: Red 600
+    value: "#E7000B"
+    description: Mid-dark stop — primary action in light mode for chromatic palettes.
+  - id: red-700
+    name: Red 700
+    value: "#C10007"
+    description: Dark stop — pressed states, deeper emphasis.
+  - id: red-800
+    name: Red 800
+    value: "#9F0712"
+    description: Very dark stop — heavy emphasis, secondary text on light.
+  - id: red-900
+    name: Red 900
+    value: "#82181A"
+    description: Near-darkest stop — body text on light, surface on dark.
+  - id: red-950
+    name: Red 950
+    value: "#460809"
+    description: Darkest stop — page background in dark mode.
+  - id: pure-white
+    name: Pure White
+    value: "#FFFFFF"
+    description: Maximum-elevation surface and high-contrast text in dark mode.
+  - id: pure-black
+    name: Pure Black
+    value: "#000000"
+    description: High-contrast text on light chromatic hues where the deepest stop reads as the hue, not black.
+
+modes:
+  light:
+    roles:
+      background: red-50
+      surface: red-100
+      surface-elevated: pure-white
+      text-primary: red-900
+      text-secondary: red-800
+      text-tertiary: red-600
+      primary: red-500
+      primary-hover: red-600
+      accent: red-700
+      accent-hover: red-600
+      warning: red-300
+      warning-hover: red-400
+      error: red-700
+      success: red-600
+  dark:
+    roles:
+      background: red-950
+      surface: red-900
+      surface-elevated: red-800
+      text-primary: red-50
+      text-secondary: red-200
+      text-tertiary: red-400
+      primary: red-400
+      primary-hover: red-300
+      accent: red-300
+      accent-hover: red-200
+      warning: red-600
+      warning-hover: red-500
+      error: red-300
+      success: red-400

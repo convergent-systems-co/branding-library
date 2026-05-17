@@ -1,0 +1,108 @@
+kind: palette
+id: tailwind-green
+version: 1.0.0
+name: Tailwind Green
+description: >
+  Tailwind CSS's green hue family — 11 stops from 50 (lightest) to
+  950 (darkest), forming a vivid green chromatic scale. Use directly as a brand
+  palette or pair with an accent hue from another tailwind-* atom.
+tags: [tailwind, cool, chromatic]
+
+provenance:
+  source: https://tailwindcss.com/docs/colors
+  license: MIT
+  attribution: >
+    Tailwind CSS colors, Copyright Tailwind Labs Inc., MIT licensed.
+    Hex values derived from canonical OKLCH definitions in
+    packages/tailwindcss/theme.css via the W3C CSS Color Module Level 4
+    OKLCH → sRGB conversion.
+  importedDate: 2026-05-17
+  importedFromVersion: "4.3.0"
+
+swatches:
+  - id: green-50
+    name: Green 50
+    value: "#F0FDF4"
+    description: Lightest stop — page background in light mode.
+  - id: green-100
+    name: Green 100
+    value: "#DCFCE7"
+    description: Very light surface — cards and panels on light background.
+  - id: green-200
+    name: Green 200
+    value: "#B9F8CF"
+    description: Light divider, hairline, or subtle fill.
+  - id: green-300
+    name: Green 300
+    value: "#7BF1A8"
+    description: Muted accent or disabled-state foreground in light mode.
+  - id: green-400
+    name: Green 400
+    value: "#05DF72"
+    description: Mid-light tint — soft accent, hover wash, decorative fill.
+  - id: green-500
+    name: Green 500
+    value: "#00C950"
+    description: Mid stop — the canonical brand hue for chromatic palettes.
+  - id: green-600
+    name: Green 600
+    value: "#00A63E"
+    description: Mid-dark stop — primary action in light mode for chromatic palettes.
+  - id: green-700
+    name: Green 700
+    value: "#008236"
+    description: Dark stop — pressed states, deeper emphasis.
+  - id: green-800
+    name: Green 800
+    value: "#016630"
+    description: Very dark stop — heavy emphasis, secondary text on light.
+  - id: green-900
+    name: Green 900
+    value: "#0D542B"
+    description: Near-darkest stop — body text on light, surface on dark.
+  - id: green-950
+    name: Green 950
+    value: "#032E15"
+    description: Darkest stop — page background in dark mode.
+  - id: pure-white
+    name: Pure White
+    value: "#FFFFFF"
+    description: Maximum-elevation surface and high-contrast text in dark mode.
+  - id: pure-black
+    name: Pure Black
+    value: "#000000"
+    description: High-contrast text on light chromatic hues where the deepest stop reads as the hue, not black.
+
+modes:
+  light:
+    roles:
+      background: green-50
+      surface: green-100
+      surface-elevated: pure-white
+      text-primary: green-900
+      text-secondary: green-800
+      text-tertiary: green-600
+      primary: green-500
+      primary-hover: green-600
+      accent: green-700
+      accent-hover: green-600
+      warning: green-300
+      warning-hover: green-400
+      error: green-700
+      success: green-600
+  dark:
+    roles:
+      background: green-950
+      surface: green-900
+      surface-elevated: green-800
+      text-primary: green-50
+      text-secondary: green-200
+      text-tertiary: green-400
+      primary: green-400
+      primary-hover: green-300
+      accent: green-300
+      accent-hover: green-200
+      warning: green-600
+      warning-hover: green-500
+      error: green-300
+      success: green-400

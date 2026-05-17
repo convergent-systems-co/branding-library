@@ -1,0 +1,108 @@
+kind: palette
+id: tailwind-zinc
+version: 1.0.0
+name: Tailwind Zinc
+description: >
+  Tailwind CSS's zinc hue family — 11 stops from 50 (lightest) to
+  950 (darkest), forming a cool-leaning neutral scale. Use directly as a brand
+  palette or pair with an accent hue from another tailwind-* atom.
+tags: [tailwind, neutral]
+
+provenance:
+  source: https://tailwindcss.com/docs/colors
+  license: MIT
+  attribution: >
+    Tailwind CSS colors, Copyright Tailwind Labs Inc., MIT licensed.
+    Hex values derived from canonical OKLCH definitions in
+    packages/tailwindcss/theme.css via the W3C CSS Color Module Level 4
+    OKLCH → sRGB conversion.
+  importedDate: 2026-05-17
+  importedFromVersion: "4.3.0"
+
+swatches:
+  - id: zinc-50
+    name: Zinc 50
+    value: "#FAFAFA"
+    description: Lightest stop — page background in light mode.
+  - id: zinc-100
+    name: Zinc 100
+    value: "#F4F4F5"
+    description: Very light surface — cards and panels on light background.
+  - id: zinc-200
+    name: Zinc 200
+    value: "#E4E4E7"
+    description: Light divider, hairline, or subtle fill.
+  - id: zinc-300
+    name: Zinc 300
+    value: "#D4D4D8"
+    description: Muted accent or disabled-state foreground in light mode.
+  - id: zinc-400
+    name: Zinc 400
+    value: "#9F9FA9"
+    description: Mid-light tint — soft accent, hover wash, decorative fill.
+  - id: zinc-500
+    name: Zinc 500
+    value: "#71717B"
+    description: Mid stop — the canonical brand hue for chromatic palettes.
+  - id: zinc-600
+    name: Zinc 600
+    value: "#52525C"
+    description: Mid-dark stop — primary action in light mode for chromatic palettes.
+  - id: zinc-700
+    name: Zinc 700
+    value: "#3F3F46"
+    description: Dark stop — pressed states, deeper emphasis.
+  - id: zinc-800
+    name: Zinc 800
+    value: "#27272A"
+    description: Very dark stop — heavy emphasis, secondary text on light.
+  - id: zinc-900
+    name: Zinc 900
+    value: "#18181B"
+    description: Near-darkest stop — body text on light, surface on dark.
+  - id: zinc-950
+    name: Zinc 950
+    value: "#09090B"
+    description: Darkest stop — page background in dark mode.
+  - id: pure-white
+    name: Pure White
+    value: "#FFFFFF"
+    description: Maximum-elevation surface and high-contrast text in dark mode.
+  - id: pure-black
+    name: Pure Black
+    value: "#000000"
+    description: High-contrast text on light chromatic hues where the deepest stop reads as the hue, not black.
+
+modes:
+  light:
+    roles:
+      background: zinc-50
+      surface: zinc-100
+      surface-elevated: pure-white
+      text-primary: zinc-900
+      text-secondary: zinc-700
+      text-tertiary: zinc-500
+      primary: zinc-900
+      primary-hover: zinc-800
+      accent: zinc-600
+      accent-hover: zinc-500
+      warning: zinc-500
+      warning-hover: zinc-400
+      error: zinc-700
+      success: zinc-600
+  dark:
+    roles:
+      background: zinc-950
+      surface: zinc-900
+      surface-elevated: zinc-800
+      text-primary: zinc-50
+      text-secondary: zinc-300
+      text-tertiary: zinc-500
+      primary: zinc-100
+      primary-hover: zinc-200
+      accent: zinc-400
+      accent-hover: zinc-300
+      warning: zinc-400
+      warning-hover: zinc-500
+      error: zinc-300
+      success: zinc-400

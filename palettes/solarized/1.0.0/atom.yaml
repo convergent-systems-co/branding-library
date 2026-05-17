@@ -1,0 +1,131 @@
+kind: palette
+id: solarized
+version: 1.0.0
+name: Solarized
+description: >
+  Sixteen-color palette by Ethan Schoonover designed for terminal and GUI
+  applications. Eight monotones (base03..base3) plus eight accent hues
+  (yellow, orange, red, magenta, violet, blue, cyan, green). Built on
+  precise CIELAB lightness relationships so the dark and light variants
+  share the same perceived contrast — colorscheme inversion is trivial.
+
+  Dark mode uses base03/02/01 as canvas surfaces and base0..3 as text.
+  Light mode is the symmetric inverse — base3/2/1 as canvas surfaces and
+  base00..base03 as text. Accent hues are mode-stable.
+tags: [solarized, editor, dual-mode, low-contrast, cielab]
+
+provenance:
+  source: https://github.com/altercation/solarized/blob/master/README.md
+  license: MIT
+  attribution: Solarized by Ethan Schoonover (github.com/altercation/solarized)
+  importedDate: 2026-05-17
+  notes: >
+    Hex values extracted directly from the canonical SOLARIZED HEX table
+    and the SCSS variable block in the upstream README. Both light and
+    dark mode role mappings follow the @mixin rebase pattern documented
+    in the same README (light = rebase(base3..base03); dark = rebase
+    inverted).
+
+swatches:
+  # ─── Monotones (base03 darkest → base3 lightest) ────────────────
+  - id: base03
+    name: Base03 (darkest)
+    value: "#002B36"
+    description: Dark mode background.
+  - id: base02
+    name: Base02
+    value: "#073642"
+    description: Dark mode highlights / elevated surface.
+  - id: base01
+    name: Base01
+    value: "#586E75"
+    description: Optional emphasized content; dark mode comments.
+  - id: base00
+    name: Base00
+    value: "#657B83"
+    description: Light mode body text.
+  - id: base0
+    name: Base0
+    value: "#839496"
+    description: Dark mode body text.
+  - id: base1
+    name: Base1
+    value: "#93A1A1"
+    description: Optional emphasized content; light mode comments.
+  - id: base2
+    name: Base2
+    value: "#EEE8D5"
+    description: Light mode highlights / elevated surface.
+  - id: base3
+    name: Base3 (lightest)
+    value: "#FDF6E3"
+    description: Light mode background.
+
+  # ─── Accents (mode-stable) ──────────────────────────────────────
+  - id: yellow
+    name: Yellow
+    value: "#B58900"
+    description: Accent. Strings, attributes.
+  - id: orange
+    name: Orange
+    value: "#CB4B16"
+    description: Accent. Integers, booleans, constants.
+  - id: red
+    name: Red
+    value: "#DC322F"
+    description: Accent. Errors, deletions.
+  - id: magenta
+    name: Magenta
+    value: "#D33682"
+    description: Accent. Keywords, declarations.
+  - id: violet
+    name: Violet
+    value: "#6C71C4"
+    description: Accent. Operators, special chars.
+  - id: blue
+    name: Blue
+    value: "#268BD2"
+    description: Accent. Primary; functions, headings.
+  - id: cyan
+    name: Cyan
+    value: "#2AA198"
+    description: Accent. Regex, escape chars, support.
+  - id: green
+    name: Green
+    value: "#859900"
+    description: Accent. Successes, additions, classes.
+
+modes:
+  light:
+    roles:
+      background: base3
+      surface: base2
+      surface-elevated: base3
+      text-primary: base00
+      text-secondary: base01
+      text-tertiary: base1
+      primary: blue
+      primary-hover: cyan
+      accent: magenta
+      accent-hover: violet
+      warning: orange
+      warning-hover: yellow
+      error: red
+      success: green
+
+  dark:
+    roles:
+      background: base03
+      surface: base02
+      surface-elevated: base02
+      text-primary: base0
+      text-secondary: base1
+      text-tertiary: base01
+      primary: blue
+      primary-hover: cyan
+      accent: magenta
+      accent-hover: violet
+      warning: orange
+      warning-hover: yellow
+      error: red
+      success: green

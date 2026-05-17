@@ -1,0 +1,108 @@
+kind: palette
+id: tailwind-indigo
+version: 1.0.0
+name: Tailwind Indigo
+description: >
+  Tailwind CSS's indigo hue family — 11 stops from 50 (lightest) to
+  950 (darkest), forming a deep indigo chromatic scale. Use directly as a brand
+  palette or pair with an accent hue from another tailwind-* atom.
+tags: [tailwind, cool, chromatic]
+
+provenance:
+  source: https://tailwindcss.com/docs/colors
+  license: MIT
+  attribution: >
+    Tailwind CSS colors, Copyright Tailwind Labs Inc., MIT licensed.
+    Hex values derived from canonical OKLCH definitions in
+    packages/tailwindcss/theme.css via the W3C CSS Color Module Level 4
+    OKLCH → sRGB conversion.
+  importedDate: 2026-05-17
+  importedFromVersion: "4.3.0"
+
+swatches:
+  - id: indigo-50
+    name: Indigo 50
+    value: "#EEF2FF"
+    description: Lightest stop — page background in light mode.
+  - id: indigo-100
+    name: Indigo 100
+    value: "#E0E7FF"
+    description: Very light surface — cards and panels on light background.
+  - id: indigo-200
+    name: Indigo 200
+    value: "#C6D2FF"
+    description: Light divider, hairline, or subtle fill.
+  - id: indigo-300
+    name: Indigo 300
+    value: "#A3B3FF"
+    description: Muted accent or disabled-state foreground in light mode.
+  - id: indigo-400
+    name: Indigo 400
+    value: "#7C86FF"
+    description: Mid-light tint — soft accent, hover wash, decorative fill.
+  - id: indigo-500
+    name: Indigo 500
+    value: "#615FFF"
+    description: Mid stop — the canonical brand hue for chromatic palettes.
+  - id: indigo-600
+    name: Indigo 600
+    value: "#4F39F6"
+    description: Mid-dark stop — primary action in light mode for chromatic palettes.
+  - id: indigo-700
+    name: Indigo 700
+    value: "#432DD7"
+    description: Dark stop — pressed states, deeper emphasis.
+  - id: indigo-800
+    name: Indigo 800
+    value: "#372AAC"
+    description: Very dark stop — heavy emphasis, secondary text on light.
+  - id: indigo-900
+    name: Indigo 900
+    value: "#312C85"
+    description: Near-darkest stop — body text on light, surface on dark.
+  - id: indigo-950
+    name: Indigo 950
+    value: "#1E1A4D"
+    description: Darkest stop — page background in dark mode.
+  - id: pure-white
+    name: Pure White
+    value: "#FFFFFF"
+    description: Maximum-elevation surface and high-contrast text in dark mode.
+  - id: pure-black
+    name: Pure Black
+    value: "#000000"
+    description: High-contrast text on light chromatic hues where the deepest stop reads as the hue, not black.
+
+modes:
+  light:
+    roles:
+      background: indigo-50
+      surface: indigo-100
+      surface-elevated: pure-white
+      text-primary: indigo-900
+      text-secondary: indigo-800
+      text-tertiary: indigo-600
+      primary: indigo-500
+      primary-hover: indigo-600
+      accent: indigo-700
+      accent-hover: indigo-600
+      warning: indigo-300
+      warning-hover: indigo-400
+      error: indigo-700
+      success: indigo-600
+  dark:
+    roles:
+      background: indigo-950
+      surface: indigo-900
+      surface-elevated: indigo-800
+      text-primary: indigo-50
+      text-secondary: indigo-200
+      text-tertiary: indigo-400
+      primary: indigo-400
+      primary-hover: indigo-300
+      accent: indigo-300
+      accent-hover: indigo-200
+      warning: indigo-600
+      warning-hover: indigo-500
+      error: indigo-300
+      success: indigo-400

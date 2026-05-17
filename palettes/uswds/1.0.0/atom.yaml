@@ -1,0 +1,341 @@
+kind: palette
+id: uswds
+version: 1.0.0
+name: U.S. Web Design System
+description: >
+  The system color palette of the U.S. Web Design System (USWDS) —
+  the official design system for U.S. federal government websites. Ten
+  hue families (red, orange, yellow, green, mint, cyan, blue, indigo,
+  violet, magenta) plus three neutral families (gray, gray-cool,
+  gray-warm). Each hue ships at grades 5/10/20/30/40/50/60/70/80/90,
+  with a parallel "vivid" variant at the same grades (vivid-90 is
+  intentionally absent in USWDS sources).
+
+  Plain neutrals (gray) include grades 1–5 in addition to 10..90 plus
+  a true black at grade 100. Light mode uses low-grade neutrals for the
+  canvas; dark mode uses high-grade neutrals for the canvas.
+
+tags: [design-system, uswds, government, public-domain]
+
+provenance:
+  source: https://github.com/uswds/uswds/tree/develop/packages/uswds-core/src/styles/tokens/color
+  license: CC0-1.0
+  attribution: >
+    U.S. Web Design System (USWDS) system color palette, released by
+    the U.S. General Services Administration to the public domain (CC0).
+    Hex values mirrored from packages/uswds-core/src/styles/tokens/color
+    Sass partials on the develop branch.
+  importedDate: 2026-05-17
+  importedFromVersion: uswds@develop
+  notes: >
+    The "vivid" variants are USWDS's higher-saturation alternates of each
+    hue at the same grade; both standard and vivid grades are exposed
+    here so palette consumers can pick the level of saturation they need.
+
+swatches:
+  # ─── Gray (plain neutral) ───────────────────────────────────────
+  - { id: gray-1,   name: Gray 1,   value: "#FCFCFC" }
+  - { id: gray-2,   name: Gray 2,   value: "#F9F9F9" }
+  - { id: gray-3,   name: Gray 3,   value: "#F6F6F6" }
+  - { id: gray-4,   name: Gray 4,   value: "#F3F3F3" }
+  - { id: gray-5,   name: Gray 5,   value: "#F0F0F0" }
+  - { id: gray-10,  name: Gray 10,  value: "#E6E6E6" }
+  - { id: gray-20,  name: Gray 20,  value: "#C9C9C9" }
+  - { id: gray-30,  name: Gray 30,  value: "#ADADAD" }
+  - { id: gray-40,  name: Gray 40,  value: "#919191" }
+  - { id: gray-50,  name: Gray 50,  value: "#757575" }
+  - { id: gray-60,  name: Gray 60,  value: "#5C5C5C" }
+  - { id: gray-70,  name: Gray 70,  value: "#454545" }
+  - { id: gray-80,  name: Gray 80,  value: "#2E2E2E" }
+  - { id: gray-90,  name: Gray 90,  value: "#1B1B1B" }
+  - { id: gray-100, name: Gray 100, value: "#000000" }
+
+  # ─── Gray Cool ──────────────────────────────────────────────────
+  - { id: gray-cool-1,  name: Gray Cool 1,  value: "#FBFCFD" }
+  - { id: gray-cool-2,  name: Gray Cool 2,  value: "#F7F9FA" }
+  - { id: gray-cool-3,  name: Gray Cool 3,  value: "#F5F6F7" }
+  - { id: gray-cool-4,  name: Gray Cool 4,  value: "#F1F3F6" }
+  - { id: gray-cool-5,  name: Gray Cool 5,  value: "#EDEFF0" }
+  - { id: gray-cool-10, name: Gray Cool 10, value: "#DFE1E2" }
+  - { id: gray-cool-20, name: Gray Cool 20, value: "#C6CACE" }
+  - { id: gray-cool-30, name: Gray Cool 30, value: "#A9AEB1" }
+  - { id: gray-cool-40, name: Gray Cool 40, value: "#8D9297" }
+  - { id: gray-cool-50, name: Gray Cool 50, value: "#71767A" }
+  - { id: gray-cool-60, name: Gray Cool 60, value: "#565C65" }
+  - { id: gray-cool-70, name: Gray Cool 70, value: "#3D4551" }
+  - { id: gray-cool-80, name: Gray Cool 80, value: "#2D2E2F" }
+  - { id: gray-cool-90, name: Gray Cool 90, value: "#1C1D1F" }
+
+  # ─── Gray Warm ──────────────────────────────────────────────────
+  - { id: gray-warm-1,  name: Gray Warm 1,  value: "#FCFCFB" }
+  - { id: gray-warm-2,  name: Gray Warm 2,  value: "#F9F9F7" }
+  - { id: gray-warm-3,  name: Gray Warm 3,  value: "#F6F6F2" }
+  - { id: gray-warm-4,  name: Gray Warm 4,  value: "#F5F5F0" }
+  - { id: gray-warm-5,  name: Gray Warm 5,  value: "#F0F0EC" }
+  - { id: gray-warm-10, name: Gray Warm 10, value: "#E6E6E2" }
+  - { id: gray-warm-20, name: Gray Warm 20, value: "#CAC9C0" }
+  - { id: gray-warm-30, name: Gray Warm 30, value: "#AFAEA2" }
+  - { id: gray-warm-40, name: Gray Warm 40, value: "#929285" }
+  - { id: gray-warm-50, name: Gray Warm 50, value: "#76766A" }
+  - { id: gray-warm-60, name: Gray Warm 60, value: "#5D5D52" }
+  - { id: gray-warm-70, name: Gray Warm 70, value: "#454540" }
+  - { id: gray-warm-80, name: Gray Warm 80, value: "#2E2E2A" }
+  - { id: gray-warm-90, name: Gray Warm 90, value: "#171716" }
+
+  # ─── Red ────────────────────────────────────────────────────────
+  - { id: red-5,  name: Red 5,  value: "#F9EEEE" }
+  - { id: red-10, name: Red 10, value: "#F8E1DE" }
+  - { id: red-20, name: Red 20, value: "#F7BBB1" }
+  - { id: red-30, name: Red 30, value: "#F2938C" }
+  - { id: red-40, name: Red 40, value: "#E9695F" }
+  - { id: red-50, name: Red 50, value: "#D83933", description: "USWDS default error / danger color." }
+  - { id: red-60, name: Red 60, value: "#A23737" }
+  - { id: red-70, name: Red 70, value: "#6F3331" }
+  - { id: red-80, name: Red 80, value: "#3E2927" }
+  - { id: red-90, name: Red 90, value: "#1B1616" }
+
+  # Red Vivid
+  - { id: red-vivid-5,  name: Red Vivid 5,  value: "#FFF3F2" }
+  - { id: red-vivid-10, name: Red Vivid 10, value: "#FDE0DB" }
+  - { id: red-vivid-20, name: Red Vivid 20, value: "#FDB8AE" }
+  - { id: red-vivid-30, name: Red Vivid 30, value: "#FF8D7B" }
+  - { id: red-vivid-40, name: Red Vivid 40, value: "#FB5A47" }
+  - { id: red-vivid-50, name: Red Vivid 50, value: "#E52207" }
+  - { id: red-vivid-60, name: Red Vivid 60, value: "#B50909" }
+  - { id: red-vivid-70, name: Red Vivid 70, value: "#8B0A03" }
+  - { id: red-vivid-80, name: Red Vivid 80, value: "#5C1111" }
+
+  # ─── Orange ─────────────────────────────────────────────────────
+  - { id: orange-5,  name: Orange 5,  value: "#F6EFE9" }
+  - { id: orange-10, name: Orange 10, value: "#F2E4D4" }
+  - { id: orange-20, name: Orange 20, value: "#F3BF90" }
+  - { id: orange-30, name: Orange 30, value: "#F09860" }
+  - { id: orange-40, name: Orange 40, value: "#DD7533" }
+  - { id: orange-50, name: Orange 50, value: "#A86437" }
+  - { id: orange-60, name: Orange 60, value: "#775540" }
+  - { id: orange-70, name: Orange 70, value: "#524236" }
+  - { id: orange-80, name: Orange 80, value: "#332D27" }
+  - { id: orange-90, name: Orange 90, value: "#1B1614" }
+
+  - { id: orange-vivid-5,  name: Orange Vivid 5,  value: "#FEF2E4" }
+  - { id: orange-vivid-10, name: Orange Vivid 10, value: "#FCE2C5" }
+  - { id: orange-vivid-20, name: Orange Vivid 20, value: "#FFBC78" }
+  - { id: orange-vivid-30, name: Orange Vivid 30, value: "#FA9441" }
+  - { id: orange-vivid-40, name: Orange Vivid 40, value: "#E66F0E" }
+  - { id: orange-vivid-50, name: Orange Vivid 50, value: "#C05600" }
+  - { id: orange-vivid-60, name: Orange Vivid 60, value: "#8C471C" }
+  - { id: orange-vivid-70, name: Orange Vivid 70, value: "#5F3617" }
+  - { id: orange-vivid-80, name: Orange Vivid 80, value: "#352313" }
+
+  # ─── Yellow ─────────────────────────────────────────────────────
+  - { id: yellow-5,  name: Yellow 5,  value: "#FAF3D1" }
+  - { id: yellow-10, name: Yellow 10, value: "#F5E6AF" }
+  - { id: yellow-20, name: Yellow 20, value: "#E6C74C" }
+  - { id: yellow-30, name: Yellow 30, value: "#C9AB48", description: "USWDS warning color." }
+  - { id: yellow-40, name: Yellow 40, value: "#A88F48" }
+  - { id: yellow-50, name: Yellow 50, value: "#8A7237" }
+  - { id: yellow-60, name: Yellow 60, value: "#6B5A39" }
+  - { id: yellow-70, name: Yellow 70, value: "#504332" }
+  - { id: yellow-80, name: Yellow 80, value: "#332D27" }
+  - { id: yellow-90, name: Yellow 90, value: "#1A1614" }
+
+  - { id: yellow-vivid-5,  name: Yellow Vivid 5,  value: "#FFF5C2" }
+  - { id: yellow-vivid-10, name: Yellow Vivid 10, value: "#FEE685" }
+  - { id: yellow-vivid-20, name: Yellow Vivid 20, value: "#FACE00" }
+  - { id: yellow-vivid-30, name: Yellow Vivid 30, value: "#DDAA01" }
+  - { id: yellow-vivid-40, name: Yellow Vivid 40, value: "#B38C00" }
+  - { id: yellow-vivid-50, name: Yellow Vivid 50, value: "#947100" }
+  - { id: yellow-vivid-60, name: Yellow Vivid 60, value: "#776017" }
+  - { id: yellow-vivid-70, name: Yellow Vivid 70, value: "#5C4809" }
+  - { id: yellow-vivid-80, name: Yellow Vivid 80, value: "#422D19" }
+
+  # ─── Green ──────────────────────────────────────────────────────
+  - { id: green-5,  name: Green 5,  value: "#EAF4DD" }
+  - { id: green-10, name: Green 10, value: "#DFEACD" }
+  - { id: green-20, name: Green 20, value: "#B8D293" }
+  - { id: green-30, name: Green 30, value: "#9BB672" }
+  - { id: green-40, name: Green 40, value: "#7D9B4E" }
+  - { id: green-50, name: Green 50, value: "#607F35", description: "USWDS success color." }
+  - { id: green-60, name: Green 60, value: "#4C6424" }
+  - { id: green-70, name: Green 70, value: "#3C4A29" }
+  - { id: green-80, name: Green 80, value: "#293021" }
+  - { id: green-90, name: Green 90, value: "#161814" }
+
+  - { id: green-vivid-5,  name: Green Vivid 5,  value: "#DDF9C7" }
+  - { id: green-vivid-10, name: Green Vivid 10, value: "#C5EE93" }
+  - { id: green-vivid-20, name: Green Vivid 20, value: "#98D035" }
+  - { id: green-vivid-30, name: Green Vivid 30, value: "#7FB135" }
+  - { id: green-vivid-40, name: Green Vivid 40, value: "#719F2A" }
+  - { id: green-vivid-50, name: Green Vivid 50, value: "#538200" }
+  - { id: green-vivid-60, name: Green Vivid 60, value: "#466C04" }
+  - { id: green-vivid-70, name: Green Vivid 70, value: "#2F4A0B" }
+  - { id: green-vivid-80, name: Green Vivid 80, value: "#243413" }
+
+  # ─── Mint ───────────────────────────────────────────────────────
+  - { id: mint-5,  name: Mint 5,  value: "#DBF6ED" }
+  - { id: mint-10, name: Mint 10, value: "#C7EFE2" }
+  - { id: mint-20, name: Mint 20, value: "#92D9BB" }
+  - { id: mint-30, name: Mint 30, value: "#5ABF95" }
+  - { id: mint-40, name: Mint 40, value: "#34A37E" }
+  - { id: mint-50, name: Mint 50, value: "#2E8367" }
+  - { id: mint-60, name: Mint 60, value: "#286846" }
+  - { id: mint-70, name: Mint 70, value: "#204E34" }
+  - { id: mint-80, name: Mint 80, value: "#193324" }
+  - { id: mint-90, name: Mint 90, value: "#0D1A12" }
+
+  - { id: mint-vivid-5,  name: Mint Vivid 5,  value: "#C9FBEB" }
+  - { id: mint-vivid-10, name: Mint Vivid 10, value: "#83FCD4" }
+  - { id: mint-vivid-20, name: Mint Vivid 20, value: "#0CEDA6" }
+  - { id: mint-vivid-30, name: Mint Vivid 30, value: "#04C585" }
+  - { id: mint-vivid-40, name: Mint Vivid 40, value: "#00A871" }
+  - { id: mint-vivid-50, name: Mint Vivid 50, value: "#008659" }
+  - { id: mint-vivid-60, name: Mint Vivid 60, value: "#146947" }
+  - { id: mint-vivid-70, name: Mint Vivid 70, value: "#0C4E29" }
+  - { id: mint-vivid-80, name: Mint Vivid 80, value: "#0D351E" }
+
+  # ─── Cyan ───────────────────────────────────────────────────────
+  - { id: cyan-5,  name: Cyan 5,  value: "#E7F6F8" }
+  - { id: cyan-10, name: Cyan 10, value: "#CCECF2" }
+  - { id: cyan-20, name: Cyan 20, value: "#99DEEA" }
+  - { id: cyan-30, name: Cyan 30, value: "#5DC0D1" }
+  - { id: cyan-40, name: Cyan 40, value: "#449DAC" }
+  - { id: cyan-50, name: Cyan 50, value: "#168092" }
+  - { id: cyan-60, name: Cyan 60, value: "#2A646D" }
+  - { id: cyan-70, name: Cyan 70, value: "#2C4A4E" }
+  - { id: cyan-80, name: Cyan 80, value: "#203133" }
+  - { id: cyan-90, name: Cyan 90, value: "#111819" }
+
+  - { id: cyan-vivid-5,  name: Cyan Vivid 5,  value: "#E5FAFF" }
+  - { id: cyan-vivid-10, name: Cyan Vivid 10, value: "#A8F2FF" }
+  - { id: cyan-vivid-20, name: Cyan Vivid 20, value: "#52DAF2" }
+  - { id: cyan-vivid-30, name: Cyan Vivid 30, value: "#00BDE3" }
+  - { id: cyan-vivid-40, name: Cyan Vivid 40, value: "#009EC1" }
+  - { id: cyan-vivid-50, name: Cyan Vivid 50, value: "#0081A1" }
+  - { id: cyan-vivid-60, name: Cyan Vivid 60, value: "#00687D" }
+  - { id: cyan-vivid-70, name: Cyan Vivid 70, value: "#0E4F5C" }
+  - { id: cyan-vivid-80, name: Cyan Vivid 80, value: "#093B44" }
+
+  # ─── Blue ───────────────────────────────────────────────────────
+  - { id: blue-5,  name: Blue 5,  value: "#EFF6FB" }
+  - { id: blue-10, name: Blue 10, value: "#D9E8F6" }
+  - { id: blue-20, name: Blue 20, value: "#AACDEC" }
+  - { id: blue-30, name: Blue 30, value: "#73B3E7" }
+  - { id: blue-40, name: Blue 40, value: "#4F97D1" }
+  - { id: blue-50, name: Blue 50, value: "#2378C3", description: "USWDS primary blue." }
+  - { id: blue-60, name: Blue 60, value: "#2C608A" }
+  - { id: blue-70, name: Blue 70, value: "#274863", description: "USWDS primary-dark." }
+  - { id: blue-80, name: Blue 80, value: "#1F303E" }
+  - { id: blue-90, name: Blue 90, value: "#11181D" }
+
+  - { id: blue-vivid-5,  name: Blue Vivid 5,  value: "#E8F5FF" }
+  - { id: blue-vivid-10, name: Blue Vivid 10, value: "#CFE8FF" }
+  - { id: blue-vivid-20, name: Blue Vivid 20, value: "#A1D3FF" }
+  - { id: blue-vivid-30, name: Blue Vivid 30, value: "#58B4FF" }
+  - { id: blue-vivid-40, name: Blue Vivid 40, value: "#2491FF" }
+  - { id: blue-vivid-50, name: Blue Vivid 50, value: "#0076D6" }
+  - { id: blue-vivid-60, name: Blue Vivid 60, value: "#005EA2" }
+  - { id: blue-vivid-70, name: Blue Vivid 70, value: "#0B4778" }
+  - { id: blue-vivid-80, name: Blue Vivid 80, value: "#112F4E" }
+
+  # ─── Indigo ─────────────────────────────────────────────────────
+  - { id: indigo-5,  name: Indigo 5,  value: "#EFEFF8" }
+  - { id: indigo-10, name: Indigo 10, value: "#E5E4FA" }
+  - { id: indigo-20, name: Indigo 20, value: "#C5C5F3" }
+  - { id: indigo-30, name: Indigo 30, value: "#A5A8EB" }
+  - { id: indigo-40, name: Indigo 40, value: "#8889DB" }
+  - { id: indigo-50, name: Indigo 50, value: "#676CC8" }
+  - { id: indigo-60, name: Indigo 60, value: "#4D52AF" }
+  - { id: indigo-70, name: Indigo 70, value: "#3D4076" }
+  - { id: indigo-80, name: Indigo 80, value: "#2B2C40" }
+  - { id: indigo-90, name: Indigo 90, value: "#16171F" }
+
+  - { id: indigo-vivid-5,  name: Indigo Vivid 5,  value: "#F0F0FF" }
+  - { id: indigo-vivid-10, name: Indigo Vivid 10, value: "#E0E0FF" }
+  - { id: indigo-vivid-20, name: Indigo Vivid 20, value: "#CCCEFF" }
+  - { id: indigo-vivid-30, name: Indigo Vivid 30, value: "#A3A7FA" }
+  - { id: indigo-vivid-40, name: Indigo Vivid 40, value: "#8289FF" }
+  - { id: indigo-vivid-50, name: Indigo Vivid 50, value: "#656BD7" }
+  - { id: indigo-vivid-60, name: Indigo Vivid 60, value: "#4A50C4" }
+  - { id: indigo-vivid-70, name: Indigo Vivid 70, value: "#3333A3" }
+  - { id: indigo-vivid-80, name: Indigo Vivid 80, value: "#212463" }
+
+  # ─── Violet ─────────────────────────────────────────────────────
+  - { id: violet-5,  name: Violet 5,  value: "#F4F1F9" }
+  - { id: violet-10, name: Violet 10, value: "#EBE3F9" }
+  - { id: violet-20, name: Violet 20, value: "#D0C3E9" }
+  - { id: violet-30, name: Violet 30, value: "#B8A2E3" }
+  - { id: violet-40, name: Violet 40, value: "#9D84D2" }
+  - { id: violet-50, name: Violet 50, value: "#8168B3" }
+  - { id: violet-60, name: Violet 60, value: "#665190" }
+  - { id: violet-70, name: Violet 70, value: "#4C3D69" }
+  - { id: violet-80, name: Violet 80, value: "#312B3F" }
+  - { id: violet-90, name: Violet 90, value: "#18161D" }
+
+  - { id: violet-vivid-5,  name: Violet Vivid 5,  value: "#F7F2FF" }
+  - { id: violet-vivid-10, name: Violet Vivid 10, value: "#EDE3FF" }
+  - { id: violet-vivid-20, name: Violet Vivid 20, value: "#D5BFFF" }
+  - { id: violet-vivid-30, name: Violet Vivid 30, value: "#C39DEB" }
+  - { id: violet-vivid-40, name: Violet Vivid 40, value: "#AD79E9" }
+  - { id: violet-vivid-50, name: Violet Vivid 50, value: "#9355DC" }
+  - { id: violet-vivid-60, name: Violet Vivid 60, value: "#783CB9" }
+  - { id: violet-vivid-70, name: Violet Vivid 70, value: "#54278F" }
+  - { id: violet-vivid-80, name: Violet Vivid 80, value: "#39215E" }
+
+  # ─── Magenta ────────────────────────────────────────────────────
+  - { id: magenta-5,  name: Magenta 5,  value: "#F9F0F2" }
+  - { id: magenta-10, name: Magenta 10, value: "#F6E1E8" }
+  - { id: magenta-20, name: Magenta 20, value: "#F0BBCC" }
+  - { id: magenta-30, name: Magenta 30, value: "#E895B3" }
+  - { id: magenta-40, name: Magenta 40, value: "#E0699F" }
+  - { id: magenta-50, name: Magenta 50, value: "#C84281" }
+  - { id: magenta-60, name: Magenta 60, value: "#8B4566" }
+  - { id: magenta-70, name: Magenta 70, value: "#66364B" }
+  - { id: magenta-80, name: Magenta 80, value: "#402731" }
+  - { id: magenta-90, name: Magenta 90, value: "#1B1617" }
+
+  - { id: magenta-vivid-5,  name: Magenta Vivid 5,  value: "#FFF2F5" }
+  - { id: magenta-vivid-10, name: Magenta Vivid 10, value: "#FFDDEA" }
+  - { id: magenta-vivid-20, name: Magenta Vivid 20, value: "#FFB4CF" }
+  - { id: magenta-vivid-30, name: Magenta Vivid 30, value: "#FF87B2" }
+  - { id: magenta-vivid-40, name: Magenta Vivid 40, value: "#FD4496" }
+  - { id: magenta-vivid-50, name: Magenta Vivid 50, value: "#D72D79" }
+  - { id: magenta-vivid-60, name: Magenta Vivid 60, value: "#AB2165" }
+  - { id: magenta-vivid-70, name: Magenta Vivid 70, value: "#731F44" }
+  - { id: magenta-vivid-80, name: Magenta Vivid 80, value: "#4F172E" }
+
+modes:
+  light:
+    roles:
+      background: gray-1
+      surface: gray-3
+      surface-elevated: gray-1
+      text-primary: gray-90
+      text-secondary: gray-70
+      text-tertiary: gray-50
+      primary: blue-50
+      primary-hover: blue-70
+      accent: indigo-vivid-60
+      accent-hover: indigo-vivid-70
+      warning: yellow-30
+      warning-hover: yellow-50
+      error: red-50
+      success: green-50
+      border: gray-30
+
+  dark:
+    roles:
+      background: gray-90
+      surface: gray-80
+      surface-elevated: gray-70
+      text-primary: gray-1
+      text-secondary: gray-20
+      text-tertiary: gray-30
+      primary: blue-vivid-30
+      primary-hover: blue-vivid-20
+      accent: indigo-vivid-30
+      accent-hover: indigo-vivid-20
+      warning: yellow-vivid-20
+      warning-hover: yellow-vivid-10
+      error: red-vivid-30
+      success: green-vivid-30
+      border: gray-70

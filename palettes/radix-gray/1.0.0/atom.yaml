@@ -1,0 +1,156 @@
+kind: palette
+id: radix-gray
+version: 1.0.0
+name: Radix Gray
+description: >
+  Radix UI's gray scale — 12 semantically labeled steps published in
+  both light and dark variants. A pure neutral gray with no chroma. The most chromatically restrained Radix neutral. Step 1 is app background,
+  step 9 is the solid brand color, step 12 is high-contrast text.
+  The same step number means the same semantic role across light and
+  dark, with different hex values per mode.
+tags: [radix, neutral, design-system, scale, dual-mode]
+
+provenance:
+  source: https://www.radix-ui.com/colors/docs/palette-composition/scales
+  license: MIT
+  attribution: >
+    Radix Colors, Copyright WorkOS, Inc., MIT licensed. Imported from
+    the radix-ui/colors repository on GitHub.
+  importedDate: 2026-05-17
+  importedFromVersion: "3.0.0"
+  notes: >
+    Radix publishes distinct hex values for each scale in light and dark mode. This atom carries both as -light and -dark suffixed swatches; modes.light.roles points at -light swatches and modes.dark.roles at -dark swatches. Gray is a neutral, so every semantic role — including text — is drawn from the gray scale itself.
+
+swatches:
+  # ─── Light-mode steps ──────────────────────────────────────────
+  - id: gray-1-light
+    name: Gray 1 (light)
+    value: "#FCFCFC"
+    description: App background.
+  - id: gray-2-light
+    name: Gray 2 (light)
+    value: "#F9F9F9"
+    description: Subtle background.
+  - id: gray-3-light
+    name: Gray 3 (light)
+    value: "#F0F0F0"
+    description: UI element background.
+  - id: gray-4-light
+    name: Gray 4 (light)
+    value: "#E8E8E8"
+    description: Hovered UI element background.
+  - id: gray-5-light
+    name: Gray 5 (light)
+    value: "#E0E0E0"
+    description: Active / selected UI element background.
+  - id: gray-6-light
+    name: Gray 6 (light)
+    value: "#D9D9D9"
+    description: Subtle borders and separators.
+  - id: gray-7-light
+    name: Gray 7 (light)
+    value: "#CECECE"
+    description: UI element border and focus rings.
+  - id: gray-8-light
+    name: Gray 8 (light)
+    value: "#BBBBBB"
+    description: Hovered UI element border.
+  - id: gray-9-light
+    name: Gray 9 (light)
+    value: "#8D8D8D"
+    description: Solid background — the brand color step.
+  - id: gray-10-light
+    name: Gray 10 (light)
+    value: "#838383"
+    description: Hovered solid background.
+  - id: gray-11-light
+    name: Gray 11 (light)
+    value: "#646464"
+    description: Low-contrast text.
+  - id: gray-12-light
+    name: Gray 12 (light)
+    value: "#202020"
+    description: High-contrast text.
+  # ─── Dark-mode steps ───────────────────────────────────────────
+  - id: gray-1-dark
+    name: Gray 1 (dark)
+    value: "#111111"
+    description: App background.
+  - id: gray-2-dark
+    name: Gray 2 (dark)
+    value: "#191919"
+    description: Subtle background.
+  - id: gray-3-dark
+    name: Gray 3 (dark)
+    value: "#222222"
+    description: UI element background.
+  - id: gray-4-dark
+    name: Gray 4 (dark)
+    value: "#2A2A2A"
+    description: Hovered UI element background.
+  - id: gray-5-dark
+    name: Gray 5 (dark)
+    value: "#313131"
+    description: Active / selected UI element background.
+  - id: gray-6-dark
+    name: Gray 6 (dark)
+    value: "#3A3A3A"
+    description: Subtle borders and separators.
+  - id: gray-7-dark
+    name: Gray 7 (dark)
+    value: "#484848"
+    description: UI element border and focus rings.
+  - id: gray-8-dark
+    name: Gray 8 (dark)
+    value: "#606060"
+    description: Hovered UI element border.
+  - id: gray-9-dark
+    name: Gray 9 (dark)
+    value: "#6E6E6E"
+    description: Solid background — the brand color step.
+  - id: gray-10-dark
+    name: Gray 10 (dark)
+    value: "#7B7B7B"
+    description: Hovered solid background.
+  - id: gray-11-dark
+    name: Gray 11 (dark)
+    value: "#B4B4B4"
+    description: Low-contrast text.
+  - id: gray-12-dark
+    name: Gray 12 (dark)
+    value: "#EEEEEE"
+    description: High-contrast text.
+
+modes:
+  light:
+    roles:
+      background: gray-1-light
+      surface: gray-2-light
+      surface-elevated: gray-3-light
+      text-primary: gray-12-light
+      text-secondary: gray-11-light
+      text-tertiary: gray-9-light
+      primary: gray-9-light
+      primary-hover: gray-10-light
+      accent: gray-8-light
+      accent-hover: gray-7-light
+      warning: gray-9-light
+      warning-hover: gray-10-light
+      error: gray-12-light
+      success: gray-9-light
+  dark:
+    roles:
+      background: gray-1-dark
+      surface: gray-2-dark
+      surface-elevated: gray-3-dark
+      text-primary: gray-12-dark
+      text-secondary: gray-11-dark
+      text-tertiary: gray-9-dark
+      primary: gray-9-dark
+      primary-hover: gray-10-dark
+      accent: gray-8-dark
+      accent-hover: gray-7-dark
+      warning: gray-9-dark
+      warning-hover: gray-10-dark
+      error: gray-12-dark
+      success: gray-9-dark

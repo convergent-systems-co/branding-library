@@ -1,0 +1,316 @@
+kind: palette
+id: polaris
+version: 1.0.0
+name: Shopify Polaris
+description: >
+  The Shopify Polaris color palette as shipped by `@shopify/polaris-tokens`.
+  Thirteen base color scales (gray, azure, blue, cyan, green, lime, magenta,
+  orange, purple, red, rose, teal, yellow) each at 16 stops (1..16) where
+  1 is the lightest and 16 the deepest. Plus alpha-only scales for black
+  and white at 16 stops apiece.
+
+  The light theme is the Polaris base theme; the dark theme overrides
+  selected role values to invert the canvas. Role mappings are derived
+  from the canonical `themes/base/color.ts` (light) and `themes/dark.ts`
+  (dark) sources in polaris-tokens.
+
+tags: [design-system, shopify, polaris, role-based]
+
+provenance:
+  source: https://github.com/Shopify/polaris/blob/main/polaris-tokens/src/themes/base/color.ts
+  license: MIT
+  attribution: >
+    Polaris Design System tokens, Copyright (c) Shopify Inc., licensed under
+    MIT. Hex values converted from rgba() definitions in
+    polaris-tokens/src/colors.ts; role mappings derived from
+    polaris-tokens/src/themes/base/color.ts and themes/dark.ts.
+  importedDate: 2026-05-17
+  importedFromVersion: "@shopify/polaris-tokens@9.4.2"
+
+swatches:
+  # ─── Gray (1..16) ───────────────────────────────────────────────
+  - { id: gray-1,  name: Gray 1,  value: "#FFFFFF" }
+  - { id: gray-2,  name: Gray 2,  value: "#FDFDFD" }
+  - { id: gray-3,  name: Gray 3,  value: "#FAFAFA" }
+  - { id: gray-4,  name: Gray 4,  value: "#F7F7F7" }
+  - { id: gray-5,  name: Gray 5,  value: "#F3F3F3" }
+  - { id: gray-6,  name: Gray 6,  value: "#F1F1F1", description: "Default page background in light mode." }
+  - { id: gray-7,  name: Gray 7,  value: "#EBEBEB" }
+  - { id: gray-8,  name: Gray 8,  value: "#E3E3E3" }
+  - { id: gray-9,  name: Gray 9,  value: "#D4D4D4" }
+  - { id: gray-10, name: Gray 10, value: "#CCCCCC" }
+  - { id: gray-11, name: Gray 11, value: "#B5B5B5" }
+  - { id: gray-12, name: Gray 12, value: "#8A8A8A" }
+  - { id: gray-13, name: Gray 13, value: "#616161" }
+  - { id: gray-14, name: Gray 14, value: "#4A4A4A" }
+  - { id: gray-15, name: Gray 15, value: "#303030", description: "Page background / surface in dark mode." }
+  - { id: gray-16, name: Gray 16, value: "#1A1A1A", description: "Page background in dark mode." }
+
+  # ─── Azure (1..16) — sky-leaning blue ───────────────────────────
+  - { id: azure-1,  name: Azure 1,  value: "#FBFDFF" }
+  - { id: azure-2,  name: Azure 2,  value: "#F2F9FF" }
+  - { id: azure-3,  name: Azure 3,  value: "#EAF4FF" }
+  - { id: azure-4,  name: Azure 4,  value: "#E0F0FF" }
+  - { id: azure-5,  name: Azure 5,  value: "#D5EBFF" }
+  - { id: azure-6,  name: Azure 6,  value: "#CAE6FF" }
+  - { id: azure-7,  name: Azure 7,  value: "#C0E1FF" }
+  - { id: azure-8,  name: Azure 8,  value: "#A8D8FF" }
+  - { id: azure-9,  name: Azure 9,  value: "#91D0FF" }
+  - { id: azure-10, name: Azure 10, value: "#51C0FF" }
+  - { id: azure-11, name: Azure 11, value: "#0094D5" }
+  - { id: azure-12, name: Azure 12, value: "#007CB4" }
+  - { id: azure-13, name: Azure 13, value: "#00679B" }
+  - { id: azure-14, name: Azure 14, value: "#00527C" }
+  - { id: azure-15, name: Azure 15, value: "#003A5A" }
+  - { id: azure-16, name: Azure 16, value: "#002133" }
+
+  # ─── Blue (1..16) — Polaris brand blue ──────────────────────────
+  - { id: blue-1,  name: Blue 1,  value: "#FCFDFF" }
+  - { id: blue-2,  name: Blue 2,  value: "#F6F8FF" }
+  - { id: blue-3,  name: Blue 3,  value: "#F0F2FF" }
+  - { id: blue-4,  name: Blue 4,  value: "#EAEDFF" }
+  - { id: blue-5,  name: Blue 5,  value: "#E2E7FF" }
+  - { id: blue-6,  name: Blue 6,  value: "#DBE1FF" }
+  - { id: blue-7,  name: Blue 7,  value: "#D5DCFF" }
+  - { id: blue-8,  name: Blue 8,  value: "#C5D0FF" }
+  - { id: blue-9,  name: Blue 9,  value: "#BAC7FF" }
+  - { id: blue-10, name: Blue 10, value: "#97ADFF" }
+  - { id: blue-11, name: Blue 11, value: "#4188FF" }
+  - { id: blue-12, name: Blue 12, value: "#0071E9" }
+  - { id: blue-13, name: Blue 13, value: "#005BD3", description: "Polaris primary action / link." }
+  - { id: blue-14, name: Blue 14, value: "#004299" }
+  - { id: blue-15, name: Blue 15, value: "#002E6A" }
+  - { id: blue-16, name: Blue 16, value: "#001633" }
+
+  # ─── Cyan (1..16) — teal-blue ───────────────────────────────────
+  - { id: cyan-1,  name: Cyan 1,  value: "#FAFFFE" }
+  - { id: cyan-2,  name: Cyan 2,  value: "#E7FCF8" }
+  - { id: cyan-3,  name: Cyan 3,  value: "#D7FBF3" }
+  - { id: cyan-4,  name: Cyan 4,  value: "#C0F9EF" }
+  - { id: cyan-5,  name: Cyan 5,  value: "#A5F7E9" }
+  - { id: cyan-6,  name: Cyan 6,  value: "#90F4E3" }
+  - { id: cyan-7,  name: Cyan 7,  value: "#92EDDE" }
+  - { id: cyan-8,  name: Cyan 8,  value: "#82E3D1" }
+  - { id: cyan-9,  name: Cyan 9,  value: "#74DBC8" }
+  - { id: cyan-10, name: Cyan 10, value: "#17C7A7" }
+  - { id: cyan-11, name: Cyan 11, value: "#13A389" }
+  - { id: cyan-12, name: Cyan 12, value: "#0E8470" }
+  - { id: cyan-13, name: Cyan 13, value: "#086B5A" }
+  - { id: cyan-14, name: Cyan 14, value: "#095346" }
+  - { id: cyan-15, name: Cyan 15, value: "#06382F" }
+  - { id: cyan-16, name: Cyan 16, value: "#05241E" }
+
+  # ─── Green (1..16) — Polaris success ────────────────────────────
+  - { id: green-1,  name: Green 1,  value: "#FAFFFB" }
+  - { id: green-2,  name: Green 2,  value: "#E6FEEA" }
+  - { id: green-3,  name: Green 3,  value: "#CDFED4" }
+  - { id: green-4,  name: Green 4,  value: "#AFFEBF" }
+  - { id: green-5,  name: Green 5,  value: "#92FCAC" }
+  - { id: green-6,  name: Green 6,  value: "#6EF799" }
+  - { id: green-7,  name: Green 7,  value: "#52F490" }
+  - { id: green-8,  name: Green 8,  value: "#2CED83" }
+  - { id: green-9,  name: Green 9,  value: "#11DF7B" }
+  - { id: green-10, name: Green 10, value: "#18BF79" }
+  - { id: green-11, name: Green 11, value: "#0D9C6A" }
+  - { id: green-12, name: Green 12, value: "#047B5D" }
+  - { id: green-13, name: Green 13, value: "#035E4C", description: "Polaris success." }
+  - { id: green-14, name: Green 14, value: "#014B40" }
+  - { id: green-15, name: Green 15, value: "#073630" }
+  - { id: green-16, name: Green 16, value: "#022622" }
+
+  # ─── Lime ───────────────────────────────────────────────────────
+  - { id: lime-1,  name: Lime 1,  value: "#FAFFFA" }
+  - { id: lime-2,  name: Lime 2,  value: "#E4FFE5" }
+  - { id: lime-3,  name: Lime 3,  value: "#D0FFD1" }
+  - { id: lime-4,  name: Lime 4,  value: "#BBFEBE" }
+  - { id: lime-5,  name: Lime 5,  value: "#9DFEA0" }
+  - { id: lime-6,  name: Lime 6,  value: "#77FE7A" }
+  - { id: lime-7,  name: Lime 7,  value: "#38FE3E" }
+  - { id: lime-8,  name: Lime 8,  value: "#28F22F" }
+  - { id: lime-9,  name: Lime 9,  value: "#25E82B" }
+  - { id: lime-10, name: Lime 10, value: "#20CF27" }
+  - { id: lime-11, name: Lime 11, value: "#18A81D" }
+  - { id: lime-12, name: Lime 12, value: "#118715" }
+  - { id: lime-13, name: Lime 13, value: "#0C710F" }
+  - { id: lime-14, name: Lime 14, value: "#0B550D" }
+  - { id: lime-15, name: Lime 15, value: "#033D05" }
+  - { id: lime-16, name: Lime 16, value: "#032104" }
+
+  # ─── Magenta ────────────────────────────────────────────────────
+  - { id: magenta-1,  name: Magenta 1,  value: "#FFFDFF" }
+  - { id: magenta-2,  name: Magenta 2,  value: "#FFF5FF" }
+  - { id: magenta-3,  name: Magenta 3,  value: "#FDEFFD" }
+  - { id: magenta-4,  name: Magenta 4,  value: "#FEE7FE" }
+  - { id: magenta-5,  name: Magenta 5,  value: "#FCDFFC" }
+  - { id: magenta-6,  name: Magenta 6,  value: "#FBD7FB" }
+  - { id: magenta-7,  name: Magenta 7,  value: "#FBCFFB" }
+  - { id: magenta-8,  name: Magenta 8,  value: "#F9BEF9" }
+  - { id: magenta-9,  name: Magenta 9,  value: "#F8B1F8" }
+  - { id: magenta-10, name: Magenta 10, value: "#F68DF6" }
+  - { id: magenta-11, name: Magenta 11, value: "#E156E1" }
+  - { id: magenta-12, name: Magenta 12, value: "#C530C5" }
+  - { id: magenta-13, name: Magenta 13, value: "#9F269F", description: "Polaris magic." }
+  - { id: magenta-14, name: Magenta 14, value: "#791A79" }
+  - { id: magenta-15, name: Magenta 15, value: "#561056" }
+  - { id: magenta-16, name: Magenta 16, value: "#340634" }
+
+  # ─── Orange (caution) ───────────────────────────────────────────
+  - { id: orange-1,  name: Orange 1,  value: "#FFFDFA" }
+  - { id: orange-2,  name: Orange 2,  value: "#FFF7EE" }
+  - { id: orange-3,  name: Orange 3,  value: "#FFF1E3" }
+  - { id: orange-4,  name: Orange 4,  value: "#FFEBD5" }
+  - { id: orange-5,  name: Orange 5,  value: "#FFE4C6" }
+  - { id: orange-6,  name: Orange 6,  value: "#FFDDB6" }
+  - { id: orange-7,  name: Orange 7,  value: "#FFD6A4" }
+  - { id: orange-8,  name: Orange 8,  value: "#FFC879" }
+  - { id: orange-9,  name: Orange 9,  value: "#FFB800" }
+  - { id: orange-10, name: Orange 10, value: "#E5A500" }
+  - { id: orange-11, name: Orange 11, value: "#B28400" }
+  - { id: orange-12, name: Orange 12, value: "#956F00" }
+  - { id: orange-13, name: Orange 13, value: "#7C5800", description: "Polaris caution text." }
+  - { id: orange-14, name: Orange 14, value: "#5E4200" }
+  - { id: orange-15, name: Orange 15, value: "#412D00" }
+  - { id: orange-16, name: Orange 16, value: "#251A00" }
+
+  # ─── Purple ─────────────────────────────────────────────────────
+  - { id: purple-1,  name: Purple 1,  value: "#FDFDFF" }
+  - { id: purple-2,  name: Purple 2,  value: "#F8F7FF" }
+  - { id: purple-3,  name: Purple 3,  value: "#F3F1FF" }
+  - { id: purple-4,  name: Purple 4,  value: "#EFECFF" }
+  - { id: purple-5,  name: Purple 5,  value: "#E9E5FF" }
+  - { id: purple-6,  name: Purple 6,  value: "#E4DEFF" }
+  - { id: purple-7,  name: Purple 7,  value: "#DFD9FF" }
+  - { id: purple-8,  name: Purple 8,  value: "#D4CCFF" }
+  - { id: purple-9,  name: Purple 9,  value: "#C7BCFF" }
+  - { id: purple-10, name: Purple 10, value: "#AA95FF" }
+  - { id: purple-11, name: Purple 11, value: "#9474FF" }
+  - { id: purple-12, name: Purple 12, value: "#8051FF" }
+  - { id: purple-13, name: Purple 13, value: "#7126FF" }
+  - { id: purple-14, name: Purple 14, value: "#5700D1" }
+  - { id: purple-15, name: Purple 15, value: "#3B0093" }
+  - { id: purple-16, name: Purple 16, value: "#1C004F" }
+
+  # ─── Red (critical) ─────────────────────────────────────────────
+  - { id: red-1,  name: Red 1,  value: "#FFFAFB" }
+  - { id: red-2,  name: Red 2,  value: "#FFF6F8" }
+  - { id: red-3,  name: Red 3,  value: "#FFECEF" }
+  - { id: red-4,  name: Red 4,  value: "#FEE8EB" }
+  - { id: red-5,  name: Red 5,  value: "#FEE1E6" }
+  - { id: red-6,  name: Red 6,  value: "#FED9DF" }
+  - { id: red-7,  name: Red 7,  value: "#FED1D7" }
+  - { id: red-8,  name: Red 8,  value: "#FEC1C7" }
+  - { id: red-9,  name: Red 9,  value: "#FDACB1" }
+  - { id: red-10, name: Red 10, value: "#F78086" }
+  - { id: red-11, name: Red 11, value: "#E22C38" }
+  - { id: red-12, name: Red 12, value: "#C70A24" }
+  - { id: red-13, name: Red 13, value: "#A30A24", description: "Polaris critical." }
+  - { id: red-14, name: Red 14, value: "#8E0B21" }
+  - { id: red-15, name: Red 15, value: "#5F0716" }
+  - { id: red-16, name: Red 16, value: "#2F040B" }
+
+  # ─── Rose ───────────────────────────────────────────────────────
+  - { id: rose-1,  name: Rose 1,  value: "#FFFDFD" }
+  - { id: rose-2,  name: Rose 2,  value: "#FFF6F8" }
+  - { id: rose-3,  name: Rose 3,  value: "#FFEFF3" }
+  - { id: rose-4,  name: Rose 4,  value: "#FFE8EE" }
+  - { id: rose-5,  name: Rose 5,  value: "#FFE1E8" }
+  - { id: rose-6,  name: Rose 6,  value: "#FFD9E3" }
+  - { id: rose-7,  name: Rose 7,  value: "#FED1DD" }
+  - { id: rose-8,  name: Rose 8,  value: "#FEC1D2" }
+  - { id: rose-9,  name: Rose 9,  value: "#FEB5CA" }
+  - { id: rose-10, name: Rose 10, value: "#FE8EB1" }
+  - { id: rose-11, name: Rose 11, value: "#FD4B92" }
+  - { id: rose-12, name: Rose 12, value: "#E30C76" }
+  - { id: rose-13, name: Rose 13, value: "#B9075F" }
+  - { id: rose-14, name: Rose 14, value: "#8D0448" }
+  - { id: rose-15, name: Rose 15, value: "#640231" }
+  - { id: rose-16, name: Rose 16, value: "#3E011C" }
+
+  # ─── Teal ───────────────────────────────────────────────────────
+  - { id: teal-1,  name: Teal 1,  value: "#F8FFFE" }
+  - { id: teal-2,  name: Teal 2,  value: "#E8FCFA" }
+  - { id: teal-3,  name: Teal 3,  value: "#D7FAF7" }
+  - { id: teal-4,  name: Teal 4,  value: "#C3F7F2" }
+  - { id: teal-5,  name: Teal 5,  value: "#AAF6EF" }
+  - { id: teal-6,  name: Teal 6,  value: "#89F5EC" }
+  - { id: teal-7,  name: Teal 7,  value: "#70F0E5" }
+  - { id: teal-8,  name: Teal 8,  value: "#5AE6DB" }
+  - { id: teal-9,  name: Teal 9,  value: "#2CE0D4" }
+  - { id: teal-10, name: Teal 10, value: "#1EC7BC" }
+  - { id: teal-11, name: Teal 11, value: "#00A198" }
+  - { id: teal-12, name: Teal 12, value: "#12837C" }
+  - { id: teal-13, name: Teal 13, value: "#0C6A64" }
+  - { id: teal-14, name: Teal 14, value: "#0C534F" }
+  - { id: teal-15, name: Teal 15, value: "#033C39" }
+  - { id: teal-16, name: Teal 16, value: "#062C29" }
+
+  # ─── Yellow ─────────────────────────────────────────────────────
+  - { id: yellow-1,  name: Yellow 1,  value: "#FFFDF6" }
+  - { id: yellow-2,  name: Yellow 2,  value: "#FFF8DB" }
+  - { id: yellow-3,  name: Yellow 3,  value: "#FFF4BF" }
+  - { id: yellow-4,  name: Yellow 4,  value: "#FFEF9D" }
+  - { id: yellow-5,  name: Yellow 5,  value: "#FFEB78" }
+  - { id: yellow-6,  name: Yellow 6,  value: "#FFE600" }
+  - { id: yellow-7,  name: Yellow 7,  value: "#F7DF00" }
+  - { id: yellow-8,  name: Yellow 8,  value: "#EAD300" }
+  - { id: yellow-9,  name: Yellow 9,  value: "#E1CB00" }
+  - { id: yellow-10, name: Yellow 10, value: "#C5B200" }
+  - { id: yellow-11, name: Yellow 11, value: "#998A00" }
+  - { id: yellow-12, name: Yellow 12, value: "#827500" }
+  - { id: yellow-13, name: Yellow 13, value: "#695F00" }
+  - { id: yellow-14, name: Yellow 14, value: "#4F4700" }
+  - { id: yellow-15, name: Yellow 15, value: "#332E00" }
+  - { id: yellow-16, name: Yellow 16, value: "#1F1C00" }
+
+  # ─── Black + White alpha scales ─────────────────────────────────
+  - { id: black-alpha-5,  name: Black Alpha 5,  value: "#0000000D" }
+  - { id: black-alpha-7,  name: Black Alpha 7,  value: "#00000014" }
+  - { id: black-alpha-11, name: Black Alpha 11, value: "#0000004A" }
+  - { id: white-alpha-5,  name: White Alpha 5,  value: "#FFFFFF0D" }
+  - { id: white-alpha-6,  name: White Alpha 6,  value: "#FFFFFF0F" }
+  - { id: white-alpha-7,  name: White Alpha 7,  value: "#FFFFFF14" }
+  - { id: white-alpha-8,  name: White Alpha 8,  value: "#FFFFFF1C" }
+  - { id: white-alpha-9,  name: White Alpha 9,  value: "#FFFFFF24" }
+  - { id: white-alpha-10, name: White Alpha 10, value: "#FFFFFF2B" }
+  - { id: white-alpha-11, name: White Alpha 11, value: "#FFFFFF38" }
+
+modes:
+  light:
+    # Mirrors polaris-tokens/src/themes/base/color.ts
+    roles:
+      background: gray-6
+      surface: gray-1
+      surface-elevated: gray-1
+      text-primary: gray-16
+      text-secondary: gray-13
+      text-tertiary: gray-12
+      primary: blue-13
+      primary-hover: blue-14
+      accent: magenta-13
+      accent-hover: magenta-14
+      warning: orange-13
+      warning-hover: orange-14
+      error: red-13
+      success: green-13
+      border: gray-8
+      brand: green-13
+
+  dark:
+    # Mirrors polaris-tokens/src/themes/dark.ts
+    roles:
+      background: gray-16
+      surface: gray-15
+      surface-elevated: gray-14
+      text-primary: gray-8
+      text-secondary: gray-11
+      text-tertiary: gray-14
+      primary: blue-11
+      primary-hover: blue-10
+      accent: magenta-11
+      accent-hover: magenta-10
+      warning: orange-9
+      warning-hover: orange-10
+      error: red-10
+      success: green-10
+      border: gray-14
+      brand: gray-1

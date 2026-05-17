@@ -1,0 +1,156 @@
+kind: palette
+id: radix-slate
+version: 1.0.0
+name: Radix Slate
+description: >
+  Radix UI's slate scale — 12 semantically labeled steps published in
+  both light and dark variants. A cool, near-blue gray. Radix's default neutral for blue-adjacent UIs. Step 1 is app background,
+  step 9 is the solid brand color, step 12 is high-contrast text.
+  The same step number means the same semantic role across light and
+  dark, with different hex values per mode.
+tags: [radix, neutral, design-system, scale, dual-mode]
+
+provenance:
+  source: https://www.radix-ui.com/colors/docs/palette-composition/scales
+  license: MIT
+  attribution: >
+    Radix Colors, Copyright WorkOS, Inc., MIT licensed. Imported from
+    the radix-ui/colors repository on GitHub.
+  importedDate: 2026-05-17
+  importedFromVersion: "3.0.0"
+  notes: >
+    Radix publishes distinct hex values for each scale in light and dark mode. This atom carries both as -light and -dark suffixed swatches; modes.light.roles points at -light swatches and modes.dark.roles at -dark swatches. Slate is a neutral, so every semantic role — including text — is drawn from the slate scale itself.
+
+swatches:
+  # ─── Light-mode steps ──────────────────────────────────────────
+  - id: slate-1-light
+    name: Slate 1 (light)
+    value: "#FCFCFD"
+    description: App background.
+  - id: slate-2-light
+    name: Slate 2 (light)
+    value: "#F9F9FB"
+    description: Subtle background.
+  - id: slate-3-light
+    name: Slate 3 (light)
+    value: "#F0F0F3"
+    description: UI element background.
+  - id: slate-4-light
+    name: Slate 4 (light)
+    value: "#E8E8EC"
+    description: Hovered UI element background.
+  - id: slate-5-light
+    name: Slate 5 (light)
+    value: "#E0E1E6"
+    description: Active / selected UI element background.
+  - id: slate-6-light
+    name: Slate 6 (light)
+    value: "#D9D9E0"
+    description: Subtle borders and separators.
+  - id: slate-7-light
+    name: Slate 7 (light)
+    value: "#CDCED6"
+    description: UI element border and focus rings.
+  - id: slate-8-light
+    name: Slate 8 (light)
+    value: "#B9BBC6"
+    description: Hovered UI element border.
+  - id: slate-9-light
+    name: Slate 9 (light)
+    value: "#8B8D98"
+    description: Solid background — the brand color step.
+  - id: slate-10-light
+    name: Slate 10 (light)
+    value: "#80838D"
+    description: Hovered solid background.
+  - id: slate-11-light
+    name: Slate 11 (light)
+    value: "#60646C"
+    description: Low-contrast text.
+  - id: slate-12-light
+    name: Slate 12 (light)
+    value: "#1C2024"
+    description: High-contrast text.
+  # ─── Dark-mode steps ───────────────────────────────────────────
+  - id: slate-1-dark
+    name: Slate 1 (dark)
+    value: "#111113"
+    description: App background.
+  - id: slate-2-dark
+    name: Slate 2 (dark)
+    value: "#18191B"
+    description: Subtle background.
+  - id: slate-3-dark
+    name: Slate 3 (dark)
+    value: "#212225"
+    description: UI element background.
+  - id: slate-4-dark
+    name: Slate 4 (dark)
+    value: "#272A2D"
+    description: Hovered UI element background.
+  - id: slate-5-dark
+    name: Slate 5 (dark)
+    value: "#2E3135"
+    description: Active / selected UI element background.
+  - id: slate-6-dark
+    name: Slate 6 (dark)
+    value: "#363A3F"
+    description: Subtle borders and separators.
+  - id: slate-7-dark
+    name: Slate 7 (dark)
+    value: "#43484E"
+    description: UI element border and focus rings.
+  - id: slate-8-dark
+    name: Slate 8 (dark)
+    value: "#5A6169"
+    description: Hovered UI element border.
+  - id: slate-9-dark
+    name: Slate 9 (dark)
+    value: "#696E77"
+    description: Solid background — the brand color step.
+  - id: slate-10-dark
+    name: Slate 10 (dark)
+    value: "#777B84"
+    description: Hovered solid background.
+  - id: slate-11-dark
+    name: Slate 11 (dark)
+    value: "#B0B4BA"
+    description: Low-contrast text.
+  - id: slate-12-dark
+    name: Slate 12 (dark)
+    value: "#EDEEF0"
+    description: High-contrast text.
+
+modes:
+  light:
+    roles:
+      background: slate-1-light
+      surface: slate-2-light
+      surface-elevated: slate-3-light
+      text-primary: slate-12-light
+      text-secondary: slate-11-light
+      text-tertiary: slate-9-light
+      primary: slate-9-light
+      primary-hover: slate-10-light
+      accent: slate-8-light
+      accent-hover: slate-7-light
+      warning: slate-9-light
+      warning-hover: slate-10-light
+      error: slate-12-light
+      success: slate-9-light
+  dark:
+    roles:
+      background: slate-1-dark
+      surface: slate-2-dark
+      surface-elevated: slate-3-dark
+      text-primary: slate-12-dark
+      text-secondary: slate-11-dark
+      text-tertiary: slate-9-dark
+      primary: slate-9-dark
+      primary-hover: slate-10-dark
+      accent: slate-8-dark
+      accent-hover: slate-7-dark
+      warning: slate-9-dark
+      warning-hover: slate-10-dark
+      error: slate-12-dark
+      success: slate-9-dark

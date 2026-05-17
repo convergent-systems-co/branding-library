@@ -1,0 +1,185 @@
+kind: palette
+id: radix-plum
+version: 1.0.0
+name: Radix Plum
+description: >
+  Radix UI's plum scale — 12 semantically labeled steps published in
+  both light and dark variants. A muted, pink-leaning purple. Step 1 is app background,
+  step 9 is the solid brand color, step 12 is high-contrast text.
+  The same step number means the same semantic role across light and
+  dark, with different hex values per mode.
+tags: [radix, warm, design-system, scale, dual-mode]
+
+provenance:
+  source: https://www.radix-ui.com/colors/docs/palette-composition/scales
+  license: MIT
+  attribution: >
+    Radix Colors, Copyright WorkOS, Inc., MIT licensed. Imported from
+    the radix-ui/colors repository on GitHub.
+  importedDate: 2026-05-17
+  importedFromVersion: "3.0.0"
+  notes: >
+    Radix publishes distinct hex values for each scale in light and dark mode. This atom carries both as -light and -dark suffixed swatches; modes.light.roles points at -light swatches and modes.dark.roles at -dark swatches. Plum is a chromatic hue and makes a poor neutral for body text, so steps 11 and 12 of Radix Slate are imported as supplementary swatches and used for text-primary and text-secondary in both modes.
+
+swatches:
+  # ─── Light-mode steps ──────────────────────────────────────────
+  - id: plum-1-light
+    name: Plum 1 (light)
+    value: "#FEFCFF"
+    description: App background.
+  - id: plum-2-light
+    name: Plum 2 (light)
+    value: "#FDF7FD"
+    description: Subtle background.
+  - id: plum-3-light
+    name: Plum 3 (light)
+    value: "#FBEBFB"
+    description: UI element background.
+  - id: plum-4-light
+    name: Plum 4 (light)
+    value: "#F7DEF8"
+    description: Hovered UI element background.
+  - id: plum-5-light
+    name: Plum 5 (light)
+    value: "#F2D1F3"
+    description: Active / selected UI element background.
+  - id: plum-6-light
+    name: Plum 6 (light)
+    value: "#E9C2EC"
+    description: Subtle borders and separators.
+  - id: plum-7-light
+    name: Plum 7 (light)
+    value: "#DEADE3"
+    description: UI element border and focus rings.
+  - id: plum-8-light
+    name: Plum 8 (light)
+    value: "#CF91D8"
+    description: Hovered UI element border.
+  - id: plum-9-light
+    name: Plum 9 (light)
+    value: "#AB4ABA"
+    description: Solid background — the brand color step.
+  - id: plum-10-light
+    name: Plum 10 (light)
+    value: "#A144AF"
+    description: Hovered solid background.
+  - id: plum-11-light
+    name: Plum 11 (light)
+    value: "#953EA3"
+    description: Low-contrast text.
+  - id: plum-12-light
+    name: Plum 12 (light)
+    value: "#53195D"
+    description: High-contrast text.
+  # ─── Dark-mode steps ───────────────────────────────────────────
+  - id: plum-1-dark
+    name: Plum 1 (dark)
+    value: "#181118"
+    description: App background.
+  - id: plum-2-dark
+    name: Plum 2 (dark)
+    value: "#201320"
+    description: Subtle background.
+  - id: plum-3-dark
+    name: Plum 3 (dark)
+    value: "#351A35"
+    description: UI element background.
+  - id: plum-4-dark
+    name: Plum 4 (dark)
+    value: "#451D47"
+    description: Hovered UI element background.
+  - id: plum-5-dark
+    name: Plum 5 (dark)
+    value: "#512454"
+    description: Active / selected UI element background.
+  - id: plum-6-dark
+    name: Plum 6 (dark)
+    value: "#5E3061"
+    description: Subtle borders and separators.
+  - id: plum-7-dark
+    name: Plum 7 (dark)
+    value: "#734079"
+    description: UI element border and focus rings.
+  - id: plum-8-dark
+    name: Plum 8 (dark)
+    value: "#92549C"
+    description: Hovered UI element border.
+  - id: plum-9-dark
+    name: Plum 9 (dark)
+    value: "#AB4ABA"
+    description: Solid background — the brand color step.
+  - id: plum-10-dark
+    name: Plum 10 (dark)
+    value: "#B658C4"
+    description: Hovered solid background.
+  - id: plum-11-dark
+    name: Plum 11 (dark)
+    value: "#E796F3"
+    description: Low-contrast text.
+  - id: plum-12-dark
+    name: Plum 12 (dark)
+    value: "#F4D4F4"
+    description: High-contrast text.
+  # ─── Neutral text imported from Radix Slate for legibility ─────
+  # Body text on a chromatic scale's mid-tone backgrounds reads
+  # better in a near-neutral. Radix recommends pairing each
+  # chromatic scale with a matching gray scale; slate is the
+  # standard pairing for the cooler hues.
+  - id: slate-11-light
+    name: Slate 11 (light) — neutral text
+    value: "#60646C"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 11 is low-contrast text.
+  - id: slate-12-light
+    name: Slate 12 (light) — neutral text
+    value: "#1C2024"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 12 is high-contrast text.
+  - id: slate-11-dark
+    name: Slate 11 (dark) — neutral text
+    value: "#B0B4BA"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 11 is low-contrast text.
+  - id: slate-12-dark
+    name: Slate 12 (dark) — neutral text
+    value: "#EDEEF0"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 12 is high-contrast text.
+
+modes:
+  light:
+    roles:
+      background: plum-1-light
+      surface: plum-2-light
+      surface-elevated: plum-3-light
+      text-primary: slate-12-light
+      text-secondary: slate-11-light
+      text-tertiary: plum-9-light
+      primary: plum-9-light
+      primary-hover: plum-10-light
+      accent: plum-8-light
+      accent-hover: plum-7-light
+      warning: plum-9-light
+      warning-hover: plum-10-light
+      error: plum-12-light
+      success: plum-9-light
+  dark:
+    roles:
+      background: plum-1-dark
+      surface: plum-2-dark
+      surface-elevated: plum-3-dark
+      text-primary: slate-12-dark
+      text-secondary: slate-11-dark
+      text-tertiary: plum-9-dark
+      primary: plum-9-dark
+      primary-hover: plum-10-dark
+      accent: plum-8-dark
+      accent-hover: plum-7-dark
+      warning: plum-9-dark
+      warning-hover: plum-10-dark
+      error: plum-12-dark
+      success: plum-9-dark

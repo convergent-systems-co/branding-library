@@ -1,0 +1,295 @@
+kind: palette
+id: github-primer
+version: 1.0.0
+name: GitHub Primer
+description: >
+  The GitHub Primer color system extracted from @primer/primitives. Provides
+  the canonical "GitHub Light" and "GitHub Dark" themes used across github.com,
+  including the full neutral scale (0–13) and eight functional color families
+  (blue, green, yellow, orange, red, purple, pink, coral) at ten stops each.
+
+  Light mode uses low-numbered neutrals for backgrounds and high-numbered for
+  text; dark mode inverts. Functional scales are tuned per-mode so each role
+  has the correct contrast — the blue used for the primary "link" role is a
+  deeper blue-5 in light and a brighter blue-3 in dark.
+
+tags: [design-system, github, primer, role-based]
+
+provenance:
+  source: https://github.com/primer/primitives/blob/main/src/tokens/base/color/light/light.json5
+  license: MIT
+  attribution: >
+    GitHub Primer Primitives, Copyright (c) GitHub Inc., licensed under MIT.
+    Hex values pulled from src/tokens/base/color/light/light.json5 and
+    src/tokens/base/color/dark/dark.json5.
+  importedDate: 2026-05-17
+  importedFromVersion: "@primer/primitives@11.9.0"
+  notes: >
+    The neutral scale is duplicated per-mode (each mode has its own neutral
+    family) so swatches are prefixed with the mode (`light-neutral-N`,
+    `dark-neutral-N`) and functional families likewise (`light-blue-N`,
+    `dark-blue-N`). The role mappings select the appropriate per-mode swatch.
+
+swatches:
+  # ─── Light-mode neutral scale (0..13) ───────────────────────────
+  - { id: light-neutral-0,  name: Light Neutral 0,  value: "#FFFFFF", description: "Page canvas in light mode." }
+  - { id: light-neutral-1,  name: Light Neutral 1,  value: "#F6F8FA", description: "Subtle background." }
+  - { id: light-neutral-2,  name: Light Neutral 2,  value: "#EFF2F5" }
+  - { id: light-neutral-3,  name: Light Neutral 3,  value: "#E6EAEF" }
+  - { id: light-neutral-4,  name: Light Neutral 4,  value: "#E0E6EB" }
+  - { id: light-neutral-5,  name: Light Neutral 5,  value: "#DAE0E7" }
+  - { id: light-neutral-6,  name: Light Neutral 6,  value: "#D1D9E0", description: "Default border." }
+  - { id: light-neutral-7,  name: Light Neutral 7,  value: "#C8D1DA" }
+  - { id: light-neutral-8,  name: Light Neutral 8,  value: "#818B98", description: "Muted icon / tertiary text." }
+  - { id: light-neutral-9,  name: Light Neutral 9,  value: "#59636E", description: "Secondary text." }
+  - { id: light-neutral-10, name: Light Neutral 10, value: "#454C54" }
+  - { id: light-neutral-11, name: Light Neutral 11, value: "#393F46" }
+  - { id: light-neutral-12, name: Light Neutral 12, value: "#25292E", description: "High-contrast text." }
+  - { id: light-neutral-13, name: Light Neutral 13, value: "#1F2328", description: "Default body text." }
+
+  # ─── Light-mode blue scale ──────────────────────────────────────
+  - { id: light-blue-0, name: Light Blue 0, value: "#DDF4FF" }
+  - { id: light-blue-1, name: Light Blue 1, value: "#B6E3FF" }
+  - { id: light-blue-2, name: Light Blue 2, value: "#80CCFF" }
+  - { id: light-blue-3, name: Light Blue 3, value: "#54AEFF" }
+  - { id: light-blue-4, name: Light Blue 4, value: "#218BFF" }
+  - { id: light-blue-5, name: Light Blue 5, value: "#0969DA", description: "Default link / primary action." }
+  - { id: light-blue-6, name: Light Blue 6, value: "#0550AE" }
+  - { id: light-blue-7, name: Light Blue 7, value: "#033D8B" }
+  - { id: light-blue-8, name: Light Blue 8, value: "#0A3069" }
+  - { id: light-blue-9, name: Light Blue 9, value: "#002155" }
+
+  # ─── Light-mode green scale ─────────────────────────────────────
+  - { id: light-green-0, name: Light Green 0, value: "#DAFBE1" }
+  - { id: light-green-1, name: Light Green 1, value: "#ACEEBB" }
+  - { id: light-green-2, name: Light Green 2, value: "#6FDD8B" }
+  - { id: light-green-3, name: Light Green 3, value: "#4AC26B" }
+  - { id: light-green-4, name: Light Green 4, value: "#2DA44E" }
+  - { id: light-green-5, name: Light Green 5, value: "#1A7F37", description: "Success." }
+  - { id: light-green-6, name: Light Green 6, value: "#116329" }
+  - { id: light-green-7, name: Light Green 7, value: "#044F1E" }
+  - { id: light-green-8, name: Light Green 8, value: "#003D16" }
+  - { id: light-green-9, name: Light Green 9, value: "#002D11" }
+
+  # ─── Light-mode yellow scale ────────────────────────────────────
+  - { id: light-yellow-0, name: Light Yellow 0, value: "#FFF8C5" }
+  - { id: light-yellow-1, name: Light Yellow 1, value: "#FAE17D" }
+  - { id: light-yellow-2, name: Light Yellow 2, value: "#EAC54F" }
+  - { id: light-yellow-3, name: Light Yellow 3, value: "#D4A72C" }
+  - { id: light-yellow-4, name: Light Yellow 4, value: "#BF8700" }
+  - { id: light-yellow-5, name: Light Yellow 5, value: "#9A6700", description: "Warning." }
+  - { id: light-yellow-6, name: Light Yellow 6, value: "#7D4E00" }
+  - { id: light-yellow-7, name: Light Yellow 7, value: "#633C01" }
+  - { id: light-yellow-8, name: Light Yellow 8, value: "#4D2D00" }
+  - { id: light-yellow-9, name: Light Yellow 9, value: "#3B2300" }
+
+  # ─── Light-mode orange scale ────────────────────────────────────
+  - { id: light-orange-0, name: Light Orange 0, value: "#FFF1E5" }
+  - { id: light-orange-1, name: Light Orange 1, value: "#FFD8B5" }
+  - { id: light-orange-2, name: Light Orange 2, value: "#FFB77C" }
+  - { id: light-orange-3, name: Light Orange 3, value: "#FB8F44" }
+  - { id: light-orange-4, name: Light Orange 4, value: "#E16F24" }
+  - { id: light-orange-5, name: Light Orange 5, value: "#BC4C00", description: "Severe / attention." }
+  - { id: light-orange-6, name: Light Orange 6, value: "#953800" }
+  - { id: light-orange-7, name: Light Orange 7, value: "#762C00" }
+  - { id: light-orange-8, name: Light Orange 8, value: "#5C2200" }
+  - { id: light-orange-9, name: Light Orange 9, value: "#471700" }
+
+  # ─── Light-mode red scale ───────────────────────────────────────
+  - { id: light-red-0, name: Light Red 0, value: "#FFEBE9" }
+  - { id: light-red-1, name: Light Red 1, value: "#FFCECB" }
+  - { id: light-red-2, name: Light Red 2, value: "#FFABA8" }
+  - { id: light-red-3, name: Light Red 3, value: "#FF8182" }
+  - { id: light-red-4, name: Light Red 4, value: "#FA4549" }
+  - { id: light-red-5, name: Light Red 5, value: "#CF222E", description: "Danger / closed PR." }
+  - { id: light-red-6, name: Light Red 6, value: "#A40E26" }
+  - { id: light-red-7, name: Light Red 7, value: "#82071E" }
+  - { id: light-red-8, name: Light Red 8, value: "#660018" }
+  - { id: light-red-9, name: Light Red 9, value: "#4C0014" }
+
+  # ─── Light-mode purple scale ────────────────────────────────────
+  - { id: light-purple-0, name: Light Purple 0, value: "#FBEFFF" }
+  - { id: light-purple-1, name: Light Purple 1, value: "#ECD8FF" }
+  - { id: light-purple-2, name: Light Purple 2, value: "#D8B9FF" }
+  - { id: light-purple-3, name: Light Purple 3, value: "#C297FF" }
+  - { id: light-purple-4, name: Light Purple 4, value: "#A475F9" }
+  - { id: light-purple-5, name: Light Purple 5, value: "#8250DF", description: "Done / merged-PR purple." }
+  - { id: light-purple-6, name: Light Purple 6, value: "#6639BA" }
+  - { id: light-purple-7, name: Light Purple 7, value: "#512A97" }
+  - { id: light-purple-8, name: Light Purple 8, value: "#3E1F79" }
+  - { id: light-purple-9, name: Light Purple 9, value: "#2E1461" }
+
+  # ─── Light-mode pink scale ──────────────────────────────────────
+  - { id: light-pink-0, name: Light Pink 0, value: "#FFEFF7" }
+  - { id: light-pink-1, name: Light Pink 1, value: "#FFD3EB" }
+  - { id: light-pink-2, name: Light Pink 2, value: "#FFADDA" }
+  - { id: light-pink-3, name: Light Pink 3, value: "#FF80C8" }
+  - { id: light-pink-4, name: Light Pink 4, value: "#E85AAD" }
+  - { id: light-pink-5, name: Light Pink 5, value: "#BF3989" }
+  - { id: light-pink-6, name: Light Pink 6, value: "#99286E" }
+  - { id: light-pink-7, name: Light Pink 7, value: "#772057" }
+  - { id: light-pink-8, name: Light Pink 8, value: "#611347" }
+  - { id: light-pink-9, name: Light Pink 9, value: "#4D0336" }
+
+  # ─── Light-mode coral scale ─────────────────────────────────────
+  - { id: light-coral-0, name: Light Coral 0, value: "#FFF0EB" }
+  - { id: light-coral-1, name: Light Coral 1, value: "#FFD6CC" }
+  - { id: light-coral-2, name: Light Coral 2, value: "#FFB4A1" }
+  - { id: light-coral-3, name: Light Coral 3, value: "#FD8C73" }
+  - { id: light-coral-4, name: Light Coral 4, value: "#EC6547" }
+  - { id: light-coral-5, name: Light Coral 5, value: "#C4432B" }
+  - { id: light-coral-6, name: Light Coral 6, value: "#9E2F1C" }
+  - { id: light-coral-7, name: Light Coral 7, value: "#801F0F" }
+  - { id: light-coral-8, name: Light Coral 8, value: "#691105" }
+  - { id: light-coral-9, name: Light Coral 9, value: "#510901" }
+
+  # ─── Dark-mode neutral scale (0..13) ────────────────────────────
+  - { id: dark-neutral-0,  name: Dark Neutral 0,  value: "#010409", description: "Deep canvas — beneath the page." }
+  - { id: dark-neutral-1,  name: Dark Neutral 1,  value: "#0D1117", description: "Page canvas in dark mode." }
+  - { id: dark-neutral-2,  name: Dark Neutral 2,  value: "#151B23", description: "Subtle background." }
+  - { id: dark-neutral-3,  name: Dark Neutral 3,  value: "#212830" }
+  - { id: dark-neutral-4,  name: Dark Neutral 4,  value: "#262C36" }
+  - { id: dark-neutral-5,  name: Dark Neutral 5,  value: "#2A313C" }
+  - { id: dark-neutral-6,  name: Dark Neutral 6,  value: "#2F3742" }
+  - { id: dark-neutral-7,  name: Dark Neutral 7,  value: "#3D444D", description: "Default border." }
+  - { id: dark-neutral-8,  name: Dark Neutral 8,  value: "#656C76", description: "Muted icon / tertiary text." }
+  - { id: dark-neutral-9,  name: Dark Neutral 9,  value: "#9198A1", description: "Secondary text." }
+  - { id: dark-neutral-10, name: Dark Neutral 10, value: "#B7BDC8" }
+  - { id: dark-neutral-11, name: Dark Neutral 11, value: "#D1D7E0" }
+  - { id: dark-neutral-12, name: Dark Neutral 12, value: "#F0F6FC", description: "Default body text in dark mode." }
+  - { id: dark-neutral-13, name: Dark Neutral 13, value: "#FFFFFF", description: "High-contrast text." }
+
+  # ─── Dark-mode blue scale ───────────────────────────────────────
+  - { id: dark-blue-0, name: Dark Blue 0, value: "#CAE8FF" }
+  - { id: dark-blue-1, name: Dark Blue 1, value: "#A5D6FF" }
+  - { id: dark-blue-2, name: Dark Blue 2, value: "#79C0FF" }
+  - { id: dark-blue-3, name: Dark Blue 3, value: "#58A6FF", description: "Default link in dark mode." }
+  - { id: dark-blue-4, name: Dark Blue 4, value: "#388BFD" }
+  - { id: dark-blue-5, name: Dark Blue 5, value: "#1F6FEB" }
+  - { id: dark-blue-6, name: Dark Blue 6, value: "#1158C7" }
+  - { id: dark-blue-7, name: Dark Blue 7, value: "#0D419D" }
+  - { id: dark-blue-8, name: Dark Blue 8, value: "#0C2D6B" }
+  - { id: dark-blue-9, name: Dark Blue 9, value: "#051D4D" }
+
+  # ─── Dark-mode green scale ──────────────────────────────────────
+  - { id: dark-green-0, name: Dark Green 0, value: "#AFF5B4" }
+  - { id: dark-green-1, name: Dark Green 1, value: "#7EE787" }
+  - { id: dark-green-2, name: Dark Green 2, value: "#56D364" }
+  - { id: dark-green-3, name: Dark Green 3, value: "#3FB950", description: "Success in dark mode." }
+  - { id: dark-green-4, name: Dark Green 4, value: "#2EA043" }
+  - { id: dark-green-5, name: Dark Green 5, value: "#238636" }
+  - { id: dark-green-6, name: Dark Green 6, value: "#196C2E" }
+  - { id: dark-green-7, name: Dark Green 7, value: "#0F5323" }
+  - { id: dark-green-8, name: Dark Green 8, value: "#033A16" }
+  - { id: dark-green-9, name: Dark Green 9, value: "#04260F" }
+
+  # ─── Dark-mode yellow scale ─────────────────────────────────────
+  - { id: dark-yellow-0, name: Dark Yellow 0, value: "#F8E3A1" }
+  - { id: dark-yellow-1, name: Dark Yellow 1, value: "#F2CC60" }
+  - { id: dark-yellow-2, name: Dark Yellow 2, value: "#E3B341" }
+  - { id: dark-yellow-3, name: Dark Yellow 3, value: "#D29922", description: "Warning in dark mode." }
+  - { id: dark-yellow-4, name: Dark Yellow 4, value: "#BB8009" }
+  - { id: dark-yellow-5, name: Dark Yellow 5, value: "#9E6A03" }
+  - { id: dark-yellow-6, name: Dark Yellow 6, value: "#845306" }
+  - { id: dark-yellow-7, name: Dark Yellow 7, value: "#693E00" }
+  - { id: dark-yellow-8, name: Dark Yellow 8, value: "#4B2900" }
+  - { id: dark-yellow-9, name: Dark Yellow 9, value: "#341A00" }
+
+  # ─── Dark-mode orange scale ─────────────────────────────────────
+  - { id: dark-orange-0, name: Dark Orange 0, value: "#FFDFB6" }
+  - { id: dark-orange-1, name: Dark Orange 1, value: "#FFC680" }
+  - { id: dark-orange-2, name: Dark Orange 2, value: "#FFA657" }
+  - { id: dark-orange-3, name: Dark Orange 3, value: "#F0883E", description: "Severe / attention in dark mode." }
+  - { id: dark-orange-4, name: Dark Orange 4, value: "#DB6D28" }
+  - { id: dark-orange-5, name: Dark Orange 5, value: "#BD561D" }
+  - { id: dark-orange-6, name: Dark Orange 6, value: "#9B4215" }
+  - { id: dark-orange-7, name: Dark Orange 7, value: "#762D0A" }
+  - { id: dark-orange-8, name: Dark Orange 8, value: "#5A1E02" }
+  - { id: dark-orange-9, name: Dark Orange 9, value: "#3D1300" }
+
+  # ─── Dark-mode red scale ────────────────────────────────────────
+  - { id: dark-red-0, name: Dark Red 0, value: "#FFDCD7" }
+  - { id: dark-red-1, name: Dark Red 1, value: "#FFC1BA" }
+  - { id: dark-red-2, name: Dark Red 2, value: "#FFA198" }
+  - { id: dark-red-3, name: Dark Red 3, value: "#FF7B72", description: "Danger / closed PR in dark mode." }
+  - { id: dark-red-4, name: Dark Red 4, value: "#F85149" }
+  - { id: dark-red-5, name: Dark Red 5, value: "#DA3633" }
+  - { id: dark-red-6, name: Dark Red 6, value: "#B62324" }
+  - { id: dark-red-7, name: Dark Red 7, value: "#8E1519" }
+  - { id: dark-red-8, name: Dark Red 8, value: "#67060C" }
+  - { id: dark-red-9, name: Dark Red 9, value: "#490202" }
+
+  # ─── Dark-mode purple scale ─────────────────────────────────────
+  - { id: dark-purple-0, name: Dark Purple 0, value: "#EDDEFF" }
+  - { id: dark-purple-1, name: Dark Purple 1, value: "#E2C5FF" }
+  - { id: dark-purple-2, name: Dark Purple 2, value: "#D2A8FF" }
+  - { id: dark-purple-3, name: Dark Purple 3, value: "#BE8FFF", description: "Done / merged PR in dark mode." }
+  - { id: dark-purple-4, name: Dark Purple 4, value: "#AB7DF8" }
+  - { id: dark-purple-5, name: Dark Purple 5, value: "#8957E5" }
+  - { id: dark-purple-6, name: Dark Purple 6, value: "#6E40C9" }
+  - { id: dark-purple-7, name: Dark Purple 7, value: "#553098" }
+  - { id: dark-purple-8, name: Dark Purple 8, value: "#3C1E70" }
+  - { id: dark-purple-9, name: Dark Purple 9, value: "#271052" }
+
+  # ─── Dark-mode pink scale ───────────────────────────────────────
+  - { id: dark-pink-0, name: Dark Pink 0, value: "#FFDAEC" }
+  - { id: dark-pink-1, name: Dark Pink 1, value: "#FFBEDD" }
+  - { id: dark-pink-2, name: Dark Pink 2, value: "#FF9BCE" }
+  - { id: dark-pink-3, name: Dark Pink 3, value: "#F778BA" }
+  - { id: dark-pink-4, name: Dark Pink 4, value: "#DB61A2" }
+  - { id: dark-pink-5, name: Dark Pink 5, value: "#BF4B8A" }
+  - { id: dark-pink-6, name: Dark Pink 6, value: "#9E3670" }
+  - { id: dark-pink-7, name: Dark Pink 7, value: "#7D2457" }
+  - { id: dark-pink-8, name: Dark Pink 8, value: "#5E103E" }
+  - { id: dark-pink-9, name: Dark Pink 9, value: "#42062A" }
+
+  # ─── Dark-mode coral scale ──────────────────────────────────────
+  - { id: dark-coral-0, name: Dark Coral 0, value: "#FFDDD2" }
+  - { id: dark-coral-1, name: Dark Coral 1, value: "#FFC2B2" }
+  - { id: dark-coral-2, name: Dark Coral 2, value: "#FFA28B" }
+  - { id: dark-coral-3, name: Dark Coral 3, value: "#F78166" }
+  - { id: dark-coral-4, name: Dark Coral 4, value: "#EA6045" }
+  - { id: dark-coral-5, name: Dark Coral 5, value: "#CF462D" }
+  - { id: dark-coral-6, name: Dark Coral 6, value: "#AC3220" }
+  - { id: dark-coral-7, name: Dark Coral 7, value: "#872012" }
+  - { id: dark-coral-8, name: Dark Coral 8, value: "#640D04" }
+  - { id: dark-coral-9, name: Dark Coral 9, value: "#460701" }
+
+modes:
+  light:
+    roles:
+      background: light-neutral-0
+      surface: light-neutral-1
+      surface-elevated: light-neutral-0
+      text-primary: light-neutral-13
+      text-secondary: light-neutral-9
+      text-tertiary: light-neutral-8
+      primary: light-blue-5
+      primary-hover: light-blue-6
+      accent: light-purple-5
+      accent-hover: light-purple-6
+      warning: light-yellow-5
+      warning-hover: light-yellow-6
+      error: light-red-5
+      success: light-green-5
+      border: light-neutral-6
+      severe: light-orange-5
+
+  dark:
+    roles:
+      background: dark-neutral-1
+      surface: dark-neutral-2
+      surface-elevated: dark-neutral-3
+      text-primary: dark-neutral-12
+      text-secondary: dark-neutral-9
+      text-tertiary: dark-neutral-8
+      primary: dark-blue-3
+      primary-hover: dark-blue-2
+      accent: dark-purple-3
+      accent-hover: dark-purple-2
+      warning: dark-yellow-3
+      warning-hover: dark-yellow-2
+      error: dark-red-3
+      success: dark-green-3
+      border: dark-neutral-7
+      severe: dark-orange-3

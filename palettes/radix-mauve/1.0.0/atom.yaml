@@ -1,0 +1,156 @@
+kind: palette
+id: radix-mauve
+version: 1.0.0
+name: Radix Mauve
+description: >
+  Radix UI's mauve scale — 12 semantically labeled steps published in
+  both light and dark variants. A warm, near-purple gray. Pairs well with purple, pink, and red-leaning hues. Step 1 is app background,
+  step 9 is the solid brand color, step 12 is high-contrast text.
+  The same step number means the same semantic role across light and
+  dark, with different hex values per mode.
+tags: [radix, neutral, design-system, scale, dual-mode]
+
+provenance:
+  source: https://www.radix-ui.com/colors/docs/palette-composition/scales
+  license: MIT
+  attribution: >
+    Radix Colors, Copyright WorkOS, Inc., MIT licensed. Imported from
+    the radix-ui/colors repository on GitHub.
+  importedDate: 2026-05-17
+  importedFromVersion: "3.0.0"
+  notes: >
+    Radix publishes distinct hex values for each scale in light and dark mode. This atom carries both as -light and -dark suffixed swatches; modes.light.roles points at -light swatches and modes.dark.roles at -dark swatches. Mauve is a neutral, so every semantic role — including text — is drawn from the mauve scale itself.
+
+swatches:
+  # ─── Light-mode steps ──────────────────────────────────────────
+  - id: mauve-1-light
+    name: Mauve 1 (light)
+    value: "#FDFCFD"
+    description: App background.
+  - id: mauve-2-light
+    name: Mauve 2 (light)
+    value: "#FAF9FB"
+    description: Subtle background.
+  - id: mauve-3-light
+    name: Mauve 3 (light)
+    value: "#F2EFF3"
+    description: UI element background.
+  - id: mauve-4-light
+    name: Mauve 4 (light)
+    value: "#EAE7EC"
+    description: Hovered UI element background.
+  - id: mauve-5-light
+    name: Mauve 5 (light)
+    value: "#E3DFE6"
+    description: Active / selected UI element background.
+  - id: mauve-6-light
+    name: Mauve 6 (light)
+    value: "#DBD8E0"
+    description: Subtle borders and separators.
+  - id: mauve-7-light
+    name: Mauve 7 (light)
+    value: "#D0CDD7"
+    description: UI element border and focus rings.
+  - id: mauve-8-light
+    name: Mauve 8 (light)
+    value: "#BCBAC7"
+    description: Hovered UI element border.
+  - id: mauve-9-light
+    name: Mauve 9 (light)
+    value: "#8E8C99"
+    description: Solid background — the brand color step.
+  - id: mauve-10-light
+    name: Mauve 10 (light)
+    value: "#84828E"
+    description: Hovered solid background.
+  - id: mauve-11-light
+    name: Mauve 11 (light)
+    value: "#65636D"
+    description: Low-contrast text.
+  - id: mauve-12-light
+    name: Mauve 12 (light)
+    value: "#211F26"
+    description: High-contrast text.
+  # ─── Dark-mode steps ───────────────────────────────────────────
+  - id: mauve-1-dark
+    name: Mauve 1 (dark)
+    value: "#121113"
+    description: App background.
+  - id: mauve-2-dark
+    name: Mauve 2 (dark)
+    value: "#1A191B"
+    description: Subtle background.
+  - id: mauve-3-dark
+    name: Mauve 3 (dark)
+    value: "#232225"
+    description: UI element background.
+  - id: mauve-4-dark
+    name: Mauve 4 (dark)
+    value: "#2B292D"
+    description: Hovered UI element background.
+  - id: mauve-5-dark
+    name: Mauve 5 (dark)
+    value: "#323035"
+    description: Active / selected UI element background.
+  - id: mauve-6-dark
+    name: Mauve 6 (dark)
+    value: "#3C393F"
+    description: Subtle borders and separators.
+  - id: mauve-7-dark
+    name: Mauve 7 (dark)
+    value: "#49474E"
+    description: UI element border and focus rings.
+  - id: mauve-8-dark
+    name: Mauve 8 (dark)
+    value: "#625F69"
+    description: Hovered UI element border.
+  - id: mauve-9-dark
+    name: Mauve 9 (dark)
+    value: "#6F6D78"
+    description: Solid background — the brand color step.
+  - id: mauve-10-dark
+    name: Mauve 10 (dark)
+    value: "#7C7A85"
+    description: Hovered solid background.
+  - id: mauve-11-dark
+    name: Mauve 11 (dark)
+    value: "#B5B2BC"
+    description: Low-contrast text.
+  - id: mauve-12-dark
+    name: Mauve 12 (dark)
+    value: "#EEEEF0"
+    description: High-contrast text.
+
+modes:
+  light:
+    roles:
+      background: mauve-1-light
+      surface: mauve-2-light
+      surface-elevated: mauve-3-light
+      text-primary: mauve-12-light
+      text-secondary: mauve-11-light
+      text-tertiary: mauve-9-light
+      primary: mauve-9-light
+      primary-hover: mauve-10-light
+      accent: mauve-8-light
+      accent-hover: mauve-7-light
+      warning: mauve-9-light
+      warning-hover: mauve-10-light
+      error: mauve-12-light
+      success: mauve-9-light
+  dark:
+    roles:
+      background: mauve-1-dark
+      surface: mauve-2-dark
+      surface-elevated: mauve-3-dark
+      text-primary: mauve-12-dark
+      text-secondary: mauve-11-dark
+      text-tertiary: mauve-9-dark
+      primary: mauve-9-dark
+      primary-hover: mauve-10-dark
+      accent: mauve-8-dark
+      accent-hover: mauve-7-dark
+      warning: mauve-9-dark
+      warning-hover: mauve-10-dark
+      error: mauve-12-dark
+      success: mauve-9-dark

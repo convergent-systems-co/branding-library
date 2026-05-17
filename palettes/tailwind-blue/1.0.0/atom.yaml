@@ -1,0 +1,108 @@
+kind: palette
+id: tailwind-blue
+version: 1.0.0
+name: Tailwind Blue
+description: >
+  Tailwind CSS's blue hue family — 11 stops from 50 (lightest) to
+  950 (darkest), forming a cool blue chromatic scale. Use directly as a brand
+  palette or pair with an accent hue from another tailwind-* atom.
+tags: [tailwind, cool, chromatic]
+
+provenance:
+  source: https://tailwindcss.com/docs/colors
+  license: MIT
+  attribution: >
+    Tailwind CSS colors, Copyright Tailwind Labs Inc., MIT licensed.
+    Hex values derived from canonical OKLCH definitions in
+    packages/tailwindcss/theme.css via the W3C CSS Color Module Level 4
+    OKLCH → sRGB conversion.
+  importedDate: 2026-05-17
+  importedFromVersion: "4.3.0"
+
+swatches:
+  - id: blue-50
+    name: Blue 50
+    value: "#EFF6FF"
+    description: Lightest stop — page background in light mode.
+  - id: blue-100
+    name: Blue 100
+    value: "#DBEAFE"
+    description: Very light surface — cards and panels on light background.
+  - id: blue-200
+    name: Blue 200
+    value: "#BEDBFF"
+    description: Light divider, hairline, or subtle fill.
+  - id: blue-300
+    name: Blue 300
+    value: "#8EC5FF"
+    description: Muted accent or disabled-state foreground in light mode.
+  - id: blue-400
+    name: Blue 400
+    value: "#51A2FF"
+    description: Mid-light tint — soft accent, hover wash, decorative fill.
+  - id: blue-500
+    name: Blue 500
+    value: "#2B7FFF"
+    description: Mid stop — the canonical brand hue for chromatic palettes.
+  - id: blue-600
+    name: Blue 600
+    value: "#155DFC"
+    description: Mid-dark stop — primary action in light mode for chromatic palettes.
+  - id: blue-700
+    name: Blue 700
+    value: "#1447E6"
+    description: Dark stop — pressed states, deeper emphasis.
+  - id: blue-800
+    name: Blue 800
+    value: "#193CB8"
+    description: Very dark stop — heavy emphasis, secondary text on light.
+  - id: blue-900
+    name: Blue 900
+    value: "#1C398E"
+    description: Near-darkest stop — body text on light, surface on dark.
+  - id: blue-950
+    name: Blue 950
+    value: "#162456"
+    description: Darkest stop — page background in dark mode.
+  - id: pure-white
+    name: Pure White
+    value: "#FFFFFF"
+    description: Maximum-elevation surface and high-contrast text in dark mode.
+  - id: pure-black
+    name: Pure Black
+    value: "#000000"
+    description: High-contrast text on light chromatic hues where the deepest stop reads as the hue, not black.
+
+modes:
+  light:
+    roles:
+      background: blue-50
+      surface: blue-100
+      surface-elevated: pure-white
+      text-primary: blue-900
+      text-secondary: blue-800
+      text-tertiary: blue-600
+      primary: blue-500
+      primary-hover: blue-600
+      accent: blue-700
+      accent-hover: blue-600
+      warning: blue-300
+      warning-hover: blue-400
+      error: blue-700
+      success: blue-600
+  dark:
+    roles:
+      background: blue-950
+      surface: blue-900
+      surface-elevated: blue-800
+      text-primary: blue-50
+      text-secondary: blue-200
+      text-tertiary: blue-400
+      primary: blue-400
+      primary-hover: blue-300
+      accent: blue-300
+      accent-hover: blue-200
+      warning: blue-600
+      warning-hover: blue-500
+      error: blue-300
+      success: blue-400
