@@ -1,0 +1,56 @@
+kind: font
+id: segoe-ui
+version: 1.0.0
+name: Segoe UI
+description: >
+  Segoe UI — Microsoft's corporate user-interface typeface, shipped as
+  the default system font on Windows since Windows Vista and used
+  throughout the Microsoft 365, Fluent, and Office product surfaces.
+  Distributed only via the operating system; specified in CSS as a
+  named family with a system-font fallback stack for non-Windows
+  consumers.
+family: Segoe UI
+classification: sans-serif
+tags: [proprietary, system, microsoft, fluent, windows, ui]
+
+provenance:
+  source: https://fluent2.microsoft.design/typography
+  license: Proprietary — Microsoft Corporation, distributed with Windows
+  attribution: >
+    Segoe UI is a trademark of the Microsoft group of companies,
+    licensed from Monotype. It is bundled with Microsoft Windows and
+    Microsoft 365 products. External / cross-platform consumers must
+    fall back to a comparable system sans (system-ui, Inter, or the
+    OS-default) rather than redistribute the font binaries.
+  importedDate: 2026-05-17
+  notes: >
+    Fluent 2 specifies Segoe UI Variable as the typeface for modern
+    Windows surfaces; older Microsoft properties still call out the
+    static Segoe UI weights (Light, Regular, Semibold, Bold). The
+    `system` source kind below leans on Windows / system-ui delivery
+    and a humanist-sans fallback for non-Windows clients.
+
+source:
+  kind: system
+  stack:
+    - Segoe UI Variable
+    - Segoe UI
+    - system-ui
+    - -apple-system
+    - BlinkMacSystemFont
+    - Helvetica Neue
+    - Arial
+    - sans-serif
+
+fallbackStack:
+  - system-ui
+  - Inter
+  - Helvetica Neue
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 300, style: normal }
+  - { weight: 400, style: normal }
+  - { weight: 600, style: normal }
+  - { weight: 700, style: normal }

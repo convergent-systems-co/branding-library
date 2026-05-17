@@ -1,0 +1,116 @@
+kind: palette
+id: google
+version: 1.0.0
+name: Google
+description: >
+  Google corporate palette anchored on the four logo colors — Blue
+  (#4285F4), Red (#EA4335), Yellow (#FBBC04), and Green (#34A853) —
+  used across the Google wordmark, the four-color "G" mark, and the
+  Material Design system primaries. Pairs the four chromatic
+  brand-defining hues with a neutral grey ramp drawn from Material
+  Design's surface and text guidance.
+tags: [tech, google, material, search, four-color]
+
+provenance:
+  source: https://about.google/brand-resource-center/logos-list/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Google, the Google logo, the Google "G" mark, Material Design, and
+    related names and marks are trademarks of Google LLC. Brand colors
+    documented here are published on the Google Brand Resource Center
+    (about.google/brand-resource-center/) and on the Material Design 3
+    color reference (m3.material.io/styles/color).
+  importedDate: 2026-05-17
+  notes: >
+    Brand-atoms' read of Google's public brand-resource and Material
+    Design guidance. This file is not an official Google brand
+    document. Google's actual palette in Material 3 is dynamic
+    (tonal palettes derived per-device); the values here are the
+    canonical four-color logo hues plus a static Material-style
+    neutral ramp suitable for cross-product brand work.
+
+swatches:
+  - id: google-blue
+    name: Google Blue
+    value: "#4285F4"
+    description: >
+      First letter of the Google wordmark and the dominant brand
+      blue. Material Design's "Blue 500" — the primary CTA color
+      across many Google product surfaces.
+  - id: google-red
+    name: Google Red
+    value: "#EA4335"
+    description: >
+      Second letter of the wordmark. Material's "Red 500" — used as
+      the error / destructive color across Google product UI.
+  - id: google-yellow
+    name: Google Yellow
+    value: "#FBBC04"
+    description: >
+      Third letter of the wordmark. Material's "Yellow 600" — used
+      for highlight, warning, and starred / favorited states.
+  - id: google-green
+    name: Google Green
+    value: "#34A853"
+    description: >
+      Fifth letter of the wordmark. Material's "Green 500" — used
+      as the success / confirmation color across Google product UI.
+  - id: google-grey-900
+    name: Google Grey 900
+    value: "#202124"
+    description: Primary text on light backgrounds; Material's
+      "Grey 900" near-black.
+  - id: google-grey-700
+    name: Google Grey 700
+    value: "#5F6368"
+    description: Secondary text and inactive icons. Material's "Grey 700".
+  - id: google-grey-500
+    name: Google Grey 500
+    value: "#9AA0A6"
+    description: Tertiary text and dividers. Material's "Grey 500".
+  - id: google-grey-200
+    name: Google Grey 200
+    value: "#E8EAED"
+    description: Subtle surface and divider tint. Material's "Grey 200".
+  - id: google-grey-100
+    name: Google Grey 100
+    value: "#F1F3F4"
+    description: Page-level background; Material's "Grey 100".
+  - id: google-white
+    name: Google White
+    value: "#FFFFFF"
+    description: Base background and reversed surface fill.
+
+modes:
+  light:
+    roles:
+      background: google-white
+      surface: google-grey-100
+      surface-elevated: google-white
+      text-primary: google-grey-900
+      text-secondary: google-grey-700
+      text-tertiary: google-grey-500
+      primary: google-blue
+      primary-hover: google-blue
+      accent: google-green
+      accent-hover: google-green
+      warning: google-yellow
+      warning-hover: google-yellow
+      error: google-red
+      success: google-green
+  dark:
+    roles:
+      background: google-grey-900
+      surface: google-grey-700
+      surface-elevated: google-grey-500
+      text-primary: google-white
+      text-secondary: google-grey-200
+      text-tertiary: google-grey-500
+      primary: google-blue
+      primary-hover: google-blue
+      accent: google-green
+      accent-hover: google-green
+      warning: google-yellow
+      warning-hover: google-yellow
+      error: google-red
+      success: google-green

@@ -1,0 +1,165 @@
+kind: palette
+id: openai
+version: 1.0.0
+name: OpenAI
+description: >
+  OpenAI's brand palette as observed on the live marketing site
+  (openai.com). The brand is monochrome-first: a pure-white canvas
+  with pure-black foreground in light mode, inverted in dark, and
+  a calibrated five-stop neutral ramp ("primary" / "secondary" /
+  "tertiary") for surfaces and quiet emphasis.
+
+  OpenAI's research and documentation surfaces additionally publish
+  a "hue" scale (red, blue, green, yellow, magenta, lime) used in
+  diagrams, code-syntax highlighting, and data visualization. These
+  are preserved here as a documented secondary scale.
+
+tags: [openai, ai, brand, minimal, monochrome]
+
+provenance:
+  source: https://openai.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    OpenAI, OpenCo. — palette values captured from the deployed
+    stylesheet on openai.com (--color-primary-*, --color-secondary-*,
+    --color-tertiary-*, --color-hue-*, and --color-gray-* token
+    families). OpenAI marks and logos are property of OpenAI.
+  importedDate: 2026-05-17
+  notes: >
+    The token names primary/secondary/tertiary in OpenAI's design
+    system are NOT brand-role names — they are neutral ramps where
+    "primary" = light-on-dark, "secondary" = dark-on-light. The
+    "solid" suffix indicates fully opaque hex; the non-solid tokens
+    are alpha-on-base. This atom records the solid variants for
+    swatch fidelity and maps them into role names per the
+    branding-library schema.
+
+swatches:
+  # ─── Foundations ────────────────────────────────────────────────
+  - id: openai-black
+    name: OpenAI Black
+    value: "#000000"
+    description: Canvas in dark mode; foreground in light mode.
+  - id: openai-white
+    name: OpenAI White
+    value: "#FFFFFF"
+    description: Canvas in light mode; foreground in dark mode.
+
+  # ─── Primary solid ramp (light-on-dark neutrals) ────────────────
+  - id: primary-solid-4
+    name: Primary Solid 4
+    value: "#1F1F1F"
+    description: Subtle elevated surface on dark canvas.
+  - id: primary-solid-12
+    name: Primary Solid 12
+    value: "#333333"
+    description: Borders / quiet dividers on dark canvas.
+  - id: primary-solid-44
+    name: Primary Solid 44
+    value: "#707070"
+    description: Tertiary text on dark canvas.
+  - id: primary-solid-60
+    name: Primary Solid 60
+    value: "#999999"
+    description: Secondary text on dark canvas.
+  - id: primary-solid-80
+    name: Primary Solid 80
+    value: "#CCCCCC"
+    description: Primary muted text on dark canvas.
+
+  # ─── Secondary solid ramp (dark-on-light neutrals) ──────────────
+  - id: secondary-solid-4
+    name: Secondary Solid 4
+    value: "#F5F5F5"
+    description: Subtle elevated surface on light canvas.
+  - id: secondary-solid-12
+    name: Secondary Solid 12
+    value: "#E0E0E0"
+    description: Borders / quiet dividers on light canvas.
+  - id: secondary-solid-44
+    name: Secondary Solid 44
+    value: "#8F8F8F"
+    description: Tertiary text on light canvas.
+  - id: secondary-solid-60
+    name: Secondary Solid 60
+    value: "#666666"
+    description: Secondary text on light canvas.
+  - id: secondary-solid-80
+    name: Secondary Solid 80
+    value: "#333333"
+    description: Body text on light canvas.
+
+  # ─── Tertiary solid ramp (deep neutrals) ────────────────────────
+  - id: tertiary-solid-60
+    name: Tertiary Solid 60
+    value: "#888888"
+    description: Mid-tone neutral.
+  - id: tertiary-solid-80
+    name: Tertiary Solid 80
+    value: "#5C5C5C"
+    description: Deep neutral.
+  - id: tertiary-solid-100
+    name: Tertiary Solid 100
+    value: "#1F1F1F"
+    description: Near-black accent.
+
+  # ─── Hue accents (data-viz, syntax, illustration) ───────────────
+  - id: openai-hue-red
+    name: OpenAI Hue Red
+    value: "#ED6079"
+    description: Hue ramp red — used in data viz and code syntax.
+  - id: openai-hue-lime
+    name: OpenAI Hue Lime
+    value: "#8FAC39"
+  - id: openai-hue-magenta
+    name: OpenAI Hue Magenta
+    value: "#C759AB"
+  - id: openai-hue-blue
+    name: OpenAI Hue Blue
+    value: "#36A6D7"
+  - id: openai-hue-yellow
+    name: OpenAI Hue Yellow
+    value: "#E2A727"
+
+  # ─── Supply accent (research/doc link blue) ─────────────────────
+  - id: openai-accent-blue
+    name: OpenAI Accent Blue
+    value: "#4DA3FF"
+    description: Documented `--color-supply-accent-color` — link / interactive blue.
+
+modes:
+  light:
+    roles:
+      background: openai-white
+      surface: secondary-solid-4
+      surface-elevated: openai-white
+      text-primary: openai-black
+      text-secondary: secondary-solid-60
+      text-tertiary: secondary-solid-44
+      primary: openai-black
+      primary-hover: secondary-solid-80
+      accent: openai-accent-blue
+      accent-hover: openai-hue-blue
+      warning: openai-hue-yellow
+      warning-hover: openai-hue-yellow
+      error: openai-hue-red
+      success: openai-hue-lime
+      border: secondary-solid-12
+
+  dark:
+    roles:
+      background: openai-black
+      surface: primary-solid-4
+      surface-elevated: primary-solid-12
+      text-primary: openai-white
+      text-secondary: primary-solid-80
+      text-tertiary: primary-solid-60
+      primary: openai-white
+      primary-hover: primary-solid-80
+      accent: openai-accent-blue
+      accent-hover: openai-hue-blue
+      warning: openai-hue-yellow
+      warning-hover: openai-hue-yellow
+      error: openai-hue-red
+      success: openai-hue-lime
+      border: primary-solid-12

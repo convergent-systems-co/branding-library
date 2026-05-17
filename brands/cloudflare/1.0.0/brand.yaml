@@ -1,0 +1,125 @@
+id: cloudflare
+version: 1.0.0
+name: Cloudflare
+description: >
+  Cloudflare, Inc. is a global edge-network and security company whose
+  products span CDN, DNS, DDoS protection, zero-trust networking, and
+  developer-platform services (Workers, R2, D1). The visual identity is
+  built around a single signature color — Cloudflare Orange (#F38020) —
+  paired with a dual-orange gradient and a restrained neutral palette
+  that keeps technical density legible. The voice is engineering-first:
+  measured, technical, optimistic about the open web, and quietly
+  insistent on speed and security as table stakes rather than features.
+tags: [tech, edge-network, security, infrastructure, cloudflare]
+
+provenance:
+  source: https://www.cloudflare.com/brand/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Cloudflare and the Cloudflare logo are trademarks of Cloudflare, Inc.
+    All brand colors and identity guidance documented here are derived
+    from Cloudflare's public brand-resource page at cloudflare.com/brand/
+    and the Cloudflare Brand Guidelines PDF distributed from it.
+  importedDate: 2026-05-17
+  notes: >
+    Brand-atoms' read of Cloudflare's public guidelines. This file is
+    not an official Cloudflare brand document. No assets (logos,
+    wordmarks) are bundled here — Cloudflare's marks are trademarked
+    and must be retrieved directly from cloudflare.com/brand/ under
+    Cloudflare's stated terms.
+
+references:
+  palette: cloudflare@1
+  fonts:
+    heading: inter@1
+    body: inter@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    identity: cloudflare-orange
+    on-identity: cloudflare-white
+    primary: cloudflare-orange
+    primary-hover: marketing-orange
+    accent: marketing-orange
+    background: cloudflare-white
+    surface: cloudflare-off-white
+    text-primary: cloudflare-black
+    text-secondary: cloudflare-dark-gray
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: logo.mark.fill
+    allowed:
+      - cloudflare-orange
+    forbidden:
+      - marketing-orange
+      - cloudflare-black
+      - cloudflare-white
+    severity: error
+    rationale: >
+      Cloudflare's brand guidelines reserve Cloudflare Orange (#F38020)
+      as the canonical mark color. Marketing Orange is a supporting
+      tone for gradients and illustrations, not the primary mark fill.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - on-busy-photo
+    severity: error
+    rationale: >
+      Cloudflare's brand guidelines explicitly prohibit altering the
+      proportions, color, or orientation of the corporate mark. Use
+      only approved variants on backgrounds with sufficient contrast.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      WCAG 2.1 Level AA contrast requirement for body text. Cloudflare
+      Black (#222222) on Cloudflare White satisfies this with ~16:1.
+
+  - type: contrastRatio
+    target: roles.colors.primary
+    against: background
+    minRatio: 3.0
+    standard: WCAG-AA-large
+    severity: warning
+    rationale: >
+      Cloudflare Orange on white is around 3.1:1 — it clears AA-large
+      for headlines and large interactive text but falls short of the
+      AA 4.5 threshold for body-sized text. Use the orange as a
+      headline / CTA color, not for body copy on white.
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    pairsWith:
+      - roles.colors.accent
+    severity: recommendation
+    rationale: >
+      Cloudflare Orange + Marketing Orange is the canonical dual-orange
+      gradient seen across cloudflare.com hero compositions. Pairing
+      them is consistent with the brand's established voice.
+
+  - type: fontPairing
+    target: typography.heading
+    requires: body
+    minSizeRatio: 1.5
+    severity: recommendation
+    rationale: >
+      Cloudflare's marketing surfaces use Inter for both heading and
+      body, with a clear size differential. Keep headings at least
+      1.5× body to preserve hierarchy when one family does both jobs.

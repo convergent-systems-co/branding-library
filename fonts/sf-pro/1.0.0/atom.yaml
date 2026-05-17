@@ -1,0 +1,63 @@
+kind: font
+id: sf-pro
+version: 1.0.0
+name: SF Pro
+description: >
+  SF Pro — Apple's proprietary corporate typeface, the system font on
+  macOS, iOS, iPadOS, watchOS, tvOS, and visionOS since the SF (San
+  Francisco) family replaced Helvetica Neue as the platform default
+  in 2014–2015. Used across Apple's product UI, marketing site
+  (apple.com), and developer surfaces. Distributed through the
+  operating systems; specified in CSS via the -apple-system / system
+  font stack rather than a webfont URL.
+family: SF Pro
+classification: sans-serif
+tags: [proprietary, system, apple, ios, macos, ui]
+
+provenance:
+  source: https://developer.apple.com/fonts/
+  license: Proprietary — Apple Inc., distributed with Apple operating systems
+  attribution: >
+    SF Pro and the San Francisco type family are trademarks of Apple
+    Inc. Bundled with macOS, iOS, iPadOS, watchOS, tvOS, and
+    visionOS. Use under Apple's Font Software License Agreement;
+    web consumers reference the system stack rather than
+    redistributing the binaries.
+  importedDate: 2026-05-17
+  notes: >
+    SF Pro ships as a variable font on modern Apple operating
+    systems (with weight, optical size, and width axes); CSS
+    consumers typically use the -apple-system / system-ui keyword
+    which resolves to SF Pro on Apple platforms and falls back
+    cleanly elsewhere. The fallback chain below targets that
+    cross-platform behavior.
+
+source:
+  kind: system
+  stack:
+    - -apple-system
+    - BlinkMacSystemFont
+    - SF Pro Text
+    - SF Pro Display
+    - SF Pro
+    - system-ui
+    - Helvetica Neue
+    - Arial
+    - sans-serif
+
+fallbackStack:
+  - Inter
+  - Helvetica Neue
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 100, style: normal }
+  - { weight: 200, style: normal }
+  - { weight: 300, style: normal }
+  - { weight: 400, style: normal }
+  - { weight: 500, style: normal }
+  - { weight: 600, style: normal }
+  - { weight: 700, style: normal }
+  - { weight: 800, style: normal }
+  - { weight: 900, style: normal }

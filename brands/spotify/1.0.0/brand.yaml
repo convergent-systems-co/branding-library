@@ -1,0 +1,184 @@
+id: spotify
+version: 1.0.0
+name: Spotify
+description: >
+  Spotify AB is the global audio-streaming service for music,
+  podcasts, and audiobooks, headquartered in Stockholm. The brand
+  is dark-first and high-energy: a solid black canvas with the
+  saturated Spotify Green used as the principal accent on the
+  wordmark, the play affordance, and primary CTAs. The voice is
+  warm, expressive, and editorial — pairing the disciplined black-
+  and-green corporate identity with vivid duotone photography and
+  bold typographic moments in marketing.
+tags: [streaming, audio, music, podcasts, spotify, dark-first, consumer-tech]
+
+provenance:
+  source: https://developer.spotify.com/documentation/design
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Spotify AB — Spotify, the Spotify wordmark, and the three-arc
+    "soundwave" mark are registered trademarks of Spotify AB.
+    Spotify Circular is licensed from Lineto. This atom captures
+    brand-atoms' read of Spotify's publicly available developer
+    design documentation and brand assets; it is not an official
+    Spotify brand-guidelines document.
+  importedDate: 2026-05-17
+  notes: >
+    Spotify's brand identity is anchored on the green-on-black
+    pairing. The 2015 brand refresh introduced the brighter
+    #1ED760 as the primary green while retaining #1DB954 for
+    legacy surfaces. Both coexist; the brighter green dominates
+    current product.
+
+references:
+  palette: spotify@1
+  fonts:
+    heading: spotify-circular@1
+    body: spotify-circular@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # identity = the brand's signature block color. Spotify is
+    # dark-first: the black canvas IS the brand, with green
+    # reading as the high-energy accent layered on top.
+    identity: spotify-black
+    on-identity: spotify-green
+
+    background: spotify-black
+    surface: spotify-dark
+    surface-elevated: spotify-elevated
+    text-primary: spotify-white
+    text-secondary: spotify-gray-light
+    text-tertiary: spotify-gray
+
+    primary: spotify-green
+    primary-hover: spotify-green-pressed
+    accent: spotify-green
+    accent-hover: spotify-green-pressed
+    mark: spotify-green
+    text-emphasis: spotify-white
+    text-muted: spotify-gray-light
+  typography:
+    display: heading
+    prose: body
+    wordmark: heading
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: logo.wordmark.fill
+    allowed:
+      - spotify-green
+      - spotify-white
+      - spotify-black
+    forbidden:
+      - spotify-green-legacy
+      - spotify-green-pressed
+      - spotify-gray
+      - spotify-gray-light
+    severity: error
+    rationale: >
+      The Spotify wordmark renders only in Spotify Green, white,
+      or black per the public brand assets. The legacy green is
+      preserved for historical surfaces; the pressed green is an
+      interactive-state value, not a wordmark fill.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - on-busy-photo
+      - inverted-without-variant
+      - green-on-low-contrast-background
+    severity: error
+    rationale: >
+      The Spotify wordmark and three-arc mark have strict
+      clearspace and color rules in the Spotify brand system.
+      Never render the green wordmark on a background where it
+      falls below WCAG-AA-large contrast; use the white or black
+      variant on those surfaces.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      Spotify White on Spotify Black gives ~21:1 — well above
+      WCAG 2.1 Level AA. The rule encodes the floor for any new
+      foreground/background pairing on Spotify surfaces.
+
+  - type: contrastRatio
+    target: roles.colors.primary
+    against: background
+    minRatio: 3.0
+    standard: WCAG-AA-large
+    severity: error
+    rationale: >
+      Spotify Green on Spotify Black must remain perceptible at
+      interactive sizes. Falling below 3:1 (AA-large) breaks the
+      affordance of the play-action and primary CTAs the brand
+      depends on.
+
+  - type: contextRestriction
+    target: roles.colors.primary
+    forbiddenContexts:
+      - body-text
+      - secondary-link
+      - validation-failure
+    severity: error
+    rationale: >
+      Spotify Green is reserved for the brand mark, the play
+      affordance, and primary action. Using it for body text or
+      for error/failure states conflicts with its established
+      positive-action meaning.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["700", "900"]
+    severity: warning
+    rationale: >
+      Spotify's editorial headlines use Spotify Circular Bold (700)
+      or Black (900) for hero typography. Lighter cuts read as
+      body or UI weight and compromise the editorial voice.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) — Level
+      AA. The dark-first canvas makes contrast verification the
+      default check on any new role pairing.
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    pairsWith:
+      - roles.colors.background
+      - roles.colors.text-primary
+    doesNotPairWith:
+      - spotify-green-legacy
+    severity: recommendation
+    rationale: >
+      The signature green pairs cleanly with black canvas and
+      white text. Combining the current green with the legacy
+      green on the same surface creates a muddy two-green
+      composition that reads as inconsistency.
+
+  - type: fontPairing
+    target: typography.heading
+    requires: body
+    minSizeRatio: 1.5
+    severity: warning
+    rationale: >
+      Spotify's hero and section headers run materially larger
+      than the player UI's body text. A 1.5× floor preserves the
+      display-to-prose hierarchy the editorial voice depends on.

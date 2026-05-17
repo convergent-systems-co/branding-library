@@ -1,0 +1,125 @@
+kind: palette
+id: microsoft
+version: 1.0.0
+name: Microsoft
+description: >
+  Microsoft corporate palette anchored on the four-quadrant logo colors
+  (Red #F25022, Green #7FBA00, Blue #00A4EF, Yellow #FFB900) and on
+  Microsoft Communications Blue (#0078D4) — the Fluent / Office system
+  primary used across product UI, the corporate marketing site, and
+  the Microsoft.com chrome.
+tags: [tech, microsoft, fluent, enterprise, productivity]
+
+provenance:
+  source: https://fluent2.microsoft.design/color
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Microsoft, the Microsoft logo, Fluent, Windows, and related marks
+    are trademarks of the Microsoft group of companies. Brand colors
+    documented here are published on the Microsoft brand resource
+    center (microsoft.com/design/) and the Fluent 2 design system
+    site (fluent2.microsoft.design).
+  importedDate: 2026-05-17
+  notes: >
+    Brand-atoms' read of Microsoft's public Fluent 2 color system and
+    the four-quadrant logo color spec. This file is not an official
+    Microsoft brand document; consult fluent2.microsoft.design and the
+    Microsoft Trademark & Brand Guidelines for the canonical source.
+    Microsoft's Fluent palette is much larger than this atom — only
+    the brand-defining hues plus a baseline neutral ramp are surfaced
+    here for cross-product identity work.
+
+swatches:
+  - id: microsoft-red
+    name: Microsoft Red
+    value: "#F25022"
+    description: >
+      Top-left quadrant of the Microsoft four-square logo. Used for
+      Office, PowerPoint, and the warm corner of the corporate mark.
+  - id: microsoft-green
+    name: Microsoft Green
+    value: "#7FBA00"
+    description: >
+      Top-right quadrant. Associated with Excel and the productivity
+      side of the brand. (Sometimes also documented as #7CBB00.)
+  - id: microsoft-blue
+    name: Microsoft Blue (Logo)
+    value: "#00A4EF"
+    description: >
+      Bottom-left quadrant of the logo — Windows blue, lighter than
+      the Communications primary.
+  - id: microsoft-yellow
+    name: Microsoft Yellow
+    value: "#FFB900"
+    description: >
+      Bottom-right quadrant. Often associated with Microsoft Build /
+      developer surfaces.
+  - id: communications-blue
+    name: Communications Blue
+    value: "#0078D4"
+    description: >
+      Microsoft's primary communications blue — the Fluent system
+      primary used across Microsoft 365, the corporate site, and
+      product UI chrome.
+  - id: microsoft-black
+    name: Microsoft Black
+    value: "#000000"
+    description: Wordmark fill and primary text on light backgrounds.
+  - id: microsoft-near-black
+    name: Microsoft Near-Black
+    value: "#1F1F1F"
+    description: Softer near-black for body text and dark surfaces.
+  - id: microsoft-gray-160
+    name: Microsoft Gray 160
+    value: "#605E5C"
+    description: Secondary text and inactive UI (Fluent Neutral Foreground 2).
+  - id: microsoft-gray-130
+    name: Microsoft Gray 130
+    value: "#8A8886"
+    description: Tertiary text and dividers (Fluent Neutral Foreground 3).
+  - id: microsoft-gray-30
+    name: Microsoft Gray 30
+    value: "#EDEBE9"
+    description: Subtle surface tint (Fluent Neutral Background 3).
+  - id: microsoft-gray-20
+    name: Microsoft Gray 20
+    value: "#F3F2F1"
+    description: Page-level background (Fluent Neutral Background 2).
+  - id: microsoft-white
+    name: Microsoft White
+    value: "#FFFFFF"
+    description: Base background and reversed text on chromatic surfaces.
+
+modes:
+  light:
+    roles:
+      background: microsoft-white
+      surface: microsoft-gray-20
+      surface-elevated: microsoft-white
+      text-primary: microsoft-near-black
+      text-secondary: microsoft-gray-160
+      text-tertiary: microsoft-gray-130
+      primary: communications-blue
+      primary-hover: microsoft-blue
+      accent: microsoft-blue
+      accent-hover: communications-blue
+      warning: microsoft-yellow
+      warning-hover: microsoft-red
+      error: microsoft-red
+      success: microsoft-green
+  dark:
+    roles:
+      background: microsoft-near-black
+      surface: microsoft-black
+      surface-elevated: microsoft-gray-160
+      text-primary: microsoft-white
+      text-secondary: microsoft-gray-30
+      text-tertiary: microsoft-gray-130
+      primary: microsoft-blue
+      primary-hover: communications-blue
+      accent: communications-blue
+      accent-hover: microsoft-blue
+      warning: microsoft-yellow
+      warning-hover: microsoft-red
+      error: microsoft-red
+      success: microsoft-green

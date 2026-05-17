@@ -1,0 +1,123 @@
+kind: palette
+id: slack
+version: 1.0.0
+name: Slack
+description: >
+  Slack's brand palette, anchored on the signature Slack Aubergine
+  (#4A154B) and the four quadrant colors of the octothorpe mark
+  introduced in the 2019 Pentagram-led rebrand: green, blue, yellow,
+  and a hot pink-red. Aubergine reads as the institutional voice;
+  the four quadrant colors carry the playful, conversational accent
+  layer.
+tags: [saas, productivity, slack, aubergine, multi-accent]
+
+provenance:
+  source: https://slack.com/media-kit
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Slack and the Slack mark are trademarks of Slack Technologies, LLC,
+    a Salesforce company. All brand colors and trade dress are the
+    property of Slack Technologies. Aubergine and the four quadrant
+    colors are documented as the core palette of the 2019 rebrand;
+    Aubergine is described by Pentagram as the color that makes Slack
+    "instantly recognizable against the white of other desktop windows."
+  importedDate: 2026-05-17
+  notes: >
+    Hex values for Aubergine and the four quadrant colors are
+    cross-referenced across Slack's marketing surfaces and the
+    Pentagram case study. brand-atoms reads these values as the
+    documented public palette; the canonical brand-use program at
+    slack.com/media-kit governs licensed applications.
+
+swatches:
+  # ─── Signature ─────────────────────────────────────────────────
+  - id: aubergine
+    name: Slack Aubergine
+    value: "#4A154B"
+    description: >
+      Signature deep-purple corporate color. The institutional voice of
+      the brand — used for the wordmark on light backgrounds, primary
+      typographic blocks, and the brand's identity surfaces.
+
+  # ─── Quadrant colors (Slack mark) ──────────────────────────────
+  - id: slack-green
+    name: Slack Green
+    value: "#2EB67D"
+    description: Top-right quadrant of the Slack mark. Success / positive accent.
+  - id: slack-blue
+    name: Slack Blue
+    value: "#36C5F0"
+    description: Bottom-right quadrant of the Slack mark. Cool informational accent.
+  - id: slack-yellow
+    name: Slack Yellow
+    value: "#ECB22E"
+    description: Bottom-left quadrant of the Slack mark. Warm attention / warning accent.
+  - id: slack-red
+    name: Slack Red
+    value: "#E01E5A"
+    description: Top-left quadrant of the Slack mark. Hot pink-red used for errors and emphasis.
+
+  # ─── Neutrals ──────────────────────────────────────────────────
+  - id: slack-white
+    name: Slack White
+    value: "#FFFFFF"
+    description: Page background on light surfaces; reversed wordmark fill on aubergine.
+  - id: slack-black
+    name: Slack Black
+    value: "#1D1C1D"
+    description: Near-black body text on light backgrounds; canvas on dark surfaces.
+  - id: slack-surface-light
+    name: Slack Surface Light
+    value: "#F4F4F4"
+    description: Subtle panel surface on light mode.
+  - id: slack-surface-dark
+    name: Slack Surface Dark
+    value: "#2C2D30"
+    description: Elevated surface on dark mode (sidebar / channels surface).
+  - id: slack-text-secondary
+    name: Slack Text Secondary
+    value: "#616061"
+    description: Secondary text on light backgrounds.
+  - id: slack-text-tertiary
+    name: Slack Text Tertiary
+    value: "#868686"
+    description: Tertiary / muted text.
+  - id: slack-text-on-dark-secondary
+    name: Slack Text Secondary (Dark)
+    value: "#ABABAD"
+    description: Secondary text on dark backgrounds.
+
+modes:
+  light:
+    roles:
+      background: slack-white
+      surface: slack-surface-light
+      surface-elevated: slack-white
+      text-primary: slack-black
+      text-secondary: slack-text-secondary
+      text-tertiary: slack-text-tertiary
+      primary: aubergine
+      primary-hover: aubergine
+      accent: slack-green
+      accent-hover: slack-green
+      warning: slack-yellow
+      warning-hover: slack-yellow
+      error: slack-red
+      success: slack-green
+
+  dark:
+    roles:
+      background: aubergine
+      surface: slack-surface-dark
+      surface-elevated: slack-black
+      text-primary: slack-white
+      text-secondary: slack-text-on-dark-secondary
+      text-tertiary: slack-text-tertiary
+      primary: slack-blue
+      primary-hover: slack-blue
+      accent: slack-green
+      accent-hover: slack-green
+      warning: slack-yellow
+      warning-hover: slack-yellow
+      error: slack-red
+      success: slack-green

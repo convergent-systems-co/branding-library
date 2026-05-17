@@ -1,0 +1,115 @@
+kind: palette
+id: meta
+version: 1.0.0
+name: Meta
+description: >
+  Meta Platforms corporate palette built around the Meta Blue
+  (#0668E1) primary, sitting above the family of Meta-owned product
+  brands (Facebook, Instagram, WhatsApp, Quest). The corporate Meta
+  identity uses a confident blue mark with a clean light canvas;
+  Meta's expressive brand system also employs a vivid multi-color
+  gradient palette across marketing surfaces, with vivid blue,
+  green, red, and purple reading as the brand's color voice.
+tags: [tech, social, meta, blue, corporate, parent-brand]
+
+provenance:
+  source: https://about.meta.com/brand/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Meta Platforms, Inc. — Meta, the Meta wordmark, and the Meta
+    "infinity" mark are registered trademarks of Meta Platforms,
+    Inc. The Meta Blue primary (#0668E1) and the expressive
+    secondary palette are documented across Meta's about-page brand
+    surfaces and corporate press kits.
+  importedDate: 2026-05-17
+  notes: >
+    Meta operates a light-mode-first corporate identity, in
+    contrast to its dark-first consumer surfaces (Facebook and
+    Instagram both ship dark mode but center their identities on
+    light backgrounds). The vivid secondary swatches reflect the
+    Meta corporate-brand gradient palette used across marketing
+    and brand-system motion work.
+
+swatches:
+  - id: meta-blue
+    name: Meta Blue
+    value: "#0668E1"
+    description: Primary Meta brand blue — the Meta wordmark and corporate mark color.
+  - id: meta-blue-dark
+    name: Meta Blue Dark
+    value: "#1877F2"
+    description: Facebook product blue — adjacent Meta brand-family color; used on Facebook product surfaces.
+  - id: meta-vivid-blue
+    name: Meta Vivid Blue
+    value: "#0064E0"
+    description: Vivid blue from the Meta gradient palette — used in motion and editorial accent.
+  - id: meta-vivid-green
+    name: Meta Vivid Green
+    value: "#00C853"
+    description: Vivid green from the Meta corporate gradient palette.
+  - id: meta-vivid-red
+    name: Meta Vivid Red
+    value: "#F02849"
+    description: Vivid red from the Meta corporate gradient palette.
+  - id: meta-vivid-purple
+    name: Meta Vivid Purple
+    value: "#7E4BFF"
+    description: Vivid purple from the Meta corporate gradient palette.
+  - id: meta-black
+    name: Meta Black
+    value: "#000000"
+    description: Headline ink and dark-mode canvas.
+  - id: meta-ink
+    name: Meta Ink
+    value: "#1C2B33"
+    description: Primary text on light surfaces — softer than pure black.
+  - id: meta-gray
+    name: Meta Gray
+    value: "#65676B"
+    description: Secondary text and metadata on the light canvas.
+  - id: meta-gray-light
+    name: Meta Gray Light
+    value: "#8A8D91"
+    description: Tertiary text and dividers.
+  - id: meta-surface
+    name: Meta Surface
+    value: "#F0F2F5"
+    description: Quiet surface — Facebook-family content cards and feed backgrounds.
+  - id: meta-white
+    name: Meta White
+    value: "#FFFFFF"
+    description: Primary canvas on light corporate surfaces.
+
+modes:
+  light:
+    roles:
+      background: meta-white
+      surface: meta-surface
+      surface-elevated: meta-white
+      text-primary: meta-ink
+      text-secondary: meta-gray
+      text-tertiary: meta-gray-light
+      primary: meta-blue
+      primary-hover: meta-vivid-blue
+      accent: meta-vivid-purple
+      accent-hover: meta-vivid-blue
+      warning: meta-vivid-red
+      warning-hover: meta-vivid-red
+      error: meta-vivid-red
+      success: meta-vivid-green
+  dark:
+    roles:
+      background: meta-black
+      surface: meta-ink
+      surface-elevated: meta-gray
+      text-primary: meta-white
+      text-secondary: meta-surface
+      text-tertiary: meta-gray-light
+      primary: meta-blue
+      primary-hover: meta-blue-dark
+      accent: meta-vivid-purple
+      accent-hover: meta-vivid-blue
+      warning: meta-vivid-red
+      warning-hover: meta-vivid-red
+      error: meta-vivid-red
+      success: meta-vivid-green

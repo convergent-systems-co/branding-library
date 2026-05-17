@@ -1,0 +1,176 @@
+kind: palette
+id: apple
+version: 1.0.0
+name: Apple
+description: >
+  Apple system palette drawn from the iOS / macOS Human Interface
+  Guidelines. Anchored on Apple Blue (#007AFF) — the canonical iOS
+  tint color used for interactive affordance across the platform —
+  and the twelve named System Colors (Blue, Brown, Gray, Green,
+  Indigo, Mint, Orange, Pink, Purple, Red, Teal, Yellow) plus the
+  light- and dark-mode system background ramps.
+tags: [tech, apple, ios, macos, hig, system]
+
+provenance:
+  source: https://developer.apple.com/design/human-interface-guidelines/color
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Apple, the Apple logo, iOS, macOS, iPadOS, watchOS, tvOS,
+    visionOS, and related names and marks are trademarks of Apple
+    Inc. Brand colors documented here are published in the Human
+    Interface Guidelines color reference at
+    developer.apple.com/design/human-interface-guidelines/color and
+    on the Apple Identity Guidelines pages distributed to platform
+    partners.
+  importedDate: 2026-05-17
+  notes: >
+    Brand-atoms' read of the Human Interface Guidelines color
+    section. This file is not an official Apple brand document.
+    System Colors are listed in their iOS Light Default sRGB
+    values; Apple's HIG also publishes dark-mode and accessible
+    high-contrast variants which are not separately surfaced as
+    swatches here. The light- and dark-mode role maps below pick
+    the conventional HIG pairings (systemBackground, label,
+    systemBlue).
+
+swatches:
+  - id: system-blue
+    name: System Blue
+    value: "#007AFF"
+    description: >
+      Default iOS tint color. Used for interactive elements (links,
+      buttons, switches) across iOS, iPadOS, and macOS.
+  - id: system-brown
+    name: System Brown
+    value: "#A2845E"
+    description: Earth-tone accent in the HIG System Colors set.
+  - id: system-gray
+    name: System Gray
+    value: "#8E8E93"
+    description: >
+      Mid-gray for secondary content and inactive controls.
+      Equivalent to UIColor.systemGray.
+  - id: system-green
+    name: System Green
+    value: "#34C759"
+    description: >
+      Confirmation / success accent (e.g., toggle switches in the
+      "on" state, recording indicators).
+  - id: system-indigo
+    name: System Indigo
+    value: "#5856D6"
+    description: Cool-violet accent in the HIG System Colors set.
+  - id: system-mint
+    name: System Mint
+    value: "#00C7BE"
+    description: Cool-teal accent introduced in iOS 15.
+  - id: system-orange
+    name: System Orange
+    value: "#FF9500"
+    description: >
+      Warning accent. Used on system controls that signal caution
+      (e.g., Cellular Data warnings).
+  - id: system-pink
+    name: System Pink
+    value: "#FF2D55"
+    description: Warm-pink accent in the HIG System Colors set.
+  - id: system-purple
+    name: System Purple
+    value: "#AF52DE"
+    description: >
+      Purple accent. Used on Siri, Podcasts, and other
+      identity-bearing Apple product surfaces.
+  - id: system-red
+    name: System Red
+    value: "#FF3B30"
+    description: >
+      Destructive / error accent. Used for delete actions, error
+      states, and recording indicators.
+  - id: system-teal
+    name: System Teal
+    value: "#30B0C7"
+    description: Cooler complement to System Mint in the HIG set.
+  - id: system-yellow
+    name: System Yellow
+    value: "#FFCC00"
+    description: Highlight / warning accent in the HIG System Colors set.
+  - id: label
+    name: Label
+    value: "#000000"
+    description: >
+      Primary text on light-mode surfaces. Equivalent to the HIG
+      `label` semantic color in Light Appearance.
+  - id: secondary-label
+    name: Secondary Label
+    value: "#3C3C43"
+    description: >
+      Secondary text. Equivalent to the HIG `secondaryLabel` (60%
+      alpha black resolved against systemBackground) in Light.
+  - id: tertiary-label
+    name: Tertiary Label
+    value: "#3C3C434D"
+    description: >
+      Tertiary text. Equivalent to the HIG `tertiaryLabel` (~30%
+      alpha) in Light.
+  - id: system-background
+    name: System Background
+    value: "#FFFFFF"
+    description: Base background in Light Appearance.
+  - id: secondary-system-background
+    name: Secondary System Background
+    value: "#F2F2F7"
+    description: Grouped-table and grouped-cell background in Light.
+  - id: tertiary-system-background
+    name: Tertiary System Background
+    value: "#FFFFFF"
+    description: Elevated card / sheet background in Light.
+  - id: system-background-dark
+    name: System Background (Dark)
+    value: "#000000"
+    description: Base background in Dark Appearance.
+  - id: secondary-system-background-dark
+    name: Secondary System Background (Dark)
+    value: "#1C1C1E"
+    description: Grouped-cell background in Dark.
+  - id: tertiary-system-background-dark
+    name: Tertiary System Background (Dark)
+    value: "#2C2C2E"
+    description: Elevated card / sheet background in Dark.
+  - id: label-dark
+    name: Label (Dark)
+    value: "#FFFFFF"
+    description: Primary text on dark-mode surfaces.
+
+modes:
+  light:
+    roles:
+      background: system-background
+      surface: secondary-system-background
+      surface-elevated: tertiary-system-background
+      text-primary: label
+      text-secondary: secondary-label
+      text-tertiary: system-gray
+      primary: system-blue
+      primary-hover: system-blue
+      accent: system-indigo
+      accent-hover: system-purple
+      warning: system-orange
+      warning-hover: system-yellow
+      error: system-red
+      success: system-green
+  dark:
+    roles:
+      background: system-background-dark
+      surface: secondary-system-background-dark
+      surface-elevated: tertiary-system-background-dark
+      text-primary: label-dark
+      text-secondary: system-gray
+      text-tertiary: system-gray
+      primary: system-blue
+      primary-hover: system-blue
+      accent: system-indigo
+      accent-hover: system-purple
+      warning: system-orange
+      warning-hover: system-yellow
+      error: system-red
+      success: system-green

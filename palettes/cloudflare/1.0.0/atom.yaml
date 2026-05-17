@@ -1,0 +1,101 @@
+kind: palette
+id: cloudflare
+version: 1.0.0
+name: Cloudflare
+description: >
+  Cloudflare corporate palette anchored on Cloudflare Orange (#F38020) —
+  the signature mark color used across the corporate logo, the marketing
+  site, and the dashboard. Pairs Cloudflare Orange with a deeper Marketing
+  Orange (#FBAD41) for gradients, a near-black for surfaces, and a small
+  set of neutrals used as backgrounds, dividers, and body text.
+tags: [tech, infrastructure, cloudflare, orange, security]
+
+provenance:
+  source: https://www.cloudflare.com/brand/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Cloudflare is a registered trademark of Cloudflare, Inc. The brand
+    colors documented here are published on the official Cloudflare
+    brand guidelines page at cloudflare.com/brand/ and on the
+    Cloudflare Brand Guidelines PDF distributed from that page.
+  importedDate: 2026-05-17
+  notes: >
+    Brand-atoms' read of Cloudflare's public brand-resource page. This
+    file is not an official Cloudflare guidelines document; consult
+    cloudflare.com/brand/ for the canonical source. The Cloudflare
+    palette as published is light-first; the dark-mode mapping below
+    is brand-atoms' sensible inversion (orange identity preserved,
+    neutrals inverted) and is not directly attested in the upstream
+    PDF.
+
+swatches:
+  - id: cloudflare-orange
+    name: Cloudflare Orange
+    value: "#F38020"
+    description: >
+      Primary brand color. The signature Cloudflare orange used on the
+      cloud-and-line corporate mark and across primary CTAs.
+  - id: marketing-orange
+    name: Marketing Orange
+    value: "#FBAD41"
+    description: >
+      Lighter orange used in marketing materials and the dual-orange
+      gradient that anchors many Cloudflare hero compositions.
+  - id: cloudflare-black
+    name: Cloudflare Black
+    value: "#222222"
+    description: Near-black used for primary text and dark surfaces.
+  - id: cloudflare-dark-gray
+    name: Cloudflare Dark Gray
+    value: "#404041"
+    description: Secondary dark surface; wordmark fill alternative.
+  - id: cloudflare-gray
+    name: Cloudflare Gray
+    value: "#808080"
+    description: Mid gray used for secondary text and inactive UI.
+  - id: cloudflare-light-gray
+    name: Cloudflare Light Gray
+    value: "#D9D9D9"
+    description: Subtle dividers, borders, and quiet card surfaces.
+  - id: cloudflare-off-white
+    name: Cloudflare Off-White
+    value: "#F6F6F6"
+    description: Page-level background tint, lighter than card surfaces.
+  - id: cloudflare-white
+    name: Cloudflare White
+    value: "#FFFFFF"
+    description: Base background and reversed text on the orange mark.
+
+modes:
+  light:
+    roles:
+      background: cloudflare-white
+      surface: cloudflare-off-white
+      surface-elevated: cloudflare-white
+      text-primary: cloudflare-black
+      text-secondary: cloudflare-dark-gray
+      text-tertiary: cloudflare-gray
+      primary: cloudflare-orange
+      primary-hover: marketing-orange
+      accent: marketing-orange
+      accent-hover: cloudflare-orange
+      warning: marketing-orange
+      warning-hover: cloudflare-orange
+      error: cloudflare-orange
+      success: cloudflare-gray
+  dark:
+    roles:
+      background: cloudflare-black
+      surface: cloudflare-dark-gray
+      surface-elevated: cloudflare-gray
+      text-primary: cloudflare-white
+      text-secondary: cloudflare-light-gray
+      text-tertiary: cloudflare-gray
+      primary: cloudflare-orange
+      primary-hover: marketing-orange
+      accent: marketing-orange
+      accent-hover: cloudflare-orange
+      warning: marketing-orange
+      warning-hover: cloudflare-orange
+      error: cloudflare-orange
+      success: cloudflare-light-gray

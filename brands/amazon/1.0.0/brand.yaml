@@ -1,0 +1,196 @@
+id: amazon
+version: 1.0.0
+name: Amazon
+description: >
+  Amazon.com, Inc. is the global retail, devices, advertising, and
+  cloud-services company headquartered in Seattle. The Amazon
+  consumer brand is anchored on the "smile" wordmark — the orange
+  arrow that runs from the "a" to the "z" — set in Amazon Ember
+  against a white retail canvas with a deep-navy navigation band.
+  The voice is utilitarian, customer-obsessed, and product-first;
+  visual identity stays out of the way of the catalog while the
+  signature orange does the brand-identity work at the page header
+  and in the call-to-action buttons.
+tags: [retail, ecommerce, amazon, orange, corporate, parent-brand]
+
+provenance:
+  source: https://www.aboutamazon.com/news/company-news/our-brand
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Amazon.com, Inc. — Amazon, the Amazon "smile" wordmark,
+    Amazon Ember, and associated marks are registered trademarks
+    of Amazon.com, Inc. This atom captures brand-atoms' read of
+    Amazon's publicly available brand-resources page and the
+    visible style values on amazon.com; it is not an official
+    Amazon brand-guidelines document.
+  importedDate: 2026-05-17
+  notes: >
+    The retail site (amazon.com) is light-mode-first with a fixed
+    dark navigation band; the AWS console and developer surfaces
+    operate bilingual light/dark themes. The yellow Add-to-Cart
+    CTA is brand-distinct from the orange Buy Now CTA and is
+    encoded as the accent role here.
+
+references:
+  palette: amazon@1
+  fonts:
+    heading: amazon-ember@1
+    body: amazon-ember@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # identity = the brand's signature block color. Amazon's
+    # signature is the orange smile, not the canvas; identity
+    # points at the orange so brand-badge surfaces render in the
+    # brand's true voice.
+    identity: amazon-orange
+    on-identity: amazon-ink
+
+    background: amazon-white
+    surface: amazon-surface
+    surface-elevated: amazon-white
+    text-primary: amazon-ink
+    text-secondary: amazon-gray
+    text-tertiary: amazon-gray-light
+
+    primary: amazon-orange
+    primary-hover: amazon-orange-dark
+    accent: amazon-yellow
+    accent-hover: amazon-yellow-dark
+    mark: amazon-orange
+    text-emphasis: amazon-ink
+    text-muted: amazon-gray
+    chrome: amazon-squid-ink
+    chrome-deep: amazon-anchor
+    link: amazon-link
+    link-hover: amazon-link-hover
+  typography:
+    display: heading
+    prose: body
+    wordmark: heading
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: logo.wordmark.fill
+    allowed:
+      - amazon-orange
+      - amazon-ink
+      - amazon-white
+    forbidden:
+      - amazon-orange-dark
+      - amazon-yellow
+      - amazon-link
+      - amazon-gray
+    severity: error
+    rationale: >
+      The Amazon wordmark renders in Amazon Orange (the smile),
+      near-black, or reversed white. The yellow and teal-link
+      values are interactive-element colors and the orange-dark
+      is a hover state — none are valid wordmark fills.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - on-busy-photo
+      - inverted-without-variant
+      - smile-detached
+    severity: error
+    rationale: >
+      The Amazon "smile" mark — the orange arrow from a-to-z —
+      is one of the most-protected commercial marks in retail.
+      The smile is integral to the wordmark and must never be
+      detached, recolored, or applied to a busy photographic
+      background that breaks its legibility.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      Amazon Ink on Amazon White gives ~18:1 — well above WCAG
+      2.1 Level AA. The rule encodes the floor for any new
+      foreground/background pairing on Amazon retail surfaces.
+
+  - type: contrastRatio
+    target: roles.colors.primary
+    against: background
+    minRatio: 3.0
+    standard: WCAG-AA-large
+    severity: error
+    rationale: >
+      Amazon Orange on Amazon White is contrast-marginal at
+      small sizes — the rule enforces the AA-large floor and
+      forbids reducing the orange CTA below sizes where it
+      stops meeting that floor.
+
+  - type: contextRestriction
+    target: roles.colors.accent
+    forbiddenContexts:
+      - error-state
+      - validation-failure
+      - destructive-action
+    severity: error
+    rationale: >
+      Amazon Yellow is the Add-to-Cart affordance — a positive,
+      commerce-forward action. Repurposing it for errors or
+      destructive actions conflicts with its established
+      meaning on every Amazon retail page.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["500", "700"]
+    severity: warning
+    rationale: >
+      Amazon Ember on amazon.com retail headlines uses Medium
+      (500) and Bold (700). Lighter cuts read as body copy and
+      compromise the catalog-clarity voice the retail site
+      depends on.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) —
+      Level AA. The retail site's reach across global markets
+      and assistive-tech users makes AA the floor for any new
+      role pairing.
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    pairsWith:
+      - amazon-squid-ink
+      - amazon-ink
+      - amazon-white
+    doesNotPairWith:
+      - amazon-link-hover
+    severity: recommendation
+    rationale: >
+      The signature orange pairs cleanly with the navy chrome
+      and the white canvas. Combining brand orange with the
+      rust-toned link-hover orange on the same surface creates
+      a two-orange composition that reads as a brand-hierarchy
+      error.
+
+  - type: fontPairing
+    target: typography.heading
+    requires: body
+    minSizeRatio: 1.4
+    severity: warning
+    rationale: >
+      Amazon retail product-detail headings run modestly larger
+      than body copy — the catalog density favors a tighter
+      hierarchy than marketing-led brands. A 1.4× floor
+      preserves the display-to-prose distinction without
+      overpowering the dense product information.

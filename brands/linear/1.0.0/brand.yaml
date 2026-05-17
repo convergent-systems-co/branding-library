@@ -1,0 +1,186 @@
+id: linear
+version: 1.0.0
+name: Linear
+description: >
+  Linear is a project and issue-tracking tool built for software
+  teams — "the purpose-built tool for planning and building products."
+  The brand voice is precise, calm, and craft-forward: dark-first
+  product surfaces, an angular sans-serif wordmark, a single
+  desaturated indigo accent (#5E6AD2), and a near-monochrome neutral
+  system that lets motion and typography carry the brand. Where
+  competing trackers shout, Linear whispers.
+tags: [saas, productivity, linear, dark-first, minimal, developer-tools]
+
+provenance:
+  source: https://linear.app
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Linear and the Linear mark are trademarks of Linear Orbit, Inc.
+    The primary brand color (#5E6AD2) is verified via the
+    simple-icons brand database, which cites linear.app as the source.
+    Mercury White (#F4F5F8) and Nordic Gray (#222326) are documented
+    directly on Linear's brand page (linear.app/brand). Linear's
+    brand guidance describes the primary as "a subtle desaturated
+    blue," consistent with #5E6AD2.
+  importedDate: 2026-05-17
+  notes: >
+    Linear is a dark-first brand: the canonical product surface is
+    Nordic Gray. The reference for body and display typography is
+    Inter (for body) and Inter Tight (for tighter display lockups) —
+    the closest open-source approximations to Linear's bespoke "Inter
+    Display" cut. Both are already in the brand-atoms catalog.
+
+references:
+  palette: linear@1
+  fonts:
+    heading: inter-tight@1
+    body: inter@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # identity = the brand's signature surface. Linear is dark-first:
+    # Nordic Gray is the canonical canvas the brand reads against.
+    # Setting identity to nordic-gray lets brand-badge surfaces render
+    # in Linear's true voice rather than in the indigo accent.
+    identity: nordic-gray
+    on-identity: linear-text-on-dark
+
+    # Dark-first canvas roles.
+    background: nordic-gray
+    surface: linear-surface-dark
+    surface-elevated: linear-surface-elevated-dark
+    text-primary: linear-text-on-dark
+    text-secondary: linear-text-secondary-dark
+    text-tertiary: linear-text-tertiary-dark
+
+    primary: linear-indigo
+    primary-hover: linear-indigo-hover
+    accent: linear-indigo
+    accent-hover: linear-indigo-hover
+
+    success: linear-success
+    warning: linear-warning
+    error: linear-error
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: logo.mark
+    allowed:
+      - linear-indigo
+      - linear-text-on-dark
+      - linear-text-on-light
+      - mercury-white
+      - nordic-gray
+    forbidden:
+      - any-non-brand-color
+    severity: error
+    rationale: >
+      Linear's brand guidance prefers monochrome wordmark usage; the
+      indigo primary is the only accent color sanctioned for the mark.
+      Recoloring into off-brand hues violates Linear's brand-use
+      policy ("do not alter these files in any way").
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - on-busy-photo
+      - cramped-clearspace
+    severity: error
+    rationale: >
+      Linear's brand guidelines instruct consumers to "provide plenty
+      of space around Linear assets" and forbid alteration of the
+      logo files.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      WCAG 2.1 Level AA contrast minimum for body text. Linear's
+      near-white-on-Nordic-Gray reads at very high contrast,
+      comfortably above AA.
+
+  - type: variantSelection
+    target: logo
+    when:
+      backgroundColorScheme: dark
+    use: wordmark-light
+    severity: error
+    rationale: >
+      On dark surfaces (the canonical Nordic Gray canvas), use the
+      light-fill wordmark variant for legibility.
+
+  - type: variantSelection
+    target: logo
+    when:
+      backgroundColorScheme: light
+    use: wordmark-dark
+    severity: error
+    rationale: >
+      On Mercury White or other light surfaces, use the dark-fill
+      wordmark variant.
+
+  - type: contextRestriction
+    target: roles.colors.identity
+    forbiddenContexts:
+      - decorative-only
+      - product-of-competitor
+      - endorsement-implication
+    severity: error
+    rationale: >
+      Linear's brand guidance prohibits use of the mark in ways that
+      imply endorsement or appear without permission on
+      competing-product surfaces.
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    pairsWith:
+      - nordic-gray
+      - mercury-white
+    severity: recommendation
+    rationale: >
+      The indigo primary is calibrated to read on both Nordic Gray
+      and Mercury White. Pairing it with a third dominant hue breaks
+      the calibrated quiet of Linear's identity.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["500", "600", "700"]
+    severity: warning
+    rationale: >
+      Linear's wordmark and display lockups use medium-to-bold weights
+      in the 500–700 band; lighter weights compromise the precise,
+      institutional voice.
+
+  - type: numericRatio
+    target: typography.body.lineHeight
+    min: 1.5
+    max: 1.65
+    severity: recommendation
+    rationale: >
+      Linear's product surface reads with disciplined line-height in
+      the 1.5–1.65 band. Tighter values feel cramped; looser values
+      break the calm rhythm.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) — Level AA.
+      Linear's near-monochrome surfaces start well above AA; consumers
+      must hold that floor.

@@ -1,0 +1,174 @@
+id: vercel
+version: 1.0.0
+name: Vercel
+description: >
+  Vercel is the frontend cloud — a platform for building, previewing,
+  and shipping web applications, including the company's flagship
+  open-source framework Next.js. The brand voice is engineer-direct
+  and product-led: short sentences, plain claims, deference to a
+  live demo over an adjective. Visually, Vercel is dark-first and
+  unapologetically monochrome — black canvas, white foreground,
+  a calibrated neutral ramp, and the open-source Geist typeface
+  family (Sans and Mono) as the typographic anchor. Color appears
+  sparingly as functional semantic ramps (blue/red/amber/green)
+  from the Geist Design System.
+
+tags: [vercel, frontend-cloud, developer-tools, brand, dark-first, monochrome]
+
+provenance:
+  source: https://vercel.com/design/brands
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Vercel, Inc. — visual identity captured from the deployed
+    stylesheet on vercel.com (Geist Design System tokens) and the
+    open-source Geist font repository (github.com/vercel/geist-font).
+    The Geist Design System and the Vercel marks are property of
+    Vercel, Inc.; the Geist font binaries are released under the SIL
+    Open Font License v1.1.
+  importedDate: 2026-05-17
+  notes: >
+    Vercel's marketing site renders in forced dark mode, but the
+    Geist Design System publishes both light and dark token sets;
+    this atom uses `identity: vercel-black` so brand surfaces
+    render in the dark-first voice regardless of consumer theme.
+
+references:
+  palette: vercel@1
+  fonts:
+    heading: geist@1
+    body: geist@1
+    mono: geist-mono@1
+
+roles:
+  colors:
+    # Vercel is dark-first: black IS the brand block color.
+    identity: vercel-black
+    on-identity: vercel-white
+
+    primary: vercel-black
+    primary-hover: dark-gray-1000
+    accent: vercel-blue
+    accent-hover: vercel-blue-bright
+    success: vercel-green
+    warning: vercel-amber
+    error: vercel-red
+    text-primary-light: light-gray-1000
+    text-primary-dark: dark-gray-1000
+    background-light: light-bg-200
+    background-dark: dark-bg-100
+    surface-light: light-bg-100
+    surface-dark: dark-gray-100
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      Geist's foreground/background pairs are designed AA-out-of-
+      the-box: dark-gray-1000 (#EDEDED) on dark-bg-100 (#0A0A0A)
+      gives ~17:1, and light-gray-1000 (#171717) on light-bg-100
+      (#FFFFFF) gives ~16:1. Both clear AA with substantial margin.
+
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - vercel-black
+      - vercel-white
+    forbidden:
+      - vercel-blue
+      - vercel-red
+      - vercel-amber
+      - vercel-green
+    severity: error
+    rationale: >
+      Vercel's primary brand color is monochrome — black in light
+      mode, white in dark. The functional hues (blue/red/amber/
+      green) carry semantic meaning (link/error/warning/success)
+      and must not stand in for the brand identity.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - gradient-fill
+      - on-busy-photo
+    severity: error
+    rationale: >
+      Vercel's triangle mark is monochrome by design. Gradient,
+      recolored, or skewed variants are explicitly disallowed by
+      the brand guidelines at vercel.com/design/brands.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["500", "600", "700", "800"]
+    severity: warning
+    rationale: >
+      Vercel's marketing surfaces use Geist Medium (500),
+      SemiBold (600), and Bold (700) for headings. Lighter
+      weights are reserved for fine UI labels; weights above 800
+      compromise the typeface's neutral geometric voice.
+
+  - type: fontPairing
+    target: typography.heading
+    requires: body
+    minSizeRatio: 1.5
+    severity: error
+    rationale: >
+      Geist Sans is the only display face on vercel.com; the
+      visual hierarchy is established entirely by size. A 1.5×
+      minimum heading-to-body ratio preserves the typographic
+      rhythm without introducing a second family.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) —
+      Level AA. Geist Design System tokens are AA-compliant by
+      construction; consumers must not derive intermediate stops
+      that defeat that property.
+
+  - type: contextRestriction
+    target: roles.colors.accent
+    allowedContexts:
+      - link
+      - focus-ring
+      - data-viz-primary
+    forbiddenContexts:
+      - background
+      - large-fill
+    severity: warning
+    rationale: >
+      Vercel Blue (#0070F3) is the documented link / focus accent
+      — used as a thin stroke or small-glyph fill, never as a
+      large background block. Large blue fills compete with the
+      monochrome brand voice.
+
+  - type: compositionConstraint
+    target: roles.colors.identity
+    pairsWith:
+      - vercel-white
+    doesNotPairWith:
+      - vercel-blue
+      - vercel-red
+      - vercel-amber
+      - vercel-green
+    severity: error
+    rationale: >
+      The brand block is black-on-white or white-on-black only.
+      Pairing the identity color directly with functional hues
+      breaks the monochrome brand contract.

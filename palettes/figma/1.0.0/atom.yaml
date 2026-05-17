@@ -1,0 +1,119 @@
+kind: palette
+id: figma
+version: 1.0.0
+name: Figma
+description: >
+  Figma's brand palette, anchored on the five colored shapes of the
+  Figma mark: orange-red (#F24E1E), coral (#FF7262), purple (#A259FF),
+  cyan-blue (#1ABCFE), and green (#0ACF83), set on a clean white canvas
+  with near-black text. The five mark colors form the brand's primary
+  accent system; the orange-red reads as the signature when a single
+  brand color is required.
+tags: [saas, design-tools, figma, multi-color, geometric]
+
+provenance:
+  source: https://www.figma.com/using-the-figma-brand/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Figma and the Figma logo are trademarks of Figma, Inc. (an Adobe
+    company). The five mark colors below are verified by reading the
+    published Figma logo SVG on Wikimedia Commons
+    (https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg);
+    the orange-red (#F24E1E) is independently cross-referenced by the
+    simple-icons brand database, which cites figma.com/using-the-figma-
+    brand/ as the source.
+  importedDate: 2026-05-17
+  notes: >
+    The five mark colors are the authoritative published palette read
+    directly from the published mark SVG. Surface neutrals and
+    secondary text tones are authored to support a clean light-mode
+    canvas and a near-black dark-mode canvas in line with Figma's
+    documented design surfaces.
+
+swatches:
+  # ─── Mark colors (the five quadrants) ──────────────────────────
+  - id: figma-orange
+    name: Figma Orange
+    value: "#F24E1E"
+    description: Primary mark color — the top-left red-orange shape. The de-facto signature when a single brand color is needed.
+  - id: figma-coral
+    name: Figma Coral
+    value: "#FF7262"
+    description: Mid-left coral shape of the mark — the lighter partner to figma-orange.
+  - id: figma-purple
+    name: Figma Purple
+    value: "#A259FF"
+    description: Bottom-left purple shape of the mark.
+  - id: figma-blue
+    name: Figma Blue
+    value: "#1ABCFE"
+    description: Top-right cyan-blue shape of the mark.
+  - id: figma-green
+    name: Figma Green
+    value: "#0ACF83"
+    description: Mid-right green shape of the mark.
+
+  # ─── Neutrals ──────────────────────────────────────────────────
+  - id: figma-white
+    name: Figma White
+    value: "#FFFFFF"
+    description: Canvas on light surfaces; reversed wordmark fill.
+  - id: figma-black
+    name: Figma Black
+    value: "#000000"
+    description: Wordmark on light backgrounds.
+  - id: figma-canvas-dark
+    name: Figma Canvas Dark
+    value: "#1E1E1E"
+    description: Authored dark-mode canvas — neutral near-black.
+  - id: figma-surface-dark
+    name: Figma Surface Dark
+    value: "#2C2C2C"
+    description: Authored elevated surface on dark mode.
+  - id: figma-surface-light
+    name: Figma Surface Light
+    value: "#F5F5F5"
+    description: Authored panel surface for light mode.
+  - id: figma-text-secondary
+    name: Figma Text Secondary
+    value: "#757575"
+    description: Authored secondary text — neutral mid-gray.
+  - id: figma-text-tertiary
+    name: Figma Text Tertiary
+    value: "#B3B3B3"
+    description: Authored tertiary / muted text.
+
+modes:
+  light:
+    roles:
+      background: figma-white
+      surface: figma-surface-light
+      surface-elevated: figma-white
+      text-primary: figma-black
+      text-secondary: figma-text-secondary
+      text-tertiary: figma-text-tertiary
+      primary: figma-blue
+      primary-hover: figma-blue
+      accent: figma-orange
+      accent-hover: figma-coral
+      warning: figma-orange
+      warning-hover: figma-coral
+      error: figma-orange
+      success: figma-green
+
+  dark:
+    roles:
+      background: figma-canvas-dark
+      surface: figma-surface-dark
+      surface-elevated: figma-surface-dark
+      text-primary: figma-white
+      text-secondary: figma-text-tertiary
+      text-tertiary: figma-text-secondary
+      primary: figma-blue
+      primary-hover: figma-blue
+      accent: figma-orange
+      accent-hover: figma-coral
+      warning: figma-orange
+      warning-hover: figma-coral
+      error: figma-orange
+      success: figma-green

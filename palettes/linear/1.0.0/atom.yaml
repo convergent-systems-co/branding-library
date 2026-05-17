@@ -1,0 +1,146 @@
+kind: palette
+id: linear
+version: 1.0.0
+name: Linear
+description: >
+  Linear's brand palette — a dark-first minimal identity built around
+  a desaturated indigo-violet primary (#5E6AD2), Mercury White for
+  light surfaces (#F4F5F8), and Nordic Gray for dark surfaces (#222326).
+  The palette is deliberately restrained: one accent, two canvases,
+  and a tight set of authored neutrals to support a near-monochrome
+  product surface where typography, spacing, and motion carry the
+  brand voice.
+tags: [saas, productivity, linear, dark-first, minimal]
+
+provenance:
+  source: https://linear.app
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Linear and the Linear mark are trademarks of Linear Orbit, Inc.
+    The primary brand color (#5E6AD2) is verified via the simple-icons
+    brand database, which cites linear.app as the source. Mercury White
+    (#F4F5F8) and Nordic Gray (#222326) are read directly from Linear's
+    published brand guidelines page (linear.app/brand). Linear's brand
+    guidance describes the primary as "a subtle desaturated blue,"
+    consistent with #5E6AD2.
+  importedDate: 2026-05-17
+  notes: >
+    Linear is a dark-first brand: Nordic Gray is the canonical product
+    canvas, with Mercury White as the canonical light-mode canvas.
+    Surface elevations and text tints below Mercury White / above
+    Nordic Gray are authored neutral inversions to support both modes
+    consistently — only the three named hex values (Mercury White,
+    Nordic Gray, primary indigo) are direct from Linear's brand
+    documentation.
+
+swatches:
+  # ─── Canonical brand swatches (verified from Linear's brand guide) ──
+  - id: linear-indigo
+    name: Linear Indigo
+    value: "#5E6AD2"
+    description: >
+      Signature desaturated indigo-violet. Primary brand accent — used
+      on the wordmark, primary buttons, and key interactive surfaces.
+  - id: mercury-white
+    name: Mercury White
+    value: "#F4F5F8"
+    description: Light-mode canvas — a cool off-white documented in Linear's brand guide.
+  - id: nordic-gray
+    name: Nordic Gray
+    value: "#222326"
+    description: Dark-mode canvas — the canonical product surface for Linear's dark-first identity.
+
+  # ─── Authored neutrals ─────────────────────────────────────────
+  - id: linear-near-black
+    name: Linear Near-Black
+    value: "#08090A"
+    description: Authored deepest canvas — used below Nordic Gray for the most-recessed surfaces.
+  - id: linear-surface-dark
+    name: Linear Surface Dark
+    value: "#1A1B1F"
+    description: Authored elevated surface on dark mode.
+  - id: linear-surface-elevated-dark
+    name: Linear Surface Elevated (Dark)
+    value: "#2C2D31"
+    description: Authored modal / popover surface on dark mode.
+  - id: linear-text-on-dark
+    name: Linear Text on Dark
+    value: "#F7F8F8"
+    description: Primary text on Nordic Gray.
+  - id: linear-text-secondary-dark
+    name: Linear Text Secondary (Dark)
+    value: "#B4BCD0"
+    description: Secondary text on dark canvas.
+  - id: linear-text-tertiary-dark
+    name: Linear Text Tertiary (Dark)
+    value: "#8A8F98"
+    description: Tertiary / muted text on dark canvas.
+  - id: linear-text-on-light
+    name: Linear Text on Light
+    value: "#0B0C10"
+    description: Primary text on Mercury White.
+  - id: linear-text-secondary-light
+    name: Linear Text Secondary (Light)
+    value: "#3F4350"
+    description: Secondary text on Mercury White.
+  - id: linear-text-tertiary-light
+    name: Linear Text Tertiary (Light)
+    value: "#6B7280"
+    description: Tertiary / muted text on Mercury White.
+  - id: linear-surface-light-elevated
+    name: Linear Surface Elevated (Light)
+    value: "#FFFFFF"
+    description: Authored elevated surface for light mode.
+  - id: linear-indigo-hover
+    name: Linear Indigo Hover
+    value: "#7A87F0"
+    description: Authored softer indigo for hover / active states.
+
+  # ─── Status accents (authored, consistent with Linear's product) ──
+  - id: linear-success
+    name: Linear Success
+    value: "#4CB782"
+    description: Authored success / completed accent.
+  - id: linear-warning
+    name: Linear Warning
+    value: "#F2C94C"
+    description: Authored warning accent.
+  - id: linear-error
+    name: Linear Error
+    value: "#E5484D"
+    description: Authored error accent.
+
+modes:
+  light:
+    roles:
+      background: mercury-white
+      surface: linear-surface-light-elevated
+      surface-elevated: linear-surface-light-elevated
+      text-primary: linear-text-on-light
+      text-secondary: linear-text-secondary-light
+      text-tertiary: linear-text-tertiary-light
+      primary: linear-indigo
+      primary-hover: linear-indigo-hover
+      accent: linear-indigo
+      accent-hover: linear-indigo-hover
+      warning: linear-warning
+      warning-hover: linear-warning
+      error: linear-error
+      success: linear-success
+
+  dark:
+    roles:
+      background: nordic-gray
+      surface: linear-surface-dark
+      surface-elevated: linear-surface-elevated-dark
+      text-primary: linear-text-on-dark
+      text-secondary: linear-text-secondary-dark
+      text-tertiary: linear-text-tertiary-dark
+      primary: linear-indigo
+      primary-hover: linear-indigo-hover
+      accent: linear-indigo
+      accent-hover: linear-indigo-hover
+      warning: linear-warning
+      warning-hover: linear-warning
+      error: linear-error
+      success: linear-success

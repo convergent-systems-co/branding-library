@@ -1,0 +1,74 @@
+kind: font
+id: mona-sans
+version: 1.0.0
+name: Mona Sans
+description: >
+  Mona Sans — GitHub's open-source variable typeface, originally
+  developed with Degarism Studio. Designed as GitHub's
+  marketing-and-brand companion to the Hubot Sans family, with a
+  geometric-humanist construction and four variable axes (Weight,
+  Width, Optical Size, Italic). Used across github.com marketing
+  pages, the Primer Brand site, and GitHub's identity surfaces.
+family: Mona Sans
+classification: sans-serif
+tags: [variable-font, github, brand, marketing, geometric-humanist, open-source]
+
+provenance:
+  source: https://github.com/github/mona-sans
+  license: OFL-1.1
+  attribution: >
+    Mona Sans is Copyright (c) GitHub, Inc., licensed under the SIL
+    Open Font License, Version 1.1. Originally designed in
+    partnership with Degarism Studio.
+  importedDate: 2026-05-17
+  importedFromVersion: "v2.0.25"
+  notes: >
+    Variable axes documented in the upstream README: Weight 200–900,
+    Width 75–125, Optical Size 1–100, Italic 0–1. Static cuts
+    distributed at ExtraLight (200), Light (300), Regular (400),
+    Medium (500), SemiBold (600), Bold (700), ExtraBold (800), and
+    Black (900). Distributed via GitHub Releases — no first-party
+    Google Fonts entry; the @fontsource/mona-sans community package
+    provides a CDN-friendly NPM bundle.
+
+source:
+  kind: external
+  family: Mona Sans
+  cssImportUrl: https://cdn.jsdelivr.net/npm/@fontsource-variable/mona-sans/index.css
+  notes: >
+    Primary distribution is the GitHub Releases artifact at
+    github.com/github/mona-sans/releases. The cssImportUrl above
+    points at the community-maintained @fontsource-variable/mona-sans
+    bundle on jsDelivr, which mirrors the OFL-licensed binaries.
+
+fallbackStack:
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Helvetica
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 200, style: normal }
+  - { weight: 200, style: italic }
+  - { weight: 300, style: normal }
+  - { weight: 300, style: italic }
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 500, style: normal }
+  - { weight: 500, style: italic }
+  - { weight: 600, style: normal }
+  - { weight: 600, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+  - { weight: 800, style: normal }
+  - { weight: 800, style: italic }
+  - { weight: 900, style: normal }
+  - { weight: 900, style: italic }
+
+variableAxes:
+  - { tag: wght, name: Weight, min: 200, max: 900, default: 400 }
+  - { tag: wdth, name: Width, min: 75, max: 125, default: 100 }
+  - { tag: opsz, name: Optical Size, min: 1, max: 100, default: 14 }
+  - { tag: ital, name: Italic, min: 0, max: 1, default: 0 }

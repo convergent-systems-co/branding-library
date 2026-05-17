@@ -1,0 +1,205 @@
+id: anthropic
+version: 1.0.0
+name: Anthropic
+description: >
+  Anthropic is an AI safety company and the maker of Claude — a
+  family of large language models built with constitutional AI and
+  safety research as first-class concerns. The brand voice is
+  serious, considered, and humane: long-form reasoning over
+  marketing copy, transparency about limits, deference to the
+  reader. Visually, Anthropic is paper-toned and warm — a cream
+  "Ivory" canvas, deep "Slate" text, and Claude's signature
+  terracotta "Clay" as the primary accent, supported by a muted
+  natural-world secondary scale (Oat, Manilla, Olive, Cactus, Sky,
+  Heather, Fig, Coral). Typography is the proprietary Anthropic
+  Sans / Anthropic Serif / Anthropic Mono family.
+
+tags: [anthropic, claude, ai, safety, brand, warm, paper, light-first]
+
+provenance:
+  source: https://www.anthropic.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Anthropic, PBC — visual identity captured from the deployed
+    stylesheet on anthropic.com (--swatch-*, --_typography-*,
+    --_color-theme-* token families). Anthropic, Claude, and
+    associated marks are property of Anthropic.
+  importedDate: 2026-05-17
+  notes: >
+    The proprietary brand typefaces (Anthropic Sans, Anthropic
+    Serif, Anthropic Mono) are declared on anthropic.com via
+    @font-face but are not publicly distributed. This atom
+    references Inter@1 as the open-source rendering substitute
+    for the sans roles and notes the proprietary primaries here.
+
+references:
+  palette: anthropic@1
+  fonts:
+    heading: inter@1
+    body: inter@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # Anthropic is light-first, but the brand block IS the warm
+    # ivory canvas — naming `identity` lets consumers render
+    # brand-badge surfaces in the paper voice without hunting
+    # for it in role state.
+    identity: ivory-light
+    on-identity: slate-dark
+
+    primary: clay
+    primary-hover: accent
+    accent: clay
+    accent-hover: accent
+    mark: clay
+    success: olive
+    warning: kraft
+    error: fig
+    text-primary-light: slate-dark
+    text-primary-dark: ivory-light
+    background-light: ivory-light
+    background-dark: slate-dark
+    surface-light: ivory-medium
+    surface-dark: slate-medium
+    text-secondary-light: slate-medium
+    text-tertiary-light: slate-light
+    border-light: ivory-dark
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 7.0
+    standard: WCAG-AAA
+    severity: error
+    rationale: >
+      Slate Dark (#141413) on Ivory Light (#FAF9F5) gives ~17:1
+      — clears AAA decisively. The brand's deliberate, long-form
+      reading posture justifies an AAA contrast target rather
+      than the AA floor.
+
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - clay
+      - accent
+    forbidden:
+      - fig
+      - coral
+      - kraft
+      - sky
+      - olive
+    severity: error
+    rationale: >
+      Clay (#D97757) is Claude's signature warm. The other
+      secondary swatches appear in illustration and surface
+      accents only — fig as muted-rose, coral as pale pink, kraft
+      as tan — and must not stand in for the primary brand
+      action color.
+
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - clay
+    forbidden:
+      - accent
+      - fig
+      - coral
+      - kraft
+      - olive
+      - sky
+    severity: error
+    rationale: >
+      The Claude / Anthropic mark fill is clay specifically.
+      The pressed `accent` variant is reserved for hover/active
+      states on interactive surfaces, not for the mark itself.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - gradient-fill
+      - on-busy-photo
+    severity: error
+    rationale: >
+      Anthropic's identity is restrained by design. Recolored,
+      skewed, or gradient-filled marks conflict with the brand's
+      humane, considered voice.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["400", "500", "600", "700"]
+    severity: warning
+    rationale: >
+      Anthropic's marketing site uses Regular (400), Medium (500),
+      SemiBold (600), and Bold (700) — declared on the live
+      stylesheet as --_typography---font--display-sans-regular
+      through --display-sans-bold. Heavier display weights are
+      not in the licensed variable-font cut.
+
+  - type: fontPairing
+    target: typography.display
+    requires: prose
+    minSizeRatio: 1.5
+    severity: error
+    rationale: >
+      The Anthropic Sans display face pairs with Anthropic Serif
+      for long-form prose on anthropic.com. A 1.5× minimum
+      display-to-prose size ratio preserves the typographic
+      hierarchy when the serif is rendered alongside the sans
+      headlines.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AAA
+    criterion: "1.4.6"
+    severity: warning
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.6 (Contrast Enhanced) —
+      Level AAA. The brand's long-form, considered posture and
+      research-document aesthetic justify the enhanced 7:1
+      target rather than the AA 4.5:1 floor.
+
+  - type: contextRestriction
+    target: roles.colors.success
+    allowedContexts:
+      - confirmation
+      - completion
+      - data-viz-positive
+    forbiddenContexts:
+      - error-state
+      - destructive-action
+    severity: error
+    rationale: >
+      Olive (#788C5D) is the muted-green secondary used for
+      confirmation and positive data points. It is NOT the
+      error color (use fig). Reusing it for failure states
+      conflicts with the established positive-natural meaning.
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    pairsWith:
+      - ivory-light
+      - ivory-medium
+      - slate-dark
+    doesNotPairWith:
+      - fig
+      - sky
+      - heather
+    severity: recommendation
+    rationale: >
+      Clay reads cleanest against the ivory canvas or the slate
+      dark canvas. Pairing it adjacent to fig (rose-magenta),
+      sky (blue), or heather (lavender) introduces a chromatic
+      conflict that fights for attention without resolving into
+      hierarchy.

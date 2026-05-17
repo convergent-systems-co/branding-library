@@ -1,0 +1,174 @@
+id: openai
+version: 1.0.0
+name: OpenAI
+description: >
+  OpenAI is an AI research and deployment company — creator of the
+  GPT model family, ChatGPT, the OpenAI API, and the Codex code-
+  generation surface. The brand voice is research-grounded and
+  understated: it lets demos and capability speak. Visually, OpenAI
+  is monochrome-first — pure white or pure black canvases, a five-
+  stop neutral ramp for quiet emphasis, and a small set of "hue"
+  accents (red, lime, magenta, blue, yellow) reserved for diagrams
+  and data visualization. Typography is OpenAI Sans, the company's
+  proprietary brand face.
+
+tags: [openai, ai, research, brand, minimal, monochrome]
+
+provenance:
+  source: https://openai.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    OpenAI, OpCo. — visual identity captured from the deployed
+    stylesheet on openai.com (--color-primary-*, --color-secondary-*,
+    --color-hue-*, --color-supply-accent-* token families). OpenAI
+    marks and logos are property of OpenAI.
+  importedDate: 2026-05-17
+  notes: >
+    OpenAI Sans is the proprietary brand typeface declared on
+    openai.com (font-family: "OpenAI Sans", sans-serif). It is not
+    publicly distributed. This atom references Inter@1 as the open-
+    source rendering substitute and notes the proprietary primary
+    in this provenance block.
+
+references:
+  palette: openai@1
+  fonts:
+    heading: inter@1
+    body: inter@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # OpenAI is monochrome-first: black IS the brand identity color.
+    identity: openai-black
+    on-identity: openai-white
+
+    primary: openai-black
+    primary-hover: secondary-solid-80
+    accent: openai-accent-blue
+    accent-hover: openai-hue-blue
+    success: openai-hue-lime
+    warning: openai-hue-yellow
+    error: openai-hue-red
+    text-primary-light: openai-black
+    text-primary-dark: openai-white
+    background-light: openai-white
+    background-dark: openai-black
+    surface-light: secondary-solid-4
+    surface-dark: primary-solid-4
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 7.0
+    standard: WCAG-AAA
+    severity: error
+    rationale: >
+      Pure black on pure white (and vice versa) is the maximum
+      possible contrast (21:1). The brand's monochrome posture
+      clears AAA by construction; this rule guards against
+      consumers swapping in mid-neutrals that would defeat the
+      property.
+
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - openai-black
+      - openai-white
+    forbidden:
+      - openai-hue-red
+      - openai-hue-blue
+      - openai-hue-lime
+      - openai-hue-magenta
+      - openai-hue-yellow
+    severity: error
+    rationale: >
+      OpenAI's primary brand color is monochrome — black on white,
+      white on black. The "hue" tokens are reserved for data
+      visualization, syntax highlighting, and illustration and
+      must not be used as the brand interactive primary.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - gradient-fill
+      - on-busy-photo
+    severity: error
+    rationale: >
+      OpenAI's blossom mark is monochrome by design. Recolored,
+      skewed, or gradient variants conflict with the brand's
+      minimal posture.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["400", "500", "600", "700"]
+    severity: warning
+    rationale: >
+      OpenAI Sans is distributed in a constrained weight range on
+      openai.com. The marketing site uses Regular (400) for body,
+      Medium (500) and SemiBold (600) for emphasis, and Bold (700)
+      for hero headings. Display weights outside this band are
+      reserved for special editorial contexts.
+
+  - type: fontPairing
+    target: typography.heading
+    requires: body
+    minSizeRatio: 1.5
+    severity: error
+    rationale: >
+      OpenAI Sans is the only display face on openai.com; the
+      visual hierarchy is established entirely by size and weight.
+      A 1.5× minimum heading-to-body ratio preserves the
+      hierarchy without introducing a second family.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) —
+      Level AA. The brand's monochrome posture clears AA
+      effortlessly; consumers must preserve the property when
+      composing neutral ramps.
+
+  - type: contextRestriction
+    target: roles.colors.accent
+    allowedContexts:
+      - link
+      - data-viz-primary
+      - focus-ring
+    forbiddenContexts:
+      - background
+      - large-fill
+    severity: warning
+    rationale: >
+      OpenAI's documented accent blue (#4DA3FF) and the hue ramps
+      appear at small sizes — links, data points, syntax tokens —
+      not as large background fills. Large hue fills conflict
+      with the brand's monochrome canvas.
+
+  - type: compositionConstraint
+    target: roles.colors.identity
+    pairsWith:
+      - openai-white
+    doesNotPairWith:
+      - openai-hue-red
+      - openai-hue-blue
+      - openai-hue-magenta
+    severity: error
+    rationale: >
+      The identity block is black-on-white or white-on-black.
+      Placing the brand identity directly against a hue
+      background breaks the documented monochrome treatment.

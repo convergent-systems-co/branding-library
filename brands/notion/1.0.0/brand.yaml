@@ -1,0 +1,151 @@
+id: notion
+version: 1.0.0
+name: Notion
+description: >
+  Notion is a connected workspace for notes, docs, knowledge bases,
+  and project management — "the AI workspace that works for you." The
+  brand voice is calm, typographic, and disciplined: black ink on
+  warm-white paper, a tiny rounded sans wordmark, generous whitespace,
+  and a deliberate refusal of decorative color at the institutional
+  level. Where competing productivity brands lead with hue, Notion
+  leads with surface and type.
+tags: [saas, productivity, notion, monochrome, minimal, ai]
+
+provenance:
+  source: https://www.notion.com
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Notion and the Notion mark are trademarks of Notion Labs, Inc.
+    The signature mark color (pure black, #000000) is verified via
+    the simple-icons brand database, which cites notion.so as the
+    source. The near-monochrome institutional identity is uniformly
+    documented across notion.com.
+  importedDate: 2026-05-17
+  notes: >
+    Notion's brand reads heavily on typography. Inter is widely used
+    on notion.com (verified by inspecting the rendered site) and is
+    referenced here as the primary face. In-product accent colors
+    (callout / tag colors) exist but are not published as brand-level
+    hex values; brand-atoms therefore catalogues the near-monochrome
+    identity only and intentionally omits accent hex values to
+    satisfy the no-fabrication rule.
+
+references:
+  palette: notion@1
+  fonts:
+    heading: inter@1
+    body: inter@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # identity = the brand's signature surface. Notion's identity IS
+    # the typographic mark in pure black on white — the surface and the
+    # mark together carry the brand. Setting identity to notion-black
+    # lets brand-badge surfaces render in the mark's true voice.
+    identity: notion-black
+    on-identity: notion-white
+
+    primary: notion-black
+    primary-hover: notion-text-secondary-light
+    accent: notion-black
+    accent-hover: notion-text-secondary-light
+
+    success: notion-black
+    warning: notion-black
+    error: notion-black
+
+    background-light: notion-white
+    background-dark: notion-canvas-dark
+    surface-light: notion-white
+    surface-dark: notion-surface-dark
+    text-primary-light: notion-black
+    text-primary-dark: notion-white
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: logo.mark
+    allowed:
+      - notion-black
+      - notion-white
+    forbidden:
+      - any-non-brand-color
+    severity: error
+    rationale: >
+      The Notion mark is monochrome by definition. Use black on light
+      surfaces or white on dark surfaces — never a colored variant.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - on-busy-photo
+      - gradient-fill
+    severity: error
+    rationale: >
+      The Notion mark's reading depends on clean black/white contrast
+      against a quiet surface. Effects, recoloring, and busy
+      backgrounds break the mark's institutional voice.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 7.0
+    standard: WCAG-AAA
+    severity: warning
+    rationale: >
+      Notion's pure-black-on-white identity sits at 21:1 contrast —
+      well above AAA's 7:1 floor. Skinning that drops below AAA on
+      body text would betray the brand's documented commitment to
+      legibility.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      WCAG 2.1 Level AA contrast minimum for body text — the floor
+      below which the surface no longer reads as Notion.
+
+  - type: contextRestriction
+    target: roles.colors.identity
+    forbiddenContexts:
+      - decorative-only
+      - product-of-competitor
+      - endorsement-implication
+    severity: error
+    rationale: >
+      Notion's trademark and brand guidance restrict use of the mark
+      in ways that imply endorsement or appear on competing-product
+      surfaces without explicit license.
+
+  - type: numericRatio
+    target: typography.body.lineHeight
+    min: 1.5
+    max: 1.7
+    severity: recommendation
+    rationale: >
+      Notion's product surface reads with generous line-height —
+      typically in the 1.5–1.7 band. Tighter values break the calm
+      typographic rhythm; looser values feel decorative.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) — Level AA.
+      Notion's pure-black-on-white default starts well above AA;
+      Notion-skinned surfaces must hold that floor.

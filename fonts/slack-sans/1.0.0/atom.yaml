@@ -1,0 +1,56 @@
+kind: font
+id: slack-sans
+version: 1.0.0
+name: Slack Sans
+description: >
+  Slack Sans — the proprietary corporate typeface of Slack Technologies
+  (a Salesforce company), used as the primary marketing and on-screen
+  display face across Slack's product surfaces, brand center, and
+  marketing site since the 2019 Pentagram-led rebrand. Slack Sans is a
+  humanist sans-serif optimized for clarity at small UI sizes and warmth
+  at editorial display sizes.
+family: Slack Sans
+classification: sans-serif
+tags: [proprietary, custom, humanist, saas, brand-only]
+
+provenance:
+  source: https://slack.com/media-kit
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Slack Sans is a proprietary licensed typeface owned by Slack
+    Technologies, LLC (a Salesforce company). Use is restricted to
+    Slack's own marketing and to partners under Slack's brand-use
+    guidelines. External / public web rendering by non-Slack consumers
+    must fall back to a comparable humanist sans.
+  importedDate: 2026-05-17
+  notes: >
+    Slack Sans is not publicly distributed. brand-atoms catalogues the
+    family as an external reference so brand consumers can declare the
+    desired identity; the actual font files must be obtained from Slack
+    through its brand-use program. The recommended public-web fallback
+    is Lato (already in the brand-atoms catalog) — a similarly humanist
+    sans that approximates the rhythm of Slack Sans when the proprietary
+    file is unavailable.
+
+source:
+  kind: external
+  family: Slack Sans
+  notes: >
+    Licensed font; no public CDN. Distributed by Slack Technologies to
+    authorized brand-use partners. CSS @font-face declarations must
+    reference internally hosted files.
+
+fallbackStack:
+  - Lato
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Helvetica Neue
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 400, style: normal }
+  - { weight: 500, style: normal }
+  - { weight: 700, style: normal }
+  - { weight: 900, style: normal }

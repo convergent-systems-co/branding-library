@@ -1,0 +1,148 @@
+id: microsoft
+version: 1.0.0
+name: Microsoft
+description: >
+  Microsoft Corporation is a global technology company whose portfolio
+  spans operating systems (Windows), productivity (Microsoft 365),
+  cloud (Azure), developer tools (GitHub, Visual Studio), gaming
+  (Xbox), and AI (Copilot). The corporate identity is anchored on the
+  four-square logo — red, green, blue, and yellow quadrants — and on
+  Communications Blue (#0078D4) as the Fluent system primary. The
+  voice is enterprise-clear: confident, productivity-oriented,
+  technically precise, and welcoming to both end users and developers.
+tags: [tech, enterprise, productivity, microsoft, fluent]
+
+provenance:
+  source: https://www.microsoft.com/design/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Microsoft, the Microsoft logo, Windows, Office, Azure, Fluent, and
+    related names and marks are trademarks of the Microsoft group of
+    companies. Brand colors and identity guidance documented here are
+    derived from microsoft.com/design/ and the Fluent 2 design system
+    site at fluent2.microsoft.design.
+  importedDate: 2026-05-17
+  notes: >
+    Brand-atoms' read of Microsoft's public Fluent and brand-resource
+    guidance. This file is not an official Microsoft brand document.
+    Microsoft's four-square logo is one of the most-protected marks
+    on the internet; no asset files are bundled here.
+
+references:
+  palette: microsoft@1
+  fonts:
+    heading: segoe-ui@1
+    body: segoe-ui@1
+    mono: cascadiacode-nerdfont@1
+
+roles:
+  colors:
+    identity: communications-blue
+    on-identity: microsoft-white
+    primary: communications-blue
+    primary-hover: microsoft-blue
+    accent: microsoft-blue
+    background: microsoft-white
+    surface: microsoft-gray-20
+    text-primary: microsoft-near-black
+    text-secondary: microsoft-gray-160
+    logo-quadrant-red: microsoft-red
+    logo-quadrant-green: microsoft-green
+    logo-quadrant-blue: microsoft-blue
+    logo-quadrant-yellow: microsoft-yellow
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: logo.quadrants
+    allowed:
+      - microsoft-red
+      - microsoft-green
+      - microsoft-blue
+      - microsoft-yellow
+    forbidden:
+      - communications-blue
+    severity: error
+    rationale: >
+      The Microsoft four-square logo uses the canonical quadrant hues
+      (#F25022, #7FBA00, #00A4EF, #FFB900). Communications Blue
+      (#0078D4) is the Fluent system primary for UI chrome, not a
+      logo fill.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - on-busy-photo
+      - separated-quadrants
+    severity: error
+    rationale: >
+      Microsoft's brand guidelines explicitly prohibit altering the
+      proportions, colors, or arrangement of the four-square mark, and
+      require sufficient clearspace around the logo on any surface.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      WCAG 2.1 Level AA contrast requirement for body text. Microsoft
+      Near-Black (#1F1F1F) on Microsoft White clears AA at ~17:1, and
+      Fluent's accessibility guidance specifies AA as the floor for
+      text-on-background pairings.
+
+  - type: contrastRatio
+    target: roles.colors.primary
+    against: background
+    minRatio: 3.0
+    standard: WCAG-AA-large
+    severity: error
+    rationale: >
+      Communications Blue on Microsoft White must remain perceptible
+      at link / large-text sizes. Below 3:1, interactive affordance
+      collapses — Fluent's color system relies on this contrast to
+      signal "clickable."
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    doesNotPairWith:
+      - microsoft-red
+      - microsoft-green
+      - microsoft-yellow
+    severity: recommendation
+    rationale: >
+      The four logo-quadrant hues belong together as the brand mark.
+      Pairing Communications Blue with one quadrant hue alone
+      (without the full quadrant set) reads as a brand-identity
+      conflict rather than a coordinated palette.
+
+  - type: fontPairing
+    target: typography.heading
+    requires: body
+    minSizeRatio: 1.4
+    severity: recommendation
+    rationale: >
+      Fluent uses Segoe UI for both heading and body. Maintain a
+      meaningful size ratio (Fluent's type ramp goes from Caption at
+      ~12px to Title at ~32px+) to preserve hierarchy when one
+      family does double duty.
+
+  - type: enumMembership
+    target: typography.body.fontWeight
+    allowed: ["400", "600"]
+    severity: recommendation
+    rationale: >
+      Fluent's type ramp uses Segoe UI Regular (400) and Semibold
+      (600) for the majority of UI surfaces. Other weights exist
+      but are reserved for specific roles (Light for hero display,
+      Bold for emphasis).

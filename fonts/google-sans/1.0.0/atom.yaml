@@ -1,0 +1,54 @@
+kind: font
+id: google-sans
+version: 1.0.0
+name: Google Sans
+description: >
+  Google Sans (also distributed as "Product Sans" for the corporate
+  wordmark) — Google's proprietary geometric sans-serif used on the
+  Google wordmark, product titles, marketing surfaces, and the
+  identity-bearing chrome of consumer Google apps (Calendar, Drive,
+  Photos, Gmail). Not publicly licensed; consumers outside Google
+  must fall back to a comparable geometric sans (Inter or Roboto).
+family: Google Sans
+classification: sans-serif
+tags: [proprietary, geometric, google, product-sans, brand-only]
+
+provenance:
+  source: https://about.google/brand-resource-center/
+  license: Proprietary — Google LLC, internal use only
+  attribution: >
+    Google Sans / Product Sans is a proprietary licensed typeface
+    owned by Google LLC. Use is restricted to Google's own products,
+    marketing materials, and authorized vendors. External consumers
+    must fall back to a comparable geometric sans-serif.
+  importedDate: 2026-05-17
+  notes: >
+    Google distributes Google Sans only via product surfaces and the
+    Google Fonts API for first-party Google services; it is not part
+    of the public Google Fonts catalog. CSS @font-face declarations
+    outside Google's CDN must use Roboto or another open alternative.
+    The `external` source kind below makes the brand-only nature
+    explicit; no public cssImportUrl is provided.
+
+source:
+  kind: external
+  family: Google Sans
+  notes: >
+    Proprietary font; no public Google Fonts URL. Cross-platform
+    consumers must fall back to Roboto or an open geometric sans
+    via the fallbackStack below.
+
+fallbackStack:
+  - Roboto
+  - Inter
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Helvetica Neue
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 400, style: normal }
+  - { weight: 500, style: normal }
+  - { weight: 700, style: normal }

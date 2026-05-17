@@ -1,0 +1,57 @@
+kind: font
+id: roboto
+version: 1.0.0
+name: Roboto
+description: >
+  Roboto — Google's flagship neo-grotesque sans-serif, designed for
+  Android in 2011 and now the default UI face across the Material
+  Design system, Google Workspace surfaces, and many Google product
+  chromes. Distributed via Google Fonts as a variable font supporting
+  weights 100–900 and both upright and italic styles.
+family: Roboto
+classification: sans-serif
+tags: [variable-font, neo-grotesque, google, material, ui, body]
+
+provenance:
+  source: https://fonts.google.com/specimen/Roboto
+  license: Apache-2.0
+  attribution: >
+    Roboto, Copyright 2011 Google LLC, licensed under the Apache
+    License, Version 2.0. Originally designed by Christian Robertson.
+  importedDate: 2026-05-17
+  notes: >
+    Unlike most Google Fonts, Roboto is distributed under Apache-2.0
+    rather than the SIL Open Font License. The 2024 redesign
+    introduced a variable-axis cut (wght, wdth) — only wght is
+    surfaced as a variable axis here since wdth coverage is still
+    incomplete in many runtimes.
+
+source:
+  kind: google-fonts
+  family: Roboto
+  url: https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap
+
+fallbackStack:
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Helvetica Neue
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 100, style: normal }
+  - { weight: 100, style: italic }
+  - { weight: 300, style: normal }
+  - { weight: 300, style: italic }
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 500, style: normal }
+  - { weight: 500, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+  - { weight: 900, style: normal }
+  - { weight: 900, style: italic }
+
+variableAxes:
+  - { tag: wght, name: Weight, min: 100, max: 900, default: 400 }

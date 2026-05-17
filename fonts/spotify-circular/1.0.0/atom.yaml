@@ -1,0 +1,53 @@
+kind: font
+id: spotify-circular
+version: 1.0.0
+name: Spotify Circular
+description: >
+  Spotify Circular — the proprietary corporate typeface licensed by
+  Spotify AB from Lineto and customized for Spotify product and
+  marketing surfaces. A geometric sans-serif with circular bowls and
+  uniform stroke weights; used across the Spotify desktop, mobile,
+  web, and TV applications.
+family: Spotify Circular
+classification: sans-serif
+tags: [proprietary, custom, geometric, brand-only, screen]
+
+provenance:
+  source: https://developer.spotify.com/documentation/design
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Circular is owned by Lineto; Spotify Circular is a licensed and
+    customized cut used by Spotify AB. brand-atoms documents the face
+    for reference only — no binaries are mirrored or redistributed
+    by this catalog. External applications that cannot license
+    Circular fall back to a system grotesk.
+  importedDate: 2026-05-17
+  notes: >
+    Spotify's developer design documentation and brand guidelines
+    name Circular as the Spotify wordmark and product face. The
+    binary is not publicly distributed; treat any embed outside
+    Spotify-controlled surfaces as a licensing question.
+
+source:
+  kind: external
+  family: Spotify Circular
+  notes: >
+    Proprietary font, no public CDN. Distributed by Spotify to
+    authorized vendors. Any @font-face declaration must reference
+    internally hosted files under Spotify's licensing.
+
+fallbackStack:
+  - Helvetica Neue
+  - Helvetica
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 300, style: normal }
+  - { weight: 400, style: normal }
+  - { weight: 500, style: normal }
+  - { weight: 700, style: normal }
+  - { weight: 900, style: normal }

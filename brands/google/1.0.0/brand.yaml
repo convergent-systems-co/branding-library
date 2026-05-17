@@ -1,0 +1,146 @@
+id: google
+version: 1.0.0
+name: Google
+description: >
+  Google LLC is a global technology company best known for Search and
+  the Android ecosystem, with a portfolio that spans Chrome, YouTube,
+  Maps, Workspace (Gmail, Docs, Drive), Cloud (GCP), AI (Gemini), and
+  the Pixel hardware line. The visual identity is built around four
+  signature colors — Blue, Red, Yellow, Green — that animate the
+  wordmark, the "G" mark, and Material Design's primary palette. The
+  voice is approachable, optimistic, and information-clear: built for
+  consumer scale while still carrying engineering credibility.
+tags: [tech, google, material, search, consumer]
+
+provenance:
+  source: https://about.google/brand-resource-center/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Google, the Google logo, the multicolor "G" mark, Android,
+    Material Design, and related names and marks are trademarks of
+    Google LLC. Brand colors and identity guidance documented here
+    are derived from the Google Brand Resource Center
+    (about.google/brand-resource-center/) and the Material Design 3
+    color reference (m3.material.io/styles/color).
+  importedDate: 2026-05-17
+  notes: >
+    Brand-atoms' read of Google's public brand and Material Design
+    guidance. This file is not an official Google brand document.
+    Google's logo and product marks are among the most-protected
+    trademarks on the internet; no asset files are bundled here.
+
+references:
+  palette: google@1
+  fonts:
+    heading: google-sans@1
+    body: roboto@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    identity: google-blue
+    on-identity: google-white
+    primary: google-blue
+    primary-hover: google-blue
+    accent: google-green
+    background: google-white
+    surface: google-grey-100
+    text-primary: google-grey-900
+    text-secondary: google-grey-700
+    wordmark-blue: google-blue
+    wordmark-red: google-red
+    wordmark-yellow: google-yellow
+    wordmark-green: google-green
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: logo.wordmark
+    allowed:
+      - google-blue
+      - google-red
+      - google-yellow
+      - google-green
+    forbidden:
+      - google-grey-900
+      - google-grey-700
+    severity: error
+    rationale: >
+      Google's wordmark and "G" mark use the canonical four-color set
+      in the specified G-o-o-g-l-e order (blue / red / yellow / blue /
+      green / red). Monochromatic uses are reserved for special
+      contexts that Google's brand center calls out explicitly.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - on-busy-photo
+      - reordered-colors
+    severity: error
+    rationale: >
+      Google's brand guidelines explicitly prohibit altering the
+      proportions, color order, or orientation of the wordmark and
+      "G" mark, and require generous clearspace around the logo.
+
+  - type: fontPairing
+    target: typography.heading
+    requires: body
+    minSizeRatio: 1.5
+    severity: recommendation
+    rationale: >
+      Google's marketing surfaces pair Google Sans (display / titles)
+      with Roboto (body / UI). Maintain a meaningful size ratio to
+      preserve the geometric-vs-neogrotesque voice split between
+      the two families.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      WCAG 2.1 Level AA contrast requirement for body text. Google
+      Grey 900 (#202124) on Google White clears AA at ~16:1, and
+      Material Design's accessibility guidance specifies AA as the
+      floor for text-on-surface pairings.
+
+  - type: contrastRatio
+    target: roles.colors.primary
+    against: background
+    minRatio: 3.0
+    standard: WCAG-AA-large
+    severity: error
+    rationale: >
+      Google Blue on Google White must remain perceptible at link /
+      large-text sizes. Below 3:1 the affordance for "clickable"
+      collapses on Material surfaces.
+
+  - type: colorChoice
+    target: roles.colors.error
+    allowed:
+      - google-red
+    severity: error
+    rationale: >
+      Material Design uses Google Red (#EA4335) as the canonical
+      error / destructive color across product UI. Other reds dilute
+      the signal.
+
+  - type: colorChoice
+    target: roles.colors.success
+    allowed:
+      - google-green
+    severity: recommendation
+    rationale: >
+      Material Design uses Google Green (#34A853) as the canonical
+      success / confirmation color. Other greens are acceptable in
+      illustration but should not be used for confirmation chrome.

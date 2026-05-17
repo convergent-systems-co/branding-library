@@ -1,0 +1,182 @@
+id: slack
+version: 1.0.0
+name: Slack
+description: >
+  Slack is a channel-based messaging and collaboration platform for
+  modern work, owned by Salesforce since the 2021 acquisition. The
+  brand voice is warm, conversational, and human — "where work
+  happens." Visually, the 2019 Pentagram-led rebrand replaced the
+  earlier eleven-color identity with a tight four-color octothorpe
+  mark anchored on Slack Aubergine, designed so the brand reads
+  instantly against the white of competing desktop windows.
+tags: [saas, productivity, slack, salesforce, messaging]
+
+provenance:
+  source: https://slack.com/media-kit
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Slack and the Slack mark are trademarks of Slack Technologies, LLC,
+    a Salesforce company. brand-atoms reads only the publicly
+    documented core palette and proprietary-font identity; licensed
+    application of the Slack name and mark is governed by Slack's
+    brand-use program at slack.com/media-kit and the Slack trademark
+    guidelines.
+  importedDate: 2026-05-17
+  notes: >
+    Slack Sans, Slack's proprietary corporate typeface, is referenced
+    here as the canonical brand face. The fallbackStack on
+    slack-sans@1 specifies Lato as the public-web fallback when the
+    licensed file is not available.
+
+references:
+  palette: slack@1
+  fonts:
+    heading: slack-sans@1
+    body: slack-sans@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # identity = the brand's signature surface. Slack Aubergine is the
+    # institutional voice — used for the wordmark anchor and brand
+    # surfaces. The four quadrant colors carry the accent layer.
+    identity: aubergine
+    on-identity: slack-white
+
+    primary: aubergine
+    primary-hover: aubergine
+    accent: slack-green
+    accent-hover: slack-green
+    accent-blue: slack-blue
+    accent-yellow: slack-yellow
+    accent-red: slack-red
+
+    success: slack-green
+    warning: slack-yellow
+    error: slack-red
+
+    background-light: slack-white
+    background-dark: aubergine
+    surface-light: slack-surface-light
+    surface-dark: slack-surface-dark
+    text-primary-light: slack-black
+    text-primary-dark: slack-white
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: logo.mark
+    allowed:
+      - aubergine
+      - slack-green
+      - slack-blue
+      - slack-yellow
+      - slack-red
+      - slack-white
+      - slack-black
+    forbidden:
+      - any-non-brand-color
+    severity: error
+    rationale: >
+      The four quadrant colors of the Slack mark and Aubergine are the
+      only documented brand colors. Recoloring the mark into off-brand
+      hues violates Slack's brand-use guidelines as published at
+      slack.com/media-kit.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - on-busy-photo
+      - inverted-without-variant
+      - cropped
+      - reordered-quadrants
+    severity: error
+    rationale: >
+      Slack's media kit explicitly prohibits stretching, rotating,
+      recoloring, applying effects to, or rearranging the quadrants of
+      the Slack mark. The four-color octothorpe is a fixed composition.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      WCAG 2.1 Level AA contrast minimum for body text. Slack Black
+      (#1D1C1D) on Slack White (#FFFFFF) clears AA comfortably; Slack
+      White on Aubergine (#4A154B) also clears AA.
+
+  - type: variantSelection
+    target: logo
+    when:
+      backgroundColorScheme: dark
+    use: logo-light-on-dark
+    severity: error
+    rationale: >
+      On dark surfaces (including the canonical Aubergine canvas), the
+      light-on-dark wordmark variant is required for legibility. Do
+      not invert the mark file on the fly.
+
+  - type: variantSelection
+    target: logo
+    when:
+      backgroundColorScheme: light
+    use: logo-dark-on-light
+    severity: error
+    rationale: >
+      On light surfaces, use the dark-on-light wordmark variant where
+      the wordmark renders in Aubergine. Do not place the light-on-dark
+      variant on white.
+
+  - type: compositionConstraint
+    target: roles.colors.identity
+    pairsWith:
+      - slack-white
+      - slack-black
+    doesNotPairWith:
+      - slack-yellow
+    severity: recommendation
+    rationale: >
+      Aubergine + Slack Yellow combinations fight without resolving;
+      Aubergine pairs cleanly with white and with the green/blue
+      quadrants. Reserve yellow for accents on a neutral canvas.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["500", "700", "900"]
+    severity: warning
+    rationale: >
+      Slack Sans is distributed with discrete weights Regular (400),
+      Medium (500), Bold (700), and Black (900). Headings use 500 and
+      above to maintain Slack's bold-typographic voice.
+
+  - type: contextRestriction
+    target: logo.mark
+    forbiddenContexts:
+      - product-of-competitor
+      - merchandise
+      - endorsement-implication
+    severity: error
+    rationale: >
+      Slack's trademark guidelines forbid use of the mark in a way
+      that implies endorsement, on third-party merchandise, or on
+      competing-product surfaces without explicit license.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) — Level AA.
+      All Slack-skinned interfaces must clear AA at minimum.

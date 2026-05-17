@@ -1,0 +1,150 @@
+kind: palette
+id: stripe
+version: 1.0.0
+name: Stripe
+description: >
+  Stripe's brand palette as observed on the live marketing site
+  (stripe.com) and the Stripe Press / newsroom surfaces. Anchored
+  on the signature Stripe Purple (#635BFF) against a deep-navy
+  "Slate" text color and a near-white page canvas with subtle
+  fog-blue tints. The palette is light-first; dark surfaces are
+  used sparingly for headers and high-contrast modules.
+
+  Functional accents (success-green, orange, magenta, pink) appear
+  in Stripe's gradient surfaces and product illustrations and are
+  preserved here as a documented secondary scale.
+
+tags: [stripe, payments, fintech, brand, purple, light-first]
+
+provenance:
+  source: https://stripe.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Stripe, Inc. — palette values captured from the deployed
+    stylesheets at stripe.com (computed and source-mapped color
+    declarations on the homepage and brand surfaces). Trademarks,
+    logos, and brand elements are subject to Stripe's Marks Usage
+    Agreement at stripe.com/marks/legal.
+  importedDate: 2026-05-17
+  notes: >
+    Hex values cross-checked between (a) the rendered computed
+    styles of hero headings and CTAs on stripe.com and (b) the
+    color literals present in the deployed marketing stylesheet.
+    #635BFF (Stripe Purple) is the canonical brand purple cited
+    widely in third-party brand databases; #0A2540 and #061B31 are
+    Stripe's documented Slate heading hues; #F6F9FC is the
+    canonical page-canvas off-white.
+
+swatches:
+  # ─── Brand purple (signature) ───────────────────────────────────
+  - id: stripe-purple
+    name: Stripe Purple
+    value: "#635BFF"
+    description: The signature brand color. Primary buttons, links, gradient anchors.
+  - id: stripe-purple-pressed
+    name: Stripe Purple Pressed
+    value: "#533AFD"
+    description: Active / pressed state of the primary purple.
+  - id: stripe-purple-soft
+    name: Stripe Purple Soft
+    value: "#E8E9FF"
+    description: Tinted backgrounds, badges, on-brand call-out cards.
+
+  # ─── Slate (heading / dark text) ────────────────────────────────
+  - id: stripe-slate-100
+    name: Stripe Slate 100
+    value: "#061B31"
+    description: Deepest slate — large headings on light surfaces.
+  - id: stripe-slate-90
+    name: Stripe Slate 90
+    value: "#0A2540"
+    description: Standard heading slate, dark module backgrounds.
+  - id: stripe-slate-70
+    name: Stripe Slate 70
+    value: "#3C4F69"
+    description: Secondary heading / large body text.
+  - id: stripe-slate-50
+    name: Stripe Slate 50
+    value: "#425466"
+    description: Default body-text gray-blue.
+  - id: stripe-slate-30
+    name: Stripe Slate 30
+    value: "#667691"
+    description: Muted text and tertiary labels.
+
+  # ─── Fog (light canvas and surface tints) ───────────────────────
+  - id: stripe-white
+    name: Stripe White
+    value: "#FFFFFF"
+    description: Pure white surface.
+  - id: stripe-fog-0
+    name: Stripe Fog 0 (canvas)
+    value: "#F6F9FC"
+    description: Page canvas — the off-white Stripe uses behind content.
+  - id: stripe-fog-1
+    name: Stripe Fog 1
+    value: "#E5EDF5"
+    description: Subtle dividers and elevated-surface tints.
+  - id: stripe-fog-2
+    name: Stripe Fog 2
+    value: "#CFD7DF"
+    description: Border / hairline.
+
+  # ─── Functional accents (used in gradients and illustrations) ───
+  - id: stripe-green
+    name: Stripe Green
+    value: "#2CA25E"
+    description: Success / confirmation green.
+  - id: stripe-orange
+    name: Stripe Orange
+    value: "#E17A38"
+    description: Warm accent used in gradient surfaces.
+  - id: stripe-magenta
+    name: Stripe Magenta
+    value: "#F44BCC"
+    description: Hot accent — appears in Stripe's brand gradients.
+  - id: stripe-pink
+    name: Stripe Pink
+    value: "#FF5996"
+    description: Light pink accent used in illustration.
+  - id: stripe-red
+    name: Stripe Red
+    value: "#EA2261"
+    description: Error / destructive action.
+
+modes:
+  light:
+    roles:
+      background: stripe-fog-0
+      surface: stripe-white
+      surface-elevated: stripe-white
+      text-primary: stripe-slate-90
+      text-secondary: stripe-slate-50
+      text-tertiary: stripe-slate-30
+      primary: stripe-purple
+      primary-hover: stripe-purple-pressed
+      accent: stripe-purple
+      accent-hover: stripe-purple-pressed
+      warning: stripe-orange
+      warning-hover: stripe-orange
+      error: stripe-red
+      success: stripe-green
+      border: stripe-fog-2
+
+  dark:
+    roles:
+      background: stripe-slate-100
+      surface: stripe-slate-90
+      surface-elevated: stripe-slate-70
+      text-primary: stripe-white
+      text-secondary: stripe-fog-1
+      text-tertiary: stripe-slate-30
+      primary: stripe-purple
+      primary-hover: stripe-purple-soft
+      accent: stripe-purple
+      accent-hover: stripe-purple-soft
+      warning: stripe-orange
+      warning-hover: stripe-orange
+      error: stripe-pink
+      success: stripe-green
+      border: stripe-slate-70

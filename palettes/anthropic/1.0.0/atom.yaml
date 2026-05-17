@@ -1,0 +1,162 @@
+kind: palette
+id: anthropic
+version: 1.0.0
+name: Anthropic
+description: >
+  Anthropic's brand palette, captured directly from the live
+  marketing site (anthropic.com) where the design system exposes
+  named swatch tokens on the document root. The brand is warm and
+  paper-toned: a cream "Ivory" canvas, deep "Slate" text, with
+  Claude's signature "Clay" terracotta as the primary accent.
+  A muted natural-world secondary scale — Cloud, Oat, Manilla,
+  Kraft, Olive, Cactus, Sky, Heather, Fig, Coral — supports
+  illustration and surface accents.
+
+  Anthropic is light-first; the dark mode used on hero modules
+  flips Slate-dark to canvas with Ivory text.
+
+tags: [anthropic, claude, ai, brand, warm, paper, terracotta, light-first]
+
+provenance:
+  source: https://www.anthropic.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Anthropic, PBC — palette values captured from the deployed
+    stylesheet on anthropic.com (--swatch-* CSS custom-property
+    family). Anthropic, Claude, and associated marks are property
+    of Anthropic.
+  importedDate: 2026-05-17
+  notes: >
+    Swatch names mirror Anthropic's own internal naming as exposed
+    on the live site (--swatch--clay, --swatch--ivory-light, etc.).
+    The brand is paired with the proprietary Anthropic Sans /
+    Anthropic Serif / Anthropic Mono typefaces, none of which are
+    publicly distributed.
+
+swatches:
+  # ─── Ivory (cream canvas) ───────────────────────────────────────
+  - id: ivory-light
+    name: Ivory Light
+    value: "#FAF9F5"
+    description: Page canvas — the warm cream Anthropic uses as the base.
+  - id: ivory-medium
+    name: Ivory Medium
+    value: "#F0EEE6"
+    description: Subtle elevated surface; hover state for ivory buttons.
+  - id: ivory-dark
+    name: Ivory Dark
+    value: "#E8E6DC"
+    description: Border / quiet divider on ivory canvas.
+
+  # ─── Slate (deep ink) ───────────────────────────────────────────
+  - id: slate-dark
+    name: Slate Dark
+    value: "#141413"
+    description: Primary text on ivory; canvas in dark mode.
+  - id: slate-medium
+    name: Slate Medium
+    value: "#3D3D3A"
+    description: Elevated surface in dark mode; secondary text on ivory.
+  - id: slate-light
+    name: Slate Light
+    value: "#5E5D59"
+    description: Tertiary text; hover state for slate surfaces.
+
+  # ─── Cloud (warm gray) ──────────────────────────────────────────
+  - id: cloud-light
+    name: Cloud Light
+    value: "#D1CFC5"
+    description: Soft neutral, illustration mid-tone.
+  - id: cloud-medium
+    name: Cloud Medium
+    value: "#B0AEA5"
+    description: Mid cloud — secondary text on dark surfaces.
+  - id: cloud-dark
+    name: Cloud Dark
+    value: "#87867F"
+    description: Deep cloud — quiet text on warm surfaces.
+
+  # ─── Clay (Claude signature) ────────────────────────────────────
+  - id: clay
+    name: Clay
+    value: "#D97757"
+    description: Claude's signature terracotta accent. The brand's primary warm.
+  - id: accent
+    name: Accent
+    value: "#C6613F"
+    description: Pressed / active variant of clay.
+
+  # ─── Secondary natural palette ──────────────────────────────────
+  - id: oat
+    name: Oat
+    value: "#E3DACC"
+    description: Wheaten neutral, illustration warm.
+  - id: manilla
+    name: Manilla
+    value: "#EBDBBC"
+    description: Pale parchment yellow.
+  - id: kraft
+    name: Kraft
+    value: "#D4A27F"
+    description: Tan / craft-paper warm.
+  - id: olive
+    name: Olive
+    value: "#788C5D"
+    description: Muted green secondary.
+  - id: cactus
+    name: Cactus
+    value: "#BCD1CA"
+    description: Pale sage.
+  - id: sky
+    name: Sky
+    value: "#6A9BCC"
+    description: Mid blue secondary.
+  - id: heather
+    name: Heather
+    value: "#CBCADB"
+    description: Pale lavender.
+  - id: fig
+    name: Fig
+    value: "#C46686"
+    description: Muted rose-magenta.
+  - id: coral
+    name: Coral
+    value: "#EBCECE"
+    description: Pale coral pink — pairs with clay.
+
+modes:
+  light:
+    roles:
+      background: ivory-light
+      surface: ivory-medium
+      surface-elevated: ivory-light
+      text-primary: slate-dark
+      text-secondary: slate-medium
+      text-tertiary: slate-light
+      primary: clay
+      primary-hover: accent
+      accent: clay
+      accent-hover: accent
+      warning: kraft
+      warning-hover: accent
+      error: fig
+      success: olive
+      border: ivory-dark
+
+  dark:
+    roles:
+      background: slate-dark
+      surface: slate-medium
+      surface-elevated: slate-light
+      text-primary: ivory-light
+      text-secondary: cloud-medium
+      text-tertiary: cloud-dark
+      primary: clay
+      primary-hover: accent
+      accent: clay
+      accent-hover: accent
+      warning: manilla
+      warning-hover: kraft
+      error: fig
+      success: cactus
+      border: slate-light

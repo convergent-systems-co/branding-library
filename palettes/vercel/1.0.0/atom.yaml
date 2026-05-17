@@ -1,0 +1,176 @@
+kind: palette
+id: vercel
+version: 1.0.0
+name: Vercel (Geist)
+description: >
+  Vercel's brand palette, captured directly from the Geist Design
+  System tokens published on the live vercel.com stylesheet. The
+  brand is unambiguously dark-first and largely monochromatic —
+  pure black canvas, pure white foreground, ten-stop neutral
+  scales — with a small set of functional hue ramps (blue, red,
+  amber, green) reserved for status and the documentation surface.
+
+  Vercel's classical accent blue (#0070F3, ds-blue-600 in Geist)
+  remains the de facto product link color even though the marketing
+  site itself emphasizes the monochrome treatment.
+
+tags: [vercel, geist, design-system, dark-first, monochrome, brand]
+
+provenance:
+  source: https://vercel.com/geist/colors
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Vercel, Inc. — palette values captured from the live Geist
+    Design System CSS variables on vercel.com (--ds-* token
+    family). HSL values are documented upstream; the hex values
+    below resolve those HSL declarations. Geist Design System and
+    the Vercel marks are property of Vercel, Inc.
+  importedDate: 2026-05-17
+  notes: >
+    Resolved hex values from the Geist HSL token declarations
+    captured in the deployed stylesheet on vercel.com. The dark
+    scale shown here is the production dark-mode rendering; the
+    light scale provides a sensible inversion using the Geist
+    light-mode background ramp.
+
+swatches:
+  # ─── Foundations ────────────────────────────────────────────────
+  - id: vercel-black
+    name: Vercel Black
+    value: "#000000"
+    description: Pure black — the canvas of the marketing site.
+  - id: vercel-white
+    name: Vercel White
+    value: "#FFFFFF"
+    description: Pure white — the foreground of the marketing site.
+
+  # ─── Dark-mode neutral scale (Geist ds-gray dark) ───────────────
+  - id: dark-bg-100
+    name: Dark Background 100
+    value: "#0A0A0A"
+    description: ds-background-100 (hsl 0,0%,4%) — page canvas in dark mode.
+  - id: dark-bg-200
+    name: Dark Background 200
+    value: "#000000"
+    description: ds-background-200 — deeper canvas / under-page.
+  - id: dark-gray-100
+    name: Dark Gray 100
+    value: "#1A1A1A"
+    description: ds-gray-100 — subtle surface tint.
+  - id: dark-gray-200
+    name: Dark Gray 200
+    value: "#1F1F1F"
+    description: ds-gray-200.
+  - id: dark-gray-300
+    name: Dark Gray 300
+    value: "#292929"
+    description: ds-gray-300.
+  - id: dark-gray-400
+    name: Dark Gray 400
+    value: "#2E2E2E"
+    description: ds-gray-400.
+  - id: dark-gray-500
+    name: Dark Gray 500
+    value: "#454545"
+    description: ds-gray-500 — borders.
+  - id: dark-gray-600
+    name: Dark Gray 600
+    value: "#878787"
+    description: ds-gray-600.
+  - id: dark-gray-700
+    name: Dark Gray 700
+    value: "#8F8F8F"
+    description: ds-gray-700.
+  - id: dark-gray-800
+    name: Dark Gray 800
+    value: "#7D7D7D"
+    description: ds-gray-800.
+  - id: dark-gray-900
+    name: Dark Gray 900
+    value: "#A1A1A1"
+    description: ds-gray-900 — muted text.
+  - id: dark-gray-1000
+    name: Dark Gray 1000
+    value: "#EDEDED"
+    description: ds-gray-1000 — primary text in dark mode.
+
+  # ─── Light-mode neutral scale (Geist ds-gray light) ─────────────
+  - id: light-bg-100
+    name: Light Background 100
+    value: "#FFFFFF"
+    description: Page canvas in light mode.
+  - id: light-bg-200
+    name: Light Background 200
+    value: "#FAFAFA"
+    description: Subtle layered surface.
+  - id: light-gray-200
+    name: Light Gray 200
+    value: "#EAEAEA"
+    description: Hairline border.
+  - id: light-gray-600
+    name: Light Gray 600
+    value: "#666666"
+    description: Secondary text.
+  - id: light-gray-1000
+    name: Light Gray 1000
+    value: "#171717"
+    description: Primary text in light mode (rgb 23,23,23 — body color on vercel.com).
+
+  # ─── Vercel functional hues (Geist ds-blue/red/amber/green) ─────
+  - id: vercel-blue
+    name: Vercel Blue
+    value: "#0070F3"
+    description: ds-blue-600 — the classic Vercel link / accent blue.
+  - id: vercel-blue-bright
+    name: Vercel Blue Bright
+    value: "#52A8FF"
+    description: ds-blue-900 — bright link blue used on dark surfaces.
+  - id: vercel-red
+    name: Vercel Red
+    value: "#FF6166"
+    description: ds-red-900 — error / destructive.
+  - id: vercel-amber
+    name: Vercel Amber
+    value: "#F2A60D"
+    description: ds-amber-900 — warning.
+  - id: vercel-green
+    name: Vercel Green
+    value: "#62C073"
+    description: ds-green-900 — success.
+
+modes:
+  light:
+    roles:
+      background: light-bg-200
+      surface: light-bg-100
+      surface-elevated: light-bg-100
+      text-primary: light-gray-1000
+      text-secondary: light-gray-600
+      text-tertiary: dark-gray-600
+      primary: vercel-black
+      primary-hover: light-gray-1000
+      accent: vercel-blue
+      accent-hover: vercel-blue-bright
+      warning: vercel-amber
+      warning-hover: vercel-amber
+      error: vercel-red
+      success: vercel-green
+      border: light-gray-200
+
+  dark:
+    roles:
+      background: dark-bg-100
+      surface: dark-gray-100
+      surface-elevated: dark-gray-200
+      text-primary: dark-gray-1000
+      text-secondary: dark-gray-900
+      text-tertiary: dark-gray-700
+      primary: vercel-white
+      primary-hover: dark-gray-1000
+      accent: vercel-blue-bright
+      accent-hover: vercel-blue
+      warning: vercel-amber
+      warning-hover: vercel-amber
+      error: vercel-red
+      success: vercel-green
+      border: dark-gray-500

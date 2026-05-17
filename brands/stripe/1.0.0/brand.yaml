@@ -1,0 +1,157 @@
+id: stripe
+version: 1.0.0
+name: Stripe
+description: >
+  Stripe is a financial-infrastructure platform for the internet —
+  payments, billing, treasury, identity, and capital APIs used by
+  millions of businesses worldwide. The brand voice is engineer-
+  facing, plain-spoken, and unusually polished for the fintech
+  category. Visually, Stripe is anchored on a single signature
+  Stripe Purple (#635BFF) against deep-navy Slate text, near-white
+  Fog canvases, and the brand's characteristic light-source gradient
+  surfaces. Typography is Söhne (Klim Type Foundry), used across
+  stripe.com and Stripe Press as the proprietary brand face.
+
+tags: [stripe, fintech, payments, developer-tools, brand]
+
+provenance:
+  source: https://stripe.com/newsroom/brand-assets
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Stripe, Inc. — visual identity captured from the deployed
+    stylesheet on stripe.com and the Stripe Newsroom brand assets
+    page. All Stripe marks, logos, and brand elements are subject
+    to Stripe's Marks Usage Agreement at stripe.com/marks/legal.
+  importedDate: 2026-05-17
+  notes: >
+    Stripe's brand font is Söhne (sohne-var on stripe.com),
+    licensed from Klim Type Foundry — not "Stripe Sans" as
+    sometimes reported by third-party trackers. Söhne is a
+    commercial proprietary face; this atom references Inter@1
+    as the open-source rendering substitute and notes the
+    proprietary primary in this provenance block.
+
+references:
+  palette: stripe@1
+  fonts:
+    heading: inter@1
+    body: inter@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    primary: stripe-purple
+    primary-hover: stripe-purple-pressed
+    accent: stripe-purple
+    accent-hover: stripe-purple-pressed
+    success: stripe-green
+    warning: stripe-orange
+    error: stripe-red
+    text-primary-light: stripe-slate-90
+    text-primary-dark: stripe-white
+    background-light: stripe-fog-0
+    background-dark: stripe-slate-100
+    surface-light: stripe-white
+    surface-dark: stripe-slate-90
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      Stripe Slate 90 (#0A2540) on Fog 0 (#F6F9FC) is ~14:1; well
+      above AA. White on Slate 100 (#061B31) is ~15:1. Both
+      directions clear AA with substantial margin.
+
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - stripe-purple
+      - stripe-purple-pressed
+    forbidden:
+      - stripe-purple-soft
+      - stripe-magenta
+      - stripe-pink
+    severity: error
+    rationale: >
+      Stripe Purple (#635BFF) is the signature brand color and the
+      only token that may carry "primary action" semantics.
+      stripe-purple-soft is a tinted-background variant; magenta
+      and pink appear in illustration gradients only and must not
+      be used as primary buttons or links.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - outlined
+      - on-busy-photo
+    severity: error
+    rationale: >
+      Stripe's Marks Usage Agreement forbids modifying or altering
+      the Stripe word mark "in any way" and prohibits use that
+      implies endorsement. Apply the official monochrome variants
+      on appropriate light/dark surfaces; do not derive new
+      treatments.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["400", "500", "600"]
+    severity: warning
+    rationale: >
+      Stripe's marketing surfaces use Söhne Book / Regular (400),
+      Medium (500), and Semibold (600). Heavier weights appear in
+      brand wordmarks only, not in body or display headings.
+
+  - type: contextRestriction
+    target: roles.colors.accent
+    forbiddenContexts:
+      - error-state
+      - destructive-action
+    severity: error
+    rationale: >
+      Stripe Purple is the brand identity color, not an alert
+      color. Destructive states use stripe-red; warnings use
+      stripe-orange. Reusing the brand purple for destruction
+      breaks the established semantic mapping.
+
+  - type: contrastRatio
+    target: roles.colors.primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      Stripe Purple (#635BFF) on Fog 0 reaches ~4.6:1 — at the AA
+      threshold for normal text. Buttons using the purple as a
+      fill with white text exceed 6:1; this rule guards link
+      usage so the brand interactive color stays AA-compliant
+      against the canvas.
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    pairsWith:
+      - stripe-white
+      - stripe-fog-0
+      - stripe-slate-100
+    doesNotPairWith:
+      - stripe-magenta
+      - stripe-pink
+    severity: recommendation
+    rationale: >
+      The brand pairs purple with neutrals (white, fog, slate).
+      Magenta and pink are reserved for illustration / gradient
+      surfaces and clash with the purple in adjacent UI
+      placements.

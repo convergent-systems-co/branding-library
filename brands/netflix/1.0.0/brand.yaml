@@ -1,0 +1,167 @@
+id: netflix
+version: 1.0.0
+name: Netflix
+description: >
+  Netflix, Inc. is the global subscription streaming service and
+  studio that, since the 2007 streaming launch, has set the visual
+  grammar for "what a streaming service looks like." The brand is
+  dark-first, cinematic, and minimal: a near-black canvas with the
+  saturated Netflix Red wordmark and the geometric "N" mark used
+  sparingly as the brand-identity anchor. The voice is confident,
+  spare, and built around the content rather than around the
+  product — chrome stays out of the way of the title art.
+tags: [streaming, entertainment, netflix, dark-first, consumer-tech]
+
+provenance:
+  source: https://brand.netflix.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Netflix, Inc. — Netflix, the Netflix wordmark, the Netflix "N"
+    mark, and Netflix Sans are registered trademarks of Netflix,
+    Inc. This atom captures brand-atoms' read of Netflix's
+    publicly available brand assets and press kit; it is not an
+    official Netflix brand-guidelines document.
+  importedDate: 2026-05-17
+  notes: >
+    Netflix's brand operates on a small, disciplined system: one
+    red, one black, one proprietary typeface, and a wordmark that
+    almost never deviates. The forbidden-treatment rules below
+    encode the most consistently policed elements of that system.
+
+references:
+  palette: netflix@1
+  fonts:
+    heading: netflix-sans@1
+    body: netflix-sans@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # identity = the brand's signature block color. Netflix is
+    # dark-first: the near-black canvas IS the brand, with red used
+    # only on the mark and the highest-priority calls to action.
+    identity: netflix-black
+    on-identity: netflix-red
+
+    background: netflix-black
+    surface: netflix-near-black
+    surface-elevated: netflix-charcoal
+    text-primary: netflix-white
+    text-secondary: netflix-off-white
+    text-tertiary: netflix-gray
+
+    primary: netflix-red
+    primary-hover: netflix-red-dark
+    accent: netflix-red
+    accent-hover: netflix-red-dark
+    mark: netflix-red
+    text-emphasis: netflix-white
+    text-muted: netflix-gray
+  typography:
+    display: heading
+    prose: body
+    wordmark: heading
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: logo.wordmark.fill
+    allowed:
+      - netflix-red
+      - netflix-white
+      - netflix-black
+    forbidden:
+      - netflix-red-dark
+      - netflix-gray
+      - netflix-off-white
+    severity: error
+    rationale: >
+      The Netflix wordmark renders only in Netflix Red, white, or
+      black per the public brand assets. The dark-red hover color
+      and gray tones are interactive-state values for product
+      surfaces, not wordmark fills.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - on-busy-photo
+      - inverted-without-variant
+      - red-on-busy-background
+    severity: error
+    rationale: >
+      The Netflix wordmark and "N" mark are among the most-policed
+      commercial marks in the world. Apply only Netflix-approved
+      variants with adequate clearspace; never render the red
+      wordmark over a busy photographic background where it loses
+      legibility.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      Netflix White on Netflix Black gives ~21:1 — well above
+      WCAG 2.1 Level AA. The rule encodes the floor for any new
+      foreground/background pairing introduced on Netflix surfaces.
+
+  - type: contrastRatio
+    target: roles.colors.primary
+    against: background
+    minRatio: 3.0
+    standard: WCAG-AA-large
+    severity: error
+    rationale: >
+      Netflix Red on Netflix Black must remain perceptible at
+      interactive sizes. Falling below 3:1 (AA-large) breaks the
+      interactive affordance of the primary CTA.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["500", "700"]
+    severity: warning
+    rationale: >
+      The Netflix Sans corporate weights most commonly seen on
+      headlines and the wordmark are Medium (500) and Bold (700).
+      Lighter cuts compromise the marketing voice; heavier cuts
+      are outside the standard kit.
+
+  - type: contextRestriction
+    target: roles.colors.primary
+    forbiddenContexts:
+      - body-text
+      - secondary-link
+    severity: error
+    rationale: >
+      Netflix Red is reserved for the brand mark and primary
+      action. Using it inside body copy or for secondary links
+      dilutes the signature accent and weakens the visual
+      hierarchy Netflix's brand depends on.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) — Level
+      AA. The dark-first canvas makes contrast checks the default
+      verification on any new role pairing.
+
+  - type: fontPairing
+    target: typography.heading
+    requires: body
+    minSizeRatio: 1.6
+    severity: warning
+    rationale: >
+      Netflix's marketing headlines run substantially larger than
+      body copy. A 1.6× minimum size ratio preserves the
+      cinematic display-to-prose hierarchy the brand voice
+      depends on.

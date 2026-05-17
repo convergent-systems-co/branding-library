@@ -1,0 +1,52 @@
+kind: font
+id: meta-sans
+version: 1.0.0
+name: Meta Sans
+description: >
+  Meta Sans — the proprietary corporate typeface of Meta Platforms,
+  Inc., used across Meta corporate communications and the company-
+  level brand system that sits above the Facebook, Instagram, and
+  WhatsApp product wordmarks. A geometric sans-serif with humanist
+  proportions tuned for headline and editorial surfaces.
+family: Meta Sans
+classification: sans-serif
+tags: [proprietary, custom, brand-only, meta, corporate]
+
+provenance:
+  source: https://about.meta.com/brand/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Meta Sans is a proprietary typeface owned by Meta Platforms,
+    Inc. Use is restricted to authorized Meta materials. brand-atoms
+    documents the face for reference only — no binaries are mirrored
+    or redistributed by this catalog.
+  importedDate: 2026-05-17
+  notes: >
+    Meta Sans is not publicly distributed. Public consumer surfaces
+    that cannot embed the proprietary face fall back to a system
+    grotesk. Meta's product brands (Facebook, Instagram) each
+    maintain their own additional brand faces alongside Meta Sans
+    at the corporate tier.
+
+source:
+  kind: external
+  family: Meta Sans
+  notes: >
+    Proprietary font, no public CDN. Distributed by Meta to
+    authorized agencies and vendors. Any @font-face declaration
+    must reference internally hosted files under Meta's licensing.
+
+fallbackStack:
+  - Inter
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Helvetica Neue
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 300, style: normal }
+  - { weight: 400, style: normal }
+  - { weight: 500, style: normal }
+  - { weight: 700, style: normal }

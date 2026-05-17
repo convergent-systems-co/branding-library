@@ -1,0 +1,134 @@
+kind: palette
+id: airbnb
+version: 1.0.0
+name: Airbnb
+description: >
+  Airbnb's brand palette, anchored on the signature Rausch
+  (#FF5A5F) — the warm pink-red introduced with the 2014 Bélo rebrand
+  and retained as the primary brand color across airbnb.com, the
+  mobile apps, and Airbnb's marketing. Rausch reads as the brand voice;
+  the rest of the system is built on warm neutrals so photography
+  and Rausch can carry the visual weight.
+tags: [hospitality, travel, airbnb, rausch, warm]
+
+provenance:
+  source: https://news.airbnb.com/press-kit/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Airbnb and the Bélo (the Airbnb mark) are trademarks of Airbnb,
+    Inc. Rausch (#FF5A5F) is independently verified via the
+    simple-icons brand database, which cites airbnb.com as the source.
+    Airbnb's broader original "Design Language System" (DLS) names
+    additional colors (Babu, Arches, Hof, Foggy) in widely-cited
+    secondary literature, but those hex values are not currently
+    surfaced in Airbnb's primary public press kit — this atom
+    deliberately catalogues only verified hex values plus authored
+    neutral surfaces to satisfy brand-atoms' no-fabrication rule.
+  importedDate: 2026-05-17
+  notes: >
+    Only Rausch (#FF5A5F) is directly verifiable from public Airbnb
+    surfaces today. Other swatches in this atom are authored neutral
+    surface and text tones that respect Airbnb's documented warm-light
+    identity. Consumers with access to Airbnb's brand-use program
+    should override these authored neutrals with the official DLS
+    values once available.
+
+swatches:
+  # ─── Signature ─────────────────────────────────────────────────
+  - id: airbnb-rausch
+    name: Airbnb Rausch
+    value: "#FF5A5F"
+    description: >
+      Signature pink-red — the primary brand color. Verified hex from
+      the simple-icons brand database citing airbnb.com.
+  - id: airbnb-rausch-hover
+    name: Airbnb Rausch Hover
+    value: "#E94A4F"
+    description: Authored hover / active state for Rausch.
+
+  # ─── Neutrals ──────────────────────────────────────────────────
+  - id: airbnb-white
+    name: Airbnb White
+    value: "#FFFFFF"
+    description: Canvas on light surfaces.
+  - id: airbnb-near-white
+    name: Airbnb Near-White
+    value: "#F7F7F7"
+    description: Authored panel surface for light mode.
+  - id: airbnb-text-primary
+    name: Airbnb Text Primary
+    value: "#222222"
+    description: >
+      Authored body text on light backgrounds — the near-black tone
+      Airbnb's marketing surfaces uniformly read as.
+  - id: airbnb-text-secondary
+    name: Airbnb Text Secondary
+    value: "#717171"
+    description: Authored secondary text on light backgrounds.
+  - id: airbnb-text-tertiary
+    name: Airbnb Text Tertiary
+    value: "#B0B0B0"
+    description: Authored tertiary / muted text.
+  - id: airbnb-divider
+    name: Airbnb Divider
+    value: "#EBEBEB"
+    description: Authored hairline divider tone.
+
+  # ─── Dark surfaces (authored) ──────────────────────────────────
+  - id: airbnb-canvas-dark
+    name: Airbnb Canvas Dark
+    value: "#1A1A1A"
+    description: Authored dark-mode canvas — Airbnb's primary product is light-first; this is an authored inversion.
+  - id: airbnb-surface-dark
+    name: Airbnb Surface Dark
+    value: "#2B2B2B"
+    description: Authored elevated surface on dark mode.
+
+  # ─── Status accents (authored) ─────────────────────────────────
+  - id: airbnb-success
+    name: Airbnb Success
+    value: "#008A05"
+    description: Authored success accent — leans deep green, consistent with Airbnb's status indicators.
+  - id: airbnb-warning
+    name: Airbnb Warning
+    value: "#C13515"
+    description: Authored warning accent — a deeper red used distinctly from Rausch for destructive context.
+  - id: airbnb-error
+    name: Airbnb Error
+    value: "#C13515"
+    description: Authored error accent — same deeper red.
+
+modes:
+  light:
+    roles:
+      background: airbnb-white
+      surface: airbnb-near-white
+      surface-elevated: airbnb-white
+      text-primary: airbnb-text-primary
+      text-secondary: airbnb-text-secondary
+      text-tertiary: airbnb-text-tertiary
+      primary: airbnb-rausch
+      primary-hover: airbnb-rausch-hover
+      accent: airbnb-rausch
+      accent-hover: airbnb-rausch-hover
+      warning: airbnb-warning
+      warning-hover: airbnb-warning
+      error: airbnb-error
+      success: airbnb-success
+
+  dark:
+    roles:
+      background: airbnb-canvas-dark
+      surface: airbnb-surface-dark
+      surface-elevated: airbnb-surface-dark
+      text-primary: airbnb-white
+      text-secondary: airbnb-text-tertiary
+      text-tertiary: airbnb-text-secondary
+      primary: airbnb-rausch
+      primary-hover: airbnb-rausch-hover
+      accent: airbnb-rausch
+      accent-hover: airbnb-rausch-hover
+      warning: airbnb-warning
+      warning-hover: airbnb-warning
+      error: airbnb-error
+      success: airbnb-success

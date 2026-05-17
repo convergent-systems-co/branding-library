@@ -1,0 +1,121 @@
+kind: palette
+id: amazon
+version: 1.0.0
+name: Amazon
+description: >
+  Amazon corporate palette built around Amazon Orange (#FF9900) —
+  the signature "smile" color of the Amazon wordmark — paired with
+  the deep-navy Amazon Squid Ink (#232F3E) used across the retail
+  site chrome and the AWS console. The orange-on-navy contrast is
+  the most recognizable element of Amazon's visual identity; the
+  warm orange carries the brand voice while the navy provides the
+  structural canvas.
+tags: [retail, ecommerce, amazon, orange, corporate, parent-brand]
+
+provenance:
+  source: https://www.aboutamazon.com/news/company-news/our-brand
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Amazon.com, Inc. — Amazon, the Amazon "smile" wordmark, and
+    associated marks are registered trademarks of Amazon.com, Inc.
+    Amazon Orange (#FF9900) and Amazon Squid Ink (#232F3E) are the
+    canonical brand-system values documented across the Amazon
+    press surfaces and the AWS console style system.
+  importedDate: 2026-05-17
+  notes: >
+    Amazon is light-mode-first on retail (amazon.com) but the
+    chrome of the retail site uses the dark Squid Ink navigation
+    band as a fixed dark accent. AWS surfaces are bilingual across
+    light and dark. Both modes are authored here.
+
+swatches:
+  - id: amazon-orange
+    name: Amazon Orange
+    value: "#FF9900"
+    description: Primary Amazon brand orange — the "smile" of the wordmark and the principal CTA color.
+  - id: amazon-orange-dark
+    name: Amazon Orange Dark
+    value: "#E47911"
+    description: Darker orange for pressed/active states on the primary CTA.
+  - id: amazon-squid-ink
+    name: Amazon Squid Ink
+    value: "#232F3E"
+    description: Deep navy — the Amazon retail navigation band and AWS console chrome.
+  - id: amazon-squid-ink-light
+    name: Amazon Squid Ink Light
+    value: "#37475A"
+    description: Secondary navigation band on amazon.com retail surfaces.
+  - id: amazon-anchor
+    name: Amazon Anchor
+    value: "#131A22"
+    description: Darkest navy used on the retail mega-nav and dark-mode canvas.
+  - id: amazon-yellow
+    name: Amazon Yellow
+    value: "#FFD814"
+    description: Add-to-Cart button yellow — secondary CTA color across the retail product detail page.
+  - id: amazon-yellow-dark
+    name: Amazon Yellow Dark
+    value: "#F7CA00"
+    description: Pressed state for the yellow secondary CTA.
+  - id: amazon-link
+    name: Amazon Link
+    value: "#007185"
+    description: Teal link color on amazon.com retail.
+  - id: amazon-link-hover
+    name: Amazon Link Hover
+    value: "#C7511F"
+    description: Hover color for product links — a rust-toned orange.
+  - id: amazon-ink
+    name: Amazon Ink
+    value: "#0F1111"
+    description: Primary text on the light retail canvas — near-black warm gray.
+  - id: amazon-gray
+    name: Amazon Gray
+    value: "#565959"
+    description: Secondary text and metadata.
+  - id: amazon-gray-light
+    name: Amazon Gray Light
+    value: "#888C8C"
+    description: Tertiary text and disabled states.
+  - id: amazon-surface
+    name: Amazon Surface
+    value: "#EAEDED"
+    description: Quiet surface — the retail "card" backgrounds and footer.
+  - id: amazon-white
+    name: Amazon White
+    value: "#FFFFFF"
+    description: Primary canvas on the retail site.
+
+modes:
+  light:
+    roles:
+      background: amazon-white
+      surface: amazon-surface
+      surface-elevated: amazon-white
+      text-primary: amazon-ink
+      text-secondary: amazon-gray
+      text-tertiary: amazon-gray-light
+      primary: amazon-orange
+      primary-hover: amazon-orange-dark
+      accent: amazon-yellow
+      accent-hover: amazon-yellow-dark
+      warning: amazon-orange
+      warning-hover: amazon-orange-dark
+      error: amazon-link-hover
+      success: amazon-link
+  dark:
+    roles:
+      background: amazon-anchor
+      surface: amazon-squid-ink
+      surface-elevated: amazon-squid-ink-light
+      text-primary: amazon-white
+      text-secondary: amazon-surface
+      text-tertiary: amazon-gray-light
+      primary: amazon-orange
+      primary-hover: amazon-orange-dark
+      accent: amazon-yellow
+      accent-hover: amazon-yellow-dark
+      warning: amazon-orange
+      warning-hover: amazon-orange-dark
+      error: amazon-link-hover
+      success: amazon-link

@@ -1,0 +1,102 @@
+kind: palette
+id: notion
+version: 1.0.0
+name: Notion
+description: >
+  Notion's brand palette — radically near-monochrome. The institutional
+  voice is black-on-white (or white-on-black in dark mode); the brand
+  reads as restrained, typographic, and surface-driven. Where competing
+  productivity brands lead with color, Notion leads with whitespace and
+  type. This atom captures only the verified mark and surface tones; in
+  the product, additional accent colors exist for callouts and tags
+  but those are not published as brand-level hex values and are not
+  catalogued here to avoid fabrication.
+tags: [saas, productivity, notion, monochrome, minimal]
+
+provenance:
+  source: https://www.notion.com
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Notion and the Notion mark are trademarks of Notion Labs, Inc. The
+    signature mark uses pure black (#000000) — verified via the
+    simple-icons brand database, which cites notion.so as the source.
+    The near-monochrome identity is uniformly documented across
+    notion.com.
+  importedDate: 2026-05-17
+  notes: >
+    Only the mark color (#000000) is independently verified from
+    Notion's public brand surfaces. The remaining swatches here are
+    a minimal authored neutral inversion (pure white canvas, near-black
+    canvas for dark mode) that respect Notion's documented monochrome
+    identity. brand-atoms deliberately omits Notion's in-product
+    accent palette (callout / tag colors) — those hex values are not
+    published as brand assets and including them without a citable
+    source would be fabrication.
+
+swatches:
+  - id: notion-black
+    name: Notion Black
+    value: "#000000"
+    description: Signature mark and wordmark color on light surfaces. Verified brand mark hex.
+  - id: notion-white
+    name: Notion White
+    value: "#FFFFFF"
+    description: Canvas on light mode; wordmark fill on dark mode.
+  - id: notion-canvas-dark
+    name: Notion Canvas Dark
+    value: "#191919"
+    description: >
+      Authored dark-mode canvas (near-black). Notion's product dark
+      theme is uniformly described as a near-black canvas; this value
+      is an authored inversion, not a published brand hex.
+  - id: notion-surface-dark
+    name: Notion Surface Dark
+    value: "#2F2F2F"
+    description: Authored elevated surface for dark mode.
+  - id: notion-text-secondary-light
+    name: Notion Text Secondary (Light)
+    value: "#787878"
+    description: Authored secondary text — neutral mid-gray on light canvas.
+  - id: notion-text-tertiary-light
+    name: Notion Text Tertiary (Light)
+    value: "#A0A0A0"
+    description: Authored tertiary / muted text on light.
+  - id: notion-text-secondary-dark
+    name: Notion Text Secondary (Dark)
+    value: "#A0A0A0"
+    description: Authored secondary text on dark canvas.
+
+modes:
+  light:
+    roles:
+      background: notion-white
+      surface: notion-white
+      surface-elevated: notion-white
+      text-primary: notion-black
+      text-secondary: notion-text-secondary-light
+      text-tertiary: notion-text-tertiary-light
+      primary: notion-black
+      primary-hover: notion-text-secondary-light
+      accent: notion-black
+      accent-hover: notion-text-secondary-light
+      warning: notion-black
+      warning-hover: notion-text-secondary-light
+      error: notion-black
+      success: notion-black
+
+  dark:
+    roles:
+      background: notion-canvas-dark
+      surface: notion-surface-dark
+      surface-elevated: notion-surface-dark
+      text-primary: notion-white
+      text-secondary: notion-text-secondary-dark
+      text-tertiary: notion-text-tertiary-light
+      primary: notion-white
+      primary-hover: notion-text-secondary-dark
+      accent: notion-white
+      accent-hover: notion-text-secondary-dark
+      warning: notion-white
+      warning-hover: notion-text-secondary-dark
+      error: notion-white
+      success: notion-white

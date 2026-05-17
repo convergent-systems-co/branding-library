@@ -1,0 +1,98 @@
+kind: palette
+id: netflix
+version: 1.0.0
+name: Netflix
+description: >
+  Netflix corporate palette built around Netflix Red (#E50914) and a
+  deep-black canvas. The brand is dark-first: the Netflix consumer
+  product, marketing surfaces, and the iconic "N" mark all live on
+  near-black surfaces with the saturated red used sparingly for the
+  wordmark, the mark, and the highest-priority calls to action. The
+  red value is verified from the official Netflix logomark SVG and
+  Netflix's own brand-asset press kit.
+tags: [streaming, entertainment, netflix, red, dark-first, corporate]
+
+provenance:
+  source: https://brand.netflix.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Netflix, Inc. — Netflix, the Netflix wordmark, and the Netflix
+    "N" mark are registered trademarks of Netflix, Inc. The
+    signature red value (#E50914) is documented across the Netflix
+    press kit and is visible in the official Netflix logomark SVG.
+  importedDate: 2026-05-17
+  notes: >
+    Dark mode is the canonical Netflix surface — the consumer app,
+    title cards, and marketing materials all default to near-black
+    canvas with the red used as the brand-identity accent. The
+    light-mode role mapping is an authored inversion provided for
+    consumers that need a light-surface treatment; it is not a
+    Netflix-published mode.
+
+swatches:
+  - id: netflix-red
+    name: Netflix Red
+    value: "#E50914"
+    description: Primary brand red — the Netflix wordmark and mark color.
+  - id: netflix-red-dark
+    name: Netflix Red Dark
+    value: "#B81D24"
+    description: Darker red used historically on the "N" ribbon and for hover/pressed states on the primary red.
+  - id: netflix-black
+    name: Netflix Black
+    value: "#000000"
+    description: Canonical canvas — the Netflix consumer surface is solid black.
+  - id: netflix-near-black
+    name: Netflix Near-Black
+    value: "#141414"
+    description: Surface color of the Netflix consumer app — rows, tiles, and modal backgrounds sit on this near-black.
+  - id: netflix-charcoal
+    name: Netflix Charcoal
+    value: "#221F1F"
+    description: Elevated surface — used on hover states, expanded title cards, and modal headers in the Netflix app.
+  - id: netflix-gray
+    name: Netflix Gray
+    value: "#564D4D"
+    description: Secondary text and divider color on the dark canvas.
+  - id: netflix-white
+    name: Netflix White
+    value: "#FFFFFF"
+    description: Primary text on the dark canvas; reversed wordmark fill on light backgrounds.
+  - id: netflix-off-white
+    name: Netflix Off-White
+    value: "#F5F5F1"
+    description: Warm off-white used for light-mode marketing surfaces and editorial pages.
+
+modes:
+  light:
+    roles:
+      background: netflix-off-white
+      surface: netflix-white
+      surface-elevated: netflix-white
+      text-primary: netflix-black
+      text-secondary: netflix-charcoal
+      text-tertiary: netflix-gray
+      primary: netflix-red
+      primary-hover: netflix-red-dark
+      accent: netflix-red
+      accent-hover: netflix-red-dark
+      warning: netflix-red
+      warning-hover: netflix-red-dark
+      error: netflix-red
+      success: netflix-gray
+  dark:
+    roles:
+      background: netflix-black
+      surface: netflix-near-black
+      surface-elevated: netflix-charcoal
+      text-primary: netflix-white
+      text-secondary: netflix-off-white
+      text-tertiary: netflix-gray
+      primary: netflix-red
+      primary-hover: netflix-red-dark
+      accent: netflix-red
+      accent-hover: netflix-red-dark
+      warning: netflix-red
+      warning-hover: netflix-red-dark
+      error: netflix-red
+      success: netflix-white

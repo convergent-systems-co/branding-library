@@ -1,0 +1,58 @@
+kind: font
+id: airbnb-cereal
+version: 1.0.0
+name: Airbnb Cereal
+description: >
+  Airbnb Cereal — the proprietary corporate typeface of Airbnb,
+  commissioned from Dalton Maag and released as part of Airbnb's brand
+  refresh. Cereal is a geometric humanist sans-serif used across
+  airbnb.com, the iOS and Android apps, the host platform, and Airbnb's
+  marketing communications.
+family: Airbnb Cereal
+classification: sans-serif
+tags: [proprietary, custom, geometric-humanist, hospitality, brand-only]
+
+provenance:
+  source: https://news.airbnb.com/press-kit/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Airbnb Cereal is a proprietary licensed typeface owned by Airbnb,
+    Inc., commissioned from Dalton Maag. Use is restricted to Airbnb's
+    own materials and to authorized partners under Airbnb's brand-use
+    guidelines. External / public web rendering by non-Airbnb consumers
+    must fall back to a comparable geometric humanist sans.
+  importedDate: 2026-05-17
+  notes: >
+    Cereal is not publicly distributed. brand-atoms catalogues the
+    family as an external reference so brand consumers can declare the
+    desired identity; the actual font files must be obtained from
+    Airbnb through its brand-use program. The recommended public-web
+    fallback is Inter (already in the brand-atoms catalog) — a similarly
+    humanist sans with comparable proportions when the proprietary file
+    is unavailable.
+
+source:
+  kind: external
+  family: Airbnb Cereal
+  notes: >
+    Licensed font; no public CDN. Distributed by Airbnb to authorized
+    partners. CSS @font-face declarations must reference internally
+    hosted files.
+
+fallbackStack:
+  - Inter
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Roboto
+  - Helvetica Neue
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 300, style: normal }
+  - { weight: 400, style: normal }
+  - { weight: 500, style: normal }
+  - { weight: 600, style: normal }
+  - { weight: 700, style: normal }
+  - { weight: 800, style: normal }

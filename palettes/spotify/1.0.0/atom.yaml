@@ -1,0 +1,103 @@
+kind: palette
+id: spotify
+version: 1.0.0
+name: Spotify
+description: >
+  Spotify corporate palette built around Spotify Green (#1DB954,
+  with the brighter #1ED760 introduced as the refreshed primary in
+  the 2015 brand update) and a deep-black canvas. The brand is
+  dark-first: the consumer player, marketing, and the official
+  Spotify logomark all live on black with green reading as the
+  high-energy accent. The black-and-green pairing is the most
+  recognizable element of the Spotify identity.
+tags: [streaming, audio, spotify, green, dark-first, corporate]
+
+provenance:
+  source: https://developer.spotify.com/documentation/design
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Spotify AB — Spotify, the Spotify wordmark, and the three-arc
+    "soundwave" mark are registered trademarks of Spotify AB. The
+    primary green (#1ED760) and the legacy Spotify Green (#1DB954)
+    are documented across Spotify's developer design guidance and
+    in the official Spotify logomark assets.
+  importedDate: 2026-05-17
+  notes: >
+    Dark mode is the canonical Spotify surface. The light-mode role
+    mapping is an authored inversion for consumers that need a
+    light-surface treatment; it is not the Spotify-published
+    canonical surface. The two greens (#1DB954 legacy and #1ED760
+    current) coexist in the brand; #1ED760 is the dominant primary
+    on current product surfaces.
+
+swatches:
+  - id: spotify-green
+    name: Spotify Green
+    value: "#1ED760"
+    description: Current primary brand green — used on the wordmark, the play affordance, and primary CTAs.
+  - id: spotify-green-legacy
+    name: Spotify Green (Legacy)
+    value: "#1DB954"
+    description: The legacy Spotify Green established with the brand. Still appears across press assets and older surfaces.
+  - id: spotify-green-pressed
+    name: Spotify Green Pressed
+    value: "#169C46"
+    description: Darker green for pressed/active states on the primary action.
+  - id: spotify-black
+    name: Spotify Black
+    value: "#000000"
+    description: Canonical canvas — the Spotify consumer surface is solid black.
+  - id: spotify-dark
+    name: Spotify Dark
+    value: "#121212"
+    description: Elevated surface of the Spotify consumer app — the player chrome and main panel sit on this near-black.
+  - id: spotify-elevated
+    name: Spotify Elevated
+    value: "#181818"
+    description: Cards, hovered rows, and elevated tiles use this slightly lifted near-black.
+  - id: spotify-gray
+    name: Spotify Gray
+    value: "#535353"
+    description: Secondary text and divider color on the dark canvas.
+  - id: spotify-gray-light
+    name: Spotify Gray Light
+    value: "#B3B3B3"
+    description: Tertiary text, captions, metadata in the player UI.
+  - id: spotify-white
+    name: Spotify White
+    value: "#FFFFFF"
+    description: Primary text on the dark canvas; reversed wordmark fill on light marketing.
+
+modes:
+  light:
+    roles:
+      background: spotify-white
+      surface: spotify-white
+      surface-elevated: spotify-white
+      text-primary: spotify-black
+      text-secondary: spotify-gray
+      text-tertiary: spotify-gray-light
+      primary: spotify-green
+      primary-hover: spotify-green-pressed
+      accent: spotify-green
+      accent-hover: spotify-green-pressed
+      warning: spotify-green-legacy
+      warning-hover: spotify-green-pressed
+      error: spotify-gray
+      success: spotify-green
+  dark:
+    roles:
+      background: spotify-black
+      surface: spotify-dark
+      surface-elevated: spotify-elevated
+      text-primary: spotify-white
+      text-secondary: spotify-gray-light
+      text-tertiary: spotify-gray
+      primary: spotify-green
+      primary-hover: spotify-green-pressed
+      accent: spotify-green
+      accent-hover: spotify-green-pressed
+      warning: spotify-green-legacy
+      warning-hover: spotify-green-pressed
+      error: spotify-gray-light
+      success: spotify-green

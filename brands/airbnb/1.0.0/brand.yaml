@@ -1,0 +1,175 @@
+id: airbnb
+version: 1.0.0
+name: Airbnb
+description: >
+  Airbnb is a global marketplace for short-term lodging and travel
+  experiences, founded in 2008. The brand voice is warm, welcoming,
+  and human — "belong anywhere." Visually, Airbnb is anchored on
+  Rausch (#FF5A5F), the warm pink-red introduced with the 2014 Bélo
+  rebrand by DesignStudio. Rausch carries the brand against generous
+  use of photography, warm whites, and the proprietary Airbnb Cereal
+  typeface. The Bélo mark itself is monochrome; Rausch reads as the
+  voice surrounding it.
+tags: [hospitality, travel, airbnb, rausch, warm, marketplace]
+
+provenance:
+  source: https://news.airbnb.com/press-kit/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Airbnb and the Bélo (the Airbnb mark) are trademarks of Airbnb,
+    Inc. Rausch (#FF5A5F) is verified via the simple-icons brand
+    database, which cites airbnb.com as the source. Airbnb Cereal is
+    a proprietary typeface commissioned from Dalton Maag for Airbnb.
+  importedDate: 2026-05-17
+  notes: >
+    Airbnb's broader original Design Language System catalogues
+    additional named colors (Babu, Arches, Hof, Foggy) in widely-cited
+    secondary literature; those hex values are not currently surfaced
+    in Airbnb's primary public press kit, so brand-atoms catalogues
+    only verified Rausch plus authored neutral surfaces. The Cereal
+    typeface is referenced here with a public-web fallback to Inter
+    when the licensed file is unavailable (see
+    fonts/airbnb-cereal/1.0.0/atom.yaml).
+
+references:
+  palette: airbnb@1
+  fonts:
+    heading: airbnb-cereal@1
+    body: airbnb-cereal@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # identity = the brand's signature surface. Airbnb's identity is
+    # Rausch on a warm white canvas — Rausch IS the brand color.
+    identity: airbnb-rausch
+    on-identity: airbnb-white
+
+    primary: airbnb-rausch
+    primary-hover: airbnb-rausch-hover
+    accent: airbnb-rausch
+    accent-hover: airbnb-rausch-hover
+
+    success: airbnb-success
+    warning: airbnb-warning
+    error: airbnb-error
+
+    background-light: airbnb-white
+    background-dark: airbnb-canvas-dark
+    surface-light: airbnb-near-white
+    surface-dark: airbnb-surface-dark
+    text-primary-light: airbnb-text-primary
+    text-primary-dark: airbnb-white
+    text-secondary-light: airbnb-text-secondary
+    divider: airbnb-divider
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: logo.mark
+    allowed:
+      - airbnb-rausch
+      - airbnb-white
+      - airbnb-text-primary
+    forbidden:
+      - any-non-brand-color
+    severity: error
+    rationale: >
+      The Bélo mark is rendered in Rausch on light surfaces, in
+      Rausch on dark surfaces where contrast permits, or in
+      monochrome white/near-black variants. Recoloring Rausch into
+      off-brand hues violates Airbnb's brand-use guidance.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - on-busy-photo
+      - inverted-without-variant
+      - placed-without-clearspace
+    severity: error
+    rationale: >
+      The Bélo's reading depends on respect for its custom proportions
+      and clearspace. Airbnb's press kit forbids stretching,
+      rotating, or recoloring the mark.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      WCAG 2.1 Level AA contrast minimum for body text. Airbnb Text
+      Primary (#222222) on Airbnb White (#FFFFFF) clears AA
+      comfortably.
+
+  - type: contrastRatio
+    target: roles.colors.primary
+    against: background
+    minRatio: 3.0
+    standard: WCAG-AA-large
+    severity: error
+    rationale: >
+      Rausch (#FF5A5F) on white meets WCAG AA at large-text size; CTA
+      buttons and primary affordances must clear 3:1.
+
+  - type: variantSelection
+    target: logo
+    when:
+      backgroundColorScheme: dark
+    use: belo-light
+    severity: error
+    rationale: >
+      On dark surfaces, use the Bélo in white. Do not invert the
+      Rausch fill on the fly.
+
+  - type: variantSelection
+    target: logo
+    when:
+      backgroundColorScheme: light
+    use: belo-rausch
+    severity: error
+    rationale: >
+      On light surfaces, the Bélo renders in Rausch. The mark on the
+      canonical airbnb.com surface is Rausch, not monochrome.
+
+  - type: contextRestriction
+    target: roles.colors.identity
+    forbiddenContexts:
+      - product-of-competitor
+      - merchandise
+      - endorsement-implication
+    severity: error
+    rationale: >
+      Airbnb's brand-use guidance restricts use of the Bélo and
+      Rausch in ways that imply affiliation, on competing-product
+      surfaces, or on third-party merchandise without explicit
+      license.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["500", "600", "700", "800"]
+    severity: warning
+    rationale: >
+      Airbnb Cereal ships with discrete weights Light (300), Book
+      (400), Medium (500), Semi-Bold (600), Bold (700), and Extra-Bold
+      (800). Headlines on airbnb.com sit in the 500–800 band; lighter
+      weights compromise the confident, warm-but-precise voice.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) — Level AA.
+      Airbnb-skinned surfaces must clear AA on body text.

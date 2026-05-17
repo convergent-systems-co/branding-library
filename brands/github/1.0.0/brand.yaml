@@ -1,0 +1,158 @@
+id: github
+version: 1.0.0
+name: GitHub
+description: >
+  GitHub is the world's most-used software-collaboration platform —
+  source control, code review, CI/CD, package distribution, and
+  the social graph of open source. The brand voice is technical,
+  inviting, and developer-first: precise without ceremony,
+  inclusive without sentimentality. The visual identity is anchored
+  on the Primer Design System (canonical light/dark color tokens)
+  and Mona Sans, GitHub's open-source variable typeface for
+  marketing and brand surfaces.
+
+tags: [github, developer-tools, source-control, devops, parent-brand, open-source-tools]
+
+provenance:
+  source: https://primer.style/foundations/color
+  license: MIT
+  attribution: >
+    GitHub, Inc. — visual identity derived from the publicly
+    available Primer Design System (github.com/primer) and the
+    open-source Mona Sans typeface (github.com/github/mona-sans).
+    The Primer color primitives are MIT-licensed; Mona Sans is
+    OFL-1.1. The GitHub name, Octocat, and Invertocat logos are
+    trademarks of GitHub, Inc. and are not redistributed by this
+    atom.
+  importedDate: 2026-05-17
+  notes: >
+    This atom intentionally reuses the existing `github-primer@1`
+    palette (the canonical Primer Primitives token set) rather
+    than introducing a brand-specific palette, because the GitHub
+    marketing site, github.com product surfaces, and Primer all
+    share the same color foundation. The primary brand interactive
+    color is Primer Blue 5 (#0969DA) in light mode and Blue 3
+    (#58A6FF) in dark.
+
+references:
+  palette: github-primer@1
+  fonts:
+    heading: mona-sans@1
+    body: mona-sans@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    primary: light-blue-5
+    primary-hover: light-blue-6
+    accent: light-purple-5
+    accent-hover: light-purple-6
+    success: light-green-5
+    warning: light-yellow-5
+    error: light-red-5
+    text-primary-light: light-neutral-13
+    text-primary-dark: dark-neutral-12
+    background-light: light-neutral-0
+    background-dark: dark-neutral-1
+    surface-light: light-neutral-1
+    surface-dark: dark-neutral-2
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      WCAG 2.1 Level AA contrast for body text. Primer's
+      light-neutral-13 (#1F2328) on light-neutral-0 (#FFFFFF) and
+      dark-neutral-12 (#F0F6FC) on dark-neutral-1 (#0D1117) both
+      exceed 4.5:1 by a wide margin.
+
+  - type: contrastRatio
+    target: roles.colors.primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      Primer documents Blue 5 (#0969DA) as the AA-compliant link
+      color on light surfaces and Blue 3 (#58A6FF) on dark. Other
+      blue stops in the ramp do not clear AA against the canvas
+      and must not be used for body-text links.
+
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - light-blue-5
+      - dark-blue-3
+    forbidden:
+      - light-blue-0
+      - light-blue-1
+      - light-blue-2
+      - light-blue-3
+      - light-blue-4
+      - dark-blue-0
+      - dark-blue-1
+    severity: error
+    rationale: >
+      Primer pins the "default link / primary action" role to
+      Blue 5 in light mode and Blue 3 in dark mode. Lighter stops
+      are reserved for subtle backgrounds and badges, not for
+      interactive primary actions.
+
+  - type: fontPairing
+    target: typography.heading
+    requires: body
+    minSizeRatio: 1.25
+    severity: warning
+    rationale: >
+      Mona Sans serves as both heading and body face on the
+      Primer Brand site. Maintaining at least a 1.25× size
+      differential between heading and body keeps the typographic
+      hierarchy legible without a second family.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["500", "600", "700", "800"]
+    severity: warning
+    rationale: >
+      Primer Brand documents heading uses at Medium (500),
+      SemiBold (600), Bold (700), and ExtraBold (800). Lighter
+      weights compromise readability of large display headings;
+      the variable font supports weights down to 200 but those
+      are reserved for fine UI labels.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - on-busy-photo
+    severity: error
+    rationale: >
+      GitHub's Logos and Usage policy forbids deforming,
+      recoloring, or otherwise modifying the Invertocat /
+      Octocat marks. Use the official monochrome variants on
+      light or dark surfaces; do not generate derivative
+      treatments.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) —
+      Level AA. Primer is designed AA-out-of-the-box; consumers
+      must not pair tokens that defeat that property (e.g.
+      mid-neutrals on mid-neutrals).

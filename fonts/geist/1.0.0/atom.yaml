@@ -1,0 +1,60 @@
+kind: font
+id: geist
+version: 1.0.0
+name: Geist Sans
+description: >
+  Geist Sans — Vercel's open-source variable sans-serif, designed
+  with Basement Studio. Neutral, geometric, and screen-tuned;
+  the typographic anchor of the Geist Design System and Vercel's
+  marketing surfaces. Variable on the Weight axis (100–900) with
+  paired italic faces.
+family: Geist
+classification: sans-serif
+tags: [variable-font, vercel, geist, open-source, geometric, ui, brand]
+
+provenance:
+  source: https://github.com/vercel/geist-font
+  license: OFL-1.1
+  attribution: >
+    Geist is Copyright (c) 2023 Vercel, in collaboration with
+    Basement Studio. Licensed under the SIL Open Font License,
+    Version 1.1.
+  importedDate: 2026-05-17
+  notes: >
+    Geist ships three families: Geist Sans, Geist Mono, and Geist
+    Pixel. This atom records the Sans family. Distributed via the
+    npm package `geist` (Vercel-maintained) and via the GitHub
+    Releases zip. The community @fontsource bundle mirrors the
+    same OFL binaries.
+
+source:
+  kind: external
+  family: Geist
+  cssImportUrl: https://cdn.jsdelivr.net/npm/@fontsource-variable/geist/index.css
+  notes: >
+    Vercel's first-party distribution is the `geist` npm package
+    (next/font compatible). The cssImportUrl above points at the
+    community @fontsource-variable/geist bundle on jsDelivr for
+    drop-in <link rel="stylesheet"> consumption.
+
+fallbackStack:
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Helvetica
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 100, style: normal }
+  - { weight: 200, style: normal }
+  - { weight: 300, style: normal }
+  - { weight: 400, style: normal }
+  - { weight: 500, style: normal }
+  - { weight: 600, style: normal }
+  - { weight: 700, style: normal }
+  - { weight: 800, style: normal }
+  - { weight: 900, style: normal }
+
+variableAxes:
+  - { tag: wght, name: Weight, min: 100, max: 900, default: 400 }

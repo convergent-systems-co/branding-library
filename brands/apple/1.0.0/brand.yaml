@@ -1,0 +1,167 @@
+id: apple
+version: 1.0.0
+name: Apple
+description: >
+  Apple Inc. is a global technology company whose product portfolio
+  spans personal computers (Mac), mobile devices (iPhone, iPad,
+  Apple Watch, Apple TV, Vision Pro), services (App Store, iCloud,
+  Apple Music, Apple TV+), and the software platforms that bind
+  them (macOS, iOS, iPadOS, watchOS, tvOS, visionOS). The visual
+  identity is built around restraint: the monochrome Apple mark, the
+  SF type family, and the twelve System Colors that the Human
+  Interface Guidelines releases as a coordinated set. The voice is
+  precise, considered, and human-centered — clarity and deference to
+  content over decoration.
+tags: [tech, apple, hardware, hig, premium]
+
+provenance:
+  source: https://developer.apple.com/design/human-interface-guidelines/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Apple, the Apple logo, iPhone, iPad, Mac, iOS, macOS, iPadOS,
+    watchOS, tvOS, visionOS, Human Interface Guidelines, and related
+    names and marks are trademarks of Apple Inc. Brand colors and
+    identity guidance documented here are derived from the Human
+    Interface Guidelines at developer.apple.com/design/human-interface-guidelines/
+    and the Apple Identity Guidelines distributed to platform partners.
+  importedDate: 2026-05-17
+  notes: >
+    Brand-atoms' read of Apple's public HIG. This file is not an
+    official Apple brand document. Apple's logo is among the most-
+    protected trademarks on the internet; no asset files are bundled
+    here and any reference to "the Apple logo" must respect the
+    Identity Guidelines.
+
+references:
+  palette: apple@1
+  fonts:
+    heading: sf-pro@1
+    body: sf-pro@1
+    mono: sf-pro@1
+
+roles:
+  colors:
+    identity: label
+    on-identity: system-background
+    primary: system-blue
+    primary-hover: system-blue
+    accent: system-indigo
+    background: system-background
+    surface: secondary-system-background
+    surface-elevated: tertiary-system-background
+    text-primary: label
+    text-secondary: secondary-label
+    text-tertiary: system-gray
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - on-busy-photo
+      - outlined
+    severity: error
+    rationale: >
+      The Apple Identity Guidelines explicitly prohibit altering the
+      proportions, color, orientation, or surrounding clearspace of
+      the Apple logo. Only the approved monochrome variants (black,
+      white, or single-color silver / gray) are permitted, and only
+      on backgrounds that meet the documented contrast threshold.
+
+  - type: colorChoice
+    target: logo.mark.fill
+    allowed:
+      - label
+      - label-dark
+      - system-gray
+    forbidden:
+      - system-blue
+      - system-red
+      - system-green
+      - system-yellow
+      - system-orange
+      - system-purple
+    severity: error
+    rationale: >
+      The Apple mark is monochrome. The Identity Guidelines prohibit
+      filling the logo with any of the System Colors — the chromatic
+      System Colors are reserved for product UI tint, not for the
+      corporate mark.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      WCAG 2.1 Level AA contrast requirement for body text. The HIG
+      Accessibility section calls out 4.5:1 as the floor for body
+      text and 3:1 for large text on a typical iOS surface; Label
+      on System Background clears AA at ~21:1.
+
+  - type: contrastRatio
+    target: roles.colors.primary
+    against: background
+    minRatio: 3.0
+    standard: WCAG-AA-large
+    severity: error
+    rationale: >
+      System Blue on System Background must remain perceptible at
+      interactive-control size. The HIG specifies that tint colors
+      need at least 3:1 contrast against the underlying surface to
+      preserve the "tappable" affordance.
+
+  - type: fontPairing
+    target: typography.heading
+    requires: body
+    minSizeRatio: 1.3
+    severity: recommendation
+    rationale: >
+      Apple's HIG uses SF Pro for both heading and body, distinguished
+      by the SF Pro Display vs SF Pro Text optical-size cuts and a
+      meaningful size differential. Maintain at least a 1.3× ratio
+      between heading and body to preserve hierarchy when one family
+      does both jobs.
+
+  - type: enumMembership
+    target: typography.body.fontWeight
+    allowed: ["400", "500", "600"]
+    severity: recommendation
+    rationale: >
+      The HIG type ramp uses SF Pro Regular (400) for body, Medium
+      (500) for emphasis, and Semibold (600) for headings and
+      controls. Lighter weights (100–300) are reserved for very
+      large display sizes; bolder weights (700+) are rare in iOS UI.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) — Level AA.
+      The HIG Accessibility section aligns Apple's platform
+      guidance with WCAG AA contrast as the floor for legible
+      text-on-surface pairings.
+
+  - type: contextRestriction
+    target: roles.colors.system-red
+    forbiddenContexts:
+      - marketing-headline
+      - hero-background
+    severity: warning
+    rationale: >
+      System Red is semantically reserved for destructive actions
+      and error / recording indicators in the HIG. Using it as a
+      marketing accent dilutes the platform-wide affordance that
+      "red means destructive."

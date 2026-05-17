@@ -1,0 +1,53 @@
+kind: font
+id: netflix-sans
+version: 1.0.0
+name: Netflix Sans
+description: >
+  Netflix Sans — the proprietary corporate typeface of Netflix, Inc.,
+  commissioned by Netflix and Dalton Maag and used across the Netflix
+  consumer product, marketing materials, and the wordmark on the
+  Netflix Originals title cards. A geometric grotesk built for screen
+  legibility with optical adjustments tuned for video-bumper and
+  living-room reading distances.
+family: Netflix Sans
+classification: sans-serif
+tags: [proprietary, custom, geometric, grotesk, brand-only, screen]
+
+provenance:
+  source: https://brand.netflix.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Netflix Sans is a proprietary typeface owned by Netflix, Inc.,
+    commissioned from Dalton Maag. Use is restricted to authorized
+    Netflix materials. brand-atoms documents the face for reference
+    only — no binaries are mirrored or redistributed by this catalog.
+  importedDate: 2026-05-17
+  notes: >
+    Netflix Sans is not publicly distributed. Public consumer surfaces
+    that cannot embed the proprietary face fall back to Helvetica Neue
+    or a system grotesk stack. This atom captures the documentary
+    record only; the binary is not part of brand-atoms.
+
+source:
+  kind: external
+  family: Netflix Sans
+  notes: >
+    Proprietary font, no public CDN. Distributed by Netflix to
+    authorized agencies and vendors. Any CSS @font-face declaration
+    must reference internally hosted files under Netflix's
+    licensing.
+
+fallbackStack:
+  - Helvetica Neue
+  - Helvetica
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 300, style: normal }
+  - { weight: 400, style: normal }
+  - { weight: 500, style: normal }
+  - { weight: 700, style: normal }

@@ -1,0 +1,53 @@
+kind: font
+id: amazon-ember
+version: 1.0.0
+name: Amazon Ember
+description: >
+  Amazon Ember — the proprietary corporate typeface of Amazon.com,
+  Inc., used across Amazon retail, Kindle devices, Alexa surfaces,
+  and AWS marketing. A humanist sans-serif with open apertures and
+  high x-height, optimized for cross-device legibility from Kindle
+  e-ink to the Fire TV ten-foot reading distance.
+family: Amazon Ember
+classification: sans-serif
+tags: [proprietary, custom, humanist, brand-only, amazon, screen]
+
+provenance:
+  source: https://www.aboutamazon.com/news/company-news/our-brand
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Amazon Ember is a proprietary typeface owned by Amazon.com, Inc.
+    Use is restricted to authorized Amazon materials. brand-atoms
+    documents the face for reference only — no binaries are mirrored
+    or redistributed by this catalog.
+  importedDate: 2026-05-17
+  notes: >
+    Amazon Ember is not publicly distributed. Public consumer
+    surfaces that cannot embed the proprietary face fall back to a
+    system grotesk. Amazon also ships Ember-family variants (Ember
+    Mono, Ember Modern Display) for specialized use; this atom
+    documents the principal text cut.
+
+source:
+  kind: external
+  family: Amazon Ember
+  notes: >
+    Proprietary font, no public CDN. Distributed by Amazon to
+    authorized agencies and vendors. Any @font-face declaration
+    must reference internally hosted files under Amazon's
+    licensing.
+
+fallbackStack:
+  - Inter
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Helvetica Neue
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 300, style: normal }
+  - { weight: 400, style: normal }
+  - { weight: 500, style: normal }
+  - { weight: 700, style: normal }

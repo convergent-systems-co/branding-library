@@ -1,0 +1,177 @@
+id: figma
+version: 1.0.0
+name: Figma
+description: >
+  Figma is a browser-based design and prototyping platform — and since
+  the 2024 expansion, also a sites/dev-mode/AI surface — owned by
+  Adobe. The brand voice is collaborative, playful, and developer-
+  adjacent. Visually, Figma is recognized by its five-color mark
+  (orange, coral, purple, blue, green) and its clean white-canvas
+  marketing surfaces with near-black body text. Where competitors
+  pick one signature color, Figma's identity IS the five-color
+  composition.
+tags: [saas, design-tools, figma, adobe, collaboration]
+
+provenance:
+  source: https://www.figma.com/using-the-figma-brand/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Figma and the Figma logo are trademarks of Figma, Inc. (an Adobe
+    company). The five mark colors are verified by reading the
+    published Figma logo SVG on Wikimedia Commons; the primary
+    orange-red (#F24E1E) is independently cross-referenced by the
+    simple-icons brand database, which cites
+    figma.com/using-the-figma-brand/ as the source.
+  importedDate: 2026-05-17
+  notes: >
+    Figma's brand guidance explicitly prohibits modifying the mark,
+    embedding fragments of it into other identities, or implying
+    affiliation. brand-atoms catalogues the five mark colors as the
+    documented palette; consumers building Figma-adjacent surfaces
+    should treat the mark composition as fixed. Inter is referenced
+    here as the primary face — Inter is widely deployed on Figma's
+    marketing surfaces and is in the brand-atoms catalog.
+
+references:
+  palette: figma@1
+  fonts:
+    heading: inter@1
+    body: inter@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # identity = the brand's signature surface. Figma's identity is
+    # the five-color composition on white — but at the "single brand
+    # color" level, orange-red is the de-facto signature. Use
+    # figma-orange as the identity surface when a single accent is
+    # required.
+    identity: figma-orange
+    on-identity: figma-white
+
+    primary: figma-blue
+    primary-hover: figma-blue
+    accent: figma-orange
+    accent-hover: figma-coral
+
+    mark-orange: figma-orange
+    mark-coral: figma-coral
+    mark-purple: figma-purple
+    mark-blue: figma-blue
+    mark-green: figma-green
+
+    success: figma-green
+    warning: figma-orange
+    error: figma-orange
+
+    background-light: figma-white
+    background-dark: figma-canvas-dark
+    surface-light: figma-surface-light
+    surface-dark: figma-surface-dark
+    text-primary-light: figma-black
+    text-primary-dark: figma-white
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: logo.mark
+    allowed:
+      - figma-orange
+      - figma-coral
+      - figma-purple
+      - figma-blue
+      - figma-green
+      - figma-white
+      - figma-black
+    forbidden:
+      - any-non-brand-color
+    severity: error
+    rationale: >
+      The five mark colors are the documented composition; only the
+      neutral black/white monochrome variants are permitted as
+      alternates. Figma's brand guidance forbids modifying the mark
+      into other hues.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - on-busy-photo
+      - fragmented-into-other-identities
+      - integrated-with-other-marks
+    severity: error
+    rationale: >
+      Figma's brand guidelines explicitly prohibit modifying the
+      marks or integrating parts of them into other identities. The
+      mark is a fixed composition of five colored shapes.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      WCAG 2.1 Level AA contrast minimum for body text. Figma Black
+      (#000000) on Figma White (#FFFFFF) clears AA comfortably.
+
+  - type: variantSelection
+    target: logo
+    when:
+      backgroundColorScheme: dark
+    use: logo-light
+    severity: error
+    rationale: >
+      On dark surfaces, use Figma's documented light-on-dark mark
+      variant; do not invert the five-color SVG on the fly.
+
+  - type: compositionConstraint
+    target: roles.colors.mark-orange
+    pairsWith:
+      - figma-white
+      - figma-black
+    severity: recommendation
+    rationale: >
+      When a single Figma color is used as accent, it pairs cleanly
+      with white or black. Combining it with another mark color
+      outside the canonical composition risks reading as a corrupted
+      mark.
+
+  - type: contextRestriction
+    target: roles.colors.identity
+    forbiddenContexts:
+      - product-of-competitor
+      - merchandise
+      - endorsement-implication
+      - company-name-or-domain
+    severity: error
+    rationale: >
+      Figma's brand guidelines forbid use of "Figma" in third-party
+      company names, product names, domain names, and social-media
+      handles, and forbid uses that imply affiliation.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["500", "600", "700"]
+    severity: warning
+    rationale: >
+      Inter on figma.com renders headings in the 500–700 band; lighter
+      weights compromise the bold, confident voice of the marketing
+      surface.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) — Level AA.
+      Figma-skinned surfaces must clear AA on body text.

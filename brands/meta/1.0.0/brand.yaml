@@ -1,0 +1,182 @@
+id: meta
+version: 1.0.0
+name: Meta
+description: >
+  Meta Platforms, Inc. is the parent company that operates
+  Facebook, Instagram, WhatsApp, Messenger, Quest, and the broader
+  Reality Labs portfolio. The corporate Meta brand was introduced
+  in October 2021 and sits above the product brands as a unifying
+  identity — a confident blue wordmark, an "infinity" mark, and a
+  vivid multi-color expressive palette used across motion,
+  marketing, and metaverse-adjacent surfaces. The voice is
+  optimistic, technology-forward, and aspirational.
+tags: [tech, social, meta, blue, corporate, parent-brand]
+
+provenance:
+  source: https://about.meta.com/brand/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Meta Platforms, Inc. — Meta, the Meta wordmark, the Meta
+    "infinity" mark, and Meta Sans are registered trademarks of
+    Meta Platforms, Inc. This atom captures brand-atoms' read of
+    Meta's publicly available brand site and press kit; it is not
+    an official Meta brand-guidelines document.
+  importedDate: 2026-05-17
+  notes: >
+    The Meta corporate brand is light-mode-first (in contrast to
+    Facebook and Instagram product surfaces, which run dark
+    themes alongside light). The vivid secondary palette
+    documented here is the Meta corporate gradient-family used
+    across motion, identity videos, and editorial accents.
+
+references:
+  palette: meta@1
+  fonts:
+    heading: meta-sans@1
+    body: meta-sans@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # identity = the brand's signature block color. Meta's
+    # corporate identity is light-first with the blue mark as the
+    # anchor; identity here points at the brand blue, not the
+    # canvas.
+    identity: meta-blue
+    on-identity: meta-white
+
+    background: meta-white
+    surface: meta-surface
+    surface-elevated: meta-white
+    text-primary: meta-ink
+    text-secondary: meta-gray
+    text-tertiary: meta-gray-light
+
+    primary: meta-blue
+    primary-hover: meta-vivid-blue
+    accent: meta-vivid-purple
+    accent-hover: meta-vivid-blue
+    mark: meta-blue
+    text-emphasis: meta-ink
+    text-muted: meta-gray
+  typography:
+    display: heading
+    prose: body
+    wordmark: heading
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: logo.wordmark.fill
+    allowed:
+      - meta-blue
+      - meta-white
+      - meta-black
+    forbidden:
+      - meta-blue-dark
+      - meta-vivid-purple
+      - meta-vivid-green
+      - meta-vivid-red
+    severity: error
+    rationale: >
+      The Meta corporate wordmark renders in Meta Blue, white, or
+      black. The vivid secondary palette is for accent and motion
+      use, not as a wordmark fill; meta-blue-dark is the Facebook
+      product blue, not the Meta corporate mark.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - on-busy-photo
+      - inverted-without-variant
+    severity: error
+    rationale: >
+      The Meta wordmark and infinity mark carry strict clearspace
+      and color rules across the Meta corporate brand system.
+      Apply only the approved variants; do not derive new color
+      treatments from the vivid secondary palette.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      Meta Ink on Meta White gives ~16:1 — well above WCAG 2.1
+      Level AA. The rule encodes the floor for any new
+      foreground/background pairing on Meta corporate surfaces.
+
+  - type: contrastRatio
+    target: roles.colors.primary
+    against: background
+    minRatio: 3.0
+    standard: WCAG-AA-large
+    severity: error
+    rationale: >
+      Meta Blue on Meta White must remain perceptible at link and
+      interactive sizes. Falling below 3:1 (AA-large) breaks the
+      affordance of primary actions on the light corporate canvas.
+
+  - type: contextRestriction
+    target: roles.colors.accent
+    forbiddenContexts:
+      - body-text
+      - validation-failure
+      - destructive-action
+    severity: error
+    rationale: >
+      Meta Vivid Purple is part of the expressive secondary
+      palette, used for editorial accent and motion. It is not
+      the error color (Meta Vivid Red plays that role) and does
+      not belong in body copy where it competes with the blue
+      primary.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["500", "700"]
+    severity: warning
+    rationale: >
+      Meta Sans headlines on the corporate brand surfaces use
+      Medium (500) and Bold (700). Lighter weights read as body
+      copy; heavier than 700 is outside the documented kit.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) — Level
+      AA. Meta's accessibility commitments make AA the floor for
+      any new role pairing introduced on Meta corporate surfaces.
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    pairsWith:
+      - meta-vivid-purple
+      - meta-vivid-green
+    doesNotPairWith:
+      - meta-blue-dark
+    severity: recommendation
+    rationale: >
+      Meta Blue (#0668E1) and Facebook product blue (#1877F2)
+      are deliberately distinct — pairing them on the same
+      surface creates a two-blue muddle that reads as a brand-
+      hierarchy error.
+
+  - type: fontPairing
+    target: typography.heading
+    requires: body
+    minSizeRatio: 1.5
+    severity: warning
+    rationale: >
+      Meta's corporate marketing headlines run materially larger
+      than body copy. A 1.5× floor preserves the display-to-
+      prose hierarchy the corporate voice depends on.
