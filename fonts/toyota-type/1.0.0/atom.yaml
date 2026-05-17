@@ -1,0 +1,48 @@
+kind: font
+id: toyota-type
+version: 1.0.0
+name: Toyota Type
+description: >
+  Toyota Type — the proprietary corporate typeface of Toyota Motor
+  Corporation, used as the primary marketing and on-screen font
+  across Toyota, Southeast Toyota Distributors, Southeast Toyota
+  Finance, and the broader Toyota dealer network.
+family: ToyotaType
+classification: sans-serif
+tags: [proprietary, custom, humanist, automotive, brand-only]
+
+provenance:
+  source: https://www.setfbranding.com/fonts.html
+  license: Proprietary — Toyota Motor Corporation, internal use only
+  attribution: >
+    Toyota Type is a proprietary licensed typeface owned by Toyota
+    Motor Corporation. Use is restricted to authorized internal and
+    licensed-vendor materials. External / public web rendering should
+    fall back to Helvetica Neue per the SETF brand guide.
+  importedDate: 2026-05-17
+  notes: >
+    Confirmed primary brand font for SETF (setfbranding.com/fonts.html);
+    the same Toyota Type face is used on toyota.com (font-family
+    declarations visible in setf.com/areas/setf/content/styles.css).
+    Weights commonly distributed: Book and Semibold.
+
+source:
+  kind: external
+  family: ToyotaType
+  notes: >
+    Licensed font; no public CDN. Distributed by Toyota Motor
+    Corporation to authorized vendors. CSS @font-face declaration
+    must reference internally hosted files.
+
+fallbackStack:
+  - Helvetica Neue
+  - Helvetica
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 400, style: normal }
+  - { weight: 600, style: normal }

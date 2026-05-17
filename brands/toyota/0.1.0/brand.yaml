@@ -1,0 +1,83 @@
+id: toyota
+version: 0.1.0
+name: Toyota
+description: >
+  Toyota Motor Sales, U.S.A. — the American sales and marketing arm
+  of Toyota Motor Corporation. The Toyota mark is one of the most
+  recognized automotive brands globally, anchored on a single
+  signature color (Toyota Red, #EB0A1E) and a custom corporate
+  typeface (Toyota Type).
+tags: [automotive, oem, toyota, parent-brand]
+
+provenance:
+  source: https://www.toyota.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Toyota Motor Sales, U.S.A., Inc. and Toyota Motor Corporation —
+    all trademarks belong to Toyota Motor Corporation. Identity
+    values verified from the official corporate logo SVG and from
+    Toyota's licensed-vendor brand documentation surfaced via
+    setfbranding.com.
+  importedDate: 2026-05-17
+  notes: >
+    Toyota Red is documented as Pantone 186C / CMYK 0/100/90/0 /
+    RGB 235/10/30 / HEX #EB0A1E (cross-referenced on
+    setfbranding.com/colors.html). Toyota Type is the proprietary
+    corporate face; Helvetica Neue is the documented secondary.
+
+references:
+  palette: toyota@1
+  fonts:
+    heading: toyota-type@1
+    body: toyota-type@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    primary: toyota-red
+    accent: toyota-red
+    text-primary-light: toyota-graphite
+    text-primary-dark: toyota-white
+    background-light: toyota-white
+    background-dark: toyota-black
+    surface-light: toyota-platinum
+    surface-dark: toyota-graphite
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      WCAG 2.1 Level AA contrast requirement for body text. Toyota
+      Graphite on Toyota White (and white on black) both satisfy.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - on-busy-photo
+    severity: error
+    rationale: >
+      The Toyota mark is one of the most-protected commercial marks
+      in the world. Only Toyota-approved variants and clearspace
+      relationships are permitted.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["400", "600"]
+    severity: warning
+    rationale: >
+      Toyota Type is distributed in Book (400) and Semibold (600).
+      Other weights are not part of the licensed kit.

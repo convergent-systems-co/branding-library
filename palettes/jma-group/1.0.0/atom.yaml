@@ -1,0 +1,90 @@
+kind: palette
+id: jma-group
+version: 1.0.0
+name: JM&A Group
+description: >
+  JM&A Group palette built around the brand teal (#008D9A) seen in
+  the official wordmark, paired with near-black and white. The teal
+  is one shade off the parent JMFE corporate teal (#008C99) — the
+  same family identity at finer resolution.
+tags: [automotive, finance-and-insurance, dealer-services, jmfe, jma, teal]
+
+provenance:
+  source: https://www.jmagroup.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    JM&A Group — a JM Family Enterprises company. Color values
+    extracted directly from the official horizontal wordmark SVG
+    (jmagroup.com/hubfs/identity/logos/jma-logo-horizontal-fc.svg).
+  importedDate: 2026-05-17
+  notes: >
+    Only three colors appear in the wordmark SVG (#008D9A, #010101,
+    #FFFFFF). The supporting grays below are interpolations selected
+    to harmonize with the brand teal and provide a usable UI scale;
+    they are not pulled from an official brand-guidelines document.
+
+swatches:
+  - id: jma-teal
+    name: JM&A Teal (primary)
+    value: "#008D9A"
+    description: Primary brand teal — wordmark accent and headline color.
+  - id: jma-teal-deep
+    name: JM&A Teal Deep
+    value: "#00707A"
+    description: Interpolated hover/pressed state for the primary teal.
+  - id: jma-teal-light
+    name: JM&A Teal Light
+    value: "#B8E2E6"
+    description: Interpolated soft teal for surfaces and inline highlights.
+  - id: jma-onyx
+    name: JM&A Onyx
+    value: "#010101"
+    description: Wordmark base color and primary headline text.
+  - id: jma-graphite
+    name: JM&A Graphite
+    value: "#2A2D31"
+    description: Body text (interpolated, slightly off #010101 for readability).
+  - id: jma-slate
+    name: JM&A Slate
+    value: "#5A6470"
+    description: Secondary text and meta labels (interpolated).
+  - id: jma-fog
+    name: JM&A Fog
+    value: "#E6ECF0"
+    description: Subtle background tint (interpolated).
+  - id: jma-white
+    name: JM&A White
+    value: "#FFFFFF"
+    description: Page background and reversed wordmark fill.
+
+modes:
+  light:
+    roles:
+      background: jma-white
+      surface: jma-fog
+      surface-elevated: jma-teal-light
+      text-primary: jma-onyx
+      text-secondary: jma-graphite
+      text-tertiary: jma-slate
+      primary: jma-teal
+      primary-hover: jma-teal-deep
+      accent: jma-teal
+      success: jma-teal-deep
+      warning: jma-teal
+      error: jma-onyx
+      info: jma-teal
+  dark:
+    roles:
+      background: jma-onyx
+      surface: jma-graphite
+      surface-elevated: jma-slate
+      text-primary: jma-white
+      text-secondary: jma-fog
+      text-tertiary: jma-teal-light
+      primary: jma-teal-light
+      primary-hover: jma-teal
+      accent: jma-teal-light
+      success: jma-teal-light
+      warning: jma-teal-light
+      error: jma-fog
+      info: jma-teal-light

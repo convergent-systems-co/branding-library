@@ -1,0 +1,42 @@
+kind: font
+id: helvetica-neue
+version: 1.0.0
+name: Helvetica Neue
+description: >
+  Helvetica Neue — the neutral grotesk sans-serif shipped with macOS
+  and iOS, used as the SETF secondary typeface when Toyota Type is
+  unavailable and across many JM Family materials where a neutral
+  system sans is appropriate.
+family: Helvetica Neue
+classification: sans-serif
+tags: [grotesk, neutral, system, fallback, setf]
+
+provenance:
+  source: https://www.setfbranding.com/fonts.html
+  license: Proprietary — Linotype/Monotype; bundled with Apple OS
+  attribution: Helvetica Neue © Linotype/Monotype. Bundled with macOS, iOS, and select OS distributions.
+  importedDate: 2026-05-17
+  notes: >
+    SETF brand guide (setfbranding.com/fonts.html) explicitly names
+    Helvetica Neue as the secondary face for associate use when
+    Toyota Type is not available. Weights called out: Bold and Regular.
+
+source:
+  kind: system
+  stack:
+    - Helvetica Neue
+    - HelveticaNeue
+    - Helvetica
+    - -apple-system
+    - BlinkMacSystemFont
+    - Arial
+    - sans-serif
+
+fallbackStack:
+  - Helvetica
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 400, style: normal }
+  - { weight: 700, style: normal }

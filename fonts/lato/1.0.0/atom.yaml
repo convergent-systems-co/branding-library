@@ -1,0 +1,42 @@
+kind: font
+id: lato
+version: 1.0.0
+name: Lato
+description: >
+  Lato — a humanist sans-serif by Łukasz Dziedzic, freely available
+  on Google Fonts under the SIL Open Font License. Used as body and
+  UI text on the World Omni Financial deployed site (worldomni.com).
+family: Lato
+classification: sans-serif
+tags: [humanist, sans-serif, google-fonts, ofl, body, ui]
+
+provenance:
+  source: https://fonts.google.com/specimen/Lato
+  license: OFL-1.1
+  attribution: >
+    Lato, Copyright © 2010-2014 by tyPoland Lukasz Dziedzic
+    (typoland.com) with Reserved Font Name "Lato", licensed under the
+    SIL Open Font License, Version 1.1.
+  importedDate: 2026-05-17
+  notes: >
+    Observed in font-family declarations on worldomni.com/style.css.
+    Likely a template default rather than an officially mandated
+    World Omni brand typeface, but it is what the deployed site uses.
+
+source:
+  kind: google-fonts
+  family: Lato
+  url: https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap
+
+fallbackStack:
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Helvetica Neue
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 400, style: normal }
+  - { weight: 700, style: normal }
+  - { weight: 900, style: normal }

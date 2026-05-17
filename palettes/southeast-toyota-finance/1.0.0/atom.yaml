@@ -1,0 +1,95 @@
+kind: palette
+id: southeast-toyota-finance
+version: 1.0.0
+name: Southeast Toyota Finance
+description: >
+  Full SETF brand palette as defined on the official SETF Brand
+  Portal (setfbranding.com/colors.html): Toyota Red as the primary
+  with an 8-step gray supporting scale from porcelain (#EDF0F5) to
+  graphite (#38393B).
+tags: [finance, automotive, jmfe, setf, toyota-aligned, red]
+
+provenance:
+  source: https://www.setfbranding.com/colors.html
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Southeast Toyota Finance — a JM Family Enterprises company.
+    Palette transcribed verbatim from the SETF Brand Portal color
+    page, which is the canonical source-of-truth for SETF visual
+    identity. All values are also published with their Pantone
+    equivalents (186C, 656C, 649C, 638C, 2176C, 2163C, 431C, Black
+    80%, Black) on that page.
+  importedDate: 2026-05-17
+  notes: >
+    Toyota Red (#EB0A1E) is shared with the parent Toyota Motor
+    Corporation brand; SETF reuses it directly as their primary.
+
+swatches:
+  - id: toyota-red
+    name: Toyota Red
+    value: "#EB0A1E"
+    description: SETF primary — Pantone 186C, CMYK 0/100/90/0.
+  - id: setf-porcelain
+    name: SETF Porcelain (Supporting 1)
+    value: "#EDF0F5"
+    description: Lightest supporting gray — page surfaces and quiet panels. Pantone 656C.
+  - id: setf-fog
+    name: SETF Fog (Supporting 2)
+    value: "#E1E8EE"
+    description: Subtle background tint — alt rows, hover surfaces. Pantone 649C.
+  - id: setf-mist
+    name: SETF Mist (Supporting 3)
+    value: "#C1C9D6"
+    description: Borders and dividers. Pantone 638C.
+  - id: setf-pewter
+    name: SETF Pewter (Supporting 4)
+    value: "#A6B4BE"
+    description: Iconography and disabled controls. Pantone 2176C.
+  - id: setf-steel
+    name: SETF Steel (Supporting 5)
+    value: "#86939E"
+    description: Tertiary text. Pantone 2163C.
+  - id: setf-slate
+    name: SETF Slate (Supporting 6)
+    value: "#626E79"
+    description: Secondary text. Pantone 431C.
+  - id: setf-graphite
+    name: SETF Graphite (Supporting 7)
+    value: "#58595B"
+    description: Headlines and emphasized text. Pantone Black 80%.
+  - id: setf-onyx
+    name: SETF Onyx (Supporting 8)
+    value: "#38393B"
+    description: Primary body text — softer than pure black per brand guide.
+
+modes:
+  light:
+    roles:
+      background: setf-porcelain
+      surface: setf-fog
+      surface-elevated: setf-mist
+      text-primary: setf-onyx
+      text-secondary: setf-slate
+      text-tertiary: setf-steel
+      primary: toyota-red
+      primary-hover: toyota-red
+      accent: toyota-red
+      success: setf-slate
+      warning: toyota-red
+      error: toyota-red
+      info: setf-slate
+  dark:
+    roles:
+      background: setf-onyx
+      surface: setf-graphite
+      surface-elevated: setf-slate
+      text-primary: setf-porcelain
+      text-secondary: setf-fog
+      text-tertiary: setf-mist
+      primary: toyota-red
+      primary-hover: toyota-red
+      accent: toyota-red
+      success: setf-fog
+      warning: toyota-red
+      error: toyota-red
+      info: setf-mist

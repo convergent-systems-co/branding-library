@@ -1,0 +1,74 @@
+id: jmfamily-enterprises
+version: 0.1.0
+name: JM Family Enterprises
+description: >
+  Founded in 1968 by Jim Moran, JM Family Enterprises is a privately
+  held diversified company headquartered in Deerfield Beach, Florida,
+  with annual revenue of $24.7 billion and over 5,500 associates.
+  The parent of Southeast Toyota Distributors (the world's largest
+  independent Toyota distributor), Southeast Toyota Finance, JM&A
+  Group, JM Lexus, and World Omni Financial.
+tags: [corporate, parent-company, automotive, finance, jmfe]
+
+provenance:
+  source: https://www.jmfamily.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    JM Family Enterprises, Inc. — all trademarks, wordmarks, and
+    brand assets are the property of JM Family Enterprises. This
+    spec reflects the publicly observable visual identity on
+    jmfamily.com (style.min.css, deployed press kits) and is not an
+    official brand-guidelines document.
+  importedDate: 2026-05-17
+
+references:
+  palette: jmfamily-enterprises@1
+  fonts:
+    heading: freight-text-pro@1
+    body: proxima-nova@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    primary: jmfe-teal
+    primary-hover: jmfe-teal-deep
+    accent: jmfe-gold
+    highlight: jmfe-signal-yellow
+    warning: jmfe-amber
+    error: jmfe-terracotta
+    text-primary-light: jmfe-ink
+    text-primary-dark: jmfe-bg
+    background-light: jmfe-bg
+    background-dark: jmfe-ink
+    surface-light: jmfe-surface
+    surface-dark: jmfe-slate
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      WCAG 2.1 Level AA contrast requirement for body text. JMFE Ink
+      on JMFE Background and inverse both satisfy this.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - inverted-without-variant
+    severity: error
+    rationale: >
+      The JM Family wordmark is a registered mark. Apply official
+      variants only; do not derive new color treatments.

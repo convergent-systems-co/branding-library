@@ -1,0 +1,43 @@
+kind: font
+id: proxima-nova
+version: 1.0.0
+name: Proxima Nova
+description: >
+  Proxima Nova — a humanist sans-serif designed by Mark Simonson,
+  distributed via Adobe Fonts. The JM Family Enterprises corporate
+  site (jmfamily.com) uses Proxima Nova as its body and UI face.
+family: proxima-nova
+classification: sans-serif
+tags: [humanist, sans-serif, adobe-fonts, ui, body]
+
+provenance:
+  source: https://fonts.adobe.com/fonts/proxima-nova
+  license: Adobe Fonts subscription — licensed for web embedding via Adobe Fonts kit
+  attribution: Proxima Nova © Mark Simonson, distributed by Adobe Fonts.
+  importedDate: 2026-05-17
+  notes: >
+    Confirmed in use on jmfamily.com via font-family declarations in
+    /wp-content/themes/jmfamily/css/style.min.css. License coverage
+    requires a valid Adobe Fonts kit ID attached to each deploying
+    domain; do NOT embed without that entitlement.
+
+source:
+  kind: adobe-fonts
+  family: proxima-nova
+  kitId: adobe-fonts-kit-required
+
+fallbackStack:
+  - Inter
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Helvetica Neue
+  - Helvetica
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 400, style: normal }
+  - { weight: 500, style: normal }
+  - { weight: 600, style: normal }
+  - { weight: 700, style: normal }

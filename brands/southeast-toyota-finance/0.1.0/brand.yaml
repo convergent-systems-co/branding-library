@@ -1,0 +1,86 @@
+id: southeast-toyota-finance
+version: 0.1.0
+name: Southeast Toyota Finance
+description: >
+  Southeast Toyota Finance (SETF), a JM Family Enterprises company,
+  provides financing, leasing, and account management services for
+  Toyota vehicle customers across the southeastern United States.
+  Tagline (per setf.com): "We're driven to help you."
+tags: [finance, automotive, jmfe, setf, toyota-aligned]
+
+provenance:
+  source: https://www.setfbranding.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Southeast Toyota Finance — a JM Family Enterprises company.
+    This spec is the most fully verified of the JMFE brands because
+    SETF publishes a public brand portal (setfbranding.com) with
+    explicit color hex codes, typography rules, and usage guidance.
+  importedDate: 2026-05-17
+  importedFromVersion: "setfbranding.com — as served 2026-05-17"
+  notes: >
+    Source pages referenced: /colors.html, /fonts.html, /brand-identity.html.
+    Logo and additional assets live in the gated Widen Collective
+    portal (jmfamily.widencollective.com/portals/btjg9ybl/SETFBrandPortal).
+
+references:
+  palette: southeast-toyota-finance@1
+  fonts:
+    heading: toyota-type@1
+    body: toyota-type@1
+    secondary: helvetica-neue@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    primary: toyota-red
+    accent: toyota-red
+    text-primary-light: setf-onyx
+    text-primary-dark: setf-porcelain
+    background-light: setf-porcelain
+    background-dark: setf-onyx
+    surface-light: setf-fog
+    surface-dark: setf-graphite
+    border-light: setf-mist
+    border-dark: setf-slate
+  typography:
+    display: heading
+    prose: body
+    fallback: secondary
+    code: mono
+
+assets: []
+
+rules:
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      WCAG 2.1 Level AA contrast for body text. SETF Onyx (#38393B)
+      on SETF Porcelain (#EDF0F5) clears comfortably.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - on-busy-photo
+      - inverted-without-variant
+    severity: error
+    rationale: >
+      The SETF wordmark and its Toyota Red treatment are governed by
+      the SETF Brand Portal. Use the supplied variants only.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["400", "600"]
+    severity: warning
+    rationale: >
+      SETF brand guide names Toyota Type Book (400) and Semibold (600)
+      as the licensed weights; Helvetica Neue Regular (400) and Bold
+      (700) serve as the secondary pair.

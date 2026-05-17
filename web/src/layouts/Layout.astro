@@ -1,4 +1,6 @@
 ---
+import { brandTheme, getResolvedBrandBySlug } from '../lib/encyclopedia.js';
+
 export interface Props {
   title: string;
   description?: string;
@@ -14,6 +16,66 @@ const navItems = [
   { id: 'fonts', label: 'Fonts', href: '/fonts' },
   { id: 'builder', label: 'Builder', href: '/builder' },
 ] as const;
+
+// The site IS the Convergent Systems brand. Drive every CSS variable from
+// the resolved convergent-systems@latest spec — light and dark mode both —
+// so a change to brands/convergent-systems/*/brand.yaml or to
+// palettes/convergent-deep-space/*/atom.yaml flows through here without a
+// second source of truth.
+const csBrand = getResolvedBrandBySlug('convergent-systems');
+const findSwatch = (id: string): string | null => {
+  if (!csBrand) return null;
+  const sw = csBrand.palette.data.swatches.find((s) => s.id === id);
+  return sw?.value ?? null;
+};
+const csLight = csBrand?.palette.data.modes.light.roles ?? {};
+const csDark = csBrand?.palette.data.modes.dark.roles ?? {};
+const swatch = (mode: Record<string, string>, role: string, fallback: string): string => {
+  const id = mode[role];
+  if (!id) return fallback;
+  return findSwatch(id) ?? fallback;
+};
+const csTheme = csBrand ? brandTheme(csBrand) : null;
+
+const lightVars = {
+  bg: swatch(csLight, 'background', '#F9F7F0'),
+  surface: swatch(csLight, 'surface', '#FDFCF7'),
+  surfaceElevated: swatch(csLight, 'surface-elevated', '#FFFFFF'),
+  textPrimary: swatch(csLight, 'text-primary', '#07090F'),
+  textSecondary: swatch(csLight, 'text-secondary', '#11182C'),
+  textTertiary: swatch(csLight, 'text-tertiary', '#7D8699'),
+  primary: swatch(csLight, 'primary', '#5CD6FF'),
+  primaryHover: swatch(csLight, 'primary-hover', '#8DE4FF'),
+  accent: swatch(csLight, 'accent', '#F4C75E'),
+  accentHover: swatch(csLight, 'accent-hover', '#FFD982'),
+  warning: swatch(csLight, 'warning', '#FF8A3D'),
+  warningHover: swatch(csLight, 'warning-hover', '#FFB070'),
+};
+
+const darkVars = {
+  bg: swatch(csDark, 'background', '#07090F'),
+  surface: swatch(csDark, 'surface', '#0B1020'),
+  surfaceElevated: swatch(csDark, 'surface-elevated', '#11182C'),
+  textPrimary: swatch(csDark, 'text-primary', '#EEF1F7'),
+  textSecondary: swatch(csDark, 'text-secondary', '#A4ADBF'),
+  textTertiary: swatch(csDark, 'text-tertiary', '#7D8699'),
+  primary: swatch(csDark, 'primary', '#5CD6FF'),
+  primaryHover: swatch(csDark, 'primary-hover', '#8DE4FF'),
+  accent: swatch(csDark, 'accent', '#F4C75E'),
+  accentHover: swatch(csDark, 'accent-hover', '#FFD982'),
+  warning: swatch(csDark, 'warning', '#FF8A3D'),
+  warningHover: swatch(csDark, 'warning-hover', '#FFB070'),
+};
+
+// The four mark dots are the brand's signature accent quartet.
+const markColors = {
+  d1: findSwatch('frost-cyan') ?? '#5CD6FF',
+  d2: findSwatch('solar-gold') ?? '#F4C75E',
+  d3: findSwatch('ember-orange') ?? '#FF8A3D',
+  d4: findSwatch('snow-0') ?? '#EEF1F7',
+};
+
+const fontSans = csTheme?.headingFont ?? "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
 ---
 
 <!doctype html>
@@ -26,7 +88,7 @@ const navItems = [
     {description && <meta name="description" content={description} />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Cascadia+Code:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Cascadia+Code:wght@400;500;700&family=Lato:wght@400;700;900&family=Raleway:wght@400;600;700;900&family=Lora:wght@400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css" />
   </head>
 
@@ -77,24 +139,50 @@ const navItems = [
       </aside>
     </div>
 
-    <style is:global>
+    <style is:global define:vars={{
+      lightBg: lightVars.bg,
+      lightSurface: lightVars.surface,
+      lightSurfaceElevated: lightVars.surfaceElevated,
+      lightTextPrimary: lightVars.textPrimary,
+      lightTextSecondary: lightVars.textSecondary,
+      lightTextTertiary: lightVars.textTertiary,
+      lightPrimary: lightVars.primary,
+      lightPrimaryHover: lightVars.primaryHover,
+      lightAccent: lightVars.accent,
+      lightAccentHover: lightVars.accentHover,
+      lightWarning: lightVars.warning,
+      darkBg: darkVars.bg,
+      darkSurface: darkVars.surface,
+      darkSurfaceElevated: darkVars.surfaceElevated,
+      darkTextPrimary: darkVars.textPrimary,
+      darkTextSecondary: darkVars.textSecondary,
+      darkTextTertiary: darkVars.textTertiary,
+      darkPrimary: darkVars.primary,
+      darkPrimaryHover: darkVars.primaryHover,
+      darkAccent: darkVars.accent,
+      darkAccentHover: darkVars.accentHover,
+      darkWarning: darkVars.warning,
+      brandDot1: markColors.d1,
+      brandDot2: markColors.d2,
+      brandDot3: markColors.d3,
+      brandDot4: markColors.d4,
+      brandFontSans: fontSans,
+    }}>
       :root {
-        --nord0: #2E3440; --nord1: #3B4252; --nord2: #434C5E; --nord3: #4C566A;
-        --nord4: #D8DEE9; --nord5: #E5E9F0; --nord6: #ECEFF4;
-        --nord7: #8FBCBB; --nord8: #88C0D0; --nord9: #81A1C1; --nord10: #5E81AC;
-        --nord11: #BF616A; --nord12: #D08770; --nord13: #EBCB8B; --nord14: #A3BE8C; --nord15: #B48EAD;
+        --bg: var(--lightBg);
+        --surface: var(--lightSurface);
+        --surface-elevated: var(--lightSurfaceElevated);
+        --text-primary: var(--lightTextPrimary);
+        --text-secondary: var(--lightTextSecondary);
+        --text-tertiary: var(--lightTextTertiary);
+        --primary: var(--lightPrimary);
+        --primary-hover: var(--lightPrimaryHover);
+        --accent: var(--lightAccent);
+        --accent-hover: var(--lightAccentHover);
+        --warning: var(--lightWarning);
+        --success: var(--lightAccent);
 
-        --bg: var(--nord6);
-        --surface: var(--nord5);
-        --surface-elevated: var(--nord4);
-        --text-primary: var(--nord0);
-        --text-secondary: var(--nord1);
-        --text-tertiary: var(--nord3);
-        --primary: var(--nord10);
-        --accent: var(--nord8);
-        --success: var(--nord14);
-
-        --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        --font-sans: var(--brandFontSans);
         --font-mono: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, monospace;
 
         --sidenav-width: 220px;
@@ -102,13 +190,17 @@ const navItems = [
 
       @media (prefers-color-scheme: dark) {
         :root {
-          --bg: var(--nord0);
-          --surface: var(--nord1);
-          --surface-elevated: var(--nord2);
-          --text-primary: var(--nord6);
-          --text-secondary: var(--nord4);
-          --text-tertiary: var(--nord3);
-          --primary: var(--nord8);
+          --bg: var(--darkBg);
+          --surface: var(--darkSurface);
+          --surface-elevated: var(--darkSurfaceElevated);
+          --text-primary: var(--darkTextPrimary);
+          --text-secondary: var(--darkTextSecondary);
+          --text-tertiary: var(--darkTextTertiary);
+          --primary: var(--darkPrimary);
+          --primary-hover: var(--darkPrimaryHover);
+          --accent: var(--darkAccent);
+          --accent-hover: var(--darkAccentHover);
+          --warning: var(--darkWarning);
         }
       }
 
@@ -171,10 +263,10 @@ const navItems = [
         height: 100%;
         border-radius: 50%;
       }
-      .dot-1 { background: var(--nord8); }
-      .dot-2 { background: var(--nord14); }
-      .dot-3 { background: var(--nord13); }
-      .dot-4 { background: var(--nord15); }
+      .dot-1 { background: var(--brandDot1); }
+      .dot-2 { background: var(--brandDot2); }
+      .dot-3 { background: var(--brandDot3); }
+      .dot-4 { background: var(--brandDot4); }
       .brand-text {
         font-weight: 800;
         font-size: 17px;

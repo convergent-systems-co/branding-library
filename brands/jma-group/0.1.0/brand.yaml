@@ -1,0 +1,68 @@
+id: jma-group
+version: 0.1.0
+name: JM&A Group
+description: >
+  JM&A Group, a JM Family Enterprises company, provides finance and
+  insurance products, performance-development services, and training
+  programs to automotive dealerships across North America. Tagline:
+  "Your Partner for Dealership Growth & Success."
+tags: [automotive, finance-and-insurance, dealer-services, jmfe, jma]
+
+provenance:
+  source: https://www.jmagroup.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    JM&A Group — a JM Family Enterprises company. Identity values
+    verified from the official horizontal wordmark SVG hosted at
+    jmagroup.com/hubfs/identity/logos/jma-logo-horizontal-fc.svg.
+  importedDate: 2026-05-17
+  notes: >
+    Typography is not exposed by the deployed jmagroup.com CSS;
+    using Proxima Nova as the corporate-family inherited sans
+    (matches parent JMFE) until a JM&A-specific spec is supplied.
+
+references:
+  palette: jma-group@1
+  fonts:
+    heading: proxima-nova@1
+    body: proxima-nova@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    primary: jma-teal
+    primary-hover: jma-teal-deep
+    accent: jma-teal
+    text-primary-light: jma-onyx
+    text-primary-dark: jma-white
+    background-light: jma-white
+    background-dark: jma-onyx
+    surface-light: jma-fog
+    surface-dark: jma-graphite
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: WCAG 2.1 Level AA — JM&A Onyx on JM&A White clears AA.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+    severity: error
+    rationale: >
+      The JM&A Group wordmark is a registered mark; use only
+      approved color variants and clearspace ratios.

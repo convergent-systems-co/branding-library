@@ -727,3 +727,6 @@ dist/
 # pnpm
 .pnpm-store/
 ### END: branding-library project
+
+# Playwright MCP screenshot artifacts
+.playwright-mcp/

@@ -1,0 +1,40 @@
+kind: font
+id: raleway
+version: 1.0.0
+name: Raleway
+description: >
+  Raleway — a geometric sans-serif family by Matt McInerney, Pablo
+  Impallari, and Rodrigo Fuenzalida, freely available on Google Fonts
+  under the SIL Open Font License. Observed as the display face on
+  the World Omni Financial deployed site (worldomni.com).
+family: Raleway
+classification: sans-serif
+tags: [geometric, display, sans-serif, google-fonts, ofl]
+
+provenance:
+  source: https://fonts.google.com/specimen/Raleway
+  license: OFL-1.1
+  attribution: >
+    Raleway, Copyright © 2010 The Raleway Project Authors (Matt
+    McInerney, Pablo Impallari, Rodrigo Fuenzalida), licensed under
+    the SIL Open Font License, Version 1.1.
+  importedDate: 2026-05-17
+
+source:
+  kind: google-fonts
+  family: Raleway
+  url: https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;900&display=swap
+
+fallbackStack:
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Helvetica Neue
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 400, style: normal }
+  - { weight: 600, style: normal }
+  - { weight: 700, style: normal }
+  - { weight: 900, style: normal }

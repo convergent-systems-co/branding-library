@@ -1,0 +1,66 @@
+id: southeast-toyota-distributors
+version: 0.1.0
+name: Southeast Toyota Distributors
+description: >
+  Southeast Toyota Distributors (SET), a JM Family Enterprises company,
+  is the world's largest independent Toyota distributor — serving
+  Florida, Georgia, Alabama, North Carolina, and South Carolina
+  through a network of more than 175 authorized Toyota dealerships.
+tags: [automotive, distributor, jmfe, set, toyota-aligned]
+
+provenance:
+  source: https://exploresetoyota.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Southeast Toyota Distributors, LLC — a JM Family Enterprises
+    company. SET reuses the parent Toyota visual system; identity
+    values verified from the official SET logo SVG and from the
+    Southeast Toyota Dealers marketing site exploresetoyota.com.
+  importedDate: 2026-05-17
+
+references:
+  palette: southeast-toyota-distributors@1
+  fonts:
+    heading: toyota-type@1
+    body: toyota-type@1
+    fallback: helvetica-neue@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    primary: toyota-red
+    accent: toyota-red
+    text-primary-light: set-graphite
+    text-primary-dark: set-white
+    background-light: set-white
+    background-dark: set-graphite
+    surface-light: set-fog
+    surface-dark: set-slate
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: WCAG 2.1 Level AA — SET Graphite on white clears 12:1.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+    severity: error
+    rationale: >
+      The Southeast Toyota wordmark co-locks with the Toyota mark;
+      visual modifications would violate both SET and Toyota corporate
+      identity standards.

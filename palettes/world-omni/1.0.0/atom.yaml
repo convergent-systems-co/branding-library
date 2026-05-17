@@ -1,0 +1,91 @@
+kind: palette
+id: world-omni
+version: 1.0.0
+name: World Omni Financial
+description: >
+  World Omni Financial Corp. palette anchored on the brand teal
+  (#008390) referenced in the corporate stylesheet, paired with a
+  cool gray scale appropriate for a financial-services UI.
+tags: [finance, automotive, jmfe, worldomni, teal]
+
+provenance:
+  source: https://worldomni.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    World Omni Financial Corp. — a JM Family Enterprises company.
+    Primary teal value (#008390) is taken from the worldomni.com
+    deployed stylesheet (/style.css). World Omni does not publish a
+    public brand-guidelines document; the supporting scale below is
+    interpolated.
+  importedDate: 2026-05-17
+  notes: >
+    The brand teal is a sibling to JM&A (#008D9A) and JMFE
+    (#008C99) — all JMFE-family identities share the teal family.
+    Lato + Raleway appear as type in the deployed CSS but are likely
+    template defaults rather than a canonical brand specification.
+
+swatches:
+  - id: wo-teal
+    name: World Omni Teal (primary)
+    value: "#008390"
+    description: Primary brand teal — the canonical signal color from worldomni.com.
+  - id: wo-teal-deep
+    name: World Omni Teal Deep
+    value: "#006670"
+    description: Interpolated darker teal for hover/pressed states.
+  - id: wo-teal-light
+    name: World Omni Teal Light
+    value: "#A8D6DA"
+    description: Interpolated soft teal for surfaces.
+  - id: wo-onyx
+    name: World Omni Onyx
+    value: "#1A1F23"
+    description: Deep blue-black for headlines and body text.
+  - id: wo-slate
+    name: World Omni Slate
+    value: "#4F5A63"
+    description: Secondary text.
+  - id: wo-steel
+    name: World Omni Steel
+    value: "#8A949D"
+    description: Tertiary text and quiet labels.
+  - id: wo-fog
+    name: World Omni Fog
+    value: "#E8EDF0"
+    description: Subtle background tint.
+  - id: wo-white
+    name: World Omni White
+    value: "#FFFFFF"
+    description: Page background.
+
+modes:
+  light:
+    roles:
+      background: wo-white
+      surface: wo-fog
+      surface-elevated: wo-teal-light
+      text-primary: wo-onyx
+      text-secondary: wo-slate
+      text-tertiary: wo-steel
+      primary: wo-teal
+      primary-hover: wo-teal-deep
+      accent: wo-teal
+      success: wo-teal-deep
+      warning: wo-teal
+      error: wo-onyx
+      info: wo-teal
+  dark:
+    roles:
+      background: wo-onyx
+      surface: wo-slate
+      surface-elevated: wo-steel
+      text-primary: wo-white
+      text-secondary: wo-fog
+      text-tertiary: wo-teal-light
+      primary: wo-teal-light
+      primary-hover: wo-teal
+      accent: wo-teal-light
+      success: wo-teal-light
+      warning: wo-teal-light
+      error: wo-fog
+      info: wo-teal-light

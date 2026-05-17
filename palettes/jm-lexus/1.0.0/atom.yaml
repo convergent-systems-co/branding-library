@@ -1,0 +1,92 @@
+kind: palette
+id: jm-lexus
+version: 1.0.0
+name: JM Lexus
+description: >
+  JM Lexus dealer palette built on the standard Lexus luxury system:
+  monochrome black + brushed-silver chrome with a near-white surface,
+  reflecting the parent Lexus visual identity used at every Lexus
+  dealership including JM Lexus in Margate, FL.
+tags: [automotive, dealer, luxury, jmfe, lexus, monochrome]
+
+provenance:
+  source: https://www.jmlexus.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    JM Lexus — a JM Family Enterprises company; trademark and visual
+    identity belong to Lexus, a Toyota Motor Corporation luxury
+    division. The Lexus visual system is a published global standard
+    applied uniformly across the dealer network (jmlexus.com,
+    lexus.com, all certified Lexus dealers).
+  importedDate: 2026-05-17
+  notes: >
+    JM Lexus does not maintain a separate brand palette — they
+    inherit the Lexus parent identity. Values below reflect that
+    monochrome luxury system; they are interpolated representative
+    grays rather than transcriptions of a specific guideline doc.
+
+swatches:
+  - id: lexus-black
+    name: Lexus Black
+    value: "#000000"
+    description: Primary brand mark color — wordmark and signage.
+  - id: lexus-graphite
+    name: Lexus Graphite
+    value: "#1A1A1A"
+    description: Deep near-black for headlines on light surfaces.
+  - id: lexus-ash
+    name: Lexus Ash
+    value: "#3D3D3D"
+    description: Body text and primary content color.
+  - id: lexus-silver
+    name: Lexus Silver
+    value: "#6B6B6B"
+    description: Secondary text — references brushed-chrome accents.
+  - id: lexus-platinum
+    name: Lexus Platinum
+    value: "#B5B5B5"
+    description: Tertiary text and divider lines.
+  - id: lexus-pearl
+    name: Lexus Pearl
+    value: "#F2F2F2"
+    description: Soft surface tint — quiet panels.
+  - id: lexus-white
+    name: Lexus White
+    value: "#FFFFFF"
+    description: Page background and reversed wordmark fill.
+  - id: lexus-chrome
+    name: Lexus Chrome
+    value: "#8E8E8E"
+    description: Mid-gray used for the chrome-finish brand accents.
+
+modes:
+  light:
+    roles:
+      background: lexus-white
+      surface: lexus-pearl
+      surface-elevated: lexus-white
+      text-primary: lexus-graphite
+      text-secondary: lexus-ash
+      text-tertiary: lexus-silver
+      primary: lexus-black
+      primary-hover: lexus-graphite
+      accent: lexus-chrome
+      success: lexus-silver
+      warning: lexus-ash
+      error: lexus-black
+      info: lexus-silver
+  dark:
+    roles:
+      background: lexus-black
+      surface: lexus-graphite
+      surface-elevated: lexus-ash
+      text-primary: lexus-white
+      text-secondary: lexus-pearl
+      text-tertiary: lexus-platinum
+      primary: lexus-white
+      primary-hover: lexus-pearl
+      accent: lexus-chrome
+      success: lexus-platinum
+      warning: lexus-pearl
+      error: lexus-white
+      info: lexus-platinum

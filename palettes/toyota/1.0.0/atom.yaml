@@ -1,0 +1,86 @@
+kind: palette
+id: toyota
+version: 1.0.0
+name: Toyota
+description: >
+  Toyota Motor Sales corporate palette built around Toyota Red
+  (#EB0A1E) — the canonical primary mark color used across vehicle
+  marketing, the corporate logo, and dealer co-branding worldwide.
+tags: [automotive, oem, toyota, red, corporate]
+
+provenance:
+  source: https://www.toyota.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Toyota Motor Sales, U.S.A., Inc. and Toyota Motor Corporation —
+    trademark and brand colors are the property of Toyota Motor
+    Corporation. Red value (#EB0A1E) verified from the SVG of the
+    official Toyota horizontal logo (VIS_toyota_logo_horiz_black_RGB_2023.svg)
+    served from delivery.tcom.assetscs.toyota.com.
+  importedDate: 2026-05-17
+  notes: >
+    Toyota Red is also called out as Pantone 186C / CMYK 0/100/90/0
+    in downstream brand guides (e.g., the SETF brand portal at
+    setfbranding.com/colors.html).
+
+swatches:
+  - id: toyota-red
+    name: Toyota Red
+    value: "#EB0A1E"
+    description: Primary Toyota brand red — used on the corporate mark and headline accents.
+  - id: toyota-black
+    name: Toyota Black
+    value: "#000000"
+    description: Wordmark and headline text on light backgrounds.
+  - id: toyota-graphite
+    name: Toyota Graphite
+    value: "#252525"
+    description: Near-black used by Southeast Toyota Dealers for the wordmark — softer than pure #000.
+  - id: toyota-white
+    name: Toyota White
+    value: "#FFFFFF"
+    description: Page background; reversed wordmark fill on dark surfaces.
+  - id: toyota-platinum
+    name: Toyota Platinum
+    value: "#F5F5F5"
+    description: Subtle panel surface — feature blocks and quiet cards.
+  - id: toyota-silver
+    name: Toyota Silver
+    value: "#86939E"
+    description: Secondary text and dividers — mirrors the SETF "Supporting 5" gray.
+  - id: toyota-ash
+    name: Toyota Ash
+    value: "#58595B"
+    description: Tertiary text.
+
+modes:
+  light:
+    roles:
+      background: toyota-white
+      surface: toyota-platinum
+      surface-elevated: toyota-white
+      text-primary: toyota-graphite
+      text-secondary: toyota-ash
+      text-tertiary: toyota-silver
+      primary: toyota-red
+      primary-hover: toyota-red
+      accent: toyota-red
+      success: toyota-silver
+      warning: toyota-red
+      error: toyota-red
+      info: toyota-ash
+  dark:
+    roles:
+      background: toyota-black
+      surface: toyota-graphite
+      surface-elevated: toyota-ash
+      text-primary: toyota-white
+      text-secondary: toyota-platinum
+      text-tertiary: toyota-silver
+      primary: toyota-red
+      primary-hover: toyota-red
+      accent: toyota-red
+      success: toyota-platinum
+      warning: toyota-red
+      error: toyota-red
+      info: toyota-silver

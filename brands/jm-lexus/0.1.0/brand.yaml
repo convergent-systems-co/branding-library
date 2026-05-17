@@ -1,0 +1,75 @@
+id: jm-lexus
+version: 0.1.0
+name: JM Lexus
+description: >
+  JM Lexus, a JM Family Enterprises retail dealership, is a full-
+  service Lexus dealer in Margate, Florida — long the largest Lexus
+  dealer in the United States. Brand voice: "World-Class Shopping
+  Experience." Visual identity inherits the global Lexus monochrome
+  + chrome luxury system.
+tags: [automotive, dealer, luxury, jmfe, lexus]
+
+provenance:
+  source: https://www.jmlexus.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    JM Lexus — a JM Family Enterprises company; the Lexus trademark
+    and visual identity belong to Lexus, a luxury division of Toyota
+    Motor Corporation. JM Lexus inherits the Lexus dealer brand
+    standards in full.
+  importedDate: 2026-05-17
+  notes: >
+    Lexus's proprietary corporate typeface (Nobel) is not freely
+    licensable. This spec references Helvetica Neue as the closest
+    publicly available neutral grotesk; replace with the Lexus
+    licensed kit when working on production materials.
+
+references:
+  palette: jm-lexus@1
+  fonts:
+    heading: helvetica-neue@1
+    body: helvetica-neue@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    primary: lexus-black
+    primary-hover: lexus-graphite
+    accent: lexus-chrome
+    text-primary-light: lexus-graphite
+    text-primary-dark: lexus-white
+    background-light: lexus-white
+    background-dark: lexus-black
+    surface-light: lexus-pearl
+    surface-dark: lexus-graphite
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: WCAG 2.1 Level AA — Lexus Graphite on white clears 14:1.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - on-busy-photo
+      - inverted-without-variant
+    severity: error
+    rationale: >
+      The Lexus mark is among the most-protected luxury marks. Only
+      Lexus-approved variants and clearspace relationships are
+      permitted; dealer co-marks (JM Lexus) must respect Lexus
+      dealer-identity guidelines.

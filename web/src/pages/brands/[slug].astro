@@ -4,7 +4,7 @@ import { resolve } from 'node:path';
 import Layout from '../../layouts/Layout.astro';
 import BrandGuide from '../../components/BrandGuide.astro';
 import DownloadsSection from '../../components/DownloadsSection.astro';
-import { fontShowcaseFamily, getBrands, getResolvedBrandBySlug } from '../../lib/encyclopedia.js';
+import { brandTheme, fontShowcaseFamily, getBrands, getResolvedBrandBySlug } from '../../lib/encyclopedia.js';
 
 export function getStaticPaths() {
   const seen = new Set<string>();
@@ -54,9 +54,9 @@ const rulesBySeverity = {
 };
 
 const severityColor = {
-  error: 'var(--nord11)',
-  warning: 'var(--nord13)',
-  recommendation: 'var(--nord8)',
+  error: 'var(--warning)',
+  warning: 'var(--accent)',
+  recommendation: 'var(--primary)',
 };
 
 const fontShowcase = (roleKey: string): string => {
@@ -93,6 +93,26 @@ const ruleDetails = (rule: typeof brand.rules[number]): { key: string; value: st
 };
 
 const pangram = 'The quick brown fox jumps over 13 lazy dogs.';
+
+const theme = brandTheme(brand);
+const themeStyle = `
+  --b-primary: ${theme.primary};
+  --b-primary-hover: ${theme.primaryHover};
+  --b-surface: ${theme.surface};
+  --b-surface-elevated: ${theme.surfaceElevated};
+  --b-background: ${theme.background};
+  --b-text: ${theme.textPrimary};
+  --b-text-secondary: ${theme.textSecondary};
+  --b-text-tertiary: ${theme.textTertiary};
+  --b-accent: ${theme.accent};
+  --b-highlight: ${theme.highlight};
+  --b-warning: ${theme.warning};
+  --b-error: ${theme.error};
+  --b-success: ${theme.success};
+  --b-on-primary: ${theme.onPrimary};
+  --b-heading-font: ${theme.headingFont};
+  --b-body-font: ${theme.bodyFont};
+`;
 ---
 
 <Layout
@@ -123,6 +143,124 @@ const pangram = 'The quick brown fox jumps over 13 lazy dogs.';
   <DownloadsSection brand={brand} />
 
   <BrandGuide brand={brand} />
+
+  <section class="section components-section">
+    <h2>Components <span class="section-aside">— same template, themed by {brand.name}</span></h2>
+    <p class="section-lede">
+      Every block below renders from the resolved palette + font references on this brand.
+      Swap the brand and the same template re-themes — no per-brand component code required.
+    </p>
+
+    <div class="brand-canvas" style={themeStyle}>
+      <div class="canvas-row canvas-row-type">
+        <h3 class="canvas-h1">{brand.name}</h3>
+        <h4 class="canvas-h2">A clear hierarchy in {brand.name}'s typeface</h4>
+        <h5 class="canvas-h3">Tertiary heading — supporting structure</h5>
+        <p class="canvas-body">
+          Body copy renders in the brand's prose font on the brand's background.
+          Inline <a class="canvas-link" href="#">links</a> and{' '}
+          <span class="canvas-highlight">highlighted phrases</span> pick up
+          the brand's primary and highlight roles. Code spans like{' '}
+          <code class="canvas-code">brand.references.palette</code>{' '}
+          fall back to the monospace face.
+        </p>
+        <blockquote class="canvas-quote">
+          A blockquote uses the brand's accent color as its rule.
+          Useful for pulling tagline copy out of running prose.
+        </blockquote>
+      </div>
+
+      <div class="canvas-row canvas-row-grid">
+        <div class="canvas-col">
+          <h6 class="canvas-h6">Bulleted list</h6>
+          <ul class="canvas-list">
+            <li>Bullet markers inherit the brand's primary color.</li>
+            <li>Item spacing reads as a deliberate vertical rhythm.</li>
+            <li>Nested items still resolve to the same primary.
+              <ul>
+                <li>Second-level item using the accent.</li>
+                <li>Third bullet wraps cleanly at narrow widths.</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="canvas-col">
+          <h6 class="canvas-h6">Numbered list</h6>
+          <ol class="canvas-list canvas-list-ordered">
+            <li>Open the brand's resolved spec.</li>
+            <li>Apply roles to the component template.</li>
+            <li>Render the surface in the brand's identity.</li>
+            <li>Audit the output against the typed rules.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="canvas-row canvas-row-buttons">
+        <h6 class="canvas-h6">Buttons</h6>
+        <div class="canvas-buttons">
+          <button class="canvas-btn canvas-btn-primary" type="button">Primary action</button>
+          <button class="canvas-btn canvas-btn-secondary" type="button">Secondary</button>
+          <button class="canvas-btn canvas-btn-ghost" type="button">Ghost</button>
+        </div>
+      </div>
+
+      <div class="canvas-row canvas-row-callouts">
+        <h6 class="canvas-h6">Callout boxes</h6>
+
+        <div class="callout callout-info">
+          <div class="callout-icon" aria-hidden="true">i</div>
+          <div class="callout-body">
+            <strong class="callout-title">Info</strong>
+            <p>Neutral status — provides supplemental context without urgency. Uses the brand's primary as the rule.</p>
+          </div>
+        </div>
+
+        <div class="callout callout-success">
+          <div class="callout-icon" aria-hidden="true">✓</div>
+          <div class="callout-body">
+            <strong class="callout-title">Success</strong>
+            <p>Confirms a completed action — palette role <code>success</code> determines the rule color.</p>
+          </div>
+        </div>
+
+        <div class="callout callout-warning">
+          <div class="callout-icon" aria-hidden="true">!</div>
+          <div class="callout-body">
+            <strong class="callout-title">Warning</strong>
+            <p>Calls out something that needs attention but isn't an error — palette role <code>warning</code>.</p>
+          </div>
+        </div>
+
+        <div class="callout callout-error">
+          <div class="callout-icon" aria-hidden="true">×</div>
+          <div class="callout-body">
+            <strong class="callout-title">Error</strong>
+            <p>Surfaces a failure that blocks progress — palette role <code>error</code>. Use sparingly.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="canvas-row canvas-row-table">
+        <h6 class="canvas-h6">Table</h6>
+        <table class="canvas-table">
+          <thead>
+            <tr>
+              <th>Role</th>
+              <th>Resolves to</th>
+              <th>Mode</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>primary</td><td>brand color #1</td><td>light + dark</td></tr>
+            <tr><td>accent</td><td>brand color #2</td><td>light + dark</td></tr>
+            <tr><td>warning</td><td>brand warning</td><td>light + dark</td></tr>
+            <tr><td>error</td><td>brand error</td><td>light + dark</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
   <section class="section">
     <h2>Atoms</h2>
@@ -651,6 +789,220 @@ const pangram = 'The quick brown fox jumps over 13 lazy dogs.';
       border-left: 2px solid var(--surface-elevated);
     }
 
+    /* === Brand canvas (Components preview) =================== */
+    .brand-canvas {
+      background: var(--b-background);
+      color: var(--b-text);
+      font-family: var(--b-body-font);
+      border-radius: 16px;
+      padding: 32px;
+      border: 1px solid var(--b-surface-elevated);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .canvas-row { display: flex; flex-direction: column; gap: 12px; }
+    .canvas-row-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 720px) {
+      .canvas-row-grid { grid-template-columns: 1fr; }
+    }
+
+    .canvas-h1 {
+      font-family: var(--b-heading-font);
+      font-size: 40px;
+      font-weight: 800;
+      color: var(--b-text);
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      margin: 0;
+    }
+    .canvas-h2 {
+      font-family: var(--b-heading-font);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--b-text);
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin: 0;
+    }
+    .canvas-h3 {
+      font-family: var(--b-heading-font);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--b-text-secondary);
+      letter-spacing: -0.005em;
+      line-height: 1.3;
+      margin: 0;
+    }
+    .canvas-h6 {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--b-text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin: 0 0 4px;
+    }
+    .canvas-body {
+      font-family: var(--b-body-font);
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--b-text);
+      margin: 0;
+      max-width: 64ch;
+    }
+    .canvas-link {
+      color: var(--b-primary);
+      text-decoration: underline;
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 2px;
+    }
+    .canvas-link:hover { color: var(--b-primary-hover); }
+    .canvas-highlight {
+      background: color-mix(in srgb, var(--b-highlight) 35%, transparent);
+      padding: 1px 4px;
+      border-radius: 3px;
+      color: var(--b-text);
+    }
+    .canvas-code {
+      font-family: var(--font-mono);
+      font-size: 0.875em;
+      background: var(--b-surface);
+      border: 1px solid var(--b-surface-elevated);
+      padding: 1px 6px;
+      border-radius: 4px;
+      color: var(--b-text);
+    }
+    .canvas-quote {
+      margin: 0;
+      padding: 10px 16px;
+      border-left: 3px solid var(--b-accent);
+      color: var(--b-text-secondary);
+      font-family: var(--b-body-font);
+      font-style: italic;
+      font-size: 15px;
+      line-height: 1.5;
+      max-width: 64ch;
+    }
+
+    .canvas-list {
+      margin: 0;
+      padding-left: 1.4em;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--b-text);
+    }
+    .canvas-list li::marker { color: var(--b-primary); }
+    .canvas-list ul { padding-left: 1.4em; }
+    .canvas-list ul li::marker { color: var(--b-accent); }
+    .canvas-list-ordered li::marker { font-family: var(--b-heading-font); font-weight: 700; }
+
+    .canvas-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .canvas-btn {
+      font-family: var(--b-body-font);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+      border: 1px solid transparent;
+    }
+    .canvas-btn-primary {
+      background: var(--b-primary);
+      color: var(--b-on-primary);
+    }
+    .canvas-btn-primary:hover { background: var(--b-primary-hover); }
+    .canvas-btn-secondary {
+      background: var(--b-surface);
+      color: var(--b-text);
+      border-color: var(--b-surface-elevated);
+    }
+    .canvas-btn-secondary:hover { border-color: var(--b-primary); color: var(--b-primary); }
+    .canvas-btn-ghost {
+      background: transparent;
+      color: var(--b-primary);
+      border-color: var(--b-primary);
+    }
+    .canvas-btn-ghost:hover { background: color-mix(in srgb, var(--b-primary) 8%, transparent); }
+
+    .callout {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: 8px;
+      background: var(--b-surface);
+      border-left: 4px solid var(--b-primary);
+      color: var(--b-text);
+    }
+    .callout-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--b-primary);
+      color: var(--b-on-primary);
+      font-family: var(--b-heading-font);
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1;
+    }
+    .callout-body p { margin: 4px 0 0; font-size: 14px; line-height: 1.55; color: var(--b-text-secondary); }
+    .callout-body code { font-family: var(--font-mono); font-size: 12px; }
+    .callout-title {
+      font-family: var(--b-heading-font);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--b-text);
+      letter-spacing: -0.005em;
+    }
+    .callout-success { border-left-color: var(--b-success); }
+    .callout-success .callout-icon { background: var(--b-success); }
+    .callout-warning { border-left-color: var(--b-warning); }
+    .callout-warning .callout-icon { background: var(--b-warning); }
+    .callout-error { border-left-color: var(--b-error); }
+    .callout-error .callout-icon { background: var(--b-error); }
+
+    .canvas-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-family: var(--b-body-font);
+      font-size: 14px;
+      color: var(--b-text);
+      border: 1px solid var(--b-surface-elevated);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .canvas-table thead {
+      background: var(--b-primary);
+      color: var(--b-on-primary);
+      font-family: var(--b-heading-font);
+    }
+    .canvas-table th, .canvas-table td {
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--b-surface-elevated);
+    }
+    .canvas-table th { font-weight: 600; letter-spacing: -0.005em; }
+    .canvas-table tbody tr:nth-child(even) { background: var(--b-surface); }
+    .canvas-table tbody tr:last-child td { border-bottom: 0; }
+    .canvas-table td:nth-child(2) { font-family: var(--font-mono); font-size: 13px; color: var(--b-text-secondary); }
+    .canvas-table td:nth-child(3) { color: var(--b-text-tertiary); font-size: 13px; }
+
+    /* === Existing styles below ============================== */
     .provenance {
       display: grid;
       grid-template-columns: 140px 1fr;

@@ -1,0 +1,82 @@
+kind: palette
+id: southeast-toyota-distributors
+version: 1.0.0
+name: Southeast Toyota Distributors
+description: >
+  SET palette built from the Southeast Toyota Dealers public logo
+  SVG (exploresetoyota.com): Toyota Red with a near-black wordmark
+  and white field. SET reuses the parent Toyota color system rather
+  than maintaining a distinct hue.
+tags: [automotive, distributor, jmfe, set, toyota-aligned, red]
+
+provenance:
+  source: https://exploresetoyota.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Southeast Toyota Distributors, LLC — a JM Family Enterprises
+    company. Color values extracted from the SET official logo SVG
+    (cdn.sanity.io/images/90qxor39/production/2ed446418bc9f745d0928579dccdd9da838b7fa0-373x105.svg)
+    served on the SET dealer-marketing site.
+  importedDate: 2026-05-17
+  notes: >
+    Supporting grays mirror the SETF brand portal scale (the two
+    JMFE Toyota businesses share a visual system). Where SET has no
+    distinct value, defer to the SETF spec.
+
+swatches:
+  - id: toyota-red
+    name: Toyota Red
+    value: "#EB0A1E"
+    description: Primary brand red — shared with the parent Toyota mark.
+  - id: set-graphite
+    name: SET Graphite
+    value: "#252525"
+    description: Wordmark color and primary text — softer than pure #000.
+  - id: set-white
+    name: SET White
+    value: "#FFFFFF"
+    description: Page background and reversed wordmark fill.
+  - id: set-fog
+    name: SET Fog
+    value: "#E1E8EE"
+    description: Subtle background tint (borrowed from SETF Supporting 2).
+  - id: set-steel
+    name: SET Steel
+    value: "#86939E"
+    description: Tertiary text and dividers (borrowed from SETF Supporting 5).
+  - id: set-slate
+    name: SET Slate
+    value: "#626E79"
+    description: Secondary text (borrowed from SETF Supporting 6).
+
+modes:
+  light:
+    roles:
+      background: set-white
+      surface: set-fog
+      surface-elevated: set-white
+      text-primary: set-graphite
+      text-secondary: set-slate
+      text-tertiary: set-steel
+      primary: toyota-red
+      primary-hover: toyota-red
+      accent: toyota-red
+      success: set-slate
+      warning: toyota-red
+      error: toyota-red
+      info: set-slate
+  dark:
+    roles:
+      background: set-graphite
+      surface: set-slate
+      surface-elevated: set-steel
+      text-primary: set-white
+      text-secondary: set-fog
+      text-tertiary: set-steel
+      primary: toyota-red
+      primary-hover: toyota-red
+      accent: toyota-red
+      success: set-fog
+      warning: toyota-red
+      error: toyota-red
+      info: set-fog

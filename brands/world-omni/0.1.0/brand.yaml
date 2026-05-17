@@ -1,0 +1,71 @@
+id: world-omni
+version: 0.1.0
+name: World Omni Financial
+description: >
+  World Omni Financial Corp., established in 1981 as a division of
+  JM Family Enterprises, specializes in automotive financing —
+  retail, lease, and floorplan products backed by Toyota dealership
+  originations in the southeast. Brand voice: "World-Class Service"
+  and "Strength in numbers."
+tags: [finance, automotive, jmfe, worldomni]
+
+provenance:
+  source: https://worldomni.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    World Omni Financial Corp. — a JM Family Enterprises company.
+    Primary color value pulled from the deployed worldomni.com
+    stylesheet. World Omni does not publish a public brand portal,
+    so several palette entries are interpolated.
+  importedDate: 2026-05-17
+  notes: >
+    Lato (body) and Raleway (display) appear in the worldomni.com
+    stylesheet — likely a CMS template default rather than a
+    mandated brand spec, but those are the actual deployed faces.
+
+references:
+  palette: world-omni@1
+  fonts:
+    heading: raleway@1
+    body: lato@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    primary: wo-teal
+    primary-hover: wo-teal-deep
+    accent: wo-teal
+    text-primary-light: wo-onyx
+    text-primary-dark: wo-white
+    background-light: wo-white
+    background-dark: wo-onyx
+    surface-light: wo-fog
+    surface-dark: wo-slate
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: WCAG 2.1 Level AA — World Omni Onyx on white clears AA.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+    severity: error
+    rationale: >
+      The World Omni wordmark is a registered mark; visual
+      modifications are not permitted on the dealer-facing site or
+      on consumer-facing materials.

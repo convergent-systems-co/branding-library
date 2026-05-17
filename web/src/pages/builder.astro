@@ -228,8 +228,86 @@ const atomsJson = JSON.stringify(atoms);
     .preview-mono {
       font-size: 12px;
       margin: 0;
+      padding: 10px 14px;
+      border-radius: 8px;
       white-space: pre-wrap;
       word-break: break-word;
+    }
+
+    .preview-lists {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 720px) {
+      .preview-lists { grid-template-columns: 1fr; }
+    }
+    .preview-list-head {
+      margin: 0 0 6px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.7;
+    }
+    .preview-list {
+      margin: 0;
+      padding-left: 1.4em;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .preview-list li::marker { color: var(--preview-bullet); }
+    .preview-list-ordered li::marker { font-weight: 700; }
+    .preview-highlight {
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+    .preview-link {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .preview-callouts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    @media (max-width: 720px) {
+      .preview-callouts { grid-template-columns: 1fr; }
+    }
+    .preview-callout {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border-left: 3px solid;
+      font-size: 12px;
+    }
+    .preview-callout-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 1;
+    }
+    .preview-callout-body strong {
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .preview-callout-body p {
+      margin: 2px 0 0;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .preview-callout-body code {
+      font-size: 11px;
+      opacity: 0.75;
     }
   </style>
 </Layout>

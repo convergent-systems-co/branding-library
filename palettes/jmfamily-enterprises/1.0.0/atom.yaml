@@ -1,0 +1,128 @@
+kind: palette
+id: jmfamily-enterprises
+version: 1.0.0
+name: JM Family Enterprises
+description: >
+  Corporate palette for JM Family Enterprises, anchored on a deep
+  teal primary with warm gold and signal-yellow accents. Extracted
+  directly from the live jmfamily.com theme stylesheet.
+tags: [corporate, automotive, finance, jmfe, teal]
+
+provenance:
+  source: https://www.jmfamily.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    JM Family Enterprises, Inc. — trademark and brand colors are the
+    property of JM Family Enterprises. Hex values transcribed from
+    the publicly served theme stylesheet on jmfamily.com.
+  importedDate: 2026-05-17
+  notes: >
+    Sourced from /wp-content/themes/jmfamily/css/style.min.css. This
+    palette models the corporate site's deployed visual identity, not
+    an officially distributed brand-guidelines document.
+
+swatches:
+  - id: jmfe-teal
+    name: JMFE Teal (primary)
+    value: "#008C99"
+    description: Primary corporate teal — links, primary buttons, accents.
+  - id: jmfe-teal-deep
+    name: JMFE Teal Deep
+    value: "#00838F"
+    description: Hover state for the primary teal; deeper edge of the brand.
+  - id: jmfe-teal-slate
+    name: JMFE Teal Slate
+    value: "#5C92A2"
+    description: Secondary slate-blue used for subdued UI accents.
+  - id: jmfe-teal-light
+    name: JMFE Teal Light
+    value: "#B1DCE0"
+    description: Soft teal surface for highlights and inline emphasis.
+  - id: jmfe-teal-mist
+    name: JMFE Teal Mist
+    value: "#C2E2E5"
+    description: Lightest teal — large translucent surfaces.
+  - id: jmfe-ink
+    name: JMFE Ink
+    value: "#1D2C31"
+    description: Deep blue-black — primary body text.
+  - id: jmfe-slate
+    name: JMFE Slate
+    value: "#405765"
+    description: Secondary text and quiet labels.
+  - id: jmfe-gray-warm
+    name: JMFE Gray Warm
+    value: "#5D6770"
+    description: Tertiary text and dividers.
+  - id: jmfe-gray-cool
+    name: JMFE Gray Cool
+    value: "#7B7C80"
+    description: Quaternary muted text.
+  - id: jmfe-gold
+    name: JMFE Gold
+    value: "#A79154"
+    description: Heritage gold accent — used sparingly with the teal.
+  - id: jmfe-amber
+    name: JMFE Amber
+    value: "#D1A829"
+    description: Warm amber callout — recognition / awards contexts.
+  - id: jmfe-yellow
+    name: JMFE Yellow
+    value: "#F5C542"
+    description: Bright warning yellow.
+  - id: jmfe-signal-yellow
+    name: JMFE Signal Yellow
+    value: "#FFC60A"
+    description: High-attention CTA / signal yellow.
+  - id: jmfe-orange
+    name: JMFE Orange
+    value: "#F99C25"
+    description: Orange accent used in feature graphics.
+  - id: jmfe-terracotta
+    name: JMFE Terracotta
+    value: "#E16B2A"
+    description: Warm terracotta for tertiary emphasis.
+  - id: jmfe-bg
+    name: JMFE Background
+    value: "#FFFFFF"
+    description: Page background in light mode.
+  - id: jmfe-surface
+    name: JMFE Surface
+    value: "#F5F7F8"
+    description: Elevated panels and quiet surfaces.
+
+modes:
+  light:
+    roles:
+      background: jmfe-bg
+      surface: jmfe-surface
+      surface-elevated: jmfe-teal-mist
+      text-primary: jmfe-ink
+      text-secondary: jmfe-slate
+      text-tertiary: jmfe-gray-warm
+      primary: jmfe-teal
+      primary-hover: jmfe-teal-deep
+      accent: jmfe-gold
+      secondary-accent: jmfe-teal-slate
+      highlight: jmfe-signal-yellow
+      success: jmfe-teal-deep
+      warning: jmfe-amber
+      error: jmfe-terracotta
+      info: jmfe-teal
+  dark:
+    roles:
+      background: jmfe-ink
+      surface: jmfe-slate
+      surface-elevated: jmfe-gray-warm
+      text-primary: jmfe-bg
+      text-secondary: jmfe-teal-mist
+      text-tertiary: jmfe-teal-light
+      primary: jmfe-teal-light
+      primary-hover: jmfe-teal-mist
+      accent: jmfe-amber
+      secondary-accent: jmfe-teal-slate
+      highlight: jmfe-signal-yellow
+      success: jmfe-teal-light
+      warning: jmfe-amber
+      error: jmfe-terracotta
+      info: jmfe-teal-light

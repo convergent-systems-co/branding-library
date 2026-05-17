@@ -1,0 +1,40 @@
+kind: font
+id: freight-text-pro
+version: 1.0.0
+name: Freight Text Pro
+description: >
+  Freight Text Pro — a transitional serif from the Freight family by
+  Joshua Darden, distributed via Adobe Fonts. JM Family Enterprises
+  uses Freight Text Pro for editorial headlines and serif body copy
+  on jmfamily.com.
+family: freight-text-pro
+classification: serif
+tags: [transitional-serif, editorial, adobe-fonts, jmfe]
+
+provenance:
+  source: https://fonts.adobe.com/fonts/freight-text-pro
+  license: Adobe Fonts subscription — licensed for web embedding via Adobe Fonts kit
+  attribution: Freight Text Pro © Joshua Darden / GarageFonts, distributed by Adobe Fonts.
+  importedDate: 2026-05-17
+  notes: >
+    Confirmed in use on jmfamily.com via font-family declarations in
+    /wp-content/themes/jmfamily/css/style.min.css. License coverage
+    requires a valid Adobe Fonts kit ID per deploying domain.
+
+source:
+  kind: adobe-fonts
+  family: freight-text-pro
+  kitId: adobe-fonts-kit-required
+
+fallbackStack:
+  - Lora
+  - Georgia
+  - Times New Roman
+  - Times
+  - serif
+
+availableStyles:
+  - { weight: 400, style: normal }
+  - { weight: 500, style: normal }
+  - { weight: 600, style: normal }
+  - { weight: 700, style: normal }
