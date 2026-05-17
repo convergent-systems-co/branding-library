@@ -1,0 +1,53 @@
+kind: font
+id: robotomono-nerdfont
+version: 1.0.0
+name: RobotoMono Nerd Font
+description: >
+  Google's Roboto Mono — the monospaced companion to the Roboto family designed under
+  Christian Robertson — with Nerd Fonts glyph augmentation (~10,000 icons: Powerline, MDI,
+  Font Awesome, Devicons, Octicons, Codicons, etc.). Familiar, neutral mono with broad
+  weight coverage for terminals and code editors.
+family: RobotoMono Nerd Font
+classification: monospace
+tags: [ nerd-font, roboto, google, monospace, terminal, code ]
+
+provenance:
+  source: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  license: (Apache-2.0 AND MIT)
+  attribution: >
+    Roboto Mono, Copyright © Google Inc., designed by Christian Robertson, licensed under
+    the Apache License, Version 2.0. Nerd Fonts patching by Ryan L McIntyre, MIT license.
+  importedDate: 2026-05-17
+  importedFromVersion: v3.4.0
+  notes: >
+    Base font: Roboto Mono 3.000 (github.com/googlefonts/roboto). Download archive:
+    https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/RobotoMono.zip
+
+source:
+  kind: external
+  family: RobotoMono Nerd Font
+  notes: >
+    Nerd-Font-patched build of Roboto Mono. Also available as plain "Roboto Mono" on
+    Google Fonts (without Nerd-Font glyphs); for the patched build, download woff2/ttf
+    files from the Nerd Fonts GitHub release and self-host or install system-wide.
+
+fallbackStack:
+  - Roboto Mono
+  - JetBrains Mono
+  - Menlo
+  - Monaco
+  - Consolas
+  - Liberation Mono
+  - monospace
+
+availableStyles:
+  - { weight: 100, style: normal }
+  - { weight: 100, style: italic }
+  - { weight: 300, style: normal }
+  - { weight: 300, style: italic }
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 500, style: normal }
+  - { weight: 500, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }

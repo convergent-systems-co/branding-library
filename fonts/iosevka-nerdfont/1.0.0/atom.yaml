@@ -1,0 +1,53 @@
+kind: font
+id: iosevka-nerdfont
+version: 1.0.0
+name: Iosevka Nerd Font
+description: >
+  Iosevka monospaced font with Nerd Fonts glyph augmentation. Iosevka by Belleve Invis is a
+  slender, narrow-width (≈ 0.5em advance) mono designed for terminals and code editors.
+  Nerd-Fonts patch adds ~10,000 icons (Powerline, MDI, Font Awesome, Devicons, Octicons,
+  Codicons, etc.) on top of the base Iosevka design.
+family: Iosevka Nerd Font
+classification: monospace
+tags: [ nerd-font, iosevka, monospace, narrow, terminal, code ]
+
+provenance:
+  source: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  license: (OFL-1.1 AND MIT)
+  attribution: >
+    Iosevka, Copyright © 2015–2025 Renzhi Li (a.k.a. Belleve Invis), licensed under the
+    SIL Open Font License, Version 1.1. Nerd Fonts patching by Ryan L McIntyre, MIT license.
+  importedDate: 2026-05-17
+  importedFromVersion: v3.4.0
+  notes: >
+    Base font version: Iosevka 31.x. Download archive:
+    https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Iosevka.zip
+
+source:
+  kind: external
+  family: Iosevka Nerd Font
+  notes: >
+    Nerd-Font-patched build of Iosevka. Not available via Google Fonts. Download
+    woff2/ttf files from the Nerd Fonts GitHub release and self-host, or install system-wide
+    for terminal/editor use.
+
+fallbackStack:
+  - Iosevka
+  - JetBrains Mono
+  - Menlo
+  - Monaco
+  - Consolas
+  - Liberation Mono
+  - monospace
+
+availableStyles:
+  - { weight: 300, style: normal }
+  - { weight: 300, style: italic }
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 500, style: normal }
+  - { weight: 500, style: italic }
+  - { weight: 600, style: normal }
+  - { weight: 600, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }

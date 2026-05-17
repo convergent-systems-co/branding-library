@@ -1,0 +1,48 @@
+kind: font
+id: meslo-nerdfont
+version: 1.0.0
+name: Meslo Nerd Font
+description: >
+  Meslo LG (a customized Menlo-from-Apple derivative by André Berg) with Nerd Fonts glyph
+  augmentation. Three line-gap variants (S/M/L) ship in the Nerd Fonts release; this atom
+  uses the popular "MesloLGS NF" build (Powerlevel10k default). Patched with ~10,000 icons.
+family: MesloLGS Nerd Font
+classification: monospace
+tags: [ nerd-font, meslo, monospace, terminal, powerlevel10k ]
+
+provenance:
+  source: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  license: (Apache-2.0 AND MIT)
+  attribution: >
+    Meslo LG, Copyright © 2009–2017 André Berg (a customized derivative of Apple's Menlo,
+    which is itself based on Bitstream Vera Sans Mono), licensed under the Apache License,
+    Version 2.0. Nerd Fonts patching by Ryan L McIntyre, MIT license.
+  importedDate: 2026-05-17
+  importedFromVersion: v3.4.0
+  notes: >
+    Base font: Meslo LG 1.2.1 (André Berg, github.com/andreberg/Meslo-Font). The Nerd Fonts
+    release packages the L (large) line-gap variant as "MesloLGS NF". Download archive:
+    https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Meslo.zip
+
+source:
+  kind: external
+  family: MesloLGS Nerd Font
+  notes: >
+    Nerd-Font-patched build of Meslo LG (line-gap large, "S" italic variant). Not available
+    via Google Fonts. Download woff2/ttf files from the Nerd Fonts GitHub release and
+    self-host, or install system-wide for terminal use.
+
+fallbackStack:
+  - Meslo LG S
+  - Menlo
+  - Monaco
+  - Consolas
+  - Liberation Mono
+  - Courier New
+  - monospace
+
+availableStyles:
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
