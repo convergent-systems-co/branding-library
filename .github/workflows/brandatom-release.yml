@@ -1,0 +1,133 @@
+name: brandatom — release
+
+# Cuts a GitHub release with cross-compiled binaries for the canonical
+# desktop platforms whenever a tag matching brandatom-v* is pushed.
+#
+# TODO: After this workflow ships the release, a follow-up job (or a
+# separate workflow in convergent-systems-co/homebrew-tap and
+# convergent-systems-co/scoop-bucket) should:
+#   1. Update src/brandatom/dist/homebrew/brandatom.rb with the new URL
+#      and SHAs and open a PR against convergent-systems-co/homebrew-tap.
+#   2. Update src/brandatom/dist/scoop/brandatom.json the same way for
+#      convergent-systems-co/scoop-bucket.
+# The cross-repo push needs a PAT with write access to those repos; we
+# leave that wiring to the human operator for now.
+
+on:
+  push:
+    tags:
+      - 'brandatom-v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: build ${{ matrix.os }}/${{ matrix.arch }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: linux
+            arch: amd64
+            ext: tar.gz
+          - os: linux
+            arch: arm64
+            ext: tar.gz
+          - os: darwin
+            arch: amd64
+            ext: tar.gz
+          - os: darwin
+            arch: arm64
+            ext: tar.gz
+          - os: windows
+            arch: amd64
+            ext: zip
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+
+      - name: build
+        working-directory: src/brandatom
+        env:
+          GOOS: ${{ matrix.os }}
+          GOARCH: ${{ matrix.arch }}
+          CGO_ENABLED: '0'
+        run: |
+          out="brandatom"
+          if [ "$GOOS" = "windows" ]; then out="brandatom.exe"; fi
+          mkdir -p ../../release
+          go build -trimpath -ldflags="-s -w" -o "../../release/$out" ./cmd/brandatom
+
+      - name: package
+        env:
+          MATRIX_OS: ${{ matrix.os }}
+          MATRIX_ARCH: ${{ matrix.arch }}
+          MATRIX_EXT: ${{ matrix.ext }}
+        working-directory: release
+        run: |
+          name="brandatom-${MATRIX_OS}-${MATRIX_ARCH}"
+          if [ "${MATRIX_EXT}" = "zip" ]; then
+            zip "${name}.zip" brandatom.exe
+            sha256sum "${name}.zip" | awk '{print $1}' > "${name}.zip.sha256"
+            rm brandatom.exe
+          else
+            tar -czf "${name}.tar.gz" brandatom
+            sha256sum "${name}.tar.gz" | awk '{print $1}' > "${name}.tar.gz.sha256"
+            rm brandatom
+          fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: brandatom-${{ matrix.os }}-${{ matrix.arch }}
+          path: release/*
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: stage assets
+        run: |
+          mkdir -p staged
+          find artifacts -type f \( -name '*.tar.gz' -o -name '*.zip' -o -name '*.sha256' \) \
+            -exec cp {} staged/ \;
+          ls -la staged
+
+      - name: create release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: staged/*
+          generate_release_notes: true
+          body: |
+            ## brandatom ${{ github.ref_name }}
+
+            Binaries for Linux, macOS, and Windows. Verify with the published
+            `.sha256` checksum files.
+
+            ### Install
+
+            **Homebrew** (once the formula is merged into
+            convergent-systems-co/homebrew-tap):
+
+            ```sh
+            brew install convergent-systems-co/tap/brandatom
+            ```
+
+            **Scoop** (once the manifest is merged into
+            convergent-systems-co/scoop-bucket):
+
+            ```sh
+            scoop bucket add convergent-systems-co https://github.com/convergent-systems-co/scoop-bucket
+            scoop install brandatom
+            ```
+
+            **Manual**: download the archive for your platform, extract,
+            and put the `brandatom` binary on your `$PATH`.
