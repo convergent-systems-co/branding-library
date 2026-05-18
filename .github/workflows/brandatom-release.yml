@@ -236,10 +236,13 @@ jobs:
           mkdir -p tap/Formula
           cp rendered/brandatom.rb tap/Formula/brandatom.rb
           cd tap
-          if git diff --quiet; then
+          # git add first so the check covers both "new file" and "modified
+          # file" — `git diff --quiet` alone misses new untracked files and
+          # would skip the commit on the very first publish.
+          git add Formula/brandatom.rb
+          if git diff --cached --quiet; then
             echo "no formula changes — already at this version"
           else
-            git add Formula/brandatom.rb
             git commit -m "brandatom ${VERSION}: update formula" \
               -m "Triggered by release brandatom-v${VERSION}." \
               -m "Source: convergent-systems-co/branding-library@${GITHUB_SHA}"
@@ -258,10 +261,10 @@ jobs:
           mkdir -p bucket/bucket
           cp rendered/brandatom.json bucket/bucket/brandatom.json
           cd bucket
-          if git diff --quiet; then
+          git add bucket/brandatom.json
+          if git diff --cached --quiet; then
             echo "no manifest changes — already at this version"
           else
-            git add bucket/brandatom.json
             git commit -m "brandatom ${VERSION}: update manifest" \
               -m "Triggered by release brandatom-v${VERSION}." \
               -m "Source: convergent-systems-co/branding-library@${GITHUB_SHA}"
