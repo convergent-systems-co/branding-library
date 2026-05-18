@@ -2,7 +2,7 @@
 package config
 
 // Version is the CLI version string. Bumped at release time.
-const Version = "0.1.0"
+const Version = "0.1.1"
 
 // DefaultBaseURL is the canonical encyclopedia host. Override with --base-url
 // for local development against `python3 -m http.server` or a staging
