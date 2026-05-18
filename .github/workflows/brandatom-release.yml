@@ -1,7 +1,7 @@
 name: brandatom — release
 
 # Cuts a GitHub release with cross-compiled binaries whenever a tag
-# matching `brandatom-v*` is pushed, then (when TAP_REPO_TOKEN is set)
+# matching `brandatom-v*` is pushed, then (when PACKAGE_PUBLISH_TOKEN is set)
 # publishes the rendered Homebrew formula and Scoop manifest to the
 # canonical taps:
 #
@@ -10,7 +10,7 @@ name: brandatom — release
 #
 # The PAT must be a fine-grained personal access token with
 # Contents: read-and-write on BOTH tap repos (and metadata: read).
-# Add it as a repo secret named TAP_REPO_TOKEN. Without it, the
+# Add it as a repo secret named PACKAGE_PUBLISH_TOKEN. Without it, the
 # publish job is skipped — the release still gets cut and the
 # binaries still land, the user just installs them manually.
 
@@ -146,10 +146,10 @@ jobs:
       - name: skip if PAT missing
         id: guard
         env:
-          HAS_TOKEN: ${{ secrets.TAP_REPO_TOKEN != '' }}
+          HAS_TOKEN: ${{ secrets.PACKAGE_PUBLISH_TOKEN != '' }}
         run: |
           if [ "$HAS_TOKEN" = "false" ]; then
-            echo "::warning::TAP_REPO_TOKEN secret not set — skipping cross-repo publish."
+            echo "::warning::PACKAGE_PUBLISH_TOKEN secret not set — skipping cross-repo publish."
             echo "::warning::Add a fine-grained PAT with Contents: read-and-write on"
             echo "::warning::  convergent-systems-co/homebrew-tap"
             echo "::warning::  convergent-systems-co/scoop-bucket"
@@ -227,7 +227,7 @@ jobs:
       - name: push to homebrew-tap
         if: steps.guard.outputs.skip != 'true'
         env:
-          GH_TOKEN: ${{ secrets.TAP_REPO_TOKEN }}
+          GH_TOKEN: ${{ secrets.PACKAGE_PUBLISH_TOKEN }}
           VERSION: ${{ needs.release.outputs.version }}
         run: |
           git config --global user.name "brandatom-release-bot"
@@ -249,7 +249,7 @@ jobs:
       - name: push to scoop-bucket
         if: steps.guard.outputs.skip != 'true'
         env:
-          GH_TOKEN: ${{ secrets.TAP_REPO_TOKEN }}
+          GH_TOKEN: ${{ secrets.PACKAGE_PUBLISH_TOKEN }}
           VERSION: ${{ needs.release.outputs.version }}
         run: |
           git config --global user.name "brandatom-release-bot"
