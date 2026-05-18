@@ -1,0 +1,36 @@
+kind: font
+id: anonymous-pro
+version: 1.0.0
+name: Anonymous Pro
+description: >
+  A fixed-width sans-serif designed for coders, descended from Mark Simonson's Anonymous and tuned for small-size legibility on screen. Pick it when you want a slightly retro, typewriter-adjacent monospace voice — quieter than Source Code Pro and warmer than Roboto Mono.
+family: Anonymous Pro
+classification: monospace
+tags: [ monospace, code, typewriter, retro, ascii ]
+
+provenance:
+  source: https://fonts.google.com/specimen/Anonymous+Pro
+  license: OFL-1.1
+  attribution: >
+    Anonymous Pro, Copyright 2009 The Anonymous Pro Project Authors (Mark Simonson), licensed under the SIL Open Font License, Version 1.1.
+  importedDate: 2026-05-18
+  notes: >
+    Static-only family. Ships four cuts (Regular, Italic, Bold, Bold Italic); no variable axes upstream.
+
+source:
+  kind: google-fonts
+  family: Anonymous Pro
+  url: https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap
+
+fallbackStack:
+  - Menlo
+  - Consolas
+  - Courier New
+  - Liberation Mono
+  - monospace
+
+availableStyles:
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }

@@ -1,0 +1,46 @@
+kind: font
+id: noto-sans-mono
+version: 1.0.0
+name: Noto Sans Mono
+description: >
+  The monospaced cut of Google and Monotype's Noto superfamily, drawn for global script coverage and code-friendly disambiguation. Variable font (weight 100–900, width 62.5–100) — pick it when a project needs a monospace face that matches Noto Sans body text and covers scripts that Source Code Pro and Roboto Mono do not.
+family: Noto Sans Mono
+classification: monospace
+tags: [ variable-font, monospace, code, multiscript, google ]
+
+provenance:
+  source: https://fonts.google.com/noto/specimen/Noto+Sans+Mono
+  license: OFL-1.1
+  attribution: >
+    Noto Sans Mono, Copyright 2022 The Noto Project Authors (Google, Monotype), licensed under the SIL Open Font License, Version 1.1.
+  importedDate: 2026-05-18
+  notes: >
+    Variable axes upstream are wght (100–900) and wdth (62.5–100). No italic axis or italic styles ship.
+
+source:
+  kind: google-fonts
+  family: Noto Sans Mono
+  url: https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wdth,wght@62.5..100,100..900&display=swap
+
+fallbackStack:
+  - SFMono-Regular
+  - Menlo
+  - Consolas
+  - Liberation Mono
+  - Courier New
+  - monospace
+
+availableStyles:
+  - { weight: 100, style: normal }
+  - { weight: 200, style: normal }
+  - { weight: 300, style: normal }
+  - { weight: 400, style: normal }
+  - { weight: 500, style: normal }
+  - { weight: 600, style: normal }
+  - { weight: 700, style: normal }
+  - { weight: 800, style: normal }
+  - { weight: 900, style: normal }
+
+variableAxes:
+  - { tag: wght, name: Weight, min: 100, max: 900, default: 400 }
+  - { tag: wdth, name: Width, min: 62.5, max: 100, default: 100 }

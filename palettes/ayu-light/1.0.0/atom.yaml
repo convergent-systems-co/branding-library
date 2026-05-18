@@ -1,0 +1,171 @@
+kind: palette
+id: ayu-light
+version: 1.0.0
+name: Ayu Light
+description: >
+  Ayu Light — the bright variant of the Ayu editor theme by Ike Ku.
+  A clean near-white canvas (#FCFCFC) with warm-orange focus accent
+  (#F29718) and a balanced spectrum of muted syntax accents
+  (green, teal, blue, purple, red, pink, orange). One of three
+  Ayu variants shipped in the official vscode-ayu extension.
+
+  Light mode is sourced directly from the ayu-light VS Code theme
+  JSON. Dark mode is brand-atoms' authored inversion (Ayu ships
+  three peer variants — light, dark, mirage — each as its own theme;
+  ayu-dark and ayu-mirage are separate atoms).
+tags: [ayu, editor, light-first, balanced]
+
+provenance:
+  source: https://github.com/ayu-theme/vscode-ayu/blob/master/ayu-light.json
+  license: MIT
+  attribution: Ayu Theme by Ike Ku (dempfi) — github.com/ayu-theme
+  importedDate: 2026-05-18
+  notes: >
+    Light-mode hex values lifted directly from the published
+    ayu-light.json color tokens (workbench colors + tokenColors).
+    Dark mode is brand-atoms' authored inversion — the Ayu project
+    also ships ayu-dark and ayu-mirage as peer atoms, so consumers
+    wanting a true Ayu dark experience should pick those. The
+    inversion here exists only to satisfy the dual-mode contract
+    and preserves the accent hues unchanged on a near-black canvas
+    drawn from the same hue family as the upstream Ayu Dark
+    background (#0D1017 / #10141C).
+
+swatches:
+  # ─── Canvas (from ayu-light.json) ───────────────────────────────
+  - id: editor-bg
+    name: Editor Background
+    value: "#FCFCFC"
+    description: Editor canvas — near-white page background.
+  - id: surface-bg
+    name: Surface Background
+    value: "#F8F9FA"
+    description: Sidebar, activity bar, status bar, panel background.
+  - id: widget-bg
+    name: Widget Background
+    value: "#FAFAFA"
+    description: Editor widget / dropdown background.
+
+  # ─── Foreground tones (mono) ────────────────────────────────────
+  - id: fg-primary
+    name: Foreground Primary
+    value: "#5C6166"
+    description: Default editor foreground / primary text.
+  - id: fg-secondary
+    name: Foreground Secondary
+    value: "#828E9F"
+    description: UI foreground / secondary text.
+  - id: fg-muted
+    name: Foreground Muted
+    value: "#ADAEB1"
+    description: Muted gray — comments, disabled.
+
+  # ─── Accent colors (syntax + UI) ────────────────────────────────
+  - id: accent-orange
+    name: Accent Orange
+    value: "#F29718"
+    description: Primary accent — buttons, focus border, badges.
+  - id: syntax-keyword
+    name: Syntax Keyword (orange)
+    value: "#FA8532"
+    description: Keywords — slightly hotter orange than the accent.
+  - id: syntax-special
+    name: Syntax Special (peach)
+    value: "#E59645"
+    description: Special values (this, self, super).
+  - id: syntax-func
+    name: Syntax Function (yellow)
+    value: "#EBA400"
+    description: Function names and calls.
+  - id: syntax-string
+    name: Syntax String (green)
+    value: "#86B300"
+    description: String literals / git-added.
+  - id: syntax-regexp
+    name: Syntax Regex (teal)
+    value: "#4CBF99"
+    description: Regular expressions.
+  - id: syntax-entity
+    name: Syntax Entity (blue)
+    value: "#22A4E6"
+    description: Class names, types, modules.
+  - id: syntax-tag
+    name: Syntax Tag (indigo)
+    value: "#55B4D4"
+    description: HTML/XML tags, CSS selectors.
+  - id: syntax-constant
+    name: Syntax Constant (purple)
+    value: "#A37ACC"
+    description: Constants and numbers.
+  - id: syntax-markup
+    name: Syntax Markup (red)
+    value: "#F07171"
+    description: Markup elements (bold, italic, headings).
+  - id: syntax-error
+    name: Error
+    value: "#E65050"
+    description: Error foreground / editorError.foreground.
+  - id: vcs-added
+    name: VCS Added
+    value: "#6CBF43"
+    description: Added lines in diff.
+  - id: vcs-modified
+    name: VCS Modified
+    value: "#478ACC"
+    description: Modified resource indicator.
+  - id: vcs-removed
+    name: VCS Removed
+    value: "#FF7383"
+    description: Deleted resource indicator / removed lines.
+
+  # ─── Authored dark canvas tones (Ayu Dark hue family) ───────────
+  - id: dark-canvas
+    name: Dark Canvas (authored)
+    value: "#10141C"
+    description: Authored dark background — drawn from Ayu Dark's editor.background.
+  - id: dark-surface
+    name: Dark Surface (authored)
+    value: "#0D1017"
+    description: Authored dark surface — drawn from Ayu Dark's sideBar.background.
+  - id: dark-elevated
+    name: Dark Elevated (authored)
+    value: "#141821"
+    description: Authored dark elevated — drawn from Ayu Dark's editorWidget.background.
+  - id: dark-fg
+    name: Dark Foreground (authored)
+    value: "#BFBDB6"
+    description: Authored dark foreground — Ayu Dark's editor.foreground.
+
+modes:
+  light:
+    roles:
+      background: editor-bg
+      surface: surface-bg
+      surface-elevated: widget-bg
+      text-primary: fg-primary
+      text-secondary: fg-secondary
+      text-tertiary: fg-muted
+      primary: accent-orange
+      primary-hover: syntax-keyword
+      accent: syntax-entity
+      accent-hover: syntax-tag
+      warning: syntax-func
+      warning-hover: syntax-special
+      error: syntax-error
+      success: vcs-added
+  dark:
+    roles:
+      background: dark-canvas
+      surface: dark-surface
+      surface-elevated: dark-elevated
+      text-primary: dark-fg
+      text-secondary: fg-secondary
+      text-tertiary: fg-muted
+      primary: accent-orange
+      primary-hover: syntax-keyword
+      accent: syntax-entity
+      accent-hover: syntax-tag
+      warning: syntax-func
+      warning-hover: syntax-special
+      error: syntax-error
+      success: vcs-added

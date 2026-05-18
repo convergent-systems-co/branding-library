@@ -1,0 +1,50 @@
+kind: font
+id: roboto-mono
+version: 1.0.0
+name: Roboto Mono
+description: >
+  The monospaced sibling of Roboto, with the same neo-grotesque skeleton tuned for fixed-width rhythm and code-friendly disambiguation (slashed zero, distinct l/I/1). Variable font (weight 100–700) with matching italics — pick it for source listings, terminals, and tabular data that should feel of-a-piece with a Roboto UI.
+family: Roboto Mono
+classification: monospace
+tags: [ variable-font, monospace, code, neo-grotesque, google ]
+
+provenance:
+  source: https://fonts.google.com/specimen/Roboto+Mono
+  license: Apache-2.0
+  attribution: >
+    Roboto Mono, Copyright 2015 Google LLC, licensed under the Apache License, Version 2.0. Originally drawn by Christian Robertson.
+  importedDate: 2026-05-18
+  notes: >
+    Apache-2.0 like its parent Roboto, not OFL. Variable axis: wght 100–700. Italic styles ship as discrete static cuts rather than as a slnt/ital axis.
+
+source:
+  kind: google-fonts
+  family: Roboto Mono
+  url: https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap
+
+fallbackStack:
+  - SFMono-Regular
+  - Menlo
+  - Consolas
+  - Liberation Mono
+  - Courier New
+  - monospace
+
+availableStyles:
+  - { weight: 100, style: normal }
+  - { weight: 100, style: italic }
+  - { weight: 200, style: normal }
+  - { weight: 200, style: italic }
+  - { weight: 300, style: normal }
+  - { weight: 300, style: italic }
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 500, style: normal }
+  - { weight: 500, style: italic }
+  - { weight: 600, style: normal }
+  - { weight: 600, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+
+variableAxes:
+  - { tag: wght, name: Weight, min: 100, max: 700, default: 400 }

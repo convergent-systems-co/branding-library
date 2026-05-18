@@ -1,0 +1,185 @@
+kind: palette
+id: radix-teal
+version: 1.0.0
+name: Radix Teal
+description: >
+  Radix UI's teal scale — 12 semantically labeled steps published in
+  both light and dark variants. A cool blue-green, between cyan and jade. Step 1 is app background,
+  step 9 is the solid brand color, step 12 is high-contrast text.
+  The same step number means the same semantic role across light and
+  dark, with different hex values per mode.
+tags: [radix, cool, design-system, scale, dual-mode]
+
+provenance:
+  source: https://www.radix-ui.com/colors/docs/palette-composition/scales
+  license: MIT
+  attribution: >
+    Radix Colors, Copyright WorkOS, Inc., MIT licensed. Imported from
+    the radix-ui/colors repository on GitHub.
+  importedDate: 2026-05-18
+  importedFromVersion: "3.0.0"
+  notes: >
+    Radix publishes distinct hex values for each scale in light and dark mode. This atom carries both as -light and -dark suffixed swatches; modes.light.roles points at -light swatches and modes.dark.roles at -dark swatches. Teal is a chromatic hue and makes a poor neutral for body text, so steps 11 and 12 of Radix Slate are imported as supplementary swatches and used for text-primary and text-secondary in both modes.
+
+swatches:
+  # ─── Light-mode steps ──────────────────────────────────────────
+  - id: teal-1-light
+    name: Teal 1 (light)
+    value: "#FAFEFD"
+    description: App background.
+  - id: teal-2-light
+    name: Teal 2 (light)
+    value: "#F3FBF9"
+    description: Subtle background.
+  - id: teal-3-light
+    name: Teal 3 (light)
+    value: "#E0F8F3"
+    description: UI element background.
+  - id: teal-4-light
+    name: Teal 4 (light)
+    value: "#CCF3EA"
+    description: Hovered UI element background.
+  - id: teal-5-light
+    name: Teal 5 (light)
+    value: "#B8EAE0"
+    description: Active / selected UI element background.
+  - id: teal-6-light
+    name: Teal 6 (light)
+    value: "#A1DED2"
+    description: Subtle borders and separators.
+  - id: teal-7-light
+    name: Teal 7 (light)
+    value: "#83CDC1"
+    description: UI element border and focus rings.
+  - id: teal-8-light
+    name: Teal 8 (light)
+    value: "#53B9AB"
+    description: Hovered UI element border.
+  - id: teal-9-light
+    name: Teal 9 (light)
+    value: "#12A594"
+    description: Solid background — the brand color step.
+  - id: teal-10-light
+    name: Teal 10 (light)
+    value: "#0D9B8A"
+    description: Hovered solid background.
+  - id: teal-11-light
+    name: Teal 11 (light)
+    value: "#008573"
+    description: Low-contrast text.
+  - id: teal-12-light
+    name: Teal 12 (light)
+    value: "#0D3D38"
+    description: High-contrast text.
+  # ─── Dark-mode steps ───────────────────────────────────────────
+  - id: teal-1-dark
+    name: Teal 1 (dark)
+    value: "#0D1514"
+    description: App background.
+  - id: teal-2-dark
+    name: Teal 2 (dark)
+    value: "#111C1B"
+    description: Subtle background.
+  - id: teal-3-dark
+    name: Teal 3 (dark)
+    value: "#0D2D2A"
+    description: UI element background.
+  - id: teal-4-dark
+    name: Teal 4 (dark)
+    value: "#023B37"
+    description: Hovered UI element background.
+  - id: teal-5-dark
+    name: Teal 5 (dark)
+    value: "#084843"
+    description: Active / selected UI element background.
+  - id: teal-6-dark
+    name: Teal 6 (dark)
+    value: "#145750"
+    description: Subtle borders and separators.
+  - id: teal-7-dark
+    name: Teal 7 (dark)
+    value: "#1C6961"
+    description: UI element border and focus rings.
+  - id: teal-8-dark
+    name: Teal 8 (dark)
+    value: "#207E73"
+    description: Hovered UI element border.
+  - id: teal-9-dark
+    name: Teal 9 (dark)
+    value: "#12A594"
+    description: Solid background — the brand color step.
+  - id: teal-10-dark
+    name: Teal 10 (dark)
+    value: "#0EB39E"
+    description: Hovered solid background.
+  - id: teal-11-dark
+    name: Teal 11 (dark)
+    value: "#0BD8B6"
+    description: Low-contrast text.
+  - id: teal-12-dark
+    name: Teal 12 (dark)
+    value: "#ADF0DD"
+    description: High-contrast text.
+  # ─── Neutral text imported from Radix Slate for legibility ─────
+  # Body text on a chromatic scale's mid-tone backgrounds reads
+  # better in a near-neutral. Radix recommends pairing each
+  # chromatic scale with a matching gray scale; slate is the
+  # standard pairing for the cooler hues.
+  - id: slate-11-light
+    name: Slate 11 (light) — neutral text
+    value: "#60646C"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 11 is low-contrast text.
+  - id: slate-12-light
+    name: Slate 12 (light) — neutral text
+    value: "#1C2024"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 12 is high-contrast text.
+  - id: slate-11-dark
+    name: Slate 11 (dark) — neutral text
+    value: "#B0B4BA"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 11 is low-contrast text.
+  - id: slate-12-dark
+    name: Slate 12 (dark) — neutral text
+    value: "#EDEEF0"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 12 is high-contrast text.
+
+modes:
+  light:
+    roles:
+      background: teal-1-light
+      surface: teal-2-light
+      surface-elevated: teal-3-light
+      text-primary: slate-12-light
+      text-secondary: slate-11-light
+      text-tertiary: teal-9-light
+      primary: teal-9-light
+      primary-hover: teal-10-light
+      accent: teal-8-light
+      accent-hover: teal-7-light
+      warning: teal-9-light
+      warning-hover: teal-10-light
+      error: teal-12-light
+      success: teal-9-light
+  dark:
+    roles:
+      background: teal-1-dark
+      surface: teal-2-dark
+      surface-elevated: teal-3-dark
+      text-primary: slate-12-dark
+      text-secondary: slate-11-dark
+      text-tertiary: teal-9-dark
+      primary: teal-9-dark
+      primary-hover: teal-10-dark
+      accent: teal-8-dark
+      accent-hover: teal-7-dark
+      warning: teal-9-dark
+      warning-hover: teal-10-dark
+      error: teal-12-dark
+      success: teal-9-dark

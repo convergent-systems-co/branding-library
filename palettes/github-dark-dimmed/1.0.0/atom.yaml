@@ -1,0 +1,189 @@
+kind: palette
+id: github-dark-dimmed
+version: 1.0.0
+name: GitHub Dark Dimmed
+description: >
+  GitHub Dark Dimmed — the lower-contrast variant of GitHub's Dark theme
+  used across github.com and the GitHub VS Code extension. A muted blue-
+  charcoal canvas (#22272E) with subtle gray borders and a softened blue
+  accent (#316DCA emphasis, #539BF5 fg). Easier on the eyes than the
+  full-contrast GitHub Dark for long reading sessions.
+
+  Dark mode is sourced directly from @primer/primitives' published
+  dark_dimmed JSON. Light mode is brand-atoms' authored inversion
+  (consumers wanting the canonical GitHub light experience should use
+  github-primer instead).
+tags: [github, primer, editor, design-system, dark-first]
+
+provenance:
+  source: https://github.com/primer/primitives/blob/main/src/tokens/base/color/dark/dark.dimmed.json5
+  license: MIT
+  attribution: >
+    GitHub Primer Primitives, Copyright GitHub, Inc., MIT licensed.
+    Dark Dimmed canvas + accents from @primer/primitives/dist/json/
+    colors/dark_dimmed.json as consumed by primer/github-vscode-theme.
+  importedDate: 2026-05-18
+  importedFromVersion: "@primer/primitives dark_dimmed (legacy JSON)"
+  notes: >
+    Dimmed inherits most chromatic scales from GitHub Dark and only
+    overrides the canvas / neutral / border layers; the resulting
+    surfaces (canvas.default #22272E, canvas.overlay #2D333B,
+    canvas.inset #1C2128) are the visible signature of the variant.
+    Accent foreground / emphasis values are the dimmed-specific
+    softened blues (#539BF5 / #316DCA) rather than the higher-
+    contrast GitHub Dark values.
+
+    Light mode is brand-atoms' authored inversion — the primer/
+    primitives dimmed scheme is dark-only; the inversion exists
+    only to satisfy the dual-mode contract and pairs the upstream
+    GitHub Light canvas tones (#FFFFFF / #F6F8FA / #EAEEF2) with
+    the dimmed accent hues unchanged.
+
+swatches:
+  # ─── Canvas (from dark_dimmed.json) ─────────────────────────────
+  - id: canvas-default
+    name: Canvas Default
+    value: "#22272E"
+    description: Editor / page background — the dimmed signature tone.
+  - id: canvas-overlay
+    name: Canvas Overlay
+    value: "#2D333B"
+    description: Elevated surface — popups, panels, overlays.
+  - id: canvas-inset
+    name: Canvas Inset
+    value: "#1C2128"
+    description: Recessed surface — sidebars, code blocks (deepest tone).
+  - id: canvas-subtle
+    name: Canvas Subtle
+    value: "#2D333B"
+    description: Subtle surface — alternating rows, muted backgrounds.
+
+  # ─── Foreground tones ───────────────────────────────────────────
+  - id: fg-default
+    name: Foreground Default
+    value: "#ADBAC7"
+    description: Primary text / default foreground.
+  - id: fg-muted
+    name: Foreground Muted
+    value: "#768390"
+    description: Muted text — secondary content, captions.
+  - id: fg-subtle
+    name: Foreground Subtle
+    value: "#636E7B"
+    description: Subtle text — placeholders, disabled.
+  - id: fg-on-emphasis
+    name: Foreground on Emphasis
+    value: "#CDD9E5"
+    description: Foreground used on accent.emphasis backgrounds.
+
+  # ─── Border ─────────────────────────────────────────────────────
+  - id: border-default
+    name: Border Default
+    value: "#444C56"
+    description: Default border color.
+  - id: border-muted
+    name: Border Muted
+    value: "#373E47"
+    description: Muted border / divider.
+
+  # ─── Semantic accents ───────────────────────────────────────────
+  - id: accent-fg
+    name: Accent Foreground
+    value: "#539BF5"
+    description: Primary accent foreground — links, focused tabs.
+  - id: accent-emphasis
+    name: Accent Emphasis
+    value: "#316DCA"
+    description: Solid accent — primary buttons, selected state.
+  - id: success-fg
+    name: Success Foreground
+    value: "#57AB5A"
+    description: Success / git-added foreground.
+  - id: success-emphasis
+    name: Success Emphasis
+    value: "#347D39"
+    description: Solid success.
+  - id: danger-fg
+    name: Danger Foreground
+    value: "#E5534B"
+    description: Error / git-removed foreground.
+  - id: danger-emphasis
+    name: Danger Emphasis
+    value: "#C93C37"
+    description: Solid danger.
+  - id: attention-fg
+    name: Attention Foreground
+    value: "#C69026"
+    description: Warning / attention foreground.
+  - id: attention-emphasis
+    name: Attention Emphasis
+    value: "#966600"
+    description: Solid warning.
+  - id: severe-fg
+    name: Severe Foreground
+    value: "#CC6B2C"
+    description: Severe (orange) foreground.
+  - id: done-fg
+    name: Done Foreground
+    value: "#986EE2"
+    description: Done / purple foreground.
+
+  # ─── Authored light canvas tones (GitHub Light hue family) ──────
+  - id: light-canvas
+    name: Light Canvas (authored)
+    value: "#FFFFFF"
+    description: Authored light background — GitHub Light's canvas.default.
+  - id: light-surface
+    name: Light Surface (authored)
+    value: "#F6F8FA"
+    description: Authored light surface — GitHub Light's canvas.subtle.
+  - id: light-elevated
+    name: Light Elevated (authored)
+    value: "#EAEEF2"
+    description: Authored light elevated — GitHub Light's canvas.inset.
+  - id: light-fg
+    name: Light Foreground (authored)
+    value: "#1F2328"
+    description: Authored light foreground — GitHub Light's fg.default.
+  - id: light-fg-muted
+    name: Light Foreground Muted (authored)
+    value: "#656D76"
+    description: Authored light muted foreground — GitHub Light's fg.muted.
+  - id: light-fg-subtle
+    name: Light Foreground Subtle (authored)
+    value: "#8C959F"
+    description: Authored light subtle foreground — GitHub Light's fg.subtle.
+
+modes:
+  light:
+    roles:
+      background: light-canvas
+      surface: light-surface
+      surface-elevated: light-elevated
+      text-primary: light-fg
+      text-secondary: light-fg-muted
+      text-tertiary: light-fg-subtle
+      primary: accent-emphasis
+      primary-hover: accent-fg
+      accent: done-fg
+      accent-hover: severe-fg
+      warning: attention-fg
+      warning-hover: attention-emphasis
+      error: danger-fg
+      success: success-fg
+  dark:
+    roles:
+      background: canvas-default
+      surface: canvas-subtle
+      surface-elevated: canvas-overlay
+      text-primary: fg-default
+      text-secondary: fg-muted
+      text-tertiary: fg-subtle
+      primary: accent-fg
+      primary-hover: accent-emphasis
+      accent: done-fg
+      accent-hover: severe-fg
+      warning: attention-fg
+      warning-hover: attention-emphasis
+      error: danger-fg
+      success: success-fg

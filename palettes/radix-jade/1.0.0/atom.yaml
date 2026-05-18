@@ -1,0 +1,185 @@
+kind: palette
+id: radix-jade
+version: 1.0.0
+name: Radix Jade
+description: >
+  Radix UI's jade scale — 12 semantically labeled steps published in
+  both light and dark variants. A cool jade-green, between teal and grass. Step 1 is app background,
+  step 9 is the solid brand color, step 12 is high-contrast text.
+  The same step number means the same semantic role across light and
+  dark, with different hex values per mode.
+tags: [radix, cool, design-system, scale, dual-mode]
+
+provenance:
+  source: https://www.radix-ui.com/colors/docs/palette-composition/scales
+  license: MIT
+  attribution: >
+    Radix Colors, Copyright WorkOS, Inc., MIT licensed. Imported from
+    the radix-ui/colors repository on GitHub.
+  importedDate: 2026-05-18
+  importedFromVersion: "3.0.0"
+  notes: >
+    Radix publishes distinct hex values for each scale in light and dark mode. This atom carries both as -light and -dark suffixed swatches; modes.light.roles points at -light swatches and modes.dark.roles at -dark swatches. Jade is a chromatic hue and makes a poor neutral for body text, so steps 11 and 12 of Radix Slate are imported as supplementary swatches and used for text-primary and text-secondary in both modes.
+
+swatches:
+  # ─── Light-mode steps ──────────────────────────────────────────
+  - id: jade-1-light
+    name: Jade 1 (light)
+    value: "#FBFEFD"
+    description: App background.
+  - id: jade-2-light
+    name: Jade 2 (light)
+    value: "#F4FBF7"
+    description: Subtle background.
+  - id: jade-3-light
+    name: Jade 3 (light)
+    value: "#E6F7ED"
+    description: UI element background.
+  - id: jade-4-light
+    name: Jade 4 (light)
+    value: "#D6F1E3"
+    description: Hovered UI element background.
+  - id: jade-5-light
+    name: Jade 5 (light)
+    value: "#C3E9D7"
+    description: Active / selected UI element background.
+  - id: jade-6-light
+    name: Jade 6 (light)
+    value: "#ACDEC8"
+    description: Subtle borders and separators.
+  - id: jade-7-light
+    name: Jade 7 (light)
+    value: "#8BCEB6"
+    description: UI element border and focus rings.
+  - id: jade-8-light
+    name: Jade 8 (light)
+    value: "#56BA9F"
+    description: Hovered UI element border.
+  - id: jade-9-light
+    name: Jade 9 (light)
+    value: "#29A383"
+    description: Solid background — the brand color step.
+  - id: jade-10-light
+    name: Jade 10 (light)
+    value: "#26997B"
+    description: Hovered solid background.
+  - id: jade-11-light
+    name: Jade 11 (light)
+    value: "#208368"
+    description: Low-contrast text.
+  - id: jade-12-light
+    name: Jade 12 (light)
+    value: "#1D3B31"
+    description: High-contrast text.
+  # ─── Dark-mode steps ───────────────────────────────────────────
+  - id: jade-1-dark
+    name: Jade 1 (dark)
+    value: "#0D1512"
+    description: App background.
+  - id: jade-2-dark
+    name: Jade 2 (dark)
+    value: "#121C18"
+    description: Subtle background.
+  - id: jade-3-dark
+    name: Jade 3 (dark)
+    value: "#0F2E22"
+    description: UI element background.
+  - id: jade-4-dark
+    name: Jade 4 (dark)
+    value: "#0B3B2C"
+    description: Hovered UI element background.
+  - id: jade-5-dark
+    name: Jade 5 (dark)
+    value: "#114837"
+    description: Active / selected UI element background.
+  - id: jade-6-dark
+    name: Jade 6 (dark)
+    value: "#1B5745"
+    description: Subtle borders and separators.
+  - id: jade-7-dark
+    name: Jade 7 (dark)
+    value: "#246854"
+    description: UI element border and focus rings.
+  - id: jade-8-dark
+    name: Jade 8 (dark)
+    value: "#2A7E68"
+    description: Hovered UI element border.
+  - id: jade-9-dark
+    name: Jade 9 (dark)
+    value: "#29A383"
+    description: Solid background — the brand color step.
+  - id: jade-10-dark
+    name: Jade 10 (dark)
+    value: "#27B08B"
+    description: Hovered solid background.
+  - id: jade-11-dark
+    name: Jade 11 (dark)
+    value: "#1FD8A4"
+    description: Low-contrast text.
+  - id: jade-12-dark
+    name: Jade 12 (dark)
+    value: "#ADF0D4"
+    description: High-contrast text.
+  # ─── Neutral text imported from Radix Slate for legibility ─────
+  # Body text on a chromatic scale's mid-tone backgrounds reads
+  # better in a near-neutral. Radix recommends pairing each
+  # chromatic scale with a matching gray scale; slate is the
+  # standard pairing for the cooler hues.
+  - id: slate-11-light
+    name: Slate 11 (light) — neutral text
+    value: "#60646C"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 11 is low-contrast text.
+  - id: slate-12-light
+    name: Slate 12 (light) — neutral text
+    value: "#1C2024"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 12 is high-contrast text.
+  - id: slate-11-dark
+    name: Slate 11 (dark) — neutral text
+    value: "#B0B4BA"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 11 is low-contrast text.
+  - id: slate-12-dark
+    name: Slate 12 (dark) — neutral text
+    value: "#EDEEF0"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 12 is high-contrast text.
+
+modes:
+  light:
+    roles:
+      background: jade-1-light
+      surface: jade-2-light
+      surface-elevated: jade-3-light
+      text-primary: slate-12-light
+      text-secondary: slate-11-light
+      text-tertiary: jade-9-light
+      primary: jade-9-light
+      primary-hover: jade-10-light
+      accent: jade-8-light
+      accent-hover: jade-7-light
+      warning: jade-9-light
+      warning-hover: jade-10-light
+      error: jade-12-light
+      success: jade-9-light
+  dark:
+    roles:
+      background: jade-1-dark
+      surface: jade-2-dark
+      surface-elevated: jade-3-dark
+      text-primary: slate-12-dark
+      text-secondary: slate-11-dark
+      text-tertiary: jade-9-dark
+      primary: jade-9-dark
+      primary-hover: jade-10-dark
+      accent: jade-8-dark
+      accent-hover: jade-7-dark
+      warning: jade-9-dark
+      warning-hover: jade-10-dark
+      error: jade-12-dark
+      success: jade-9-dark

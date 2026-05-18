@@ -1,0 +1,108 @@
+kind: palette
+id: tailwind-neutral
+version: 1.0.0
+name: Tailwind Neutral
+description: >
+  Tailwind CSS's neutral hue family — 11 stops from 50 (lightest) to
+  950 (darkest), forming a pure achromatic gray scale (zero chroma). Use directly as a brand
+  palette or pair with an accent hue from another tailwind-* atom.
+tags: [tailwind, neutral]
+
+provenance:
+  source: https://tailwindcss.com/docs/colors
+  license: MIT
+  attribution: >
+    Tailwind CSS colors, Copyright Tailwind Labs Inc., MIT licensed.
+    Hex values derived from canonical OKLCH definitions in
+    packages/tailwindcss/theme.css via the W3C CSS Color Module Level 4
+    OKLCH → sRGB conversion.
+  importedDate: 2026-05-18
+  importedFromVersion: "4.x"
+
+swatches:
+  - id: neutral-50
+    name: Neutral 50
+    value: "#FAFAFA"
+    description: Lightest stop — page background in light mode.
+  - id: neutral-100
+    name: Neutral 100
+    value: "#F5F5F5"
+    description: Very light surface — cards and panels on light background.
+  - id: neutral-200
+    name: Neutral 200
+    value: "#E5E5E5"
+    description: Light divider, hairline, or subtle fill.
+  - id: neutral-300
+    name: Neutral 300
+    value: "#D4D4D4"
+    description: Muted accent or disabled-state foreground in light mode.
+  - id: neutral-400
+    name: Neutral 400
+    value: "#A1A1A1"
+    description: Mid-light tint — soft accent, hover wash, decorative fill.
+  - id: neutral-500
+    name: Neutral 500
+    value: "#737373"
+    description: Mid stop — the canonical brand hue for chromatic palettes.
+  - id: neutral-600
+    name: Neutral 600
+    value: "#525252"
+    description: Mid-dark stop — primary action in light mode for chromatic palettes.
+  - id: neutral-700
+    name: Neutral 700
+    value: "#404040"
+    description: Dark stop — pressed states, deeper emphasis.
+  - id: neutral-800
+    name: Neutral 800
+    value: "#262626"
+    description: Very dark stop — heavy emphasis, secondary text on light.
+  - id: neutral-900
+    name: Neutral 900
+    value: "#171717"
+    description: Near-darkest stop — body text on light, surface on dark.
+  - id: neutral-950
+    name: Neutral 950
+    value: "#0A0A0A"
+    description: Darkest stop — page background in dark mode.
+  - id: pure-white
+    name: Pure White
+    value: "#FFFFFF"
+    description: Maximum-elevation surface and high-contrast text in dark mode.
+  - id: pure-black
+    name: Pure Black
+    value: "#000000"
+    description: High-contrast text on light chromatic hues where the deepest stop reads as the hue, not black.
+
+modes:
+  light:
+    roles:
+      background: neutral-50
+      surface: neutral-100
+      surface-elevated: pure-white
+      text-primary: neutral-900
+      text-secondary: neutral-700
+      text-tertiary: neutral-500
+      primary: neutral-900
+      primary-hover: neutral-800
+      accent: neutral-600
+      accent-hover: neutral-500
+      warning: neutral-500
+      warning-hover: neutral-400
+      error: neutral-700
+      success: neutral-600
+  dark:
+    roles:
+      background: neutral-950
+      surface: neutral-900
+      surface-elevated: neutral-800
+      text-primary: neutral-50
+      text-secondary: neutral-300
+      text-tertiary: neutral-500
+      primary: neutral-100
+      primary-hover: neutral-200
+      accent: neutral-400
+      accent-hover: neutral-300
+      warning: neutral-400
+      warning-hover: neutral-500
+      error: neutral-300
+      success: neutral-400

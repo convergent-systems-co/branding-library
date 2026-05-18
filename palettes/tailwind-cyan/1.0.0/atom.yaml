@@ -1,0 +1,108 @@
+kind: palette
+id: tailwind-cyan
+version: 1.0.0
+name: Tailwind Cyan
+description: >
+  Tailwind CSS's cyan hue family — 11 stops from 50 (lightest) to
+  950 (darkest), forming a bright cool-blue chromatic scale. Use directly as a brand
+  palette or pair with an accent hue from another tailwind-* atom.
+tags: [tailwind, cool, chromatic]
+
+provenance:
+  source: https://tailwindcss.com/docs/colors
+  license: MIT
+  attribution: >
+    Tailwind CSS colors, Copyright Tailwind Labs Inc., MIT licensed.
+    Hex values derived from canonical OKLCH definitions in
+    packages/tailwindcss/theme.css via the W3C CSS Color Module Level 4
+    OKLCH → sRGB conversion.
+  importedDate: 2026-05-18
+  importedFromVersion: "4.x"
+
+swatches:
+  - id: cyan-50
+    name: Cyan 50
+    value: "#ECFEFF"
+    description: Lightest stop — page background in light mode.
+  - id: cyan-100
+    name: Cyan 100
+    value: "#CEFAFE"
+    description: Very light surface — cards and panels on light background.
+  - id: cyan-200
+    name: Cyan 200
+    value: "#A2F4FD"
+    description: Light divider, hairline, or subtle fill.
+  - id: cyan-300
+    name: Cyan 300
+    value: "#53EAFD"
+    description: Muted accent or disabled-state foreground in light mode.
+  - id: cyan-400
+    name: Cyan 400
+    value: "#00D3F2"
+    description: Mid-light tint — soft accent, hover wash, decorative fill.
+  - id: cyan-500
+    name: Cyan 500
+    value: "#00B8DB"
+    description: Mid stop — the canonical brand hue for chromatic palettes.
+  - id: cyan-600
+    name: Cyan 600
+    value: "#0092B8"
+    description: Mid-dark stop — primary action in light mode for chromatic palettes.
+  - id: cyan-700
+    name: Cyan 700
+    value: "#007595"
+    description: Dark stop — pressed states, deeper emphasis.
+  - id: cyan-800
+    name: Cyan 800
+    value: "#005F78"
+    description: Very dark stop — heavy emphasis, secondary text on light.
+  - id: cyan-900
+    name: Cyan 900
+    value: "#104E64"
+    description: Near-darkest stop — body text on light, surface on dark.
+  - id: cyan-950
+    name: Cyan 950
+    value: "#053345"
+    description: Darkest stop — page background in dark mode.
+  - id: pure-white
+    name: Pure White
+    value: "#FFFFFF"
+    description: Maximum-elevation surface and high-contrast text in dark mode.
+  - id: pure-black
+    name: Pure Black
+    value: "#000000"
+    description: High-contrast text on light chromatic hues where the deepest stop reads as the hue, not black.
+
+modes:
+  light:
+    roles:
+      background: cyan-50
+      surface: cyan-100
+      surface-elevated: pure-white
+      text-primary: cyan-900
+      text-secondary: cyan-800
+      text-tertiary: cyan-600
+      primary: cyan-500
+      primary-hover: cyan-600
+      accent: cyan-700
+      accent-hover: cyan-600
+      warning: cyan-300
+      warning-hover: cyan-400
+      error: cyan-700
+      success: cyan-600
+  dark:
+    roles:
+      background: cyan-950
+      surface: cyan-900
+      surface-elevated: cyan-800
+      text-primary: cyan-50
+      text-secondary: cyan-200
+      text-tertiary: cyan-400
+      primary: cyan-400
+      primary-hover: cyan-300
+      accent: cyan-300
+      accent-hover: cyan-200
+      warning: cyan-600
+      warning-hover: cyan-500
+      error: cyan-300
+      success: cyan-400

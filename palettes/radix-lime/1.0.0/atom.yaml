@@ -1,0 +1,185 @@
+kind: palette
+id: radix-lime
+version: 1.0.0
+name: Radix Lime
+description: >
+  Radix UI's lime scale — 12 semantically labeled steps published in
+  both light and dark variants. A bright yellow-green, between grass and yellow. Step 1 is app background,
+  step 9 is the solid brand color, step 12 is high-contrast text.
+  The same step number means the same semantic role across light and
+  dark, with different hex values per mode.
+tags: [radix, warm, design-system, scale, dual-mode]
+
+provenance:
+  source: https://www.radix-ui.com/colors/docs/palette-composition/scales
+  license: MIT
+  attribution: >
+    Radix Colors, Copyright WorkOS, Inc., MIT licensed. Imported from
+    the radix-ui/colors repository on GitHub.
+  importedDate: 2026-05-18
+  importedFromVersion: "3.0.0"
+  notes: >
+    Radix publishes distinct hex values for each scale in light and dark mode. This atom carries both as -light and -dark suffixed swatches; modes.light.roles points at -light swatches and modes.dark.roles at -dark swatches. Lime is a chromatic hue and makes a poor neutral for body text, so steps 11 and 12 of Radix Slate are imported as supplementary swatches and used for text-primary and text-secondary in both modes.
+
+swatches:
+  # ─── Light-mode steps ──────────────────────────────────────────
+  - id: lime-1-light
+    name: Lime 1 (light)
+    value: "#FCFDFA"
+    description: App background.
+  - id: lime-2-light
+    name: Lime 2 (light)
+    value: "#F8FAF3"
+    description: Subtle background.
+  - id: lime-3-light
+    name: Lime 3 (light)
+    value: "#EEF6D6"
+    description: UI element background.
+  - id: lime-4-light
+    name: Lime 4 (light)
+    value: "#E2F0BD"
+    description: Hovered UI element background.
+  - id: lime-5-light
+    name: Lime 5 (light)
+    value: "#D3E7A6"
+    description: Active / selected UI element background.
+  - id: lime-6-light
+    name: Lime 6 (light)
+    value: "#C2DA91"
+    description: Subtle borders and separators.
+  - id: lime-7-light
+    name: Lime 7 (light)
+    value: "#ABC978"
+    description: UI element border and focus rings.
+  - id: lime-8-light
+    name: Lime 8 (light)
+    value: "#8DB654"
+    description: Hovered UI element border.
+  - id: lime-9-light
+    name: Lime 9 (light)
+    value: "#BDEE63"
+    description: Solid background — the brand color step.
+  - id: lime-10-light
+    name: Lime 10 (light)
+    value: "#B0E64C"
+    description: Hovered solid background.
+  - id: lime-11-light
+    name: Lime 11 (light)
+    value: "#5C7C2F"
+    description: Low-contrast text.
+  - id: lime-12-light
+    name: Lime 12 (light)
+    value: "#37401C"
+    description: High-contrast text.
+  # ─── Dark-mode steps ───────────────────────────────────────────
+  - id: lime-1-dark
+    name: Lime 1 (dark)
+    value: "#11130C"
+    description: App background.
+  - id: lime-2-dark
+    name: Lime 2 (dark)
+    value: "#151A10"
+    description: Subtle background.
+  - id: lime-3-dark
+    name: Lime 3 (dark)
+    value: "#1F2917"
+    description: UI element background.
+  - id: lime-4-dark
+    name: Lime 4 (dark)
+    value: "#29371D"
+    description: Hovered UI element background.
+  - id: lime-5-dark
+    name: Lime 5 (dark)
+    value: "#334423"
+    description: Active / selected UI element background.
+  - id: lime-6-dark
+    name: Lime 6 (dark)
+    value: "#3D522A"
+    description: Subtle borders and separators.
+  - id: lime-7-dark
+    name: Lime 7 (dark)
+    value: "#496231"
+    description: UI element border and focus rings.
+  - id: lime-8-dark
+    name: Lime 8 (dark)
+    value: "#577538"
+    description: Hovered UI element border.
+  - id: lime-9-dark
+    name: Lime 9 (dark)
+    value: "#BDEE63"
+    description: Solid background — the brand color step.
+  - id: lime-10-dark
+    name: Lime 10 (dark)
+    value: "#D4FF70"
+    description: Hovered solid background.
+  - id: lime-11-dark
+    name: Lime 11 (dark)
+    value: "#BDE56C"
+    description: Low-contrast text.
+  - id: lime-12-dark
+    name: Lime 12 (dark)
+    value: "#E3F7BA"
+    description: High-contrast text.
+  # ─── Neutral text imported from Radix Slate for legibility ─────
+  # Body text on a chromatic scale's mid-tone backgrounds reads
+  # better in a near-neutral. Radix recommends pairing each
+  # chromatic scale with a matching gray scale; slate is the
+  # standard pairing for the cooler hues.
+  - id: slate-11-light
+    name: Slate 11 (light) — neutral text
+    value: "#60646C"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 11 is low-contrast text.
+  - id: slate-12-light
+    name: Slate 12 (light) — neutral text
+    value: "#1C2024"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 12 is high-contrast text.
+  - id: slate-11-dark
+    name: Slate 11 (dark) — neutral text
+    value: "#B0B4BA"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 11 is low-contrast text.
+  - id: slate-12-dark
+    name: Slate 12 (dark) — neutral text
+    value: "#EDEEF0"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 12 is high-contrast text.
+
+modes:
+  light:
+    roles:
+      background: lime-1-light
+      surface: lime-2-light
+      surface-elevated: lime-3-light
+      text-primary: slate-12-light
+      text-secondary: slate-11-light
+      text-tertiary: lime-9-light
+      primary: lime-9-light
+      primary-hover: lime-10-light
+      accent: lime-8-light
+      accent-hover: lime-7-light
+      warning: lime-9-light
+      warning-hover: lime-10-light
+      error: lime-12-light
+      success: lime-9-light
+  dark:
+    roles:
+      background: lime-1-dark
+      surface: lime-2-dark
+      surface-elevated: lime-3-dark
+      text-primary: slate-12-dark
+      text-secondary: slate-11-dark
+      text-tertiary: lime-9-dark
+      primary: lime-9-dark
+      primary-hover: lime-10-dark
+      accent: lime-8-dark
+      accent-hover: lime-7-dark
+      warning: lime-9-dark
+      warning-hover: lime-10-dark
+      error: lime-12-dark
+      success: lime-9-dark

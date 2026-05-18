@@ -1,0 +1,45 @@
+kind: font
+id: inconsolata
+version: 1.0.0
+name: Inconsolata
+description: >
+  A humanist monospaced typeface designed for code listings and terminals, drawing on Letter Gothic and Consolas while adding warmer curves and clear disambiguation. Variable font (weight 200–900, width 50–200) — pick it as a friendlier monospaced alternative to Source Code Pro or JetBrains Mono.
+family: Inconsolata
+classification: monospace
+tags: [ variable-font, monospace, code, humanist, terminal ]
+
+provenance:
+  source: https://fonts.google.com/specimen/Inconsolata
+  license: OFL-1.1
+  attribution: >
+    Inconsolata, Copyright 2006 The Inconsolata Project Authors (Raph Levien), licensed under the SIL Open Font License, Version 1.1.
+  importedDate: 2026-05-18
+  notes: >
+    Variable axes upstream are wght (200–900) and wdth (50–200). No italic axis or italic styles ship.
+
+source:
+  kind: google-fonts
+  family: Inconsolata
+  url: https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@50..200,200..900&display=swap
+
+fallbackStack:
+  - SFMono-Regular
+  - Menlo
+  - Consolas
+  - Liberation Mono
+  - Courier New
+  - monospace
+
+availableStyles:
+  - { weight: 200, style: normal }
+  - { weight: 300, style: normal }
+  - { weight: 400, style: normal }
+  - { weight: 500, style: normal }
+  - { weight: 600, style: normal }
+  - { weight: 700, style: normal }
+  - { weight: 800, style: normal }
+  - { weight: 900, style: normal }
+
+variableAxes:
+  - { tag: wght, name: Weight, min: 200, max: 900, default: 400 }
+  - { tag: wdth, name: Width, min: 50, max: 200, default: 100 }

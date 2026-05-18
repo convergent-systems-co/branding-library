@@ -1,0 +1,185 @@
+kind: palette
+id: radix-brown
+version: 1.0.0
+name: Radix Brown
+description: >
+  Radix UI's brown scale — 12 semantically labeled steps published in
+  both light and dark variants. A natural earthy brown — desaturated warm. Step 1 is app background,
+  step 9 is the solid brand color, step 12 is high-contrast text.
+  The same step number means the same semantic role across light and
+  dark, with different hex values per mode.
+tags: [radix, warm, design-system, scale, dual-mode]
+
+provenance:
+  source: https://www.radix-ui.com/colors/docs/palette-composition/scales
+  license: MIT
+  attribution: >
+    Radix Colors, Copyright WorkOS, Inc., MIT licensed. Imported from
+    the radix-ui/colors repository on GitHub.
+  importedDate: 2026-05-18
+  importedFromVersion: "3.0.0"
+  notes: >
+    Radix publishes distinct hex values for each scale in light and dark mode. This atom carries both as -light and -dark suffixed swatches; modes.light.roles points at -light swatches and modes.dark.roles at -dark swatches. Brown is a chromatic hue and makes a poor neutral for body text, so steps 11 and 12 of Radix Slate are imported as supplementary swatches and used for text-primary and text-secondary in both modes.
+
+swatches:
+  # ─── Light-mode steps ──────────────────────────────────────────
+  - id: brown-1-light
+    name: Brown 1 (light)
+    value: "#FEFDFC"
+    description: App background.
+  - id: brown-2-light
+    name: Brown 2 (light)
+    value: "#FCF9F6"
+    description: Subtle background.
+  - id: brown-3-light
+    name: Brown 3 (light)
+    value: "#F6EEE7"
+    description: UI element background.
+  - id: brown-4-light
+    name: Brown 4 (light)
+    value: "#F0E4D9"
+    description: Hovered UI element background.
+  - id: brown-5-light
+    name: Brown 5 (light)
+    value: "#EBDACA"
+    description: Active / selected UI element background.
+  - id: brown-6-light
+    name: Brown 6 (light)
+    value: "#E4CDB7"
+    description: Subtle borders and separators.
+  - id: brown-7-light
+    name: Brown 7 (light)
+    value: "#DCBC9F"
+    description: UI element border and focus rings.
+  - id: brown-8-light
+    name: Brown 8 (light)
+    value: "#CEA37E"
+    description: Hovered UI element border.
+  - id: brown-9-light
+    name: Brown 9 (light)
+    value: "#AD7F58"
+    description: Solid background — the brand color step.
+  - id: brown-10-light
+    name: Brown 10 (light)
+    value: "#A07553"
+    description: Hovered solid background.
+  - id: brown-11-light
+    name: Brown 11 (light)
+    value: "#815E46"
+    description: Low-contrast text.
+  - id: brown-12-light
+    name: Brown 12 (light)
+    value: "#3E332E"
+    description: High-contrast text.
+  # ─── Dark-mode steps ───────────────────────────────────────────
+  - id: brown-1-dark
+    name: Brown 1 (dark)
+    value: "#12110F"
+    description: App background.
+  - id: brown-2-dark
+    name: Brown 2 (dark)
+    value: "#1C1816"
+    description: Subtle background.
+  - id: brown-3-dark
+    name: Brown 3 (dark)
+    value: "#28211D"
+    description: UI element background.
+  - id: brown-4-dark
+    name: Brown 4 (dark)
+    value: "#322922"
+    description: Hovered UI element background.
+  - id: brown-5-dark
+    name: Brown 5 (dark)
+    value: "#3E3128"
+    description: Active / selected UI element background.
+  - id: brown-6-dark
+    name: Brown 6 (dark)
+    value: "#4D3C2F"
+    description: Subtle borders and separators.
+  - id: brown-7-dark
+    name: Brown 7 (dark)
+    value: "#614A39"
+    description: UI element border and focus rings.
+  - id: brown-8-dark
+    name: Brown 8 (dark)
+    value: "#7C5F46"
+    description: Hovered UI element border.
+  - id: brown-9-dark
+    name: Brown 9 (dark)
+    value: "#AD7F58"
+    description: Solid background — the brand color step.
+  - id: brown-10-dark
+    name: Brown 10 (dark)
+    value: "#B88C67"
+    description: Hovered solid background.
+  - id: brown-11-dark
+    name: Brown 11 (dark)
+    value: "#DBB594"
+    description: Low-contrast text.
+  - id: brown-12-dark
+    name: Brown 12 (dark)
+    value: "#F2E1CA"
+    description: High-contrast text.
+  # ─── Neutral text imported from Radix Slate for legibility ─────
+  # Body text on a chromatic scale's mid-tone backgrounds reads
+  # better in a near-neutral. Radix recommends pairing each
+  # chromatic scale with a matching gray scale; slate is the
+  # standard pairing for the cooler hues.
+  - id: slate-11-light
+    name: Slate 11 (light) — neutral text
+    value: "#60646C"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 11 is low-contrast text.
+  - id: slate-12-light
+    name: Slate 12 (light) — neutral text
+    value: "#1C2024"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 12 is high-contrast text.
+  - id: slate-11-dark
+    name: Slate 11 (dark) — neutral text
+    value: "#B0B4BA"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 11 is low-contrast text.
+  - id: slate-12-dark
+    name: Slate 12 (dark) — neutral text
+    value: "#EDEEF0"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 12 is high-contrast text.
+
+modes:
+  light:
+    roles:
+      background: brown-1-light
+      surface: brown-2-light
+      surface-elevated: brown-3-light
+      text-primary: slate-12-light
+      text-secondary: slate-11-light
+      text-tertiary: brown-9-light
+      primary: brown-9-light
+      primary-hover: brown-10-light
+      accent: brown-8-light
+      accent-hover: brown-7-light
+      warning: brown-9-light
+      warning-hover: brown-10-light
+      error: brown-12-light
+      success: brown-9-light
+  dark:
+    roles:
+      background: brown-1-dark
+      surface: brown-2-dark
+      surface-elevated: brown-3-dark
+      text-primary: slate-12-dark
+      text-secondary: slate-11-dark
+      text-tertiary: brown-9-dark
+      primary: brown-9-dark
+      primary-hover: brown-10-dark
+      accent: brown-8-dark
+      accent-hover: brown-7-dark
+      warning: brown-9-dark
+      warning-hover: brown-10-dark
+      error: brown-12-dark
+      success: brown-9-dark

@@ -1,0 +1,108 @@
+kind: palette
+id: tailwind-rose
+version: 1.0.0
+name: Tailwind Rose
+description: >
+  Tailwind CSS's rose hue family — 11 stops from 50 (lightest) to
+  950 (darkest), forming a warm rose-red chromatic scale. Use directly as a brand
+  palette or pair with an accent hue from another tailwind-* atom.
+tags: [tailwind, warm, chromatic]
+
+provenance:
+  source: https://tailwindcss.com/docs/colors
+  license: MIT
+  attribution: >
+    Tailwind CSS colors, Copyright Tailwind Labs Inc., MIT licensed.
+    Hex values derived from canonical OKLCH definitions in
+    packages/tailwindcss/theme.css via the W3C CSS Color Module Level 4
+    OKLCH → sRGB conversion.
+  importedDate: 2026-05-18
+  importedFromVersion: "4.x"
+
+swatches:
+  - id: rose-50
+    name: Rose 50
+    value: "#FFF1F2"
+    description: Lightest stop — page background in light mode.
+  - id: rose-100
+    name: Rose 100
+    value: "#FFE4E6"
+    description: Very light surface — cards and panels on light background.
+  - id: rose-200
+    name: Rose 200
+    value: "#FFCCD3"
+    description: Light divider, hairline, or subtle fill.
+  - id: rose-300
+    name: Rose 300
+    value: "#FFA1AD"
+    description: Muted accent or disabled-state foreground in light mode.
+  - id: rose-400
+    name: Rose 400
+    value: "#FF637E"
+    description: Mid-light tint — soft accent, hover wash, decorative fill.
+  - id: rose-500
+    name: Rose 500
+    value: "#FF2056"
+    description: Mid stop — the canonical brand hue for chromatic palettes.
+  - id: rose-600
+    name: Rose 600
+    value: "#EC003F"
+    description: Mid-dark stop — primary action in light mode for chromatic palettes.
+  - id: rose-700
+    name: Rose 700
+    value: "#C70036"
+    description: Dark stop — pressed states, deeper emphasis.
+  - id: rose-800
+    name: Rose 800
+    value: "#A50036"
+    description: Very dark stop — heavy emphasis, secondary text on light.
+  - id: rose-900
+    name: Rose 900
+    value: "#8B0836"
+    description: Near-darkest stop — body text on light, surface on dark.
+  - id: rose-950
+    name: Rose 950
+    value: "#4D0218"
+    description: Darkest stop — page background in dark mode.
+  - id: pure-white
+    name: Pure White
+    value: "#FFFFFF"
+    description: Maximum-elevation surface and high-contrast text in dark mode.
+  - id: pure-black
+    name: Pure Black
+    value: "#000000"
+    description: High-contrast text on light chromatic hues where the deepest stop reads as the hue, not black.
+
+modes:
+  light:
+    roles:
+      background: rose-50
+      surface: rose-100
+      surface-elevated: pure-white
+      text-primary: rose-900
+      text-secondary: rose-800
+      text-tertiary: rose-600
+      primary: rose-500
+      primary-hover: rose-600
+      accent: rose-700
+      accent-hover: rose-600
+      warning: rose-300
+      warning-hover: rose-400
+      error: rose-700
+      success: rose-600
+  dark:
+    roles:
+      background: rose-950
+      surface: rose-900
+      surface-elevated: rose-800
+      text-primary: rose-50
+      text-secondary: rose-200
+      text-tertiary: rose-400
+      primary: rose-400
+      primary-hover: rose-300
+      accent: rose-300
+      accent-hover: rose-200
+      warning: rose-600
+      warning-hover: rose-500
+      error: rose-300
+      success: rose-400

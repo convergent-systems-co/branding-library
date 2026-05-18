@@ -1,0 +1,185 @@
+kind: palette
+id: radix-orange
+version: 1.0.0
+name: Radix Orange
+description: >
+  Radix UI's orange scale — 12 semantically labeled steps published in
+  both light and dark variants. A warm orange between tomato and yellow. Step 1 is app background,
+  step 9 is the solid brand color, step 12 is high-contrast text.
+  The same step number means the same semantic role across light and
+  dark, with different hex values per mode.
+tags: [radix, warm, design-system, scale, dual-mode]
+
+provenance:
+  source: https://www.radix-ui.com/colors/docs/palette-composition/scales
+  license: MIT
+  attribution: >
+    Radix Colors, Copyright WorkOS, Inc., MIT licensed. Imported from
+    the radix-ui/colors repository on GitHub.
+  importedDate: 2026-05-18
+  importedFromVersion: "3.0.0"
+  notes: >
+    Radix publishes distinct hex values for each scale in light and dark mode. This atom carries both as -light and -dark suffixed swatches; modes.light.roles points at -light swatches and modes.dark.roles at -dark swatches. Orange is a chromatic hue and makes a poor neutral for body text, so steps 11 and 12 of Radix Slate are imported as supplementary swatches and used for text-primary and text-secondary in both modes.
+
+swatches:
+  # ─── Light-mode steps ──────────────────────────────────────────
+  - id: orange-1-light
+    name: Orange 1 (light)
+    value: "#FEFCFB"
+    description: App background.
+  - id: orange-2-light
+    name: Orange 2 (light)
+    value: "#FFF7ED"
+    description: Subtle background.
+  - id: orange-3-light
+    name: Orange 3 (light)
+    value: "#FFEFD6"
+    description: UI element background.
+  - id: orange-4-light
+    name: Orange 4 (light)
+    value: "#FFDFB5"
+    description: Hovered UI element background.
+  - id: orange-5-light
+    name: Orange 5 (light)
+    value: "#FFD19A"
+    description: Active / selected UI element background.
+  - id: orange-6-light
+    name: Orange 6 (light)
+    value: "#FFC182"
+    description: Subtle borders and separators.
+  - id: orange-7-light
+    name: Orange 7 (light)
+    value: "#F5AE73"
+    description: UI element border and focus rings.
+  - id: orange-8-light
+    name: Orange 8 (light)
+    value: "#EC9455"
+    description: Hovered UI element border.
+  - id: orange-9-light
+    name: Orange 9 (light)
+    value: "#F76B15"
+    description: Solid background — the brand color step.
+  - id: orange-10-light
+    name: Orange 10 (light)
+    value: "#EF5F00"
+    description: Hovered solid background.
+  - id: orange-11-light
+    name: Orange 11 (light)
+    value: "#CC4E00"
+    description: Low-contrast text.
+  - id: orange-12-light
+    name: Orange 12 (light)
+    value: "#582D1D"
+    description: High-contrast text.
+  # ─── Dark-mode steps ───────────────────────────────────────────
+  - id: orange-1-dark
+    name: Orange 1 (dark)
+    value: "#17120E"
+    description: App background.
+  - id: orange-2-dark
+    name: Orange 2 (dark)
+    value: "#1E160F"
+    description: Subtle background.
+  - id: orange-3-dark
+    name: Orange 3 (dark)
+    value: "#331E0B"
+    description: UI element background.
+  - id: orange-4-dark
+    name: Orange 4 (dark)
+    value: "#462100"
+    description: Hovered UI element background.
+  - id: orange-5-dark
+    name: Orange 5 (dark)
+    value: "#562800"
+    description: Active / selected UI element background.
+  - id: orange-6-dark
+    name: Orange 6 (dark)
+    value: "#66350C"
+    description: Subtle borders and separators.
+  - id: orange-7-dark
+    name: Orange 7 (dark)
+    value: "#7E451D"
+    description: UI element border and focus rings.
+  - id: orange-8-dark
+    name: Orange 8 (dark)
+    value: "#A35829"
+    description: Hovered UI element border.
+  - id: orange-9-dark
+    name: Orange 9 (dark)
+    value: "#F76B15"
+    description: Solid background — the brand color step.
+  - id: orange-10-dark
+    name: Orange 10 (dark)
+    value: "#FF801F"
+    description: Hovered solid background.
+  - id: orange-11-dark
+    name: Orange 11 (dark)
+    value: "#FFA057"
+    description: Low-contrast text.
+  - id: orange-12-dark
+    name: Orange 12 (dark)
+    value: "#FFE0C2"
+    description: High-contrast text.
+  # ─── Neutral text imported from Radix Slate for legibility ─────
+  # Body text on a chromatic scale's mid-tone backgrounds reads
+  # better in a near-neutral. Radix recommends pairing each
+  # chromatic scale with a matching gray scale; slate is the
+  # standard pairing for the cooler hues.
+  - id: slate-11-light
+    name: Slate 11 (light) — neutral text
+    value: "#60646C"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 11 is low-contrast text.
+  - id: slate-12-light
+    name: Slate 12 (light) — neutral text
+    value: "#1C2024"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 12 is high-contrast text.
+  - id: slate-11-dark
+    name: Slate 11 (dark) — neutral text
+    value: "#B0B4BA"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 11 is low-contrast text.
+  - id: slate-12-dark
+    name: Slate 12 (dark) — neutral text
+    value: "#EDEEF0"
+    description: >
+      Neutral text imported from Radix Slate for legibility on the
+      chromatic scale's mid-tone backgrounds. Step 12 is high-contrast text.
+
+modes:
+  light:
+    roles:
+      background: orange-1-light
+      surface: orange-2-light
+      surface-elevated: orange-3-light
+      text-primary: slate-12-light
+      text-secondary: slate-11-light
+      text-tertiary: orange-9-light
+      primary: orange-9-light
+      primary-hover: orange-10-light
+      accent: orange-8-light
+      accent-hover: orange-7-light
+      warning: orange-9-light
+      warning-hover: orange-10-light
+      error: orange-12-light
+      success: orange-9-light
+  dark:
+    roles:
+      background: orange-1-dark
+      surface: orange-2-dark
+      surface-elevated: orange-3-dark
+      text-primary: slate-12-dark
+      text-secondary: slate-11-dark
+      text-tertiary: orange-9-dark
+      primary: orange-9-dark
+      primary-hover: orange-10-dark
+      accent: orange-8-dark
+      accent-hover: orange-7-dark
+      warning: orange-9-dark
+      warning-hover: orange-10-dark
+      error: orange-12-dark
+      success: orange-9-dark

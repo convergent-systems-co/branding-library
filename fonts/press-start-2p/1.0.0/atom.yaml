@@ -1,0 +1,30 @@
+kind: font
+id: press-start-2p
+version: 1.0.0
+name: Press Start 2P
+description: >
+  A pixel-perfect bitmap-style typeface modelled on Namco's 1980s arcade lettering, with all glyphs locked to an 8x8 grid. Single weight only — pick it for game UI, retro-themed product surfaces, and any context that wants the unmistakable voice of a CRT arcade cabinet.
+family: Press Start 2P
+classification: display
+tags: [ pixel, retro, arcade, game, bitmap ]
+
+provenance:
+  source: https://fonts.google.com/specimen/Press+Start+2P
+  license: OFL-1.1
+  attribution: >
+    Press Start 2P, Copyright 2012 The Press Start 2P Project Authors (Cody "CodeMan38" Boisclair), licensed under the SIL Open Font License, Version 1.1.
+  importedDate: 2026-05-18
+  notes: >
+    Single-weight bitmap-style display family. Designed to be set only at integer multiples of 8px to preserve the pixel grid.
+
+source:
+  kind: google-fonts
+  family: Press Start 2P
+  url: https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap
+
+fallbackStack:
+  - Courier New
+  - monospace
+
+availableStyles:
+  - { weight: 400, style: normal }

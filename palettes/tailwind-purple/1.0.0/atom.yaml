@@ -1,0 +1,108 @@
+kind: palette
+id: tailwind-purple
+version: 1.0.0
+name: Tailwind Purple
+description: >
+  Tailwind CSS's purple hue family — 11 stops from 50 (lightest) to
+  950 (darkest), forming a vivid red-violet chromatic scale. Use directly as a brand
+  palette or pair with an accent hue from another tailwind-* atom.
+tags: [tailwind, cool, chromatic]
+
+provenance:
+  source: https://tailwindcss.com/docs/colors
+  license: MIT
+  attribution: >
+    Tailwind CSS colors, Copyright Tailwind Labs Inc., MIT licensed.
+    Hex values derived from canonical OKLCH definitions in
+    packages/tailwindcss/theme.css via the W3C CSS Color Module Level 4
+    OKLCH → sRGB conversion.
+  importedDate: 2026-05-18
+  importedFromVersion: "4.x"
+
+swatches:
+  - id: purple-50
+    name: Purple 50
+    value: "#FAF5FF"
+    description: Lightest stop — page background in light mode.
+  - id: purple-100
+    name: Purple 100
+    value: "#F3E8FF"
+    description: Very light surface — cards and panels on light background.
+  - id: purple-200
+    name: Purple 200
+    value: "#E9D4FF"
+    description: Light divider, hairline, or subtle fill.
+  - id: purple-300
+    name: Purple 300
+    value: "#DAB2FF"
+    description: Muted accent or disabled-state foreground in light mode.
+  - id: purple-400
+    name: Purple 400
+    value: "#C27AFF"
+    description: Mid-light tint — soft accent, hover wash, decorative fill.
+  - id: purple-500
+    name: Purple 500
+    value: "#AD46FF"
+    description: Mid stop — the canonical brand hue for chromatic palettes.
+  - id: purple-600
+    name: Purple 600
+    value: "#9810FA"
+    description: Mid-dark stop — primary action in light mode for chromatic palettes.
+  - id: purple-700
+    name: Purple 700
+    value: "#8200DB"
+    description: Dark stop — pressed states, deeper emphasis.
+  - id: purple-800
+    name: Purple 800
+    value: "#6E11B0"
+    description: Very dark stop — heavy emphasis, secondary text on light.
+  - id: purple-900
+    name: Purple 900
+    value: "#59168B"
+    description: Near-darkest stop — body text on light, surface on dark.
+  - id: purple-950
+    name: Purple 950
+    value: "#3C0366"
+    description: Darkest stop — page background in dark mode.
+  - id: pure-white
+    name: Pure White
+    value: "#FFFFFF"
+    description: Maximum-elevation surface and high-contrast text in dark mode.
+  - id: pure-black
+    name: Pure Black
+    value: "#000000"
+    description: High-contrast text on light chromatic hues where the deepest stop reads as the hue, not black.
+
+modes:
+  light:
+    roles:
+      background: purple-50
+      surface: purple-100
+      surface-elevated: pure-white
+      text-primary: purple-900
+      text-secondary: purple-800
+      text-tertiary: purple-600
+      primary: purple-500
+      primary-hover: purple-600
+      accent: purple-700
+      accent-hover: purple-600
+      warning: purple-300
+      warning-hover: purple-400
+      error: purple-700
+      success: purple-600
+  dark:
+    roles:
+      background: purple-950
+      surface: purple-900
+      surface-elevated: purple-800
+      text-primary: purple-50
+      text-secondary: purple-200
+      text-tertiary: purple-400
+      primary: purple-400
+      primary-hover: purple-300
+      accent: purple-300
+      accent-hover: purple-200
+      warning: purple-600
+      warning-hover: purple-500
+      error: purple-300
+      success: purple-400

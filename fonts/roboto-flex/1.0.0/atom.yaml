@@ -1,0 +1,50 @@
+kind: font
+id: roboto-flex
+version: 1.0.0
+name: Roboto Flex
+description: >
+  The fully variable evolution of Roboto, exposing thirteen registered and parametric axes (weight, optical size, width, grade, slant, and the YT/XT parametric set) for fine-grained typographic control. Pick it when a design system needs one face that can flex from caption to display and from default to grade-shifted dark-mode without swapping files.
+family: Roboto Flex
+classification: sans-serif
+tags: [ variable-font, parametric, neo-grotesque, google, design-system ]
+
+provenance:
+  source: https://fonts.google.com/specimen/Roboto+Flex
+  license: Apache-2.0
+  attribution: >
+    Roboto Flex, Copyright 2022 Google LLC, licensed under the Apache License, Version 2.0. Built on the Roboto skeleton (Christian Robertson) with parametric axes by the Type Network team (David Berlow, Santiago Orozco, Irene Vlachou, Ilya Ruderman, Yury Ostromentsky).
+  importedDate: 2026-05-18
+  notes: >
+    Upstream wght axis range is 100–1000; capped to 900 here per the schema FontWeight constraint (CSS font-weight max). The thirteen upstream axes are wght (100..1000), opsz (8..144), wdth (25..151), slnt (-10..0), GRAD (-200..150), XOPQ (27..175), YOPQ (25..135), XTRA (323..603), YTAS (649..854), YTDE (-305..-98), YTFI (560..788), YTLC (416..570), YTUC (528..760). The atom surfaces the five most commonly targeted axes; the parametric XT*/YT* set is omitted because few consumer runtimes expose them.
+
+source:
+  kind: google-fonts
+  family: Roboto Flex
+  url: https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,slnt,wdth,wght,GRAD@8..144,-10..0,25..151,100..1000,-200..150&display=swap
+
+fallbackStack:
+  - Roboto
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Helvetica Neue
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 100, style: normal }
+  - { weight: 200, style: normal }
+  - { weight: 300, style: normal }
+  - { weight: 400, style: normal }
+  - { weight: 500, style: normal }
+  - { weight: 600, style: normal }
+  - { weight: 700, style: normal }
+  - { weight: 800, style: normal }
+  - { weight: 900, style: normal }
+
+variableAxes:
+  - { tag: wght, name: Weight, min: 100, max: 900, default: 400 }
+  - { tag: opsz, name: Optical Size, min: 8, max: 144, default: 14 }
+  - { tag: wdth, name: Width, min: 25, max: 151, default: 100 }
+  - { tag: slnt, name: Slant, min: -10, max: 0, default: 0 }
+  - { tag: GRAD, name: Grade, min: -200, max: 150, default: 0 }

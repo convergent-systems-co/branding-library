@@ -1,0 +1,35 @@
+kind: font
+id: pt-serif
+version: 1.0.0
+name: PT Serif
+description: >
+  A transitional serif drawn at ParaType as part of the Public Types of Russian Federation project, paired by design with PT Sans for mixed-script body and UI use. Pick it for editorial body and long-form text where you want sturdy, no-fuss screen legibility and broad Cyrillic + Latin coverage.
+family: PT Serif
+classification: serif
+tags: [ transitional, body, editorial, cyrillic, paratype ]
+
+provenance:
+  source: https://fonts.google.com/specimen/PT+Serif
+  license: OFL-1.1
+  attribution: >
+    PT Serif, Copyright 2010 ParaType Ltd (Alexandra Korolkova, Olga Umpeleva, Vladimir Yefimov), licensed under the SIL Open Font License, Version 1.1.
+  importedDate: 2026-05-18
+  notes: >
+    Static-only family on Google Fonts; ships Regular, Bold, and italics. Designed as part of the broader Public Types of Russian Federation initiative.
+
+source:
+  kind: google-fonts
+  family: PT Serif
+  url: https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap
+
+fallbackStack:
+  - Charter
+  - Georgia
+  - Times New Roman
+  - serif
+
+availableStyles:
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }

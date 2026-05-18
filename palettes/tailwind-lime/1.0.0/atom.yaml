@@ -1,0 +1,108 @@
+kind: palette
+id: tailwind-lime
+version: 1.0.0
+name: Tailwind Lime
+description: >
+  Tailwind CSS's lime hue family — 11 stops from 50 (lightest) to
+  950 (darkest), forming a vivid yellow-green chromatic scale. Use directly as a brand
+  palette or pair with an accent hue from another tailwind-* atom.
+tags: [tailwind, warm, chromatic]
+
+provenance:
+  source: https://tailwindcss.com/docs/colors
+  license: MIT
+  attribution: >
+    Tailwind CSS colors, Copyright Tailwind Labs Inc., MIT licensed.
+    Hex values derived from canonical OKLCH definitions in
+    packages/tailwindcss/theme.css via the W3C CSS Color Module Level 4
+    OKLCH → sRGB conversion.
+  importedDate: 2026-05-18
+  importedFromVersion: "4.x"
+
+swatches:
+  - id: lime-50
+    name: Lime 50
+    value: "#F7FEE7"
+    description: Lightest stop — page background in light mode.
+  - id: lime-100
+    name: Lime 100
+    value: "#ECFCCA"
+    description: Very light surface — cards and panels on light background.
+  - id: lime-200
+    name: Lime 200
+    value: "#D8F999"
+    description: Light divider, hairline, or subtle fill.
+  - id: lime-300
+    name: Lime 300
+    value: "#BBF451"
+    description: Muted accent or disabled-state foreground in light mode.
+  - id: lime-400
+    name: Lime 400
+    value: "#9AE600"
+    description: Mid-light tint — soft accent, hover wash, decorative fill.
+  - id: lime-500
+    name: Lime 500
+    value: "#7CCF00"
+    description: Mid stop — the canonical brand hue for chromatic palettes.
+  - id: lime-600
+    name: Lime 600
+    value: "#5EA500"
+    description: Mid-dark stop — primary action in light mode for chromatic palettes.
+  - id: lime-700
+    name: Lime 700
+    value: "#497D00"
+    description: Dark stop — pressed states, deeper emphasis.
+  - id: lime-800
+    name: Lime 800
+    value: "#3C6300"
+    description: Very dark stop — heavy emphasis, secondary text on light.
+  - id: lime-900
+    name: Lime 900
+    value: "#35530E"
+    description: Near-darkest stop — body text on light, surface on dark.
+  - id: lime-950
+    name: Lime 950
+    value: "#192E03"
+    description: Darkest stop — page background in dark mode.
+  - id: pure-white
+    name: Pure White
+    value: "#FFFFFF"
+    description: Maximum-elevation surface and high-contrast text in dark mode.
+  - id: pure-black
+    name: Pure Black
+    value: "#000000"
+    description: High-contrast text on light chromatic hues where the deepest stop reads as the hue, not black.
+
+modes:
+  light:
+    roles:
+      background: lime-50
+      surface: lime-100
+      surface-elevated: pure-white
+      text-primary: pure-black
+      text-secondary: lime-800
+      text-tertiary: lime-600
+      primary: lime-500
+      primary-hover: lime-600
+      accent: lime-700
+      accent-hover: lime-600
+      warning: lime-300
+      warning-hover: lime-400
+      error: lime-700
+      success: lime-600
+  dark:
+    roles:
+      background: lime-950
+      surface: lime-900
+      surface-elevated: lime-800
+      text-primary: pure-white
+      text-secondary: lime-200
+      text-tertiary: lime-400
+      primary: lime-400
+      primary-hover: lime-300
+      accent: lime-300
+      accent-hover: lime-200
+      warning: lime-600
+      warning-hover: lime-500
+      error: lime-300
+      success: lime-400

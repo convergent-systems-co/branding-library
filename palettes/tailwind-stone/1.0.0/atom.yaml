@@ -1,0 +1,108 @@
+kind: palette
+id: tailwind-stone
+version: 1.0.0
+name: Tailwind Stone
+description: >
+  Tailwind CSS's stone hue family — 11 stops from 50 (lightest) to
+  950 (darkest), forming a warm-leaning neutral scale. Use directly as a brand
+  palette or pair with an accent hue from another tailwind-* atom.
+tags: [tailwind, neutral, warm]
+
+provenance:
+  source: https://tailwindcss.com/docs/colors
+  license: MIT
+  attribution: >
+    Tailwind CSS colors, Copyright Tailwind Labs Inc., MIT licensed.
+    Hex values derived from canonical OKLCH definitions in
+    packages/tailwindcss/theme.css via the W3C CSS Color Module Level 4
+    OKLCH → sRGB conversion.
+  importedDate: 2026-05-18
+  importedFromVersion: "4.x"
+
+swatches:
+  - id: stone-50
+    name: Stone 50
+    value: "#FAFAF9"
+    description: Lightest stop — page background in light mode.
+  - id: stone-100
+    name: Stone 100
+    value: "#F5F5F4"
+    description: Very light surface — cards and panels on light background.
+  - id: stone-200
+    name: Stone 200
+    value: "#E7E5E4"
+    description: Light divider, hairline, or subtle fill.
+  - id: stone-300
+    name: Stone 300
+    value: "#D6D3D1"
+    description: Muted accent or disabled-state foreground in light mode.
+  - id: stone-400
+    name: Stone 400
+    value: "#A6A09B"
+    description: Mid-light tint — soft accent, hover wash, decorative fill.
+  - id: stone-500
+    name: Stone 500
+    value: "#79716B"
+    description: Mid stop — the canonical brand hue for chromatic palettes.
+  - id: stone-600
+    name: Stone 600
+    value: "#57534D"
+    description: Mid-dark stop — primary action in light mode for chromatic palettes.
+  - id: stone-700
+    name: Stone 700
+    value: "#44403B"
+    description: Dark stop — pressed states, deeper emphasis.
+  - id: stone-800
+    name: Stone 800
+    value: "#292524"
+    description: Very dark stop — heavy emphasis, secondary text on light.
+  - id: stone-900
+    name: Stone 900
+    value: "#1C1917"
+    description: Near-darkest stop — body text on light, surface on dark.
+  - id: stone-950
+    name: Stone 950
+    value: "#0C0A09"
+    description: Darkest stop — page background in dark mode.
+  - id: pure-white
+    name: Pure White
+    value: "#FFFFFF"
+    description: Maximum-elevation surface and high-contrast text in dark mode.
+  - id: pure-black
+    name: Pure Black
+    value: "#000000"
+    description: High-contrast text on light chromatic hues where the deepest stop reads as the hue, not black.
+
+modes:
+  light:
+    roles:
+      background: stone-50
+      surface: stone-100
+      surface-elevated: pure-white
+      text-primary: stone-900
+      text-secondary: stone-700
+      text-tertiary: stone-500
+      primary: stone-900
+      primary-hover: stone-800
+      accent: stone-600
+      accent-hover: stone-500
+      warning: stone-500
+      warning-hover: stone-400
+      error: stone-700
+      success: stone-600
+  dark:
+    roles:
+      background: stone-950
+      surface: stone-900
+      surface-elevated: stone-800
+      text-primary: stone-50
+      text-secondary: stone-300
+      text-tertiary: stone-500
+      primary: stone-100
+      primary-hover: stone-200
+      accent: stone-400
+      accent-hover: stone-300
+      warning: stone-400
+      warning-hover: stone-500
+      error: stone-300
+      success: stone-400

@@ -1,0 +1,32 @@
+kind: font
+id: bungee
+version: 1.0.0
+name: Bungee
+description: >
+  A chromatic display family inspired by mid-century American signage, designed to be set vertically as well as horizontally and to layer color across overlapping cuts. Pick it for posters, transit-inspired branding, and any surface that wants the unmistakable voice of painted-letter wayfinding.
+family: Bungee
+classification: display
+tags: [ display, signage, chromatic, poster, retro ]
+
+provenance:
+  source: https://fonts.google.com/specimen/Bungee
+  license: OFL-1.1
+  attribution: >
+    Bungee, Copyright 2015 The Bungee Project Authors (David Jonathan Ross), licensed under the SIL Open Font License, Version 1.1.
+  importedDate: 2026-05-18
+  notes: >
+    Single-weight base family. Companion chromatic cuts (Bungee Hairline, Inline, Outline, Shade, Spice, Tint) are shipped as separate Google Fonts families and are not in scope for this atom.
+
+source:
+  kind: google-fonts
+  family: Bungee
+  url: https://fonts.googleapis.com/css2?family=Bungee&display=swap
+
+fallbackStack:
+  - Impact
+  - Arial Black
+  - Helvetica Neue
+  - sans-serif
+
+availableStyles:
+  - { weight: 400, style: normal }

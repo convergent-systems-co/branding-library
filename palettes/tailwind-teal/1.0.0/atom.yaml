@@ -1,0 +1,108 @@
+kind: palette
+id: tailwind-teal
+version: 1.0.0
+name: Tailwind Teal
+description: >
+  Tailwind CSS's teal hue family — 11 stops from 50 (lightest) to
+  950 (darkest), forming a cool blue-green chromatic scale. Use directly as a brand
+  palette or pair with an accent hue from another tailwind-* atom.
+tags: [tailwind, cool, chromatic]
+
+provenance:
+  source: https://tailwindcss.com/docs/colors
+  license: MIT
+  attribution: >
+    Tailwind CSS colors, Copyright Tailwind Labs Inc., MIT licensed.
+    Hex values derived from canonical OKLCH definitions in
+    packages/tailwindcss/theme.css via the W3C CSS Color Module Level 4
+    OKLCH → sRGB conversion.
+  importedDate: 2026-05-18
+  importedFromVersion: "4.x"
+
+swatches:
+  - id: teal-50
+    name: Teal 50
+    value: "#F0FDFA"
+    description: Lightest stop — page background in light mode.
+  - id: teal-100
+    name: Teal 100
+    value: "#CBFBF1"
+    description: Very light surface — cards and panels on light background.
+  - id: teal-200
+    name: Teal 200
+    value: "#96F7E4"
+    description: Light divider, hairline, or subtle fill.
+  - id: teal-300
+    name: Teal 300
+    value: "#46ECD5"
+    description: Muted accent or disabled-state foreground in light mode.
+  - id: teal-400
+    name: Teal 400
+    value: "#00D5BE"
+    description: Mid-light tint — soft accent, hover wash, decorative fill.
+  - id: teal-500
+    name: Teal 500
+    value: "#00BBA7"
+    description: Mid stop — the canonical brand hue for chromatic palettes.
+  - id: teal-600
+    name: Teal 600
+    value: "#009689"
+    description: Mid-dark stop — primary action in light mode for chromatic palettes.
+  - id: teal-700
+    name: Teal 700
+    value: "#00786F"
+    description: Dark stop — pressed states, deeper emphasis.
+  - id: teal-800
+    name: Teal 800
+    value: "#005F5A"
+    description: Very dark stop — heavy emphasis, secondary text on light.
+  - id: teal-900
+    name: Teal 900
+    value: "#0B4F4A"
+    description: Near-darkest stop — body text on light, surface on dark.
+  - id: teal-950
+    name: Teal 950
+    value: "#022F2E"
+    description: Darkest stop — page background in dark mode.
+  - id: pure-white
+    name: Pure White
+    value: "#FFFFFF"
+    description: Maximum-elevation surface and high-contrast text in dark mode.
+  - id: pure-black
+    name: Pure Black
+    value: "#000000"
+    description: High-contrast text on light chromatic hues where the deepest stop reads as the hue, not black.
+
+modes:
+  light:
+    roles:
+      background: teal-50
+      surface: teal-100
+      surface-elevated: pure-white
+      text-primary: teal-900
+      text-secondary: teal-800
+      text-tertiary: teal-600
+      primary: teal-500
+      primary-hover: teal-600
+      accent: teal-700
+      accent-hover: teal-600
+      warning: teal-300
+      warning-hover: teal-400
+      error: teal-700
+      success: teal-600
+  dark:
+    roles:
+      background: teal-950
+      surface: teal-900
+      surface-elevated: teal-800
+      text-primary: teal-50
+      text-secondary: teal-200
+      text-tertiary: teal-400
+      primary: teal-400
+      primary-hover: teal-300
+      accent: teal-300
+      accent-hover: teal-200
+      warning: teal-600
+      warning-hover: teal-500
+      error: teal-300
+      success: teal-400
