@@ -1,17 +1,18 @@
 name: brandatom — release
 
-# Cuts a GitHub release with cross-compiled binaries for the canonical
-# desktop platforms whenever a tag matching brandatom-v* is pushed.
+# Cuts a GitHub release with cross-compiled binaries whenever a tag
+# matching `brandatom-v*` is pushed, then (when TAP_REPO_TOKEN is set)
+# publishes the rendered Homebrew formula and Scoop manifest to the
+# canonical taps:
 #
-# TODO: After this workflow ships the release, a follow-up job (or a
-# separate workflow in convergent-systems-co/homebrew-tap and
-# convergent-systems-co/scoop-bucket) should:
-#   1. Update src/brandatom/dist/homebrew/brandatom.rb with the new URL
-#      and SHAs and open a PR against convergent-systems-co/homebrew-tap.
-#   2. Update src/brandatom/dist/scoop/brandatom.json the same way for
-#      convergent-systems-co/scoop-bucket.
-# The cross-repo push needs a PAT with write access to those repos; we
-# leave that wiring to the human operator for now.
+#   - convergent-systems-co/homebrew-tap  → Formula/brandatom.rb
+#   - convergent-systems-co/scoop-bucket  → bucket/brandatom.json
+#
+# The PAT must be a fine-grained personal access token with
+# Contents: read-and-write on BOTH tap repos (and metadata: read).
+# Add it as a repo secret named TAP_REPO_TOKEN. Without it, the
+# publish job is skipped — the release still gets cut and the
+# binaries still land, the user just installs them manually.
 
 on:
   push:
@@ -89,6 +90,8 @@ jobs:
   release:
     needs: build
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.value }}
     steps:
       - uses: actions/download-artifact@v4
         with:
@@ -101,6 +104,10 @@ jobs:
             -exec cp {} staged/ \;
           ls -la staged
 
+      - name: parse version
+        id: version
+        run: echo "value=${GITHUB_REF_NAME#brandatom-v}" >> "$GITHUB_OUTPUT"
+
       - name: create release
         uses: softprops/action-gh-release@v2
         with:
@@ -109,25 +116,154 @@ jobs:
           body: |
             ## brandatom ${{ github.ref_name }}
 
-            Binaries for Linux, macOS, and Windows. Verify with the published
-            `.sha256` checksum files.
+            Binaries for Linux, macOS, and Windows. Verify with the
+            published `.sha256` checksum files.
 
             ### Install
 
-            **Homebrew** (once the formula is merged into
-            convergent-systems-co/homebrew-tap):
+            **Homebrew:**
 
             ```sh
             brew install convergent-systems-co/tap/brandatom
             ```
 
-            **Scoop** (once the manifest is merged into
-            convergent-systems-co/scoop-bucket):
+            **Scoop:**
 
             ```sh
             scoop bucket add convergent-systems-co https://github.com/convergent-systems-co/scoop-bucket
             scoop install brandatom
             ```
 
-            **Manual**: download the archive for your platform, extract,
-            and put the `brandatom` binary on your `$PATH`.
+            **Manual:** download the archive for your platform,
+            extract, and put the `brandatom` binary on your `$PATH`.
+
+  publish-formulae:
+    name: publish brew formula + scoop manifest
+    needs: release
+    runs-on: ubuntu-latest
+    if: ${{ vars.SKIP_PUBLISH_FORMULAE != 'true' }}
+    steps:
+      - name: skip if PAT missing
+        id: guard
+        env:
+          HAS_TOKEN: ${{ secrets.TAP_REPO_TOKEN != '' }}
+        run: |
+          if [ "$HAS_TOKEN" = "false" ]; then
+            echo "::warning::TAP_REPO_TOKEN secret not set — skipping cross-repo publish."
+            echo "::warning::Add a fine-grained PAT with Contents: read-and-write on"
+            echo "::warning::  convergent-systems-co/homebrew-tap"
+            echo "::warning::  convergent-systems-co/scoop-bucket"
+            echo "::warning::then re-run this workflow (or cut the next tag)."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.guard.outputs.skip != 'true'
+
+      - uses: actions/download-artifact@v4
+        if: steps.guard.outputs.skip != 'true'
+        with:
+          path: artifacts
+
+      - name: collect SHA256s
+        id: shas
+        if: steps.guard.outputs.skip != 'true'
+        run: |
+          # Each artifact's .sha256 sibling contains the hex digest produced
+          # in the build job.
+          find_sha() {
+            find artifacts -name "$1" -type f | head -1
+          }
+          darwin_arm64=$(cat "$(find_sha 'brandatom-darwin-arm64.tar.gz.sha256')")
+          darwin_amd64=$(cat "$(find_sha 'brandatom-darwin-amd64.tar.gz.sha256')")
+          linux_arm64=$(cat "$(find_sha 'brandatom-linux-arm64.tar.gz.sha256')")
+          linux_amd64=$(cat "$(find_sha 'brandatom-linux-amd64.tar.gz.sha256')")
+          windows_amd64=$(cat "$(find_sha 'brandatom-windows-amd64.zip.sha256')")
+          {
+            echo "darwin_arm64=$darwin_arm64"
+            echo "darwin_amd64=$darwin_amd64"
+            echo "linux_arm64=$linux_arm64"
+            echo "linux_amd64=$linux_amd64"
+            echo "windows_amd64=$windows_amd64"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: render brew formula
+        if: steps.guard.outputs.skip != 'true'
+        env:
+          VERSION: ${{ needs.release.outputs.version }}
+          DARWIN_ARM64: ${{ steps.shas.outputs.darwin_arm64 }}
+          DARWIN_AMD64: ${{ steps.shas.outputs.darwin_amd64 }}
+          LINUX_ARM64: ${{ steps.shas.outputs.linux_arm64 }}
+          LINUX_AMD64: ${{ steps.shas.outputs.linux_amd64 }}
+        run: |
+          mkdir -p rendered
+          sed \
+            -e "s|0\\.1\\.0|${VERSION}|g" \
+            -e "s|REPLACE_WITH_DARWIN_ARM64_SHA256|${DARWIN_ARM64}|" \
+            -e "s|REPLACE_WITH_DARWIN_AMD64_SHA256|${DARWIN_AMD64}|" \
+            -e "s|REPLACE_WITH_LINUX_ARM64_SHA256|${LINUX_ARM64}|" \
+            -e "s|REPLACE_WITH_LINUX_AMD64_SHA256|${LINUX_AMD64}|" \
+            src/brandatom/dist/homebrew/brandatom.rb > rendered/brandatom.rb
+          echo "--- rendered formula ---"
+          cat rendered/brandatom.rb
+
+      - name: render scoop manifest
+        if: steps.guard.outputs.skip != 'true'
+        env:
+          VERSION: ${{ needs.release.outputs.version }}
+          WINDOWS_AMD64: ${{ steps.shas.outputs.windows_amd64 }}
+        run: |
+          # The manifest hash field uses sha256: prefix when it's a checksum;
+          # Scoop also accepts a raw hex digest, which we use.
+          sed \
+            -e "s|0\\.1\\.0|${VERSION}|g" \
+            -e "s|REPLACE_WITH_WINDOWS_AMD64_SHA256|${WINDOWS_AMD64}|" \
+            src/brandatom/dist/scoop/brandatom.json > rendered/brandatom.json
+          echo "--- rendered manifest ---"
+          cat rendered/brandatom.json
+
+      - name: push to homebrew-tap
+        if: steps.guard.outputs.skip != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.TAP_REPO_TOKEN }}
+          VERSION: ${{ needs.release.outputs.version }}
+        run: |
+          git config --global user.name "brandatom-release-bot"
+          git config --global user.email "noreply@convergent-systems.co"
+          git clone "https://x-access-token:${GH_TOKEN}@github.com/convergent-systems-co/homebrew-tap.git" tap
+          mkdir -p tap/Formula
+          cp rendered/brandatom.rb tap/Formula/brandatom.rb
+          cd tap
+          if git diff --quiet; then
+            echo "no formula changes — already at this version"
+          else
+            git add Formula/brandatom.rb
+            git commit -m "brandatom ${VERSION}: update formula" \
+              -m "Triggered by release brandatom-v${VERSION}." \
+              -m "Source: convergent-systems-co/branding-library@${GITHUB_SHA}"
+            git push origin HEAD
+          fi
+
+      - name: push to scoop-bucket
+        if: steps.guard.outputs.skip != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.TAP_REPO_TOKEN }}
+          VERSION: ${{ needs.release.outputs.version }}
+        run: |
+          git config --global user.name "brandatom-release-bot"
+          git config --global user.email "noreply@convergent-systems.co"
+          git clone "https://x-access-token:${GH_TOKEN}@github.com/convergent-systems-co/scoop-bucket.git" bucket
+          mkdir -p bucket/bucket
+          cp rendered/brandatom.json bucket/bucket/brandatom.json
+          cd bucket
+          if git diff --quiet; then
+            echo "no manifest changes — already at this version"
+          else
+            git add bucket/brandatom.json
+            git commit -m "brandatom ${VERSION}: update manifest" \
+              -m "Triggered by release brandatom-v${VERSION}." \
+              -m "Source: convergent-systems-co/branding-library@${GITHUB_SHA}"
+            git push origin HEAD
+          fi
