@@ -140,7 +140,49 @@ const themeStyle = `
         <span class="tags">{brand.tags.map((t) => <code class="tag">{t}</code>)}</span>
       )}
     </div>
+
+    <div class="ai-prompt" data-brand-slug={brand.id} data-brand-version={brand.version}>
+      <button type="button" class="ai-prompt-btn" data-action="copy-prompt">
+        <span class="copy-icon" aria-hidden="true">⧉</span>
+        <span class="copy-label">Copy AI prompt</span>
+      </button>
+      <details class="ai-prompt-preview">
+        <summary>Preview prompt</summary>
+        <pre><code>{`Use the ${brand.id}@${brand.version} brand from brand-atoms.com.
+Fetch https://brand-atoms.com/dist/brands/${brand.id}/${brand.version}/json/brand.json
+and apply its role mappings (primary, accent, identity, etc.),
+reference the fonts in references.fonts, and honor every rule where
+severity is "error". Surface any deviation you choose to make.`}</code></pre>
+      </details>
+    </div>
   </header>
+
+  <script is:inline>
+    (() => {
+      const root = document.querySelector('.ai-prompt');
+      if (!root) return;
+      const btn = root.querySelector('[data-action="copy-prompt"]');
+      const label = btn?.querySelector('.copy-label');
+      if (!btn || !label) return;
+      const slug = root.getAttribute('data-brand-slug');
+      const version = root.getAttribute('data-brand-version');
+      const prompt = `Use the ${slug}@${version} brand from brand-atoms.com.\nFetch https://brand-atoms.com/dist/brands/${slug}/${version}/json/brand.json\nand apply its role mappings (primary, accent, identity, etc.),\nreference the fonts in references.fonts, and honor every rule where\nseverity is "error". Surface any deviation you choose to make.`;
+      btn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(prompt);
+          const original = label.textContent;
+          label.textContent = 'Copied — paste into Claude/GPT';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            label.textContent = original;
+            btn.classList.remove('copied');
+          }, 2400);
+        } catch {
+          label.textContent = 'Copy failed — see preview';
+        }
+      });
+    })();
+  </script>
 
   <DownloadsSection brand={brand} />
 
@@ -537,6 +579,69 @@ const themeStyle = `
       padding: 2px 8px;
       border-radius: 4px;
       font-size: 12px;
+    }
+
+    .ai-prompt {
+      margin-top: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .ai-prompt-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: color-mix(in srgb, var(--b-on-identity) 18%, transparent);
+      color: var(--b-on-identity);
+      border: 1px solid color-mix(in srgb, var(--b-on-identity) 28%, transparent);
+      padding: 9px 14px;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+    }
+    .ai-prompt-btn:hover {
+      background: color-mix(in srgb, var(--b-on-identity) 28%, transparent);
+      border-color: color-mix(in srgb, var(--b-on-identity) 50%, transparent);
+    }
+    .ai-prompt-btn.copied {
+      background: var(--b-accent);
+      color: var(--b-identity);
+      border-color: var(--b-accent);
+    }
+    .copy-icon { font-size: 14px; line-height: 1; }
+    .ai-prompt-preview {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--b-on-identity);
+      opacity: 0.75;
+      max-width: 100%;
+    }
+    .ai-prompt-preview summary {
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+    .ai-prompt-preview summary:hover { opacity: 1; }
+    .ai-prompt-preview[open] summary { margin-bottom: 8px; }
+    .ai-prompt-preview pre {
+      margin: 0;
+      padding: 12px 14px;
+      background: color-mix(in srgb, var(--b-on-identity) 10%, transparent);
+      border: 1px solid color-mix(in srgb, var(--b-on-identity) 18%, transparent);
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    .ai-prompt-preview pre code {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--b-on-identity);
+      white-space: pre-wrap;
+      word-break: break-word;
     }
 
     .section { padding: 24px 0 32px; }
