@@ -1,0 +1,53 @@
+kind: font
+id: ubuntu-sans-nerdfont
+version: 1.0.0
+name: Ubuntu Sans Mono Nerd Font
+description: >
+  Ubuntu Sans (Mono cut) with Nerd Fonts glyph augmentation. Ubuntu Sans is the 2022 redesign of the Ubuntu Font Family by Dalton Maag — a cleaner, expanded successor that re-engineers the original Ubuntu sans across more weights and a paired Ubuntu Sans Mono. This atom records the Mono cut (UbuntuSansMono) patched with ~10,000 Nerd Fonts icons for terminal and IDE use.
+family: UbuntuSansMono Nerd Font
+classification: monospace
+tags: [ nerd-font, monospace, ubuntu, canonical, terminal ]
+
+provenance:
+  source: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  license: UFL-1.0
+  attribution: >
+    Ubuntu Sans, part of the Ubuntu Font Family, Copyright 2010–2022 Canonical Ltd., designed by Dalton Maag, licensed under the Ubuntu Font Licence, Version 1.0 (UFL-1.0) — NOT the SIL Open Font License. Nerd Fonts patching by Ryan L McIntyre, MIT license.
+  importedDate: 2026-05-19
+  importedFromVersion: v3.4.0
+  notes: >
+    Ubuntu Sans ships under the Ubuntu Font Licence (UFL-1.0), not OFL — verified against the LICENCE.txt bundled in the v3.4.0 release archive. The release archive contains both the proportional Ubuntu Sans cut and the monospaced Ubuntu Sans Mono cut; this atom enumerates the Mono cut (which is the primary draw for a Nerd Fonts consumer). Download archive: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/UbuntuSans.zip
+
+source:
+  kind: external
+  family: UbuntuSansMono Nerd Font
+  notes: >
+    Nerd-Font-patched build of Ubuntu Sans Mono. Not available via Google Fonts as a patched variant. Download woff2/ttf files from the Nerd Fonts GitHub release and self-host, or install system-wide for terminal use.
+
+fallbackStack:
+  - Ubuntu Sans Mono
+  - Ubuntu Mono
+  - DejaVu Sans Mono
+  - Menlo
+  - Monaco
+  - Consolas
+  - monospace
+
+availableStyles:
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 500, style: normal }
+  - { weight: 500, style: italic }
+  - { weight: 600, style: normal }
+  - { weight: 600, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+cdnUrls:
+  UbuntuSansMonoNerdFontMono-Regular.ttf: https://cdn.brand-atoms.com/fonts/ubuntu-sans-nerdfont/1.0.0/UbuntuSansMonoNerdFontMono-Regular.ttf
+  UbuntuSansMonoNerdFontMono-Italic.ttf: https://cdn.brand-atoms.com/fonts/ubuntu-sans-nerdfont/1.0.0/UbuntuSansMonoNerdFontMono-Italic.ttf
+  UbuntuSansMonoNerdFontMono-Medium.ttf: https://cdn.brand-atoms.com/fonts/ubuntu-sans-nerdfont/1.0.0/UbuntuSansMonoNerdFontMono-Medium.ttf
+  UbuntuSansMonoNerdFontMono-MediumItalic.ttf: https://cdn.brand-atoms.com/fonts/ubuntu-sans-nerdfont/1.0.0/UbuntuSansMonoNerdFontMono-MediumItalic.ttf
+  UbuntuSansMonoNerdFontMono-SemiBold.ttf: https://cdn.brand-atoms.com/fonts/ubuntu-sans-nerdfont/1.0.0/UbuntuSansMonoNerdFontMono-SemiBold.ttf
+  UbuntuSansMonoNerdFontMono-SemiBoldItalic.ttf: https://cdn.brand-atoms.com/fonts/ubuntu-sans-nerdfont/1.0.0/UbuntuSansMonoNerdFontMono-SemiBoldItalic.ttf
+  UbuntuSansMonoNerdFontMono-Bold.ttf: https://cdn.brand-atoms.com/fonts/ubuntu-sans-nerdfont/1.0.0/UbuntuSansMonoNerdFontMono-Bold.ttf
+  UbuntuSansMonoNerdFontMono-BoldItalic.ttf: https://cdn.brand-atoms.com/fonts/ubuntu-sans-nerdfont/1.0.0/UbuntuSansMonoNerdFontMono-BoldItalic.ttf

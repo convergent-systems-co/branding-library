@@ -1,0 +1,43 @@
+kind: font
+id: tinos-nerdfont
+version: 1.0.0
+name: Tinos Nerd Font
+description: >
+  Tinos serif font with Nerd Fonts glyph augmentation. Tinos is a transitional serif by Steve Matteson (Ascender), metrically compatible with Microsoft's Times New Roman and originally commissioned by Google for ChromeOS. Patched with ~10,000 additional icons (Powerline, Material Design Icons, Font Awesome, Devicons, Octicons, Codicons, etc.) — uncommon for a serif body face, useful when icon coverage is needed inside running prose.
+family: Tinos Nerd Font
+classification: serif
+tags: [ nerd-font, serif, transitional, times-compatible, body-text ]
+
+provenance:
+  source: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  license: OFL-1.1
+  attribution: >
+    Tinos, designed by Steve Matteson, Copyright (c) Google Corporation, licensed under the SIL Open Font License, Version 1.1. Nerd Fonts patching by Ryan L McIntyre, MIT license.
+  importedDate: 2026-05-19
+  importedFromVersion: v3.4.0
+  notes: >
+    Tinos is a Times-compatible transitional serif, not a monospace — the Nerd Fonts patch adds an icon column but does not alter the proportional metrics of the base face. Download archive: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Tinos.zip
+
+source:
+  kind: external
+  family: Tinos Nerd Font
+  notes: >
+    Nerd-Font-patched build of Tinos. Not available via Google Fonts as a patched variant (upstream Tinos is on Google Fonts under its plain name). Download woff2/ttf files from the Nerd Fonts GitHub release and self-host. Both `Tinos Nerd Font` (mono-cell, single-width icons) and `Tinos Nerd Font Propo` (proportional icons) ship in the archive.
+
+fallbackStack:
+  - Tinos
+  - Times New Roman
+  - Times
+  - Liberation Serif
+  - serif
+
+availableStyles:
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+cdnUrls:
+  TinosNerdFont-Regular.ttf: https://cdn.brand-atoms.com/fonts/tinos-nerdfont/1.0.0/TinosNerdFont-Regular.ttf
+  TinosNerdFont-Italic.ttf: https://cdn.brand-atoms.com/fonts/tinos-nerdfont/1.0.0/TinosNerdFont-Italic.ttf
+  TinosNerdFont-Bold.ttf: https://cdn.brand-atoms.com/fonts/tinos-nerdfont/1.0.0/TinosNerdFont-Bold.ttf
+  TinosNerdFont-BoldItalic.ttf: https://cdn.brand-atoms.com/fonts/tinos-nerdfont/1.0.0/TinosNerdFont-BoldItalic.ttf

@@ -1,0 +1,36 @@
+kind: font
+id: nerdfont-symbols
+version: 1.0.0
+name: Symbols Nerd Font
+description: >
+  Icon-only — Nerd Fonts glyph set without a base font. Combine with any other font for icon coverage when you don't want to patch. Ships ~10,000 icons (Powerline, Material Design Icons, Font Awesome, Devicons, Octicons, Codicons, Weather, Pomicons, etc.) as a self-contained symbols-only family. Two cuts are distributed: a proportional variant (SymbolsNerdFont) and a monospaced variant (SymbolsNerdFontMono) sized to one terminal cell.
+family: Symbols Nerd Font
+classification: monospace
+tags: [ nerd-font, monospace, icons, symbols-only, terminal ]
+
+provenance:
+  source: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  license: OFL-1.1
+  attribution: >
+    Nerd Fonts patching and the Symbols Only build by Ryan L McIntyre and the Nerd Fonts contributors, licensed under the SIL Open Font License, Version 1.1. Constituent icon sets carry their own upstream licenses (Material Design Icons — Apache-2.0; Font Awesome Free — OFL-1.1 / MIT; Devicons, Octicons, Codicons — MIT; Powerline — MIT) and are aggregated under OFL-1.1 in this distribution.
+  importedDate: 2026-05-19
+  importedFromVersion: v3.4.0
+  notes: >
+    The entire family IS the symbol set — there is no base font to patch. Download archive: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/NerdFontsSymbolsOnly.zip. Pair with any text font via a CSS font-family fallback (e.g. `font-family: "JetBrains Mono", "Symbols Nerd Font Mono"`) to gain icon coverage without committing to a patched base font.
+
+source:
+  kind: external
+  family: Symbols Nerd Font
+  notes: >
+    Self-contained icon-only build of the Nerd Fonts glyph set. Not available via Google Fonts. Two cuts: `Symbols Nerd Font` (proportional) and `Symbols Nerd Font Mono` (monospaced, one terminal cell). Download woff2/ttf files from the Nerd Fonts GitHub release and self-host, or install system-wide.
+
+fallbackStack:
+  - Symbols Nerd Font Mono
+  - Symbols Nerd Font
+  - monospace
+
+availableStyles:
+  - { weight: 400, style: normal }
+cdnUrls:
+  SymbolsNerdFont-Regular.ttf: https://cdn.brand-atoms.com/fonts/nerdfont-symbols/1.0.0/SymbolsNerdFont-Regular.ttf
+  SymbolsNerdFontMono-Regular.ttf: https://cdn.brand-atoms.com/fonts/nerdfont-symbols/1.0.0/SymbolsNerdFontMono-Regular.ttf

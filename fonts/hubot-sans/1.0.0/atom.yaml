@@ -1,0 +1,77 @@
+kind: font
+id: hubot-sans
+version: 1.0.0
+name: Hubot Sans
+description: >
+  Hubot Sans — GitHub's open-source variable typeface, the body-text
+  companion to Mona Sans. Where Mona Sans handles display-scale
+  marketing surfaces, Hubot Sans is tuned for paragraph-length copy:
+  a slightly more compact, more humanist construction with three
+  variable axes (Weight, Width, Slant). Used across GitHub product
+  surfaces and documentation. Designed as a deliberate pair with
+  Mona Sans — share the family for headlines + body text without
+  importing two unrelated typefaces.
+family: Hubot Sans
+classification: sans-serif
+tags: [variable-font, github, brand, body-text, humanist, open-source]
+
+provenance:
+  source: https://github.com/github/hubot-sans/releases/tag/v1.0.1
+  license: OFL-1.1
+  attribution: >
+    Hubot Sans is Copyright (c) GitHub, Inc., licensed under the SIL
+    Open Font License, Version 1.1.
+  importedDate: 2026-05-19
+  importedFromVersion: v1.0.1
+  notes: >
+    Cross-reference: paired with the existing `mona-sans` atom as
+    GitHub's display + body pairing — Mona Sans for headlines and
+    brand surfaces, Hubot Sans for paragraph copy. Variable axes
+    verified from the upstream fvar table: wdth 75–125, wght
+    200–900, slnt -10–0. Static cuts ship across three width buckets
+    (Condensed at ~75%, Normal at 100%, Expanded at ~125%) with
+    eight weights and matching italic/slanted cuts in each.
+
+source:
+  kind: external
+  family: Hubot Sans
+  cssImportUrl: https://cdn.jsdelivr.net/npm/@fontsource-variable/hubot-sans/index.css
+  notes: >
+    Primary distribution is the GitHub Releases archive at
+    github.com/github/hubot-sans/releases. The variable font file
+    is `HubotSans[slnt,wdth,wght].woff2`. The cssImportUrl above
+    points at the community-maintained @fontsource-variable/hubot-sans
+    bundle on jsDelivr, which mirrors the OFL-licensed binaries
+    for drop-in <link rel="stylesheet"> consumption.
+
+fallbackStack:
+  - Mona Sans
+  - -apple-system
+  - BlinkMacSystemFont
+  - Segoe UI
+  - Helvetica
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 200, style: normal }
+  - { weight: 200, style: italic }
+  - { weight: 300, style: normal }
+  - { weight: 300, style: italic }
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 500, style: normal }
+  - { weight: 500, style: italic }
+  - { weight: 600, style: normal }
+  - { weight: 600, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+  - { weight: 800, style: normal }
+  - { weight: 800, style: italic }
+  - { weight: 900, style: normal }
+  - { weight: 900, style: italic }
+
+variableAxes:
+  - { tag: wght, name: Weight, min: 200, max: 900, default: 400 }
+  - { tag: wdth, name: Width, min: 75, max: 125, default: 100 }
+  - { tag: slnt, name: Slant, min: -10, max: 0, default: 0 }

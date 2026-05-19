@@ -1,0 +1,71 @@
+kind: font
+id: monaspace-krypton
+version: 1.0.0
+name: Monaspace Krypton
+description: >
+  Monaspace Krypton — the mechanical sans member of GitHub Next's
+  Monaspace superfamily. Five variants (Neon, Argon, Xenon, Radon,
+  Krypton) share identical metrics so they can be mixed inside a
+  single text block without breaking line height ("texture healing").
+  Krypton draws from Eurostile and DIN — squared, technical,
+  industrial. A good pick for environment banners, status lines, or
+  any code surface that wants to read as "infrastructure."
+family: Monaspace Krypton
+classification: monospace
+tags: [variable-font, monospace, github, monaspace, mechanical-sans, open-source]
+
+provenance:
+  source: https://github.com/githubnext/monaspace/releases/tag/v1.400
+  license: OFL-1.1
+  attribution: >
+    Monaspace is Copyright (c) GitHub, Inc., released by GitHub Next.
+    Licensed under the SIL Open Font License, Version 1.1.
+  importedDate: 2026-05-19
+  importedFromVersion: v1.400
+  notes: >
+    One of five Monaspace variants in the catalog (siblings:
+    monaspace-argon, monaspace-neon, monaspace-radon,
+    monaspace-xenon). Cross-reference: the Nerd-Font-patched build
+    is catalogued separately as `monaspace-nerdfont`. Variable axes
+    verified from the upstream fvar table: wght 200–800,
+    wdth 100–125, slnt -11–0.
+
+source:
+  kind: external
+  family: Monaspace Krypton
+  notes: >
+    Primary distribution is the GitHub Releases artifact at
+    github.com/githubnext/monaspace/releases. The variable font
+    file is `Monaspace Krypton Var.ttf`; static cuts ship as OTF
+    in the same archive. Community @fontsource bundles exist but
+    upstream is the source of truth.
+
+fallbackStack:
+  - Monaspace Neon
+  - JetBrains Mono
+  - Menlo
+  - Monaco
+  - Consolas
+  - Liberation Mono
+  - monospace
+
+availableStyles:
+  - { weight: 200, style: normal }
+  - { weight: 200, style: italic }
+  - { weight: 300, style: normal }
+  - { weight: 300, style: italic }
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 500, style: normal }
+  - { weight: 500, style: italic }
+  - { weight: 600, style: normal }
+  - { weight: 600, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+  - { weight: 800, style: normal }
+  - { weight: 800, style: italic }
+
+variableAxes:
+  - { tag: wght, name: Weight, min: 200, max: 800, default: 400 }
+  - { tag: wdth, name: Width, min: 100, max: 125, default: 100 }
+  - { tag: slnt, name: Slant, min: -11, max: 0, default: 0 }

@@ -1,0 +1,65 @@
+kind: font
+id: victor-mono-nerdfont
+version: 1.0.0
+name: VictorMono Nerd Font
+description: >
+  Victor Mono monospaced font with Nerd Fonts glyph augmentation. Victor Mono is a free programming font with semi-connected cursive italics — a distinctive feature that makes italic comments and keywords visually separable from upright code. Seven weights, both italic and oblique cuts. Patched with ~10,000 additional icons (Powerline, Material Design Icons, Font Awesome, Devicons, Octicons, Codicons, etc.).
+family: VictorMono Nerd Font
+classification: monospace
+tags: [ nerd-font, monospace, programming-ligatures, cursive-italic, terminal, ide ]
+
+provenance:
+  source: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  license: OFL-1.1
+  attribution: >
+    Victor Mono, Copyright 2018 Rune Bjørnerås (rubjo), licensed under the SIL Open Font License, Version 1.1. Nerd Fonts patching by Ryan L McIntyre, MIT license.
+  importedDate: 2026-05-19
+  importedFromVersion: v3.4.0
+  notes: >
+    Base font: Victor Mono by Rune Bjørnerås. Ships seven weights (Thin–Bold) with both upright and italic + oblique cuts; the cursive italic is the signature design feature. Download archive: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/VictorMono.zip
+
+source:
+  kind: external
+  family: VictorMono Nerd Font
+  notes: >
+    Nerd-Font-patched build of Victor Mono. Not available via Google Fonts. Download woff2/ttf files from the Nerd Fonts GitHub release and self-host, or install system-wide for terminal/IDE use. Italic and oblique cuts are both shipped — italic carries the cursive design, oblique is a mechanical slant.
+
+fallbackStack:
+  - Victor Mono
+  - JetBrains Mono
+  - Fira Code
+  - Menlo
+  - Monaco
+  - Consolas
+  - monospace
+
+availableStyles:
+  - { weight: 100, style: normal }
+  - { weight: 100, style: italic }
+  - { weight: 200, style: normal }
+  - { weight: 200, style: italic }
+  - { weight: 300, style: normal }
+  - { weight: 300, style: italic }
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 500, style: normal }
+  - { weight: 500, style: italic }
+  - { weight: 600, style: normal }
+  - { weight: 600, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+cdnUrls:
+  VictorMonoNerdFontMono-Thin.ttf: https://cdn.brand-atoms.com/fonts/victor-mono-nerdfont/1.0.0/VictorMonoNerdFontMono-Thin.ttf
+  VictorMonoNerdFontMono-ThinItalic.ttf: https://cdn.brand-atoms.com/fonts/victor-mono-nerdfont/1.0.0/VictorMonoNerdFontMono-ThinItalic.ttf
+  VictorMonoNerdFontMono-ExtraLight.ttf: https://cdn.brand-atoms.com/fonts/victor-mono-nerdfont/1.0.0/VictorMonoNerdFontMono-ExtraLight.ttf
+  VictorMonoNerdFontMono-ExtraLightItalic.ttf: https://cdn.brand-atoms.com/fonts/victor-mono-nerdfont/1.0.0/VictorMonoNerdFontMono-ExtraLightItalic.ttf
+  VictorMonoNerdFontMono-Light.ttf: https://cdn.brand-atoms.com/fonts/victor-mono-nerdfont/1.0.0/VictorMonoNerdFontMono-Light.ttf
+  VictorMonoNerdFontMono-LightItalic.ttf: https://cdn.brand-atoms.com/fonts/victor-mono-nerdfont/1.0.0/VictorMonoNerdFontMono-LightItalic.ttf
+  VictorMonoNerdFontMono-Regular.ttf: https://cdn.brand-atoms.com/fonts/victor-mono-nerdfont/1.0.0/VictorMonoNerdFontMono-Regular.ttf
+  VictorMonoNerdFontMono-Italic.ttf: https://cdn.brand-atoms.com/fonts/victor-mono-nerdfont/1.0.0/VictorMonoNerdFontMono-Italic.ttf
+  VictorMonoNerdFontMono-Medium.ttf: https://cdn.brand-atoms.com/fonts/victor-mono-nerdfont/1.0.0/VictorMonoNerdFontMono-Medium.ttf
+  VictorMonoNerdFontMono-MediumItalic.ttf: https://cdn.brand-atoms.com/fonts/victor-mono-nerdfont/1.0.0/VictorMonoNerdFontMono-MediumItalic.ttf
+  VictorMonoNerdFontMono-SemiBold.ttf: https://cdn.brand-atoms.com/fonts/victor-mono-nerdfont/1.0.0/VictorMonoNerdFontMono-SemiBold.ttf
+  VictorMonoNerdFontMono-SemiBoldItalic.ttf: https://cdn.brand-atoms.com/fonts/victor-mono-nerdfont/1.0.0/VictorMonoNerdFontMono-SemiBoldItalic.ttf
+  VictorMonoNerdFontMono-Bold.ttf: https://cdn.brand-atoms.com/fonts/victor-mono-nerdfont/1.0.0/VictorMonoNerdFontMono-Bold.ttf
+  VictorMonoNerdFontMono-BoldItalic.ttf: https://cdn.brand-atoms.com/fonts/victor-mono-nerdfont/1.0.0/VictorMonoNerdFontMono-BoldItalic.ttf

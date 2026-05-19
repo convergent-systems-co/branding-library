@@ -1,0 +1,57 @@
+kind: font
+id: zed-mono-nerdfont
+version: 1.0.0
+name: ZedMono Nerd Font
+description: >
+  Zed Mono monospaced font with Nerd Fonts glyph augmentation. Zed Mono is the default editor font of the Zed code editor — derived from Iosevka but with a wider, more humanist construction and a generous extended ("Extended") cut for screen reading. Patched with ~10,000 additional icons (Powerline, Material Design Icons, Font Awesome, Devicons, Octicons, Codicons, etc.). Both the standard and Extended widths ship in the archive.
+family: ZedMono Nerd Font
+classification: monospace
+tags: [ nerd-font, monospace, zed, code-editor, iosevka-derived, terminal ]
+
+provenance:
+  source: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  license: OFL-1.1
+  attribution: >
+    Zed Mono, Copyright Zed Industries, derived from Iosevka by Renzhi "Belleve" Li and the Iosevka authors. Licensed under the SIL Open Font License, Version 1.1. Nerd Fonts patching by Ryan L McIntyre, MIT license.
+  importedDate: 2026-05-19
+  importedFromVersion: v3.4.0
+  notes: >
+    Zed Mono is the editor font of the Zed editor (https://zed.dev). Ships seven weights (Light–ExtraBold) with italic + oblique cuts, plus a parallel "Extended" width family that widens the side bearings for prose-style reading. Download archive: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ZedMono.zip
+
+source:
+  kind: external
+  family: ZedMono Nerd Font
+  notes: >
+    Nerd-Font-patched build of Zed Mono. Not available via Google Fonts. Download woff2/ttf files from the Nerd Fonts GitHub release and self-host, or install system-wide for terminal/IDE use.
+
+fallbackStack:
+  - Zed Mono
+  - Iosevka
+  - JetBrains Mono
+  - Menlo
+  - Monaco
+  - Consolas
+  - monospace
+
+availableStyles:
+  - { weight: 300, style: normal }
+  - { weight: 300, style: italic }
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 500, style: normal }
+  - { weight: 500, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+  - { weight: 800, style: normal }
+  - { weight: 800, style: italic }
+cdnUrls:
+  ZedMonoNerdFontMono-Light.ttf: https://cdn.brand-atoms.com/fonts/zed-mono-nerdfont/1.0.0/ZedMonoNerdFontMono-Light.ttf
+  ZedMonoNerdFontMono-LightItalic.ttf: https://cdn.brand-atoms.com/fonts/zed-mono-nerdfont/1.0.0/ZedMonoNerdFontMono-LightItalic.ttf
+  ZedMonoNerdFontMono-Regular.ttf: https://cdn.brand-atoms.com/fonts/zed-mono-nerdfont/1.0.0/ZedMonoNerdFontMono-Regular.ttf
+  ZedMonoNerdFontMono-Italic.ttf: https://cdn.brand-atoms.com/fonts/zed-mono-nerdfont/1.0.0/ZedMonoNerdFontMono-Italic.ttf
+  ZedMonoNerdFontMono-Medium.ttf: https://cdn.brand-atoms.com/fonts/zed-mono-nerdfont/1.0.0/ZedMonoNerdFontMono-Medium.ttf
+  ZedMonoNerdFontMono-MediumItalic.ttf: https://cdn.brand-atoms.com/fonts/zed-mono-nerdfont/1.0.0/ZedMonoNerdFontMono-MediumItalic.ttf
+  ZedMonoNerdFontMono-Bold.ttf: https://cdn.brand-atoms.com/fonts/zed-mono-nerdfont/1.0.0/ZedMonoNerdFontMono-Bold.ttf
+  ZedMonoNerdFontMono-BoldItalic.ttf: https://cdn.brand-atoms.com/fonts/zed-mono-nerdfont/1.0.0/ZedMonoNerdFontMono-BoldItalic.ttf
+  ZedMonoNerdFontMono-ExtraBold.ttf: https://cdn.brand-atoms.com/fonts/zed-mono-nerdfont/1.0.0/ZedMonoNerdFontMono-ExtraBold.ttf
+  ZedMonoNerdFontMono-ExtraBoldItalic.ttf: https://cdn.brand-atoms.com/fonts/zed-mono-nerdfont/1.0.0/ZedMonoNerdFontMono-ExtraBoldItalic.ttf

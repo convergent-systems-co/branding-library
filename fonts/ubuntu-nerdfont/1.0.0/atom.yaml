@@ -1,0 +1,53 @@
+kind: font
+id: ubuntu-nerdfont
+version: 1.0.0
+name: Ubuntu Nerd Font
+description: >
+  Ubuntu sans-serif font with Nerd Fonts glyph augmentation. Ubuntu is the humanist sans designed by Dalton Maag for Canonical, used across the Ubuntu Linux desktop and brand. Patched with ~10,000 additional icons (Powerline, Material Design Icons, Font Awesome, Devicons, Octicons, Codicons, etc.). Useful when icon coverage is needed in a proportional body / UI face.
+family: Ubuntu Nerd Font
+classification: sans-serif
+tags: [ nerd-font, sans-serif, ubuntu, canonical, humanist, ui ]
+
+provenance:
+  source: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  license: UFL-1.0
+  attribution: >
+    Ubuntu Font Family, Copyright 2010 Canonical Ltd., designed by Dalton Maag, licensed under the Ubuntu Font Licence, Version 1.0 (UFL-1.0) — NOT the SIL Open Font License. Nerd Fonts patching by Ryan L McIntyre, MIT license. The UFL-1.0 retains a name-restriction clause similar to the OFL Reserved Font Name provision; redistributors must keep "Ubuntu" trademark requirements in mind.
+  importedDate: 2026-05-19
+  importedFromVersion: v3.4.0
+  notes: >
+    Ubuntu / Ubuntu Mono / Ubuntu Sans all ship under the Ubuntu Font Licence (UFL-1.0), not OFL — verified against the LICENCE.txt bundled in the v3.4.0 release archive. Download archive: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Ubuntu.zip
+
+source:
+  kind: external
+  family: Ubuntu Nerd Font
+  notes: >
+    Nerd-Font-patched build of the Ubuntu sans. Not available via Google Fonts as a patched variant (upstream Ubuntu is on Google Fonts under its plain name). Download woff2/ttf files from the Nerd Fonts GitHub release and self-host. Both `Ubuntu Nerd Font` (mono-cell icons) and `Ubuntu Nerd Font Propo` (proportional icons) ship in the archive.
+
+fallbackStack:
+  - Ubuntu
+  - Cantarell
+  - Segoe UI
+  - Helvetica
+  - Arial
+  - sans-serif
+
+availableStyles:
+  - { weight: 300, style: normal }
+  - { weight: 300, style: italic }
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 500, style: normal }
+  - { weight: 500, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+cdnUrls:
+  UbuntuNerdFont-Regular.ttf: https://cdn.brand-atoms.com/fonts/ubuntu-nerdfont/1.0.0/UbuntuNerdFont-Regular.ttf
+  UbuntuNerdFont-Italic.ttf: https://cdn.brand-atoms.com/fonts/ubuntu-nerdfont/1.0.0/UbuntuNerdFont-Italic.ttf
+  UbuntuNerdFont-Bold.ttf: https://cdn.brand-atoms.com/fonts/ubuntu-nerdfont/1.0.0/UbuntuNerdFont-Bold.ttf
+  UbuntuNerdFont-BoldItalic.ttf: https://cdn.brand-atoms.com/fonts/ubuntu-nerdfont/1.0.0/UbuntuNerdFont-BoldItalic.ttf
+  UbuntuNerdFont-Light.ttf: https://cdn.brand-atoms.com/fonts/ubuntu-nerdfont/1.0.0/UbuntuNerdFont-Light.ttf
+  UbuntuNerdFont-LightItalic.ttf: https://cdn.brand-atoms.com/fonts/ubuntu-nerdfont/1.0.0/UbuntuNerdFont-LightItalic.ttf
+  UbuntuNerdFont-Medium.ttf: https://cdn.brand-atoms.com/fonts/ubuntu-nerdfont/1.0.0/UbuntuNerdFont-Medium.ttf
+  UbuntuNerdFont-MediumItalic.ttf: https://cdn.brand-atoms.com/fonts/ubuntu-nerdfont/1.0.0/UbuntuNerdFont-MediumItalic.ttf
+  UbuntuNerdFont-Condensed.ttf: https://cdn.brand-atoms.com/fonts/ubuntu-nerdfont/1.0.0/UbuntuNerdFont-Condensed.ttf

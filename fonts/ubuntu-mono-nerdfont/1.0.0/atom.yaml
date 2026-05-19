@@ -1,0 +1,45 @@
+kind: font
+id: ubuntu-mono-nerdfont
+version: 1.0.0
+name: Ubuntu Mono Nerd Font
+description: >
+  Ubuntu Mono monospaced font with Nerd Fonts glyph augmentation. The monospace companion to the Ubuntu sans, designed by Dalton Maag for Canonical. Used as the default terminal font in many Ubuntu Linux desktops. Patched with ~10,000 additional icons (Powerline, Material Design Icons, Font Awesome, Devicons, Octicons, Codicons, etc.) for terminal/editor use.
+family: Ubuntu Mono Nerd Font
+classification: monospace
+tags: [ nerd-font, monospace, ubuntu, canonical, terminal ]
+
+provenance:
+  source: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  license: UFL-1.0
+  attribution: >
+    Ubuntu Mono, part of the Ubuntu Font Family, Copyright 2010 Canonical Ltd., designed by Dalton Maag, licensed under the Ubuntu Font Licence, Version 1.0 (UFL-1.0) — NOT the SIL Open Font License. Nerd Fonts patching by Ryan L McIntyre, MIT license.
+  importedDate: 2026-05-19
+  importedFromVersion: v3.4.0
+  notes: >
+    Ubuntu Mono ships under the Ubuntu Font Licence (UFL-1.0), not OFL — verified against the LICENCE.txt bundled in the v3.4.0 release archive. Download archive: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/UbuntuMono.zip
+
+source:
+  kind: external
+  family: Ubuntu Mono Nerd Font
+  notes: >
+    Nerd-Font-patched build of Ubuntu Mono. Not available via Google Fonts as a patched variant. Download woff2/ttf files from the Nerd Fonts GitHub release and self-host, or install system-wide for terminal use.
+
+fallbackStack:
+  - Ubuntu Mono
+  - DejaVu Sans Mono
+  - Menlo
+  - Monaco
+  - Consolas
+  - Liberation Mono
+  - monospace
+
+availableStyles:
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+cdnUrls:
+  UbuntuMonoNerdFontMono-Regular.ttf: https://cdn.brand-atoms.com/fonts/ubuntu-mono-nerdfont/1.0.0/UbuntuMonoNerdFontMono-Regular.ttf
+  UbuntuMonoNerdFontMono-Italic.ttf: https://cdn.brand-atoms.com/fonts/ubuntu-mono-nerdfont/1.0.0/UbuntuMonoNerdFontMono-Italic.ttf
+  UbuntuMonoNerdFontMono-Bold.ttf: https://cdn.brand-atoms.com/fonts/ubuntu-mono-nerdfont/1.0.0/UbuntuMonoNerdFontMono-Bold.ttf
+  UbuntuMonoNerdFontMono-BoldItalic.ttf: https://cdn.brand-atoms.com/fonts/ubuntu-mono-nerdfont/1.0.0/UbuntuMonoNerdFontMono-BoldItalic.ttf

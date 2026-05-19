@@ -1,0 +1,45 @@
+kind: font
+id: terminus-nerdfont
+version: 1.0.0
+name: Terminess Nerd Font
+description: >
+  Terminus (TTF) monospaced bitmap-style font with Nerd Fonts glyph augmentation. Terminus is a clean, high-legibility console font long favored on Linux virtual terminals. Patched with ~10,000 additional icons (Powerline, Material Design Icons, Font Awesome, Devicons, Octicons, Codicons, etc.). Distributed under the family name "Terminess Nerd Font" to avoid trademark collision with the upstream Terminus name.
+family: Terminess Nerd Font
+classification: monospace
+tags: [ nerd-font, monospace, terminal, bitmap-style, linux-console ]
+
+provenance:
+  source: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  license: OFL-1.1
+  attribution: >
+    Terminus (TTF) by Tilman Blumenbach and Dimitar Toshkov Zhekov, derived from Terminus by Dimitar Toshkov Zhekov, licensed under the SIL Open Font License, Version 1.1. Nerd Fonts patching by Ryan L McIntyre, MIT license. Nerd-Font-patched build is distributed under the family name "Terminess Nerd Font" to avoid trademark issues with the upstream "Terminus" name.
+  importedDate: 2026-05-19
+  importedFromVersion: v3.4.0
+  notes: >
+    Base font: Terminus (TTF) — a TrueType conversion of the Terminus bitmap console font. Download archive: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Terminus.zip
+
+source:
+  kind: external
+  family: Terminess Nerd Font
+  notes: >
+    Nerd-Font-patched build of Terminus (TTF), renamed "Terminess" for distribution. Not available via Google Fonts. Download woff2/ttf files from the Nerd Fonts GitHub release and self-host, or install system-wide for terminal use.
+
+fallbackStack:
+  - Terminus
+  - Terminus (TTF)
+  - DejaVu Sans Mono
+  - Menlo
+  - Monaco
+  - Consolas
+  - monospace
+
+availableStyles:
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+cdnUrls:
+  TerminessNerdFontMono-Regular.ttf: https://cdn.brand-atoms.com/fonts/terminus-nerdfont/1.0.0/TerminessNerdFontMono-Regular.ttf
+  TerminessNerdFontMono-Italic.ttf: https://cdn.brand-atoms.com/fonts/terminus-nerdfont/1.0.0/TerminessNerdFontMono-Italic.ttf
+  TerminessNerdFontMono-Bold.ttf: https://cdn.brand-atoms.com/fonts/terminus-nerdfont/1.0.0/TerminessNerdFontMono-Bold.ttf
+  TerminessNerdFontMono-BoldItalic.ttf: https://cdn.brand-atoms.com/fonts/terminus-nerdfont/1.0.0/TerminessNerdFontMono-BoldItalic.ttf
