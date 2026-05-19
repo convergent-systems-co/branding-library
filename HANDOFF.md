@@ -10,13 +10,13 @@ This is a living document: edit it as items move between sections.
 
 - **Brands:** 144
 - **Palettes:** 210
-- **Fonts:** 69
+- **Fonts:** 141 (doubled in Wave-6: full Nerd Fonts + GitHub Monaspace + Hubot Sans)
 - **Output formats per brand:** 9 (YAML, JSON, W3C tokens, CSS, SCSS,
   Tailwind, Figma tokens, Swift, Kotlin, Markdown)
 - **Live site:** [brand-atoms.com](https://brand-atoms.com)
 - **CLI:** `brandatom` v0.1.1 — brew + scoop install live
-- **Last commit on `main`:** `43ee387` (pre-handoff bump)
-- **Session commit count:** 43 (Wave-5 added 8 cluster commits)
+- **Last commit on `main`:** `d30de7e` (pre-handoff bump)
+- **Session commit count:** 48 (Wave-6 added 5 font commits)
 
 ## What "complete" means
 
