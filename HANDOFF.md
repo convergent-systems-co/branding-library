@@ -8,15 +8,15 @@ This is a living document: edit it as items move between sections.
 
 ## Snapshot (2026-05-19)
 
-- **Brands:** 144
-- **Palettes:** 210
-- **Fonts:** 141 (doubled in Wave-6: full Nerd Fonts + GitHub Monaspace + Hubot Sans)
+- **Brands:** 144 (started session at 73)
+- **Palettes:** 235 (started session at 141; +22 community editor themes + 2 Catppuccin variants + Wave-3/4/5/6 brand-palette pairs)
+- **Fonts:** 225 (started session at 69; +72 from Wave-6 Nerd Fonts/Monaspace/Hubot + ~89 Google Fonts via PR #13 merge + 2 misc)
 - **Output formats per brand:** 9 (YAML, JSON, W3C tokens, CSS, SCSS,
   Tailwind, Figma tokens, Swift, Kotlin, Markdown)
 - **Live site:** [brand-atoms.com](https://brand-atoms.com)
 - **CLI:** `brandatom` v0.1.1 — brew + scoop install live
-- **Last commit on `main`:** `d30de7e` (pre-handoff bump)
-- **Session commit count:** 48 (Wave-6 added 5 font commits)
+- **Last commit on `main`:** `bf9700c` (pre-handoff bump)
+- **Session commit count:** 53. Stale PRs #15/#16/#17/#18 from 2026-05-17 either merged or superseded by current main; GitHub Enterprise prevents API-side closes — close them manually in the UI.
 
 ## What "complete" means
 
