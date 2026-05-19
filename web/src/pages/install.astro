@@ -1,0 +1,411 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getBrands, getFonts, getPalettes } from '../lib/encyclopedia.js';
+
+const palettes = getPalettes();
+const fonts = getFonts();
+const brands = getBrands();
+
+const sampleBrand = brands.find((b) => b.slug === 'convergent-systems') ?? brands[0];
+const sampleSlug = sampleBrand?.slug ?? 'convergent-systems';
+const sampleVersion = sampleBrand?.version ?? '1.0.0';
+---
+
+<Layout
+  title="Install — Brand Atoms"
+  description="Install the brandatom CLI or fetch atoms directly from brand-atoms.com."
+  section="install"
+>
+  <header class="hero">
+    <h1>Install</h1>
+    <p class="lede">
+      Two ways to consume Brand Atoms: the <code>brandatom</code> CLI for terminals
+      and CI, or direct HTTP fetch for AI agents and runtimes. Pick one and skip to
+      <a href="/how-to-use">How to use</a>.
+    </p>
+  </header>
+
+  <nav class="toc" aria-label="On this page">
+    <a href="#cli">CLI</a>
+    <span>·</span>
+    <a href="#http">HTTP fetch</a>
+    <span>·</span>
+    <a href="#concepts">Concepts</a>
+    <span>·</span>
+    <a href="#next">Next</a>
+  </nav>
+
+  <section class="section" id="cli">
+    <h2>brandatom CLI</h2>
+    <p class="section-lede">
+      A single static binary. Browses the catalog, inspects a brand, and applies a
+      brand to your local project — Tailwind, Xcode, Android, or vanilla CSS.
+    </p>
+
+    <h3 class="sub">Homebrew — macOS &amp; Linux</h3>
+    <div class="code-block">
+      <div class="code-head">
+        <code class="code-lang">shell</code>
+      </div>
+      <pre><code>brew install convergent-systems-co/tap/brandatom</code></pre>
+    </div>
+
+    <h3 class="sub">Scoop — Windows</h3>
+    <div class="code-block">
+      <div class="code-head">
+        <code class="code-lang">powershell</code>
+      </div>
+      <pre><code>scoop bucket add convergent-systems-co https://github.com/convergent-systems-co/scoop-bucket
+scoop install brandatom</code></pre>
+    </div>
+
+    <h3 class="sub">From source — anywhere with Go ≥ 1.22</h3>
+    <div class="code-block">
+      <div class="code-head">
+        <code class="code-lang">shell</code>
+      </div>
+      <pre><code>git clone https://github.com/convergent-systems-co/branding-library
+cd branding-library/src/brandatom
+go build -o brandatom ./cmd/brandatom
+./brandatom --version</code></pre>
+    </div>
+
+    <p class="check">
+      Verify:
+      <code>brandatom --version</code> prints a SemVer string. If it doesn't, the
+      shim isn't on your <code>PATH</code>.
+    </p>
+  </section>
+
+  <section class="section" id="http">
+    <h2>HTTP fetch — for AI agents and runtimes</h2>
+    <p class="section-lede">
+      No install. Every atom is reachable as a static file under
+      <code>https://brand-atoms.com/dist/</code> with deterministic paths. Pick the
+      emitter that matches your runtime.
+    </p>
+
+    <h3 class="sub">Catalog index</h3>
+    <div class="code-block">
+      <div class="code-head">
+        <code class="code-lang">shell</code>
+      </div>
+      <pre><code>curl https://brand-atoms.com/dist/index.json</code></pre>
+    </div>
+    <p class="format-note">
+      Lists every brand, palette, and font with version, slug, and identity colors.
+      Use this to discover what's available before fetching a specific atom.
+    </p>
+
+    <h3 class="sub">One brand, one format</h3>
+    <div class="code-block">
+      <div class="code-head">
+        <code class="code-lang">shell</code>
+      </div>
+      <pre><code>curl https://brand-atoms.com/dist/brands/{sampleSlug}/{sampleVersion}/json/brand.json
+curl https://brand-atoms.com/dist/brands/{sampleSlug}/{sampleVersion}/css/tokens.css
+curl https://brand-atoms.com/dist/brands/{sampleSlug}/{sampleVersion}/w3c/tokens.json</code></pre>
+    </div>
+
+    <p class="format-note">
+      Path shape:
+      <code>/dist/&lt;kind&gt;/&lt;slug&gt;/&lt;version&gt;/&lt;emitter&gt;/&lt;file&gt;</code>.
+      Nine emitters per brand — see the full list under
+      <a href="/how-to-use#formats">How to use → Output formats</a>.
+    </p>
+  </section>
+
+  <section class="section" id="concepts">
+    <h2>The atom model — the 60-second version</h2>
+    <p class="section-lede">
+      Three concepts. Everything else is mechanical.
+    </p>
+
+    <div class="concepts">
+      <article class="concept">
+        <div class="concept-icon" style="background: var(--primary)"></div>
+        <h3>Atoms</h3>
+        <p>
+          The leaves. A <code>palette</code> is swatches + light/dark role mappings;
+          a <code>font</code> is family, weights, classification, source, and CDN
+          URLs. Every atom lives at
+          <code>&lt;kind&gt;/&lt;slug&gt;/&lt;version&gt;/atom.yaml</code> and is
+          versioned with semver.
+        </p>
+      </article>
+      <article class="concept">
+        <div class="concept-icon" style="background: var(--accent)"></div>
+        <h3>Brands</h3>
+        <p>
+          The compositions. A <code>brand</code> picks one palette and a set of
+          fonts by reference, adds semantic role overrides
+          (<code>primary</code>, <code>identity</code>, <code>accent</code>), and
+          attaches structured assets (logos, favicons, og-images).
+        </p>
+      </article>
+      <article class="concept">
+        <div class="concept-icon" style="background: var(--warning)"></div>
+        <h3>Rules</h3>
+        <p>
+          The contracts. A brand declares typed constraints —
+          <code>contrastRatio</code>, <code>colorChoice</code>,
+          <code>forbiddenTreatment</code>, <code>fontPairing</code>, and seven more
+          — that an AI iterates programmatically. No opaque prose: every rule has a
+          target, parameters, severity, and rationale.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="next">
+    <h2>What now?</h2>
+    <p class="section-lede">
+      You're installed. Decide what to do next.
+    </p>
+
+    <div class="paths">
+      <a class="path" href="/how-to-use">
+        <h3>How to use →</h3>
+        <p>
+          Concrete recipes: apply a brand to Tailwind, Next.js, iOS, Android, Figma,
+          Style Dictionary, or vanilla CSS. Both CLI and HTTP paths.
+        </p>
+      </a>
+      <a class="path" href="/brands">
+        <h3>Browse brands →</h3>
+        <p>
+          {brands.length} brands, each with a live preview in its own palette and
+          fonts, downloadable specs, and the full role + rule breakdown.
+        </p>
+      </a>
+      <a class="path" href="/builder">
+        <h3>Compose a brand →</h3>
+        <p>
+          Pick a palette + fonts client-side; preview live in both modes; download
+          the <code>brand.yaml</code> or full nine-format bundle. No account.
+        </p>
+      </a>
+    </div>
+
+    <p class="extend-note">
+      Currently {palettes.length} palettes, {fonts.length} fonts, and {brands.length} brands
+      published. Missing one?
+      <a class="ext-link" href="/request-brand">Request a brand</a>.
+    </p>
+  </section>
+
+  <style>
+    .hero {
+      padding: 32px 0 16px;
+      max-width: 760px;
+    }
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin: 0 0 12px;
+      line-height: 1;
+    }
+    .lede {
+      font-size: 17px;
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin: 0;
+      line-height: 1.55;
+    }
+    .lede a, .lede code {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .lede a:hover { text-decoration: underline; }
+
+    .toc {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 0 8px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+    .toc a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+    .toc a:hover { color: var(--primary); }
+
+    .section { padding: 32px 0; max-width: 920px; }
+    .section h2 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 8px;
+      scroll-margin-top: 16px;
+    }
+    .section h3.sub {
+      font-size: 14px;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-tertiary);
+      margin: 18px 0 8px;
+      font-weight: 600;
+    }
+    .section-lede {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin: 0 0 20px;
+      max-width: 640px;
+      line-height: 1.6;
+    }
+
+    .check {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      margin: 12px 0 0;
+      padding: 10px 14px;
+      background: var(--surface);
+      border-radius: 8px;
+      border-left: 3px solid var(--accent);
+    }
+
+    code, .section code {
+      font-family: var(--font-mono);
+      font-size: 0.9em;
+      background: var(--surface);
+      padding: 1px 6px;
+      border-radius: 4px;
+      color: var(--text-primary);
+    }
+
+    .code-block {
+      background: var(--surface);
+      border: 1px solid var(--surface-elevated);
+      border-radius: 10px;
+      margin: 8px 0 12px;
+      overflow: hidden;
+    }
+    .code-head {
+      padding: 8px 14px;
+      border-bottom: 1px solid var(--surface-elevated);
+      background: var(--surface-elevated);
+    }
+    .code-lang {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: transparent;
+      padding: 0;
+    }
+    .code-block pre {
+      margin: 0;
+      padding: 14px;
+      overflow-x: auto;
+    }
+    .code-block pre code {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      background: transparent;
+      padding: 0;
+      color: var(--text-primary);
+      white-space: pre;
+    }
+    .format-note {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      margin: 8px 0 16px;
+    }
+    .format-note a {
+      color: var(--primary);
+      text-decoration: none;
+      font-family: var(--font-mono);
+    }
+    .format-note a:hover { text-decoration: underline; }
+
+    .concepts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    @media (max-width: 720px) {
+      .concepts { grid-template-columns: minmax(0, 1fr); }
+    }
+    .concept {
+      background: var(--surface);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .concept-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .concept h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+    .concept p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    .paths {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    @media (max-width: 880px) {
+      .paths { grid-template-columns: minmax(0, 1fr); }
+    }
+    .path {
+      background: var(--surface);
+      border-radius: 14px;
+      padding: 20px;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid var(--surface-elevated);
+      transition: transform 0.12s ease, border-color 0.12s ease;
+    }
+    .path:hover {
+      transform: translateY(-2px);
+      border-color: var(--primary);
+    }
+    .path h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0 0 10px;
+      color: var(--primary);
+    }
+    .path p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    .extend-note {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin: 16px 0 0;
+      padding: 14px 16px;
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+    }
+    .ext-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 13px;
+    }
+    .ext-link:hover { text-decoration: underline; }
+  </style>
+</Layout>

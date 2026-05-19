@@ -1,0 +1,698 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getBrands } from '../lib/encyclopedia.js';
+
+const brands = getBrands();
+const sampleBrand = brands.find((b) => b.slug === 'convergent-systems') ?? brands[0];
+const sampleSlug = sampleBrand?.slug ?? 'convergent-systems';
+const sampleVersion = sampleBrand?.version ?? '1.0.0';
+---
+
+<Layout
+  title="How to use — Brand Atoms"
+  description="Concrete recipes for applying brand-atoms.com palettes, fonts, and brands to apps, websites, and design tools."
+  section="how-to-use"
+>
+  <header class="hero">
+    <h1>How to use</h1>
+    <p class="lede">
+      Every way to apply a brand, palette, or font from <a href="/">brand-atoms.com</a>
+      to a real project. Not installed yet?
+      <a href="/install">Install the CLI</a> or read the
+      <a href="/install#http">direct HTTP fetch</a> pattern.
+    </p>
+  </header>
+
+  <nav class="toc" aria-label="On this page">
+    <a href="#ai">AI agents</a>
+    <span>·</span>
+    <a href="#humans">Humans</a>
+    <span>·</span>
+    <a href="#recipes">Recipes</a>
+    <span>·</span>
+    <a href="#formats">Output formats</a>
+    <span>·</span>
+    <a href="#extend">Extend the catalog</a>
+  </nav>
+
+  <section class="section" id="ai">
+    <h2>For AI agents</h2>
+    <p class="section-lede">
+      Render in-brand output every time. Brand Atoms gives you a deterministic
+      contract — pick the format that matches your runtime.
+    </p>
+
+    <ol class="numbered-steps">
+      <li>
+        <strong>Resolve a brand.</strong> Address by
+        <code>&lt;slug&gt;@&lt;version&gt;</code>. At build time the encyclopedia
+        emits nine formats per brand under
+        <code>/dist/brands/&lt;slug&gt;/&lt;version&gt;/</code>.
+      </li>
+      <li>
+        <strong>Pick a format.</strong> JSON for agents and scripts; W3C tokens for
+        Figma / Style Dictionary; CSS for direct drop-in; Swift / Kotlin for native.
+      </li>
+      <li>
+        <strong>Read the rules.</strong> Iterate <code>brand.rules</code> and treat
+        each typed constraint as a check. <code>severity: error</code> rules MUST
+        hold; <code>severity: recommendation</code> rules SHOULD hold — explain any
+        deviation.
+      </li>
+      <li>
+        <strong>Pin versions.</strong> Reference by exact version
+        (<code>{sampleSlug}@{sampleVersion}</code>) for reproducibility, or by
+        major (<code>{sampleSlug}@1</code>) to ride non-breaking updates.
+      </li>
+    </ol>
+
+    <div class="code-block">
+      <div class="code-head">
+        <code class="code-lang">fetch a brand · JSON</code>
+      </div>
+      <pre><code>curl https://brand-atoms.com/dist/brands/{sampleSlug}/{sampleVersion}/json/brand.json</code></pre>
+    </div>
+
+    <div class="code-block">
+      <div class="code-head">
+        <code class="code-lang">prompt pattern · system instruction</code>
+      </div>
+      <pre><code>{`The user's brand is "${sampleSlug}@${sampleVersion}". Fetch
+https://brand-atoms.com/dist/brands/${sampleSlug}/${sampleVersion}/json/brand.json
+before generating. Honor every roles.colors mapping verbatim,
+respect every rules entry, and use references.fonts for type.`}</code></pre>
+    </div>
+  </section>
+
+  <section class="section" id="humans">
+    <h2>For humans</h2>
+    <p class="section-lede">
+      Three paths, depending on what you want to do.
+    </p>
+
+    <div class="paths">
+      <article class="path">
+        <h3>I want to learn a brand.</h3>
+        <p>
+          Go to <a href="/brands">/brands</a>. Each brand has a live preview
+          (components rendered in the brand's actual palette and fonts), a
+          downloadable spec, and a full role + rule breakdown.
+        </p>
+      </article>
+      <article class="path">
+        <h3>I want to reuse an atom.</h3>
+        <p>
+          Browse <a href="/palettes">/palettes</a> or <a href="/fonts">/fonts</a>.
+          Filter by hex, classification, license, or mode coverage. Reference by
+          <code>slug@version</code>.
+        </p>
+      </article>
+      <article class="path">
+        <h3>I want to build a new brand.</h3>
+        <p>
+          Go to <a href="/builder">/builder</a>. Pick a palette and three fonts;
+          preview live in both modes; download the <code>brand.yaml</code> or the
+          full nine-format zip. All client-side.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="recipes">
+    <h2>Recipes</h2>
+    <p class="section-lede">
+      Concrete worked examples for each consumer. Substitute
+      <code>{sampleSlug}@{sampleVersion}</code> with the brand you want.
+    </p>
+
+    <article class="recipe">
+      <h3>Tailwind project — one command</h3>
+      <p>
+        Inject a <code>brandatom</code> color block into <code>theme.extend.colors</code>.
+        <code>brandatom</code> detects <code>tailwind.config.*</code> and writes in place.
+      </p>
+      <div class="code-block">
+        <div class="code-head"><code class="code-lang">shell</code></div>
+        <pre><code>cd my-tailwind-app
+brandatom brand {sampleSlug}@{sampleVersion} apply --dry-run    # preview the diff
+brandatom brand {sampleSlug}@{sampleVersion} apply              # commit the change</code></pre>
+      </div>
+      <p class="recipe-note">
+        Then use <code>bg-brand-primary</code>, <code>text-brand-on-identity</code>,
+        <code>bg-swatch-clay</code>, <code>font-heading</code>, etc. in your markup.
+      </p>
+    </article>
+
+    <article class="recipe">
+      <h3>Next.js / React — manual import</h3>
+      <p>
+        Drop the CSS into your root layout. The custom-property tokens flow through
+        any component that reads <code>var(--color-primary)</code>.
+      </p>
+      <div class="code-block">
+        <div class="code-head"><code class="code-lang">app/layout.tsx</code></div>
+        <pre><code>{`import './brand.css';
+
+export default function RootLayout({ children }) {
+  return <html><body>{children}</body></html>;
+}`}</code></pre>
+      </div>
+      <div class="code-block">
+        <div class="code-head"><code class="code-lang">app/brand.css</code></div>
+        <pre><code>{`@import url("https://brand-atoms.com/dist/brands/${sampleSlug}/${sampleVersion}/css/tokens.css");`}</code></pre>
+      </div>
+      <p class="recipe-note">
+        Or bundle the file locally for offline / production:
+        <code>{`curl -o app/brand.css \\\n  https://brand-atoms.com/dist/brands/${sampleSlug}/${sampleVersion}/css/tokens.css`}</code>
+      </p>
+    </article>
+
+    <article class="recipe">
+      <h3>Vanilla HTML / CSS site</h3>
+      <p>
+        Add one <code>&lt;link&gt;</code> to <code>&lt;head&gt;</code> and reference
+        the custom properties from any stylesheet.
+      </p>
+      <div class="code-block">
+        <div class="code-head"><code class="code-lang">index.html</code></div>
+        <pre><code>{`<link rel="stylesheet"
+      href="https://brand-atoms.com/dist/brands/${sampleSlug}/${sampleVersion}/css/tokens.css">`}</code></pre>
+      </div>
+      <div class="code-block">
+        <div class="code-head"><code class="code-lang">site.css</code></div>
+        <pre><code>{`body {
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+}
+.cta { background: var(--color-primary); color: var(--color-background); }
+h1 { font-family: var(--font-heading); }
+code { font-family: var(--font-mono); }`}</code></pre>
+      </div>
+      <p class="recipe-note">
+        Need the full role set including <code>on-identity</code>, <code>mark</code>,
+        and dark-mode-specific roles? Use the Tailwind or SCSS emitter — the CSS
+        emitter resolves to the active mode only.
+      </p>
+    </article>
+
+    <article class="recipe">
+      <h3>iOS — Swift</h3>
+      <p>
+        Inside an <code>*.xcodeproj</code> directory, the CLI emits a
+        <code>Brand.swift</code> with <code>UIColor</code> extensions next to the
+        project.
+      </p>
+      <div class="code-block">
+        <div class="code-head"><code class="code-lang">shell</code></div>
+        <pre><code>cd MyApp
+brandatom brand {sampleSlug}@{sampleVersion} apply --format swift</code></pre>
+      </div>
+      <p class="recipe-note">
+        Or fetch directly:
+        <code>{`curl -o Brand.swift https://brand-atoms.com/dist/brands/${sampleSlug}/${sampleVersion}/swift/BrandTokens.swift`}</code>
+      </p>
+    </article>
+
+    <article class="recipe">
+      <h3>Android — Kotlin / XML</h3>
+      <p>
+        Detects <code>app/src/main/AndroidManifest.xml</code> and writes
+        <code>app/src/main/res/values/brand-atoms.xml</code>.
+      </p>
+      <div class="code-block">
+        <div class="code-head"><code class="code-lang">shell</code></div>
+        <pre><code>cd MyAndroidApp
+brandatom brand {sampleSlug}@{sampleVersion} apply --format android</code></pre>
+      </div>
+      <p class="recipe-note">
+        Reference in Kotlin via <code>R.color.bra_primary</code> after a Gradle
+        sync. Pure Kotlin tokens also available at
+        <code>{`/dist/brands/${sampleSlug}/${sampleVersion}/kotlin/BrandTokens.kt`}</code>.
+      </p>
+    </article>
+
+    <article class="recipe">
+      <h3>Figma — via Tokens Studio / W3C Design Tokens</h3>
+      <p>
+        Brand Atoms emits DTCG-spec tokens. Import the file into the
+        <em>Tokens Studio</em> plugin and Figma variables sync.
+      </p>
+      <div class="code-block">
+        <div class="code-head"><code class="code-lang">shell</code></div>
+        <pre><code>{`curl -o brand.tokens.json \\
+  https://brand-atoms.com/dist/brands/${sampleSlug}/${sampleVersion}/w3c/tokens.json`}</code></pre>
+      </div>
+      <p class="recipe-note">
+        In Tokens Studio: <em>Tools → Load from file</em> → pick
+        <code>brand.tokens.json</code>. Light and dark modes are split into
+        <code>tokens.light.json</code> and <code>tokens.dark.json</code> in the
+        same folder.
+      </p>
+    </article>
+
+    <article class="recipe">
+      <h3>Style Dictionary — multi-platform pipeline</h3>
+      <p>
+        Treat the W3C tokens file as a source and let Style Dictionary fan out to
+        iOS / Android / web / whatever.
+      </p>
+      <div class="code-block">
+        <div class="code-head"><code class="code-lang">config.json</code></div>
+        <pre><code>{`{
+  "source": ["tokens/*.json"],
+  "platforms": {
+    "web":    { "transformGroup": "css",     "buildPath": "build/web/" },
+    "ios":    { "transformGroup": "ios",     "buildPath": "build/ios/" },
+    "android":{ "transformGroup": "android", "buildPath": "build/and/" }
+  }
+}`}</code></pre>
+      </div>
+      <p class="recipe-note">
+        Drop the fetched <code>tokens.json</code> into <code>tokens/</code> and
+        run <code>style-dictionary build</code>.
+      </p>
+    </article>
+
+    <article class="recipe">
+      <h3>Tailwind — manual (no CLI)</h3>
+      <p>
+        Fetch the pre-built <code>tailwind.config.cjs</code> snippet and merge it
+        into yours by hand. Useful in CI where you can't run the binary.
+      </p>
+      <div class="code-block">
+        <div class="code-head"><code class="code-lang">shell</code></div>
+        <pre><code>{`curl https://brand-atoms.com/dist/brands/${sampleSlug}/${sampleVersion}/tailwind/tailwind.config.cjs`}</code></pre>
+      </div>
+    </article>
+
+    <article class="recipe">
+      <h3>SCSS pipeline</h3>
+      <p>
+        SCSS variables for projects that haven't migrated to custom properties.
+      </p>
+      <div class="code-block">
+        <div class="code-head"><code class="code-lang">_brand.scss</code></div>
+        <pre><code>{`@import url("https://brand-atoms.com/dist/brands/${sampleSlug}/${sampleVersion}/scss/_tokens.scss");
+
+.card { background: $brand-surface; color: $brand-text-primary; }`}</code></pre>
+      </div>
+    </article>
+
+    <article class="recipe">
+      <h3>Apply a palette only — no brand</h3>
+      <p>
+        Sometimes you want the colors without the brand's role mappings and rules.
+        Palettes ship the same way, under <code>/dist/palettes/</code>.
+      </p>
+      <div class="code-block">
+        <div class="code-head"><code class="code-lang">shell</code></div>
+        <pre><code>{`curl https://brand-atoms.com/dist/palettes/catppuccin-mocha/1.0.0/json/palette.json
+curl https://brand-atoms.com/dist/palettes/tailwind-v3/1.0.0/css/tokens.css`}</code></pre>
+      </div>
+    </article>
+
+    <article class="recipe">
+      <h3>Apply a font — discover the CDN URL</h3>
+      <p>
+        Fonts ship with resolved CDN URLs. Read the atom, drop the URL into a
+        <code>&lt;link&gt;</code> or <code>@font-face</code> block.
+      </p>
+      <div class="code-block">
+        <div class="code-head"><code class="code-lang">shell</code></div>
+        <pre><code>{`curl https://brand-atoms.com/dist/fonts/inter/1.0.0/json/font.json | jq .cdnUrl`}</code></pre>
+      </div>
+      <p class="recipe-note">
+        Or browse <a href="/fonts">/fonts</a> and copy the URL from the detail
+        page.
+      </p>
+    </article>
+
+    <article class="recipe">
+      <h3>Browse from the terminal</h3>
+      <p>
+        Quick discovery without leaving the shell.
+      </p>
+      <div class="code-block">
+        <div class="code-head"><code class="code-lang">shell</code></div>
+        <pre><code>brandatom brands list                         # all brands with primary swatches
+brandatom palettes list                       # all palettes with swatch previews
+brandatom fonts list                          # all fonts with specimen line
+brandatom brand {sampleSlug}@{sampleVersion} show          # streams resolved JSON to stdout
+brandatom brands list --json | jq '.[].slug' # machine-readable</code></pre>
+      </div>
+    </article>
+
+    <article class="recipe">
+      <h3>Compose a new brand in the browser</h3>
+      <p>
+        <a href="/builder">/builder</a> is a client-side composer. Pick a palette
+        and three fonts; toggle light / dark; preview a card, a button, a heading;
+        download <code>brand.yaml</code> or the full nine-format zip.
+      </p>
+      <p class="recipe-note">
+        Nothing uploaded, no account. To publish to the encyclopedia, open a PR or
+        use <a href="/request-brand">/request-brand</a>.
+      </p>
+    </article>
+  </section>
+
+  <section class="section" id="formats">
+    <h2>Output formats</h2>
+    <p class="section-lede">
+      Nine emitters per brand. Pick the one that matches your toolchain.
+    </p>
+
+    <table class="format-table">
+      <thead>
+        <tr>
+          <th>Format</th>
+          <th>File</th>
+          <th>Best for</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>YAML</strong></td>
+          <td><code>yaml/brand.yaml</code></td>
+          <td>Source-of-truth; human-editable; same as the repo.</td>
+        </tr>
+        <tr>
+          <td><strong>JSON</strong></td>
+          <td><code>json/brand.json</code></td>
+          <td>AI agents, scripts, anything that parses JSON natively.</td>
+        </tr>
+        <tr>
+          <td><strong>W3C Design Tokens</strong></td>
+          <td><code>w3c/tokens.json</code> + light / dark</td>
+          <td>Figma, Style Dictionary, Tokens Studio, anything DTCG.</td>
+        </tr>
+        <tr>
+          <td><strong>CSS variables</strong></td>
+          <td><code>css/tokens.css</code></td>
+          <td>Direct drop-in for any web project with <code>prefers-color-scheme</code>.</td>
+        </tr>
+        <tr>
+          <td><strong>Tailwind</strong></td>
+          <td><code>tailwind/tailwind.config.cjs</code></td>
+          <td>Tailwind projects that want brand colors as utility classes.</td>
+        </tr>
+        <tr>
+          <td><strong>SCSS</strong></td>
+          <td><code>scss/_tokens.scss</code></td>
+          <td>SCSS pipelines that need <code>$brand-primary</code>-style vars.</td>
+        </tr>
+        <tr>
+          <td><strong>Figma tokens</strong></td>
+          <td><code>figma/tokens.json</code></td>
+          <td>Direct Figma variable import (separate dialect from W3C).</td>
+        </tr>
+        <tr>
+          <td><strong>Swift</strong></td>
+          <td><code>swift/BrandTokens.swift</code></td>
+          <td>Native iOS; emits <code>UIColor</code> extensions.</td>
+        </tr>
+        <tr>
+          <td><strong>Kotlin</strong></td>
+          <td><code>kotlin/BrandTokens.kt</code></td>
+          <td>Native Android; emits typed color constants.</td>
+        </tr>
+        <tr>
+          <td><strong>Markdown</strong></td>
+          <td><code>markdown/brand-guide.md</code></td>
+          <td>Human-readable brand guide; pastes into Notion / Confluence.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="format-note">
+      Every emitter resolves the brand fully — palette references, font CDN URLs,
+      asset paths, role overrides. You're never re-resolving in your runtime.
+    </p>
+  </section>
+
+  <section class="section" id="extend">
+    <h2>Extending the catalog</h2>
+    <p class="section-lede">
+      Brand Atoms is open source. Adding an atom or brand is a typed YAML diff in
+      git.
+    </p>
+
+    <ol class="numbered-steps">
+      <li>
+        <strong>Pick a kind.</strong> New palette →
+        <code>palettes/&lt;slug&gt;/&lt;semver&gt;/atom.yaml</code>. New font →
+        <code>fonts/&lt;slug&gt;/&lt;semver&gt;/atom.yaml</code>. New brand →
+        <code>brands/&lt;slug&gt;/&lt;semver&gt;/brand.yaml</code>.
+      </li>
+      <li>
+        <strong>Match the schema.</strong> Schemas live in
+        <code>tools/schemas/</code>. Zod validates every file at build time; a
+        missing required field fails the deploy.
+      </li>
+      <li>
+        <strong>Cite a source.</strong> Every atom carries a <code>provenance</code>
+        block (source URL, license, attribution, import date). No fabricated
+        colors, no ghost fonts.
+      </li>
+      <li>
+        <strong>Open a PR.</strong> CI runs <code>pnpm validate</code> on every
+        push; merge to <code>main</code> triggers a deploy.
+      </li>
+    </ol>
+
+    <p class="extend-note">
+      Repo:
+      <a class="ext-link" href="https://github.com/convergent-systems-co/branding-library">github.com/convergent-systems-co/branding-library</a>.
+    </p>
+
+    <p class="extend-note">
+      Don't want to open a PR yourself?
+      <a class="ext-link" href="/request-brand">Request a brand</a> — provide a
+      public webpage and a maintainer triages by hand.
+    </p>
+  </section>
+
+  <style>
+    .hero {
+      padding: 32px 0 16px;
+      max-width: 760px;
+    }
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin: 0 0 12px;
+      line-height: 1;
+    }
+    .lede {
+      font-size: 17px;
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin: 0;
+      line-height: 1.55;
+    }
+    .lede a { color: var(--primary); text-decoration: none; }
+    .lede a:hover { text-decoration: underline; }
+
+    .toc {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 0 8px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+    .toc a { color: var(--text-secondary); text-decoration: none; }
+    .toc a:hover { color: var(--primary); }
+
+    .section { padding: 32px 0; max-width: 920px; }
+    .section h2 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 8px;
+      scroll-margin-top: 16px;
+    }
+    .section-lede {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin: 0 0 20px;
+      max-width: 640px;
+      line-height: 1.6;
+    }
+
+    .numbered-steps {
+      margin: 0 0 20px;
+      padding-left: 24px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+    .numbered-steps > li { margin-bottom: 14px; }
+    .numbered-steps > li::marker { color: var(--primary); font-weight: 700; }
+    .numbered-steps strong { color: var(--text-primary); }
+
+    code, .section code {
+      font-family: var(--font-mono);
+      font-size: 0.9em;
+      background: var(--surface);
+      padding: 1px 6px;
+      border-radius: 4px;
+      color: var(--text-primary);
+    }
+
+    .code-block {
+      background: var(--surface);
+      border: 1px solid var(--surface-elevated);
+      border-radius: 10px;
+      margin: 8px 0 12px;
+      overflow: hidden;
+    }
+    .code-head {
+      padding: 8px 14px;
+      border-bottom: 1px solid var(--surface-elevated);
+      background: var(--surface-elevated);
+    }
+    .code-lang {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: transparent;
+      padding: 0;
+    }
+    .code-block pre {
+      margin: 0;
+      padding: 14px;
+      overflow-x: auto;
+    }
+    .code-block pre code {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      background: transparent;
+      padding: 0;
+      color: var(--text-primary);
+      white-space: pre;
+    }
+
+    .paths {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    @media (max-width: 880px) {
+      .paths { grid-template-columns: minmax(0, 1fr); }
+    }
+    .path {
+      background: var(--surface);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .path h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0 0 10px;
+      color: var(--primary);
+    }
+    .path p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+    .path a {
+      color: var(--primary);
+      text-decoration: none;
+      font-family: var(--font-mono);
+    }
+    .path a:hover { text-decoration: underline; }
+
+    .recipe {
+      background: var(--surface);
+      border-radius: 14px;
+      padding: 22px;
+      margin: 0 0 20px;
+      border: 1px solid var(--surface-elevated);
+    }
+    .recipe h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 8px;
+      color: var(--text-primary);
+    }
+    .recipe > p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin: 0 0 10px;
+    }
+    .recipe-note {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      margin: 6px 0 0;
+      line-height: 1.55;
+    }
+    .recipe-note code {
+      font-size: 12px;
+      background: var(--surface-elevated);
+    }
+
+    .format-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 14px;
+      border: 1px solid var(--surface-elevated);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .format-table thead { background: var(--surface-elevated); }
+    .format-table th,
+    .format-table td {
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--surface-elevated);
+      vertical-align: top;
+    }
+    .format-table th {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-tertiary);
+      font-weight: 600;
+    }
+    .format-table tbody tr:last-child td { border-bottom: 0; }
+    .format-table tbody tr:nth-child(even) { background: var(--surface); }
+    .format-table strong { color: var(--text-primary); }
+    .format-table code { font-size: 12px; }
+    .format-note {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      margin: 12px 0 0;
+      font-style: italic;
+    }
+
+    .extend-note {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin: 16px 0 0;
+      padding: 14px 16px;
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+    }
+    .ext-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .ext-link:hover { text-decoration: underline; }
+  </style>
+</Layout>
