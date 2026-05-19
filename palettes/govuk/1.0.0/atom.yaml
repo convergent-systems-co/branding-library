@@ -1,0 +1,206 @@
+kind: palette
+id: govuk
+version: 1.0.0
+name: GOV.UK Design System
+description: >
+  The GOV.UK Design System colour palette as published by the
+  Government Digital Service (GDS). The palette is built around
+  GOV.UK Black (#0B0C0C) for ink and GOV.UK Blue (#1D70B8) for
+  the brand link colour, with a yellow focus state (#FFDD00) that
+  is the signature accessibility-driven affordance on every UK
+  central-government service surface. Functional roles (link,
+  link-hover, link-visited, error, success, border, focus,
+  template-background, surface) are published alongside an
+  11-hue "web palette" (blue, green, teal, purple, magenta, red,
+  orange, yellow, brown, black, white) for chart and illustration
+  use. Light-first; the system targets WCAG 2.1 AA on the GOV.UK
+  template background.
+
+tags: [govuk, gds, design-system, government, civic, light-first, public-sector]
+
+provenance:
+  source: https://design-system.service.gov.uk/styles/colour/
+  license: MIT (code) / Open Government Licence v3.0 (content)
+  attribution: >
+    GOV.UK Design System, maintained by the Government Digital
+    Service (Cabinet Office, Crown copyright). The govuk-frontend
+    codebase is published under the MIT License; the design-system
+    guidance content is published under the Open Government Licence
+    v3.0. The GOV.UK logotype, the GOV.UK colour pairings, and
+    Crown copyright marks are reserved.
+  importedDate: 2026-05-19
+  notes: >
+    Colour values mirrored from the published Colour reference at
+    design-system.service.gov.uk/styles/colour. The "web palette"
+    eleven-hue set is included alongside the functional roles
+    because GOV.UK service teams frequently need chart and
+    illustration palettes that already pair with the brand blue
+    and focus yellow.
+
+swatches:
+  # ─── Functional / role colours ──────────────────────────────────
+  - id: text
+    name: Text
+    value: "#0B0C0C"
+    description: GOV.UK Black — primary text ink on every page.
+  - id: secondary-text
+    name: Secondary Text
+    value: "#484949"
+    description: Secondary text and hints; quiet metadata.
+  - id: link
+    name: Link
+    value: "#1A65A6"
+    description: Default link colour on the GOV.UK template background.
+  - id: link-hover
+    name: Link Hover
+    value: "#0F385C"
+    description: Hover state for links.
+  - id: link-visited
+    name: Link Visited
+    value: "#54319F"
+    description: Visited link state — sourced from web-palette Purple.
+  - id: link-active
+    name: Link Active
+    value: "#0B0C0C"
+    description: Active link state — GOV.UK Black for highest emphasis.
+  - id: border
+    name: Border
+    value: "#CECECE"
+    description: Default border on quiet dividers and cards.
+  - id: input-border
+    name: Input Border
+    value: "#0B0C0C"
+    description: Form-control border — full-strength GOV.UK Black.
+  - id: hover
+    name: Hover
+    value: "#CECECE"
+    description: Hover surface for interactive rows and list items.
+  - id: focus
+    name: Focus
+    value: "#FFDD00"
+    description: GOV.UK Yellow focus indicator — the signature accessibility affordance.
+  - id: focus-text
+    name: Focus Text
+    value: "#0B0C0C"
+    description: Text ink rendered on the yellow focus background.
+  - id: error
+    name: Error
+    value: "#CA3535"
+    description: Validation and error messaging colour.
+  - id: success
+    name: Success
+    value: "#0F7A52"
+    description: Success / confirmation colour.
+  - id: brand
+    name: Brand
+    value: "#1D70B8"
+    description: GOV.UK Blue — the system's brand link / primary blue.
+  - id: body-background
+    name: Body Background
+    value: "#FFFFFF"
+    description: Default page background — white.
+  - id: template-background
+    name: Template Background
+    value: "#F4F8FB"
+    description: The pale-blue GOV.UK template background.
+  - id: surface-background
+    name: Surface Background
+    value: "#F4F8FB"
+    description: Default surface background for cards and panels.
+  - id: surface-text
+    name: Surface Text
+    value: "#0B0C0C"
+    description: Default text colour on a surface panel.
+  - id: surface-border
+    name: Surface Border
+    value: "#8EB8DC"
+    description: Default border colour on a surface panel.
+
+  # ─── Web palette (chart / illustration hues) ────────────────────
+  - id: web-blue
+    name: Web Blue
+    value: "#1D70B8"
+    description: Web-palette Blue — identical to brand.
+  - id: web-green
+    name: Web Green
+    value: "#0F7A52"
+    description: Web-palette Green — identical to success.
+  - id: web-teal
+    name: Web Teal
+    value: "#158187"
+    description: Web-palette Teal.
+  - id: web-purple
+    name: Web Purple
+    value: "#54319F"
+    description: Web-palette Purple — identical to link-visited.
+  - id: web-magenta
+    name: Web Magenta
+    value: "#CA357C"
+    description: Web-palette Magenta.
+  - id: web-red
+    name: Web Red
+    value: "#CA3535"
+    description: Web-palette Red — identical to error.
+  - id: web-orange
+    name: Web Orange
+    value: "#F47738"
+    description: Web-palette Orange.
+  - id: web-yellow
+    name: Web Yellow
+    value: "#FFDD00"
+    description: Web-palette Yellow — identical to focus.
+  - id: web-brown
+    name: Web Brown
+    value: "#99704A"
+    description: Web-palette Brown.
+  - id: web-black
+    name: Web Black
+    value: "#0B0C0C"
+    description: Web-palette Black — identical to text.
+  - id: web-white
+    name: Web White
+    value: "#FFFFFF"
+    description: Web-palette White — identical to body-background.
+
+modes:
+  light:
+    roles:
+      background: body-background
+      surface: template-background
+      surface-elevated: body-background
+      text-primary: text
+      text-secondary: secondary-text
+      text-tertiary: secondary-text
+      primary: brand
+      primary-hover: link-hover
+      accent: focus
+      accent-hover: focus
+      warning: web-orange
+      warning-hover: web-orange
+      error: error
+      success: success
+      border: border
+
+  dark:
+    # GOV.UK does not ship an official dark theme — every central
+    # government service site uses the light template. This dark
+    # mapping is a documented inversion for non-government
+    # consumers; the body-background flips to GOV.UK Black with
+    # white ink and the focus yellow is preserved (the only colour
+    # that legally cannot be substituted on a GOV.UK service surface).
+    roles:
+      background: text
+      surface: text
+      surface-elevated: secondary-text
+      text-primary: body-background
+      text-secondary: border
+      text-tertiary: border
+      primary: web-blue
+      primary-hover: web-blue
+      accent: focus
+      accent-hover: focus
+      warning: web-orange
+      warning-hover: web-orange
+      error: error
+      success: success
+      border: secondary-text

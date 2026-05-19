@@ -1,0 +1,249 @@
+kind: palette
+id: eudi
+version: 1.0.0
+name: European Digital Identity
+description: >
+  The European Digital Identity (EUDI) Wallet is a European
+  Commission programme rendered through the institutional Europa
+  Component Library (ECL) visual identity. The palette is anchored
+  by the European Commission's Branding blue (#004494) and an EC
+  Primary blue scale that runs from #051036 (Primary-180) up
+  through #D8E0FB (Primary-20), paired with a warm Secondary gold
+  scale (Secondary-180 #8F5600 through Secondary-20 #FFF2DE) used
+  for ceremonial and editorial accents. Status colours follow the
+  ECL feedback set (Info #3860ED, Success #24A148, Warning #F39811,
+  Error #DA1E28). Neutrals are the ECL "Dark" trio plus a
+  blue-tinted Neutral scale.
+
+tags: [eudi, european-commission, ecl, europa, government, civic, digital-identity, light-first]
+
+provenance:
+  source: https://ec.europa.eu/component-library/ec/guidelines/colours/
+  license: Proprietary — © European Union
+  attribution: >
+    Europa Component Library (ECL) — European Commission, ©
+    European Union. The ECL is the institutional design system
+    that backs European Commission digital surfaces, including
+    the EUDI Wallet programme pages. Colour values mirrored from
+    the ECL "Colours" guideline page. The European emblem (the
+    twelve gold stars on Reflex Blue) and the "European Union"
+    name are reserved and their use is governed by EU
+    interinstitutional rules.
+  importedDate: 2026-05-19
+  notes: >
+    The EUDI Wallet programme itself does not publish a
+    separately-branded palette; it inherits the ECL identity used
+    by the European Commission's digital estate. This atom
+    captures the ECL Primary / Secondary / Dark / Neutral / Status
+    scales plus the canonical Branding blue (#004494). The EU
+    flag's "Reflex Blue" / Pantone Yellow values are NOT included
+    here because the canonical Pantone-to-RGB mapping is published
+    only in the Interinstitutional Style Guide / Graphics Guide
+    annexes, which were not fetched as part of this atom's
+    provenance; consumers needing flag-grade emblem colours should
+    consult those primary sources directly.
+
+swatches:
+  # ─── Branding ───────────────────────────────────────────────────
+  - id: branding
+    name: Branding
+    value: "#004494"
+    description: ECL canonical Branding blue — the European Commission identity colour.
+
+  # ─── Primary blue scale ─────────────────────────────────────────
+  - id: primary-180
+    name: Primary 180
+    value: "#051036"
+    description: Deepest primary — near-black blue for text and high-emphasis surfaces.
+  - id: primary-160
+    name: Primary 160
+    value: "#0A1F6C"
+    description: Deep primary — body text on light surfaces.
+  - id: primary-140
+    name: Primary 140
+    value: "#0F2FA2"
+    description: Strong primary — hover state for primary actions.
+  - id: primary-120
+    name: Primary 120
+    value: "#143FD9"
+    description: Mid-deep primary.
+  - id: primary-100
+    name: Primary 100
+    value: "#3860ED"
+    description: Default primary — the standard ECL interactive blue.
+  - id: primary-80
+    name: Primary 80
+    value: "#5577F0"
+    description: Lighter primary — quiet emphasis.
+  - id: primary-60
+    name: Primary 60
+    value: "#89A1F4"
+    description: Pale primary.
+  - id: primary-40
+    name: Primary 40
+    value: "#B1C0F8"
+    description: Very pale primary — surface tint.
+  - id: primary-20
+    name: Primary 20
+    value: "#D8E0FB"
+    description: Palest primary — quiet surface background.
+
+  # ─── Secondary gold scale ───────────────────────────────────────
+  - id: secondary-180
+    name: Secondary 180
+    value: "#8F5600"
+    description: Deep secondary — strong warm accent.
+  - id: secondary-160
+    name: Secondary 160
+    value: "#E08700"
+    description: Mid-deep secondary.
+  - id: secondary-140
+    name: Secondary 140
+    value: "#FF9D0A"
+    description: Saturated secondary.
+  - id: secondary-120
+    name: Secondary 120
+    value: "#FFAD33"
+    description: Mid secondary.
+  - id: secondary-100
+    name: Secondary 100
+    value: "#FFBE5C"
+    description: Default secondary — the standard ECL warm accent.
+  - id: secondary-80
+    name: Secondary 80
+    value: "#FFCB7C"
+    description: Lighter secondary.
+  - id: secondary-60
+    name: Secondary 60
+    value: "#FFD89D"
+    description: Pale secondary.
+  - id: secondary-40
+    name: Secondary 40
+    value: "#FFE5BE"
+    description: Very pale secondary.
+  - id: secondary-20
+    name: Secondary 20
+    value: "#FFF2DE"
+    description: Palest secondary — quiet warm surface.
+
+  # ─── Dark (ink) ─────────────────────────────────────────────────
+  - id: dark-100
+    name: Dark 100
+    value: "#26324B"
+    description: Default ink — body text on light surfaces.
+  - id: dark-80
+    name: Dark 80
+    value: "#546FA6"
+    description: Secondary ink — hints, captions, metadata.
+  - id: dark-60
+    name: Dark 60
+    value: "#99AACC"
+    description: Tertiary ink — disabled text, quiet labels.
+
+  # ─── Neutrals (blue-tinted) ─────────────────────────────────────
+  - id: neutral-180
+    name: Neutral 180
+    value: "#6C85D1"
+    description: Strongest neutral.
+  - id: neutral-160
+    name: Neutral 160
+    value: "#7F95D7"
+    description: Strong neutral.
+  - id: neutral-140
+    name: Neutral 140
+    value: "#92A5DD"
+    description: Mid-strong neutral.
+  - id: neutral-120
+    name: Neutral 120
+    value: "#A6B5E3"
+    description: Mid neutral.
+  - id: neutral-100
+    name: Neutral 100
+    value: "#B9C5E9"
+    description: Default neutral — borders, dividers on elevated surfaces.
+  - id: neutral-80
+    name: Neutral 80
+    value: "#CDD5EF"
+    description: Lighter neutral.
+  - id: neutral-60
+    name: Neutral 60
+    value: "#E0E5F5"
+    description: Pale neutral.
+  - id: neutral-40
+    name: Neutral 40
+    value: "#F3F5FB"
+    description: Very pale neutral — surface background.
+  - id: neutral-20
+    name: Neutral 20
+    value: "#F8F9FD"
+    description: Palest neutral — page background tint.
+
+  # ─── Status / feedback ──────────────────────────────────────────
+  - id: info
+    name: Info
+    value: "#3860ED"
+    description: Info colour — identical to Primary 100.
+  - id: success
+    name: Success
+    value: "#24A148"
+    description: Success / confirmation colour.
+  - id: warning
+    name: Warning
+    value: "#F39811"
+    description: Warning colour.
+  - id: error
+    name: Error
+    value: "#DA1E28"
+    description: Error / destructive colour.
+
+  # ─── Foundations ────────────────────────────────────────────────
+  - id: background
+    name: Background
+    value: "#FCFCFC"
+    description: Default page background — near-white.
+  - id: white
+    name: White
+    value: "#FFFFFF"
+    description: True white — used for elevated surfaces.
+
+modes:
+  light:
+    roles:
+      background: background
+      surface: neutral-40
+      surface-elevated: white
+      text-primary: dark-100
+      text-secondary: dark-80
+      text-tertiary: dark-60
+      primary: branding
+      primary-hover: primary-140
+      accent: secondary-100
+      accent-hover: secondary-140
+      warning: warning
+      warning-hover: secondary-180
+      error: error
+      success: success
+      border: neutral-100
+
+  dark:
+    # ECL does not publish a canonical dark theme; this mapping is a
+    # documented inversion using Primary 180 (#051036) as the deep
+    # navy canvas and Neutral 60 as the highest-emphasis ink, with
+    # the Primary scale flipped so the lighter Primary 60/80 carry
+    # the interactive role against the dark canvas.
+    roles:
+      background: primary-180
+      surface: primary-160
+      surface-elevated: primary-140
+      text-primary: neutral-60
+      text-secondary: neutral-100
+      text-tertiary: neutral-140
+      primary: primary-60
+      primary-hover: primary-40
+      accent: secondary-100
+      accent-hover: secondary-80
+      warning: warning
+      warning-hover: secondary-120
+      error: error
+      success: success
+      border: primary-140

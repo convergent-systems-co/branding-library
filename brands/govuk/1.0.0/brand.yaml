@@ -1,0 +1,233 @@
+id: govuk
+version: 1.0.0
+name: GOV.UK Design System
+description: >
+  GOV.UK is the unified service-delivery surface for UK central
+  government, maintained by the Government Digital Service (GDS).
+  The brand is austere by design: GOV.UK Black (#0B0C0C) ink on a
+  white or pale-blue (#F4F8FB) template, GOV.UK Blue (#1D70B8) for
+  links and the brand stripe, and a signature GOV.UK Yellow
+  (#FFDD00) focus indicator that is a non-negotiable accessibility
+  affordance across every form, button, and link on every central
+  government service. Typography on the live GOV.UK estate is GDS
+  Transport (a proprietary GDS-commissioned typeface descended
+  from the Department for Transport's road-signage face); this
+  atom substitutes Inter as the open-source rendering proxy and
+  documents the substitution.
+
+tags: [govuk, gds, government, civic, design-system, light-first, accessibility]
+
+provenance:
+  source: https://design-system.service.gov.uk/styles/colour/
+  license: MIT (code) / Open Government Licence v3.0 (content)
+  attribution: >
+    GOV.UK Design System, maintained by the Government Digital
+    Service (Cabinet Office, Crown copyright). govuk-frontend code
+    MIT-licensed; design-system guidance content under the Open
+    Government Licence v3.0. "GOV.UK," the GOV.UK logotype, and
+    GDS Transport are reserved — GDS Transport in particular is a
+    proprietary GDS-commissioned typeface and is NOT publicly
+    redistributable. Use of the GOV.UK name and logotype is
+    restricted to UK central-government services.
+  importedDate: 2026-05-19
+  notes: >
+    Typography substitution: GDS Transport is proprietary and is
+    not present in this catalogue's fonts/ directory. This brand
+    references inter@1 as the open-source heading/body face and
+    roboto-mono@1 for code. Consumers shipping an actual UK
+    central-government service MUST license and use GDS Transport
+    via govuk-frontend's distribution; this atom serves consumers
+    rendering GOV.UK-styled comparators, mock-ups, or third-party
+    documentation where Transport licensing does not apply.
+
+references:
+  palette: govuk@1
+  fonts:
+    heading: inter@1
+    body: inter@1
+    mono: roboto-mono@1
+
+roles:
+  colors:
+    # GOV.UK's identity surface is the white body-background with
+    # GOV.UK Black ink; the brand stripe across the top of every
+    # page is rendered in GOV.UK Black, not blue, and the link
+    # blue carries the "interactive" brand voice underneath.
+    identity: body-background
+    on-identity: text
+
+    primary: brand
+    primary-hover: link-hover
+    accent: focus
+    accent-hover: focus
+    mark: text
+    success: success
+    warning: web-orange
+    error: error
+    text-primary-light: text
+    text-primary-dark: body-background
+    background-light: body-background
+    background-dark: text
+    surface-light: template-background
+    surface-dark: text
+    text-secondary-light: secondary-text
+    text-tertiary-light: secondary-text
+    border-light: border
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: roles.colors.accent
+    allowed:
+      - focus
+    forbidden:
+      - brand
+      - error
+      - success
+      - web-orange
+      - web-purple
+    severity: error
+    rationale: >
+      GOV.UK Yellow (#FFDD00) is the documented focus indicator
+      across every central government service surface, paired
+      with GOV.UK Black ink and an accompanying focus-bottom
+      border. Substituting the brand blue or any other hue for
+      the focus state breaks visual parity with the rest of
+      GOV.UK and fails the system's keyboard-accessibility
+      contract (WCAG 2.1 Success Criterion 2.4.7).
+
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - brand
+      - link
+    forbidden:
+      - web-magenta
+      - web-purple
+      - web-orange
+      - web-teal
+    severity: error
+    rationale: >
+      GOV.UK Blue (#1D70B8) is the documented link / brand
+      colour. The other "web palette" hues exist for chart,
+      illustration, and category-distinction use and MUST NOT
+      stand in for the primary link role — users navigating
+      GOV.UK rely on blue-means-link recognition built up
+      across thousands of service pages.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      GOV.UK targets WCAG 2.1 Level AA at minimum across every
+      central-government service, in line with the Public Sector
+      Bodies Accessibility Regulations 2018. GOV.UK Black
+      (#0B0C0C) on white clears AA at ~19:1; on the pale-blue
+      template (#F4F8FB) it clears AA at ~18:1.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "2.4.7"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 2.4.7 (Focus Visible) — Level
+      AA. The signature GOV.UK Yellow focus state exists
+      specifically to satisfy this criterion. Any GOV.UK-styled
+      consumer that suppresses or substitutes focus indicators
+      fails the regulation that drove the focus state's
+      existence.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - gradient-fill
+      - outlined
+      - tilted
+      - on-busy-photo
+    severity: error
+    rationale: >
+      The GOV.UK logotype is Crown copyright and its use is
+      restricted to UK central-government services. The mark
+      MUST render in its supplied form (black wordmark on a
+      white field, or white on the GOV.UK Black header bar)
+      with no decorative treatment. Non-government consumers
+      of this brand atom should substitute their own
+      identifier rather than alter the GOV.UK mark.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["400", "700"]
+    severity: warning
+    rationale: >
+      GDS Transport, the live GOV.UK heading face, ships in two
+      weights only (Light/Regular and Bold) and the published
+      GOV.UK type ramp uses Regular and Bold exclusively.
+      Constraining the substitute (Inter) to the same two
+      weights preserves the typographic restraint of the live
+      service surface.
+
+  - type: fontPairing
+    target: typography.display
+    requires: prose
+    minSizeRatio: 1.5
+    severity: error
+    rationale: >
+      GOV.UK's published type scale steps from 16px body up
+      through 19px lede, 24px small heading, 36px medium
+      heading, and 48px+ display heading — every step preserving
+      at least a 1.5× ratio against the 16px body anchor.
+      Display-at-body-size collapses the hierarchy that
+      service-page scannability depends on.
+
+  - type: contextRestriction
+    target: roles.colors.error
+    allowedContexts:
+      - error-state
+      - destructive-action
+      - validation-failure
+    forbiddenContexts:
+      - confirmation
+      - completion
+      - data-viz-positive
+    severity: error
+    rationale: >
+      GOV.UK Red (#CA3535) is reserved for the error-summary
+      and validation patterns. Reusing it for confirmation
+      inverts the semantic contract that users navigating a
+      GOV.UK form rely on — the red border / red link inside
+      an error summary is the documented signal that something
+      needs the user's attention before submission.
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    pairsWith:
+      - body-background
+      - template-background
+      - text
+    doesNotPairWith:
+      - web-purple
+      - web-magenta
+      - web-teal
+      - web-orange
+    severity: recommendation
+    rationale: >
+      GOV.UK Blue reads cleanly against the white body or pale
+      template background; placing it adjacent to the other
+      web-palette hues at equal weight produces chromatic
+      competition that fights GOV.UK's restrained, hierarchy-
+      first voice. The web-palette colours are for charts and
+      illustrations, where they sit inside a frame and are
+      legibly distinct without competing with brand blue.

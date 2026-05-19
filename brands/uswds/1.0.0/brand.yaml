@@ -1,0 +1,223 @@
+id: uswds
+version: 1.0.0
+name: U.S. Web Design System
+description: >
+  The U.S. Web Design System (USWDS) is the official design system
+  for U.S. federal government websites, maintained by the General
+  Services Administration's Technology Transformation Services.
+  Adoption is widespread across executive-branch domains. The
+  default "uswds" theme uses Blue 60v (#005EA2) as primary, Red 50
+  (#D83933) as secondary, Cyan 30v (#00BDE3) as accent-cool, and
+  Orange 30v (#FA9441) as accent-warm — all sourced from the 24-hue
+  USWDS system color palette already present in this catalogue.
+  Typography pairs Public Sans (the system's default open-source
+  face commissioned by GSA) with Source Sans Pro and a Roboto Mono
+  fallback for code. Accessibility (WCAG 2.1 AA) is non-negotiable.
+
+tags: [uswds, government, federal, public-domain, design-system, civic, light-first]
+
+provenance:
+  source: https://designsystem.digital.gov/design-tokens/color/theme-tokens/
+  license: CC0-1.0
+  attribution: >
+    U.S. Web Design System (USWDS), released by the U.S. General
+    Services Administration to the public domain (CC0-1.0). Theme
+    token defaults captured from the published theme-color-tokens
+    reference; system color values mirrored from the uswds-core
+    Sass partials. "U.S. Web Design System," "USWDS," the federal
+    word marks, and U.S. government insignia are not implied to be
+    licensed CC0 — only the design-system code and tokens are.
+  importedDate: 2026-05-19
+  notes: >
+    This brand atom REFERENCES the existing `uswds@1` palette atom
+    rather than creating a duplicate. Theme-token defaults from the
+    published reference resolve as follows: primary = blue-vivid-60
+    (#005EA2), secondary = red-50 (#D83933), accent-cool =
+    cyan-vivid-30 (#00BDE3), accent-warm = orange-vivid-30
+    (#FA9441), base-darkest / base-ink = gray-90 (#1B1B1B). All
+    referenced swatch IDs exist in palettes/uswds@1.
+
+references:
+  palette: uswds@1
+  fonts:
+    heading: public-sans@1
+    body: source-sans-3@1
+    mono: roboto-mono@1
+
+roles:
+  colors:
+    # USWDS is light-first; federal sites overwhelmingly ship the
+    # default light theme with white canvas and near-black ink. The
+    # identity surface IS that white-on-ink pairing.
+    identity: gray-1
+    on-identity: gray-90
+
+    primary: blue-vivid-60
+    primary-hover: blue-vivid-70
+    accent: cyan-vivid-30
+    accent-hover: cyan-vivid-40
+    mark: blue-vivid-60
+    success: green-50
+    warning: yellow-30
+    error: red-50
+    text-primary-light: gray-90
+    text-primary-dark: gray-1
+    background-light: gray-1
+    background-dark: gray-90
+    surface-light: gray-3
+    surface-dark: gray-80
+    text-secondary-light: gray-70
+    text-tertiary-light: gray-50
+    border-light: gray-30
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - blue-vivid-60
+      - blue-vivid-70
+    forbidden:
+      - red-50
+      - red-vivid-50
+      - green-50
+      - violet-50
+      - magenta-50
+    severity: error
+    rationale: >
+      USWDS's default "uswds" theme resolves the `primary` token to
+      blue-vivid-60 (#005EA2) and `primary-vivid` to blue-warm-60v
+      (#0050D8), with blue-warm-70v (#1A4480) and blue-warm-80v
+      (#162E51) as the dark variants. The secondary slot is red-50,
+      but red MUST NOT stand in for the primary interactive role —
+      doing so violates the documented theme contract that federal
+      consumers rely on for affordance and link recognition.
+
+  - type: colorChoice
+    target: roles.colors.error
+    allowed:
+      - red-50
+      - red-vivid-50
+    forbidden:
+      - orange-vivid-30
+      - yellow-30
+      - magenta-50
+    severity: error
+    rationale: >
+      USWDS Red 50 (#D83933) is the documented danger / error color
+      across the system. Orange and yellow are reserved for
+      accent-warm and warning roles respectively; conflating them
+      with destructive error states undermines the WCAG-grounded
+      affordance hierarchy USWDS encodes.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      USWDS's published accessibility commitment targets WCAG 2.1
+      Level AA across all components. Gray 90 (#1B1B1B) on Gray 1
+      (#FCFCFC) clears AA at ~17:1, satisfying the federal Section
+      508 accessibility baseline that USWDS exists to make routine.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) — Level
+      AA. Federal websites are subject to Section 508 of the
+      Rehabilitation Act and OMB M-23-22 implementing guidance;
+      USWDS is the standardized path to compliance and all
+      consumers of this brand atom MUST meet AA at minimum.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - gradient-fill
+      - outlined
+      - on-busy-photo
+    severity: error
+    rationale: >
+      U.S. government insignia (agency seals, the great seal,
+      department wordmarks) are subject to federal statute and
+      agency-specific usage policy. The USWDS visual-identity
+      guidance prohibits decorative treatment of official marks;
+      consumers ship the official mark unaltered or substitute a
+      site-specific identifier rendered in the system's theme
+      colors only.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["300", "400", "500", "600", "700"]
+    severity: warning
+    rationale: >
+      Public Sans, USWDS's commissioned default heading face,
+      ships in Thin, ExtraLight, Light (300), Regular (400),
+      Medium (500), SemiBold (600), Bold (700), ExtraBold, and
+      Black. USWDS's documented type ramp anchors at Regular,
+      Medium, SemiBold, and Bold for headings — Thin/ExtraLight
+      and Black/ExtraBold cuts are not part of the documented
+      scale and should not be used for primary heading roles.
+
+  - type: fontPairing
+    target: typography.display
+    requires: prose
+    minSizeRatio: 1.5
+    severity: error
+    rationale: >
+      USWDS's documented type scale maintains a clear hierarchy
+      between display and body sizes (heading-xl through
+      heading-3xs, with body anchored at the 16-pixel base).
+      Display-at-body-size collapses the scannability USWDS's
+      component patterns rely on for landing pages, alerts,
+      and form-flow surfaces.
+
+  - type: contextRestriction
+    target: roles.colors.success
+    allowedContexts:
+      - confirmation
+      - completion
+      - data-viz-positive
+    forbiddenContexts:
+      - error-state
+      - destructive-action
+    severity: error
+    rationale: >
+      USWDS Green 50 (#607F35) is the documented success color
+      used by the Alert and Status components. Inverting its
+      meaning (success for failure) conflicts with the role
+      contract federal product teams and screen-reader users
+      rely on for assistive-tech announcement parity.
+
+  - type: compositionConstraint
+    target: roles.colors.mark
+    pairsWith:
+      - gray-1
+      - gray-3
+      - gray-90
+    doesNotPairWith:
+      - red-50
+      - orange-vivid-30
+      - yellow-30
+      - magenta-50
+    severity: recommendation
+    rationale: >
+      Blue 60v reads as institutional federal-identity blue
+      against the white canvas or the near-black ink surface.
+      Placing it adjacent to red-50 (secondary), orange-vivid-30
+      (accent-warm), yellow-30 (warning), or magenta-50 at equal
+      weight produces chromatic competition that fights the
+      restrained civic-government voice USWDS targets.

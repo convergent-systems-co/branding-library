@@ -1,0 +1,243 @@
+id: eudi
+version: 1.0.0
+name: European Digital Identity
+description: >
+  The European Digital Identity (EUDI) Wallet is a flagship
+  European Commission programme that gives EU citizens, residents,
+  and businesses a single digital wallet for authenticating
+  identity, storing credentials (diplomas, driving licences,
+  prescriptions, tickets), and creating qualified electronic
+  signatures across borders. The visual identity inherits the
+  institutional Europa Component Library (ECL) — Branding blue
+  (#004494) as the European Commission identity colour, a deep
+  Primary blue scale for interaction, a warm Secondary gold scale
+  for accents (the chromatic echo of the EU emblem stars), and the
+  ECL status set for feedback. Typography on EC digital surfaces
+  is Arial; this atom substitutes Public Sans (heading) and Manrope
+  (body) as the open-source rendering proxies and documents the
+  substitution.
+
+tags: [eudi, european-commission, ecl, europa, government, civic, digital-identity, light-first]
+
+provenance:
+  source: https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/european-digital-identity_en
+  license: Proprietary — © European Union
+  attribution: >
+    European Digital Identity (EUDI) programme, European Commission.
+    The EUDI Wallet is published by the Commission's
+    Directorate-General for Communications Networks, Content and
+    Technology (DG CONNECT) and is rendered through the Europa
+    Component Library (ECL) institutional identity. "European
+    Union," the EU emblem, and the European Commission marks are
+    reserved.
+  importedDate: 2026-05-19
+  notes: >
+    Typography substitution: ECL specifies Arial exclusively for
+    EC digital surfaces (font-family: Arial, sans-serif). Arial is
+    proprietary to Monotype and is not present in this catalogue's
+    fonts/ directory. This brand references public-sans@1 as the
+    open-source heading face (the closest grotesque-sans match
+    commissioned for U.S. government digital use) and manrope@1
+    as the body face, with roboto-mono@1 for code. Consumers
+    targeting an actual EC-licensed surface should use Arial via
+    their platform's stock distribution.
+
+    The EUDI programme inherits ECL identity rather than publishing
+    a separate brand; this atom maps ECL Branding blue to the
+    `identity` and `mark` roles and ECL Primary 100 to the default
+    interactive primary, with the warm Secondary scale carrying the
+    accent role.
+
+references:
+  palette: eudi@1
+  fonts:
+    heading: public-sans@1
+    body: manrope@1
+    mono: roboto-mono@1
+
+roles:
+  colors:
+    # The EUDI Wallet pages on commission.europa.eu render the EC
+    # institutional identity: white canvas, Branding blue header
+    # treatment, Dark 100 (#26324B) ink. The identity surface is
+    # the white canvas paired with Dark 100 text.
+    identity: white
+    on-identity: dark-100
+
+    primary: branding
+    primary-hover: primary-140
+    accent: secondary-100
+    accent-hover: secondary-140
+    mark: branding
+    success: success
+    warning: warning
+    error: error
+    text-primary-light: dark-100
+    text-primary-dark: neutral-60
+    background-light: background
+    background-dark: primary-180
+    surface-light: neutral-40
+    surface-dark: primary-160
+    text-secondary-light: dark-80
+    text-tertiary-light: dark-60
+    border-light: neutral-100
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - branding
+      - primary-100
+      - primary-140
+    forbidden:
+      - secondary-100
+      - error
+      - success
+      - warning
+    severity: error
+    rationale: >
+      The European Commission's institutional identity blue is
+      Branding (#004494), with ECL Primary 100 (#3860ED) carrying
+      the default interactive role inside the component library.
+      The warm Secondary scale, the success/warning/error status
+      hues, and the Neutral scale all have their own roles —
+      substituting any of them for the primary action colour
+      breaks the institutional identity that EU citizens
+      recognise as "European Commission."
+
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - branding
+    forbidden:
+      - primary-100
+      - primary-140
+      - secondary-100
+      - dark-100
+    severity: error
+    rationale: >
+      The EC identity mark renders in Branding blue (#004494)
+      specifically — not the ECL Primary 100 used for interactive
+      controls and not Dark 100 used for ink. The mark colour and
+      the interaction colour are intentionally distinct so that
+      brand presence is visually separable from clickable
+      affordance.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      ECL components are documented to target WCAG 2.1 Level AA
+      across European Commission digital surfaces, in line with
+      Directive (EU) 2016/2102 on the accessibility of public-
+      sector websites and mobile applications. Dark 100
+      (#26324B) on the near-white background (#FCFCFC) clears
+      AA at ~12:1.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) —
+      Level AA. The EUDI Wallet, as a Commission service
+      programme rolling out to every Member State by end-2026,
+      is in scope of the EU Public Sector Accessibility
+      Directive; AA conformance is the regulatory floor for
+      every consuming Member State implementation.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - gradient-fill
+      - outlined
+      - on-busy-photo
+      - tilted
+    severity: error
+    rationale: >
+      The European emblem (twelve gold stars on Reflex Blue) is
+      governed by EU interinstitutional rules and the European
+      Commission emblem-use guidelines. The emblem MUST render
+      in its supplied proportions, in its supplied colours, on a
+      clear field. Recolouring, distortion, rotation, or
+      placement on a busy photographic background is prohibited.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["400", "700"]
+    severity: warning
+    rationale: >
+      ECL's published typography reference specifies Arial at
+      weight 400 (Regular) for all heading levels except Heading
+      6, which uses 700 (Bold). Constraining the substitute
+      (Public Sans) to Regular and Bold preserves the typographic
+      flatness of the EC institutional surface — extra display
+      weights would introduce hierarchy ECL doesn't itself use.
+
+  - type: fontPairing
+    target: typography.display
+    requires: prose
+    minSizeRatio: 1.5
+    severity: error
+    rationale: >
+      ECL's documented type scale steps from a 16px body anchor
+      through 20px lede, 24px small heading, and up to 52px
+      Heading 1 desktop. Every step preserves at least a 1.5×
+      ratio against the body anchor; collapsing display to body
+      size destroys the scannability ECL components rely on for
+      multilingual readability across 24 official EU languages.
+
+  - type: contextRestriction
+    target: roles.colors.error
+    allowedContexts:
+      - error-state
+      - destructive-action
+      - validation-failure
+    forbiddenContexts:
+      - confirmation
+      - completion
+      - data-viz-positive
+    severity: error
+    rationale: >
+      ECL Error (#DA1E28) is the documented destructive /
+      validation-failure colour. Reusing it for confirmation
+      inverts the semantic contract built into ECL's Banner,
+      Notification, and Form-validation components — components
+      that EUDI Wallet implementations across 27+ Member States
+      compose with directly.
+
+  - type: compositionConstraint
+    target: roles.colors.mark
+    pairsWith:
+      - white
+      - background
+      - neutral-40
+      - primary-180
+    doesNotPairWith:
+      - secondary-100
+      - error
+      - warning
+      - web-magenta
+    severity: recommendation
+    rationale: >
+      Branding blue reads as institutional EC identity against
+      the white canvas, the near-white background, or the deep
+      Primary 180 navy. Placing it adjacent to the Secondary
+      gold, Warning orange, or Error red at equal weight
+      produces chromatic competition that fights the measured
+      civic voice EUDI inherits from the Commission's
+      institutional identity.
