@@ -1,0 +1,113 @@
+kind: palette
+id: npm
+version: 1.0.0
+name: npm
+description: >
+  npm brand palette anchored on npm Red (#CB3837) — the fill of
+  the iconic red-square mark that wraps the lowercase "npm"
+  wordmark — paired with black, white, and a quiet grey
+  supporting scale. The registry's visual identity is
+  developer-direct: a red rectangle, a lowercase wordmark, and
+  no decoration. npm is owned by GitHub (a Microsoft
+  subsidiary) but retains a distinct mark from both parents.
+
+tags: [npm, registry, javascript, nodejs, package-manager, brand, red]
+
+provenance:
+  source: https://raw.githubusercontent.com/simple-icons/simple-icons/develop/data/simple-icons.json
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    "npm" and the npm logo are trademarks of npm, Inc., a
+    subsidiary of GitHub (Microsoft). Brand-atoms' encoding of
+    npm Red cross-references the simple-icons project's
+    published canonical value (title: "npm", hex: "CB3837")
+    for the npm wordmark mark.
+  importedDate: 2026-05-19
+  notes: >
+    The npmjs.com site does not publish a public brand-color
+    page; the #CB3837 value is the long-stable canonical for
+    the npm red-square mark and is the value carried by the
+    simple-icons project. The lowercase wordmark inside a red
+    rectangle is the entire mark — no separate icon, no
+    monogram. The npm registry is light-first; this palette
+    encodes a sensible dark-mode inversion for surfaces that
+    need it.
+
+swatches:
+  - id: npm-red
+    name: npm Red
+    value: "#CB3837"
+    description: >
+      Primary brand color — the fill of the red-square npm mark.
+      Source: simple-icons canonical entry for "npm".
+  - id: npm-red-dark
+    name: npm Red Dark
+    value: "#A02B2A"
+    description: Pressed / active variant of npm Red for hover states.
+  - id: npm-black
+    name: npm Black
+    value: "#231F20"
+    description: >
+      Wordmark color when rendered outside the red square; the
+      "npm" lowercase letterform when set in solid color.
+  - id: npm-charcoal
+    name: npm Charcoal
+    value: "#2D2A2B"
+    description: Elevated dark surface for cards and panels.
+  - id: npm-slate
+    name: npm Slate
+    value: "#4A4344"
+    description: Body text on light canvas; secondary copy.
+  - id: npm-gray
+    name: npm Gray
+    value: "#8C8385"
+    description: Tertiary text and quiet UI; muted divider tone.
+  - id: npm-light-gray
+    name: npm Light Gray
+    value: "#E0DEDF"
+    description: Hairline borders on light canvas.
+  - id: npm-off-white
+    name: npm Off-White
+    value: "#FAF8F8"
+    description: Subtle layered surface on light canvas.
+  - id: npm-white
+    name: npm White
+    value: "#FFFFFF"
+    description: Page canvas in light mode; lowercase wordmark fill inside the red square.
+
+modes:
+  light:
+    roles:
+      background: npm-white
+      surface: npm-off-white
+      surface-elevated: npm-white
+      text-primary: npm-black
+      text-secondary: npm-slate
+      text-tertiary: npm-gray
+      primary: npm-red
+      primary-hover: npm-red-dark
+      accent: npm-red
+      accent-hover: npm-red-dark
+      warning: npm-red
+      warning-hover: npm-red-dark
+      error: npm-red-dark
+      success: npm-slate
+      border: npm-light-gray
+
+  dark:
+    roles:
+      background: npm-black
+      surface: npm-charcoal
+      surface-elevated: npm-charcoal
+      text-primary: npm-white
+      text-secondary: npm-light-gray
+      text-tertiary: npm-gray
+      primary: npm-red
+      primary-hover: npm-red-dark
+      accent: npm-red
+      accent-hover: npm-red-dark
+      warning: npm-red
+      warning-hover: npm-red-dark
+      error: npm-red-dark
+      success: npm-light-gray
+      border: npm-slate

@@ -1,0 +1,124 @@
+kind: palette
+id: eclipse
+version: 1.0.0
+name: Eclipse Foundation
+description: >
+  Eclipse Foundation brand palette anchored on Eclipse Orange
+  (#F06C02) — the fill of the sun-arc element in the modern
+  Eclipse Foundation logo — paired with a near-black wordmark
+  on a clean white canvas. The Foundation stewards the Eclipse
+  IDE, Jakarta EE, Adoptium (Temurin), Mosquitto, Vert.x,
+  MicroProfile, and a broad portfolio of working groups
+  spanning enterprise, embedded, and research open-source.
+
+tags: [eclipse, foundation, ide, jakarta-ee, open-source, brand, orange]
+
+provenance:
+  source: https://www.eclipse.org/org/documents/logo_guidelines.php
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Eclipse, the Eclipse Foundation logo, the Eclipse IDE logo,
+    "Built on Eclipse", "Eclipse Ready", and associated project
+    marks are trademarks of the Eclipse Foundation AISBL. The
+    canonical Eclipse Orange (#F06C02) is the resolved fill of
+    the .st0 class in the official Eclipse Foundation
+    white-orange SVG distributed at
+    eclipse.org/eclipse.org-common/themes/solstice/public/images/logo/.
+    Eclipse marks themselves are not redistributed by this
+    atom.
+  importedDate: 2026-05-19
+  notes: >
+    The Eclipse Foundation Logo Guidelines page documents the
+    monochromatic, color, and reversed-color variants but does
+    not publish hex values in prose. The #F06C02 orange is the
+    resolved fill in the official "white-orange" Eclipse
+    Foundation SVG (a confirming #F7941E orange also appears
+    in the Solstice theme's warning-button CSS class on
+    eclipse.org). The wordmark is rendered in black on a white
+    canvas in the modern 2024-refresh expression; this palette
+    encodes both the light-first surface and a sensible
+    dark-mode inversion.
+
+swatches:
+  - id: eclipse-orange
+    name: Eclipse Orange
+    value: "#F06C02"
+    description: >
+      Primary brand color — the sun-arc fill in the Eclipse
+      Foundation logo. Resolved from the .st0 class of the
+      official Eclipse Foundation white-orange SVG.
+  - id: eclipse-orange-dark
+    name: Eclipse Orange Dark
+    value: "#C75300"
+    description: Pressed / active variant of Eclipse Orange for hover states.
+  - id: eclipse-amber
+    name: Eclipse Amber
+    value: "#F7941E"
+    description: >
+      Warmer secondary orange seen in the Solstice theme's
+      warning button class (.btn-warning) on eclipse.org.
+  - id: eclipse-black
+    name: Eclipse Black
+    value: "#111418"
+    description: Wordmark color on light canvas; dark-mode page canvas.
+  - id: eclipse-charcoal
+    name: Eclipse Charcoal
+    value: "#1F252E"
+    description: Elevated dark surface for cards and panels.
+  - id: eclipse-slate
+    name: Eclipse Slate
+    value: "#3D4654"
+    description: Body text on light canvas; secondary copy.
+  - id: eclipse-gray
+    name: Eclipse Gray
+    value: "#6B7280"
+    description: Tertiary text and quiet UI.
+  - id: eclipse-light-gray
+    name: Eclipse Light Gray
+    value: "#D6DAE0"
+    description: Hairline borders on light canvas.
+  - id: eclipse-off-white
+    name: Eclipse Off-White
+    value: "#F5F6F8"
+    description: Subtle layered surface on light canvas.
+  - id: eclipse-white
+    name: Eclipse White
+    value: "#FFFFFF"
+    description: Page canvas in light mode.
+
+modes:
+  light:
+    roles:
+      background: eclipse-white
+      surface: eclipse-off-white
+      surface-elevated: eclipse-white
+      text-primary: eclipse-black
+      text-secondary: eclipse-slate
+      text-tertiary: eclipse-gray
+      primary: eclipse-black
+      primary-hover: eclipse-orange-dark
+      accent: eclipse-orange
+      accent-hover: eclipse-orange-dark
+      warning: eclipse-amber
+      warning-hover: eclipse-orange
+      error: eclipse-orange-dark
+      success: eclipse-slate
+      border: eclipse-light-gray
+
+  dark:
+    roles:
+      background: eclipse-black
+      surface: eclipse-charcoal
+      surface-elevated: eclipse-charcoal
+      text-primary: eclipse-white
+      text-secondary: eclipse-light-gray
+      text-tertiary: eclipse-orange
+      primary: eclipse-orange
+      primary-hover: eclipse-amber
+      accent: eclipse-orange
+      accent-hover: eclipse-amber
+      warning: eclipse-amber
+      warning-hover: eclipse-orange
+      error: eclipse-orange-dark
+      success: eclipse-light-gray
+      border: eclipse-slate

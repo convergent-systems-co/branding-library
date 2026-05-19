@@ -1,0 +1,133 @@
+kind: palette
+id: linux-foundation
+version: 1.0.0
+name: The Linux Foundation
+description: >
+  The Linux Foundation brand palette is anchored on a deep
+  corporate blue scale — LF Dark Blue (#003778), LF Darker Blue
+  (#003764), and LF Bright Blue (#0094FF) — captured directly
+  from the resolved fills of the official LF stacked-color
+  logo distributed via linuxfoundation.org. The Foundation's
+  brand voice is institutional and ecosystem-scaled: stewardship
+  of Linux, Kubernetes, CNCF, OpenJS, and dozens of other
+  industry-spanning open-source projects.
+
+tags: [linux-foundation, lf, foundation, open-source, brand, blue, institutional]
+
+provenance:
+  source: https://www.linuxfoundation.org/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    The Linux Foundation, the Linux Foundation logo, and
+    associated marks are trademarks of The Linux Foundation,
+    a 501(c)(6) Delaware nonprofit. Brand colors documented
+    here are the resolved fill values from the canonical LF
+    stacked-color SVG hosted at
+    linuxfoundation.org/hubfs/lf-stacked-color.svg (.st0
+    #003778, .st1 #003764, .st2 #0094FF). LF marks themselves
+    are not redistributed by this atom.
+  importedDate: 2026-05-19
+  notes: >
+    The Linux Foundation brand-guidelines page does not publish
+    hex values in prose; the canonical values are the resolved
+    fill colors in the official LF stacked-color SVG. The
+    Foundation's brand expression is dark-blue-first on a white
+    canvas; this palette also encodes a sensible dark-mode
+    inversion (deep navy canvas, LF Bright Blue accent
+    preserved).
+
+swatches:
+  - id: lf-dark-blue
+    name: LF Dark Blue
+    value: "#003778"
+    description: >
+      Primary brand color — the dark blue of the Linux Foundation
+      wordmark. Resolved from the .st0 class in the official LF
+      stacked-color SVG.
+  - id: lf-darker-blue
+    name: LF Darker Blue
+    value: "#003764"
+    description: >
+      Deeper navy used as the shadow / depth accent in the
+      stacked-color logo. Resolved from the .st1 class.
+  - id: lf-bright-blue
+    name: LF Bright Blue
+    value: "#0094FF"
+    description: >
+      The bright cyan-blue accent used for the linking arc and
+      hover highlights. Resolved from the .st2 class.
+  - id: lf-blue-hover
+    name: LF Blue Hover
+    value: "#005FB8"
+    description: >
+      Mid-blue pressed / active variant between LF Dark Blue
+      and LF Bright Blue.
+  - id: lf-black
+    name: LF Black
+    value: "#0B1320"
+    description: Dark-mode page canvas; deep navy near-black.
+  - id: lf-charcoal
+    name: LF Charcoal
+    value: "#1A2434"
+    description: Elevated dark surface for cards and panels.
+  - id: lf-gray
+    name: LF Gray
+    value: "#5D6573"
+    description: Mid neutral for body text and quiet UI.
+  - id: lf-light-gray
+    name: LF Light Gray
+    value: "#D6DAE0"
+    description: Hairline borders on light canvas.
+  - id: lf-off-white
+    name: LF Off-White
+    value: "#F4F5F7"
+    description: Subtle layered surface on light canvas.
+  - id: lf-white
+    name: LF White
+    value: "#FFFFFF"
+    description: Page canvas in light mode.
+  - id: lf-warning
+    name: LF Warning Amber
+    value: "#E0A100"
+    description: Status warning color for advisories.
+  - id: lf-error
+    name: LF Error Red
+    value: "#C03030"
+    description: Status error color.
+
+modes:
+  light:
+    roles:
+      background: lf-white
+      surface: lf-off-white
+      surface-elevated: lf-white
+      text-primary: lf-dark-blue
+      text-secondary: lf-gray
+      text-tertiary: lf-blue-hover
+      primary: lf-dark-blue
+      primary-hover: lf-darker-blue
+      accent: lf-bright-blue
+      accent-hover: lf-blue-hover
+      warning: lf-warning
+      warning-hover: lf-bright-blue
+      error: lf-error
+      success: lf-bright-blue
+      border: lf-light-gray
+
+  dark:
+    roles:
+      background: lf-black
+      surface: lf-charcoal
+      surface-elevated: lf-charcoal
+      text-primary: lf-white
+      text-secondary: lf-light-gray
+      text-tertiary: lf-bright-blue
+      primary: lf-bright-blue
+      primary-hover: lf-blue-hover
+      accent: lf-bright-blue
+      accent-hover: lf-blue-hover
+      warning: lf-warning
+      warning-hover: lf-bright-blue
+      error: lf-error
+      success: lf-bright-blue
+      border: lf-gray

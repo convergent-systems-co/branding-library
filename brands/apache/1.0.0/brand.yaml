@@ -1,0 +1,195 @@
+id: apache
+version: 1.0.0
+name: Apache Software Foundation
+description: >
+  The Apache Software Foundation (ASF) is the vendor-neutral, US
+  501(c)(3) home of the Apache HTTP Server, Tomcat, Kafka, Spark,
+  Cassandra, Lucene, and over three hundred other top-level
+  open-source projects. The brand voice is institutional, careful,
+  and project-first: the Foundation does not market individual
+  projects; it provides the legal, infrastructure, and trademark
+  umbrella under which independent project communities operate.
+  Visually, Apache is restrained — a red feather mark (Apache Red
+  #D22128), a black wordmark, and a quiet grey supporting palette
+  that defers to the project being read about rather than
+  promoting the Foundation itself.
+
+tags: [apache, asf, foundation, open-source, brand, red, institutional]
+
+provenance:
+  source: https://www.apache.org/foundation/marks/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Apache, the Apache feather logo, the names of Apache projects,
+    and associated marks are trademarks of The Apache Software
+    Foundation. Brand-atoms' encoding draws from the ASF
+    Trademark Policy and the canonical Apache Red value
+    (#D22128) carried by the simple-icons project's "Apache"
+    entry, matching the resolved fill in the official ASF
+    feather logo distributed via apache.org/foundation/press/kit/.
+  importedDate: 2026-05-19
+  notes: >
+    The ASF Trademark Policy (apache.org/foundation/marks/) is the
+    primary source for the trademark redistribution rules encoded
+    below. Per that policy: ASF graphic logos are licensed to the
+    public under the Apache License and derivative works are
+    permitted, BUT (1) derivative logos applied to software cannot
+    be "confusingly similar" to the originals, (2) ASF logos
+    cannot be used "in association with other companies' software
+    or related services", and (3) all non-hyperlink uses require
+    "written approval" from the VP, Brand Management. The
+    Foundation does not publish formal brand-color hex values on
+    the marks page; the #D22128 value is the SVG-resolved canonical.
+
+references:
+  palette: apache@1
+  fonts:
+    heading: inter@1
+    body: inter@1
+    mono: source-code-pro@1
+
+roles:
+  colors:
+    identity: apache-red
+    on-identity: apache-white
+    primary: apache-red
+    primary-hover: apache-red-dark
+    accent: apache-red
+    accent-hover: apache-red-dark
+    mark: apache-red
+    background: apache-white
+    surface: apache-off-white
+    text-primary: apache-black
+    text-secondary: apache-slate
+    error: apache-red-dark
+    success: apache-slate
+    border: apache-light-gray
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - apache-red
+    forbidden:
+      - apache-red-dark
+      - apache-black
+      - apache-slate
+      - apache-gray
+    severity: error
+    rationale: >
+      The Apache feather is rendered in Apache Red (#D22128).
+      Substituting a black feather, a darker red, or any other
+      fill changes the canonical Foundation mark and conflicts
+      with the ASF Trademark Policy's requirement that the
+      logo not be presented in a "confusingly similar"
+      derivative form.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - recolored
+      - rotated
+      - stretched
+      - skewed
+      - drop-shadow
+      - gradient-fill
+      - feather-detached-from-wordmark-without-approval
+      - associated-with-non-apache-software
+    severity: error
+    rationale: >
+      The ASF Trademark Policy forbids using Apache marks "in
+      association with other companies' software or related
+      services," and requires written approval from the VP,
+      Brand Management for all non-hyperlink uses. Recoloring,
+      rotation, gradient fills, and other ornamental treatments
+      create confusingly similar derivatives that fall outside
+      the policy's permitted scope.
+
+  - type: contextRestriction
+    target: trademark.use
+    forbiddenContexts:
+      - associated-with-third-party-software
+      - implied-endorsement
+      - non-hyperlink-use-without-approval
+      - product-name-prefix-without-approval
+    severity: error
+    rationale: >
+      The ASF Trademark Policy explicitly forbids using Apache
+      marks alongside non-Apache software, implying ASF
+      endorsement of a product or service, or using the marks
+      in any non-hyperlink context without prior written
+      approval from the VP, Brand Management. Project names
+      (e.g., "Apache Kafka") must follow the ASF's specific
+      naming guidance and cannot be prefixed onto third-party
+      products.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 7.0
+    standard: WCAG-AAA
+    severity: error
+    rationale: >
+      Apache Black (#0E1014) on Apache White exceeds 18:1 —
+      decisively clears WCAG AAA. The Foundation's
+      documentation-first surfaces (apache.org, project sites,
+      mailing-list archives) benefit from the strongest
+      readable contrast.
+
+  - type: contrastRatio
+    target: roles.colors.primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: warning
+    rationale: >
+      Apache Red (#D22128) on Apache White sits around 5.0:1 —
+      clears WCAG AA for body text. Apache Red Dark (#A81920)
+      on White sits around 7.6:1 and clears AAA, making it the
+      preferred fill for small-text interactive elements.
+
+  - type: fontPairing
+    target: typography.heading
+    requires: body
+    minSizeRatio: 1.5
+    severity: recommendation
+    rationale: >
+      ASF project documentation surfaces typically use a single
+      humanist sans for heading and body. Maintain at least a
+      1.5× heading-to-body ratio to preserve hierarchy in
+      long-form release notes, ADR-style design docs, and
+      mailing-list archive pages.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) —
+      Level AA. The Apache Foundation's project-documentation
+      mission makes broad legibility a load-bearing brand
+      attribute.
+
+  - type: compositionConstraint
+    target: roles.colors.identity
+    pairsWith:
+      - apache-white
+      - apache-off-white
+      - apache-black
+    doesNotPairWith:
+      - apache-red-dark
+    severity: recommendation
+    rationale: >
+      Apache Red reads cleanest as a feather on a white or
+      off-white canvas, or reversed on the deep apache-black
+      dark canvas. Placing it directly adjacent to Apache Red
+      Dark muddies the mark; reserve the dark-red variant for
+      hover states and interactive surfaces, not for the
+      feather fill.

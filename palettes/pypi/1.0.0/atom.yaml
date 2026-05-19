@@ -1,0 +1,133 @@
+kind: palette
+id: pypi
+version: 1.0.0
+name: PyPI (Python Package Index)
+description: >
+  PyPI brand palette anchored on PyPI Blue (#3775A9) — the
+  Python-family blue inherited from the PSF logo, paired with
+  Python Yellow (#FFD43B) as the secondary accent and a clean
+  light-grey UI scale. PyPI is a registered trademark of the
+  Python Software Foundation and the "blocks logo" is its
+  distinguishing mark, separate from the two-snake PSF / Python
+  language identity even though both share the blue+yellow
+  color anchor.
+
+tags: [pypi, python, package-manager, psf, registry, brand, blue, yellow]
+
+provenance:
+  source: https://pypi.org/trademarks/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    "PyPI", "Python Package Index", and the blocks logos are
+    registered trademarks of the Python Software Foundation
+    (USPTO #5608450 for "PyPI"; USPTO #5764496 for "Python
+    Package Index"). The PyPI Blue value (#3775A9) is the
+    canonical entry carried by the simple-icons project (title:
+    "PyPI", hex: "3775A9") — matching the broader Python-family
+    blue. Python Yellow (#FFD43B) is the documented PSF logo
+    yellow.
+  importedDate: 2026-05-19
+  notes: >
+    PyPI shares the Python Software Foundation's blue/yellow
+    color anchor (the PSF identity is encoded in the
+    sibling python@1 atom) but maintains a distinct
+    blocks-logo mark with its own USPTO registration. The
+    pypi.org trademarks page states verbatim: "'PyPI', 'Python
+    Package Index', and the blocks logos are registered
+    trademarks of the Python Software Foundation referring to
+    products and services associated with pypi.org. Any other
+    use by any other party is prohibited." This palette
+    encodes the light-first registry surface and a sensible
+    dark-mode inversion.
+
+swatches:
+  - id: pypi-blue
+    name: PyPI Blue
+    value: "#3775A9"
+    description: >
+      Primary brand color — the canonical PyPI/Python-family
+      blue. Source: simple-icons "PyPI" entry, matching the
+      PSF logo's upper-snake blue.
+  - id: pypi-blue-dark
+    name: PyPI Blue Dark
+    value: "#1E415E"
+    description: Deeper navy for hover states; dark-mode tertiary surface.
+  - id: pypi-yellow
+    name: PyPI Yellow
+    value: "#FFD43B"
+    description: >
+      Secondary brand color — the Python-family yellow inherited
+      from the PSF logo's lower-snake fill.
+  - id: pypi-yellow-dark
+    name: PyPI Yellow Dark
+    value: "#FFC331"
+    description: Deeper amber used for hover states on the yellow accent.
+  - id: pypi-black
+    name: PyPI Black
+    value: "#0E1217"
+    description: Dark-mode page canvas.
+  - id: pypi-charcoal
+    name: PyPI Charcoal
+    value: "#1C232C"
+    description: Elevated dark surface for cards and panels.
+  - id: pypi-slate
+    name: PyPI Slate
+    value: "#3D4554"
+    description: Body text on light canvas; secondary copy.
+  - id: pypi-gray
+    name: PyPI Gray
+    value: "#6B7280"
+    description: Tertiary text and quiet UI.
+  - id: pypi-light-gray
+    name: PyPI Light Gray
+    value: "#D5D9DE"
+    description: Hairline borders on light canvas.
+  - id: pypi-off-white
+    name: PyPI Off-White
+    value: "#F4F5F7"
+    description: Subtle layered surface on light canvas.
+  - id: pypi-white
+    name: PyPI White
+    value: "#FFFFFF"
+    description: Page canvas in light mode.
+  - id: pypi-error
+    name: PyPI Error Red
+    value: "#BD4147"
+    description: Status error color used in advisory and yanked-release callouts.
+
+modes:
+  light:
+    roles:
+      background: pypi-white
+      surface: pypi-off-white
+      surface-elevated: pypi-white
+      text-primary: pypi-blue-dark
+      text-secondary: pypi-slate
+      text-tertiary: pypi-gray
+      primary: pypi-blue
+      primary-hover: pypi-blue-dark
+      accent: pypi-yellow
+      accent-hover: pypi-yellow-dark
+      warning: pypi-yellow-dark
+      warning-hover: pypi-yellow
+      error: pypi-error
+      success: pypi-blue
+      border: pypi-light-gray
+
+  dark:
+    roles:
+      background: pypi-black
+      surface: pypi-charcoal
+      surface-elevated: pypi-charcoal
+      text-primary: pypi-white
+      text-secondary: pypi-light-gray
+      text-tertiary: pypi-yellow
+      primary: pypi-yellow
+      primary-hover: pypi-yellow-dark
+      accent: pypi-blue
+      accent-hover: pypi-blue-dark
+      warning: pypi-yellow
+      warning-hover: pypi-yellow-dark
+      error: pypi-error
+      success: pypi-blue
+      border: pypi-slate

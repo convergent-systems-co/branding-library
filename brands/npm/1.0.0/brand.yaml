@@ -1,0 +1,183 @@
+id: npm
+version: 1.0.0
+name: npm
+description: >
+  npm is the default package registry for Node.js and the
+  JavaScript ecosystem — the place where `npm install <name>`
+  resolves the world's largest collection of open-source
+  packages by count. The registry is operated by npm, Inc., a
+  subsidiary of GitHub (which is itself part of Microsoft),
+  but the npm brand persists as its own distinct identity. The
+  voice is terse and developer-direct: lowercase letters,
+  imperative verbs, and runnable commands over marketing copy.
+  Visually, npm is the red rectangle with a lowercase white
+  "npm" wordmark — one of the most-recognizable marks in
+  developer tooling.
+
+tags: [npm, registry, javascript, nodejs, package-manager, brand, red]
+
+provenance:
+  source: https://www.npmjs.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    "npm" and the npm logo are trademarks of npm, Inc., a
+    subsidiary of GitHub, Inc., a subsidiary of Microsoft.
+    Brand-atoms' encoding of npm Red (#CB3837) is the canonical
+    value carried by the simple-icons project's "npm" entry,
+    matched against the resolved fill of the red-square mark
+    used across npmjs.com.
+  importedDate: 2026-05-19
+  notes: >
+    npmjs.com does not publish a formal public brand-guidelines
+    page; the rules below are encoded against the de facto
+    identity (lowercase wordmark inside the red square,
+    Microsoft Corporate Trademarks and Service Marks Guidelines
+    that cover npm as a Microsoft-family mark, and the npm,
+    Inc. terms-of-service trademark notices). The "npm" name is
+    intentionally lowercase per long-standing convention; do
+    not Title-Case it in headlines or marketing copy.
+
+references:
+  palette: npm@1
+  fonts:
+    heading: inter@1
+    body: inter@1
+    mono: source-code-pro@1
+
+roles:
+  colors:
+    identity: npm-red
+    on-identity: npm-white
+    primary: npm-red
+    primary-hover: npm-red-dark
+    accent: npm-red
+    accent-hover: npm-red-dark
+    mark: npm-red
+    background: npm-white
+    surface: npm-off-white
+    text-primary: npm-black
+    text-secondary: npm-slate
+    error: npm-red-dark
+    success: npm-slate
+    border: npm-light-gray
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: enumMembership
+    target: wordmark.case
+    allowed:
+      - "lowercase"
+    forbidden:
+      - "uppercase"
+      - "title-case"
+      - "small-caps"
+      - "Npm"
+      - "NPM"
+    severity: error
+    rationale: >
+      The npm wordmark is intentionally lowercase. "NPM" and
+      "Npm" both misrepresent the mark and conflict with the
+      brand's terse, developer-direct voice. The lowercase
+      convention dates from the project's origin as
+      "node package manager" and is preserved across npmjs.com
+      and the CLI.
+
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - npm-red
+    forbidden:
+      - npm-black
+      - npm-slate
+      - npm-gray
+    severity: error
+    rationale: >
+      The npm mark is rendered in npm Red (#CB3837). A black,
+      slate, or gray square mark is not a recognized variant;
+      monochrome treatments fall outside the canonical
+      identity expression.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - recolored
+      - rotated
+      - stretched
+      - skewed
+      - drop-shadow
+      - gradient-fill
+      - wordmark-detached-from-square
+      - square-without-wordmark
+      - outlined-without-fill
+    severity: error
+    rationale: >
+      The npm mark is the unified red-square + lowercase
+      wordmark combination. Detaching the wordmark, rendering
+      the square without the wordmark, or using an outlined
+      (non-filled) variant all break the mark's recognized
+      expression.
+
+  - type: contextRestriction
+    target: trademark.use
+    forbiddenContexts:
+      - implied-endorsement
+      - registry-name-substitution
+      - product-name-prefix-without-approval
+    severity: error
+    rationale: >
+      As a Microsoft-family mark, "npm" is subject to the
+      Microsoft Corporate Trademarks and Service Marks
+      Guidelines: third-party products cannot imply
+      endorsement, cannot substitute "npm" as a generic name
+      for any package registry, and cannot prefix "npm" onto
+      a product name without prior approval.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      npm Black (#231F20) on npm White exceeds 14:1 — clears
+      WCAG AA decisively for body text on registry surfaces
+      (package pages, search results, version histories).
+
+  - type: contrastRatio
+    target: roles.colors.primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: warning
+    rationale: >
+      npm Red (#CB3837) on White sits around 4.8:1 — clears
+      WCAG AA for body text and matches the mark fill. Reserve
+      npm Red Dark (#A02B2A) for hover and pressed states; it
+      clears AA with additional headroom (~7:1).
+
+  - type: fontPairing
+    target: typography.heading
+    requires: body
+    minSizeRatio: 1.5
+    severity: recommendation
+    rationale: >
+      npmjs.com uses a single humanist sans for heading and
+      body. Maintain at least a 1.5× heading-to-body ratio to
+      preserve hierarchy on package pages, version histories,
+      and security-advisory listings.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) —
+      Level AA. As the registry of record for the JavaScript
+      ecosystem, npmjs.com is consumed by the entire
+      front-end developer population; AA is the floor.

@@ -1,0 +1,209 @@
+id: eclipse
+version: 1.0.0
+name: Eclipse Foundation
+description: >
+  The Eclipse Foundation is a member-supported European AISBL
+  (formerly Delaware nonprofit) that stewards the Eclipse IDE,
+  Jakarta EE, Adoptium (the Temurin JDK distribution),
+  Mosquitto, Vert.x, MicroProfile, the Software Defined
+  Vehicle Working Group, and over four hundred other open-source
+  projects. The brand voice is industrial, enterprise-aware, and
+  ecosystem-first — long-running working groups, vendor-neutral
+  governance, and a strong tradition of Java/JVM tooling.
+  Visually, Eclipse pairs an Eclipse Orange (#F06C02) sun-arc
+  with a near-black wordmark on a clean white canvas — the
+  2024-refresh expression that anchors current Foundation
+  surfaces.
+
+tags: [eclipse, foundation, ide, jakarta-ee, open-source, brand, orange, java]
+
+provenance:
+  source: https://www.eclipse.org/org/documents/logo_guidelines.php
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Eclipse, the Eclipse Foundation logo, the Eclipse IDE logo,
+    "Built on Eclipse", "Eclipse Ready", and associated project
+    names are trademarks of the Eclipse Foundation AISBL.
+    Brand-atoms' encoding draws from the Eclipse Foundation
+    Logo Guidelines (eclipse.org/org/documents/logo_guidelines.php)
+    and the artwork inventory at eclipse.org/org/artwork/.
+    Eclipse Orange (#F06C02) is the resolved fill of the .st0
+    class in the official white-orange Eclipse Foundation SVG.
+  importedDate: 2026-05-19
+  notes: >
+    The Eclipse Foundation Logo Guidelines distinguish the
+    Foundation mark from the Eclipse IDE mark and govern the
+    "Built on Eclipse" / "Eclipse Ready" supplementary marks.
+    Per the artwork inventory, the canonical logo variants are
+    Colour, Reversed Colour, and Monochromatic. The Foundation
+    does not publish hex values in prose; the #F06C02 value is
+    the SVG-resolved canonical fill for the sun-arc element,
+    matched against the #F7941E orange that appears in the
+    Solstice theme's warning button class on eclipse.org.
+
+references:
+  palette: eclipse@1
+  fonts:
+    heading: inter@1
+    body: inter@1
+    mono: source-code-pro@1
+
+roles:
+  colors:
+    identity: eclipse-black
+    on-identity: eclipse-white
+    primary: eclipse-black
+    primary-hover: eclipse-orange-dark
+    accent: eclipse-orange
+    accent-hover: eclipse-orange-dark
+    mark: eclipse-orange
+    background: eclipse-white
+    surface: eclipse-off-white
+    text-primary: eclipse-black
+    text-secondary: eclipse-slate
+    error: eclipse-orange-dark
+    success: eclipse-slate
+    border: eclipse-light-gray
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - eclipse-orange
+      - eclipse-amber
+    forbidden:
+      - eclipse-black
+      - eclipse-slate
+      - eclipse-gray
+    severity: error
+    rationale: >
+      The Eclipse Foundation sun-arc element is rendered in
+      Eclipse Orange (#F06C02). The Monochromatic variant
+      (black-on-white or white-on-black) is permitted only as a
+      single-color variant per the Logo Guidelines — using
+      slate or gray for the colored sun-arc is not a documented
+      variant and creates an off-brand expression.
+
+  - type: variantSelection
+    target: logo
+    when: { surface: "dark" }
+    use: "reversed-colour"
+    severity: warning
+    rationale: >
+      Per the Eclipse Foundation Logo Guidelines, the
+      Reversed Colour variant is the permitted expression of
+      the logo on dark backgrounds. Do not invert hue or
+      generate ad-hoc dark-mode renderings; use the official
+      reversed-colour asset.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - recolored
+      - rotated
+      - stretched
+      - skewed
+      - drop-shadow
+      - gradient-fill
+      - sun-arc-detached-from-wordmark
+      - sun-arc-recolored
+      - undocumented-variant
+    severity: error
+    rationale: >
+      The Eclipse Foundation Logo Guidelines permit only three
+      variants — Colour, Reversed Colour, and Monochromatic.
+      Detaching the sun arc from the wordmark, recoloring the
+      arc to a non-orange hue, rotation, skewing, stretching,
+      and drop-shadow treatments are not documented and
+      conflict with the guidelines' canonical variant set.
+
+  - type: contextRestriction
+    target: trademark.use
+    forbiddenContexts:
+      - implied-endorsement
+      - product-name-prefix-without-approval
+      - eclipse-ide-mark-substituted-for-foundation-mark
+      - built-on-eclipse-without-eligibility
+      - eclipse-ready-without-eligibility
+    severity: error
+    rationale: >
+      Eclipse marks are program-specific. The "Built on Eclipse"
+      and "Eclipse Ready" supplementary marks have explicit
+      eligibility requirements (products built on the Eclipse
+      Platform / passing the Eclipse Ready program review
+      respectively). The Eclipse IDE mark is distinct from the
+      Foundation mark; substituting one for the other implies
+      endorsements that do not exist.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 7.0
+    standard: WCAG-AAA
+    severity: error
+    rationale: >
+      Eclipse Black (#111418) on Eclipse White exceeds 17:1 —
+      clears WCAG AAA decisively. Eclipse documentation
+      surfaces — release notes, JEP-like project proposals,
+      working-group charters — benefit from AAA-grade
+      legibility.
+
+  - type: contrastRatio
+    target: roles.colors.accent
+    against: background
+    minRatio: 3.0
+    standard: WCAG-AA-large
+    severity: warning
+    rationale: >
+      Eclipse Orange (#F06C02) on White sits around 3.6:1 —
+      clears AA-large for headlines and the sun-arc element
+      but does NOT clear AA for body text. Reserve the orange
+      for the mark, large display surfaces, and accent use;
+      use Eclipse Black for small-text foreground on light
+      canvas.
+
+  - type: fontPairing
+    target: typography.heading
+    requires: body
+    minSizeRatio: 1.5
+    severity: recommendation
+    rationale: >
+      Eclipse Foundation surfaces use a humanist sans for
+      heading and body. Maintain at least a 1.5×
+      heading-to-body ratio on long-form project pages,
+      working-group charters, and release-train
+      documentation.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) —
+      Level AA. Eclipse Foundation surfaces span developer
+      tooling, enterprise specifications, and public policy
+      documents; AA contrast is the floor.
+
+  - type: compositionConstraint
+    target: roles.colors.accent
+    pairsWith:
+      - eclipse-black
+      - eclipse-white
+      - eclipse-amber
+    doesNotPairWith:
+      - eclipse-gray
+    severity: recommendation
+    rationale: >
+      Eclipse Orange reads cleanest against the black wordmark
+      on a white canvas, or as a sun-arc above the wordmark on
+      either canvas. Placing it adjacent to the mid-gray neutral
+      flattens the brand's industrial contrast; reserve gray
+      for tertiary UI and let the orange/black pair carry the
+      identity.

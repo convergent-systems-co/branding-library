@@ -1,0 +1,110 @@
+kind: palette
+id: apache
+version: 1.0.0
+name: Apache Software Foundation
+description: >
+  Apache Software Foundation brand palette anchored on the canonical
+  Apache Red (#D22128) — the fill of the ASF feather mark. The
+  Foundation's identity is restrained and ink-on-paper: red feather,
+  black wordmark, white canvas, with grey supporting neutrals for
+  documentation surfaces. The palette captures the institutional
+  Apache voice — vendor-neutral, project-first, decades-stable.
+
+tags: [apache, asf, foundation, open-source, brand, red]
+
+provenance:
+  source: https://www.apache.org/foundation/marks/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Apache and the Apache feather logo are trademarks of The
+    Apache Software Foundation. The Apache feather mark is
+    licensed to the public under the Apache License (per the ASF
+    Trademark Policy), but the marks themselves remain ASF
+    trademarks subject to the Foundation's policy. Brand-atoms'
+    encoding of Apache Red (#D22128) cross-references the
+    simple-icons project's published canonical value for the
+    Apache mark.
+  importedDate: 2026-05-19
+  notes: >
+    The ASF marks page (apache.org/foundation/marks/) does not
+    publish hex values in prose; the Apache Red value #D22128 is
+    the resolved fill in the canonical feather SVG distributed
+    via the ASF press kit and is the value carried by the
+    simple-icons project (title: "Apache", hex: "D22128").
+
+swatches:
+  - id: apache-red
+    name: Apache Red
+    value: "#D22128"
+    description: >
+      Primary brand color — the fill of the Apache feather mark.
+      The single most-recognized Apache visual element.
+  - id: apache-red-dark
+    name: Apache Red Dark
+    value: "#A81920"
+    description: Pressed / active variant of Apache Red for hover states.
+  - id: apache-black
+    name: Apache Black
+    value: "#0E1014"
+    description: Wordmark color on light canvas; dark-mode page canvas.
+  - id: apache-charcoal
+    name: Apache Charcoal
+    value: "#1F232B"
+    description: Elevated dark surface for cards and panels.
+  - id: apache-slate
+    name: Apache Slate
+    value: "#4A5568"
+    description: Body text on light canvas; secondary copy.
+  - id: apache-gray
+    name: Apache Gray
+    value: "#7B8794"
+    description: Tertiary text and quiet UI; muted divider tone.
+  - id: apache-light-gray
+    name: Apache Light Gray
+    value: "#D5D9DE"
+    description: Hairline borders on light canvas.
+  - id: apache-off-white
+    name: Apache Off-White
+    value: "#F4F5F7"
+    description: Subtle layered surface on light canvas.
+  - id: apache-white
+    name: Apache White
+    value: "#FFFFFF"
+    description: Page canvas in light mode.
+
+modes:
+  light:
+    roles:
+      background: apache-white
+      surface: apache-off-white
+      surface-elevated: apache-white
+      text-primary: apache-black
+      text-secondary: apache-slate
+      text-tertiary: apache-gray
+      primary: apache-red
+      primary-hover: apache-red-dark
+      accent: apache-red
+      accent-hover: apache-red-dark
+      warning: apache-red
+      warning-hover: apache-red-dark
+      error: apache-red-dark
+      success: apache-slate
+      border: apache-light-gray
+
+  dark:
+    roles:
+      background: apache-black
+      surface: apache-charcoal
+      surface-elevated: apache-charcoal
+      text-primary: apache-white
+      text-secondary: apache-light-gray
+      text-tertiary: apache-gray
+      primary: apache-red
+      primary-hover: apache-red-dark
+      accent: apache-red
+      accent-hover: apache-red-dark
+      warning: apache-red
+      warning-hover: apache-red-dark
+      error: apache-red-dark
+      success: apache-light-gray
+      border: apache-slate

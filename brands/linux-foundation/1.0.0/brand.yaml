@@ -1,0 +1,206 @@
+id: linux-foundation
+version: 1.0.0
+name: The Linux Foundation
+description: >
+  The Linux Foundation (LF) is a vendor-neutral 501(c)(6) home
+  for the Linux kernel and an umbrella over a constellation of
+  open-source ecosystems — Cloud Native Computing Foundation
+  (CNCF), OpenJS, Open Mainframe Project, Hyperledger,
+  Academy Software Foundation, OpenSSF, and many others. The
+  brand voice is institutional and ecosystem-scaled: the
+  Foundation does not market individual projects; it stewards
+  the legal, infrastructure, and trademark layer beneath them.
+  Visually, LF leans on a corporate deep-blue identity —
+  LF Dark Blue (#003778) wordmark with a bright cyan-blue arc
+  (#0094FF) — on a clean white canvas.
+
+tags: [linux-foundation, lf, foundation, open-source, brand, blue, institutional]
+
+provenance:
+  source: https://www.linuxfoundation.org/legal/trademark-usage
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    The Linux Foundation, the Linux Foundation logo, "Linux",
+    and associated marks are trademarks of The Linux Foundation
+    (or, in the case of "Linux", licensed via the Linux Mark
+    Institute on behalf of Linus Torvalds). Brand-atoms'
+    encoding draws from the LF Trademark Usage Guidelines at
+    linuxfoundation.org/legal/trademark-usage and the canonical
+    fill values resolved from the official LF stacked-color SVG
+    at linuxfoundation.org/hubfs/lf-stacked-color.svg.
+  importedDate: 2026-05-19
+  notes: >
+    The LF Trademark Usage Guidelines establish the rules
+    encoded below. Per that policy, the LF marks (1) must be
+    used only as an adjective followed by a generic noun, never
+    as a verb or pluralized form, (2) cannot be altered,
+    combined with other marks, hyphenated, abbreviated, or
+    displayed in parts, (3) cannot be used as domain names or
+    in product names, (4) cannot appear more prominently than
+    the user's own brand, and (5) require the registered ® or
+    ™ symbol on first use per the registration status of the
+    specific mark. The Foundation does not publish formal hex
+    values; #003778 / #003764 / #0094FF are the resolved fills
+    in the official stacked-color SVG.
+
+references:
+  palette: linux-foundation@1
+  fonts:
+    heading: inter@1
+    body: inter@1
+    mono: source-code-pro@1
+
+roles:
+  colors:
+    identity: lf-dark-blue
+    on-identity: lf-white
+    primary: lf-dark-blue
+    primary-hover: lf-darker-blue
+    accent: lf-bright-blue
+    accent-hover: lf-blue-hover
+    mark: lf-dark-blue
+    background: lf-white
+    surface: lf-off-white
+    text-primary: lf-dark-blue
+    text-secondary: lf-gray
+    warning: lf-warning
+    error: lf-error
+    success: lf-bright-blue
+    border: lf-light-gray
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - recolored
+      - rotated
+      - stretched
+      - skewed
+      - drop-shadow
+      - combined-with-other-mark
+      - hyphenated
+      - abbreviated
+      - displayed-in-parts
+      - elements-superimposed
+    severity: error
+    rationale: >
+      The Linux Foundation Trademark Usage Guidelines forbid
+      color variations on the LF logos, design-element
+      modifications, scale changes, and combining the LF mark
+      with any other mark, hyphenation, abbreviation, or
+      partial display. Recoloring, rotation, drop-shadows, and
+      superimposed elements all fall within the policy's
+      explicit prohibitions.
+
+  - type: colorChoice
+    target: roles.colors.identity
+    allowed:
+      - lf-dark-blue
+      - lf-bright-blue
+    forbidden:
+      - lf-gray
+      - lf-warning
+      - lf-error
+    severity: error
+    rationale: >
+      The Linux Foundation identity is the LF Dark Blue wordmark
+      with the LF Bright Blue accent arc. Substituting the gray,
+      amber, or red supporting hues for the brand identity color
+      conflicts with the policy's color-variation prohibition.
+
+  - type: contextRestriction
+    target: trademark.use
+    forbiddenContexts:
+      - verb-form
+      - noun-form
+      - pluralized
+      - possessive
+      - domain-name
+      - product-name
+      - more-prominent-than-host-brand
+      - implied-endorsement
+      - unauthorized-certification-claim
+      - book-magazine-cover-without-permission
+    severity: error
+    rationale: >
+      Per the LF Trademark Usage Guidelines: "A trademark should
+      never be used as a verb or noun. A trademark should be
+      used only as an adjective followed by the generic
+      name/noun." LF marks cannot be pluralized, used
+      possessively, incorporated into domain names or product
+      names, displayed more prominently than the host brand,
+      used to claim certification, or appear on commercial
+      book/magazine covers without permission.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 7.0
+    standard: WCAG-AAA
+    severity: error
+    rationale: >
+      LF Dark Blue (#003778) on LF White exceeds 12:1 — clears
+      WCAG AAA decisively. The Foundation's policy and
+      governance documentation surfaces benefit from
+      AAA-grade legibility.
+
+  - type: contrastRatio
+    target: roles.colors.accent
+    against: background
+    minRatio: 3.0
+    standard: WCAG-AA-large
+    severity: warning
+    rationale: >
+      LF Bright Blue (#0094FF) on White sits around 3.3:1 —
+      clears AA-large for headlines and accent surfaces but
+      does NOT clear AA for body text. Reserve the bright-blue
+      accent for headings, callouts, and the arc graphic; use
+      LF Dark Blue (#003778) or LF Darker Blue (#003764) for
+      small-text foreground.
+
+  - type: fontPairing
+    target: typography.heading
+    requires: body
+    minSizeRatio: 1.5
+    severity: recommendation
+    rationale: >
+      LF documentation surfaces use a single humanist sans for
+      heading and body. Maintain at least a 1.5×
+      heading-to-body ratio to preserve hierarchy on
+      long-form governance documents, member directories,
+      and announcement pages.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) —
+      Level AA. The Linux Foundation's role as a public
+      steward of open-source infrastructure makes broad
+      accessibility a load-bearing brand attribute.
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    pairsWith:
+      - lf-white
+      - lf-off-white
+      - lf-bright-blue
+    doesNotPairWith:
+      - lf-warning
+      - lf-error
+    severity: recommendation
+    rationale: >
+      LF Dark Blue reads cleanest on the white canvas with the
+      LF Bright Blue arc as accent. Placing it adjacent to the
+      warning amber or error red introduces chromatic tension
+      that undermines the institutional voice — those status
+      hues are for advisories, not for compositions with the
+      brand identity.
