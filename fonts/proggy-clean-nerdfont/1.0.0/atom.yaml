@@ -1,0 +1,41 @@
+kind: font
+id: proggy-clean-nerdfont
+version: 1.0.0
+name: Proggy Clean Nerd Font
+description: >
+  Proggy Clean bitmap-style monospaced font with Nerd Fonts glyph augmentation. A long-running favorite among developers since 2004, optimized for crisp rendering at small terminal sizes. Patched with ~10,000 additional icons (Powerline, Material Design Icons, Font Awesome, Devicons, Octicons, Codicons, etc.).
+family: ProggyClean Nerd Font
+classification: monospace
+tags: [ nerd-font, monospace, bitmap, retro, terminal ]
+
+provenance:
+  source: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  license: MIT
+  attribution: >
+    Proggy Clean, Copyright 2004–2005 Tristan Grimmer (https://www.proggyfonts.net/), licensed under the MIT License. Nerd Fonts patching by Ryan L McIntyre, MIT license.
+  importedDate: 2026-05-19
+  importedFromVersion: v3.4.0
+  notes: >
+    The Nerd Fonts ProggyClean archive ships three cuts: Regular (vanilla Proggy Clean), CE (Latin-2 / Central European extension), and SZ (Slashed-Zero). All three are captured here as Regular-only — Proggy Clean does not ship bold or italic. Download archive: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ProggyClean.zip
+
+source:
+  kind: external
+  family: ProggyClean Nerd Font
+  notes: >
+    Nerd-Font-patched build of Proggy Clean. Not available via Google Fonts. Download ttf files from the Nerd Fonts GitHub release and self-host, or install system-wide for terminal use.
+
+fallbackStack:
+  - ProggyClean
+  - Proggy Clean
+  - Menlo
+  - Monaco
+  - Consolas
+  - Liberation Mono
+  - monospace
+
+availableStyles:
+  - { weight: 400, style: normal }
+cdnUrls:
+  ProggyCleanNerdFontMono-Regular.ttf: https://cdn.brand-atoms.com/fonts/proggy-clean-nerdfont/1.0.0/ProggyCleanNerdFontMono-Regular.ttf
+  ProggyCleanCENerdFontMono-Regular.ttf: https://cdn.brand-atoms.com/fonts/proggy-clean-nerdfont/1.0.0/ProggyCleanCENerdFontMono-Regular.ttf
+  ProggyCleanSZNerdFontMono-Regular.ttf: https://cdn.brand-atoms.com/fonts/proggy-clean-nerdfont/1.0.0/ProggyCleanSZNerdFontMono-Regular.ttf

@@ -1,0 +1,44 @@
+kind: font
+id: space-mono-nerdfont
+version: 1.0.0
+name: Space Mono Nerd Font
+description: >
+  Space Mono with Nerd Fonts glyph augmentation. Colophon Foundry's open-source monospace, commissioned by Google Design, with eccentric, slightly experimental detailing that reads cleanly at body sizes. Patched with ~10,000 additional icons (Powerline, Material Design Icons, Font Awesome, Devicons, Octicons, Codicons, etc.).
+family: SpaceMono Nerd Font
+classification: monospace
+tags: [ nerd-font, monospace, google, experimental, terminal ]
+
+provenance:
+  source: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  license: OFL-1.1
+  attribution: >
+    Space Mono, Copyright 2016 The Space Mono Project Authors (Colophon Foundry, https://github.com/google/fonts/tree/main/ofl/spacemono), licensed under the SIL Open Font License, Version 1.1. Commissioned by Google Design. Nerd Fonts patching by Ryan L McIntyre, MIT license.
+  importedDate: 2026-05-19
+  importedFromVersion: v3.4.0
+  notes: >
+    Nerd Fonts ships Space Mono with the two upstream weights (Regular, Bold) plus matching italics. Download archive: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/SpaceMono.zip
+
+source:
+  kind: external
+  family: SpaceMono Nerd Font
+  notes: >
+    Nerd-Font-patched build of Space Mono. The unpatched Space Mono is available via Google Fonts; the Nerd-Font-patched build is distributed only via the Nerd Fonts GitHub release. Download ttf files and self-host, or install system-wide for terminal/editor use.
+
+fallbackStack:
+  - Space Mono
+  - Menlo
+  - Monaco
+  - Consolas
+  - Liberation Mono
+  - monospace
+
+availableStyles:
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+cdnUrls:
+  SpaceMonoNerdFontMono-Regular.ttf: https://cdn.brand-atoms.com/fonts/space-mono-nerdfont/1.0.0/SpaceMonoNerdFontMono-Regular.ttf
+  SpaceMonoNerdFontMono-Italic.ttf: https://cdn.brand-atoms.com/fonts/space-mono-nerdfont/1.0.0/SpaceMonoNerdFontMono-Italic.ttf
+  SpaceMonoNerdFontMono-Bold.ttf: https://cdn.brand-atoms.com/fonts/space-mono-nerdfont/1.0.0/SpaceMonoNerdFontMono-Bold.ttf
+  SpaceMonoNerdFontMono-BoldItalic.ttf: https://cdn.brand-atoms.com/fonts/space-mono-nerdfont/1.0.0/SpaceMonoNerdFontMono-BoldItalic.ttf

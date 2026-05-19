@@ -1,0 +1,45 @@
+kind: font
+id: mononoki-nerdfont
+version: 1.0.0
+name: Mononoki Nerd Font
+description: >
+  Mononoki monospaced font with Nerd Fonts glyph augmentation. Designed by Matthias Tellen for source code and text editing, with disambiguated letterforms and a calm humanist rhythm. Patched with ~10,000 additional icons (Powerline, Material Design Icons, Font Awesome, Devicons, Octicons, Codicons, etc.).
+family: Mononoki Nerd Font
+classification: monospace
+tags: [ nerd-font, monospace, humanist, terminal, code ]
+
+provenance:
+  source: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  license: OFL-1.1
+  attribution: >
+    Mononoki, Copyright 2013–2018 Matthias Tellen (https://github.com/madmalik/mononoki), licensed under the SIL Open Font License, Version 1.1. Nerd Fonts patching by Ryan L McIntyre, MIT license.
+  importedDate: 2026-05-19
+  importedFromVersion: v3.4.0
+  notes: >
+    Download archive: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Mononoki.zip
+
+source:
+  kind: external
+  family: Mononoki Nerd Font
+  notes: >
+    Nerd-Font-patched build of Mononoki. Not available via Google Fonts. Download ttf files from the Nerd Fonts GitHub release and self-host, or install system-wide for terminal/editor use.
+
+fallbackStack:
+  - mononoki
+  - JetBrains Mono
+  - Menlo
+  - Monaco
+  - Consolas
+  - Liberation Mono
+  - monospace
+
+availableStyles:
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+cdnUrls:
+  MononokiNerdFontMono-Regular.ttf: https://cdn.brand-atoms.com/fonts/mononoki-nerdfont/1.0.0/MononokiNerdFontMono-Regular.ttf
+  MononokiNerdFontMono-Italic.ttf: https://cdn.brand-atoms.com/fonts/mononoki-nerdfont/1.0.0/MononokiNerdFontMono-Italic.ttf
+  MononokiNerdFontMono-Bold.ttf: https://cdn.brand-atoms.com/fonts/mononoki-nerdfont/1.0.0/MononokiNerdFontMono-Bold.ttf
+  MononokiNerdFontMono-BoldItalic.ttf: https://cdn.brand-atoms.com/fonts/mononoki-nerdfont/1.0.0/MononokiNerdFontMono-BoldItalic.ttf

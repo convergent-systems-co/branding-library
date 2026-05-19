@@ -1,0 +1,52 @@
+kind: font
+id: mplus-nerdfont
+version: 1.0.0
+name: M+ Nerd Font
+description: >
+  M+ 1 Code monospaced font with Nerd Fonts glyph augmentation. The M+ Code variant is a fixed-pitch programming face from the M+ Fonts project, covering wide Latin and Japanese repertoires across seven weights. Patched with ~10,000 additional icons (Powerline, Material Design Icons, Font Awesome, Devicons, Octicons, Codicons, etc.).
+family: M+1Code Nerd Font
+classification: monospace
+tags: [ nerd-font, monospace, japanese, multilingual, terminal, code ]
+
+provenance:
+  source: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  license: OFL-1.1
+  attribution: >
+    M+ Fonts (M+ 1 Code), Copyright 2021 The M+ Fonts Project Authors (https://github.com/coz-m/MPLUS_FONTS), licensed under the SIL Open Font License, Version 1.1. Nerd Fonts patching by Ryan L McIntyre, MIT license.
+  importedDate: 2026-05-19
+  importedFromVersion: v3.4.0
+  notes: >
+    Canonical upstream name is "M+" (the plus sign is preserved in the family name "M+1Code"); the atom slug drops the "+" because the Slug schema accepts only lowercase letters, digits, and hyphens. The MPlus archive ships multiple M+ subfamilies — this atom captures the M+ 1 Code monospace variant. Download archive: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/MPlus.zip
+
+source:
+  kind: external
+  family: M+1Code Nerd Font
+  notes: >
+    Nerd-Font-patched build of M+ 1 Code. Not available via Google Fonts (the unpatched M PLUS family is available there, but not the M+ Code Nerd-Font-patched variant). Download ttf files from the Nerd Fonts GitHub release and self-host.
+
+fallbackStack:
+  - M PLUS 1 Code
+  - M PLUS Code Latin
+  - JetBrains Mono
+  - Menlo
+  - Monaco
+  - Consolas
+  - Liberation Mono
+  - monospace
+
+availableStyles:
+  - { weight: 100, style: normal }
+  - { weight: 200, style: normal }
+  - { weight: 300, style: normal }
+  - { weight: 400, style: normal }
+  - { weight: 500, style: normal }
+  - { weight: 600, style: normal }
+  - { weight: 700, style: normal }
+cdnUrls:
+  M+1CodeNerdFontMono-Thin.ttf: https://cdn.brand-atoms.com/fonts/mplus-nerdfont/1.0.0/M+1CodeNerdFontMono-Thin.ttf
+  M+1CodeNerdFontMono-ExtraLight.ttf: https://cdn.brand-atoms.com/fonts/mplus-nerdfont/1.0.0/M+1CodeNerdFontMono-ExtraLight.ttf
+  M+1CodeNerdFontMono-Light.ttf: https://cdn.brand-atoms.com/fonts/mplus-nerdfont/1.0.0/M+1CodeNerdFontMono-Light.ttf
+  M+1CodeNerdFontMono-Regular.ttf: https://cdn.brand-atoms.com/fonts/mplus-nerdfont/1.0.0/M+1CodeNerdFontMono-Regular.ttf
+  M+1CodeNerdFontMono-Medium.ttf: https://cdn.brand-atoms.com/fonts/mplus-nerdfont/1.0.0/M+1CodeNerdFontMono-Medium.ttf
+  M+1CodeNerdFontMono-SemiBold.ttf: https://cdn.brand-atoms.com/fonts/mplus-nerdfont/1.0.0/M+1CodeNerdFontMono-SemiBold.ttf
+  M+1CodeNerdFontMono-Bold.ttf: https://cdn.brand-atoms.com/fonts/mplus-nerdfont/1.0.0/M+1CodeNerdFontMono-Bold.ttf

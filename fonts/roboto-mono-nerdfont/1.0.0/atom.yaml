@@ -1,0 +1,60 @@
+kind: font
+id: roboto-mono-nerdfont
+version: 1.0.0
+name: Roboto Mono Nerd Font
+description: >
+  Google's Roboto Mono with Nerd Fonts glyph augmentation. The monospace cut of Christian Robertson's Roboto superfamily — neo-grotesque proportions adapted to fixed width, with six matched weights across upright and italic. Patched with ~10,000 additional icons (Powerline, Material Design Icons, Font Awesome, Devicons, Octicons, Codicons, etc.).
+family: RobotoMono Nerd Font
+classification: monospace
+tags: [ nerd-font, monospace, google, neo-grotesque, terminal, code ]
+
+provenance:
+  source: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  license: Apache-2.0
+  attribution: >
+    Roboto Mono, Copyright 2015 Google Inc., designed by Christian Robertson, licensed under the Apache License, Version 2.0. Nerd Fonts patching by Ryan L McIntyre, MIT license.
+  importedDate: 2026-05-19
+  importedFromVersion: v3.4.0
+  notes: >
+    Unlike most fonts in the Nerd Fonts catalog, Roboto Mono is licensed under Apache-2.0 (not OFL-1.1). Download archive: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/RobotoMono.zip
+
+source:
+  kind: external
+  family: RobotoMono Nerd Font
+  notes: >
+    Nerd-Font-patched build of Roboto Mono. The unpatched Roboto Mono is available via Google Fonts; the Nerd-Font-patched build is distributed only via the Nerd Fonts GitHub release. Download ttf files and self-host, or install system-wide for terminal/editor use.
+
+fallbackStack:
+  - Roboto Mono
+  - Menlo
+  - Monaco
+  - Consolas
+  - Liberation Mono
+  - monospace
+
+availableStyles:
+  - { weight: 100, style: normal }
+  - { weight: 100, style: italic }
+  - { weight: 300, style: normal }
+  - { weight: 300, style: italic }
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 500, style: normal }
+  - { weight: 500, style: italic }
+  - { weight: 600, style: normal }
+  - { weight: 600, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+cdnUrls:
+  RobotoMonoNerdFontMono-Thin.ttf: https://cdn.brand-atoms.com/fonts/roboto-mono-nerdfont/1.0.0/RobotoMonoNerdFontMono-Thin.ttf
+  RobotoMonoNerdFontMono-ThinItalic.ttf: https://cdn.brand-atoms.com/fonts/roboto-mono-nerdfont/1.0.0/RobotoMonoNerdFontMono-ThinItalic.ttf
+  RobotoMonoNerdFontMono-Light.ttf: https://cdn.brand-atoms.com/fonts/roboto-mono-nerdfont/1.0.0/RobotoMonoNerdFontMono-Light.ttf
+  RobotoMonoNerdFontMono-LightItalic.ttf: https://cdn.brand-atoms.com/fonts/roboto-mono-nerdfont/1.0.0/RobotoMonoNerdFontMono-LightItalic.ttf
+  RobotoMonoNerdFontMono-Regular.ttf: https://cdn.brand-atoms.com/fonts/roboto-mono-nerdfont/1.0.0/RobotoMonoNerdFontMono-Regular.ttf
+  RobotoMonoNerdFontMono-Italic.ttf: https://cdn.brand-atoms.com/fonts/roboto-mono-nerdfont/1.0.0/RobotoMonoNerdFontMono-Italic.ttf
+  RobotoMonoNerdFontMono-Medium.ttf: https://cdn.brand-atoms.com/fonts/roboto-mono-nerdfont/1.0.0/RobotoMonoNerdFontMono-Medium.ttf
+  RobotoMonoNerdFontMono-MediumItalic.ttf: https://cdn.brand-atoms.com/fonts/roboto-mono-nerdfont/1.0.0/RobotoMonoNerdFontMono-MediumItalic.ttf
+  RobotoMonoNerdFontMono-SemiBold.ttf: https://cdn.brand-atoms.com/fonts/roboto-mono-nerdfont/1.0.0/RobotoMonoNerdFontMono-SemiBold.ttf
+  RobotoMonoNerdFontMono-SemiBoldItalic.ttf: https://cdn.brand-atoms.com/fonts/roboto-mono-nerdfont/1.0.0/RobotoMonoNerdFontMono-SemiBoldItalic.ttf
+  RobotoMonoNerdFontMono-Bold.ttf: https://cdn.brand-atoms.com/fonts/roboto-mono-nerdfont/1.0.0/RobotoMonoNerdFontMono-Bold.ttf
+  RobotoMonoNerdFontMono-BoldItalic.ttf: https://cdn.brand-atoms.com/fonts/roboto-mono-nerdfont/1.0.0/RobotoMonoNerdFontMono-BoldItalic.ttf

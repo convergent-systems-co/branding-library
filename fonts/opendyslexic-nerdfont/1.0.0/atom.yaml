@@ -1,0 +1,39 @@
+kind: font
+id: opendyslexic-nerdfont
+version: 1.0.0
+name: OpenDyslexic Nerd Font
+description: >
+  OpenDyslexic Mono with Nerd Fonts glyph augmentation. An open-source typeface designed by Abelardo Gonzalez to mitigate common dyslexia-related reading errors via weighted letter bottoms and disambiguated glyph shapes; this is the monospace cut intended for code and terminal use. Patched with ~10,000 additional icons (Powerline, Material Design Icons, Font Awesome, Devicons, Octicons, Codicons, etc.).
+family: OpenDyslexicM Nerd Font
+classification: monospace
+tags: [ nerd-font, monospace, accessibility, dyslexia, terminal ]
+
+provenance:
+  source: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  license: OFL-1.1
+  attribution: >
+    OpenDyslexic, Copyright Abelardo Gonzalez (https://opendyslexic.org/), licensed under the SIL Open Font License, Version 1.1. Nerd Fonts patching by Ryan L McIntyre, MIT license.
+  importedDate: 2026-05-19
+  importedFromVersion: v3.4.0
+  notes: >
+    The Nerd Fonts OpenDyslexic archive ships proportional, Alta, and Mono cuts. This atom captures only the Mono cut (OpenDyslexicM), which ships a single Regular weight in the patched build. Download archive: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/OpenDyslexic.zip
+
+source:
+  kind: external
+  family: OpenDyslexicM Nerd Font
+  notes: >
+    Nerd-Font-patched build of OpenDyslexic Mono. Not available via Google Fonts. Download otf files from the Nerd Fonts GitHub release and self-host, or install system-wide for terminal/editor use.
+
+fallbackStack:
+  - OpenDyslexic Mono
+  - OpenDyslexicMono
+  - Menlo
+  - Monaco
+  - Consolas
+  - Liberation Mono
+  - monospace
+
+availableStyles:
+  - { weight: 400, style: normal }
+cdnUrls:
+  OpenDyslexicMNerdFontMono-Regular.otf: https://cdn.brand-atoms.com/fonts/opendyslexic-nerdfont/1.0.0/OpenDyslexicMNerdFontMono-Regular.otf

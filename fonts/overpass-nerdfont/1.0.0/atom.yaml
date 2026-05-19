@@ -1,0 +1,44 @@
+kind: font
+id: overpass-nerdfont
+version: 1.0.0
+name: Overpass Nerd Font
+description: >
+  Overpass Mono with Nerd Fonts glyph augmentation. Red Hat's open-source monospace inspired by the Highway Gothic lettering of the US Federal Highway Administration; a clean industrial face for code and interfaces. Patched with ~10,000 additional icons (Powerline, Material Design Icons, Font Awesome, Devicons, Octicons, Codicons, etc.).
+family: OverpassM Nerd Font
+classification: monospace
+tags: [ nerd-font, monospace, red-hat, terminal, code ]
+
+provenance:
+  source: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  license: OFL-1.1
+  attribution: >
+    Overpass Mono, Copyright 2016 Red Hat, Inc. (https://github.com/RedHatOfficial/Overpass), licensed under the SIL Open Font License, Version 1.1. Nerd Fonts patching by Ryan L McIntyre, MIT license.
+  importedDate: 2026-05-19
+  importedFromVersion: v3.4.0
+  notes: >
+    Captures only the Overpass Mono cut of the Nerd Fonts Overpass archive. The proportional Overpass Sans is also patched but is not part of this atom. Download archive: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Overpass.zip
+
+source:
+  kind: external
+  family: OverpassM Nerd Font
+  notes: >
+    Nerd-Font-patched build of Overpass Mono. Unpatched Overpass is available via Google Fonts; the Nerd-Font-patched build is distributed only via the Nerd Fonts GitHub release. Download otf files and self-host, or install system-wide for terminal/editor use.
+
+fallbackStack:
+  - Overpass Mono
+  - Menlo
+  - Monaco
+  - Consolas
+  - Liberation Mono
+  - monospace
+
+availableStyles:
+  - { weight: 300, style: normal }
+  - { weight: 400, style: normal }
+  - { weight: 600, style: normal }
+  - { weight: 700, style: normal }
+cdnUrls:
+  OverpassMNerdFontMono-Light.otf: https://cdn.brand-atoms.com/fonts/overpass-nerdfont/1.0.0/OverpassMNerdFontMono-Light.otf
+  OverpassMNerdFontMono-Regular.otf: https://cdn.brand-atoms.com/fonts/overpass-nerdfont/1.0.0/OverpassMNerdFontMono-Regular.otf
+  OverpassMNerdFontMono-SemiBold.otf: https://cdn.brand-atoms.com/fonts/overpass-nerdfont/1.0.0/OverpassMNerdFontMono-SemiBold.otf
+  OverpassMNerdFontMono-Bold.otf: https://cdn.brand-atoms.com/fonts/overpass-nerdfont/1.0.0/OverpassMNerdFontMono-Bold.otf

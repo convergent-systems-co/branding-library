@@ -1,0 +1,40 @@
+kind: font
+id: profont-nerdfont
+version: 1.0.0
+name: ProFont Nerd Font
+description: >
+  ProFont monospaced bitmap-derived font with Nerd Fonts glyph augmentation. A compact, highly legible programmer face originally designed by Andrew Welch for small sizes on Mac, Windows, and Linux terminals. Patched with ~10,000 additional icons (Powerline, Material Design Icons, Font Awesome, Devicons, Octicons, Codicons, etc.).
+family: ProFontIIx Nerd Font
+classification: monospace
+tags: [ nerd-font, monospace, bitmap, terminal, retro ]
+
+provenance:
+  source: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  license: MIT
+  attribution: >
+    ProFont, Copyright 2014 Tobias Jung, Carl Osterwald, Stephen C. Gilardi, Andrew Welch (https://tobiasjung.name/profont/), licensed under the MIT License. Nerd Fonts patching by Ryan L McIntyre, MIT license.
+  importedDate: 2026-05-19
+  importedFromVersion: v3.4.0
+  notes: >
+    The Nerd Fonts ProFont archive ships two cuts: ProFontIIx (the modernized cross-platform vector revival) and ProFontWindows (the Windows-tweaked variant). Both are captured as Regular only — ProFont historically does not ship bold or italic. Download archive: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ProFont.zip
+
+source:
+  kind: external
+  family: ProFontIIx Nerd Font
+  notes: >
+    Nerd-Font-patched build of ProFont. Not available via Google Fonts. Download ttf files from the Nerd Fonts GitHub release and self-host, or install system-wide for terminal use.
+
+fallbackStack:
+  - ProFont
+  - ProFontIIx
+  - Menlo
+  - Monaco
+  - Consolas
+  - Liberation Mono
+  - monospace
+
+availableStyles:
+  - { weight: 400, style: normal }
+cdnUrls:
+  ProFontIIxNerdFontMono-Regular.ttf: https://cdn.brand-atoms.com/fonts/profont-nerdfont/1.0.0/ProFontIIxNerdFontMono-Regular.ttf
+  ProFontWindowsNerdFontMono-Regular.ttf: https://cdn.brand-atoms.com/fonts/profont-nerdfont/1.0.0/ProFontWindowsNerdFontMono-Regular.ttf

@@ -1,0 +1,58 @@
+kind: font
+id: recursive-mono-nerdfont
+version: 1.0.0
+name: Recursive Mono Nerd Font
+description: >
+  Recursive Mono with Nerd Fonts glyph augmentation. Stephen Nixon's variable-font family for code and UI, drawn from casual signpainting scripts; this atom captures the four monospace style preset cuts — Linear, Casual, Duotone, and SemiCasual — that ship with the patched build. Patched with ~10,000 additional icons (Powerline, Material Design Icons, Font Awesome, Devicons, Octicons, Codicons, etc.).
+family: RecMonoLinear Nerd Font
+classification: monospace
+tags: [ nerd-font, monospace, variable-font, casual, terminal, code ]
+
+provenance:
+  source: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  license: OFL-1.1
+  attribution: >
+    Recursive Mono, Copyright 2019 The Recursive Project Authors (Stephen Nixon / Arrow Type, https://github.com/arrowtype/recursive), licensed under the SIL Open Font License, Version 1.1. Nerd Fonts patching by Ryan L McIntyre, MIT license.
+  importedDate: 2026-05-19
+  importedFromVersion: v3.4.0
+  notes: >
+    Recursive ships as a variable font upstream; Nerd Fonts redistributes four static-instance monospace cuts — RecMonoLinear (workhorse), RecMonoCasual (handwritten flair), RecMonoDuotone (Linear regular + Casual italic/bold), and RecMonoSmCasual (CASL axis at 0.5). Each cut ships Regular, Bold, Italic, and BoldItalic. Download archive: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Recursive.zip
+
+source:
+  kind: external
+  family: RecMonoLinear Nerd Font
+  notes: >
+    Nerd-Font-patched build of Recursive Mono. The unpatched variable font is available via Google Fonts; the Nerd-Font-patched static-instance cuts are distributed only via the Nerd Fonts GitHub release. Download ttf files and self-host, or install system-wide for terminal/editor use.
+
+fallbackStack:
+  - Recursive Mono
+  - Recursive
+  - JetBrains Mono
+  - Menlo
+  - Monaco
+  - Consolas
+  - Liberation Mono
+  - monospace
+
+availableStyles:
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+cdnUrls:
+  RecMonoLinearNerdFontMono-Regular.ttf: https://cdn.brand-atoms.com/fonts/recursive-mono-nerdfont/1.0.0/RecMonoLinearNerdFontMono-Regular.ttf
+  RecMonoLinearNerdFontMono-Italic.ttf: https://cdn.brand-atoms.com/fonts/recursive-mono-nerdfont/1.0.0/RecMonoLinearNerdFontMono-Italic.ttf
+  RecMonoLinearNerdFontMono-Bold.ttf: https://cdn.brand-atoms.com/fonts/recursive-mono-nerdfont/1.0.0/RecMonoLinearNerdFontMono-Bold.ttf
+  RecMonoLinearNerdFontMono-BoldItalic.ttf: https://cdn.brand-atoms.com/fonts/recursive-mono-nerdfont/1.0.0/RecMonoLinearNerdFontMono-BoldItalic.ttf
+  RecMonoCasualNerdFontMono-Regular.ttf: https://cdn.brand-atoms.com/fonts/recursive-mono-nerdfont/1.0.0/RecMonoCasualNerdFontMono-Regular.ttf
+  RecMonoCasualNerdFontMono-Italic.ttf: https://cdn.brand-atoms.com/fonts/recursive-mono-nerdfont/1.0.0/RecMonoCasualNerdFontMono-Italic.ttf
+  RecMonoCasualNerdFontMono-Bold.ttf: https://cdn.brand-atoms.com/fonts/recursive-mono-nerdfont/1.0.0/RecMonoCasualNerdFontMono-Bold.ttf
+  RecMonoCasualNerdFontMono-BoldItalic.ttf: https://cdn.brand-atoms.com/fonts/recursive-mono-nerdfont/1.0.0/RecMonoCasualNerdFontMono-BoldItalic.ttf
+  RecMonoDuotoneNerdFontMono-Regular.ttf: https://cdn.brand-atoms.com/fonts/recursive-mono-nerdfont/1.0.0/RecMonoDuotoneNerdFontMono-Regular.ttf
+  RecMonoDuotoneNerdFontMono-Italic.ttf: https://cdn.brand-atoms.com/fonts/recursive-mono-nerdfont/1.0.0/RecMonoDuotoneNerdFontMono-Italic.ttf
+  RecMonoDuotoneNerdFontMono-Bold.ttf: https://cdn.brand-atoms.com/fonts/recursive-mono-nerdfont/1.0.0/RecMonoDuotoneNerdFontMono-Bold.ttf
+  RecMonoDuotoneNerdFontMono-BoldItalic.ttf: https://cdn.brand-atoms.com/fonts/recursive-mono-nerdfont/1.0.0/RecMonoDuotoneNerdFontMono-BoldItalic.ttf
+  RecMonoSmCasualNerdFontMono-Regular.ttf: https://cdn.brand-atoms.com/fonts/recursive-mono-nerdfont/1.0.0/RecMonoSmCasualNerdFontMono-Regular.ttf
+  RecMonoSmCasualNerdFontMono-Italic.ttf: https://cdn.brand-atoms.com/fonts/recursive-mono-nerdfont/1.0.0/RecMonoSmCasualNerdFontMono-Italic.ttf
+  RecMonoSmCasualNerdFontMono-Bold.ttf: https://cdn.brand-atoms.com/fonts/recursive-mono-nerdfont/1.0.0/RecMonoSmCasualNerdFontMono-Bold.ttf
+  RecMonoSmCasualNerdFontMono-BoldItalic.ttf: https://cdn.brand-atoms.com/fonts/recursive-mono-nerdfont/1.0.0/RecMonoSmCasualNerdFontMono-BoldItalic.ttf

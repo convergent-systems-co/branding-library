@@ -1,0 +1,45 @@
+kind: font
+id: monoid-nerdfont
+version: 1.0.0
+name: Monoid Nerd Font
+description: >
+  Monoid monospaced font with Nerd Fonts glyph augmentation. Designed by Andreas Larsen for crisp legibility at small sizes with semantic ligatures for code, including a Retina weight tuned for high-DPI displays. Patched with ~10,000 additional icons (Powerline, Material Design Icons, Font Awesome, Devicons, Octicons, Codicons, etc.).
+family: Monoid Nerd Font
+classification: monospace
+tags: [ nerd-font, monospace, programming-ligatures, terminal, code ]
+
+provenance:
+  source: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  license: OFL-1.1
+  attribution: >
+    Monoid, Copyright 2015 Andreas Larsen and contributors (https://github.com/larsenwork/monoid), dual-licensed under the SIL Open Font License, Version 1.1 and the MIT License. Nerd Fonts patching by Ryan L McIntyre, MIT license.
+  importedDate: 2026-05-19
+  importedFromVersion: v3.4.0
+  notes: >
+    Download archive: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Monoid.zip
+
+source:
+  kind: external
+  family: Monoid Nerd Font
+  notes: >
+    Nerd-Font-patched build of Monoid. Not available via Google Fonts. Download ttf files from the Nerd Fonts GitHub release and self-host, or install system-wide for terminal/editor use.
+
+fallbackStack:
+  - Monoid
+  - JetBrains Mono
+  - Menlo
+  - Monaco
+  - Consolas
+  - Liberation Mono
+  - monospace
+
+availableStyles:
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 450, style: normal }
+  - { weight: 700, style: normal }
+cdnUrls:
+  MonoidNerdFontMono-Regular.ttf: https://cdn.brand-atoms.com/fonts/monoid-nerdfont/1.0.0/MonoidNerdFontMono-Regular.ttf
+  MonoidNerdFontMono-Italic.ttf: https://cdn.brand-atoms.com/fonts/monoid-nerdfont/1.0.0/MonoidNerdFontMono-Italic.ttf
+  MonoidNerdFontMono-Retina.ttf: https://cdn.brand-atoms.com/fonts/monoid-nerdfont/1.0.0/MonoidNerdFontMono-Retina.ttf
+  MonoidNerdFontMono-Bold.ttf: https://cdn.brand-atoms.com/fonts/monoid-nerdfont/1.0.0/MonoidNerdFontMono-Bold.ttf

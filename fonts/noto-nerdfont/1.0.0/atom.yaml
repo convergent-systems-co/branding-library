@@ -1,0 +1,39 @@
+kind: font
+id: noto-nerdfont
+version: 1.0.0
+name: Noto Nerd Font
+description: >
+  Noto Mono with Nerd Fonts glyph augmentation. Google and Monotype's universal-coverage typeface family in its monospace cut, designed for harmonious typography across hundreds of scripts. Patched with ~10,000 additional icons (Powerline, Material Design Icons, Font Awesome, Devicons, Octicons, Codicons, etc.).
+family: NotoMono Nerd Font
+classification: monospace
+tags: [ nerd-font, monospace, google, multilingual, terminal ]
+
+provenance:
+  source: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  license: OFL-1.1
+  attribution: >
+    Noto Mono, Copyright 2012 Google Inc. (https://github.com/notofonts/), licensed under the SIL Open Font License, Version 1.1. Designed in collaboration with Monotype. Nerd Fonts patching by Ryan L McIntyre, MIT license.
+  importedDate: 2026-05-19
+  importedFromVersion: v3.4.0
+  notes: >
+    Captures the Noto Mono cut of the Noto family (the dedicated monospace variant). The Nerd Fonts Noto archive also ships Noto Sans Mono with extended condensed and weight axes; that variant is tracked separately under noto-sans-mono. Download archive: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Noto.zip
+
+source:
+  kind: external
+  family: NotoMono Nerd Font
+  notes: >
+    Nerd-Font-patched build of Noto Mono. The unpatched Noto Mono is available via Google Fonts; the Nerd-Font-patched build is distributed only via the Nerd Fonts GitHub release. Download ttf files and self-host, or install system-wide for terminal/editor use.
+
+fallbackStack:
+  - Noto Mono
+  - Noto Sans Mono
+  - Menlo
+  - Monaco
+  - Consolas
+  - Liberation Mono
+  - monospace
+
+availableStyles:
+  - { weight: 400, style: normal }
+cdnUrls:
+  NotoMonoNerdFontMono-Regular.ttf: https://cdn.brand-atoms.com/fonts/noto-nerdfont/1.0.0/NotoMonoNerdFontMono-Regular.ttf

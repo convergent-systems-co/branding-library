@@ -1,0 +1,64 @@
+kind: font
+id: source-code-pro-nerdfont
+version: 1.0.0
+name: Source Code Pro Nerd Font
+description: >
+  Adobe's Source Code Pro with Nerd Fonts glyph augmentation. Paul D. Hunt's open-source monospace, drawn as the code companion to the Source Sans family, with eight weights spanning ExtraLight to Black across upright and italic. Patched with ~10,000 additional icons (Powerline, Material Design Icons, Font Awesome, Devicons, Octicons, Codicons, etc.).
+family: SauceCodePro Nerd Font
+classification: monospace
+tags: [ nerd-font, monospace, adobe, terminal, code ]
+
+provenance:
+  source: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  license: OFL-1.1
+  attribution: >
+    Source Code Pro, Copyright 2010, 2012 Adobe Systems Incorporated (https://github.com/adobe-fonts/source-code-pro), designed by Paul D. Hunt, licensed under the SIL Open Font License, Version 1.1. Nerd Fonts patching by Ryan L McIntyre, MIT license. Note: the Nerd-Font-patched build is distributed under the family name "SauceCodePro Nerd Font" to avoid trademark issues with Adobe's "Source Code Pro".
+  importedDate: 2026-05-19
+  importedFromVersion: v3.4.0
+  notes: >
+    Download archive: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/SourceCodePro.zip
+
+source:
+  kind: external
+  family: SauceCodePro Nerd Font
+  notes: >
+    Nerd-Font-patched build of Source Code Pro (renamed SauceCodePro for distribution). The unpatched Source Code Pro is available via Google Fonts; the Nerd-Font-patched build is distributed only via the Nerd Fonts GitHub release. Download ttf files and self-host, or install system-wide for terminal/editor use.
+
+fallbackStack:
+  - Source Code Pro
+  - Menlo
+  - Monaco
+  - Consolas
+  - Liberation Mono
+  - monospace
+
+availableStyles:
+  - { weight: 200, style: normal }
+  - { weight: 200, style: italic }
+  - { weight: 300, style: normal }
+  - { weight: 300, style: italic }
+  - { weight: 400, style: normal }
+  - { weight: 400, style: italic }
+  - { weight: 500, style: normal }
+  - { weight: 500, style: italic }
+  - { weight: 600, style: normal }
+  - { weight: 600, style: italic }
+  - { weight: 700, style: normal }
+  - { weight: 700, style: italic }
+  - { weight: 900, style: normal }
+  - { weight: 900, style: italic }
+cdnUrls:
+  SauceCodeProNerdFontMono-ExtraLight.ttf: https://cdn.brand-atoms.com/fonts/source-code-pro-nerdfont/1.0.0/SauceCodeProNerdFontMono-ExtraLight.ttf
+  SauceCodeProNerdFontMono-ExtraLightItalic.ttf: https://cdn.brand-atoms.com/fonts/source-code-pro-nerdfont/1.0.0/SauceCodeProNerdFontMono-ExtraLightItalic.ttf
+  SauceCodeProNerdFontMono-Light.ttf: https://cdn.brand-atoms.com/fonts/source-code-pro-nerdfont/1.0.0/SauceCodeProNerdFontMono-Light.ttf
+  SauceCodeProNerdFontMono-LightItalic.ttf: https://cdn.brand-atoms.com/fonts/source-code-pro-nerdfont/1.0.0/SauceCodeProNerdFontMono-LightItalic.ttf
+  SauceCodeProNerdFontMono-Regular.ttf: https://cdn.brand-atoms.com/fonts/source-code-pro-nerdfont/1.0.0/SauceCodeProNerdFontMono-Regular.ttf
+  SauceCodeProNerdFontMono-Italic.ttf: https://cdn.brand-atoms.com/fonts/source-code-pro-nerdfont/1.0.0/SauceCodeProNerdFontMono-Italic.ttf
+  SauceCodeProNerdFontMono-Medium.ttf: https://cdn.brand-atoms.com/fonts/source-code-pro-nerdfont/1.0.0/SauceCodeProNerdFontMono-Medium.ttf
+  SauceCodeProNerdFontMono-MediumItalic.ttf: https://cdn.brand-atoms.com/fonts/source-code-pro-nerdfont/1.0.0/SauceCodeProNerdFontMono-MediumItalic.ttf
+  SauceCodeProNerdFontMono-SemiBold.ttf: https://cdn.brand-atoms.com/fonts/source-code-pro-nerdfont/1.0.0/SauceCodeProNerdFontMono-SemiBold.ttf
+  SauceCodeProNerdFontMono-SemiBoldItalic.ttf: https://cdn.brand-atoms.com/fonts/source-code-pro-nerdfont/1.0.0/SauceCodeProNerdFontMono-SemiBoldItalic.ttf
+  SauceCodeProNerdFontMono-Bold.ttf: https://cdn.brand-atoms.com/fonts/source-code-pro-nerdfont/1.0.0/SauceCodeProNerdFontMono-Bold.ttf
+  SauceCodeProNerdFontMono-BoldItalic.ttf: https://cdn.brand-atoms.com/fonts/source-code-pro-nerdfont/1.0.0/SauceCodeProNerdFontMono-BoldItalic.ttf
+  SauceCodeProNerdFontMono-Black.ttf: https://cdn.brand-atoms.com/fonts/source-code-pro-nerdfont/1.0.0/SauceCodeProNerdFontMono-Black.ttf
+  SauceCodeProNerdFontMono-BlackItalic.ttf: https://cdn.brand-atoms.com/fonts/source-code-pro-nerdfont/1.0.0/SauceCodeProNerdFontMono-BlackItalic.ttf
