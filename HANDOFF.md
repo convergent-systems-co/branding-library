@@ -6,17 +6,17 @@ This is a living document: edit it as items move between sections.
 
 ---
 
-## Snapshot (2026-05-18)
+## Snapshot (2026-05-19)
 
-- **Brands:** 91
-- **Palettes:** 159
+- **Brands:** 100
+- **Palettes:** 167
 - **Fonts:** 69
 - **Output formats per brand:** 9 (YAML, JSON, W3C tokens, CSS, SCSS,
   Tailwind, Figma tokens, Swift, Kotlin, Markdown)
 - **Live site:** [brand-atoms.com](https://brand-atoms.com)
 - **CLI:** `brandatom` v0.1.1 — brew + scoop install live
-- **Last commit on `main`:** `ba99e02`
-- **Session commit count:** 28 (Wave-3 added 4 brand-cluster commits)
+- **Last commit on `main`:** `c4267cd` (pre-handoff bump)
+- **Session commit count:** 34 (Wave-4 added 2 brand commits)
 
 ## What "complete" means
 
@@ -52,10 +52,7 @@ decreasing order of usefulness for the catalog's primary audiences
 
 - [x] **Communications apps (4):** WhatsApp, Telegram, Signal, Snapchat — landed in `6733a61` (#20)
 - [x] **Hardware / silicon (5):** NVIDIA, AMD, Intel, Samsung, Sony — landed in `ce0b1b4` (#21). Scope was parent corporate identity only; sub-brands (GeForce, Ryzen, Galaxy, Bravia, Xperia, Vaio) deferred.
-- [ ] **Other major tech gap-fillers (~9):** IBM (as a brand — Carbon
-      palette exists), Atlassian (parent of existing Trello),
-      Adobe, Cursor, Hugging Face, MongoDB, Postman, Salesforce,
-      Oracle — tracked in [#22](https://github.com/convergent-systems-co/branding-library/issues/22)
+- [x] **Other major tech gap-fillers (9):** Adobe, IBM, Atlassian, Salesforce, MongoDB landed in `943c3b8` (#22A); Cursor, Hugging Face, Postman, Oracle landed in `c4267cd` (#22B). IBM brand reuses the existing `carbon@1` palette (no duplicate). Cursor authored light-first per live evidence (overriding initial dark-first directive); MongoDB authored dark-first per mongodb.com hero. Spectrum + Atlassian palettes captured anchor stops only, not the full 14×16 grid — flagged in palette `provenance.notes` for future expansion.
 - [x] **AI labs (4):** Mistral, Cohere, Perplexity, xAI — landed in `7518580` (#23). Anthropic + OpenAI already in catalog. Audit resolved 2026-05-19: Cohere `identity: ink` kept — the brand-badge canvas is the Command product UI (dark), not the marketing chrome (light); consistent with other AI-lab identity surfaces.
 - [x] **Email / productivity (5):** Gmail, Outlook, Superhuman, HEY, Fastmail — landed in `ba99e02` (#24). Gmail/Outlook documented as product-brands under Google/Microsoft via `provenance.notes` only (no inheritance machinery).
 
