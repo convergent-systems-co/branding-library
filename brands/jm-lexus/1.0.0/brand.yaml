@@ -1,0 +1,190 @@
+id: jm-lexus
+version: 1.0.0
+name: JM Lexus
+description: >
+  JM Lexus is a JM Family Enterprises retail dealership in Margate,
+  Florida — long the highest-volume Lexus dealer in the United States
+  — operating under the global Lexus dealer-identity standards.
+  Voice: "World-Class Shopping Experience." Visually, JM Lexus
+  inherits the Lexus monochrome luxury system: a near-black canvas,
+  brushed-chrome accents, and the Lexus L mark as the singular point
+  of color (or rather, of polished gray). Display type targets a
+  neutral grotesk in the spirit of Lexus's licensed Nobel face,
+  rendered here as Helvetica Neue until the licensed kit is supplied
+  for production work.
+
+tags: [automotive, dealer, luxury, jmfe, lexus, monochrome, dark-first]
+
+provenance:
+  source: https://www.jmlexus.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    JM Lexus — a JM Family Enterprises company. The Lexus trademark,
+    "L" emblem, and all dealer-identity standards belong to Lexus, a
+    luxury division of Toyota Motor Corporation. JM Lexus inherits
+    the Lexus dealer-brand standards in full; no JM-specific identity
+    deviates from the parent Lexus system. JM Family Enterprises,
+    Inc. holds the dealer franchise.
+  importedDate: 2026-05-19
+  notes: >
+    1.0.0 audit upgrade of jm-lexus@0.1.0 — preserves the original
+    Lexus monochrome palette + Helvetica Neue substitution for Nobel,
+    adds identity / on-identity roles (identity = near-black canvas
+    appropriate to a dark-luxury system), and expands the rules block
+    from 2 to 7 typed entries grounded in observable Lexus global
+    identity material on lexus.com and the deployed jmlexus.com site.
+    The 0.1.0 spec remains the historical baseline.
+
+references:
+  palette: jm-lexus@1
+  fonts:
+    heading: helvetica-neue@1
+    body: helvetica-neue@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # JM Lexus is dark-first — the brand-card surface is the near-
+    # black Lexus canvas the L emblem sits on, with white-on-dark
+    # as the contrasting ink. Light-on-dark dominates the global
+    # Lexus identity (lexus.com, dealer print, environmental
+    # signage), so identity points at lexus-black, not lexus-white.
+    identity: lexus-black
+    on-identity: lexus-white
+
+    primary: lexus-black
+    primary-hover: lexus-graphite
+    accent: lexus-chrome
+    mark: lexus-black
+    text-primary-light: lexus-graphite
+    text-primary-dark: lexus-white
+    background-light: lexus-white
+    background-dark: lexus-black
+    surface-light: lexus-pearl
+    surface-dark: lexus-graphite
+    border-light: lexus-platinum
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 7.0
+    standard: WCAG-AAA
+    severity: error
+    rationale: >
+      Lexus Graphite (#1A1A1A) on Lexus White (#FFFFFF) measures
+      ~18:1 — well past the AAA 7:1 floor. The luxury-automotive
+      audience reads on a range of devices and lighting conditions
+      (showroom signage, mobile inventory pages, financing PDFs);
+      the brand's quiet-confidence posture justifies an AAA target
+      rather than the AA minimum.
+
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - lexus-black
+      - lexus-white
+    forbidden:
+      - lexus-chrome
+      - lexus-platinum
+      - lexus-pearl
+      - lexus-ash
+      - lexus-silver
+    severity: error
+    rationale: >
+      The Lexus L mark is rendered in solid black on light surfaces
+      or solid white on dark surfaces — never in chrome, gradient,
+      platinum, or a brand-accent tint. Lexus's global dealer
+      identity standards published via lexus.com consistently
+      enforce a two-tone-only treatment of the emblem.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - on-busy-photo
+      - inverted-without-variant
+      - gradient-fill
+      - outlined-only
+    severity: error
+    rationale: >
+      The Lexus mark is among the most-protected luxury marks in
+      the world. Only Lexus-approved variants, clearspace ratios,
+      and color treatments are permitted; dealer co-marks
+      (JM Lexus) must respect the Lexus dealer-identity guidelines
+      published by Lexus to its franchised network. Any treatment
+      that softens or distorts the silhouette violates dealer
+      compliance.
+
+  - type: contextRestriction
+    target: roles.colors.accent
+    allowedContexts:
+      - feature-detail
+      - secondary-emphasis
+      - print
+    forbiddenContexts:
+      - cta-primary
+      - error-state
+      - destructive-action
+    severity: error
+    rationale: >
+      Lexus Chrome (#8E8E8E) is the brushed-silver accent that
+      evokes the marque's polished-metal trim. It functions as a
+      secondary-emphasis color — never as a primary call-to-action
+      or as a signal for errors or destructive actions. The Lexus
+      visual system has no warning-red; chrome and white-on-black
+      do the entire signaling job.
+
+  - type: compositionConstraint
+    target: roles.colors.identity
+    pairsWith:
+      - lexus-white
+      - lexus-chrome
+      - lexus-platinum
+    doesNotPairWith:
+      - toyota-red
+      - jmfe-signal-yellow
+      - jmfe-gold
+    severity: error
+    rationale: >
+      The Lexus near-black canvas is engineered to sit next to its
+      own white / chrome / platinum scale, not next to the parent
+      Toyota red or the JMFE signal-yellow / heritage gold.
+      Co-locking JM Lexus with the parent JMFE palette is forbidden
+      in dealer-facing materials per the Lexus dealer-identity
+      separation rule — JM Lexus presents as Lexus first.
+
+  - type: fontPairing
+    target: typography.display
+    requires: prose
+    minSizeRatio: 1.6
+    severity: error
+    rationale: >
+      Lexus's display typography (the licensed Nobel face,
+      represented here by Helvetica Neue) carries a quiet,
+      restrained voice that depends on a strong size hierarchy
+      between display and prose. A 1.6× minimum ratio preserves
+      the typographic distinction Lexus uses across vehicle
+      marketing and dealer sites — display reads as headline,
+      prose as body, with no ambiguity in the middle.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AAA
+    criterion: "1.4.6"
+    severity: warning
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.6 (Contrast Enhanced — Level
+      AAA). The Lexus monochrome system trivially clears the 7:1
+      enhanced-contrast bar, and a luxury-automotive consumer
+      experience benefits from the enhanced legibility floor on
+      financing pages, specification tables, and dealer paperwork.

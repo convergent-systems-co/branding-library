@@ -1,0 +1,193 @@
+id: toyota
+version: 1.0.0
+name: Toyota
+description: >
+  Toyota Motor Sales, U.S.A. — the American sales and marketing arm
+  of Toyota Motor Corporation. The Toyota mark is one of the most
+  recognized automotive brands globally, anchored on a single
+  signature color (Toyota Red, #EB0A1E / Pantone 186C) and the
+  proprietary Toyota Type corporate face. Voice: confident, direct,
+  human-centered ("Let's Go Places"). Visually, Toyota is light-
+  first: white field, near-black wordmark and headline copy, and
+  red as the brand-action color used sparingly and decisively.
+
+tags: [automotive, oem, toyota, parent-brand, red, light-first]
+
+provenance:
+  source: https://www.toyota.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Toyota Motor Sales, U.S.A., Inc. and Toyota Motor Corporation
+    — all trademarks belong to Toyota Motor Corporation. Identity
+    values verified from the official corporate horizontal-logo
+    SVG (VIS_toyota_logo_horiz_black_RGB_2023.svg) served from
+    delivery.tcom.assetscs.toyota.com and cross-referenced against
+    the SETF Brand Portal (setfbranding.com/colors.html) which
+    publishes Toyota Red as Pantone 186C / CMYK 0/100/90/0 / RGB
+    235/10/30 / HEX #EB0A1E.
+  importedDate: 2026-05-19
+  notes: >
+    1.0.0 audit upgrade of toyota@0.1.0 — preserves the canonical
+    Toyota Red + neutral palette and Toyota Type primary face,
+    adds identity / on-identity roles for the white Toyota canvas,
+    and expands the rules block from 3 to 7 typed entries
+    grounded in Toyota corporate identity (toyota.com), Toyota
+    Motor Corporation global brand-guide references, and the SETF
+    Brand Portal Pantone documentation. The 0.1.0 spec remains
+    historical.
+
+references:
+  palette: toyota@1
+  fonts:
+    heading: toyota-type@1
+    body: toyota-type@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # Toyota is light-first — the corporate wordmark sits on
+    # toyota-white in horizontal black + the red ellipses. The
+    # brand-card canvas is white; toyota-graphite carries the
+    # text and the wordmark.
+    identity: toyota-white
+    on-identity: toyota-graphite
+
+    primary: toyota-red
+    primary-hover: toyota-red
+    accent: toyota-red
+    mark: toyota-black
+    text-primary-light: toyota-graphite
+    text-primary-dark: toyota-white
+    background-light: toyota-white
+    background-dark: toyota-black
+    surface-light: toyota-platinum
+    surface-dark: toyota-graphite
+    border-light: toyota-silver
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      Toyota Graphite (#252525) on Toyota White (#FFFFFF) measures
+      ~16:1, and Toyota White on Toyota Black is ~21:1 — both
+      decisively past the AA floor. Toyota's marketing and dealer
+      properties operate at AA as the published baseline;
+      consumer-facing safety and financing copy must remain
+      legible across devices, lighting, and printed media.
+
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - toyota-red
+    forbidden:
+      - toyota-black
+      - toyota-graphite
+      - toyota-white
+      - toyota-platinum
+      - toyota-silver
+      - toyota-ash
+    severity: error
+    rationale: >
+      Toyota Red (#EB0A1E / Pantone 186C) is the single signature
+      color in the Toyota brand system. Every other swatch in the
+      palette is a neutral surface or text role; substituting any
+      of them for the primary collapses the brand's visual
+      recognition.
+
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - toyota-black
+      - toyota-white
+      - toyota-red
+    forbidden:
+      - toyota-graphite
+      - toyota-platinum
+      - toyota-silver
+      - toyota-ash
+    severity: error
+    rationale: >
+      The Toyota wordmark renders in solid black on light surfaces
+      and solid white on dark surfaces; the "T-ellipses" emblem
+      may be rendered in Toyota Red as a featured mark. Mid-gray
+      tints (graphite, platinum, silver, ash) are not authorized
+      mark fills — they collapse the wordmark's silhouette
+      against light surfaces.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - on-busy-photo
+      - gradient-fill
+      - inverted-without-variant
+      - outlined-only
+    severity: error
+    rationale: >
+      The Toyota mark is one of the most-protected commercial
+      marks in the world. Only Toyota-approved variants,
+      clearspace ratios, and color treatments are permitted;
+      Toyota Motor Corporation enforces the dealer and partner
+      identity standards globally and exposes the approved
+      treatments through licensed brand portals.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["400", "600"]
+    severity: warning
+    rationale: >
+      Toyota Type is distributed in Book (400) and Semibold (600)
+      — the two weights authorized in licensed Toyota brand
+      packages, including the SETF Brand Portal's documented
+      type pair. Other weights are not part of the licensed kit.
+
+  - type: contextRestriction
+    target: roles.colors.primary
+    allowedContexts:
+      - cta-primary
+      - brand-feature
+      - mark-emphasis
+    forbiddenContexts:
+      - body-text
+      - large-surface-fill
+      - background-fill
+    severity: error
+    rationale: >
+      Toyota Red is a signature color, not a surface color. Using
+      it as a body-text fill or as a large-surface background
+      breaks the discipline that gives the red its impact — it
+      is reserved for the mark, primary CTAs, and brand-feature
+      emphasis where Toyota's brand voice peaks.
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    pairsWith:
+      - toyota-white
+      - toyota-platinum
+      - toyota-black
+      - toyota-graphite
+    doesNotPairWith:
+      - jmfe-teal
+      - jma-teal
+      - wo-teal
+      - lexus-chrome
+    severity: error
+    rationale: >
+      Toyota Red pairs with the Toyota neutral scale only.
+      Placing it adjacent to a JMFE-family teal or Lexus chrome
+      breaks the Toyota corporate-identity standalone posture —
+      Toyota presents on its own palette, not adjacent to its
+      partner / distributor identities.

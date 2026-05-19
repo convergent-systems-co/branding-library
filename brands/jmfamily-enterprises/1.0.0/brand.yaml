@@ -1,0 +1,195 @@
+id: jmfamily-enterprises
+version: 1.0.0
+name: JM Family Enterprises
+description: >
+  JM Family Enterprises, Inc. — founded in 1968 by Jim Moran and
+  headquartered in Deerfield Beach, Florida — is a privately held
+  diversified company with annual revenue of $24.7 billion and over
+  5,500 associates. JMFE is the parent of Southeast Toyota
+  Distributors (the world's largest independent Toyota distributor),
+  Southeast Toyota Finance, JM&A Group, JM Lexus, and World Omni
+  Financial. Voice: "World-Class Workplace." Visual identity is
+  professional and corporate: deep teal primary, heritage gold and
+  signal-yellow accents, a deep blue-black ink, set on a white
+  light-first canvas. Display copy in Freight Text Pro pairs with
+  Proxima Nova body — both visible on jmfamily.com.
+
+tags: [corporate, parent-company, automotive, finance, jmfe, teal, light-first]
+
+provenance:
+  source: https://www.jmfamily.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    JM Family Enterprises, Inc. — all trademarks, wordmarks, and
+    brand assets are the property of JM Family Enterprises. This
+    spec reflects the publicly observable visual identity on
+    jmfamily.com (style.min.css, deployed press kits) and is not an
+    official brand-guidelines document.
+  importedDate: 2026-05-19
+  notes: >
+    1.0.0 audit upgrade of jmfamily-enterprises@0.1.0 — preserves
+    the rich palette extracted from jmfamily.com (teal primary,
+    gold + signal-yellow + amber + terracotta accents), adds
+    identity / on-identity roles for the white corporate canvas,
+    and expands the rules block from 2 to 7 typed entries. The
+    0.1.0 spec remains historical; <jmfamily-enterprises@1>
+    resolves to this 1.0.0 atom.
+
+references:
+  palette: jmfamily-enterprises@1
+  fonts:
+    heading: freight-text-pro@1
+    body: proxima-nova@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # JMFE is light-corporate — the brand-card canvas is white
+    # (jmfe-bg) and the wordmark / teal accent sit on it.
+    # `identity` therefore points at the white surface, with the
+    # deep blue-black ink as the contrasting text role.
+    identity: jmfe-bg
+    on-identity: jmfe-ink
+
+    primary: jmfe-teal
+    primary-hover: jmfe-teal-deep
+    accent: jmfe-gold
+    highlight: jmfe-signal-yellow
+    mark: jmfe-ink
+    warning: jmfe-amber
+    error: jmfe-terracotta
+    text-primary-light: jmfe-ink
+    text-primary-dark: jmfe-bg
+    background-light: jmfe-bg
+    background-dark: jmfe-ink
+    surface-light: jmfe-surface
+    surface-dark: jmfe-slate
+    border-light: jmfe-teal-mist
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      JMFE Ink (#1D2C31) on JMFE Background (#FFFFFF) measures
+      ~14:1 — decisively past the AA floor. The corporate audience
+      (employees, investors, dealer partners) consumes long-form
+      annual-report and press-release content; AA is the documented
+      baseline for the JMFE family.
+
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - jmfe-teal
+      - jmfe-teal-deep
+    forbidden:
+      - jmfe-gold
+      - jmfe-amber
+      - jmfe-yellow
+      - jmfe-signal-yellow
+      - jmfe-orange
+      - jmfe-terracotta
+    severity: error
+    rationale: >
+      JMFE Teal (#008C99) is the corporate primary on jmfamily.com
+      — links, primary buttons, and accent strokes. The gold,
+      amber, yellow, orange, and terracotta swatches are
+      heritage / signal / illustration accents and must not stand
+      in for the primary brand color. The teal carries the
+      recognition; the warms accent it.
+
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - jmfe-ink
+      - jmfe-bg
+    forbidden:
+      - jmfe-teal
+      - jmfe-teal-deep
+      - jmfe-gold
+      - jmfe-signal-yellow
+      - jmfe-terracotta
+    severity: error
+    rationale: >
+      The JM Family wordmark is rendered in deep blue-black on
+      light surfaces or reversed to white on the deep-ink
+      background — never re-tinted in teal, gold, or signal-
+      yellow. The brand-card accents stay alongside the wordmark,
+      not inside it.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - inverted-without-variant
+      - gradient-fill
+      - on-busy-photo
+    severity: error
+    rationale: >
+      The JM Family wordmark is a registered mark. Apply official
+      variants only; the inverted (white-on-ink) variant must be
+      used for dark surfaces rather than auto-inverting the
+      light-surface variant. Drop shadows, gradient fills, and
+      stretched aspect ratios are all forbidden per standard
+      corporate-identity practice.
+
+  - type: contextRestriction
+    target: roles.colors.highlight
+    allowedContexts:
+      - cta-emphasis
+      - data-viz-callout
+      - print-feature
+    forbiddenContexts:
+      - body-text
+      - error-state
+      - destructive-action
+    severity: error
+    rationale: >
+      JMFE Signal Yellow (#FFC60A) is a high-attention callout
+      used sparingly for feature emphasis and data-viz highlights
+      on jmfamily.com. It must NOT be used as a body-text color
+      (illegible at small sizes against white) and it must NOT be
+      reused as a warning or error signal — JMFE Amber and
+      Terracotta hold those roles.
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    pairsWith:
+      - jmfe-bg
+      - jmfe-surface
+      - jmfe-ink
+      - jmfe-teal-mist
+    doesNotPairWith:
+      - toyota-red
+      - lexus-chrome
+    severity: recommendation
+    rationale: >
+      JMFE Teal sits on the corporate white / surface / ink scale.
+      Pairing it adjacent to Toyota Red or the Lexus Chrome breaks
+      the corporate-parent positioning — JMFE is the umbrella
+      identity, distinct from the OEM identities of its
+      subsidiaries' partners.
+
+  - type: fontPairing
+    target: typography.display
+    requires: prose
+    minSizeRatio: 1.5
+    severity: error
+    rationale: >
+      Freight Text Pro serves as the editorial display face on
+      jmfamily.com and pairs with Proxima Nova body. A 1.5×
+      minimum size ratio preserves the serif-display vs sans-prose
+      hierarchy the corporate site has deployed since the current
+      brand refresh.

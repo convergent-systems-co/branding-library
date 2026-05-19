@@ -1,0 +1,170 @@
+id: southeast-toyota-distributors
+version: 1.0.0
+name: Southeast Toyota Distributors
+description: >
+  Southeast Toyota Distributors (SET), a JM Family Enterprises
+  company, is the world's largest independent Toyota distributor —
+  serving Florida, Georgia, Alabama, North Carolina, and South
+  Carolina through a network of more than 175 authorized Toyota
+  dealerships. SET co-locks with the parent Toyota corporate
+  identity: Toyota Red (#EB0A1E) primary, near-black SET wordmark,
+  white field, and a supporting cool-gray scale shared with sibling
+  SETF.
+
+tags: [automotive, distributor, jmfe, set, toyota-aligned, red, light-first]
+
+provenance:
+  source: https://exploresetoyota.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Southeast Toyota Distributors, LLC — a JM Family Enterprises
+    company. The Toyota trademark and red color belong to Toyota
+    Motor Corporation; SET adopts that primary directly. Identity
+    values verified from the SET logo SVG served via Sanity CDN
+    and from the Southeast Toyota Dealers marketing site
+    exploresetoyota.com. The supporting gray scale mirrors the
+    SETF Brand Portal (setfbranding.com).
+  importedDate: 2026-05-19
+  notes: >
+    1.0.0 audit upgrade of southeast-toyota-distributors@0.1.0 —
+    preserves the original red + neutral palette and the
+    Toyota Type primary face, adds identity / on-identity roles
+    for the white SET canvas, and expands the rules block from 2
+    to 6 typed entries grounded in Toyota global identity and the
+    SETF public brand portal which SET shares. The 0.1.0 spec
+    remains the historical baseline.
+
+references:
+  palette: southeast-toyota-distributors@1
+  fonts:
+    heading: toyota-type@1
+    body: toyota-type@1
+    fallback: helvetica-neue@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # SET is light-first like its Toyota parent — the brand-card
+    # canvas is white (set-white) carrying the SET wordmark in
+    # near-black with the Toyota Red co-lock. `identity` points
+    # at the white surface, with set-graphite as the contrasting
+    # ink.
+    identity: set-white
+    on-identity: set-graphite
+
+    primary: toyota-red
+    primary-hover: toyota-red
+    accent: toyota-red
+    mark: set-graphite
+    text-primary-light: set-graphite
+    text-primary-dark: set-white
+    background-light: set-white
+    background-dark: set-graphite
+    surface-light: set-fog
+    surface-dark: set-slate
+    border-light: set-steel
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      SET Graphite (#252525) on SET White (#FFFFFF) measures
+      ~16:1 — well past the AA 4.5:1 floor. SET's communications
+      reach dealer associates, customers, and regional regulators;
+      the AA target is the documented compliance bar shared
+      across the JMFE-family Toyota businesses.
+
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - toyota-red
+    forbidden:
+      - set-graphite
+      - set-fog
+      - set-slate
+      - set-steel
+    severity: error
+    rationale: >
+      Toyota Red (#EB0A1E / Pantone 186C) is the single primary
+      across the entire Toyota system, including SET as the
+      regional distributor. The supporting grays are surface and
+      text roles — they must not substitute for the brand action
+      color, which is what carries Toyota recognition.
+
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - set-graphite
+      - set-white
+      - toyota-red
+    forbidden:
+      - set-fog
+      - set-slate
+      - set-steel
+    severity: error
+    rationale: >
+      The SET wordmark is rendered in near-black (set-graphite) on
+      light surfaces, reversed to white on the dark-graphite
+      canvas, or in Toyota Red where the co-lock with the parent
+      Toyota mark is shown. Lighter grays are surface roles, not
+      mark roles.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - on-busy-photo
+      - gradient-fill
+      - outlined-only
+      - inverted-without-variant
+    severity: error
+    rationale: >
+      The Southeast Toyota wordmark co-locks with the Toyota mark;
+      modifications would violate both SET dealer-marketing
+      standards and Toyota Motor Corporation corporate-identity
+      standards. The Toyota mark is one of the most-protected
+      commercial marks globally, and SET inherits that protection
+      in full.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["400", "600"]
+    severity: warning
+    rationale: >
+      Toyota Type — the proprietary corporate face — is licensed
+      in Book (400) and Semibold (600). The same weight ladder
+      governs SET's deliverables. Helvetica Neue serves as the
+      fallback when Toyota Type is unavailable.
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    pairsWith:
+      - set-white
+      - set-fog
+      - set-graphite
+    doesNotPairWith:
+      - jmfe-teal
+      - jma-teal
+      - wo-teal
+      - lexus-chrome
+    severity: error
+    rationale: >
+      Toyota Red sits on the Toyota / SET neutral scale only. It
+      must never be placed adjacent to the JMFE-family teals
+      (JMFE, JM&A, World Omni) or the Lexus chrome — co-locking
+      Toyota Red with a sibling-JMFE brand color would imply a
+      sub-brand relationship that does not exist in the Toyota
+      identity system.

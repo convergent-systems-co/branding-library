@@ -1,0 +1,170 @@
+id: jma-group
+version: 1.0.0
+name: JM&A Group
+description: >
+  JM&A Group, a JM Family Enterprises company, provides finance and
+  insurance products, performance-development services, and training
+  programs to automotive dealerships across North America. Tagline:
+  "Your Partner for Dealership Growth & Success." The visual
+  identity is light-corporate: the JM&A wordmark in near-black with
+  a single signature teal (#008D9A) as the brand-card accent, set
+  against white surfaces. Typography mirrors the parent JMFE
+  corporate face (Proxima Nova) until a JM&A-specific spec is
+  supplied.
+
+tags: [automotive, finance-and-insurance, dealer-services, jmfe, jma, teal, light-first]
+
+provenance:
+  source: https://www.jmagroup.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    JM&A Group — a JM Family Enterprises company. The JM&A wordmark,
+    teal hue, and all derivative dealer-facing identity belong to
+    JM Family Enterprises, Inc. Identity values verified from the
+    official horizontal-wordmark SVG hosted at
+    jmagroup.com/hubfs/identity/logos/jma-logo-horizontal-fc.svg.
+  importedDate: 2026-05-19
+  notes: >
+    1.0.0 audit upgrade of jma-group@0.1.0 — preserves the original
+    wordmark-derived palette (jma-teal + onyx + supporting fog),
+    adds identity / on-identity roles for the white brand-card
+    canvas the wordmark sits on, and expands the rules block from 2
+    to 6 typed entries grounded in the wordmark SVG and the parent
+    JMFE corporate identity. The 0.1.0 spec remains the historical
+    baseline; consumers using <jma-group@1> resolve here.
+
+references:
+  palette: jma-group@1
+  fonts:
+    heading: proxima-nova@1
+    body: proxima-nova@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # JM&A is light-corporate — the brand-card canvas is white
+    # (jma-white) and the wordmark sits on it in near-black with
+    # the teal accent stroke. `identity` therefore points at the
+    # white surface, with onyx as the contrasting ink.
+    identity: jma-white
+    on-identity: jma-onyx
+
+    primary: jma-teal
+    primary-hover: jma-teal-deep
+    accent: jma-teal
+    mark: jma-onyx
+    text-primary-light: jma-onyx
+    text-primary-dark: jma-white
+    background-light: jma-white
+    background-dark: jma-onyx
+    surface-light: jma-fog
+    surface-dark: jma-graphite
+    border-light: jma-teal-light
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      JM&A Onyx (#010101) on JM&A White (#FFFFFF) measures ~21:1,
+      decisively clearing the AA 4.5:1 floor. The dealer-services
+      audience consumes JM&A content as long-form training
+      material, finance product sheets, and operations dashboards;
+      AA is the standing requirement, and the deployed wordmark
+      composition already satisfies it.
+
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - jma-teal
+      - jma-teal-deep
+    forbidden:
+      - jma-fog
+      - jma-graphite
+      - jma-slate
+      - jma-teal-light
+    severity: error
+    rationale: >
+      The JM&A primary teal is the SVG-extracted #008D9A. The
+      deeper sibling (#00707A) covers hover and pressed states.
+      Lighter teals and the supporting gray scale are surface and
+      meta-text tools — they must never substitute for the primary
+      brand action color, which is what carries JM&A's recognition
+      against the parent JMFE family of teals.
+
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - jma-onyx
+      - jma-white
+    forbidden:
+      - jma-teal
+      - jma-teal-deep
+      - jma-teal-light
+      - jma-fog
+      - jma-graphite
+    severity: error
+    rationale: >
+      The wordmark fill is near-black on light surfaces and white
+      when reversed — the teal is the ampersand-accent stroke
+      INSIDE the wordmark, not a fill recolor for the wordmark
+      itself. Recoloring the wordmark in teal collapses the
+      designed contrast between the lettering and the accent
+      detail.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - gradient-fill
+      - on-busy-photo
+      - outlined-only
+    severity: error
+    rationale: >
+      The JM&A Group horizontal wordmark is a registered mark.
+      Stretched, rotated, recolored, or gradient-filled
+      reproductions are not permitted; only the official two-color
+      treatment (onyx wordmark + teal accent on a clean surface)
+      ships in JMFE-approved deliverables.
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    pairsWith:
+      - jma-white
+      - jma-fog
+      - jma-onyx
+    doesNotPairWith:
+      - toyota-red
+      - jmfe-signal-yellow
+      - jmfe-terracotta
+    severity: recommendation
+    rationale: >
+      JM&A teal reads cleanest on the white / fog / onyx scale.
+      Pairing it adjacent to Toyota Red or the JMFE signal-yellow
+      breaks the JMFE family ladder — JM&A is the cool-teal
+      sibling, not a red or yellow sibling.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum — Level
+      AA). JM&A's dealer-services content includes finance and
+      insurance documentation that must remain legible across
+      mobile devices, dealership terminals, and printed training
+      materials. AA is the documented JMFE-family compliance
+      target.

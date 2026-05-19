@@ -1,0 +1,171 @@
+id: world-omni
+version: 1.0.0
+name: World Omni Financial
+description: >
+  World Omni Financial Corp., established in 1981 as a division of
+  JM Family Enterprises, specializes in automotive financing —
+  retail, lease, and floorplan products backed by Toyota dealership
+  originations in the southeastern United States. Voice: "World-
+  Class Service" and "Strength in numbers." Visual identity is
+  light-corporate-financial: a teal primary (#008390) sibling to
+  the JMFE and JM&A teals, a deep blue-black ink, white field, and
+  Raleway display paired with Lato body as the deployed faces on
+  worldomni.com.
+
+tags: [finance, automotive, jmfe, worldomni, teal, light-first]
+
+provenance:
+  source: https://worldomni.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    World Omni Financial Corp. — a JM Family Enterprises company.
+    Primary teal value (#008390) is taken from the deployed
+    worldomni.com stylesheet (/style.css). World Omni does not
+    publish a public brand-guidelines portal; the supporting
+    scale is interpolated to harmonize with the parent JMFE
+    family of teals.
+  importedDate: 2026-05-19
+  notes: >
+    1.0.0 audit upgrade of world-omni@0.1.0 — preserves the
+    deployed-stylesheet teal and the Raleway + Lato pairing seen
+    on worldomni.com, adds identity / on-identity roles for the
+    white corporate canvas, and expands the rules block from 2
+    to 6 typed entries grounded in the deployed site identity
+    and the JMFE corporate-family discipline. The 0.1.0 spec
+    remains historical.
+
+references:
+  palette: world-omni@1
+  fonts:
+    heading: raleway@1
+    body: lato@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # World Omni is light-first like its JMFE-family siblings —
+    # the brand-card canvas is wo-white, the wordmark renders in
+    # the teal + onyx pair on top. `identity` therefore points
+    # at the white surface, with onyx as the contrasting ink.
+    identity: wo-white
+    on-identity: wo-onyx
+
+    primary: wo-teal
+    primary-hover: wo-teal-deep
+    accent: wo-teal
+    mark: wo-onyx
+    text-primary-light: wo-onyx
+    text-primary-dark: wo-white
+    background-light: wo-white
+    background-dark: wo-onyx
+    surface-light: wo-fog
+    surface-dark: wo-slate
+    border-light: wo-teal-light
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      World Omni Onyx (#1A1F23) on World Omni White (#FFFFFF)
+      measures ~17:1, clearing the AA 4.5:1 floor decisively.
+      World Omni's audience consumes long-form financial product
+      sheets and dealer-facing operations content; AA is the
+      documented compliance target for the JMFE family of
+      financial-services brands.
+
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - wo-teal
+      - wo-teal-deep
+    forbidden:
+      - wo-teal-light
+      - wo-fog
+      - wo-slate
+      - wo-steel
+    severity: error
+    rationale: >
+      World Omni Teal (#008390) is the signal color on the
+      worldomni.com deployed stylesheet. The deeper sibling
+      (#006670) covers hover and pressed states. The light teal
+      and the gray supporting scale are surface and meta-text
+      roles — they must not substitute for the primary brand
+      action color.
+
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - wo-onyx
+      - wo-white
+      - wo-teal
+    forbidden:
+      - wo-teal-deep
+      - wo-teal-light
+      - wo-fog
+      - wo-slate
+      - wo-steel
+    severity: error
+    rationale: >
+      The World Omni wordmark renders in onyx on light surfaces,
+      reversed to white on dark surfaces, or with the teal accent
+      stroke on the brand-card. Lighter teals and the supporting
+      grays do not carry sufficient contrast for the mark.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - inverted-without-variant
+      - gradient-fill
+      - on-busy-photo
+    severity: error
+    rationale: >
+      The World Omni wordmark is a registered mark of World Omni
+      Financial Corp. Visual modifications are not permitted on
+      the dealer-facing site, consumer-facing materials, or
+      regulatory filings; the inverted variant must be supplied
+      explicitly rather than derived by auto-inversion.
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    pairsWith:
+      - wo-white
+      - wo-fog
+      - wo-onyx
+      - wo-teal-light
+    doesNotPairWith:
+      - toyota-red
+      - jmfe-signal-yellow
+      - lexus-chrome
+    severity: recommendation
+    rationale: >
+      World Omni's teal sits on the JMFE-family teal ladder
+      alongside JM&A (#008D9A) and JMFE (#008C99). Placing it
+      adjacent to Toyota Red or the Lexus chrome breaks the
+      family positioning — World Omni is a financial-services
+      sibling within the JMFE family, not a Toyota-OEM sibling.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum — Level
+      AA). World Omni is a regulated automotive-finance brand;
+      consumer disclosures, loan documentation, and dealer
+      operations screens must remain legible across mobile,
+      desktop, and printed media. AA is the standing requirement.

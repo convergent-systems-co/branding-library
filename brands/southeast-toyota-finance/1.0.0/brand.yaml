@@ -1,0 +1,184 @@
+id: southeast-toyota-finance
+version: 1.0.0
+name: Southeast Toyota Finance
+description: >
+  Southeast Toyota Finance (SETF), a JM Family Enterprises company,
+  provides financing, leasing, and account management services for
+  Toyota vehicle customers across the southeastern United States.
+  Tagline: "We're driven to help you." SETF maintains a public
+  brand portal (setfbranding.com) that publishes the canonical
+  palette (Toyota Red primary + an 8-step supporting gray scale,
+  each carrying its Pantone equivalent), the licensed type pair
+  (Toyota Type primary, Helvetica Neue secondary), and usage rules
+  for the wordmark. SETF is the most fully verified of the JMFE-
+  family brand specs.
+
+tags: [finance, automotive, jmfe, setf, toyota-aligned, red, light-first]
+
+provenance:
+  source: https://www.setfbranding.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Southeast Toyota Finance — a JM Family Enterprises company.
+    The Toyota trademark and red color belong to Toyota Motor
+    Corporation, used by SETF under partnership with Toyota
+    Financial Services. Palette and typography transcribed
+    verbatim from the SETF Brand Portal at
+    setfbranding.com/colors.html, /fonts.html, and
+    /brand-identity.html. Logo and supplementary assets live in
+    the gated Widen Collective portal hosted by JMFE.
+  importedDate: 2026-05-19
+  importedFromVersion: "setfbranding.com — as served 2026-05-17"
+  notes: >
+    1.0.0 audit upgrade of southeast-toyota-finance@0.1.0 —
+    preserves the SETF portal-derived palette and the licensed
+    Toyota Type + Helvetica Neue pairing, adds identity /
+    on-identity roles for the SETF Porcelain canvas, and expands
+    the rules block from 3 to 7 typed entries grounded in the
+    setfbranding.com guide. The 0.1.0 spec remains historical.
+
+references:
+  palette: southeast-toyota-finance@1
+  fonts:
+    heading: toyota-type@1
+    body: toyota-type@1
+    secondary: helvetica-neue@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # SETF is light-first — the brand-card canvas is SETF
+    # Porcelain (the documented page background on the SETF
+    # portal), with onyx as the contrasting body-text ink.
+    identity: setf-porcelain
+    on-identity: setf-onyx
+
+    primary: toyota-red
+    primary-hover: toyota-red
+    accent: toyota-red
+    mark: setf-onyx
+    text-primary-light: setf-onyx
+    text-primary-dark: setf-porcelain
+    background-light: setf-porcelain
+    background-dark: setf-onyx
+    surface-light: setf-fog
+    surface-dark: setf-graphite
+    border-light: setf-mist
+    border-dark: setf-slate
+  typography:
+    display: heading
+    prose: body
+    fallback: secondary
+    code: mono
+
+assets: []
+
+rules:
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      SETF Onyx (#38393B) on SETF Porcelain (#EDF0F5) measures
+      ~12:1, clearing the AA 4.5:1 minimum decisively. SETF's
+      customer-facing content includes statements, disclosures,
+      and account-management screens that demand legible body
+      text across mobile and desktop; AA is the published
+      compliance target on the SETF brand portal.
+
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - toyota-red
+    forbidden:
+      - setf-porcelain
+      - setf-fog
+      - setf-mist
+      - setf-pewter
+      - setf-steel
+      - setf-slate
+      - setf-graphite
+      - setf-onyx
+    severity: error
+    rationale: >
+      Toyota Red (#EB0A1E / Pantone 186C / CMYK 0/100/90/0) is the
+      single primary on the SETF brand portal. The 8-step gray
+      supporting scale is for surfaces, borders, and text — never
+      as a substitute for the brand action color.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["400", "600"]
+    severity: warning
+    rationale: >
+      The SETF brand guide names Toyota Type Book (400) and
+      Semibold (600) as the licensed weights on setfbranding.com
+      /fonts.html. Helvetica Neue Regular (400) and Bold (700)
+      serve as the fallback pair when Toyota Type cannot be
+      embedded.
+
+  - type: fontPairing
+    target: typography.display
+    requires: prose
+    minSizeRatio: 1.5
+    severity: error
+    rationale: >
+      The SETF brand portal shows Toyota Type Semibold as the
+      display weight against Toyota Type Book body, with a
+      consistent 1.5×+ size step in deliverables. The size
+      contrast carries the hierarchy when the type voice is
+      otherwise uniform across display and prose.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - on-busy-photo
+      - inverted-without-variant
+      - gradient-fill
+      - outlined-only
+    severity: error
+    rationale: >
+      The SETF wordmark and its Toyota Red treatment are governed
+      by the SETF Brand Portal. Use the supplied variants only;
+      auto-inversion, gradient fills, drop shadows, and stretched
+      aspect ratios are explicitly out of compliance per the
+      portal's brand-identity page.
+
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - setf-onyx
+      - setf-graphite
+      - setf-porcelain
+      - toyota-red
+    forbidden:
+      - setf-fog
+      - setf-mist
+      - setf-pewter
+      - setf-steel
+      - setf-slate
+    severity: error
+    rationale: >
+      The SETF wordmark renders in onyx or graphite on light
+      surfaces, reversed to porcelain on dark surfaces, or in
+      Toyota Red for the brand-co-lock. Lighter grays (fog, mist,
+      pewter, steel, slate) are surface and border roles — they
+      lack the contrast to carry the wordmark.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum — Level
+      AA). SETF is a regulated financial-services brand; consumer
+      disclosures and statement copy must meet AA across the
+      8-step gray scale. The SETF portal's documented foreground/
+      background pairings all clear AA on Porcelain.
