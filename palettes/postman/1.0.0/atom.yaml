@@ -1,0 +1,157 @@
+kind: palette
+id: postman
+version: 1.0.0
+name: Postman
+description: >
+  Postman's brand palette, captured from the live postman.com
+  stylesheet where the design system exposes a fully named token
+  set on :root (--demo-brand, --demo-content-*, --demo-bg-*,
+  --demo-border-*). The brand reads as a single saturated orange
+  primary (#FF6C37) against a clean light canvas, with secondary
+  surface tints (a near-white #F9F9F9 and a step warmer #F2F2F2)
+  and a dark "Postman Plum" #140B1E used as the product chrome
+  inversion. Postman's brand is light-first on the marketing
+  surface, dark-first on the product canvas.
+
+tags: [postman, api, developer-tools, orange, light-first]
+
+provenance:
+  source: https://www.postman.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Postman and the Postman mark are trademarks of Postman, Inc.
+    Palette values captured from the deployed stylesheet on
+    postman.com (--demo-brand, --demo-content-*, --demo-bg-*,
+    --demo-border-* token family).
+  importedDate: 2026-05-19
+  notes: >
+    Derived from live site CSS at https://www.postman.com/ on
+    2026-05-19; the brand-guidelines URL at
+    postman.com/company/brand-guidelines returned HTTP 404, so
+    the live site is the authoritative source. The proprietary
+    "degular" display sans is declared via @font-face but is not
+    publicly distributed; Plus Jakarta Sans is the closest open-
+    source rendering substitute. IBM Plex Mono is the code face
+    declared on the live site and is open-source.
+
+swatches:
+  # ─── Postman Orange (signature primary) ────────────────────────
+  - id: postman-orange
+    name: Postman Orange
+    value: "#FF6C37"
+    description: Postman's signature brand orange — the primary action color.
+  - id: postman-orange-pressed
+    name: Postman Orange Pressed
+    value: "#E0531F"
+    description: Pressed / active variant of postman orange used on hover surfaces.
+  - id: postman-orange-deep
+    name: Postman Orange Deep
+    value: "#D23F0E"
+    description: Deep brand orange used for text-on-light brand accents.
+  - id: postman-orange-tint
+    name: Postman Orange Tint
+    value: "#FFF1EB"
+    description: Pale orange wash for brand-tinted surfaces (badges, notices).
+
+  # ─── Light canvas (marketing surface) ──────────────────────────
+  - id: postman-canvas
+    name: Postman Canvas
+    value: "#FFFFFF"
+    description: Page canvas — the bright neutral surface postman.com reads against.
+  - id: postman-surface
+    name: Postman Surface
+    value: "#F9F9F9"
+    description: Subtle elevated surface; one step warmer than canvas.
+  - id: postman-surface-elevated
+    name: Postman Surface Elevated
+    value: "#F2F2F2"
+    description: Card / panel surface elevated above postman-surface.
+  - id: postman-border-subdued
+    name: Postman Border Subdued
+    value: "#F2F2F2"
+    description: Quietest divider; near-canvas border.
+  - id: postman-border
+    name: Postman Border
+    value: "#EDEDED"
+    description: Default divider on the postman canvas.
+  - id: postman-border-strong
+    name: Postman Border Strong
+    value: "#E6E6E6"
+    description: Strong divider for elevated cards and form fields.
+
+  # ─── Postman ink (text scale) ──────────────────────────────────
+  - id: postman-ink
+    name: Postman Ink
+    value: "#212121"
+    description: Primary text on postman canvas — deep near-black.
+  - id: postman-ink-secondary
+    name: Postman Ink Secondary
+    value: "#6B6B6B"
+    description: Secondary text; mid-gray body copy de-emphasis.
+  - id: postman-ink-tertiary
+    name: Postman Ink Tertiary
+    value: "#A6A6A6"
+    description: Tertiary text / caption tone — placeholder ink.
+
+  # ─── Postman Plum (dark canvas) ────────────────────────────────
+  - id: postman-plum
+    name: Postman Plum
+    value: "#140B1E"
+    description: Dark canvas — the deep plum used on hero modules and product chrome.
+
+  # ─── Semantic state colors ─────────────────────────────────────
+  - id: postman-success
+    name: Postman Success
+    value: "#007F31"
+    description: Confirmation / success state green.
+  - id: postman-success-active
+    name: Postman Success Active
+    value: "#0CBB52"
+    description: Brighter active-green used for "running" / "connected" status pips.
+  - id: postman-warning
+    name: Postman Warning
+    value: "#AD7A03"
+    description: Warning / caution state amber.
+  - id: postman-error
+    name: Postman Error
+    value: "#8E1A10"
+    description: Error / destructive state red.
+  - id: postman-purple
+    name: Postman Purple
+    value: "#4C207D"
+    description: Supporting purple — used for category badges and chrome accents.
+
+modes:
+  light:
+    roles:
+      background: postman-canvas
+      surface: postman-surface
+      surface-elevated: postman-surface-elevated
+      text-primary: postman-ink
+      text-secondary: postman-ink-secondary
+      text-tertiary: postman-ink-tertiary
+      primary: postman-orange
+      primary-hover: postman-orange-pressed
+      accent: postman-orange
+      accent-hover: postman-orange-pressed
+      success: postman-success
+      warning: postman-warning
+      error: postman-error
+      border: postman-border
+
+  dark:
+    roles:
+      background: postman-plum
+      surface: postman-ink
+      surface-elevated: postman-ink-secondary
+      text-primary: postman-canvas
+      text-secondary: postman-surface-elevated
+      text-tertiary: postman-ink-tertiary
+      primary: postman-orange
+      primary-hover: postman-orange-pressed
+      accent: postman-orange
+      accent-hover: postman-orange-pressed
+      success: postman-success-active
+      warning: postman-warning
+      error: postman-error
+      border: postman-ink-secondary

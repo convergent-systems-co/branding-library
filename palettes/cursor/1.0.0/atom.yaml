@@ -1,0 +1,137 @@
+kind: palette
+id: cursor
+version: 1.0.0
+name: Cursor
+description: >
+  Cursor's brand palette, captured directly from the live cursor.com
+  marketing site where the design system exposes named color tokens
+  on :root (--color-theme-bg, --color-theme-text, --color-theme-accent,
+  --color-theme-product-ansi-*). Cursor presents a warm light-first
+  canvas — a near-paper "Sand" surface, a deep ink "Cursor Ink" text,
+  and a saturated orange "Cursor Orange" (#F54E00) as the primary
+  accent — supported by an ANSI-aligned green and red used by the
+  product UI. The brand reads as quietly editorial: small palette,
+  warm neutrals, a single hot accent.
+
+tags: [cursor, ai, developer-tools, code-editor, warm, light-first, paper]
+
+provenance:
+  source: https://www.cursor.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Cursor and the Cursor mark are trademarks of Anysphere, Inc.
+    Palette values captured from the deployed stylesheet on
+    cursor.com (--color-theme-bg, --color-theme-text,
+    --color-theme-accent, --color-theme-card-hex,
+    --color-theme-card-hover-hex, --color-theme-product-ansi-green,
+    --color-theme-product-ansi-red token family).
+  importedDate: 2026-05-19
+  notes: >
+    Derived from live site CSS at https://www.cursor.com/ on
+    2026-05-19; no public brand guide located. Cursor publishes no
+    standalone brand-asset page; the design tokens above are the
+    authoritative source observable on the live marketing surface.
+    The proprietary "CursorGothic" sans and "BerkeleyMono" mono are
+    declared via @font-face but not publicly distributed.
+
+swatches:
+  # ─── Sand (warm light canvas) ──────────────────────────────────
+  - id: sand-canvas
+    name: Sand Canvas
+    value: "#F7F7F4"
+    description: Page canvas — the warm near-paper surface cursor.com reads against.
+  - id: sand-card
+    name: Sand Card
+    value: "#F2F1ED"
+    description: Subtle elevated card surface; one step warmer than canvas.
+  - id: sand-card-hover
+    name: Sand Card Hover
+    value: "#EBEAE5"
+    description: Hover state for card surfaces on the sand canvas.
+  - id: sand-border
+    name: Sand Border
+    value: "#E1E0DB"
+    description: Quiet divider on the sand canvas; near-canvas border.
+
+  # ─── Cursor Ink (deep text on light) ───────────────────────────
+  - id: cursor-ink
+    name: Cursor Ink
+    value: "#26251E"
+    description: Primary text on sand canvas; dark-mode canvas inversion.
+  - id: cursor-ink-secondary
+    name: Cursor Ink Secondary
+    value: "#4A443B"
+    description: Secondary text; muted ink for body copy de-emphasis.
+  - id: cursor-ink-tertiary
+    name: Cursor Ink Tertiary
+    value: "#76716A"
+    description: Tertiary text / caption ink; quiet metadata.
+
+  # ─── Cursor Orange (signature accent) ──────────────────────────
+  - id: cursor-orange
+    name: Cursor Orange
+    value: "#F54E00"
+    description: Cursor's signature hot orange accent — the brand's primary action color.
+  - id: cursor-orange-pressed
+    name: Cursor Orange Pressed
+    value: "#DB7042"
+    description: Pressed / muted variant of cursor orange used on hover-secondary surfaces.
+
+  # ─── Product ANSI semantics ────────────────────────────────────
+  - id: cursor-green
+    name: Cursor Green
+    value: "#1F8A65"
+    description: ANSI-aligned success green from the product UI.
+  - id: cursor-red
+    name: Cursor Red
+    value: "#CF2D56"
+    description: ANSI-aligned error red from the product UI.
+
+  # ─── Cursor Night (dark mode canvas) ───────────────────────────
+  - id: cursor-night
+    name: Cursor Night
+    value: "#1A1A17"
+    description: Dark-mode canvas — the inverted product chrome surface.
+  - id: cursor-night-elevated
+    name: Cursor Night Elevated
+    value: "#26251E"
+    description: Elevated surface in dark mode; one step above canvas.
+  - id: cursor-night-border
+    name: Cursor Night Border
+    value: "#3C3933"
+    description: Quiet divider on the cursor-night canvas.
+
+modes:
+  light:
+    roles:
+      background: sand-canvas
+      surface: sand-card
+      surface-elevated: sand-card-hover
+      text-primary: cursor-ink
+      text-secondary: cursor-ink-secondary
+      text-tertiary: cursor-ink-tertiary
+      primary: cursor-orange
+      primary-hover: cursor-orange-pressed
+      accent: cursor-orange
+      accent-hover: cursor-orange-pressed
+      success: cursor-green
+      warning: cursor-orange
+      error: cursor-red
+      border: sand-border
+
+  dark:
+    roles:
+      background: cursor-night
+      surface: cursor-night-elevated
+      surface-elevated: cursor-ink-secondary
+      text-primary: sand-canvas
+      text-secondary: sand-card-hover
+      text-tertiary: cursor-ink-tertiary
+      primary: cursor-orange
+      primary-hover: cursor-orange-pressed
+      accent: cursor-orange
+      accent-hover: cursor-orange-pressed
+      success: cursor-green
+      warning: cursor-orange
+      error: cursor-red
+      border: cursor-night-border

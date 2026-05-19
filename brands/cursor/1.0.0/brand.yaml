@@ -1,0 +1,203 @@
+id: cursor
+version: 1.0.0
+name: Cursor
+description: >
+  Cursor is an AI-first code editor — a fork of VS Code engineered
+  around long-context model reasoning, project-wide edit operations,
+  and an agentic terminal. The marketing surface at cursor.com reads
+  as quietly editorial rather than loud-tech: a warm "Sand" near-paper
+  canvas, deep "Cursor Ink" text, and a single hot "Cursor Orange"
+  (#F54E00) accent. Product chrome inverts to a "Cursor Night" dark
+  canvas with ANSI-aligned semantic greens and reds. Typography on
+  the marketing site is Cursor's proprietary "CursorGothic" sans
+  with a "BerkeleyMono" mono pair; neither is publicly distributed.
+
+tags: [cursor, ai, developer-tools, code-editor, warm, light-first, paper]
+
+provenance:
+  source: https://www.cursor.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Cursor and the Cursor mark are trademarks of Anysphere, Inc.
+    Visual identity captured from the deployed stylesheet on
+    cursor.com (--color-theme-*, --color-bg, --color-accent,
+    --font-mono token families).
+  importedDate: 2026-05-19
+  notes: >
+    Derived from live site CSS at https://www.cursor.com/ on
+    2026-05-19; no public brand guide located. The proprietary
+    "CursorGothic" sans is declared via @font-face on cursor.com
+    but is not publicly distributed; Inter is the open-source
+    rendering substitute. The proprietary "BerkeleyMono" mono is
+    not publicly distributed; JetBrains Mono Nerd Font is the
+    open-source rendering substitute. Although Cursor's product
+    chrome (the IDE itself) is dark-first, the marketing brand
+    surface is light-first — `identity` is therefore mapped to
+    the sand canvas rather than the night canvas.
+
+references:
+  palette: cursor@1
+  fonts:
+    heading: inter@1
+    body: inter@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # Cursor's marketing surface is light-first; the brand reads
+    # against the warm sand canvas. Setting identity to sand-canvas
+    # lets consumers render brand-badge surfaces in the editorial
+    # marketing voice. The night canvas is reachable via mode=dark.
+    identity: sand-canvas
+    on-identity: cursor-ink
+
+    primary: cursor-orange
+    primary-hover: cursor-orange-pressed
+    accent: cursor-orange
+    accent-hover: cursor-orange-pressed
+    mark: cursor-ink
+    success: cursor-green
+    warning: cursor-orange
+    error: cursor-red
+    text-primary-light: cursor-ink
+    text-primary-dark: sand-canvas
+    background-light: sand-canvas
+    background-dark: cursor-night
+    surface-light: sand-card
+    surface-dark: cursor-night-elevated
+    text-secondary-light: cursor-ink-secondary
+    text-tertiary-light: cursor-ink-tertiary
+    border-light: sand-border
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      Cursor Ink (#26251E) on Sand Canvas (#F7F7F4) reads at ~15:1
+      — comfortably above WCAG AA. The brand's editorial posture
+      and long-form documentation rewards holding the AA floor
+      decisively rather than nudging into AAA-only territory.
+
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - cursor-orange
+      - cursor-orange-pressed
+    forbidden:
+      - cursor-green
+      - cursor-red
+      - cursor-ink
+      - sand-card
+    severity: error
+    rationale: >
+      Cursor Orange (#F54E00) is the single hot accent on the
+      cursor.com marketing surface (--color-theme-accent on the
+      live site). The product greens and reds are reserved for ANSI
+      semantic states and must not stand in for the primary brand
+      action color; the inks are text, not action.
+
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - cursor-ink
+      - sand-canvas
+    forbidden:
+      - cursor-orange
+      - cursor-green
+      - cursor-red
+    severity: error
+    rationale: >
+      The Cursor wordmark on the live marketing site renders in
+      Cursor Ink on light canvas or Sand Canvas on the night
+      canvas — monochromatic, not orange. The orange is an action
+      accent, not a logo fill.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - gradient-fill
+      - on-busy-photo
+    severity: error
+    rationale: >
+      Cursor's identity is restrained by design. Recolored, skewed,
+      or gradient-filled marks conflict with the quiet, editorial
+      voice of the cursor.com surface.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["400", "500", "600"]
+    severity: warning
+    rationale: >
+      The live cursor.com surface renders display headings in the
+      400–600 weight band on the proprietary CursorGothic face.
+      Heavier weights (700+) push the brand into a louder marketing
+      voice than the editorial baseline supports.
+
+  - type: fontPairing
+    target: typography.code
+    requires: prose
+    minSizeRatio: 0.875
+    severity: recommendation
+    rationale: >
+      Cursor pairs its proprietary BerkeleyMono with the sans for
+      inline code on the marketing site; JetBrains Mono Nerd Font
+      (the open-source substitute) reads cleanly at 0.875× of the
+      body size and preserves the editorial rhythm.
+
+  - type: contextRestriction
+    target: roles.colors.warning
+    allowedContexts:
+      - call-to-action
+      - inline-highlight
+      - product-emphasis
+    forbiddenContexts:
+      - error-state
+      - destructive-action
+    severity: error
+    rationale: >
+      Cursor Orange does double duty as accent + warning on the
+      live site (--color-warning aliases to --color-theme-accent).
+      The error state is the separate Cursor Red (#CF2D56) — orange
+      must not stand in for destructive or failure states.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) — Level AA.
+      The sand canvas and Cursor Ink combination starts well above
+      AA; consumers must hold that floor when adapting the palette.
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    pairsWith:
+      - sand-canvas
+      - sand-card
+      - cursor-night
+      - cursor-ink
+    doesNotPairWith:
+      - cursor-red
+      - cursor-green
+    severity: recommendation
+    rationale: >
+      Cursor Orange is calibrated to read on the warm sand canvas
+      and on the cursor-night dark canvas. Pairing it adjacent to
+      the ANSI green or red introduces a chromatic conflict — three
+      saturated hues competing — that breaks the calm one-accent
+      voice of the brand.

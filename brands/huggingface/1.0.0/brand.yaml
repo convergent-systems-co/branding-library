@@ -1,0 +1,188 @@
+id: huggingface
+version: 1.0.0
+name: Hugging Face
+description: >
+  Hugging Face is the open community platform for machine-learning
+  models, datasets, and Spaces — the canonical host for open-source
+  AI artifacts. The brand voice is warm, community-first, and emoji-
+  native: the yellow hug-mark (🤗) is the identity anchor, a saturated
+  warm orange supports it, and the marketing surface reads as a
+  bright near-white canvas with deep slate text. The brand is
+  light-first and Source Sans Pro carries body and display.
+
+tags: [huggingface, ai, ml, community, warm, yellow, light-first]
+
+provenance:
+  source: https://huggingface.co/brand
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Hugging Face and the hug-mark are trademarks of Hugging Face, Inc.
+    Primary, secondary, and neutral brand colors captured directly
+    from the official brand-assets page at huggingface.co/brand.
+    Typography and surface tokens captured from the deployed
+    stylesheet on huggingface.co.
+  importedDate: 2026-05-19
+  notes: >
+    Hugging Face publishes a brand-assets page (huggingface.co/brand)
+    that documents the primary, secondary, and neutral hex values
+    and the logo variants (HF Logo, HF Logo with Title, Monochrome,
+    Pirate) — but does not document a full typography or surface
+    system. Surface and ink tokens are therefore supplemented from
+    the live huggingface.co stylesheet on 2026-05-19. Source Sans
+    Pro is the proprietary body face declared on the marketing site;
+    Source Sans 3 is the open-source rendering substitute used here
+    via the source-sans-3@1 atom.
+
+references:
+  palette: huggingface@1
+  fonts:
+    heading: source-sans-3@1
+    body: source-sans-3@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # Hugging Face is light-first; the identity anchor is the hug
+    # yellow itself, since the hug-mark is the brand's signature
+    # surface in product chrome and marketing. Setting identity to
+    # hug-yellow lets brand-badge surfaces render in the warm
+    # primary voice; canvas roles below carry the bright surface.
+    identity: hug-yellow
+    on-identity: hub-ink
+
+    primary: hug-yellow
+    primary-hover: hug-yellow-deep
+    accent: hug-orange
+    accent-hover: hug-orange-deep
+    mark: hug-yellow
+    success: hub-success
+    warning: hug-orange
+    error: hub-error
+    text-primary-light: hub-ink
+    text-primary-dark: hub-canvas
+    background-light: hub-canvas
+    background-dark: hub-night
+    surface-light: hub-surface
+    surface-dark: hub-night-surface
+    text-secondary-light: hub-ink-secondary
+    text-tertiary-light: hub-ink-tertiary
+    border-light: hub-border
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - hug-yellow
+      - hub-ink
+      - hub-canvas
+    forbidden:
+      - hug-orange
+      - hub-success
+      - hub-error
+      - hub-night
+    severity: error
+    rationale: >
+      The hug-mark renders in its signature Hug Yellow (#FFD21E),
+      in monochrome ink on light surfaces, or in monochrome canvas
+      on dark surfaces — per the four logo variants published at
+      huggingface.co/brand (HF Logo, HF Logo with Title, HF Logo
+      Monochrome, HF Logo Pirate). The secondary orange is a
+      supporting accent, not a mark fill.
+
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - hug-yellow
+      - hug-yellow-deep
+    forbidden:
+      - hug-orange
+      - hub-ink
+      - hub-canvas
+    severity: error
+    rationale: >
+      Hugging Face's published brand page names Hug Yellow as the
+      primary and Hug Orange as the secondary. Swapping them
+      inverts the brand hierarchy — the yellow is the identity,
+      the orange supports it.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - gradient-fill
+      - on-busy-photo
+    severity: error
+    rationale: >
+      Hugging Face publishes specific monochrome and pirate logo
+      variants; consumers must use those variants rather than apply
+      effects to the full-color mark. Stretching, rotating, or
+      drop-shadowing the hug breaks the warm, hand-drawn voice.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      Hub Ink (#111827) on Hub Canvas (#FFFFFF) reads at ~17:1 —
+      well above WCAG AA. Long-form model cards and dataset docs
+      depend on holding that floor.
+
+  - type: contextRestriction
+    target: roles.colors.primary
+    forbiddenContexts:
+      - body-text
+      - small-icon-on-light
+    severity: warning
+    rationale: >
+      Hug Yellow (#FFD21E) on white reads at ~1.6:1 contrast — far
+      below the AA 4.5:1 floor for body text. The yellow is for
+      brand-mark surfaces and large emphasis blocks, never for
+      small text or thin iconography on a light canvas.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["400", "600", "700"]
+    severity: warning
+    rationale: >
+      The live huggingface.co surface renders display headings at
+      400 / 600 / 700 on Source Sans Pro. The substitute Source
+      Sans 3 family carries the same weight band; intermediate
+      weights are not part of the published display set.
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    pairsWith:
+      - hub-ink
+      - hub-canvas
+      - hug-orange
+    doesNotPairWith:
+      - hub-error
+      - hub-success
+    severity: recommendation
+    rationale: >
+      Hug Yellow reads cleanest against deep ink, bright canvas,
+      or alongside its warm secondary orange. Adjacent saturated
+      reds or greens fight the warm-on-bright voice and read as
+      product-state semantics rather than brand identity.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) — Level AA.
+      Hugging Face's Hub canvas pairs deep slate ink with bright
+      surfaces, comfortably clearing AA; consumers must hold this
+      floor across the adapted palette.

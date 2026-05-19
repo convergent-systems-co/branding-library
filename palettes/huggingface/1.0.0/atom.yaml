@@ -1,0 +1,151 @@
+kind: palette
+id: huggingface
+version: 1.0.0
+name: Hugging Face
+description: >
+  Hugging Face's brand palette, captured from the official brand
+  assets page at huggingface.co/brand (Primary Yellow #FFD21E,
+  Secondary Orange #FF9D00, Neutral Gray #6B7280) and supplemented
+  by the live marketing-site surface colors used on huggingface.co.
+  The brand reads as warm, approachable, and emoji-native: the
+  yellow hug-mark is the identity anchor, the orange is the
+  secondary warm, and a near-white canvas with deep slate text
+  carries the long-form model-and-dataset content.
+
+tags: [huggingface, ai, ml, community, warm, yellow, light-first]
+
+provenance:
+  source: https://huggingface.co/brand
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Hugging Face and the hug-mark are trademarks of Hugging Face, Inc.
+    Primary, secondary, and neutral brand colors captured directly
+    from the official brand-assets page at huggingface.co/brand.
+    Surface, ink, and elevation values supplemented from the live
+    marketing-site stylesheet on huggingface.co.
+  importedDate: 2026-05-19
+  notes: >
+    The yellow / orange / neutral triplet is the published-by-brand
+    set. The ink, surface, and dark-mode tokens are derived from
+    the live huggingface.co stylesheet on 2026-05-19 since the brand
+    page does not publish a full surface system. Source Sans Pro is
+    the body face declared on the live marketing site; Source Sans 3
+    is the open-source rendering substitute.
+
+swatches:
+  # ─── Hug Yellow (published brand primary) ──────────────────────
+  - id: hug-yellow
+    name: Hug Yellow
+    value: "#FFD21E"
+    description: Hugging Face's published primary — the warm yellow of the hug-mark.
+  - id: hug-yellow-deep
+    name: Hug Yellow Deep
+    value: "#E6B800"
+    description: Pressed / hover variant of hug-yellow for interactive surfaces.
+
+  # ─── Hug Orange (published brand secondary) ────────────────────
+  - id: hug-orange
+    name: Hug Orange
+    value: "#FF9D00"
+    description: Hugging Face's published secondary — a warm orange that pairs with the yellow primary.
+  - id: hug-orange-deep
+    name: Hug Orange Deep
+    value: "#CC7E00"
+    description: Pressed / hover variant of hug-orange.
+
+  # ─── Hug Neutral (published brand neutral) ─────────────────────
+  - id: hug-neutral
+    name: Hug Neutral
+    value: "#6B7280"
+    description: Hugging Face's published neutral gray — the body-meta tone.
+
+  # ─── Hub canvas (light-first surfaces) ─────────────────────────
+  - id: hub-canvas
+    name: Hub Canvas
+    value: "#FFFFFF"
+    description: Page canvas — the bright neutral surface huggingface.co reads against.
+  - id: hub-surface
+    name: Hub Surface
+    value: "#F9FAFB"
+    description: Subtle elevated surface; one step warmer than canvas.
+  - id: hub-surface-elevated
+    name: Hub Surface Elevated
+    value: "#F3F4F6"
+    description: Card / panel surface elevated above hub-surface.
+  - id: hub-border
+    name: Hub Border
+    value: "#E5E7EB"
+    description: Quiet divider on the hub canvas.
+
+  # ─── Hub ink (text scale) ──────────────────────────────────────
+  - id: hub-ink
+    name: Hub Ink
+    value: "#111827"
+    description: Primary text on hub canvas — deep slate near-black.
+  - id: hub-ink-secondary
+    name: Hub Ink Secondary
+    value: "#374151"
+    description: Secondary text; muted slate for body copy de-emphasis.
+  - id: hub-ink-tertiary
+    name: Hub Ink Tertiary
+    value: "#6B7280"
+    description: Tertiary text / metadata tone — same hex as the published hug-neutral.
+
+  # ─── Hub night (dark mode canvas) ──────────────────────────────
+  - id: hub-night
+    name: Hub Night
+    value: "#0B0F19"
+    description: Dark-mode canvas — the deep slate the hub flips to.
+  - id: hub-night-surface
+    name: Hub Night Surface
+    value: "#1F2937"
+    description: Elevated surface in dark mode.
+  - id: hub-night-border
+    name: Hub Night Border
+    value: "#374151"
+    description: Quiet divider on the hub-night canvas.
+
+  # ─── Semantic (state colors) ───────────────────────────────────
+  - id: hub-success
+    name: Hub Success
+    value: "#16A34A"
+    description: Confirmation / positive state green.
+  - id: hub-error
+    name: Hub Error
+    value: "#DC2626"
+    description: Error / destructive state red.
+
+modes:
+  light:
+    roles:
+      background: hub-canvas
+      surface: hub-surface
+      surface-elevated: hub-surface-elevated
+      text-primary: hub-ink
+      text-secondary: hub-ink-secondary
+      text-tertiary: hub-ink-tertiary
+      primary: hug-yellow
+      primary-hover: hug-yellow-deep
+      accent: hug-orange
+      accent-hover: hug-orange-deep
+      success: hub-success
+      warning: hug-orange
+      error: hub-error
+      border: hub-border
+
+  dark:
+    roles:
+      background: hub-night
+      surface: hub-night-surface
+      surface-elevated: hub-ink-secondary
+      text-primary: hub-canvas
+      text-secondary: hub-surface-elevated
+      text-tertiary: hub-ink-tertiary
+      primary: hug-yellow
+      primary-hover: hug-yellow-deep
+      accent: hug-orange
+      accent-hover: hug-orange-deep
+      success: hub-success
+      warning: hug-orange
+      error: hub-error
+      border: hub-night-border

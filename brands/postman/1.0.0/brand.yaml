@@ -1,0 +1,208 @@
+id: postman
+version: 1.0.0
+name: Postman
+description: >
+  Postman is the API platform — request builder, collection runner,
+  workspace collaboration, and API governance. The brand voice is
+  developer-direct, warm, and tooling-confident: a saturated orange
+  (#FF6C37) anchors the identity, a clean light canvas carries the
+  marketing surface, and a deep "Postman Plum" inverts the product
+  chrome for hero modules. Typography on the marketing site is the
+  proprietary "degular" display sans paired with IBM Plex Mono for
+  code; the brand is light-first.
+
+tags: [postman, api, developer-tools, orange, light-first]
+
+provenance:
+  source: https://www.postman.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Postman and the Postman mark are trademarks of Postman, Inc.
+    Visual identity captured from the deployed stylesheet on
+    postman.com (--demo-brand, --demo-content-*, --demo-bg-*,
+    --demo-font, --demo-font-code token families).
+  importedDate: 2026-05-19
+  notes: >
+    Derived from live site CSS at https://www.postman.com/ on
+    2026-05-19; no public brand guide located. The brand-guidelines
+    URL at postman.com/company/brand-guidelines returned HTTP 404,
+    so the live site is the authoritative source. The proprietary
+    "degular" display sans is declared via @font-face on
+    postman.com but is not publicly distributed; Plus Jakarta Sans
+    is the closest open-source rendering substitute. IBM Plex Mono
+    is the code face declared on the live site and is open-source.
+
+references:
+  palette: postman@1
+  fonts:
+    heading: plus-jakarta-sans@1
+    body: plus-jakarta-sans@1
+    mono: ibm-plex-mono@1
+
+roles:
+  colors:
+    # Postman's marketing surface is light-first; the orange is the
+    # signature accent. Setting identity to postman-orange anchors
+    # brand-badge surfaces in the warm primary voice. Canvas roles
+    # below carry the bright light surface; postman-plum reaches
+    # dark mode.
+    identity: postman-orange
+    on-identity: postman-canvas
+
+    primary: postman-orange
+    primary-hover: postman-orange-pressed
+    accent: postman-orange
+    accent-hover: postman-orange-pressed
+    mark: postman-orange
+    success: postman-success
+    warning: postman-warning
+    error: postman-error
+    text-primary-light: postman-ink
+    text-primary-dark: postman-canvas
+    background-light: postman-canvas
+    background-dark: postman-plum
+    surface-light: postman-surface
+    surface-dark: postman-ink
+    text-secondary-light: postman-ink-secondary
+    text-tertiary-light: postman-ink-tertiary
+    border-light: postman-border
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - postman-orange
+      - postman-orange-pressed
+      - postman-orange-deep
+    forbidden:
+      - postman-purple
+      - postman-success
+      - postman-error
+      - postman-ink
+    severity: error
+    rationale: >
+      Postman Orange (#FF6C37) is the brand's single signature
+      primary — exposed on the live site as --demo-brand and
+      reinforced through every CTA, mark fill, and brand surface.
+      The purple is a category accent; the greens / reds are state
+      semantics; the ink is text. None of those may stand in for
+      the brand primary.
+
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - postman-orange
+      - postman-ink
+      - postman-canvas
+    forbidden:
+      - postman-orange-pressed
+      - postman-purple
+      - postman-success
+      - postman-error
+    severity: error
+    rationale: >
+      The Postman wordmark and the satellite-mark render in the
+      signature Postman Orange on light surfaces, in Postman Ink
+      monochrome on light surfaces, or in Postman Canvas (white)
+      monochrome on dark surfaces. Pressed orange is a state, not
+      a mark fill.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - gradient-fill
+      - on-busy-photo
+    severity: error
+    rationale: >
+      Postman's mark is a calibrated wordmark + satellite glyph.
+      Stretching, rotating, gradient-filling, or recoloring breaks
+      the developer-direct, tooling-confident voice the live brand
+      surface establishes.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      Postman Ink (#212121) on Postman Canvas (#FFFFFF) reads at
+      ~16:1 — well above WCAG AA. The brand's documentation-heavy
+      surface depends on holding that floor cleanly.
+
+  - type: contextRestriction
+    target: roles.colors.warning
+    allowedContexts:
+      - caution
+      - rate-limit-warning
+      - draft-state
+    forbiddenContexts:
+      - error-state
+      - destructive-action
+      - call-to-action
+    severity: error
+    rationale: >
+      Postman Warning (#AD7A03) is the amber caution tone — it must
+      not stand in for the error red or the brand orange primary.
+      Reusing the warning amber for destructive actions conflicts
+      with the established state semantics on the live product UI.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["400", "500", "600", "700"]
+    severity: warning
+    rationale: >
+      The live postman.com surface renders display headings at the
+      400–700 weight band on the proprietary degular face. The
+      substitute Plus Jakarta Sans family carries the same range;
+      heavier weights are not part of the published display set.
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    pairsWith:
+      - postman-canvas
+      - postman-ink
+      - postman-plum
+      - postman-orange-tint
+    doesNotPairWith:
+      - postman-error
+      - postman-warning
+      - postman-purple
+    severity: recommendation
+    rationale: >
+      Postman Orange reads cleanest on the bright canvas, against
+      deep ink text, on the plum dark canvas, or against its own
+      pale tint. Pairing it adjacent to the warning amber, error
+      red, or category purple introduces a chromatic conflict that
+      breaks the calibrated one-accent voice of the brand.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) — Level AA.
+      Postman's canvas / ink combination starts well above AA;
+      consumers must hold that floor when adapting the palette.
+
+  - type: fontPairing
+    target: typography.code
+    requires: prose
+    minSizeRatio: 0.875
+    severity: recommendation
+    rationale: >
+      Postman pairs degular display with IBM Plex Mono on the live
+      marketing site (--demo-font + --demo-font-code). The mono
+      reads cleanest at ~0.875× of the body size, preserving the
+      developer-direct rhythm of inline-code-in-prose blocks.

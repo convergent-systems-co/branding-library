@@ -1,0 +1,214 @@
+id: oracle
+version: 1.0.0
+name: Oracle
+description: >
+  Oracle is the enterprise database and cloud-applications company —
+  ERP, CRM, infrastructure, autonomous database. The brand voice is
+  conservative corporate: deep "Oracle Ink" (#161513) text on a warm
+  light "Oracle Stone" canvas, a deep graphite "Oracle Graphite"
+  (#312D2A) primary CTA fill, and the historical "Oracle Red"
+  (#C0533F) reserved for the mark and brand-feature accent surfaces.
+  Typography on oracle.com is the proprietary "OracleSans" variable
+  face paired with a Georgia serif fallback and a Consolas mono;
+  the brand is light-first.
+
+tags: [oracle, enterprise, corporate, red, light-first, conservative, database]
+
+provenance:
+  source: https://www.oracle.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Oracle and the Oracle mark are trademarks of Oracle Corporation.
+    Visual identity captured from the deployed stylesheet on
+    oracle.com (--txtcolor, --thm-*, --obttn1bg, --linkcolor,
+    --oraclesans, --oracleserif, --oraclemono token families).
+  importedDate: 2026-05-19
+  notes: >
+    Derived from live site CSS at https://www.oracle.com/ on
+    2026-05-19; no public brand-guidelines page located. Oracle's
+    public-facing brand identity is documented inside its
+    redwood-design system pages but not at a single
+    consumer-readable URL. The proprietary "OracleSansVF" variable
+    face is declared via @font-face on oracle.com but is not
+    publicly distributed; Public Sans is the open-source rendering
+    substitute. The historical Oracle Red is sampled live from a
+    feature-module background at #C0533F — the modern
+    slightly-desaturated cut rather than the legacy saturated
+    #F80000.
+
+references:
+  palette: oracle@1
+  fonts:
+    heading: public-sans@1
+    body: public-sans@1
+    mono: source-code-pro@1
+
+roles:
+  colors:
+    # Oracle is light-first and conservative-corporate; the identity
+    # anchor is the warm Oracle Stone surface, not the saturated
+    # Oracle Red. The red is a mark / feature-accent color, not a
+    # canvas — the corporate voice is calm, the red is the punctuation.
+    identity: oracle-stone
+    on-identity: oracle-ink
+
+    primary: oracle-graphite
+    primary-hover: oracle-graphite-hover
+    accent: oracle-red
+    accent-hover: oracle-red-deep
+    mark: oracle-red
+    success: oracle-link
+    warning: oracle-red
+    error: oracle-error
+    text-primary-light: oracle-ink
+    text-primary-dark: oracle-canvas
+    background-light: oracle-canvas
+    background-dark: oracle-coal
+    surface-light: oracle-stone
+    surface-dark: oracle-coal-elevated
+    text-secondary-light: oracle-ink-secondary
+    text-tertiary-light: oracle-ink-tertiary
+    border-light: oracle-border
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - oracle-red
+      - oracle-red-deep
+      - oracle-ink
+      - oracle-canvas
+    forbidden:
+      - oracle-graphite
+      - oracle-mist
+      - oracle-link
+      - oracle-error
+    severity: error
+    rationale: >
+      The Oracle wordmark renders in Oracle Red on light surfaces,
+      in Oracle Ink monochrome on light surfaces, or in Oracle
+      Canvas (white) monochrome on dark surfaces. The graphite is
+      the CTA button fill, not a mark color; oracle-error is form-
+      validation red, not the brand mark red.
+
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - oracle-graphite
+      - oracle-graphite-hover
+      - oracle-canvas
+    forbidden:
+      - oracle-red
+      - oracle-mist
+      - oracle-link
+    severity: error
+    rationale: >
+      The primary CTA fill on oracle.com is the deep warm graphite
+      (--obttn1bg = #312D2A), not the brand red. Oracle's
+      conservative-corporate voice reserves the red for the mark
+      and for editorial feature surfaces; using it as a button fill
+      breaks the calm enterprise rhythm.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - gradient-fill
+      - on-busy-photo
+    severity: error
+    rationale: >
+      Oracle's wordmark is a calibrated red lockup with strict
+      clearspace. Stretching, rotating, drop-shadowing, or
+      gradient-filling the mark conflicts with the conservative-
+      corporate voice that the live oracle.com surface establishes.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 7.0
+    standard: WCAG-AAA
+    severity: error
+    rationale: >
+      Oracle Ink (#161513) on Oracle Canvas (#FFFFFF) reads at
+      ~19:1 — clearing WCAG AAA decisively. Oracle's enterprise
+      documentation surface, with dense long-form product copy and
+      regulatory-grade disclosures, justifies the AAA contrast
+      target rather than the AA floor.
+
+  - type: contextRestriction
+    target: roles.colors.accent
+    allowedContexts:
+      - mark
+      - feature-accent
+      - brand-emphasis
+    forbiddenContexts:
+      - body-text
+      - button-fill-primary
+      - background-canvas
+    severity: error
+    rationale: >
+      Oracle Red is the mark and feature-accent color. The brand's
+      conservative posture forbids using it as a body-text tone, a
+      primary CTA fill (that role is reserved for oracle-graphite),
+      or a wash canvas — those uses break the editorial rhythm of
+      red-as-punctuation that the live brand surface establishes.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["300", "350", "400", "500", "600", "700"]
+    severity: warning
+    rationale: >
+      The live oracle.com surface declares --base-weight: 350 and
+      renders display headings at the 300–700 weight band on the
+      proprietary OracleSans variable face. Heavier weights are not
+      part of the published display set.
+
+  - type: compositionConstraint
+    target: roles.colors.accent
+    pairsWith:
+      - oracle-canvas
+      - oracle-stone
+      - oracle-ink
+    doesNotPairWith:
+      - oracle-error
+      - oracle-link
+      - oracle-mist
+    severity: recommendation
+    rationale: >
+      Oracle Red reads cleanest against the warm Oracle Stone
+      canvas, the bright Oracle Canvas, or against deep Oracle Ink
+      text. Adjacent to the form-error red, link blue, or mist teal,
+      the brand red loses its editorial emphasis and reads as just
+      another saturated swatch in a noisy palette.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AAA
+    criterion: "1.4.6"
+    severity: warning
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.6 (Contrast Enhanced) —
+      Level AAA. Oracle's enterprise documentation surface, with
+      dense regulatory and long-form product copy, justifies the
+      enhanced 7:1 target rather than the AA 4.5:1 floor.
+
+  - type: fontPairing
+    target: typography.display
+    requires: prose
+    minSizeRatio: 1.5
+    severity: error
+    rationale: >
+      OracleSans display headlines pair with the same family for
+      body prose at a deliberate size step; a 1.5× minimum
+      display-to-prose size ratio preserves the institutional
+      hierarchy that oracle.com establishes between section
+      headlines and long-form product copy.

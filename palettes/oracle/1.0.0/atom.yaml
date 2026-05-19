@@ -1,0 +1,168 @@
+kind: palette
+id: oracle
+version: 1.0.0
+name: Oracle
+description: >
+  Oracle's brand palette, captured from the live oracle.com
+  stylesheet where the design system exposes a named token set on
+  :root (--txtcolor, --thm-base, --thm-accent, --obttn1bg,
+  --linkcolor, --form-error, --form-focusonlgt). The brand reads
+  as conservative corporate: a deep "Oracle Ink" near-black text
+  (#161513), a warm light "Oracle Stone" canvas (#F1EFED), a deep
+  graphite CTA button surface (#312D2A), the historical "Oracle
+  Red" (#C0533F) sampled live as a feature-module accent, and a
+  trust-blue link (#006B8F). The brand is light-first; the dark
+  inversion uses Oracle Coal as a near-black product canvas.
+
+tags: [oracle, enterprise, corporate, red, light-first, conservative]
+
+provenance:
+  source: https://www.oracle.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Oracle and the Oracle mark are trademarks of Oracle Corporation.
+    Palette values captured from the deployed stylesheet on
+    oracle.com (--txtcolor, --thm-base, --thm-primary, --thm-accent,
+    --obttn1bg, --linkcolor, --form-error, --form-focusonlgt token
+    family).
+  importedDate: 2026-05-19
+  notes: >
+    Derived from live site CSS at https://www.oracle.com/ on
+    2026-05-19; no public brand-guidelines page located. The
+    historical "Oracle Red" is sampled from a live feature-module
+    background at #C0533F — the modern, slightly desaturated cut
+    of the brand red rather than the saturated #F80000 cut used in
+    legacy chrome. The proprietary "OracleSans" variable face is
+    declared via @font-face on oracle.com but is not publicly
+    distributed; Public Sans is the open-source rendering
+    substitute.
+
+swatches:
+  # ─── Oracle Red (signature mark color) ─────────────────────────
+  - id: oracle-red
+    name: Oracle Red
+    value: "#C0533F"
+    description: Modern Oracle Red — the brand mark color sampled from live feature modules.
+  - id: oracle-red-deep
+    name: Oracle Red Deep
+    value: "#A03D2C"
+    description: Pressed / hover variant of Oracle Red for interactive surfaces.
+
+  # ─── Oracle Stone (warm light canvas) ──────────────────────────
+  - id: oracle-canvas
+    name: Oracle Canvas
+    value: "#FFFFFF"
+    description: Page canvas — the bright neutral surface oracle.com reads against.
+  - id: oracle-stone
+    name: Oracle Stone
+    value: "#F1EFED"
+    description: Warm light theme base; the section-fill surface on light modules.
+  - id: oracle-stone-disabled
+    name: Oracle Stone Disabled
+    value: "#FBF9F8"
+    description: Disabled-state surface tint; a step lighter than oracle-stone.
+  - id: oracle-border
+    name: Oracle Border
+    value: "#E4E1DD"
+    description: Quiet divider on the oracle-stone canvas.
+
+  # ─── Oracle Ink (text scale) ───────────────────────────────────
+  - id: oracle-ink
+    name: Oracle Ink
+    value: "#161513"
+    description: Primary text on oracle-canvas — deep near-black.
+  - id: oracle-ink-secondary
+    name: Oracle Ink Secondary
+    value: "#464F4F"
+    description: Secondary text; muted graphite for body copy de-emphasis.
+  - id: oracle-ink-tertiary
+    name: Oracle Ink Tertiary
+    value: "#697778"
+    description: Tertiary text / caption tone — quiet metadata.
+  - id: oracle-ink-disabled
+    name: Oracle Ink Disabled
+    value: "#AEA8A2"
+    description: Disabled-state text tone.
+
+  # ─── Oracle Graphite (button-1 / CTA fill) ─────────────────────
+  - id: oracle-graphite
+    name: Oracle Graphite
+    value: "#312D2A"
+    description: Primary CTA button fill — deep warm graphite for one-step-darker action surfaces.
+  - id: oracle-graphite-hover
+    name: Oracle Graphite Hover
+    value: "#3A3632"
+    description: Hover variant of oracle-graphite.
+
+  # ─── Oracle Coal (dark mode canvas) ────────────────────────────
+  - id: oracle-coal
+    name: Oracle Coal
+    value: "#201E1C"
+    description: Dark-mode canvas — the near-black product chrome surface.
+  - id: oracle-coal-elevated
+    name: Oracle Coal Elevated
+    value: "#312D2A"
+    description: Elevated surface in dark mode.
+
+  # ─── Oracle Mist (calm secondary accent) ───────────────────────
+  - id: oracle-mist
+    name: Oracle Mist
+    value: "#C2D4D4"
+    description: Pale teal-gray secondary accent; the calm chrome wash on light modules.
+  - id: oracle-mist-deep
+    name: Oracle Mist Deep
+    value: "#8B9D9E"
+    description: Mid teal-gray; supporting alt-accent.
+
+  # ─── Semantic state colors ─────────────────────────────────────
+  - id: oracle-link
+    name: Oracle Link
+    value: "#006B8F"
+    description: Trust-blue link color used across long-form documentation.
+  - id: oracle-focus
+    name: Oracle Focus
+    value: "#227E9E"
+    description: Focus-ring color on form inputs (light + dark).
+  - id: oracle-error
+    name: Oracle Error
+    value: "#D63B25"
+    description: Form-error red — distinct from the brand Oracle Red mark color.
+  - id: oracle-link-invert
+    name: Oracle Link Invert
+    value: "#F0CC71"
+    description: Inverted link color used on dark backgrounds.
+
+modes:
+  light:
+    roles:
+      background: oracle-canvas
+      surface: oracle-stone
+      surface-elevated: oracle-canvas
+      text-primary: oracle-ink
+      text-secondary: oracle-ink-secondary
+      text-tertiary: oracle-ink-tertiary
+      primary: oracle-graphite
+      primary-hover: oracle-graphite-hover
+      accent: oracle-red
+      accent-hover: oracle-red-deep
+      success: oracle-link
+      warning: oracle-red
+      error: oracle-error
+      border: oracle-border
+
+  dark:
+    roles:
+      background: oracle-coal
+      surface: oracle-coal-elevated
+      surface-elevated: oracle-ink-secondary
+      text-primary: oracle-canvas
+      text-secondary: oracle-stone
+      text-tertiary: oracle-ink-tertiary
+      primary: oracle-canvas
+      primary-hover: oracle-stone
+      accent: oracle-red
+      accent-hover: oracle-red-deep
+      success: oracle-mist
+      warning: oracle-red
+      error: oracle-error
+      border: oracle-ink-secondary
