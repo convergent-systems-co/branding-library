@@ -8,15 +8,15 @@ This is a living document: edit it as items move between sections.
 
 ## Snapshot (2026-05-18)
 
-- **Brands:** 73
-- **Palettes:** 141
+- **Brands:** 91
+- **Palettes:** 159
 - **Fonts:** 69
 - **Output formats per brand:** 9 (YAML, JSON, W3C tokens, CSS, SCSS,
   Tailwind, Figma tokens, Swift, Kotlin, Markdown)
 - **Live site:** [brand-atoms.com](https://brand-atoms.com)
 - **CLI:** `brandatom` v0.1.1 — brew + scoop install live
-- **Last commit on `main`:** `02eea66`
-- **Session commit count:** 24
+- **Last commit on `main`:** `ba99e02`
+- **Session commit count:** 28 (Wave-3 added 4 brand-cluster commits)
 
 ## What "complete" means
 
@@ -50,15 +50,14 @@ decreasing order of usefulness for the catalog's primary audiences
 
 ### High-value brand gaps
 
-- [ ] **Communications apps (4):** WhatsApp, Telegram, Signal, Snapchat
-- [ ] **Hardware / silicon (5):** NVIDIA, AMD, Intel, Samsung, Sony
+- [x] **Communications apps (4):** WhatsApp, Telegram, Signal, Snapchat — landed in `6733a61` (#20)
+- [x] **Hardware / silicon (5):** NVIDIA, AMD, Intel, Samsung, Sony — landed in `ce0b1b4` (#21). Scope was parent corporate identity only; sub-brands (GeForce, Ryzen, Galaxy, Bravia, Xperia, Vaio) deferred.
 - [ ] **Other major tech gap-fillers (~9):** IBM (as a brand — Carbon
       palette exists), Atlassian (parent of existing Trello),
       Adobe, Cursor, Hugging Face, MongoDB, Postman, Salesforce,
-      Oracle
-- [ ] **AI labs (4):** Anthropic (have), OpenAI (have), Mistral, Cohere, Perplexity, xAI
-- [ ] **Email / productivity (4):** Gmail (Google has it, but Gmail
-      has its own identity), Outlook, Superhuman, HEY, Fastmail
+      Oracle — tracked in [#22](https://github.com/convergent-systems-co/branding-library/issues/22)
+- [x] **AI labs (4):** Mistral, Cohere, Perplexity, xAI — landed in `7518580` (#23). Anthropic + OpenAI already in catalog. Audit note: Cohere `identity` set to dark `ink` (Command product canvas) rather than light `paper` (marketing) — defensible but worth a future review pass.
+- [x] **Email / productivity (5):** Gmail, Outlook, Superhuman, HEY, Fastmail — landed in `ba99e02` (#24). Gmail/Outlook documented as product-brands under Google/Microsoft via `provenance.notes` only (no inheritance machinery).
 
 ### Lower-priority brand gaps
 
