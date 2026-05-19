@@ -1,0 +1,8 @@
+# Cloudflare Pages redirects.
+# Syntax: <source> <destination> [<status>]
+# 308 = Permanent Redirect (preserves method + body)
+
+# 2026-05-19: /instructions split into /install + /how-to-use.
+# Old links land on /install; the install page links onward to /how-to-use.
+/instructions /install 308
+/instructions/* /install 308
