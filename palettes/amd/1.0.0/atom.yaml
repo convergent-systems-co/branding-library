@@ -1,0 +1,133 @@
+kind: palette
+id: amd
+version: 1.0.0
+name: AMD
+description: >
+  AMD (Advanced Micro Devices) is a silicon company whose corporate
+  identity is anchored on a saturated red — the wordmark color and
+  the only chromatic primary in the system. The supporting palette
+  on amd.com is a near-black canvas (#1a1a1b) under the marketing
+  voice, a small neutral ramp (#27282b through #f1f1f2) for surfaces
+  and rules, and a cooler "AMD Blue" (#0051c6) reserved for partner
+  / link contexts. A Bootstrap-derived danger red (#dc3545) appears
+  for system error states distinct from the brand red.
+
+tags: [amd, hardware, cpu, gpu, silicon, red, dark-first]
+
+provenance:
+  source: https://www.amd.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Advanced Micro Devices, Inc. — palette values captured from
+    the deployed stylesheet on amd.com (clientlib-webpack.min.css
+    color declarations under the --bs-* and --ep-* / --pts-*
+    custom-property families). AMD, the AMD Arrow, Ryzen,
+    Radeon, EPYC, and Threadripper are trademarks of Advanced
+    Micro Devices, Inc.
+  importedDate: 2026-05-18
+  notes: >
+    Derived from live site CSS at https://www.amd.com/ on
+    2026-05-18; the published brand-resources page is not
+    publicly accessible. The AMD wordmark red (#ED1C24) is the
+    value declared on the live stylesheet and matches the
+    long-published AMD Red specification (Pantone 485 / sRGB).
+
+swatches:
+  # ─── AMD Red (signature) ────────────────────────────────────
+  - id: amd-red
+    name: AMD Red
+    value: "#ED1C24"
+    description: >
+      The signature AMD wordmark red. The brand's identity color
+      and the only chromatic primary in the system.
+
+  # ─── Canvas (dark-first) ────────────────────────────────────
+  - id: black
+    name: Black
+    value: "#1A1A1B"
+    description: >
+      Near-black page canvas on amd.com's marketing surfaces.
+      Primary background in the brand's dark posture.
+  - id: charcoal
+    name: Charcoal
+    value: "#27282B"
+    description: >
+      Elevated surface on the dark canvas; titles in light mode.
+  - id: white
+    name: White
+    value: "#FFFFFF"
+    description: >
+      Page canvas on light-mode surfaces; text on the dark canvas.
+
+  # ─── Neutral ramp ───────────────────────────────────────────
+  - id: gray-100
+    name: Gray 100
+    value: "#F1F1F2"
+    description: Light-mode surface tint; quiet background.
+  - id: gray-200
+    name: Gray 200
+    value: "#E1E1E2"
+    description: Subtitle / body text on the dark canvas.
+  - id: gray-300
+    name: Gray 300
+    value: "#DEE2E6"
+    description: Border on light-mode surfaces.
+  - id: gray-500
+    name: Gray 500
+    value: "#9D9FA2"
+    description: Placeholder / divider; tertiary text on dark.
+  - id: gray-600
+    name: Gray 600
+    value: "#747579"
+    description: Mid-gray for inactive controls.
+  - id: gray-700
+    name: Gray 700
+    value: "#636466"
+    description: Secondary text / placeholder on light canvas.
+
+  # ─── Secondary blue (link / partner contexts) ───────────────
+  - id: amd-blue
+    name: AMD Blue
+    value: "#0051C6"
+    description: >
+      Cooler blue used in partner / link contexts on the live
+      site. A secondary accent, not the brand primary.
+
+  # ─── System danger (distinct from brand red) ────────────────
+  - id: danger
+    name: Danger Red
+    value: "#DC3545"
+    description: >
+      System error red for destructive / failure states. Visually
+      distinct from AMD Red so that the brand mark does not read
+      as "error" inside the product UI.
+
+modes:
+  light:
+    roles:
+      background: white
+      surface: gray-100
+      surface-elevated: white
+      text-primary: charcoal
+      text-secondary: gray-700
+      text-tertiary: gray-500
+      primary: amd-red
+      primary-hover: amd-red
+      accent: amd-blue
+      accent-hover: amd-blue
+      error: danger
+      border: gray-300
+  dark:
+    roles:
+      background: black
+      surface: charcoal
+      surface-elevated: charcoal
+      text-primary: white
+      text-secondary: gray-200
+      text-tertiary: gray-500
+      primary: amd-red
+      primary-hover: amd-red
+      accent: amd-blue
+      accent-hover: amd-blue
+      error: danger
+      border: charcoal

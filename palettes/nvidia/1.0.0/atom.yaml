@@ -1,0 +1,118 @@
+kind: palette
+id: nvidia
+version: 1.0.0
+name: NVIDIA
+description: >
+  NVIDIA's corporate palette is anchored on the signature NVIDIA Green
+  (#76B900) — the chartreuse accent that has identified the wordmark
+  and "eye" logomark since the 2006 brand refresh and survives the
+  more recent identity work as the single colored hue allowed on the
+  primary mark. The supporting palette on nvidia.com is otherwise
+  monochrome: pure black for text and the wordmark, a near-white
+  page canvas (#F7F7F7), and a small neutral ramp for surfaces and
+  rules. A slightly cooler green (#74B71B) appears in CSS as the
+  on-dark pairing for legibility.
+
+tags: [nvidia, hardware, gpu, ai, silicon, green, monochrome]
+
+provenance:
+  source: https://www.nvidia.com/en-us/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    NVIDIA Corporation — palette values captured from the deployed
+    stylesheet on nvidia.com (clientlib-base.min.css color
+    declarations) and cross-referenced with the published Logo
+    and Brand Usage page at
+    nvidia.com/en-us/about-nvidia/legal-info/logo-brand-usage/.
+    NVIDIA, the NVIDIA logo, and the "eye" logomark are
+    trademarks of NVIDIA Corporation.
+  importedDate: 2026-05-18
+  notes: >
+    Derived from live site CSS at https://www.nvidia.com/ on
+    2026-05-18; the published brand-usage page documents the
+    logo treatment rules but does not list hex values. The
+    NVIDIA Green hex #76B900 is the value declared on the live
+    site and is the value commonly cited in NVIDIA Pantone /
+    sRGB color guidance.
+
+swatches:
+  # ─── NVIDIA Green (signature) ───────────────────────────────
+  - id: nvidia-green
+    name: NVIDIA Green
+    value: "#76B900"
+    description: >
+      The signature NVIDIA chartreuse green. The single colored
+      hue on the corporate mark and the brand's identity accent.
+  - id: nvidia-green-dark
+    name: NVIDIA Green (Dark)
+    value: "#74B71B"
+    description: >
+      Slightly cooler / darker variant declared on the live
+      stylesheet — used as the legible on-dark pairing where
+      the primary green meets a black surface.
+
+  # ─── Monochrome canvas ──────────────────────────────────────
+  - id: black
+    name: Black
+    value: "#000000"
+    description: >
+      Primary text on light surfaces; canvas in dark mode;
+      logo fill in the monochrome one-color variant.
+  - id: white
+    name: White
+    value: "#FFFFFF"
+    description: >
+      Default page background on nvidia.com; logo fill in the
+      reverse one-color variant on dark surfaces.
+
+  # ─── Neutral ramp (page chrome) ─────────────────────────────
+  - id: gray-50
+    name: Gray 50
+    value: "#F7F7F7"
+    description: Subtle elevated surface tint on the white canvas.
+  - id: gray-100
+    name: Gray 100
+    value: "#EEEEEE"
+    description: Quiet rule / border on the white canvas.
+  - id: gray-300
+    name: Gray 300
+    value: "#A7A7A7"
+    description: Mid-gray for inactive controls and tertiary text.
+  - id: gray-600
+    name: Gray 600
+    value: "#666666"
+    description: Secondary body text on the white canvas.
+  - id: gray-700
+    name: Gray 700
+    value: "#5E5E5E"
+    description: Darker secondary text; control labels.
+
+modes:
+  light:
+    roles:
+      background: white
+      surface: gray-50
+      surface-elevated: white
+      text-primary: black
+      text-secondary: gray-700
+      text-tertiary: gray-600
+      primary: nvidia-green
+      primary-hover: nvidia-green-dark
+      accent: nvidia-green
+      accent-hover: nvidia-green-dark
+      border: gray-100
+      mark: black
+  dark:
+    roles:
+      background: black
+      surface: gray-700
+      surface-elevated: gray-600
+      text-primary: white
+      text-secondary: gray-300
+      text-tertiary: gray-300
+      primary: nvidia-green
+      primary-hover: nvidia-green-dark
+      accent: nvidia-green
+      accent-hover: nvidia-green-dark
+      border: gray-700
+      mark: white

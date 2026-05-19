@@ -1,0 +1,236 @@
+id: sony
+version: 1.0.0
+name: Sony
+description: >
+  Sony Group Corporation is the Japanese diversified conglomerate
+  behind consumer electronics (Bravia televisions, Alpha cameras,
+  WH headphones), professional imaging, semiconductors (CMOS image
+  sensors), Sony Music, Sony Pictures, and Sony Interactive
+  Entertainment (PlayStation). The parent corporate identity is
+  defined by austere restraint: a pure-black SST wordmark on a
+  white canvas, with no chromatic primary on the parent mark. The
+  voice is engineered, considered, and product-led; the visual
+  treatment leaves the work to the photography and the type.
+
+tags: [sony, hardware, consumer-electronics, monochrome, japanese-conglomerate]
+
+provenance:
+  source: https://www.sony.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Sony Group Corporation / Sony Corporation — identity values
+    captured from the deployed stylesheet on sony.com (template
+    2023 gnavi.css / footer.css and the corporate styles.css on
+    the 2021 top template). Sony, the Sony logo, SST, Bravia,
+    Alpha, WALKMAN, INZONE, and related names and marks are
+    trademarks of Sony Group Corporation / Sony Corporation.
+  importedDate: 2026-05-18
+  notes: >
+    Derived from live site CSS at https://www.sony.com/ on
+    2026-05-18; Sony does not publish a public brand-guidelines
+    page. The proprietary brand typeface family is SST (SST W20
+    Roman / Bold, SST W55 Regular, SST Japanese), declared on
+    sony.com via @font-face but not publicly distributed. This
+    atom references Inter@1 as the open-source rendering
+    substitute. Scope is the parent Sony Group corporate
+    identity only — PlayStation, Bravia, Alpha, INZONE, and
+    other sub-brands are deferred to their own atoms (and
+    PlayStation in particular is its own brand cluster). assets:
+    [] per the encyclopedia's trademark-redistribution policy.
+
+references:
+  palette: sony@1
+  fonts:
+    heading: inter@1
+    body: inter@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # Sony's parent identity is light-first and monochrome; the
+    # brand block is the white canvas with the pure-black SST
+    # wordmark. Naming `identity` lets consumers render brand-
+    # badge surfaces in the corporate voice — black mark on
+    # white surface, the canonical pairing.
+    identity: white
+    on-identity: black
+
+    primary: black
+    primary-hover: gray-800
+    accent: action-blue
+    accent-hover: link-blue
+    mark: black
+    background-light: white
+    background-dark: gray-900
+    surface-light: gray-50
+    surface-dark: gray-700
+    text-primary-light: gray-800
+    text-primary-dark: white
+    text-secondary-light: gray-600
+    text-tertiary-light: gray-500
+    border-light: gray-100
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - black
+      - white
+    forbidden:
+      - action-blue
+      - link-blue
+      - focus-blue
+      - accent-teal
+      - accent-purple
+      - accent-magenta
+      - accent-orange
+      - accent-olive
+      - accent-rust
+      - gray-600
+      - gray-800
+    severity: error
+    rationale: >
+      The Sony wordmark is pure monochrome. The SST logotype
+      appears in black on light surfaces and white on dark
+      surfaces — never in any of the corporate template's
+      action blues or desaturated category accents. The
+      parent identity has no chromatic primary; recoloring the
+      mark conflicts with the brand's defining restraint.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - gradient-fill
+      - on-busy-photo
+      - outlined
+      - distorted
+    severity: error
+    rationale: >
+      The Sony wordmark is a fixed-proportion identity. The live
+      site uses it only in solid black or solid white on plain
+      backgrounds with generous clearspace. Skewing, rotating,
+      gradient-filling, drop-shadowing, or placing the mark on
+      a busy photo conflicts with the restrained corporate
+      identity.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      Gray 800 (#262626) on white (#FFFFFF) measures ~14:1 —
+      clears WCAG AA at the body-text floor decisively. Sony's
+      monochrome reading environment is built around this high-
+      contrast pairing.
+
+  - type: contrastRatio
+    target: logo
+    against: background
+    minRatio: 7.0
+    standard: WCAG-AAA
+    severity: error
+    rationale: >
+      Pure black (#000000) on white (#FFFFFF) gives ~21:1 and
+      clears AAA decisively. The monochrome identity has no
+      tolerance for a low-contrast mark — the SST wordmark
+      must appear on a surface that gives at least AAA
+      contrast against its fill color.
+
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - black
+      - white
+    forbidden:
+      - action-blue
+      - link-blue
+      - accent-teal
+      - accent-purple
+      - accent-magenta
+      - accent-orange
+      - accent-olive
+      - accent-rust
+    severity: error
+    rationale: >
+      The Sony parent brand has no chromatic primary. Action
+      Blue (#186FA4) is an inline-link affordance, not a brand
+      primary; the desaturated accents are category-signal
+      colors on the corporate template, not identity colors.
+      Substituting any of them for the monochrome primary
+      reads as a sub-brand or a partner identity, not as Sony.
+
+  - type: contextRestriction
+    target: roles.colors.accent
+    allowedContexts:
+      - inline-link
+      - focus-ring
+      - active-state
+    forbiddenContexts:
+      - logo
+      - hero-headline
+      - brand-badge
+    severity: warning
+    rationale: >
+      The action blues are interactive affordances inside the
+      product chrome — links inside paragraphs, focus rings,
+      hover states. They must not appear as headline color,
+      logo fill, or brand-badge color; the parent identity
+      stays monochrome.
+
+  - type: compositionConstraint
+    target: logo
+    pairsWith:
+      - white
+      - black
+      - gray-50
+    doesNotPairWith:
+      - accent-teal
+      - accent-purple
+      - accent-magenta
+      - accent-orange
+      - accent-olive
+      - accent-rust
+      - action-blue
+    severity: error
+    rationale: >
+      The SST wordmark pairs only with neutrals — white, black,
+      or the gray-50 surface tint. Placing the mark on any of
+      the desaturated category accents (teal, purple, magenta,
+      orange, olive, rust) reads as a sub-brand lockup, not as
+      the parent Sony mark.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) — Level
+      AA. The monochrome canvas-and-text pairings all clear AA
+      at the body-text floor with significant headroom. AA is
+      the floor; the logo pairing (per the contrastRatio rule
+      above) is held to AAA.
+
+  - type: fontPairing
+    target: typography.display
+    requires: prose
+    minSizeRatio: 1.3
+    severity: recommendation
+    rationale: >
+      Sony's marketing surfaces use SST (proprietary) for both
+      display and body, distinguished by size and weight rather
+      than two distinct families. Maintain at least a 1.3×
+      ratio between display and prose to preserve hierarchy
+      when one family carries both roles.

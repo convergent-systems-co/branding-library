@@ -1,0 +1,201 @@
+id: amd
+version: 1.0.0
+name: AMD
+description: >
+  Advanced Micro Devices, Inc. (AMD) is the silicon company behind
+  Ryzen CPUs, Radeon GPUs, EPYC data-center processors, and
+  Threadripper workstation parts — the long-running counterweight
+  to Intel and, in graphics, to NVIDIA. The corporate identity is
+  built around a single mark — the lowercase "amd" wordmark inside
+  the AMD Arrow — in AMD Red (#ED1C24) on white, or in white-
+  on-red. The marketing voice on amd.com is dark-first: a near-
+  black canvas under product hero modules with white type and the
+  red used as a CTA and emphasis accent.
+
+tags: [amd, hardware, cpu, gpu, silicon, semiconductor, red]
+
+provenance:
+  source: https://www.amd.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Advanced Micro Devices, Inc. — identity values captured from
+    the deployed stylesheet on amd.com (clientlib-webpack.min.css
+    color declarations). AMD, the AMD Arrow, Ryzen, Radeon, EPYC,
+    Threadripper, and Instinct are trademarks of Advanced Micro
+    Devices, Inc.
+  importedDate: 2026-05-18
+  notes: >
+    Derived from live site CSS at https://www.amd.com/ on
+    2026-05-18; the published brand-resources page is not
+    publicly accessible. The AMD wordmark uses a proprietary
+    typeface; this atom references Inter@1 as the open-source
+    rendering substitute. Scope is the parent corporate
+    identity only — Ryzen, Radeon, EPYC, and Threadripper sub-
+    brands are deferred to their own atoms. assets: [] per the
+    encyclopedia's trademark-redistribution policy.
+
+references:
+  palette: amd@1
+  fonts:
+    heading: inter@1
+    body: inter@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # AMD's marketing surfaces are dark-first; the brand block
+    # is the near-black canvas with white text. Naming
+    # `identity` lets consumers render brand-badge surfaces in
+    # the corporate voice. The red is the accent, not the
+    # canvas — using AMD Red as a page background is a
+    # forbidden treatment.
+    identity: black
+    on-identity: white
+
+    primary: amd-red
+    primary-hover: amd-red
+    accent: amd-blue
+    mark: amd-red
+    error: danger
+    background-light: white
+    background-dark: black
+    surface-light: gray-100
+    surface-dark: charcoal
+    text-primary-light: charcoal
+    text-primary-dark: white
+    text-secondary-light: gray-700
+    text-tertiary-light: gray-500
+    border-light: gray-300
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - amd-red
+      - white
+      - black
+    forbidden:
+      - amd-blue
+      - gray-300
+      - gray-500
+      - gray-700
+      - danger
+    severity: error
+    rationale: >
+      The AMD wordmark and Arrow appear in AMD Red (#ED1C24) on
+      light surfaces, or in white-on-red / white-on-black on
+      dark surfaces. The system error red (#DC3545) is visually
+      adjacent but distinct from the brand mark and must not
+      stand in for it.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - gradient-fill
+      - on-busy-photo
+      - outlined
+    severity: error
+    rationale: >
+      The AMD identity is a fixed-proportion wordmark plus arrow.
+      Recoloring (e.g., filling the mark with AMD Blue), skewing,
+      gradient-filling, or placing the mark on a busy photo
+      conflicts with the corporate identity as it appears on the
+      live site.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      White (#FFFFFF) on the near-black canvas (#1A1A1B) gives
+      ~20:1 — clears AA at the body-text floor decisively. The
+      dark-first marketing posture is built around this high-
+      contrast pairing.
+
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - amd-red
+    forbidden:
+      - amd-blue
+      - danger
+      - charcoal
+      - gray-700
+    severity: error
+    rationale: >
+      AMD Red (#ED1C24) is the brand's sole identity primary.
+      AMD Blue is a secondary partner / link color, not the
+      primary action color. The danger red is reserved for
+      destructive UI states and must not be substituted for the
+      brand red.
+
+  - type: contextRestriction
+    target: roles.colors.error
+    allowedContexts:
+      - error-state
+      - destructive-action
+    forbiddenContexts:
+      - marketing-headline
+      - hero-background
+      - cta
+    severity: error
+    rationale: >
+      Danger Red (#DC3545) is the system error / destructive
+      accent inherited from the Bootstrap ramp on amd.com. It is
+      not a CTA color and must not appear in marketing context —
+      the brand AMD Red occupies that role, and confusing the
+      two collapses the destructive-state affordance.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) — Level
+      AA. AMD Red on white measures ~4.6:1 (clears AA body text
+      by a narrow margin); white on AMD Red measures ~4.6:1 in
+      reverse. AA is the appropriate target for a high-saturation
+      brand red of this hue.
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    pairsWith:
+      - white
+      - black
+      - charcoal
+      - gray-100
+    doesNotPairWith:
+      - amd-blue
+      - danger
+    severity: recommendation
+    rationale: >
+      AMD Red reads cleanest against neutrals — white, the near-
+      black canvas, or the gray-100 surface. Pairing it adjacent
+      to the secondary AMD Blue creates a red-blue clash without
+      hierarchy resolution, and pairing it adjacent to the
+      danger red is ambiguous semantically.
+
+  - type: fontPairing
+    target: typography.display
+    requires: prose
+    minSizeRatio: 1.3
+    severity: recommendation
+    rationale: >
+      AMD's marketing surfaces use a single sans family for both
+      display and body, distinguished by size and weight rather
+      than two families. Maintain at least a 1.3× ratio between
+      display and prose to preserve hierarchy when one family
+      carries both roles.

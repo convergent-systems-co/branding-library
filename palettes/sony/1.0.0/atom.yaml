@@ -1,0 +1,162 @@
+kind: palette
+id: sony
+version: 1.0.0
+name: Sony
+description: >
+  Sony's corporate identity is one of the most austerely monochrome
+  in consumer electronics. The Sony wordmark is pure black on white
+  — no chromatic primary, no secondary brand color. The live site
+  on sony.com / sony.co.jp/en backs this with a tight neutral ramp
+  (white through #1F2024 near-black) for surfaces and text, a small
+  set of muted blues (#186FA4 / #2D61BF / #4F83DF) reserved for
+  links and active states, and a desaturated secondary palette of
+  greens, oranges, magentas, and slate-purples introduced on the
+  corporate "Sony Group" template surfaces for product-category
+  signaling.
+
+tags: [sony, hardware, consumer-electronics, monochrome, black]
+
+provenance:
+  source: https://www.sony.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Sony Group Corporation / Sony Corporation — palette values
+    captured from the deployed stylesheet on sony.com (template
+    2023 gnavi.css and footer.css, plus the corporate styles.css
+    on the 2021 top template). Sony, the Sony logo, SST, and
+    related marks are trademarks of Sony Group Corporation /
+    Sony Corporation.
+  importedDate: 2026-05-18
+  notes: >
+    Derived from live site CSS at https://www.sony.com/ (captured
+    via the Wayback Machine snapshot
+    web.archive.org/web/20241231183129/sony.com because the
+    direct host returns 403 to non-browser clients) on
+    2026-05-18; Sony does not publish a public brand-guidelines
+    page. The proprietary brand typeface family is SST (SST W20
+    Roman / Bold, SST W55 Regular, SST Japanese), declared on
+    sony.com via @font-face but not publicly distributed.
+
+swatches:
+  # ─── Monochrome (the brand is black-on-white) ───────────────
+  - id: black
+    name: Black
+    value: "#000000"
+    description: >
+      The Sony wordmark color. The brand has no chromatic primary
+      — the identity is pure black on white.
+  - id: white
+    name: White
+    value: "#FFFFFF"
+    description: Default page canvas; reverse wordmark fill on dark.
+
+  # ─── Neutral ramp ───────────────────────────────────────────
+  - id: gray-50
+    name: Gray 50
+    value: "#EFEFEF"
+    description: Light page surface tint.
+  - id: gray-100
+    name: Gray 100
+    value: "#DADADA"
+    description: Quiet rule / border on the white canvas.
+  - id: gray-200
+    name: Gray 200
+    value: "#BFBFBF"
+    description: Mid-light gray; disabled borders.
+  - id: gray-400
+    name: Gray 400
+    value: "#898991"
+    description: Mid-gray for inactive controls.
+  - id: gray-500
+    name: Gray 500
+    value: "#767676"
+    description: Tertiary text on the white canvas.
+  - id: gray-600
+    name: Gray 600
+    value: "#656565"
+    description: Secondary body text.
+  - id: gray-700
+    name: Gray 700
+    value: "#363636"
+    description: Elevated dark surface.
+  - id: gray-800
+    name: Gray 800
+    value: "#262626"
+    description: Dark surface; primary text on white.
+  - id: gray-900
+    name: Gray 900
+    value: "#1F2024"
+    description: Near-black canvas in dark-mode surfaces.
+
+  # ─── Link / action blues ────────────────────────────────────
+  - id: action-blue
+    name: Action Blue
+    value: "#186FA4"
+    description: >
+      Primary link / action blue on the corporate template.
+      Used inside paragraph text on the 2021 top template.
+  - id: link-blue
+    name: Link Blue
+    value: "#2D61BF"
+    description: Inline link variant on the navigation chrome.
+  - id: focus-blue
+    name: Focus Blue
+    value: "#5E9DF4"
+    description: Focus-ring / hover-affordance blue.
+
+  # ─── Desaturated category accents ───────────────────────────
+  # These appear on Sony Group corporate template hero modules
+  # for product-category signaling; they are NOT primary brand
+  # colors — they are secondary, muted, and used in pairs.
+  - id: accent-teal
+    name: Accent Teal
+    value: "#007263"
+    description: Desaturated teal — category accent on dark surfaces.
+  - id: accent-purple
+    name: Accent Purple
+    value: "#5B2C6E"
+    description: Desaturated purple — category accent.
+  - id: accent-magenta
+    name: Accent Magenta
+    value: "#B62D76"
+    description: Desaturated magenta — category accent.
+  - id: accent-orange
+    name: Accent Orange
+    value: "#BC5B00"
+    description: Burnt orange — category accent.
+  - id: accent-olive
+    name: Accent Olive
+    value: "#577515"
+    description: Desaturated olive — category accent.
+  - id: accent-rust
+    name: Accent Rust
+    value: "#B83744"
+    description: Desaturated rust red — category accent.
+
+modes:
+  light:
+    roles:
+      background: white
+      surface: gray-50
+      surface-elevated: white
+      text-primary: gray-800
+      text-secondary: gray-600
+      text-tertiary: gray-500
+      primary: black
+      primary-hover: gray-800
+      accent: action-blue
+      accent-hover: link-blue
+      border: gray-100
+  dark:
+    roles:
+      background: gray-900
+      surface: gray-700
+      surface-elevated: gray-800
+      text-primary: white
+      text-secondary: gray-200
+      text-tertiary: gray-400
+      primary: white
+      primary-hover: gray-50
+      accent: focus-blue
+      accent-hover: action-blue
+      border: gray-700

@@ -1,0 +1,148 @@
+kind: palette
+id: intel
+version: 1.0.0
+name: Intel
+description: >
+  Intel's 2020 brand refresh moved the company off its long-standing
+  navy "Intel Blue" onto a paired-blue system: Intel Classic Blue
+  (#0068B5) as the primary identity blue used on the logo and CTAs,
+  with Intel Energy Blue (#00C7FD) as the bright accent for highlights
+  and active states. The supporting palette declared on the live site
+  is a tight neutral ramp from near-white (#F7F7F7) through carbon
+  greys to a dark canvas (#262626), with deeper navy variants
+  (#004A86, #0046C8, #000F28) reserved for hover / pressed states and
+  for high-emphasis hero surfaces.
+
+tags: [intel, hardware, cpu, silicon, blue, refreshed-identity]
+
+provenance:
+  source: https://www.intel.com/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Intel Corporation — palette values captured from the deployed
+    stylesheet on intel.com (clientlib-base.min.css and
+    intel-fonts.css, under the --ighf-h-color-* custom-property
+    family — `classic-blue`, `energy-blue`, `carbon-*`). Intel,
+    the Intel logo, Intel Core, Intel Xeon, Intel Arc, Intel One,
+    and Intel Clear are trademarks of Intel Corporation.
+  importedDate: 2026-05-18
+  notes: >
+    Derived from live site CSS at https://www.intel.com/ (captured
+    via the Wayback Machine snapshot
+    web.archive.org/web/20260101011132/intel.com because the
+    direct host returns 403 to non-browser clients) on 2026-05-18.
+    Published brand guidelines are linked from
+    intel.com/content/www/us/en/company-overview/brand-guidelines.html
+    but the page returns 404 to non-browser clients. Token names
+    mirror Intel's own declarations on the live site
+    (--ighf-h-color-classic-blue, --ighf-h-color-energy-blue,
+    --ighf-h-color-carbon-web, etc.).
+
+swatches:
+  # ─── Intel Blue (paired primary) ────────────────────────────
+  - id: classic-blue
+    name: Intel Classic Blue
+    value: "#0068B5"
+    description: >
+      The primary Intel Blue — used on the wordmark, on calls-to-
+      action, and as the link / button color across intel.com.
+  - id: energy-blue
+    name: Intel Energy Blue
+    value: "#00C7FD"
+    description: >
+      The bright accent introduced in the 2020 refresh — used on
+      highlights, active borders, and on dark surfaces where the
+      classic blue would lose contrast.
+
+  # ─── Deep blues (hero / hover) ──────────────────────────────
+  - id: blue-700
+    name: Blue 700
+    value: "#004A86"
+    description: >
+      Hover / pressed variant of Classic Blue — declared on the
+      live site as `--ighf-h-link-color-hover`.
+  - id: blue-800
+    name: Blue 800
+    value: "#0046C8"
+    description: >
+      Deeper saturated blue for hero / high-emphasis surfaces.
+  - id: blue-900
+    name: Blue 900
+    value: "#000F28"
+    description: >
+      Near-navy used as a dark canvas under hero modules.
+
+  # ─── Carbon (neutral ramp) ──────────────────────────────────
+  - id: carbon-web
+    name: Carbon Web
+    value: "#F7F7F7"
+    description: >
+      Light page surface tint on the white canvas — the
+      `--ighf-h-color-carbon-web` token.
+  - id: carbon-100
+    name: Carbon 100
+    value: "#E7E7E7"
+    description: Quiet rule / border on the white canvas.
+  - id: carbon-200
+    name: Carbon 200
+    value: "#D7D7D7"
+    description: >
+      Light-gray border — the `--ighf-h-color-gray-light` token.
+  - id: carbon-400
+    name: Carbon 400
+    value: "#999FA9"
+    description: Mid-gray for inactive controls.
+  - id: carbon-500
+    name: Carbon 500
+    value: "#6A6D75"
+    description: >
+      Disabled / placeholder text — the
+      `--ighf-h-color-carbon-disabled` token.
+  - id: carbon-600
+    name: Carbon 600
+    value: "#525252"
+    description: Secondary body text.
+  - id: carbon-800
+    name: Carbon 800
+    value: "#262626"
+    description: >
+      Primary text color on the white canvas — the
+      `--ighf-h-text-color` token; also the dark-mode canvas.
+
+  # ─── True monochrome ────────────────────────────────────────
+  - id: white
+    name: White
+    value: "#FFFFFF"
+    description: Default page canvas; reverse logo fill.
+  - id: black
+    name: Black
+    value: "#000000"
+    description: Logo fill in the monochrome one-color variant.
+
+modes:
+  light:
+    roles:
+      background: white
+      surface: carbon-web
+      surface-elevated: white
+      text-primary: carbon-800
+      text-secondary: carbon-600
+      text-tertiary: carbon-500
+      primary: classic-blue
+      primary-hover: blue-700
+      accent: energy-blue
+      accent-hover: classic-blue
+      border: carbon-200
+  dark:
+    roles:
+      background: blue-900
+      surface: carbon-800
+      surface-elevated: blue-800
+      text-primary: white
+      text-secondary: carbon-200
+      text-tertiary: carbon-400
+      primary: energy-blue
+      primary-hover: classic-blue
+      accent: energy-blue
+      accent-hover: classic-blue
+      border: carbon-600

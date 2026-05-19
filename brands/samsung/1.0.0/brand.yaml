@@ -1,0 +1,206 @@
+id: samsung
+version: 1.0.0
+name: Samsung
+description: >
+  Samsung Electronics Co., Ltd. is the consumer-electronics arm of
+  the Samsung Group — smartphones (Galaxy), televisions, appliances
+  (Bespoke), displays, and the memory and foundry business behind
+  them. The corporate identity is anchored on the Samsung Blue
+  (#1428A0) wordmark, which the parent brand pairs with a near-
+  monochrome supporting palette: white canvas, fine grey rules,
+  and near-black text for the global marketing surfaces, plus a
+  brighter action blue (#2189FF) for the dark "UX25" product UI.
+  Voice is engineered, optimistic, and product-led.
+
+tags: [samsung, hardware, consumer-electronics, blue, korean-conglomerate]
+
+provenance:
+  source: https://www.samsung.com/us/
+  license: Proprietary — All Rights Reserved
+  attribution: >
+    Samsung Electronics Co., Ltd. — identity values captured from
+    the deployed stylesheet on samsung.com (us.css, ux25 base CSS,
+    and inline declarations on the US homepage). Samsung, the
+    Samsung logo, Galaxy, Bespoke, Bixby, SmartThings, SamsungOne,
+    and Samsung Sharp Sans are trademarks of Samsung Electronics
+    Co., Ltd.
+  importedDate: 2026-05-18
+  notes: >
+    Derived from live site CSS at https://www.samsung.com/us/ on
+    2026-05-18; the published brand-identity guide at
+    samsung.com/global/about-us/brand-identity/ is unavailable
+    (returns 403 to non-browser clients). The proprietary brand
+    typefaces (SamsungOne for body, SamsungSharpSans for display)
+    are declared on samsung.com via @font-face but are not
+    publicly distributed. This atom references Inter@1 as the
+    open-source rendering substitute. Scope is the parent
+    corporate identity only — Galaxy, Bespoke, SmartThings, and
+    other sub-brands are deferred. assets: [] per the
+    encyclopedia's trademark-redistribution policy.
+
+references:
+  palette: samsung@1
+  fonts:
+    heading: inter@1
+    body: inter@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # Samsung's parent identity is light-first; the brand block
+    # is the white canvas with the Samsung Blue wordmark and
+    # near-black body text. Naming `identity` lets consumers
+    # render brand-badge surfaces in the corporate voice. The
+    # UX25 dark canvas is the product UI environment, not the
+    # marketing identity surface.
+    identity: white
+    on-identity: black
+
+    primary: samsung-blue
+    primary-hover: legacy-navy
+    accent: link-blue
+    mark: samsung-blue
+    success: success
+    warning: warning
+    error: error
+    background-light: white
+    background-dark: gray-900
+    surface-light: gray-50
+    surface-dark: gray-800
+    text-primary-light: black
+    text-primary-dark: white
+    text-secondary-light: gray-600
+    text-tertiary-light: gray-500
+    border-light: gray-200
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - samsung-blue
+      - black
+      - white
+    forbidden:
+      - action-blue
+      - link-blue
+      - light-blue
+      - legacy-navy
+      - gray-600
+    severity: error
+    rationale: >
+      The Samsung wordmark fills with Samsung Blue (#1428A0) on
+      light surfaces, or with monochrome black-on-light /
+      white-on-dark when a one-color treatment is required.
+      The brighter action blues are product-UI affordances; the
+      legacy navy (#0C4DA2) is a softer historical variant.
+      Substituting any of them for the corporate blue dilutes
+      the wordmark's anchor color.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - gradient-fill
+      - on-busy-photo
+      - outlined
+      - distorted
+    severity: error
+    rationale: >
+      The Samsung wordmark is a fixed-proportion identity. The
+      live site uses it only in solid-color treatments (Samsung
+      Blue, black, or white) on plain backgrounds. Skewing,
+      rotating, gradient-filling, drop-shadowing, or placing the
+      mark on a busy photo conflicts with the restrained
+      corporate identity.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      Black (#000000) on white (#FFFFFF) measures ~21:1 — clears
+      WCAG AA at the body-text floor decisively. The high-
+      contrast monochrome posture is the parent brand's default
+      reading environment.
+
+  - type: contrastRatio
+    target: roles.colors.primary
+    against: background
+    minRatio: 4.5
+    standard: WCAG-AA
+    severity: error
+    rationale: >
+      Samsung Blue (#1428A0) on white (#FFFFFF) measures ~11:1 —
+      clears WCAG AA for body text decisively. This headroom is
+      meaningful because Samsung Blue is used not only on the
+      wordmark but also on inline links inside paragraph text.
+
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - samsung-blue
+      - action-blue
+      - legacy-navy
+    forbidden:
+      - link-blue
+      - light-blue
+      - gray-600
+    severity: error
+    rationale: >
+      The identity-primary role is filled by Samsung Blue
+      (default), Action Blue (on dark UX25 surfaces), or Legacy
+      Navy (on legacy US templates). Link Blue (#0381FE) and
+      Light Blue (#68AEFF) are inline-link and hover affordances
+      — not primary action colors.
+
+  - type: contextRestriction
+    target: roles.colors.error
+    allowedContexts:
+      - error-state
+      - destructive-action
+      - form-validation
+    forbiddenContexts:
+      - marketing-headline
+      - hero-background
+      - cta
+    severity: error
+    rationale: >
+      Error (#EF3434) is the destructive / failure-state accent
+      in the UX25 product UI. It must not appear in marketing
+      context — the brand's marketing CTAs are blue, not red,
+      and treating Error as a brand color collapses the
+      destructive-state affordance.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.3 (Contrast Minimum) — Level
+      AA. The monochrome-on-white text pairings and Samsung
+      Blue inline links all clear AA at the body-text floor
+      with significant headroom.
+
+  - type: fontPairing
+    target: typography.display
+    requires: prose
+    minSizeRatio: 1.3
+    severity: recommendation
+    rationale: >
+      Samsung's marketing surfaces pair SamsungSharpSans
+      (display, proprietary) with SamsungOne (body, proprietary)
+      on the live site. Maintain at least a 1.3× ratio between
+      display and prose to preserve the two-family hierarchy
+      when both roles render through the Inter substitute.
