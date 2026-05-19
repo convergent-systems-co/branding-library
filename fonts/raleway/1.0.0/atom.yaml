@@ -38,3 +38,6 @@ availableStyles:
   - { weight: 600, style: normal }
   - { weight: 700, style: normal }
   - { weight: 900, style: normal }
+
+variableAxes:
+  - { tag: wght, name: Weight, min: 100, max: 900, default: 400 }
