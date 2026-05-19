@@ -1,0 +1,226 @@
+id: harvard
+version: 1.0.0
+name: Harvard
+description: >
+  Harvard University — the oldest institution of higher learning
+  in the United States, whose institutional voice has rested on
+  Crimson since the Class of 1858 adopted the colour. Harvard's
+  central brand pairs Crimson (#A51C30) with black on a white
+  canvas; a supporting core palette of saturated reds, greens,
+  blues, yellows, turquoises, and purples carries editorial and
+  data-visualization work without competing with the
+  institutional crimson. The voice is restrained, scholarly, and
+  protective of the wordmark and shield.
+
+tags: [harvard, university, education, crimson, conservative-institutional, light-first]
+
+provenance:
+  source: https://seas.harvard.edu/office-communications/brand-style-guide/color-palette
+  license: Proprietary — All Rights Reserved (Harvard trademarks)
+  attribution: >
+    The President and Fellows of Harvard College — visual
+    identity captured from the Harvard SEAS brand style guide,
+    which publishes the canonical institutional Crimson
+    (#A51C30) consistent with Harvard's central trademark
+    guidance. "Harvard," "Veritas," the Harvard shield, and the
+    Harvard wordmark are registered trademarks of the President
+    and Fellows of Harvard College.
+  importedDate: 2026-05-19
+  notes: >
+    trademark.harvard.edu (the central reference URL named in
+    the task brief) returned HTTP 403 / Forbidden on WebFetch.
+    The Harvard SEAS brand-style page is the most accessible
+    authoritative source for the institutional Crimson hex
+    value (#A51C30) and the core supporting palette. This atom
+    is scoped to the parent institution only — the individual
+    Harvard schools (HBS, HMS, GSE, SEAS, HLS, GSAS, the
+    Library) each publish their own atom-eligible identity
+    variants but are out of scope for this brand atom. Harvard's
+    serifed institutional voice is supported by lora@1 as the
+    catalogue substitute for proprietary serif faces, inter@1
+    as the sans, and jetbrainsmono-nerdfont@1 for code. Assets
+    are kept empty per trademark policy.
+
+references:
+  palette: harvard@1
+  fonts:
+    heading: lora@1
+    body: inter@1
+    serif: lora@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # Harvard is light-first; the institutional canvas is white
+    # with Crimson as the brand-block / wordmark. `identity`
+    # names that canvas; on-identity is the canonical near-black
+    # Harvard uses for primary text.
+    identity: white
+    on-identity: black
+
+    primary: crimson
+    primary-hover: red
+    accent: crimson
+    accent-hover: red
+    mark: crimson
+    success: green
+    warning: warm-yellow
+    error: red
+    text-primary-light: black
+    text-primary-dark: white
+    background-light: white
+    background-dark: black
+    surface-light: grey
+    surface-dark: grey
+    text-secondary-light: black
+    text-tertiary-light: grey
+    border-light: grey
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - crimson
+    forbidden:
+      - red
+      - salmon
+      - blue
+      - green
+      - purple
+      - turquoise
+      - warm-yellow
+      - yellow
+    severity: error
+    rationale: >
+      Crimson (#A51C30) is Harvard's institutional colour and
+      the only swatch permitted to act as the primary brand
+      anchor. The Harvard brand-style guidance places Crimson as
+      the dominant colour for materials, with the core palette
+      providing accents — not substitutes.
+
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - crimson
+      - black
+      - white
+    forbidden:
+      - red
+      - salmon
+      - blue
+      - green
+      - purple
+      - turquoise
+    severity: error
+    rationale: >
+      The Harvard wordmark and shield are reproduced in
+      Crimson, solid black, or solid white (reversed) only.
+      Accent palette colours MUST NOT be used to colorize the
+      institutional mark.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 7.0
+    standard: WCAG-AAA
+    severity: error
+    rationale: >
+      Harvard Black (#1E1E1E) on white gives ~17:1 — clears
+      AAA. As a research university with extensive scholarly
+      content and obligations under Section 504 / ADA to its
+      student body and the public, Harvard's core text-on-canvas
+      pairs target the enhanced 7:1 floor.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - outlined
+      - gradient-fill
+      - on-busy-photo
+      - tilted
+      - cropped
+    severity: error
+    rationale: >
+      Harvard's trademark guidance prohibits stretching,
+      rotating, recolouring, outlining, applying drop-shadow or
+      gradient fills, or placing the wordmark or shield on busy
+      photographic backgrounds. Marks render only in approved
+      colourways with documented clear-space.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["400", "500", "600", "700"]
+    severity: warning
+    rationale: >
+      Harvard's editorial system uses Regular (400), Medium
+      (500), SemiBold (600), and Bold (700) weights across
+      surfaces. Display ultra-heavy cuts (800/900) are not part
+      of the documented institutional ramp.
+
+  - type: fontPairing
+    target: typography.display
+    requires: prose
+    minSizeRatio: 1.5
+    severity: error
+    rationale: >
+      Harvard's editorial hierarchy pairs a large serif display
+      with body text at a minimum 1.5× ratio. The scholarly
+      voice the institution projects depends on that explicit
+      hierarchy between display and prose.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AAA
+    criterion: "1.4.6"
+    severity: warning
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.6 (Contrast Enhanced) —
+      Level AAA. Harvard's scholarly posture and its
+      obligations to a diverse academic community justify the
+      enhanced 7:1 target on core text-on-background pairs.
+
+  - type: contextRestriction
+    target: roles.colors.error
+    allowedContexts:
+      - error-state
+      - destructive-action
+      - validation-failure
+    forbiddenContexts:
+      - confirmation
+      - completion
+      - data-viz-positive
+    severity: error
+    rationale: >
+      Red (#ED1B34) is Harvard's saturated digital accent and
+      the documented error / destructive-action signal. Reusing
+      it for confirmation or positive data-viz inverts the
+      established semantic role and conflicts with Crimson
+      sitting beside it on Harvard surfaces.
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    pairsWith:
+      - white
+      - black
+      - grey
+    doesNotPairWith:
+      - red
+      - salmon
+      - purple
+    severity: recommendation
+    rationale: >
+      Crimson reads cleanest on white, near-black, or the cool
+      Harvard grey. Adjacent to the saturated accent Red the two
+      hues vibrate without resolving into hierarchy; adjacent
+      to Salmon or Purple the editorial accents compete with the
+      institutional crimson for attention.

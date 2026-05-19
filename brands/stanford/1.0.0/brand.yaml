@@ -1,0 +1,232 @@
+id: stanford
+version: 1.0.0
+name: Stanford
+description: >
+  Stanford University — the private research university whose
+  institutional voice has rested on Cardinal red since the
+  university's founding. The Stanford Identity Guide pairs
+  Cardinal Red (#8C1515) with a warm black (#2E2D29) and Cool
+  Grey on a white canvas, with a distinct digital palette that
+  reserves Digital Blue for links and Digital Green for form
+  validation. The brand voice is restrained, scholarly, and
+  unmistakably West-Coast: confident colour, generous whitespace,
+  and a refusal to use Digital Red as a stand-in for Cardinal.
+
+tags: [stanford, university, education, cardinal, conservative-institutional, light-first]
+
+provenance:
+  source: https://identity.stanford.edu/design-elements/color/primary-colors/
+  license: Proprietary — All Rights Reserved (Stanford trademarks)
+  attribution: >
+    The Board of Trustees of The Leland Stanford Junior
+    University — visual identity captured from the Stanford
+    Identity Guide (identity.stanford.edu). "Stanford," the
+    Stanford block-S, the Stanford wordmark, and the Stanford
+    tree are registered trademarks of the Board of Trustees.
+  importedDate: 2026-05-19
+  notes: >
+    Stanford ships a proprietary type system anchored on Source
+    Sans 3 and Source Serif 4 (both open-source) for digital
+    surfaces. This atom references inter@1 as the sans surrogate
+    where Source Sans is not the chosen substitute, source-serif-4@1
+    is unavailable in catalogue so lora@1 is used as the serif
+    substitute, and jetbrainsmono-nerdfont@1 for code. The Identity
+    Guide is explicit that Digital Red is "not a replacement for
+    Cardinal Red" and that Digital Blue is reserved for links.
+    Assets are kept empty per trademark policy.
+
+references:
+  palette: stanford@1
+  fonts:
+    heading: source-sans-3@1
+    body: source-sans-3@1
+    serif: lora@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # Stanford is light-first; institutional surfaces use a white
+    # canvas with Cardinal Red as the brand block. `identity`
+    # names that canvas; on-identity is the canonical warm-black
+    # text Stanford uses for primary text.
+    identity: white
+    on-identity: black
+
+    primary: cardinal-red
+    primary-hover: cardinal-red-dark
+    accent: digital-red
+    accent-hover: digital-red-dark
+    mark: cardinal-red
+    success: digital-green
+    warning: digital-red
+    error: digital-red
+    text-primary-light: black
+    text-primary-dark: white
+    background-light: white
+    background-dark: black
+    surface-light: black-10
+    surface-dark: black-90
+    text-secondary-light: cool-grey
+    text-tertiary-light: black-90
+    border-light: black-10
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - cardinal-red
+      - cardinal-red-dark
+    forbidden:
+      - digital-red
+      - digital-red-light
+      - digital-blue
+      - digital-green
+    severity: error
+    rationale: >
+      Cardinal Red (#8C1515) is Stanford's institutional colour.
+      The Stanford Identity Guide is explicit that Digital Red
+      "is not a replacement for Cardinal red" and that Digital
+      Blue and Digital Green are role-restricted (links and form
+      validation). The primary brand colour role MUST be
+      Cardinal — no exceptions.
+
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - cardinal-red
+      - black
+      - white
+    forbidden:
+      - digital-red
+      - digital-red-light
+      - digital-blue
+      - cardinal-red-light
+    severity: error
+    rationale: >
+      The Stanford wordmark, block-S, and tree mark are
+      reproduced in Cardinal Red, solid black, or solid white
+      (reversed). Digital Red MUST NOT be used to colorize the
+      Stanford wordmark per the published guidance.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 7.0
+    standard: WCAG-AAA
+    severity: error
+    rationale: >
+      Stanford Black (#2E2D29) on white gives ~14:1 — clears
+      AAA. As a research university with extensive long-form
+      scholarly content and obligations under ADA / Section 504,
+      Stanford's surfaces target the enhanced 7:1 floor rather
+      than the AA 4.5:1 minimum.
+
+  - type: contextRestriction
+    target: roles.colors.link
+    allowedContexts:
+      - link
+      - navigation
+    forbiddenContexts:
+      - error-state
+      - confirmation
+      - destructive-action
+      - data-viz-positive
+    severity: error
+    rationale: >
+      The Identity Guide reserves Digital Blue (#006CB8)
+      "exclusively for links" on digital communications.
+      Repurposing it for confirmation, error, or data-viz roles
+      breaks the link-affordance contract Stanford visitors rely
+      on.
+
+  - type: contextRestriction
+    target: roles.colors.success
+    allowedContexts:
+      - confirmation
+      - completion
+      - form-validation
+      - data-viz-positive
+    forbiddenContexts:
+      - error-state
+      - destructive-action
+      - link
+    severity: error
+    rationale: >
+      Digital Green (#008566) is documented as the form-validation
+      colour. Using it for errors or as a link colour inverts the
+      semantics the Identity Guide assigns it.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - outlined
+      - gradient-fill
+      - on-busy-photo
+      - tilted
+    severity: error
+    rationale: >
+      Stanford's brand standards prohibit stretching, rotating,
+      recolouring, outlining, or applying decorative treatments
+      to the wordmark, block-S, or tree. Marks render in solid
+      Cardinal Red, solid black, or solid white only, with
+      documented clear-space.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["400", "600", "700"]
+    severity: warning
+    rationale: >
+      Stanford's Identity Guide type ramp anchors on Regular
+      (400), SemiBold (600), and Bold (700) for headings and
+      body. Heavier display cuts (800/900) are not part of the
+      published institutional ramp.
+
+  - type: fontPairing
+    target: typography.display
+    requires: prose
+    minSizeRatio: 1.5
+    severity: error
+    rationale: >
+      Stanford's editorial hierarchy pairs a large display sans
+      with body sans at a minimum 1.5× ratio. The Identity Guide
+      depends on that gap for the legible scholarly voice the
+      institution projects.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AAA
+    criterion: "1.4.6"
+    severity: warning
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.6 (Contrast Enhanced) —
+      Level AAA. Stanford's research / scholarly posture and its
+      obligations to a diverse academic community justify the
+      enhanced 7:1 target on core text-on-background pairs.
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    pairsWith:
+      - white
+      - black-10
+      - black
+    doesNotPairWith:
+      - digital-red
+      - digital-red-light
+      - cardinal-red-light
+    severity: recommendation
+    rationale: >
+      Cardinal Red reads cleanest on white, soft black-tint
+      surfaces, or against the warm institutional black. Adjacent
+      to Digital Red or the light Cardinal tint, the two reds
+      vibrate without resolving into hierarchy — and the Identity
+      Guide treats their roles as semantically distinct.

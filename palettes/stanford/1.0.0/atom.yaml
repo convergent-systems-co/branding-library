@@ -1,0 +1,150 @@
+kind: palette
+id: stanford
+version: 1.0.0
+name: Stanford
+description: >
+  The Stanford University brand palette as published in Stanford's
+  Identity Guide. The primary palette is Cardinal red, white,
+  black (#2E2D29 — a warm near-black), and Cool Grey. A digital
+  accent palette adds Digital Red, Digital Blue (links only), and
+  Digital Green (form validation). Black tints in 10% increments
+  expand the neutral ramp. The Identity Guide is emphatic that
+  Cardinal Red is the institutional colour and Digital Red is an
+  accent — not a replacement.
+
+tags: [stanford, university, education, cardinal, conservative-institutional, light-first]
+
+provenance:
+  source: https://identity.stanford.edu/design-elements/color/primary-colors/
+  license: Proprietary — All Rights Reserved (Stanford trademarks)
+  attribution: >
+    The Board of Trustees of The Leland Stanford Junior
+    University — palette captured from the Stanford Identity Guide
+    (identity.stanford.edu). "Stanford," the Stanford block-S
+    mark, the Stanford wordmark, and the Stanford tree are
+    registered trademarks of the Board of Trustees.
+  importedDate: 2026-05-19
+  notes: >
+    Stanford's Identity Guide notes "The colors on this website
+    are not intended to match Pantone color standards." Hex values
+    captured here are the documented digital specifications from
+    the primary-colors and web/digital pages. Cardinal Red has
+    been Stanford's official colour since the university's
+    founding; Digital Blue is reserved for links and Digital
+    Green for form validation.
+
+swatches:
+  # ─── Primary (Cardinal + neutrals) ────────────────────────────
+  - id: cardinal-red
+    name: Cardinal Red
+    value: "#8C1515"
+    description: Stanford's institutional cardinal — primary brand colour.
+  - id: cardinal-red-light
+    name: Cardinal Red Light
+    value: "#B83A4B"
+    description: Light tint of Cardinal Red for surface accents.
+  - id: cardinal-red-dark
+    name: Cardinal Red Dark
+    value: "#820000"
+    description: Deep Cardinal — pressed / active variant.
+  - id: white
+    name: White
+    value: "#FFFFFF"
+    description: Primary canvas in light mode.
+  - id: black
+    name: Black
+    value: "#2E2D29"
+    description: Warm near-black — primary text on light surfaces.
+  - id: cool-grey
+    name: Cool Grey
+    value: "#53565A"
+    description: Secondary text / supporting neutral.
+
+  # ─── Black-tint ramp ──────────────────────────────────────────
+  - id: black-90
+    name: Black 90
+    value: "#43423E"
+    description: 90% black tint — deep text on lighter surfaces.
+  - id: black-10
+    name: Black 10
+    value: "#EAEAEA"
+    description: 10% black tint — soft surface / divider.
+
+  # ─── Digital (web accents) ────────────────────────────────────
+  - id: digital-red
+    name: Digital Red
+    value: "#B1040E"
+    description: Digital accent red — emphasis only, not a replacement for Cardinal.
+  - id: digital-red-light
+    name: Digital Red Light
+    value: "#E50808"
+    description: Light digital red — interactive emphasis.
+  - id: digital-red-dark
+    name: Digital Red Dark
+    value: "#820000"
+    description: Dark digital red — pressed state.
+  - id: digital-blue
+    name: Digital Blue
+    value: "#006CB8"
+    description: Reserved for links on digital surfaces.
+  - id: digital-blue-light
+    name: Digital Blue Light
+    value: "#6FC3FF"
+    description: Hover / focus link variant.
+  - id: digital-blue-dark
+    name: Digital Blue Dark
+    value: "#00548F"
+    description: Visited / active link variant.
+  - id: digital-green
+    name: Digital Green
+    value: "#008566"
+    description: Form-validation success.
+  - id: digital-green-light
+    name: Digital Green Light
+    value: "#1AECBA"
+    description: Light validation green — confirmation surfaces.
+  - id: digital-green-dark
+    name: Digital Green Dark
+    value: "#006F54"
+    description: Dark validation green — pressed state.
+
+modes:
+  light:
+    roles:
+      background: white
+      surface: black-10
+      surface-elevated: white
+      text-primary: black
+      text-secondary: cool-grey
+      text-tertiary: black-90
+      primary: cardinal-red
+      primary-hover: cardinal-red-dark
+      accent: digital-red
+      accent-hover: digital-red-dark
+      link: digital-blue
+      link-hover: digital-blue-dark
+      warning: digital-red
+      warning-hover: digital-red-dark
+      error: digital-red
+      success: digital-green
+      border: black-10
+
+  dark:
+    roles:
+      background: black
+      surface: black-90
+      surface-elevated: cool-grey
+      text-primary: white
+      text-secondary: black-10
+      text-tertiary: cool-grey
+      primary: cardinal-red-light
+      primary-hover: cardinal-red
+      accent: digital-red-light
+      accent-hover: digital-red
+      link: digital-blue-light
+      link-hover: digital-blue
+      warning: digital-red-light
+      warning-hover: digital-red
+      error: digital-red-light
+      success: digital-green-light
+      border: cool-grey

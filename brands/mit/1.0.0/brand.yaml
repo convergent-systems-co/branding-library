@@ -1,0 +1,218 @@
+id: mit
+version: 1.0.0
+name: MIT
+description: >
+  The Massachusetts Institute of Technology — the research
+  university whose institutional identity rests on three core
+  colours (MIT Red, Silver Gray, Bright Red) plus black and white.
+  MIT's brand voice is direct, technical, and confident: rigorous
+  typography, restrained colour, and a deliberate refusal of
+  decorative treatment on the seal and wordmark. The expanded
+  palette adds high-chroma pinks, purples, blues, greens, and a
+  yellow that MIT pairs with the core for editorial and digital
+  surfaces while keeping MIT Red as the institutional anchor.
+
+tags: [mit, university, education, research, conservative-institutional, light-first]
+
+provenance:
+  source: https://brand.mit.edu/color
+  license: Proprietary — All Rights Reserved (MIT trademarks)
+  attribution: >
+    Massachusetts Institute of Technology — visual identity
+    captured from the MIT Brand Guide (brand.mit.edu). "MIT," the
+    MIT name, the MIT seal, and the MIT wordmark are registered
+    trademarks of the Massachusetts Institute of Technology.
+  importedDate: 2026-05-19
+  notes: >
+    MIT's institutional wordmark uses a proprietary face (the MIT
+    Logo Letters); body and display type on brand.mit.edu pair a
+    geometric sans with a serif. This atom references inter@1 as
+    the open-source sans substitute, lora@1 as the serif substitute,
+    and jetbrainsmono-nerdfont@1 for code. The proprietary faces
+    are not publicly distributed and assets are kept empty per
+    trademark policy.
+
+references:
+  palette: mit@1
+  fonts:
+    heading: inter@1
+    body: inter@1
+    serif: lora@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # MIT is light-first. The institutional canvas is white with
+    # MIT Red as the brand-block / wordmark accent. `identity`
+    # names that canvas; on-identity is the canonical dark-gray
+    # text MIT uses for primary text on light surfaces.
+    identity: white
+    on-identity: dark-gray-2
+
+    primary: mit-red
+    primary-hover: bright-red
+    accent: bright-red
+    accent-hover: mit-red
+    mark: mit-red
+    success: green
+    warning: yellow
+    error: bright-red
+    text-primary-light: dark-gray-2
+    text-primary-dark: white
+    background-light: white
+    background-dark: dark-gray-2
+    surface-light: light-gray-1
+    surface-dark: dark-gray-1
+    text-secondary-light: dark-gray-1
+    text-tertiary-light: dark-silver-gray
+    border-light: light-gray-2
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - mit-red
+      - bright-red
+    forbidden:
+      - pink
+      - dark-pink
+      - purple
+      - blue
+      - green
+      - yellow
+    severity: error
+    rationale: >
+      MIT Red (#750014) is the institutional crimson and the only
+      colour authorized to act as the primary brand mark fill.
+      Bright Red (#FF1423) is permitted as a digital activation
+      accent but the MIT Brand Guide is explicit that Bright Red
+      "is not a replacement for MIT Red." The expanded-palette
+      chromas are for editorial accent only and must not stand in
+      for the primary institutional colour.
+
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - mit-red
+      - black
+    forbidden:
+      - bright-red
+      - silver-gray
+      - pink
+      - purple
+      - blue
+      - green
+      - yellow
+    severity: error
+    rationale: >
+      The MIT wordmark and seal are reproduced in MIT Red on light
+      surfaces or in black for single-colour and embossed use.
+      Bright Red and the expanded palette chromas are reserved for
+      editorial accents and digital states, not for the
+      institutional mark itself.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 7.0
+    standard: WCAG-AAA
+    severity: error
+    rationale: >
+      Dark Gray 2 (#212326) on white gives ~17:1 — clears AAA.
+      As a research university with extensive long-form scholarly
+      content (theses, OCW, lab pages), MIT's surfaces target the
+      enhanced 7:1 floor rather than the AA 4.5:1 minimum.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - outlined
+      - gradient-fill
+      - on-busy-photo
+      - tilted
+      - cropped
+    severity: error
+    rationale: >
+      The MIT Brand Guide prohibits stretching, rotating,
+      recolouring, outlining, applying drop-shadow or gradient
+      fills, or placing the wordmark on busy photographic
+      backgrounds. The mark renders only in approved colourways
+      on uncluttered backgrounds with documented clear-space.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["400", "500", "600", "700"]
+    severity: warning
+    rationale: >
+      MIT's editorial system on brand.mit.edu uses Regular (400),
+      Medium (500), SemiBold (600), and Bold (700) for headings
+      and body. Heavier display cuts (800/900) are not part of
+      the documented institutional ramp.
+
+  - type: fontPairing
+    target: typography.display
+    requires: prose
+    minSizeRatio: 1.5
+    severity: error
+    rationale: >
+      MIT's typographic hierarchy pairs a large display sans with
+      body sans at a minimum 1.5× ratio. Closing the gap below
+      1.5× destroys the scannability the brand guide assumes for
+      hero modules and section openers.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AAA
+    criterion: "1.4.6"
+    severity: warning
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.6 (Contrast Enhanced) —
+      Level AAA. The institution's scholarly, long-form posture
+      and obligations under Section 504 / ADA to its student and
+      research community justify aiming above the AA floor where
+      core text and background pairs allow it.
+
+  - type: contextRestriction
+    target: roles.colors.error
+    allowedContexts:
+      - error-state
+      - destructive-action
+      - validation-failure
+    forbiddenContexts:
+      - confirmation
+      - completion
+      - data-viz-positive
+    severity: error
+    rationale: >
+      Bright Red (#FF1423) is MIT's digital activation /
+      alert colour. Reusing it for confirmation or positive
+      data-viz inverts the established meaning and conflicts
+      with the digital colour's documented role.
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    pairsWith:
+      - white
+      - light-gray-1
+      - black
+      - silver-gray
+    doesNotPairWith:
+      - pink
+      - dark-pink
+      - bright-red
+    severity: recommendation
+    rationale: >
+      MIT Red reads cleanest on white, soft light gray, or black.
+      Adjacent to Bright Red it loses chromatic separation; next
+      to Pink or Dark Pink the warm reds compete for attention
+      and obscure the institutional voice.

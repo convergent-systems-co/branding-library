@@ -1,0 +1,223 @@
+kind: palette
+id: cambridge
+version: 1.0.0
+name: Cambridge
+description: >
+  The University of Cambridge brand palette as published in the
+  Cambridge brand resources / colour guidelines. The core palette
+  is built around a Cambridge Blue family — a distinctive light
+  teal-cyan (#8EE8D8) that differentiates Cambridge from Oxford's
+  navy — alongside Cambridge Dark Blue (#133844), Warm Blue
+  (#00BDB6), and Light Blue (#D1F9F1). A heritage Cambridge Blue
+  (#85B09A) preserves the traditional cooler shade. Five secondary
+  colour families (Crest, Cherry, Purple, Indigo, Green) each
+  carry a four-stop ramp, and a four-stop greyscale (Slate 1–4)
+  provides neutrals.
+
+tags: [cambridge, university, education, cambridge-blue, heritage, conservative-institutional, light-first]
+
+provenance:
+  source: https://www.cam.ac.uk/brand-resources/guidelines/colour
+  license: Proprietary — All Rights Reserved (Cambridge trademarks)
+  attribution: >
+    The Chancellor, Masters, and Scholars of the University of
+    Cambridge — palette captured from the University of Cambridge
+    brand-resources colour guidelines (cam.ac.uk). "Cambridge,"
+    "University of Cambridge," the Cambridge coat of arms, and
+    the University shield are protected marks of the University
+    of Cambridge.
+  importedDate: 2026-05-19
+  notes: >
+    Cambridge's contemporary brand system distinguishes a
+    refreshed core Cambridge Blue (#8EE8D8 — a light teal-cyan)
+    from the heritage Cambridge Blue (#85B09A — closer to the
+    traditional cool-green) that institutions historically use.
+    Both are captured here. Cambridge Judge Yellow (#FFB81C) is
+    a Judge Business School heritage colour included in the
+    University-published brand resources but used selectively.
+    Sub-brand schools (Judge Business School, Trinity, King's,
+    etc.) carry their own atom-eligible identities and are out
+    of scope for this atom — only the parent University palette
+    is encoded here.
+
+swatches:
+  # ─── Cambridge Blue (core) ────────────────────────────────────
+  - id: cambridge-blue
+    name: Cambridge Blue
+    value: "#8EE8D8"
+    description: The contemporary Cambridge Blue — primary brand colour.
+  - id: cambridge-light-blue
+    name: Cambridge Light Blue
+    value: "#D1F9F1"
+    description: Light tint of Cambridge Blue — surface accents.
+  - id: cambridge-warm-blue
+    name: Cambridge Warm Blue
+    value: "#00BDB6"
+    description: Saturated teal — digital accent / hover.
+  - id: cambridge-dark-blue
+    name: Cambridge Dark Blue
+    value: "#133844"
+    description: Deep teal-navy — primary text / dark canvas.
+  - id: heritage-cambridge-blue
+    name: Heritage Cambridge Blue
+    value: "#85B09A"
+    description: Traditional Cambridge Blue (closer to muted sage-green).
+
+  # ─── Secondary — Crest ────────────────────────────────────────
+  - id: light-crest
+    name: Light Crest
+    value: "#FFE2C8"
+    description: Pale crest — pastel accent.
+  - id: warm-crest
+    name: Warm Crest
+    value: "#FFC392"
+    description: Warm crest — soft accent.
+  - id: crest
+    name: Crest
+    value: "#FD8153"
+    description: Crest orange — saturated accent.
+  - id: dark-crest
+    name: Dark Crest
+    value: "#DD3025"
+    description: Deep crest red — strong accent / warning.
+
+  # ─── Secondary — Cherry ───────────────────────────────────────
+  - id: light-cherry
+    name: Light Cherry
+    value: "#F2CAD8"
+    description: Pale cherry — pastel accent.
+  - id: warm-cherry
+    name: Warm Cherry
+    value: "#E18AAC"
+    description: Mid pink — accent.
+  - id: cherry
+    name: Cherry
+    value: "#CD3572"
+    description: Saturated cherry — accent.
+  - id: dark-cherry
+    name: Dark Cherry
+    value: "#911449"
+    description: Deep cherry — strong accent / error.
+
+  # ─── Secondary — Purple ───────────────────────────────────────
+  - id: light-purple
+    name: Light Purple
+    value: "#F2ECF8"
+    description: Pale purple — pastel accent.
+  - id: warm-purple
+    name: Warm Purple
+    value: "#D1B7EB"
+    description: Mid purple — accent.
+  - id: purple
+    name: Purple
+    value: "#A368DF"
+    description: Saturated purple — accent.
+  - id: dark-purple
+    name: Dark Purple
+    value: "#681FB1"
+    description: Deep purple — strong accent.
+
+  # ─── Secondary — Indigo ───────────────────────────────────────
+  - id: light-indigo
+    name: Light Indigo
+    value: "#EBEDFB"
+    description: Pale indigo — pastel accent.
+  - id: warm-indigo
+    name: Warm Indigo
+    value: "#B0B9F1"
+    description: Mid indigo — accent.
+  - id: indigo
+    name: Indigo
+    value: "#5366E0"
+    description: Saturated indigo — accent / link.
+  - id: dark-indigo
+    name: Dark Indigo
+    value: "#29347A"
+    description: Deep indigo — strong accent.
+
+  # ─── Secondary — Green ────────────────────────────────────────
+  - id: light-green
+    name: Light Green
+    value: "#DFF2EA"
+    description: Pale green — pastel accent.
+  - id: warm-green
+    name: Warm Green
+    value: "#AFDFCB"
+    description: Mid green — accent.
+  - id: green
+    name: Green
+    value: "#4DB78C"
+    description: Saturated green — success.
+  - id: dark-green
+    name: Dark Green
+    value: "#13553A"
+    description: Deep green — strong accent.
+
+  # ─── Heritage / school accents ────────────────────────────────
+  - id: cambridge-judge-yellow
+    name: Cambridge Judge Yellow
+    value: "#FFB81C"
+    description: Cambridge Judge heritage yellow — warm institutional accent.
+
+  # ─── Greyscale ────────────────────────────────────────────────
+  - id: white
+    name: White
+    value: "#FFFFFF"
+    description: Primary canvas in light mode.
+  - id: slate-1
+    name: Slate 1
+    value: "#ECEEF1"
+    description: Soft slate — surface tint.
+  - id: slate-2
+    name: Slate 2
+    value: "#B5BDC8"
+    description: Mid slate — border / divider.
+  - id: slate-3
+    name: Slate 3
+    value: "#546072"
+    description: Deep slate — secondary text.
+  - id: slate-4
+    name: Slate 4
+    value: "#232830"
+    description: Near-black slate — primary text on light.
+
+modes:
+  light:
+    roles:
+      background: white
+      surface: slate-1
+      surface-elevated: white
+      text-primary: slate-4
+      text-secondary: slate-3
+      text-tertiary: slate-2
+      primary: cambridge-blue
+      primary-hover: cambridge-warm-blue
+      accent: cambridge-warm-blue
+      accent-hover: cambridge-dark-blue
+      link: indigo
+      link-hover: dark-indigo
+      warning: cambridge-judge-yellow
+      warning-hover: crest
+      error: dark-cherry
+      success: green
+      border: slate-2
+
+  dark:
+    roles:
+      background: cambridge-dark-blue
+      surface: slate-4
+      surface-elevated: slate-3
+      text-primary: white
+      text-secondary: cambridge-light-blue
+      text-tertiary: slate-2
+      primary: cambridge-blue
+      primary-hover: cambridge-warm-blue
+      accent: cambridge-light-blue
+      accent-hover: cambridge-warm-blue
+      link: warm-indigo
+      link-hover: indigo
+      warning: cambridge-judge-yellow
+      warning-hover: crest
+      error: warm-cherry
+      success: warm-green
+      border: slate-3

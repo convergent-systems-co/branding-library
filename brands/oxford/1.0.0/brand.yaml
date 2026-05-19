@@ -1,0 +1,229 @@
+id: oxford
+version: 1.0.0
+name: Oxford
+description: >
+  The University of Oxford — the English-speaking world's oldest
+  university, whose institutional identity rests on Oxford Blue
+  (#002147 — Pantone 282), the colour the University has been
+  recognised by worldwide for centuries. Oxford pairs the
+  institutional blue with a warm-neutral grey ramp, an off-white
+  canvas, and an eight-colour secondary palette (cerulean blue,
+  lemon yellow, charcoal, mauve, peach, potter's pink, dusk,
+  lilac, sienna) that supports editorial accents while keeping
+  Oxford Blue as the unmistakable institutional anchor. The
+  voice is restrained, heritage-aware, and protective of the
+  belted-crest mark.
+
+tags: [oxford, university, education, oxford-blue, heritage, conservative-institutional, light-first]
+
+provenance:
+  source: https://www.ox.ac.uk/about/the-university/brand/guidelines
+  license: Proprietary — All Rights Reserved (Oxford trademarks)
+  attribution: >
+    The Chancellor, Masters, and Scholars of the University of
+    Oxford — visual identity captured from the University of
+    Oxford brand guidelines page on ox.ac.uk. "Oxford,"
+    "University of Oxford," the Oxford coat of arms, and the
+    belted-crest mark are protected marks of the University of
+    Oxford.
+  importedDate: 2026-05-19
+  notes: >
+    The University publishes a proprietary type family (Foundry
+    Sterling and a paired serif) for institutional use. This
+    atom references inter@1 as the open-source sans substitute,
+    lora@1 as the serif substitute (a humanist serif consistent
+    with Oxford's traditional voice), and jetbrainsmono-nerdfont@1
+    for code. The proprietary faces are not publicly distributed
+    and assets are kept empty per trademark policy. Oxford Blue
+    is documented as Pantone 282 across the central University
+    brand guidance; the Wikipedia Oxford Blue entry corroborates
+    #002147 as the hex equivalent. Scoped to the parent University
+    only — the constituent colleges (Christ Church, Magdalen,
+    Balliol, etc.) and the Oxford University Press identity are
+    out of scope and have their own brand systems.
+
+references:
+  palette: oxford@1
+  fonts:
+    heading: inter@1
+    body: inter@1
+    serif: lora@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # Oxford is light-first; the institutional canvas is white or
+    # the warm Oxford off-white, with Oxford Blue as the brand
+    # block. `identity` names that canvas; on-identity is the
+    # canonical Oxford Charcoal text.
+    identity: white
+    on-identity: oxford-charcoal
+
+    primary: oxford-blue
+    primary-hover: oxford-charcoal
+    accent: oxford-cerulean-blue
+    accent-hover: oxford-blue
+    mark: oxford-blue
+    success: oxford-blue
+    warning: oxford-lemon-yellow
+    error: oxford-sienna
+    text-primary-light: oxford-charcoal
+    text-primary-dark: white
+    background-light: white
+    background-dark: oxford-charcoal
+    surface-light: oxford-shell-grey
+    surface-dark: oxford-ash-grey
+    text-secondary-light: oxford-ash-grey
+    text-tertiary-light: oxford-umber
+    border-light: oxford-stone-grey
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - oxford-blue
+    forbidden:
+      - oxford-cerulean-blue
+      - oxford-lemon-yellow
+      - oxford-mauve
+      - oxford-peach
+      - oxford-potters-pink
+      - oxford-dusk
+      - oxford-lilac
+      - oxford-sienna
+    severity: error
+    rationale: >
+      Oxford Blue (#002147 — Pantone 282) is the institutional
+      colour and the only swatch authorized to act as the primary
+      brand anchor. The Oxford brand guidelines describe the blue
+      as the colour "recognised worldwide as our identifying
+      colour" — the secondary palette supports but never
+      substitutes for it.
+
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - oxford-blue
+      - oxford-charcoal
+      - white
+    forbidden:
+      - oxford-cerulean-blue
+      - oxford-sienna
+      - oxford-potters-pink
+      - oxford-mauve
+      - oxford-peach
+    severity: error
+    rationale: >
+      The Oxford coat of arms and belted-crest mark are
+      reproduced in Oxford Blue, near-black Oxford Charcoal, or
+      reversed in white only. Secondary palette colours MUST NOT
+      be used to colorize the institutional mark.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 7.0
+    standard: WCAG-AAA
+    severity: error
+    rationale: >
+      Oxford Charcoal (#211D1C) on white gives ~17:1 — clears
+      AAA decisively. The University's scholarly long-form
+      posture, statutory obligations under the UK Equality Act,
+      and the publishing weight of ox.ac.uk justify the enhanced
+      7:1 floor rather than the AA 4.5:1 minimum.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - outlined
+      - gradient-fill
+      - on-busy-photo
+      - tilted
+      - cropped
+    severity: error
+    rationale: >
+      Oxford's brand guidelines prohibit stretching, rotating,
+      recolouring, outlining, applying drop-shadow or gradient
+      fills, or placing the coat of arms or belted-crest mark on
+      busy photographic backgrounds. Marks render in approved
+      colourways only with documented clear-space.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["400", "500", "600", "700"]
+    severity: warning
+    rationale: >
+      The Oxford editorial type ramp uses Regular (400), Medium
+      (500), SemiBold (600), and Bold (700) across surfaces.
+      Heavier display cuts (800/900) are not part of the
+      documented institutional ramp.
+
+  - type: fontPairing
+    target: typography.display
+    requires: prose
+    minSizeRatio: 1.5
+    severity: error
+    rationale: >
+      Oxford's editorial hierarchy pairs a large display sans (or
+      its serif companion) with body text at a minimum 1.5×
+      ratio. The University's scholarly voice depends on that
+      explicit gap between display and prose; flattening below
+      1.5× breaks the typographic hierarchy.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AAA
+    criterion: "1.4.6"
+    severity: warning
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.6 (Contrast Enhanced) —
+      Level AAA. Oxford's scholarly posture and obligations under
+      the UK Equality Act to a diverse academic and public
+      audience justify the enhanced 7:1 target on core
+      text-on-background pairs.
+
+  - type: contextRestriction
+    target: roles.colors.warning
+    allowedContexts:
+      - warning-state
+      - highlight
+      - editorial-emphasis
+    forbiddenContexts:
+      - error-state
+      - destructive-action
+      - confirmation
+    severity: error
+    rationale: >
+      Oxford Lemon Yellow (#F7EF66) is the pale editorial
+      highlight in the secondary palette. Using it for hard
+      errors or confirmation states is inconsistent with its
+      documented soft-emphasis role.
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    pairsWith:
+      - white
+      - oxford-off-white
+      - oxford-shell-grey
+      - oxford-charcoal
+    doesNotPairWith:
+      - oxford-potters-pink
+      - oxford-peach
+      - oxford-dusk
+    severity: recommendation
+    rationale: >
+      Oxford Blue reads cleanest on white, the warm Oxford off
+      white / shell grey, or against the near-black Oxford
+      Charcoal. Adjacent to the muted warm pinks (potter's
+      pink, peach, dusk) the institutional blue loses the calm
+      authority the heritage colour is designed to project.

@@ -1,0 +1,150 @@
+kind: palette
+id: harvard
+version: 1.0.0
+name: Harvard
+description: >
+  The Harvard University brand palette as published in the
+  Harvard SEAS brand style guide (the most accessible
+  authoritative source for Harvard's core institutional Crimson
+  and supporting palette). Crimson (#A51C30) is the dominant
+  institutional colour; the core palette adds saturated reds,
+  greens, blues, yellows, turquoises, and purples that pair with
+  Crimson and Black to produce the editorial voice across
+  Harvard's many surfaces.
+
+tags: [harvard, university, education, crimson, conservative-institutional, light-first]
+
+provenance:
+  source: https://seas.harvard.edu/office-communications/brand-style-guide/color-palette
+  license: Proprietary — All Rights Reserved (Harvard trademarks)
+  attribution: >
+    The President and Fellows of Harvard College — palette
+    captured from the Harvard John A. Paulson School of
+    Engineering and Applied Sciences brand-style colour palette
+    page, which publishes the institutional Crimson (#A51C30)
+    consistent with Harvard's central trademark guidance.
+    "Harvard," "Veritas," the Harvard shield, and the Harvard
+    wordmark are registered trademarks of the President and
+    Fellows of Harvard College.
+  importedDate: 2026-05-19
+  notes: >
+    trademark.harvard.edu (the primary central reference cited
+    in the task brief) returned HTTP 403 / blocked WebFetch. The
+    Harvard SEAS brand-style page publishes Crimson #A51C30 — the
+    canonical institutional value used by Harvard's marketing
+    and communications work, and consistent with Harvard's
+    widely-cited brand colour code. Crimson is the institutional
+    anchor; the core palette colours are documented for editorial
+    accent and data-viz, with Harvard's published guidance that
+    "Crimson should be the dominant color for materials, with the
+    primary color palette providing accents."
+
+swatches:
+  # ─── Primary (Crimson + Black) ────────────────────────────────
+  - id: crimson
+    name: Crimson
+    value: "#A51C30"
+    description: Harvard's institutional crimson — primary brand colour.
+  - id: black
+    name: Black
+    value: "#1E1E1E"
+    description: Primary text and dark surfaces.
+  - id: white
+    name: White
+    value: "#FFFFFF"
+    description: Primary canvas in light mode.
+  - id: grey
+    name: Grey
+    value: "#93A1AD"
+    description: Cool institutional grey — secondary surface.
+
+  # ─── Core palette ─────────────────────────────────────────────
+  - id: red
+    name: Red
+    value: "#ED1B34"
+    description: Saturated accent red — digital emphasis.
+  - id: salmon
+    name: Salmon
+    value: "#EC8F9C"
+    description: Pastel salmon — pairs with Crimson on light surfaces.
+  - id: green
+    name: Green
+    value: "#4DB848"
+    description: Mid-green — success / positive data-viz.
+  - id: lime-green
+    name: Lime Green
+    value: "#CBDB2A"
+    description: Bright lime — illustration accent.
+  - id: blue
+    name: Blue
+    value: "#4E88C7"
+    description: Mid-blue — supporting cool tone, links.
+  - id: sky-blue
+    name: Sky Blue
+    value: "#95B5DF"
+    description: Pale sky — soft cool surface tint.
+  - id: warm-yellow
+    name: Warm Yellow
+    value: "#FCB315"
+    description: Warm gold — warning / highlight.
+  - id: yellow
+    name: Yellow
+    value: "#FFDE2D"
+    description: Bright yellow — editorial highlight.
+  - id: turquoise
+    name: Turquoise
+    value: "#00AAAD"
+    description: Saturated turquoise — accent.
+  - id: aquamarine
+    name: Aquamarine
+    value: "#77CED9"
+    description: Pale aquamarine — illustration tint.
+  - id: purple
+    name: Purple
+    value: "#946EB7"
+    description: Mid-purple — accent.
+  - id: lavender
+    name: Lavender
+    value: "#BB89CA"
+    description: Pale lavender — illustration tint.
+
+modes:
+  light:
+    roles:
+      background: white
+      surface: grey
+      surface-elevated: white
+      text-primary: black
+      text-secondary: black
+      text-tertiary: grey
+      primary: crimson
+      primary-hover: red
+      accent: crimson
+      accent-hover: red
+      link: blue
+      link-hover: crimson
+      warning: warm-yellow
+      warning-hover: yellow
+      error: red
+      success: green
+      border: grey
+
+  dark:
+    roles:
+      background: black
+      surface: grey
+      surface-elevated: grey
+      text-primary: white
+      text-secondary: grey
+      text-tertiary: grey
+      primary: crimson
+      primary-hover: red
+      accent: salmon
+      accent-hover: crimson
+      link: sky-blue
+      link-hover: blue
+      warning: warm-yellow
+      warning-hover: yellow
+      error: red
+      success: lime-green
+      border: grey

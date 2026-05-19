@@ -1,0 +1,176 @@
+kind: palette
+id: mit
+version: 1.0.0
+name: MIT
+description: >
+  The Massachusetts Institute of Technology brand palette as
+  published in the MIT Brand Guide. The institutional voice rests
+  on three core swatches — MIT Red (#750014), Silver Gray
+  (#8B959E), and Bright Red (#FF1423) — set against white and
+  black. An expanded palette adds saturated pinks, purples, blues,
+  greens, and a yellow that MIT pairs with the core for editorial
+  and digital surfaces, plus a four-stop neutral gray ramp from
+  Dark Gray 2 to Light Gray 1.
+
+tags: [mit, university, education, research, conservative-institutional, light-first]
+
+provenance:
+  source: https://brand.mit.edu/color
+  license: Proprietary — All Rights Reserved (MIT trademarks)
+  attribution: >
+    Massachusetts Institute of Technology — palette captured from
+    the MIT Brand Guide colour page. "MIT," the MIT name, and the
+    MIT seal are registered trademarks of the Massachusetts
+    Institute of Technology.
+  importedDate: 2026-05-19
+  notes: >
+    MIT's documented MIT Red is #750014 — the canonical
+    institutional crimson on brand.mit.edu/color. Bright Red
+    (#FF1423) is the digital accent used for activation and
+    emphasis, not a replacement for MIT Red. The expanded
+    palette colors are documented but should be used selectively
+    against the core swatches.
+
+swatches:
+  # ─── Core ─────────────────────────────────────────────────────
+  - id: mit-red
+    name: MIT Red
+    value: "#750014"
+    description: The institutional crimson — primary brand colour.
+  - id: bright-red
+    name: Bright Red
+    value: "#FF1423"
+    description: Digital accent / activation red. Not a replacement for MIT Red.
+  - id: silver-gray
+    name: Silver Gray
+    value: "#8B959E"
+    description: Core neutral — cool silver used alongside MIT Red.
+  - id: black
+    name: Black
+    value: "#000000"
+    description: Body text and dark surfaces.
+  - id: white
+    name: White
+    value: "#FFFFFF"
+    description: Primary canvas in light mode.
+
+  # ─── Neutrals (gray ramp) ─────────────────────────────────────
+  - id: dark-gray-1
+    name: Dark Gray 1
+    value: "#40464C"
+    description: Mid-dark text on light surfaces.
+  - id: dark-gray-2
+    name: Dark Gray 2
+    value: "#212326"
+    description: Primary text / dark-mode canvas.
+  - id: dark-silver-gray
+    name: Dark Silver Gray
+    value: "#626A73"
+    description: Secondary text on light; deeper silver tone.
+  - id: light-silver-gray
+    name: Light Silver Gray
+    value: "#B8C2CC"
+    description: Quiet text on dark; light divider.
+  - id: light-gray-1
+    name: Light Gray 1
+    value: "#F2F4F8"
+    description: Soft surface tint on light canvas.
+  - id: light-gray-2
+    name: Light Gray 2
+    value: "#DDE1E6"
+    description: Border / divider on light canvas.
+
+  # ─── Expanded — Pinks / Purples ───────────────────────────────
+  - id: dark-pink
+    name: Dark Pink
+    value: "#750062"
+    description: Deep magenta — expanded accent.
+  - id: pink
+    name: Pink
+    value: "#FF14F0"
+    description: Saturated digital pink.
+  - id: light-pink
+    name: Light Pink
+    value: "#FFB3FF"
+    description: Pastel pink — illustration tint.
+  - id: dark-purple
+    name: Dark Purple
+    value: "#3E006B"
+    description: Deep violet — expanded accent.
+  - id: purple
+    name: Purple
+    value: "#9933FF"
+    description: Saturated digital purple.
+  - id: light-purple
+    name: Light Purple
+    value: "#BFB3FF"
+    description: Pastel violet — illustration tint.
+
+  # ─── Expanded — Blues ─────────────────────────────────────────
+  - id: dark-blue
+    name: Dark Blue
+    value: "#002896"
+    description: Deep institutional blue — expanded accent.
+  - id: blue
+    name: Blue
+    value: "#1966FF"
+    description: Saturated digital blue.
+  - id: light-blue
+    name: Light Blue
+    value: "#99EBFF"
+    description: Pastel sky — illustration tint.
+
+  # ─── Expanded — Greens / Yellow ───────────────────────────────
+  - id: dark-green
+    name: Dark Green
+    value: "#004D1A"
+    description: Deep forest green — expanded accent.
+  - id: green
+    name: Green
+    value: "#00AD00"
+    description: Saturated digital green — success surface.
+  - id: light-green
+    name: Light Green
+    value: "#AAFF33"
+    description: Pastel lime — illustration tint.
+  - id: yellow
+    name: Yellow
+    value: "#FFEB00"
+    description: Saturated digital yellow — warning / highlight.
+
+modes:
+  light:
+    roles:
+      background: white
+      surface: light-gray-1
+      surface-elevated: white
+      text-primary: dark-gray-2
+      text-secondary: dark-gray-1
+      text-tertiary: dark-silver-gray
+      primary: mit-red
+      primary-hover: bright-red
+      accent: bright-red
+      accent-hover: mit-red
+      warning: yellow
+      warning-hover: yellow
+      error: bright-red
+      success: green
+      border: light-gray-2
+
+  dark:
+    roles:
+      background: dark-gray-2
+      surface: dark-gray-1
+      surface-elevated: dark-silver-gray
+      text-primary: white
+      text-secondary: light-silver-gray
+      text-tertiary: silver-gray
+      primary: bright-red
+      primary-hover: mit-red
+      accent: bright-red
+      accent-hover: mit-red
+      warning: yellow
+      warning-hover: yellow
+      error: bright-red
+      success: light-green
+      border: dark-silver-gray

@@ -1,0 +1,145 @@
+kind: palette
+id: oxford
+version: 1.0.0
+name: Oxford
+description: >
+  The University of Oxford brand palette as published in the
+  Oxford visual identity guidelines. The institutional anchor is
+  Oxford Blue (#002147 — Pantone 282), the colour the University
+  has been identified by worldwide for centuries. A secondary
+  palette of named "Oxford" colours (cerulean blue, lemon yellow,
+  charcoal, mauve, peach, potter's pink, dusk, lilac, sienna)
+  supports layouts and editorial accents, with a five-stop
+  neutral set (ash grey, umber, stone grey, shell grey, off
+  white) used selectively alongside the core.
+
+tags: [oxford, university, education, oxford-blue, heritage, conservative-institutional, light-first]
+
+provenance:
+  source: https://www.ox.ac.uk/about/the-university/brand/guidelines
+  license: Proprietary — All Rights Reserved (Oxford trademarks)
+  attribution: >
+    The Chancellor, Masters, and Scholars of the University of
+    Oxford — palette captured from the University of Oxford
+    visual identity guidelines (ox.ac.uk/about/the-university/brand).
+    "Oxford," "University of Oxford," the Oxford coat of arms,
+    and the belted-crest mark are protected marks of the
+    University of Oxford.
+  importedDate: 2026-05-19
+  notes: >
+    Oxford Blue (#002147 = Pantone 282) is the canonical
+    institutional value documented across the University's brand
+    guidelines and corroborated by the Wikipedia Oxford Blue
+    entry. The secondary palette swatches and neutral set are
+    captured from the published Oxford brand guidance via the
+    central university brand resources. Secondary colours should
+    be used selectively and always in combination with the core
+    Oxford Blue.
+
+swatches:
+  # ─── Core ─────────────────────────────────────────────────────
+  - id: oxford-blue
+    name: Oxford Blue
+    value: "#002147"
+    description: The institutional Oxford Blue (Pantone 282) — primary brand colour.
+  - id: white
+    name: White
+    value: "#FFFFFF"
+    description: Primary canvas in light mode.
+  - id: oxford-off-white
+    name: Oxford Off White
+    value: "#F2F0F0"
+    description: Warm off-white — soft canvas tint.
+
+  # ─── Neutrals ─────────────────────────────────────────────────
+  - id: oxford-ash-grey
+    name: Oxford Ash Grey
+    value: "#61615F"
+    description: Mid-deep neutral — body text on light surfaces.
+  - id: oxford-umber
+    name: Oxford Umber
+    value: "#89827A"
+    description: Warm mid-neutral — secondary text.
+  - id: oxford-stone-grey
+    name: Oxford Stone Grey
+    value: "#D9D8D6"
+    description: Soft warm grey — border / divider.
+  - id: oxford-shell-grey
+    name: Oxford Shell Grey
+    value: "#F1EEE9"
+    description: Lightest warm neutral — surface tint.
+  - id: oxford-charcoal
+    name: Oxford Charcoal
+    value: "#211D1C"
+    description: Near-black — primary text on light canvas.
+
+  # ─── Secondary accents ────────────────────────────────────────
+  - id: oxford-cerulean-blue
+    name: Oxford Cerulean Blue
+    value: "#49B6FF"
+    description: Bright sky-cerulean — digital accent.
+  - id: oxford-lemon-yellow
+    name: Oxford Lemon Yellow
+    value: "#F7EF66"
+    description: Pale lemon — editorial highlight / warning.
+  - id: oxford-mauve
+    name: Oxford Mauve
+    value: "#776885"
+    description: Muted mauve — editorial accent.
+  - id: oxford-peach
+    name: Oxford Peach
+    value: "#E08D79"
+    description: Warm peach — soft accent.
+  - id: oxford-potters-pink
+    name: Oxford Potter's Pink
+    value: "#ED9390"
+    description: Heritage pink — editorial accent.
+  - id: oxford-dusk
+    name: Oxford Dusk
+    value: "#C4A29E"
+    description: Muted dusk — soft warm accent.
+  - id: oxford-lilac
+    name: Oxford Lilac
+    value: "#D1BDD5"
+    description: Pale lilac — illustration tint.
+  - id: oxford-sienna
+    name: Oxford Sienna
+    value: "#994636"
+    description: Deep sienna — heritage accent.
+
+modes:
+  light:
+    roles:
+      background: white
+      surface: oxford-shell-grey
+      surface-elevated: white
+      text-primary: oxford-charcoal
+      text-secondary: oxford-ash-grey
+      text-tertiary: oxford-umber
+      primary: oxford-blue
+      primary-hover: oxford-charcoal
+      accent: oxford-cerulean-blue
+      accent-hover: oxford-blue
+      warning: oxford-lemon-yellow
+      warning-hover: oxford-peach
+      error: oxford-sienna
+      success: oxford-blue
+      border: oxford-stone-grey
+
+  dark:
+    roles:
+      background: oxford-charcoal
+      surface: oxford-ash-grey
+      surface-elevated: oxford-umber
+      text-primary: white
+      text-secondary: oxford-stone-grey
+      text-tertiary: oxford-shell-grey
+      primary: oxford-cerulean-blue
+      primary-hover: oxford-blue
+      accent: oxford-cerulean-blue
+      accent-hover: oxford-blue
+      warning: oxford-lemon-yellow
+      warning-hover: oxford-peach
+      error: oxford-sienna
+      success: oxford-cerulean-blue
+      border: oxford-ash-grey

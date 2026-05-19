@@ -1,0 +1,235 @@
+id: cambridge
+version: 1.0.0
+name: Cambridge
+description: >
+  The University of Cambridge — the second-oldest English-speaking
+  university and the institutional counterpart to Oxford. Cambridge
+  is identified worldwide by Cambridge Blue, a distinctive light
+  teal-cyan (#8EE8D8 contemporary / #85B09A heritage) that
+  deliberately differentiates Cambridge from Oxford's deep navy.
+  The contemporary brand pairs the light Cambridge Blue with a
+  Cambridge Dark Blue (#133844) anchor and a five-family secondary
+  palette (Crest, Cherry, Purple, Indigo, Green) carrying editorial
+  and data-viz accents. The voice is heritage-aware, restrained,
+  and protective of the University shield.
+
+tags: [cambridge, university, education, cambridge-blue, heritage, conservative-institutional, light-first]
+
+provenance:
+  source: https://www.cam.ac.uk/brand-resources/guidelines/colour
+  license: Proprietary — All Rights Reserved (Cambridge trademarks)
+  attribution: >
+    The Chancellor, Masters, and Scholars of the University of
+    Cambridge — visual identity captured from the University of
+    Cambridge brand-resources colour guidelines on cam.ac.uk.
+    "Cambridge," "University of Cambridge," the Cambridge coat of
+    arms, and the University shield are protected marks of the
+    University of Cambridge.
+  importedDate: 2026-05-19
+  notes: >
+    The University publishes a proprietary type family for
+    institutional use. This atom references inter@1 as the
+    open-source sans substitute, lora@1 as the serif substitute
+    consistent with Cambridge's heritage-aware voice, and
+    jetbrainsmono-nerdfont@1 for code. The proprietary faces are
+    not publicly distributed and assets are kept empty per
+    trademark policy. The brand atom is scoped to the parent
+    University only — the constituent colleges (Trinity, King's,
+    St John's, etc.), Cambridge Judge Business School (which
+    publishes its own identity using Cambridge Judge Yellow),
+    and Cambridge University Press each carry distinct
+    identities and are out of scope. Both the contemporary
+    Cambridge Blue (#8EE8D8) and the heritage Cambridge Blue
+    (#85B09A) are documented in the palette atom.
+
+references:
+  palette: cambridge@1
+  fonts:
+    heading: inter@1
+    body: inter@1
+    serif: lora@1
+    mono: jetbrainsmono-nerdfont@1
+
+roles:
+  colors:
+    # Cambridge is light-first; the institutional canvas is white
+    # with Cambridge Blue as the brand block. `identity` names
+    # that canvas; on-identity is the canonical Slate 4 text
+    # Cambridge uses for primary text on light surfaces.
+    identity: white
+    on-identity: slate-4
+
+    primary: cambridge-blue
+    primary-hover: cambridge-warm-blue
+    accent: cambridge-warm-blue
+    accent-hover: cambridge-dark-blue
+    mark: cambridge-dark-blue
+    success: green
+    warning: cambridge-judge-yellow
+    error: dark-cherry
+    text-primary-light: slate-4
+    text-primary-dark: white
+    background-light: white
+    background-dark: cambridge-dark-blue
+    surface-light: slate-1
+    surface-dark: slate-4
+    text-secondary-light: slate-3
+    text-tertiary-light: slate-2
+    border-light: slate-2
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: colorChoice
+    target: roles.colors.primary
+    allowed:
+      - cambridge-blue
+      - cambridge-warm-blue
+      - cambridge-dark-blue
+      - heritage-cambridge-blue
+    forbidden:
+      - crest
+      - cherry
+      - purple
+      - indigo
+      - green
+      - cambridge-judge-yellow
+    severity: error
+    rationale: >
+      Cambridge Blue (#8EE8D8 contemporary, #85B09A heritage,
+      with #00BDB6 warm and #133844 dark) is the institutional
+      colour family. The secondary palette families (Crest,
+      Cherry, Purple, Indigo, Green) are editorial accents and
+      Cambridge Judge Yellow is a school-specific heritage
+      accent — none may substitute for the primary brand anchor
+      at the parent-University level.
+
+  - type: colorChoice
+    target: roles.colors.mark
+    allowed:
+      - cambridge-dark-blue
+      - slate-4
+      - white
+    forbidden:
+      - cambridge-blue
+      - cambridge-warm-blue
+      - crest
+      - cherry
+      - purple
+      - indigo
+      - cambridge-judge-yellow
+    severity: error
+    rationale: >
+      The Cambridge University shield and wordmark are
+      reproduced in Cambridge Dark Blue or near-black, or
+      reversed in white. The light contemporary Cambridge Blue
+      is the brand-block / canvas accent, not the mark fill —
+      its low chroma against white would compromise the shield's
+      legibility.
+
+  - type: contrastRatio
+    target: text-primary
+    against: background
+    minRatio: 7.0
+    standard: WCAG-AAA
+    severity: error
+    rationale: >
+      Slate 4 (#232830) on white gives ~15:1 — clears AAA. As
+      a research university with statutory obligations under
+      the UK Equality Act and extensive long-form scholarly
+      content, Cambridge targets the enhanced 7:1 floor rather
+      than the AA 4.5:1 minimum on core text-on-canvas pairs.
+
+  - type: forbiddenTreatment
+    target: logo
+    treatments:
+      - stretched
+      - rotated
+      - recolored
+      - drop-shadow
+      - outlined
+      - gradient-fill
+      - on-busy-photo
+      - tilted
+      - cropped
+    severity: error
+    rationale: >
+      Cambridge's brand guidelines prohibit stretching, rotating,
+      recolouring, outlining, applying drop-shadow or gradient
+      fills, or placing the University shield or wordmark on busy
+      photographic backgrounds. Marks render in approved
+      colourways only with documented clear-space.
+
+  - type: enumMembership
+    target: typography.heading.fontWeight
+    allowed: ["400", "500", "600", "700"]
+    severity: warning
+    rationale: >
+      Cambridge's editorial type ramp uses Regular (400), Medium
+      (500), SemiBold (600), and Bold (700) weights across
+      surfaces. Heavier display cuts (800/900) are not part of
+      the documented institutional ramp.
+
+  - type: fontPairing
+    target: typography.display
+    requires: prose
+    minSizeRatio: 1.5
+    severity: error
+    rationale: >
+      Cambridge's editorial hierarchy pairs a large display
+      with body text at a minimum 1.5× ratio. The scholarly
+      voice the institution projects depends on that explicit
+      gap between display and prose.
+
+  - type: accessibilityRequirement
+    target: "*"
+    standard: WCAG-AAA
+    criterion: "1.4.6"
+    severity: warning
+    rationale: >
+      WCAG 2.1 Success Criterion 1.4.6 (Contrast Enhanced) —
+      Level AAA. Cambridge's scholarly posture and obligations
+      under the UK Equality Act to a diverse academic and
+      public audience justify the enhanced 7:1 target on core
+      text-on-background pairs.
+
+  - type: contextRestriction
+    target: roles.colors.error
+    allowedContexts:
+      - error-state
+      - destructive-action
+      - validation-failure
+    forbiddenContexts:
+      - confirmation
+      - completion
+      - data-viz-positive
+    severity: error
+    rationale: >
+      Dark Cherry (#911449) is the deep accent reserved for
+      error and destructive-action signalling in the Cambridge
+      secondary palette. Reusing it for confirmation or positive
+      data-viz inverts the established semantic role.
+
+  - type: compositionConstraint
+    target: roles.colors.primary
+    pairsWith:
+      - white
+      - slate-1
+      - cambridge-dark-blue
+      - slate-4
+    doesNotPairWith:
+      - warm-cherry
+      - warm-purple
+      - cambridge-judge-yellow
+    severity: recommendation
+    rationale: >
+      Cambridge Blue reads cleanest on white, the soft Slate 1
+      surface, or against the deep Cambridge Dark Blue / Slate
+      4 anchors. Adjacent to Warm Cherry or Warm Purple the
+      teal-cyan loses its calm authority; adjacent to Cambridge
+      Judge Yellow the school-specific heritage accent competes
+      with the parent-University blue for visual weight.
