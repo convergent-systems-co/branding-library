@@ -56,7 +56,7 @@ decreasing order of usefulness for the catalog's primary audiences
       palette exists), Atlassian (parent of existing Trello),
       Adobe, Cursor, Hugging Face, MongoDB, Postman, Salesforce,
       Oracle — tracked in [#22](https://github.com/convergent-systems-co/branding-library/issues/22)
-- [x] **AI labs (4):** Mistral, Cohere, Perplexity, xAI — landed in `7518580` (#23). Anthropic + OpenAI already in catalog. Audit note: Cohere `identity` set to dark `ink` (Command product canvas) rather than light `paper` (marketing) — defensible but worth a future review pass.
+- [x] **AI labs (4):** Mistral, Cohere, Perplexity, xAI — landed in `7518580` (#23). Anthropic + OpenAI already in catalog. Audit resolved 2026-05-19: Cohere `identity: ink` kept — the brand-badge canvas is the Command product UI (dark), not the marketing chrome (light); consistent with other AI-lab identity surfaces.
 - [x] **Email / productivity (5):** Gmail, Outlook, Superhuman, HEY, Fastmail — landed in `ba99e02` (#24). Gmail/Outlook documented as product-brands under Google/Microsoft via `provenance.notes` only (no inheritance machinery).
 
 ### Lower-priority brand gaps
