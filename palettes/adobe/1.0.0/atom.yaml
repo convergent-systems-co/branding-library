@@ -7,13 +7,14 @@ description: >
   product surfaces (Creative Cloud, Document Cloud, Experience Cloud).
   Spectrum is built on tonally-paired neutral and chromatic scales (gray,
   blue, red, orange, yellow, chartreuse, celery, green, seafoam, cyan,
-  indigo, purple, fuchsia, magenta), each running 100 → 1600 with a
-  light-mode hex and a dark-mode counterpart. The brand accent on
-  product surfaces is Spectrum Blue 900 (#3B63FB light / #5681FF dark) —
-  the same swatch that backs the `accent-background-color-default`
-  token. Semantic role tokens (positive, negative, notice, informative)
-  map onto the same scales: positive=green-900, negative=red-900,
-  notice=orange-900, informative=blue-900.
+  indigo, purple, fuchsia, magenta, pink, brown, silver, cinnamon,
+  turquoise), each running 100 → 1600 with a light-mode hex and a
+  dark-mode counterpart. The brand accent on product surfaces is
+  Spectrum Blue 900 (#3B63FB light / #5681FF dark) — the same swatch
+  that backs the `accent-background-color-default` token. Semantic role
+  tokens (positive, negative, notice, informative) map onto the same
+  scales: positive=green-900, negative=red-900, notice=orange-900,
+  informative=blue-900.
 
 tags: [adobe, spectrum, design-system, role-based, dual-mode]
 
@@ -28,21 +29,21 @@ provenance:
   importedDate: 2026-05-19
   importedFromVersion: "@spectrum-css/tokens main@2026-05"
   notes: >
-    Spectrum is dual-mode by construction: every scale stop has both a
-    light and dark hex. The catalogue captures both stops as separate
-    swatches (e.g., `blue-900` for light, `blue-900-dark` for dark) so
-    that mode mappings can name a single swatch ID per role. Spectrum
-    ships chromatic scales we have not enumerated in full (every stop
-    of every family); the swatches below cover the canonical anchors
-    needed for the role mappings — neutrals across the full range,
-    chromatics at the 100 / 700 / 900 / 1100 stops that the design
-    system uses for fill, primary, accent, and pressed states.
+    Full Spectrum grid captured 2026-05-19: 18 chromatic families
+    (blue, red, orange, yellow, chartreuse, celery, green, seafoam,
+    cyan, indigo, purple, fuchsia, magenta, pink, brown, silver,
+    cinnamon, turquoise) at 16 stops each (100..1600), plus the gray
+    neutral scale (25, 50, 75, 100..1000). Spectrum is dual-mode by
+    construction — every stop has both a light and dark hex. The
+    catalogue captures both as separate swatches (e.g., `blue-900`
+    for light, `blue-900-dark` for dark) so that mode mappings can
+    name a single swatch ID per role.
 
 swatches:
   # ─── Neutrals (light scale) ────────────────────────────────────
-  - { id: gray-25,  name: Gray 25,  value: "#FFFFFF", description: "Light canvas. The brightest neutral; pairs with text-primary on light surfaces." }
-  - { id: gray-50,  name: Gray 50,  value: "#F8F8F8" }
-  - { id: gray-75,  name: Gray 75,  value: "#F3F3F3" }
+  - { id: gray-25, name: Gray 25, value: "#FFFFFF", description: "Light canvas. The brightest neutral; pairs with text-primary on light surfaces." }
+  - { id: gray-50, name: Gray 50, value: "#F8F8F8" }
+  - { id: gray-75, name: Gray 75, value: "#F3F3F3" }
   - { id: gray-100, name: Gray 100, value: "#E9E9E9", description: "Light surface — Spectrum default surface in light mode." }
   - { id: gray-200, name: Gray 200, value: "#E1E1E1" }
   - { id: gray-300, name: Gray 300, value: "#DADADA", description: "Subtle border in light mode." }
@@ -52,45 +53,652 @@ swatches:
   - { id: gray-700, name: Gray 700, value: "#505050", description: "Secondary text on light surfaces." }
   - { id: gray-800, name: Gray 800, value: "#292929", description: "High-contrast text on light surfaces." }
   - { id: gray-900, name: Gray 900, value: "#131313", description: "Primary text on light surfaces." }
+  - { id: gray-1000, name: Gray 1000, value: "#000000" }
 
   # ─── Neutrals (dark scale — Spectrum's dark mode counterparts) ──
-  - { id: gray-25-dark,  name: Gray 25 Dark,  value: "#111111", description: "Dark canvas." }
-  - { id: gray-50-dark,  name: Gray 50 Dark,  value: "#1B1B1B" }
+  - { id: gray-25-dark, name: Gray 25 Dark, value: "#111111", description: "Dark canvas." }
+  - { id: gray-50-dark, name: Gray 50 Dark, value: "#1B1B1B" }
+  - { id: gray-75-dark, name: Gray 75 Dark, value: "#222222" }
   - { id: gray-100-dark, name: Gray 100 Dark, value: "#2C2C2C", description: "Dark surface — Spectrum default surface in dark mode." }
+  - { id: gray-200-dark, name: Gray 200 Dark, value: "#323232" }
   - { id: gray-300-dark, name: Gray 300 Dark, value: "#393939", description: "Subtle border in dark mode." }
+  - { id: gray-400-dark, name: Gray 400 Dark, value: "#444444" }
+  - { id: gray-500-dark, name: Gray 500 Dark, value: "#6D6D6D" }
+  - { id: gray-600-dark, name: Gray 600 Dark, value: "#8A8A8A" }
   - { id: gray-700-dark, name: Gray 700 Dark, value: "#AFAFAF", description: "Secondary text on dark surfaces." }
   - { id: gray-800-dark, name: Gray 800 Dark, value: "#DBDBDB" }
   - { id: gray-900-dark, name: Gray 900 Dark, value: "#F2F2F2", description: "Primary text on dark surfaces." }
+  - { id: gray-1000-dark, name: Gray 1000 Dark, value: "#FFFFFF" }
 
-  # ─── Accent / Blue (Spectrum's primary interactive) ────────────
+  # ─── Blue (light) ──────────────────────────────────────────────
   - { id: blue-100, name: Blue 100, value: "#F5F9FF", description: "Subtle blue background; matches accent-color-100." }
+  - { id: blue-200, name: Blue 200, value: "#E5F0FE" }
+  - { id: blue-300, name: Blue 300, value: "#CBE2FE" }
+  - { id: blue-400, name: Blue 400, value: "#ACCFFD" }
+  - { id: blue-500, name: Blue 500, value: "#8EB9FC" }
+  - { id: blue-600, name: Blue 600, value: "#729EFD" }
   - { id: blue-700, name: Blue 700, value: "#5D89FF", description: "Pressed / hover variant of accent on light." }
+  - { id: blue-800, name: Blue 800, value: "#4B75FF" }
   - { id: blue-900, name: Blue 900, value: "#3B63FB", description: "Spectrum primary interactive — accent-background-color-default (light)." }
   - { id: blue-1000, name: Blue 1000, value: "#274DEA", description: "Accent pressed (light)." }
   - { id: blue-1100, name: Blue 1100, value: "#1D3ECF" }
-  - { id: blue-900-dark,  name: Blue 900 Dark,  value: "#5681FF", description: "Spectrum primary interactive — dark mode." }
+  - { id: blue-1200, name: Blue 1200, value: "#1532AD" }
+  - { id: blue-1300, name: Blue 1300, value: "#10288C" }
+  - { id: blue-1400, name: Blue 1400, value: "#0C1F69" }
+  - { id: blue-1500, name: Blue 1500, value: "#0E1843" }
+  - { id: blue-1600, name: Blue 1600, value: "#070B1E" }
+  # ─── Blue (dark) ──────────────────────────────────────────────
+  - { id: blue-100-dark, name: Blue 100 Dark, value: "#0E173F" }
+  - { id: blue-200-dark, name: Blue 200 Dark, value: "#0F1C52" }
+  - { id: blue-300-dark, name: Blue 300 Dark, value: "#0C2175" }
+  - { id: blue-400-dark, name: Blue 400 Dark, value: "#122D9A" }
+  - { id: blue-500-dark, name: Blue 500 Dark, value: "#1A3AC3" }
+  - { id: blue-600-dark, name: Blue 600 Dark, value: "#2549E5" }
+  - { id: blue-700-dark, name: Blue 700 Dark, value: "#345BF8" }
+  - { id: blue-800-dark, name: Blue 800 Dark, value: "#4069FD" }
+  - { id: blue-900-dark, name: Blue 900 Dark, value: "#5681FF", description: "Spectrum primary interactive — dark mode." }
   - { id: blue-1000-dark, name: Blue 1000 Dark, value: "#6995FE", description: "Accent hover — dark mode." }
+  - { id: blue-1100-dark, name: Blue 1100 Dark, value: "#7CA9FC" }
+  - { id: blue-1200-dark, name: Blue 1200 Dark, value: "#98C0FC" }
+  - { id: blue-1300-dark, name: Blue 1300 Dark, value: "#B5D5FD" }
+  - { id: blue-1400-dark, name: Blue 1400 Dark, value: "#D5E7FE" }
+  - { id: blue-1500-dark, name: Blue 1500 Dark, value: "#EEF5FF" }
+  - { id: blue-1600-dark, name: Blue 1600 Dark, value: "#FFFFFF" }
 
-  # ─── Red (negative) ────────────────────────────────────────────
-  - { id: red-900,  name: Red 900,  value: "#D73220", description: "Spectrum negative semantic color (light)." }
-  - { id: red-700,  name: Red 700,  value: "#FF513D" }
+  # ─── Red (light) ───────────────────────────────────────────────
+  - { id: red-100, name: Red 100, value: "#FFF6F5" }
+  - { id: red-200, name: Red 200, value: "#FFEBE8" }
+  - { id: red-300, name: Red 300, value: "#FFD6D1" }
+  - { id: red-400, name: Red 400, value: "#FFBCB4" }
+  - { id: red-500, name: Red 500, value: "#FF9D91" }
+  - { id: red-600, name: Red 600, value: "#FF7665" }
+  - { id: red-700, name: Red 700, value: "#FF513D" }
+  - { id: red-800, name: Red 800, value: "#F03823" }
+  - { id: red-900, name: Red 900, value: "#D73220", description: "Spectrum negative semantic color (light)." }
+  - { id: red-1000, name: Red 1000, value: "#B72818" }
+  - { id: red-1100, name: Red 1100, value: "#9C2113" }
+  - { id: red-1200, name: Red 1200, value: "#811B0E" }
+  - { id: red-1300, name: Red 1300, value: "#68150A" }
+  - { id: red-1400, name: Red 1400, value: "#501006" }
+  - { id: red-1500, name: Red 1500, value: "#3B0B04" }
+  - { id: red-1600, name: Red 1600, value: "#1D0502" }
+  # ─── Red (dark) ───────────────────────────────────────────────
+  - { id: red-100-dark, name: Red 100 Dark, value: "#360A03" }
+  - { id: red-200-dark, name: Red 200 Dark, value: "#440D05" }
+  - { id: red-300-dark, name: Red 300 Dark, value: "#571107" }
+  - { id: red-400-dark, name: Red 400 Dark, value: "#73180B" }
+  - { id: red-500-dark, name: Red 500 Dark, value: "#931F11" }
+  - { id: red-600-dark, name: Red 600 Dark, value: "#B12617" }
+  - { id: red-700-dark, name: Red 700 Dark, value: "#CD2E1D" }
+  - { id: red-800-dark, name: Red 800 Dark, value: "#DF3422" }
   - { id: red-900-dark, name: Red 900 Dark, value: "#FC432E", description: "Spectrum negative — dark mode." }
+  - { id: red-1000-dark, name: Red 1000 Dark, value: "#FF6756" }
+  - { id: red-1100-dark, name: Red 1100 Dark, value: "#FF8678" }
+  - { id: red-1200-dark, name: Red 1200 Dark, value: "#FFA79D" }
+  - { id: red-1300-dark, name: Red 1300 Dark, value: "#FFC4BD" }
+  - { id: red-1400-dark, name: Red 1400 Dark, value: "#FFDEDB" }
+  - { id: red-1500-dark, name: Red 1500 Dark, value: "#FFF2F0" }
+  - { id: red-1600-dark, name: Red 1600 Dark, value: "#FFFFFF" }
 
-  # ─── Orange (notice) ───────────────────────────────────────────
-  - { id: orange-900,  name: Orange 900,  value: "#C24E00", description: "Spectrum notice semantic color (light)." }
-  - { id: orange-700,  name: Orange 700,  value: "#E86A00" }
+  # ─── Orange (light) ────────────────────────────────────────────
+  - { id: orange-100, name: Orange 100, value: "#FFF6E7" }
+  - { id: orange-200, name: Orange 200, value: "#FFECCF" }
+  - { id: orange-300, name: Orange 300, value: "#FFDA9E" }
+  - { id: orange-400, name: Orange 400, value: "#FFC15E" }
+  - { id: orange-500, name: Orange 500, value: "#FFA213" }
+  - { id: orange-600, name: Orange 600, value: "#FC7D00" }
+  - { id: orange-700, name: Orange 700, value: "#E86A00" }
+  - { id: orange-800, name: Orange 800, value: "#D45B00" }
+  - { id: orange-900, name: Orange 900, value: "#C24E00", description: "Spectrum notice semantic color (light)." }
+  - { id: orange-1000, name: Orange 1000, value: "#A73E00" }
+  - { id: orange-1100, name: Orange 1100, value: "#903300" }
+  - { id: orange-1200, name: Orange 1200, value: "#762900" }
+  - { id: orange-1300, name: Orange 1300, value: "#5F2000" }
+  - { id: orange-1400, name: Orange 1400, value: "#491800" }
+  - { id: orange-1500, name: Orange 1500, value: "#341200" }
+  - { id: orange-1600, name: Orange 1600, value: "#190800" }
+  # ─── Orange (dark) ────────────────────────────────────────────
+  - { id: orange-100-dark, name: Orange 100 Dark, value: "#311000" }
+  - { id: orange-200-dark, name: Orange 200 Dark, value: "#3D1500" }
+  - { id: orange-300-dark, name: Orange 300 Dark, value: "#501B00" }
+  - { id: orange-400-dark, name: Orange 400 Dark, value: "#6A2400" }
+  - { id: orange-500-dark, name: Orange 500 Dark, value: "#872F00" }
+  - { id: orange-600-dark, name: Orange 600 Dark, value: "#A23B00" }
+  - { id: orange-700-dark, name: Orange 700 Dark, value: "#B94900" }
+  - { id: orange-800-dark, name: Orange 800 Dark, value: "#C75200" }
   - { id: orange-900-dark, name: Orange 900 Dark, value: "#E06400", description: "Spectrum notice — dark mode." }
+  - { id: orange-1000-dark, name: Orange 1000 Dark, value: "#F37500" }
+  - { id: orange-1100-dark, name: Orange 1100 Dark, value: "#FF8900" }
+  - { id: orange-1200-dark, name: Orange 1200 Dark, value: "#FFAD2D" }
+  - { id: orange-1300-dark, name: Orange 1300 Dark, value: "#FFC974" }
+  - { id: orange-1400-dark, name: Orange 1400 Dark, value: "#FFE1B2" }
+  - { id: orange-1500-dark, name: Orange 1500 Dark, value: "#FFF3E1" }
+  - { id: orange-1600-dark, name: Orange 1600 Dark, value: "#FFFFFF" }
 
-  # ─── Green (positive) ──────────────────────────────────────────
-  - { id: green-900,  name: Green 900,  value: "#05834E", description: "Spectrum positive semantic color (light)." }
+  # ─── Yellow (light) ────────────────────────────────────────────
+  - { id: yellow-100, name: Yellow 100, value: "#FFF8CC" }
+  - { id: yellow-200, name: Yellow 200, value: "#FFF197" }
+  - { id: yellow-300, name: Yellow 300, value: "#FFDE2C" }
+  - { id: yellow-400, name: Yellow 400, value: "#F5C700" }
+  - { id: yellow-500, name: Yellow 500, value: "#E6AF00" }
+  - { id: yellow-600, name: Yellow 600, value: "#D29500" }
+  - { id: yellow-700, name: Yellow 700, value: "#C18300" }
+  - { id: yellow-800, name: Yellow 800, value: "#AF7400" }
+  - { id: yellow-900, name: Yellow 900, value: "#9E6600", description: "Yellow at AA-readable stop." }
+  - { id: yellow-1000, name: Yellow 1000, value: "#865500" }
+  - { id: yellow-1100, name: Yellow 1100, value: "#724800" }
+  - { id: yellow-1200, name: Yellow 1200, value: "#5D3B00" }
+  - { id: yellow-1300, name: Yellow 1300, value: "#4B2F00" }
+  - { id: yellow-1400, name: Yellow 1400, value: "#382300" }
+  - { id: yellow-1500, name: Yellow 1500, value: "#281900" }
+  - { id: yellow-1600, name: Yellow 1600, value: "#120B00" }
+  # ─── Yellow (dark) ────────────────────────────────────────────
+  - { id: yellow-100-dark, name: Yellow 100 Dark, value: "#251700" }
+  - { id: yellow-200-dark, name: Yellow 200 Dark, value: "#2F1D00" }
+  - { id: yellow-300-dark, name: Yellow 300 Dark, value: "#3D2700" }
+  - { id: yellow-400-dark, name: Yellow 400 Dark, value: "#533400" }
+  - { id: yellow-500-dark, name: Yellow 500 Dark, value: "#6B4300" }
+  - { id: yellow-600-dark, name: Yellow 600 Dark, value: "#825200" }
+  - { id: yellow-700-dark, name: Yellow 700 Dark, value: "#976100" }
+  - { id: yellow-800-dark, name: Yellow 800 Dark, value: "#A46A00" }
+  - { id: yellow-900-dark, name: Yellow 900 Dark, value: "#BA7C00" }
+  - { id: yellow-1000-dark, name: Yellow 1000 Dark, value: "#CB8D00" }
+  - { id: yellow-1100-dark, name: Yellow 1100 Dark, value: "#DA9F00" }
+  - { id: yellow-1200-dark, name: Yellow 1200 Dark, value: "#EBB700" }
+  - { id: yellow-1300-dark, name: Yellow 1300 Dark, value: "#F9CE00" }
+  - { id: yellow-1400-dark, name: Yellow 1400 Dark, value: "#FFE656" }
+  - { id: yellow-1500-dark, name: Yellow 1500 Dark, value: "#FFF6C3" }
+  - { id: yellow-1600-dark, name: Yellow 1600 Dark, value: "#FFFFFF" }
+
+  # ─── Chartreuse (light) ────────────────────────────────────────
+  - { id: chartreuse-100, name: Chartreuse 100, value: "#F6FBDE" }
+  - { id: chartreuse-200, name: Chartreuse 200, value: "#EAF6AD" }
+  - { id: chartreuse-300, name: Chartreuse 300, value: "#D0EC46" }
+  - { id: chartreuse-400, name: Chartreuse 400, value: "#B6DB00" }
+  - { id: chartreuse-500, name: Chartreuse 500, value: "#A3C400" }
+  - { id: chartreuse-600, name: Chartreuse 600, value: "#8FAC00" }
+  - { id: chartreuse-700, name: Chartreuse 700, value: "#809900" }
+  - { id: chartreuse-800, name: Chartreuse 800, value: "#728900" }
+  - { id: chartreuse-900, name: Chartreuse 900, value: "#667A00" }
+  - { id: chartreuse-1000, name: Chartreuse 1000, value: "#566700" }
+  - { id: chartreuse-1100, name: Chartreuse 1100, value: "#495700" }
+  - { id: chartreuse-1200, name: Chartreuse 1200, value: "#3C4700" }
+  - { id: chartreuse-1300, name: Chartreuse 1300, value: "#2F3900" }
+  - { id: chartreuse-1400, name: Chartreuse 1400, value: "#232B00" }
+  - { id: chartreuse-1500, name: Chartreuse 1500, value: "#191E00" }
+  - { id: chartreuse-1600, name: Chartreuse 1600, value: "#0B0E00" }
+  # ─── Chartreuse (dark) ────────────────────────────────────────
+  - { id: chartreuse-100-dark, name: Chartreuse 100 Dark, value: "#171C00" }
+  - { id: chartreuse-200-dark, name: Chartreuse 200 Dark, value: "#1E2400" }
+  - { id: chartreuse-300-dark, name: Chartreuse 300 Dark, value: "#272F00" }
+  - { id: chartreuse-400-dark, name: Chartreuse 400 Dark, value: "#353F00" }
+  - { id: chartreuse-500-dark, name: Chartreuse 500 Dark, value: "#445200" }
+  - { id: chartreuse-600-dark, name: Chartreuse 600 Dark, value: "#536400" }
+  - { id: chartreuse-700-dark, name: Chartreuse 700 Dark, value: "#617400" }
+  - { id: chartreuse-800-dark, name: Chartreuse 800 Dark, value: "#6A7F00" }
+  - { id: chartreuse-900-dark, name: Chartreuse 900 Dark, value: "#7A9300" }
+  - { id: chartreuse-1000-dark, name: Chartreuse 1000 Dark, value: "#88A400" }
+  - { id: chartreuse-1100-dark, name: Chartreuse 1100 Dark, value: "#97B500" }
+  - { id: chartreuse-1200-dark, name: Chartreuse 1200 Dark, value: "#A9CB00" }
+  - { id: chartreuse-1300-dark, name: Chartreuse 1300 Dark, value: "#BBE100" }
+  - { id: chartreuse-1400-dark, name: Chartreuse 1400 Dark, value: "#DBF075" }
+  - { id: chartreuse-1500-dark, name: Chartreuse 1500 Dark, value: "#F2F9CE" }
+  - { id: chartreuse-1600-dark, name: Chartreuse 1600 Dark, value: "#FFFFFF" }
+
+  # ─── Celery (light) ────────────────────────────────────────────
+  - { id: celery-100, name: Celery 100, value: "#EBFFDC" }
+  - { id: celery-200, name: Celery 200, value: "#C5FF9C" }
+  - { id: celery-300, name: Celery 300, value: "#9DF75C" }
+  - { id: celery-400, name: Celery 400, value: "#81E43A" }
+  - { id: celery-500, name: Celery 500, value: "#6ECE2A" }
+  - { id: celery-600, name: Celery 600, value: "#5DB41F" }
+  - { id: celery-700, name: Celery 700, value: "#52A119" }
+  - { id: celery-800, name: Celery 800, value: "#489014" }
+  - { id: celery-900, name: Celery 900, value: "#408111" }
+  - { id: celery-1000, name: Celery 1000, value: "#346D0C" }
+  - { id: celery-1100, name: Celery 1100, value: "#2C5C09" }
+  - { id: celery-1200, name: Celery 1200, value: "#234B06" }
+  - { id: celery-1300, name: Celery 1300, value: "#1B3C03" }
+  - { id: celery-1400, name: Celery 1400, value: "#132E00" }
+  - { id: celery-1500, name: Celery 1500, value: "#0C2100" }
+  - { id: celery-1600, name: Celery 1600, value: "#040F00" }
+  # ─── Celery (dark) ────────────────────────────────────────────
+  - { id: celery-100-dark, name: Celery 100 Dark, value: "#0B1F00" }
+  - { id: celery-200-dark, name: Celery 200 Dark, value: "#0F2600" }
+  - { id: celery-300-dark, name: Celery 300 Dark, value: "#153301" }
+  - { id: celery-400-dark, name: Celery 400 Dark, value: "#1F4304" }
+  - { id: celery-500-dark, name: Celery 500 Dark, value: "#295608" }
+  - { id: celery-600-dark, name: Celery 600 Dark, value: "#32690B" }
+  - { id: celery-700-dark, name: Celery 700 Dark, value: "#3C7A0F" }
+  - { id: celery-800-dark, name: Celery 800 Dark, value: "#428612" }
+  - { id: celery-900-dark, name: Celery 900 Dark, value: "#4E9A17" }
+  - { id: celery-1000-dark, name: Celery 1000 Dark, value: "#58AC1C" }
+  - { id: celery-1100-dark, name: Celery 1100 Dark, value: "#64BE23" }
+  - { id: celery-1200-dark, name: Celery 1200 Dark, value: "#74D52E" }
+  - { id: celery-1300-dark, name: Celery 1300 Dark, value: "#88EA41" }
+  - { id: celery-1400-dark, name: Celery 1400 Dark, value: "#AAFB70" }
+  - { id: celery-1500-dark, name: Celery 1500 Dark, value: "#DEFFC6" }
+  - { id: celery-1600-dark, name: Celery 1600 Dark, value: "#FFFFFF" }
+
+  # ─── Green (light) ─────────────────────────────────────────────
+  - { id: green-100, name: Green 100, value: "#EDFCF1" }
+  - { id: green-200, name: Green 200, value: "#D7F7E1" }
+  - { id: green-300, name: Green 300, value: "#ADEEC5" }
+  - { id: green-400, name: Green 400, value: "#6BE3A2" }
+  - { id: green-500, name: Green 500, value: "#2BD17D" }
+  - { id: green-600, name: Green 600, value: "#12B867" }
+  - { id: green-700, name: Green 700, value: "#0BA45D" }
+  - { id: green-800, name: Green 800, value: "#079355" }
+  - { id: green-900, name: Green 900, value: "#05834E", description: "Spectrum positive semantic color (light)." }
+  - { id: green-1000, name: Green 1000, value: "#036E45" }
+  - { id: green-1100, name: Green 1100, value: "#025D3C" }
+  - { id: green-1200, name: Green 1200, value: "#014C34" }
+  - { id: green-1300, name: Green 1300, value: "#003D2C" }
+  - { id: green-1400, name: Green 1400, value: "#002E22" }
+  - { id: green-1500, name: Green 1500, value: "#002119" }
+  - { id: green-1600, name: Green 1600, value: "#000F0C" }
+  # ─── Green (dark) ─────────────────────────────────────────────
+  - { id: green-100-dark, name: Green 100 Dark, value: "#001E17" }
+  - { id: green-200-dark, name: Green 200 Dark, value: "#00261D" }
+  - { id: green-300-dark, name: Green 300 Dark, value: "#003326" }
+  - { id: green-400-dark, name: Green 400 Dark, value: "#004430" }
+  - { id: green-500-dark, name: Green 500 Dark, value: "#02573A" }
+  - { id: green-600-dark, name: Green 600 Dark, value: "#036A43" }
+  - { id: green-700-dark, name: Green 700 Dark, value: "#047C4B" }
+  - { id: green-800-dark, name: Green 800 Dark, value: "#068850" }
   - { id: green-900-dark, name: Green 900 Dark, value: "#099D59", description: "Spectrum positive — dark mode." }
+  - { id: green-1000-dark, name: Green 1000 Dark, value: "#0EAF62" }
+  - { id: green-1100-dark, name: Green 1100 Dark, value: "#18C16E" }
+  - { id: green-1200-dark, name: Green 1200 Dark, value: "#39D786" }
+  - { id: green-1300-dark, name: Green 1300 Dark, value: "#7EE7AC" }
+  - { id: green-1400-dark, name: Green 1400 Dark, value: "#BDF1D0" }
+  - { id: green-1500-dark, name: Green 1500 Dark, value: "#E5FAEC" }
+  - { id: green-1600-dark, name: Green 1600 Dark, value: "#FFFFFF" }
 
-  # ─── Auxiliary chromatic family anchors ────────────────────────
-  - { id: indigo-900, name: Indigo 900, value: "#5151E0", description: "Indigo accent anchor used in marketing/illustration." }
-  - { id: purple-900, name: Purple 900, value: "#893DE7", description: "Purple accent anchor." }
-  - { id: magenta-900, name: Magenta 900, value: "#D135AC", description: "Magenta accent anchor." }
-  - { id: seafoam-900, name: Seafoam 900, value: "#008C8C", description: "Seafoam accent anchor." }
-  - { id: yellow-900, name: Yellow 900, value: "#A37B00", description: "Yellow at AA-readable stop." }
+  # ─── Seafoam (light) ───────────────────────────────────────────
+  - { id: seafoam-100, name: Seafoam 100, value: "#EBFBF6" }
+  - { id: seafoam-200, name: Seafoam 200, value: "#D3F6EA" }
+  - { id: seafoam-300, name: Seafoam 300, value: "#A9EDD8" }
+  - { id: seafoam-400, name: Seafoam 400, value: "#5CE1C2" }
+  - { id: seafoam-500, name: Seafoam 500, value: "#10CFA9" }
+  - { id: seafoam-600, name: Seafoam 600, value: "#0DB595" }
+  - { id: seafoam-700, name: Seafoam 700, value: "#0BA286" }
+  - { id: seafoam-800, name: Seafoam 800, value: "#099078" }
+  - { id: seafoam-900, name: Seafoam 900, value: "#07816D", description: "Seafoam accent anchor." }
+  - { id: seafoam-1000, name: Seafoam 1000, value: "#056C5C" }
+  - { id: seafoam-1100, name: Seafoam 1100, value: "#035C50" }
+  - { id: seafoam-1200, name: Seafoam 1200, value: "#014B43" }
+  - { id: seafoam-1300, name: Seafoam 1300, value: "#003C36" }
+  - { id: seafoam-1400, name: Seafoam 1400, value: "#002E28" }
+  - { id: seafoam-1500, name: Seafoam 1500, value: "#00211D" }
+  - { id: seafoam-1600, name: Seafoam 1600, value: "#000F0E" }
+  # ─── Seafoam (dark) ───────────────────────────────────────────
+  - { id: seafoam-100-dark, name: Seafoam 100 Dark, value: "#001E1B" }
+  - { id: seafoam-200-dark, name: Seafoam 200 Dark, value: "#002723" }
+  - { id: seafoam-300-dark, name: Seafoam 300 Dark, value: "#00322C" }
+  - { id: seafoam-400-dark, name: Seafoam 400 Dark, value: "#00433B" }
+  - { id: seafoam-500-dark, name: Seafoam 500 Dark, value: "#02564B" }
+  - { id: seafoam-600-dark, name: Seafoam 600 Dark, value: "#046959" }
+  - { id: seafoam-700-dark, name: Seafoam 700 Dark, value: "#067A67" }
+  - { id: seafoam-800-dark, name: Seafoam 800 Dark, value: "#088670" }
+  - { id: seafoam-900-dark, name: Seafoam 900 Dark, value: "#0A9A80" }
+  - { id: seafoam-1000-dark, name: Seafoam 1000 Dark, value: "#0CAD8E" }
+  - { id: seafoam-1100-dark, name: Seafoam 1100 Dark, value: "#0EBE9C" }
+  - { id: seafoam-1200-dark, name: Seafoam 1200 Dark, value: "#1DD6B0" }
+  - { id: seafoam-1300-dark, name: Seafoam 1300 Dark, value: "#7AE5CB" }
+  - { id: seafoam-1400-dark, name: Seafoam 1400 Dark, value: "#BAF1DE" }
+  - { id: seafoam-1500-dark, name: Seafoam 1500 Dark, value: "#E5F9F3" }
+  - { id: seafoam-1600-dark, name: Seafoam 1600 Dark, value: "#FFFFFF" }
+
+  # ─── Cyan (light) ──────────────────────────────────────────────
+  - { id: cyan-100, name: Cyan 100, value: "#EEFAFE" }
+  - { id: cyan-200, name: Cyan 200, value: "#D9F4FD" }
+  - { id: cyan-300, name: Cyan 300, value: "#B7E7FC" }
+  - { id: cyan-400, name: Cyan 400, value: "#8AD5FF" }
+  - { id: cyan-500, name: Cyan 500, value: "#5CC0FF" }
+  - { id: cyan-600, name: Cyan 600, value: "#30A7FE" }
+  - { id: cyan-700, name: Cyan 700, value: "#1D95E7" }
+  - { id: cyan-800, name: Cyan 800, value: "#1286CD" }
+  - { id: cyan-900, name: Cyan 900, value: "#0B78B3" }
+  - { id: cyan-1000, name: Cyan 1000, value: "#046691" }
+  - { id: cyan-1100, name: Cyan 1100, value: "#005779" }
+  - { id: cyan-1200, name: Cyan 1200, value: "#004762" }
+  - { id: cyan-1300, name: Cyan 1300, value: "#00394E" }
+  - { id: cyan-1400, name: Cyan 1400, value: "#002B3B" }
+  - { id: cyan-1500, name: Cyan 1500, value: "#001F2B" }
+  - { id: cyan-1600, name: Cyan 1600, value: "#000E14" }
+  # ─── Cyan (dark) ──────────────────────────────────────────────
+  - { id: cyan-100-dark, name: Cyan 100 Dark, value: "#001D27" }
+  - { id: cyan-200-dark, name: Cyan 200 Dark, value: "#002431" }
+  - { id: cyan-300-dark, name: Cyan 300 Dark, value: "#003041" }
+  - { id: cyan-400-dark, name: Cyan 400 Dark, value: "#004058" }
+  - { id: cyan-500-dark, name: Cyan 500 Dark, value: "#005271" }
+  - { id: cyan-600-dark, name: Cyan 600 Dark, value: "#03638C" }
+  - { id: cyan-700-dark, name: Cyan 700 Dark, value: "#0873A8" }
+  - { id: cyan-800-dark, name: Cyan 800 Dark, value: "#0D7DBA" }
+  - { id: cyan-900-dark, name: Cyan 900 Dark, value: "#188EDC" }
+  - { id: cyan-1000-dark, name: Cyan 1000 Dark, value: "#269FF4" }
+  - { id: cyan-1100-dark, name: Cyan 1100 Dark, value: "#3FB1FF" }
+  - { id: cyan-1200-dark, name: Cyan 1200 Dark, value: "#6BC7FF" }
+  - { id: cyan-1300-dark, name: Cyan 1300 Dark, value: "#98DBFF" }
+  - { id: cyan-1400-dark, name: Cyan 1400 Dark, value: "#C3ECFC" }
+  - { id: cyan-1500-dark, name: Cyan 1500 Dark, value: "#E6F8FD" }
+  - { id: cyan-1600-dark, name: Cyan 1600 Dark, value: "#FFFFFF" }
+
+  # ─── Indigo (light) ────────────────────────────────────────────
+  - { id: indigo-100, name: Indigo 100, value: "#F7F8FF" }
+  - { id: indigo-200, name: Indigo 200, value: "#EBEEFF" }
+  - { id: indigo-300, name: Indigo 300, value: "#D8DEFF" }
+  - { id: indigo-400, name: Indigo 400, value: "#C0C9FF" }
+  - { id: indigo-500, name: Indigo 500, value: "#A7B2FF" }
+  - { id: indigo-600, name: Indigo 600, value: "#9197FE" }
+  - { id: indigo-700, name: Indigo 700, value: "#8480FE" }
+  - { id: indigo-800, name: Indigo 800, value: "#7A6AFD" }
+  - { id: indigo-900, name: Indigo 900, value: "#7155FA", description: "Indigo accent anchor used in marketing/illustration." }
+  - { id: indigo-1000, name: Indigo 1000, value: "#6338EE" }
+  - { id: indigo-1100, name: Indigo 1100, value: "#5424DB" }
+  - { id: indigo-1200, name: Indigo 1200, value: "#4513BF" }
+  - { id: indigo-1300, name: Indigo 1300, value: "#3706A0" }
+  - { id: indigo-1400, name: Indigo 1400, value: "#2A0081" }
+  - { id: indigo-1500, name: Indigo 1500, value: "#1F0062" }
+  - { id: indigo-1600, name: Indigo 1600, value: "#110036" }
+  # ─── Indigo (dark) ────────────────────────────────────────────
+  - { id: indigo-100-dark, name: Indigo 100 Dark, value: "#1E005D" }
+  - { id: indigo-200-dark, name: Indigo 200 Dark, value: "#23006E" }
+  - { id: indigo-300-dark, name: Indigo 300 Dark, value: "#2F008C" }
+  - { id: indigo-400-dark, name: Indigo 400 Dark, value: "#3E0CAE" }
+  - { id: indigo-500-dark, name: Indigo 500 Dark, value: "#4F1ED1" }
+  - { id: indigo-600-dark, name: Indigo 600 Dark, value: "#5F34EB" }
+  - { id: indigo-700-dark, name: Indigo 700 Dark, value: "#6D4BF8" }
+  - { id: indigo-800-dark, name: Indigo 800 Dark, value: "#745BFC" }
+  - { id: indigo-900-dark, name: Indigo 900 Dark, value: "#8077FE" }
+  - { id: indigo-1000-dark, name: Indigo 1000 Dark, value: "#8B8DFE" }
+  - { id: indigo-1100-dark, name: Indigo 1100 Dark, value: "#99A1FF" }
+  - { id: indigo-1200-dark, name: Indigo 1200 Dark, value: "#B0BAFF" }
+  - { id: indigo-1300-dark, name: Indigo 1300 Dark, value: "#C7D0FF" }
+  - { id: indigo-1400-dark, name: Indigo 1400 Dark, value: "#DFE4FF" }
+  - { id: indigo-1500-dark, name: Indigo 1500 Dark, value: "#F3F4FF" }
+  - { id: indigo-1600-dark, name: Indigo 1600 Dark, value: "#FFFFFF" }
+
+  # ─── Purple (light) ────────────────────────────────────────────
+  - { id: purple-100, name: Purple 100, value: "#FBF7FE" }
+  - { id: purple-200, name: Purple 200, value: "#F4EBFC" }
+  - { id: purple-300, name: Purple 300, value: "#EBDAF9" }
+  - { id: purple-400, name: Purple 400, value: "#DDC1F6" }
+  - { id: purple-500, name: Purple 500, value: "#D0A7F3" }
+  - { id: purple-600, name: Purple 600, value: "#BF8AEE" }
+  - { id: purple-700, name: Purple 700, value: "#B272EB" }
+  - { id: purple-800, name: Purple 800, value: "#A65CE7" }
+  - { id: purple-900, name: Purple 900, value: "#9A47E2", description: "Purple accent anchor." }
+  - { id: purple-1000, name: Purple 1000, value: "#8628D9" }
+  - { id: purple-1100, name: Purple 1100, value: "#730DCC" }
+  - { id: purple-1200, name: Purple 1200, value: "#5D00B1" }
+  - { id: purple-1300, name: Purple 1300, value: "#4B0090" }
+  - { id: purple-1400, name: Purple 1400, value: "#3B006F" }
+  - { id: purple-1500, name: Purple 1500, value: "#2C0054" }
+  - { id: purple-1600, name: Purple 1600, value: "#17002D" }
+  # ─── Purple (dark) ────────────────────────────────────────────
+  - { id: purple-100-dark, name: Purple 100 Dark, value: "#29004F" }
+  - { id: purple-200-dark, name: Purple 200 Dark, value: "#320060" }
+  - { id: purple-300-dark, name: Purple 300 Dark, value: "#40007A" }
+  - { id: purple-400-dark, name: Purple 400 Dark, value: "#53009F" }
+  - { id: purple-500-dark, name: Purple 500 Dark, value: "#6B06C3" }
+  - { id: purple-600-dark, name: Purple 600 Dark, value: "#8222D7" }
+  - { id: purple-700-dark, name: Purple 700 Dark, value: "#943EE0" }
+  - { id: purple-800-dark, name: Purple 800 Dark, value: "#9D4EE4" }
+  - { id: purple-900-dark, name: Purple 900 Dark, value: "#AD69E9" }
+  - { id: purple-1000-dark, name: Purple 1000 Dark, value: "#BA7FED" }
+  - { id: purple-1100-dark, name: Purple 1100 Dark, value: "#C595F0" }
+  - { id: purple-1200-dark, name: Purple 1200 Dark, value: "#D4B0F4" }
+  - { id: purple-1300-dark, name: Purple 1300 Dark, value: "#E1C9F7" }
+  - { id: purple-1400-dark, name: Purple 1400 Dark, value: "#EEE0FA" }
+  - { id: purple-1500-dark, name: Purple 1500 Dark, value: "#F8F3FD" }
+  - { id: purple-1600-dark, name: Purple 1600 Dark, value: "#FFFFFF" }
+
+  # ─── Fuchsia (light) ───────────────────────────────────────────
+  - { id: fuchsia-100, name: Fuchsia 100, value: "#FEF6FF" }
+  - { id: fuchsia-200, name: Fuchsia 200, value: "#FDE9FF" }
+  - { id: fuchsia-300, name: Fuchsia 300, value: "#FAD3FF" }
+  - { id: fuchsia-400, name: Fuchsia 400, value: "#F7B5FF" }
+  - { id: fuchsia-500, name: Fuchsia 500, value: "#F393FF" }
+  - { id: fuchsia-600, name: Fuchsia 600, value: "#EC69FF" }
+  - { id: fuchsia-700, name: Fuchsia 700, value: "#DF4DF5" }
+  - { id: fuchsia-800, name: Fuchsia 800, value: "#C844DC" }
+  - { id: fuchsia-900, name: Fuchsia 900, value: "#B539C8" }
+  - { id: fuchsia-1000, name: Fuchsia 1000, value: "#9C28AF" }
+  - { id: fuchsia-1100, name: Fuchsia 1100, value: "#871B9A" }
+  - { id: fuchsia-1200, name: Fuchsia 1200, value: "#710F83" }
+  - { id: fuchsia-1300, name: Fuchsia 1300, value: "#5C046D" }
+  - { id: fuchsia-1400, name: Fuchsia 1400, value: "#480058" }
+  - { id: fuchsia-1500, name: Fuchsia 1500, value: "#360042" }
+  - { id: fuchsia-1600, name: Fuchsia 1600, value: "#1D0023" }
+  # ─── Fuchsia (dark) ───────────────────────────────────────────
+  - { id: fuchsia-100-dark, name: Fuchsia 100 Dark, value: "#32003D" }
+  - { id: fuchsia-200-dark, name: Fuchsia 200 Dark, value: "#3D004A" }
+  - { id: fuchsia-300-dark, name: Fuchsia 300 Dark, value: "#4F005F" }
+  - { id: fuchsia-400-dark, name: Fuchsia 400 Dark, value: "#660978" }
+  - { id: fuchsia-500-dark, name: Fuchsia 500 Dark, value: "#7F1792" }
+  - { id: fuchsia-600-dark, name: Fuchsia 600 Dark, value: "#9726AA" }
+  - { id: fuchsia-700-dark, name: Fuchsia 700 Dark, value: "#AD33C0" }
+  - { id: fuchsia-800-dark, name: Fuchsia 800 Dark, value: "#BA3CCE" }
+  - { id: fuchsia-900-dark, name: Fuchsia 900 Dark, value: "#D549EB" }
+  - { id: fuchsia-1000-dark, name: Fuchsia 1000 Dark, value: "#E85BFD" }
+  - { id: fuchsia-1100-dark, name: Fuchsia 1100 Dark, value: "#F07AFF" }
+  - { id: fuchsia-1200-dark, name: Fuchsia 1200 Dark, value: "#F59FFF" }
+  - { id: fuchsia-1300-dark, name: Fuchsia 1300 Dark, value: "#F8BFFF" }
+  - { id: fuchsia-1400-dark, name: Fuchsia 1400 Dark, value: "#FBDBFF" }
+  - { id: fuchsia-1500-dark, name: Fuchsia 1500 Dark, value: "#FDF1FF" }
+  - { id: fuchsia-1600-dark, name: Fuchsia 1600 Dark, value: "#FFFFFF" }
+
+  # ─── Magenta (light) ───────────────────────────────────────────
+  - { id: magenta-100, name: Magenta 100, value: "#FFF5F8" }
+  - { id: magenta-200, name: Magenta 200, value: "#FFE8F0" }
+  - { id: magenta-300, name: Magenta 300, value: "#FFD5E3" }
+  - { id: magenta-400, name: Magenta 400, value: "#FFB9D0" }
+  - { id: magenta-500, name: Magenta 500, value: "#FF98BB" }
+  - { id: magenta-600, name: Magenta 600, value: "#FF709F" }
+  - { id: magenta-700, name: Magenta 700, value: "#FF4885" }
+  - { id: magenta-800, name: Magenta 800, value: "#F02D6E" }
+  - { id: magenta-900, name: Magenta 900, value: "#D92361", description: "Magenta accent anchor." }
+  - { id: magenta-1000, name: Magenta 1000, value: "#BA1650" }
+  - { id: magenta-1100, name: Magenta 1100, value: "#A3053E" }
+  - { id: magenta-1200, name: Magenta 1200, value: "#880033" }
+  - { id: magenta-1300, name: Magenta 1300, value: "#6F0028" }
+  - { id: magenta-1400, name: Magenta 1400, value: "#56001E" }
+  - { id: magenta-1500, name: Magenta 1500, value: "#400016" }
+  - { id: magenta-1600, name: Magenta 1600, value: "#23000C" }
+  # ─── Magenta (dark) ───────────────────────────────────────────
+  - { id: magenta-100-dark, name: Magenta 100 Dark, value: "#3B0016" }
+  - { id: magenta-200-dark, name: Magenta 200 Dark, value: "#4A001B" }
+  - { id: magenta-300-dark, name: Magenta 300 Dark, value: "#5D0022" }
+  - { id: magenta-400-dark, name: Magenta 400 Dark, value: "#7B002D" }
+  - { id: magenta-500-dark, name: Magenta 500 Dark, value: "#98073C" }
+  - { id: magenta-600-dark, name: Magenta 600 Dark, value: "#B5134C" }
+  - { id: magenta-700-dark, name: Magenta 700 Dark, value: "#CF1F5C" }
+  - { id: magenta-800-dark, name: Magenta 800 Dark, value: "#E02665" }
+  - { id: magenta-900-dark, name: Magenta 900 Dark, value: "#FF3377" }
+  - { id: magenta-1000-dark, name: Magenta 1000 Dark, value: "#FF6095" }
+  - { id: magenta-1100-dark, name: Magenta 1100 Dark, value: "#FF80AB" }
+  - { id: magenta-1200-dark, name: Magenta 1200 Dark, value: "#FFA3C2" }
+  - { id: magenta-1300-dark, name: Magenta 1300 Dark, value: "#FFC1D6" }
+  - { id: magenta-1400-dark, name: Magenta 1400 Dark, value: "#FFDCE8" }
+  - { id: magenta-1500-dark, name: Magenta 1500 Dark, value: "#FFF1F6" }
+  - { id: magenta-1600-dark, name: Magenta 1600 Dark, value: "#FFFFFF" }
+
+  # ─── Pink (light) ──────────────────────────────────────────────
+  - { id: pink-100, name: Pink 100, value: "#FFF6FC" }
+  - { id: pink-200, name: Pink 200, value: "#FFE8F7" }
+  - { id: pink-300, name: Pink 300, value: "#FFD3F0" }
+  - { id: pink-400, name: Pink 400, value: "#FFB5E6" }
+  - { id: pink-500, name: Pink 500, value: "#FF94DB" }
+  - { id: pink-600, name: Pink 600, value: "#FF67CC" }
+  - { id: pink-700, name: Pink 700, value: "#F24CB8" }
+  - { id: pink-800, name: Pink 800, value: "#E434A3" }
+  - { id: pink-900, name: Pink 900, value: "#CE2A92" }
+  - { id: pink-1000, name: Pink 1000, value: "#B01F7B" }
+  - { id: pink-1100, name: Pink 1100, value: "#981668" }
+  - { id: pink-1200, name: Pink 1200, value: "#800C55" }
+  - { id: pink-1300, name: Pink 1300, value: "#690344" }
+  - { id: pink-1400, name: Pink 1400, value: "#530035" }
+  - { id: pink-1500, name: Pink 1500, value: "#3E0027" }
+  - { id: pink-1600, name: Pink 1600, value: "#210015" }
+  # ─── Pink (dark) ──────────────────────────────────────────────
+  - { id: pink-100-dark, name: Pink 100 Dark, value: "#3A0025" }
+  - { id: pink-200-dark, name: Pink 200 Dark, value: "#47002C" }
+  - { id: pink-300-dark, name: Pink 300 Dark, value: "#5A0039" }
+  - { id: pink-400-dark, name: Pink 400 Dark, value: "#73074B" }
+  - { id: pink-500-dark, name: Pink 500 Dark, value: "#8F1261" }
+  - { id: pink-600-dark, name: Pink 600 Dark, value: "#AB1D77" }
+  - { id: pink-700-dark, name: Pink 700 Dark, value: "#C4278A" }
+  - { id: pink-800-dark, name: Pink 800 Dark, value: "#D52D97" }
+  - { id: pink-900-dark, name: Pink 900 Dark, value: "#EC43AF" }
+  - { id: pink-1000-dark, name: Pink 1000 Dark, value: "#FB5AC4" }
+  - { id: pink-1100-dark, name: Pink 1100 Dark, value: "#FF7AD2" }
+  - { id: pink-1200-dark, name: Pink 1200 Dark, value: "#FF9FDF" }
+  - { id: pink-1300-dark, name: Pink 1300 Dark, value: "#FFBFEA" }
+  - { id: pink-1400-dark, name: Pink 1400 Dark, value: "#FFDBF3" }
+  - { id: pink-1500-dark, name: Pink 1500 Dark, value: "#FFF1FA" }
+  - { id: pink-1600-dark, name: Pink 1600 Dark, value: "#FFFFFF" }
+
+  # ─── Brown (light) ─────────────────────────────────────────────
+  - { id: brown-100, name: Brown 100, value: "#FCF7F2" }
+  - { id: brown-200, name: Brown 200, value: "#F7EEE1" }
+  - { id: brown-300, name: Brown 300, value: "#EFDDC3" }
+  - { id: brown-400, name: Brown 400, value: "#E5C89D" }
+  - { id: brown-500, name: Brown 500, value: "#D6B17B" }
+  - { id: brown-600, name: Brown 600, value: "#BE9B68" }
+  - { id: brown-700, name: Brown 700, value: "#AB8A5A" }
+  - { id: brown-800, name: Brown 800, value: "#9A7B4D" }
+  - { id: brown-900, name: Brown 900, value: "#8B6D42" }
+  - { id: brown-1000, name: Brown 1000, value: "#775B32" }
+  - { id: brown-1100, name: Brown 1100, value: "#674C23" }
+  - { id: brown-1200, name: Brown 1200, value: "#583D15" }
+  - { id: brown-1300, name: Brown 1300, value: "#463111" }
+  - { id: brown-1400, name: Brown 1400, value: "#34250D" }
+  - { id: brown-1500, name: Brown 1500, value: "#261A09" }
+  - { id: brown-1600, name: Brown 1600, value: "#100C04" }
+  # ─── Brown (dark) ─────────────────────────────────────────────
+  - { id: brown-100-dark, name: Brown 100 Dark, value: "#231808" }
+  - { id: brown-200-dark, name: Brown 200 Dark, value: "#2C1F0B" }
+  - { id: brown-300-dark, name: Brown 300 Dark, value: "#3A280E" }
+  - { id: brown-400-dark, name: Brown 400 Dark, value: "#4E3713" }
+  - { id: brown-500-dark, name: Brown 500 Dark, value: "#62471E" }
+  - { id: brown-600-dark, name: Brown 600 Dark, value: "#73582F" }
+  - { id: brown-700-dark, name: Brown 700 Dark, value: "#84683D" }
+  - { id: brown-800-dark, name: Brown 800 Dark, value: "#8F7245" }
+  - { id: brown-900-dark, name: Brown 900 Dark, value: "#A38454" }
+  - { id: brown-1000-dark, name: Brown 1000 Dark, value: "#B59362" }
+  - { id: brown-1100-dark, name: Brown 1100 Dark, value: "#C7A370" }
+  - { id: brown-1200-dark, name: Brown 1200 Dark, value: "#DEB982" }
+  - { id: brown-1300-dark, name: Brown 1300 Dark, value: "#E8CFA9" }
+  - { id: brown-1400-dark, name: Brown 1400 Dark, value: "#F2E3CE" }
+  - { id: brown-1500-dark, name: Brown 1500 Dark, value: "#FAF4EC" }
+  - { id: brown-1600-dark, name: Brown 1600 Dark, value: "#FFFFFF" }
+
+  # ─── Silver (light) ────────────────────────────────────────────
+  - { id: silver-100, name: Silver 100, value: "#F7F7F7" }
+  - { id: silver-200, name: Silver 200, value: "#EFEFEF" }
+  - { id: silver-300, name: Silver 300, value: "#DFDFDF" }
+  - { id: silver-400, name: Silver 400, value: "#CCCCCC" }
+  - { id: silver-500, name: Silver 500, value: "#B7B7B7" }
+  - { id: silver-600, name: Silver 600, value: "#A0A0A0" }
+  - { id: silver-700, name: Silver 700, value: "#8F8F8F" }
+  - { id: silver-800, name: Silver 800, value: "#808080" }
+  - { id: silver-900, name: Silver 900, value: "#727272" }
+  - { id: silver-1000, name: Silver 1000, value: "#606060" }
+  - { id: silver-1100, name: Silver 1100, value: "#515151" }
+  - { id: silver-1200, name: Silver 1200, value: "#424242" }
+  - { id: silver-1300, name: Silver 1300, value: "#343434" }
+  - { id: silver-1400, name: Silver 1400, value: "#272727" }
+  - { id: silver-1500, name: Silver 1500, value: "#1C1C1C" }
+  - { id: silver-1600, name: Silver 1600, value: "#0C0C0C" }
+  # ─── Silver (dark) ────────────────────────────────────────────
+  - { id: silver-100-dark, name: Silver 100 Dark, value: "#1A1A1A" }
+  - { id: silver-200-dark, name: Silver 200 Dark, value: "#212121" }
+  - { id: silver-300-dark, name: Silver 300 Dark, value: "#2C2C2C" }
+  - { id: silver-400-dark, name: Silver 400 Dark, value: "#3B3B3B" }
+  - { id: silver-500-dark, name: Silver 500 Dark, value: "#4C4C4C" }
+  - { id: silver-600-dark, name: Silver 600 Dark, value: "#5C5C5C" }
+  - { id: silver-700-dark, name: Silver 700 Dark, value: "#6C6C6C" }
+  - { id: silver-800-dark, name: Silver 800 Dark, value: "#767676" }
+  - { id: silver-900-dark, name: Silver 900 Dark, value: "#898989" }
+  - { id: silver-1000-dark, name: Silver 1000 Dark, value: "#989898" }
+  - { id: silver-1100-dark, name: Silver 1100 Dark, value: "#A9A9A9" }
+  - { id: silver-1200-dark, name: Silver 1200 Dark, value: "#BEBEBE" }
+  - { id: silver-1300-dark, name: Silver 1300 Dark, value: "#D3D3D3" }
+  - { id: silver-1400-dark, name: Silver 1400 Dark, value: "#E5E5E5" }
+  - { id: silver-1500-dark, name: Silver 1500 Dark, value: "#F4F4F4" }
+  - { id: silver-1600-dark, name: Silver 1600 Dark, value: "#FFFFFF" }
+
+  # ─── Cinnamon (light) ──────────────────────────────────────────
+  - { id: cinnamon-100, name: Cinnamon 100, value: "#FDF7F3" }
+  - { id: cinnamon-200, name: Cinnamon 200, value: "#F9ECE5" }
+  - { id: cinnamon-300, name: Cinnamon 300, value: "#F4DACB" }
+  - { id: cinnamon-400, name: Cinnamon 400, value: "#EDC4AC" }
+  - { id: cinnamon-500, name: Cinnamon 500, value: "#E5AA88" }
+  - { id: cinnamon-600, name: Cinnamon 600, value: "#D4916C" }
+  - { id: cinnamon-700, name: Cinnamon 700, value: "#C67E58" }
+  - { id: cinnamon-800, name: Cinnamon 800, value: "#B86D46" }
+  - { id: cinnamon-900, name: Cinnamon 900, value: "#AA5E38" }
+  - { id: cinnamon-1000, name: Cinnamon 1000, value: "#934D2B" }
+  - { id: cinnamon-1100, name: Cinnamon 1100, value: "#803E20" }
+  - { id: cinnamon-1200, name: Cinnamon 1200, value: "#6E3015" }
+  - { id: cinnamon-1300, name: Cinnamon 1300, value: "#5C230B" }
+  - { id: cinnamon-1400, name: Cinnamon 1400, value: "#481906" }
+  - { id: cinnamon-1500, name: Cinnamon 1500, value: "#341204" }
+  - { id: cinnamon-1600, name: Cinnamon 1600, value: "#180802" }
+  # ─── Cinnamon (dark) ──────────────────────────────────────────
+  - { id: cinnamon-100-dark, name: Cinnamon 100 Dark, value: "#301104" }
+  - { id: cinnamon-200-dark, name: Cinnamon 200 Dark, value: "#3B1505" }
+  - { id: cinnamon-300-dark, name: Cinnamon 300 Dark, value: "#4F1C07" }
+  - { id: cinnamon-400-dark, name: Cinnamon 400 Dark, value: "#64290F" }
+  - { id: cinnamon-500-dark, name: Cinnamon 500 Dark, value: "#7A391C" }
+  - { id: cinnamon-600-dark, name: Cinnamon 600 Dark, value: "#8F4A28" }
+  - { id: cinnamon-700-dark, name: Cinnamon 700 Dark, value: "#A35834" }
+  - { id: cinnamon-800-dark, name: Cinnamon 800 Dark, value: "#B0623B" }
+  - { id: cinnamon-900-dark, name: Cinnamon 900 Dark, value: "#C07750" }
+  - { id: cinnamon-1000-dark, name: Cinnamon 1000 Dark, value: "#CE8863" }
+  - { id: cinnamon-1100-dark, name: Cinnamon 1100 Dark, value: "#DC9A76" }
+  - { id: cinnamon-1200-dark, name: Cinnamon 1200 Dark, value: "#E8B395" }
+  - { id: cinnamon-1300-dark, name: Cinnamon 1300 Dark, value: "#EFCBB7" }
+  - { id: cinnamon-1400-dark, name: Cinnamon 1400 Dark, value: "#F6E1D6" }
+  - { id: cinnamon-1500-dark, name: Cinnamon 1500 Dark, value: "#FCF4EF" }
+  - { id: cinnamon-1600-dark, name: Cinnamon 1600 Dark, value: "#FFFFFF" }
+
+  # ─── Turquoise (light) ─────────────────────────────────────────
+  - { id: turquoise-100, name: Turquoise 100, value: "#EEFBFB" }
+  - { id: turquoise-200, name: Turquoise 200, value: "#D1F5F5" }
+  - { id: turquoise-300, name: Turquoise 300, value: "#A9ECED" }
+  - { id: turquoise-400, name: Turquoise 400, value: "#6FDDE4" }
+  - { id: turquoise-500, name: Turquoise 500, value: "#27CAD8" }
+  - { id: turquoise-600, name: Turquoise 600, value: "#0FB1C0" }
+  - { id: turquoise-700, name: Turquoise 700, value: "#0C9EAB" }
+  - { id: turquoise-800, name: Turquoise 800, value: "#0A8D99" }
+  - { id: turquoise-900, name: Turquoise 900, value: "#087E89" }
+  - { id: turquoise-1000, name: Turquoise 1000, value: "#056B74" }
+  - { id: turquoise-1100, name: Turquoise 1100, value: "#035A62" }
+  - { id: turquoise-1200, name: Turquoise 1200, value: "#014A51" }
+  - { id: turquoise-1300, name: Turquoise 1300, value: "#003B41" }
+  - { id: turquoise-1400, name: Turquoise 1400, value: "#002C31" }
+  - { id: turquoise-1500, name: Turquoise 1500, value: "#002023" }
+  - { id: turquoise-1600, name: Turquoise 1600, value: "#000F11" }
+  # ─── Turquoise (dark) ─────────────────────────────────────────
+  - { id: turquoise-100-dark, name: Turquoise 100 Dark, value: "#001E21" }
+  - { id: turquoise-200-dark, name: Turquoise 200 Dark, value: "#002529" }
+  - { id: turquoise-300-dark, name: Turquoise 300 Dark, value: "#003136" }
+  - { id: turquoise-400-dark, name: Turquoise 400 Dark, value: "#004248" }
+  - { id: turquoise-500-dark, name: Turquoise 500 Dark, value: "#03545C" }
+  - { id: turquoise-600-dark, name: Turquoise 600 Dark, value: "#056770" }
+  - { id: turquoise-700-dark, name: Turquoise 700 Dark, value: "#077883" }
+  - { id: turquoise-800-dark, name: Turquoise 800 Dark, value: "#09838E" }
+  - { id: turquoise-900-dark, name: Turquoise 900 Dark, value: "#0B97A4" }
+  - { id: turquoise-1000-dark, name: Turquoise 1000 Dark, value: "#0DA8B6" }
+  - { id: turquoise-1100-dark, name: Turquoise 1100 Dark, value: "#10BACA" }
+  - { id: turquoise-1200-dark, name: Turquoise 1200 Dark, value: "#40D0DC" }
+  - { id: turquoise-1300-dark, name: Turquoise 1300 Dark, value: "#80E1E7" }
+  - { id: turquoise-1400-dark, name: Turquoise 1400 Dark, value: "#B7F0F0" }
+  - { id: turquoise-1500-dark, name: Turquoise 1500 Dark, value: "#E4F9F9" }
+  - { id: turquoise-1600-dark, name: Turquoise 1600 Dark, value: "#FFFFFF" }
 
 modes:
   light:

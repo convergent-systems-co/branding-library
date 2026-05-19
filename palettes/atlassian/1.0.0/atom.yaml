@@ -6,13 +6,15 @@ description: >
   Atlassian's design-token palette, sourced from the
   `@atlaskit/tokens` package — the package that backs every product
   surface in the Atlassian portfolio (Jira, Confluence, Trello,
-  Bitbucket, Compass, Loom, Statuspage). Ten chromatic families
-  (Blue, Teal, Purple, Magenta, Red, Orange, Yellow, Green, Lime,
-  Neutral) running 100 → 1000+ with a 250 / 850 odd-stop. Atlassian
-  Blue 800 (#1558BC) anchors the primary interactive role on light
-  surfaces; Blue 400 (#669DF1) takes that role on dark surfaces.
-  The Neutral scale supplies the canvas, surface, and text tokens
-  for both modes.
+  Bitbucket, Compass, Loom, Statuspage). Nine chromatic families
+  (Blue, Teal, Green, Lime, Yellow, Orange, Red, Magenta, Purple)
+  running 100 → 1000 with 250 / 850 odd-stops, plus two neutral
+  scales (Neutral for light surfaces, DarkNeutral for dark surfaces)
+  and a set of translucent alpha overlays. Atlassian Blue 700
+  (#1868DB) anchors the primary interactive role on light surfaces;
+  Blue 400 (#669DF1) takes that role on dark surfaces. The Neutral
+  scale supplies the canvas, surface, and text tokens for light
+  mode; DarkNeutral plays the same role in dark mode.
 
 tags: [atlassian, atlaskit, design-system, role-based, dual-mode]
 
@@ -28,84 +30,189 @@ provenance:
   importedDate: 2026-05-19
   importedFromVersion: "atlassian-frontend palettes-raw@2026-05"
   notes: >
-    Atlassian's palette uses a 100..1000 scale with a 250 odd-stop
-    for accessibility-tuned mid-tones and an 850 odd-stop for
-    contrast-paired darks. The catalogue captures the anchor stops
-    (100 / 200 / 400 / 700 / 800 / 900) for every family — the
-    stops Atlassian's semantic tokens map onto — plus the full
-    Neutral scale that drives canvas, surface, and text.
+    Full Atlassian Design System palette captured 2026-05-19: nine
+    chromatic families (Blue, Teal, Green, Lime, Yellow, Orange, Red,
+    Magenta, Purple) at every documented stop (100, 200, 250, 300,
+    400, 500, 600, 700, 800, 850, 900, 1000), plus the Neutral scale
+    used for light-mode canvas/surface/text (0, 100, 200, 300..1100)
+    and the DarkNeutral scale used for dark-mode canvas/surface/text
+    (0, 100, 200, 250, 300, 350, 400..1100). Translucent alpha
+    overlays (Neutral{100..500}A and DarkNeutral{100..500,250,350}A)
+    are captured as 8-digit hex values for accessibility-tuned
+    overlays.
 
 swatches:
-  # ─── Neutrals ──────────────────────────────────────────────────
-  - { id: neutral-0,    name: Neutral 0,    value: "#FFFFFF", description: "Light canvas." }
-  - { id: neutral-100,  name: Neutral 100,  value: "#F8F8F8", description: "Light surface — subtle elevation." }
-  - { id: neutral-200,  name: Neutral 200,  value: "#F0F1F2" }
-  - { id: neutral-300,  name: Neutral 300,  value: "#DDDEE1", description: "Default border on light." }
-  - { id: neutral-400,  name: Neutral 400,  value: "#B7B9BE" }
-  - { id: neutral-500,  name: Neutral 500,  value: "#8C8F97" }
-  - { id: neutral-600,  name: Neutral 600,  value: "#7D818A" }
-  - { id: neutral-700,  name: Neutral 700,  value: "#6B6E76", description: "Secondary text on light." }
-  - { id: neutral-800,  name: Neutral 800,  value: "#505258" }
-  - { id: neutral-900,  name: Neutral 900,  value: "#3B3D42" }
+  # ─── Neutral (light mode canvas, surface, text) ──────────────
+  - { id: neutral-0, name: Neutral 0, value: "#FFFFFF", description: "Light canvas." }
+  - { id: neutral-100, name: Neutral 100, value: "#F8F8F8", description: "Light surface — subtle elevation." }
+  - { id: neutral-200, name: Neutral 200, value: "#F0F1F2" }
+  - { id: neutral-300, name: Neutral 300, value: "#DDDEE1", description: "Default border on light." }
+  - { id: neutral-400, name: Neutral 400, value: "#B7B9BE" }
+  - { id: neutral-500, name: Neutral 500, value: "#8C8F97" }
+  - { id: neutral-600, name: Neutral 600, value: "#7D818A" }
+  - { id: neutral-700, name: Neutral 700, value: "#6B6E76", description: "Secondary text on light." }
+  - { id: neutral-800, name: Neutral 800, value: "#505258" }
+  - { id: neutral-900, name: Neutral 900, value: "#3B3D42" }
   - { id: neutral-1000, name: Neutral 1000, value: "#292A2E", description: "Dark surface (canvas in dark mode)." }
   - { id: neutral-1100, name: Neutral 1100, value: "#1E1F21", description: "Dark canvas / deepest neutral." }
 
-  # ─── Blue (Atlassian primary) ──────────────────────────────────
+  # ─── Neutral Alpha (translucent overlays on light) ───────────
+  - { id: neutral-100-alpha, name: Neutral 100 Alpha, value: "#17171708" }
+  - { id: neutral-200-alpha, name: Neutral 200 Alpha, value: "#0515240F" }
+  - { id: neutral-300-alpha, name: Neutral 300 Alpha, value: "#0B120E24" }
+  - { id: neutral-400-alpha, name: Neutral 400 Alpha, value: "#080F214A" }
+  - { id: neutral-500-alpha, name: Neutral 500 Alpha, value: "#050C1F75" }
+
+  # ─── Dark Neutral (dark mode canvas, surface, text) ──────────
+  - { id: dark-neutral-0, name: Dark Neutral 0, value: "#18191A" }
+  - { id: dark-neutral-100, name: Dark Neutral 100, value: "#1F1F21" }
+  - { id: dark-neutral-200, name: Dark Neutral 200, value: "#242528" }
+  - { id: dark-neutral-250, name: Dark Neutral 250, value: "#2B2C2F" }
+  - { id: dark-neutral-300, name: Dark Neutral 300, value: "#303134" }
+  - { id: dark-neutral-350, name: Dark Neutral 350, value: "#3D3F43" }
+  - { id: dark-neutral-400, name: Dark Neutral 400, value: "#4B4D51" }
+  - { id: dark-neutral-500, name: Dark Neutral 500, value: "#63666B" }
+  - { id: dark-neutral-600, name: Dark Neutral 600, value: "#7E8188" }
+  - { id: dark-neutral-700, name: Dark Neutral 700, value: "#96999E" }
+  - { id: dark-neutral-800, name: Dark Neutral 800, value: "#A9ABAF" }
+  - { id: dark-neutral-900, name: Dark Neutral 900, value: "#BFC1C4" }
+  - { id: dark-neutral-1000, name: Dark Neutral 1000, value: "#CECFD2" }
+  - { id: dark-neutral-1100, name: Dark Neutral 1100, value: "#E2E3E4" }
+
+  # ─── Dark Neutral Alpha (translucent overlays on dark) ───────
+  - { id: dark-neutral-100-alpha, name: Dark Neutral 100 Alpha, value: "#BDBDBD0A" }
+  - { id: dark-neutral-200-alpha, name: Dark Neutral 200 Alpha, value: "#CECED912" }
+  - { id: dark-neutral-250-alpha, name: Dark Neutral 250 Alpha, value: "#D9DAE71A" }
+  - { id: dark-neutral-300-alpha, name: Dark Neutral 300 Alpha, value: "#E3E4F21F" }
+  - { id: dark-neutral-350-alpha, name: Dark Neutral 350 Alpha, value: "#E8EDFD2E" }
+  - { id: dark-neutral-400-alpha, name: Dark Neutral 400 Alpha, value: "#E5E9F640" }
+  - { id: dark-neutral-500-alpha, name: Dark Neutral 500 Alpha, value: "#E9F0FB5C" }
+
+  # ─── Blue ────────────────────────────────────────────────────────
   - { id: blue-100, name: Blue 100, value: "#E9F2FE" }
   - { id: blue-200, name: Blue 200, value: "#CFE1FD" }
+  - { id: blue-250, name: Blue 250, value: "#ADCBFB" }
+  - { id: blue-300, name: Blue 300, value: "#8FB8F6" }
   - { id: blue-400, name: Blue 400, value: "#669DF1", description: "Primary interactive (dark mode)." }
   - { id: blue-500, name: Blue 500, value: "#4688EC" }
+  - { id: blue-600, name: Blue 600, value: "#357DE8" }
   - { id: blue-700, name: Blue 700, value: "#1868DB", description: "Atlassian's most-recognized brand blue; primary on light surfaces." }
   - { id: blue-800, name: Blue 800, value: "#1558BC", description: "Pressed / active variant on light." }
+  - { id: blue-850, name: Blue 850, value: "#144794" }
   - { id: blue-900, name: Blue 900, value: "#123263" }
+  - { id: blue-1000, name: Blue 1000, value: "#1C2B42" }
 
-  # ─── Teal ──────────────────────────────────────────────────────
+  # ─── Teal ────────────────────────────────────────────────────────
   - { id: teal-100, name: Teal 100, value: "#E7F9FF" }
+  - { id: teal-200, name: Teal 200, value: "#C6EDFB" }
+  - { id: teal-250, name: Teal 250, value: "#B1E4F7" }
+  - { id: teal-300, name: Teal 300, value: "#9DD9EE" }
   - { id: teal-400, name: Teal 400, value: "#6CC3E0" }
+  - { id: teal-500, name: Teal 500, value: "#42B2D7" }
+  - { id: teal-600, name: Teal 600, value: "#2898BD" }
   - { id: teal-700, name: Teal 700, value: "#227D9B" }
+  - { id: teal-800, name: Teal 800, value: "#206A83" }
+  - { id: teal-850, name: Teal 850, value: "#1A5265" }
   - { id: teal-900, name: Teal 900, value: "#164555" }
+  - { id: teal-1000, name: Teal 1000, value: "#1E3137" }
 
-  # ─── Green (success) ───────────────────────────────────────────
+  # ─── Green ───────────────────────────────────────────────────────
   - { id: green-100, name: Green 100, value: "#DCFFF1" }
+  - { id: green-200, name: Green 200, value: "#BAF3DB" }
+  - { id: green-250, name: Green 250, value: "#97EDC9" }
+  - { id: green-300, name: Green 300, value: "#7EE2B8" }
   - { id: green-400, name: Green 400, value: "#4BCE97", description: "Success on dark surfaces." }
+  - { id: green-500, name: Green 500, value: "#2ABB7F" }
+  - { id: green-600, name: Green 600, value: "#22A06B" }
   - { id: green-700, name: Green 700, value: "#1F845A", description: "Success on light surfaces." }
+  - { id: green-800, name: Green 800, value: "#216E4E" }
+  - { id: green-850, name: Green 850, value: "#19573D" }
   - { id: green-900, name: Green 900, value: "#164B35" }
+  - { id: green-1000, name: Green 1000, value: "#1C3329" }
 
-  # ─── Yellow (warning) ──────────────────────────────────────────
-  - { id: yellow-100, name: Yellow 100, value: "#FEF7C8" }
-  - { id: yellow-400, name: Yellow 400, value: "#DDB30E" }
-  - { id: yellow-700, name: Yellow 700, value: "#946F00", description: "Warning on light surfaces." }
-  - { id: yellow-900, name: Yellow 900, value: "#533F04" }
-
-  # ─── Orange ────────────────────────────────────────────────────
-  - { id: orange-100, name: Orange 100, value: "#FFF5DB" }
-  - { id: orange-400, name: Orange 400, value: "#FCA700" }
-  - { id: orange-700, name: Orange 700, value: "#BD5B00" }
-  - { id: orange-900, name: Orange 900, value: "#693200" }
-
-  # ─── Red (error) ───────────────────────────────────────────────
-  - { id: red-100, name: Red 100, value: "#FFECEB" }
-  - { id: red-400, name: Red 400, value: "#F87168", description: "Error on dark surfaces." }
-  - { id: red-700, name: Red 700, value: "#C9372C", description: "Error on light surfaces." }
-  - { id: red-900, name: Red 900, value: "#5D1F1A" }
-
-  # ─── Purple ────────────────────────────────────────────────────
-  - { id: purple-100, name: Purple 100, value: "#F8EEFE" }
-  - { id: purple-400, name: Purple 400, value: "#C97CF4" }
-  - { id: purple-700, name: Purple 700, value: "#964AC0" }
-  - { id: purple-900, name: Purple 900, value: "#48245D" }
-
-  # ─── Magenta ───────────────────────────────────────────────────
-  - { id: magenta-100, name: Magenta 100, value: "#FFECF8" }
-  - { id: magenta-400, name: Magenta 400, value: "#E774BB" }
-  - { id: magenta-700, name: Magenta 700, value: "#AE4787" }
-  - { id: magenta-900, name: Magenta 900, value: "#50253F" }
-
-  # ─── Lime ──────────────────────────────────────────────────────
+  # ─── Lime ────────────────────────────────────────────────────────
   - { id: lime-100, name: Lime 100, value: "#EFFFD6" }
+  - { id: lime-200, name: Lime 200, value: "#D3F1A7" }
+  - { id: lime-250, name: Lime 250, value: "#BDE97C" }
+  - { id: lime-300, name: Lime 300, value: "#B3DF72" }
   - { id: lime-400, name: Lime 400, value: "#94C748" }
+  - { id: lime-500, name: Lime 500, value: "#82B536" }
+  - { id: lime-600, name: Lime 600, value: "#6A9A23" }
   - { id: lime-700, name: Lime 700, value: "#5B7F24" }
+  - { id: lime-800, name: Lime 800, value: "#4C6B1F" }
+  - { id: lime-850, name: Lime 850, value: "#3F5224" }
   - { id: lime-900, name: Lime 900, value: "#37471F" }
+  - { id: lime-1000, name: Lime 1000, value: "#28311B" }
+
+  # ─── Yellow ──────────────────────────────────────────────────────
+  - { id: yellow-100, name: Yellow 100, value: "#FEF7C8" }
+  - { id: yellow-200, name: Yellow 200, value: "#F5E989" }
+  - { id: yellow-250, name: Yellow 250, value: "#EFDD4E" }
+  - { id: yellow-300, name: Yellow 300, value: "#EED12B" }
+  - { id: yellow-400, name: Yellow 400, value: "#DDB30E" }
+  - { id: yellow-500, name: Yellow 500, value: "#CF9F02" }
+  - { id: yellow-600, name: Yellow 600, value: "#B38600" }
+  - { id: yellow-700, name: Yellow 700, value: "#946F00", description: "Warning on light surfaces." }
+  - { id: yellow-800, name: Yellow 800, value: "#7F5F01" }
+  - { id: yellow-850, name: Yellow 850, value: "#614A05" }
+  - { id: yellow-900, name: Yellow 900, value: "#533F04" }
+  - { id: yellow-1000, name: Yellow 1000, value: "#332E1B" }
+
+  # ─── Orange ──────────────────────────────────────────────────────
+  - { id: orange-100, name: Orange 100, value: "#FFF5DB" }
+  - { id: orange-200, name: Orange 200, value: "#FCE4A6" }
+  - { id: orange-250, name: Orange 250, value: "#FBD779" }
+  - { id: orange-300, name: Orange 300, value: "#FBC828" }
+  - { id: orange-400, name: Orange 400, value: "#FCA700" }
+  - { id: orange-500, name: Orange 500, value: "#F68909" }
+  - { id: orange-600, name: Orange 600, value: "#E06C00" }
+  - { id: orange-700, name: Orange 700, value: "#BD5B00" }
+  - { id: orange-800, name: Orange 800, value: "#9E4C00" }
+  - { id: orange-850, name: Orange 850, value: "#7A3B00" }
+  - { id: orange-900, name: Orange 900, value: "#693200" }
+  - { id: orange-1000, name: Orange 1000, value: "#3A2C1F" }
+
+  # ─── Red ─────────────────────────────────────────────────────────
+  - { id: red-100, name: Red 100, value: "#FFECEB" }
+  - { id: red-200, name: Red 200, value: "#FFD5D2" }
+  - { id: red-250, name: Red 250, value: "#FFB8B2" }
+  - { id: red-300, name: Red 300, value: "#FD9891" }
+  - { id: red-400, name: Red 400, value: "#F87168", description: "Error on dark surfaces." }
+  - { id: red-500, name: Red 500, value: "#F15B50" }
+  - { id: red-600, name: Red 600, value: "#E2483D" }
+  - { id: red-700, name: Red 700, value: "#C9372C", description: "Error on light surfaces." }
+  - { id: red-800, name: Red 800, value: "#AE2E24" }
+  - { id: red-850, name: Red 850, value: "#872821" }
+  - { id: red-900, name: Red 900, value: "#5D1F1A" }
+  - { id: red-1000, name: Red 1000, value: "#42221F" }
+
+  # ─── Magenta ─────────────────────────────────────────────────────
+  - { id: magenta-100, name: Magenta 100, value: "#FFECF8" }
+  - { id: magenta-200, name: Magenta 200, value: "#FDD0EC" }
+  - { id: magenta-250, name: Magenta 250, value: "#FCB6E1" }
+  - { id: magenta-300, name: Magenta 300, value: "#F797D2" }
+  - { id: magenta-400, name: Magenta 400, value: "#E774BB" }
+  - { id: magenta-500, name: Magenta 500, value: "#DA62AC" }
+  - { id: magenta-600, name: Magenta 600, value: "#CD519D" }
+  - { id: magenta-700, name: Magenta 700, value: "#AE4787" }
+  - { id: magenta-800, name: Magenta 800, value: "#943D73" }
+  - { id: magenta-850, name: Magenta 850, value: "#77325B" }
+  - { id: magenta-900, name: Magenta 900, value: "#50253F" }
+  - { id: magenta-1000, name: Magenta 1000, value: "#3D2232" }
+
+  # ─── Purple ──────────────────────────────────────────────────────
+  - { id: purple-100, name: Purple 100, value: "#F8EEFE" }
+  - { id: purple-200, name: Purple 200, value: "#EED7FC" }
+  - { id: purple-250, name: Purple 250, value: "#E3BDFA" }
+  - { id: purple-300, name: Purple 300, value: "#D8A0F7" }
+  - { id: purple-400, name: Purple 400, value: "#C97CF4" }
+  - { id: purple-500, name: Purple 500, value: "#BF63F3" }
+  - { id: purple-600, name: Purple 600, value: "#AF59E1" }
+  - { id: purple-700, name: Purple 700, value: "#964AC0" }
+  - { id: purple-800, name: Purple 800, value: "#803FA5" }
+  - { id: purple-850, name: Purple 850, value: "#673286" }
+  - { id: purple-900, name: Purple 900, value: "#48245D" }
+  - { id: purple-1000, name: Purple 1000, value: "#35243F" }
 
 modes:
   light:
