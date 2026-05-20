@@ -1,90 +1,63 @@
-# Brand Atoms
+      # brand-atoms
 
-A civilization-grade encyclopedia of branding — typed palettes, fonts, brands, and constraints, consumed by AI agents and humans to produce on-brand output.
+      > Brand guidelines, from PDFs into typed YAML — machine-consumable, composable atoms covering palettes, fonts, and glyph sets.
 
-- **Live:** [brand-atoms.com](https://brand-atoms.com)
-- **CDN index:** [brand-atoms.com/dist/index.json](https://brand-atoms.com/dist/index.json)
-- **CLI:** `brandatom` — brew + scoop installs available
-- **License:** MIT (code) · individual brand atoms note their own trademark provenance
+      `brand-atoms` is a `*-Atoms` catalog in the [Convergent Systems](https://xdao.co) ecosystem. It defines what exists in its domain — typed, versioned, machine-readable, composable, and open — so runtimes (and humans) can stand on shared infrastructure instead of reinventing it.
 
-## What this is
+      ## Structure
 
-Every palette, font, and brand is a typed YAML file with verifiable provenance. A build step validates each atom against a Zod schema and emits nine output formats per brand: YAML, JSON, W3C Design Tokens, CSS variables, SCSS, Tailwind config, Figma tokens, Swift, Kotlin, and a human-readable Markdown brand guide.
+      ```
+      brand-atoms/
+      ├── ATOMS.yml              # Catalog manifest
+      ├── atoms/                 # Reusable building blocks
+      ├── brands/         # Compositions assembled from atoms
+      ├── rules/                 # Typed constraint vocabulary
+      ├── schemas/               # Catalog-specific JSON Schemas
+      ├── exports/               # CI-generated machine-readable exports
+      └── docs/                  # Human-readable documentation
+      ```
 
-The same source feeds:
+      ### Atom types
 
-- **AI agents** that need a machine-readable contract to render in-brand output.
-- **Humans** browsing a reference, composing a new brand in the builder, or pulling tokens into their toolchain.
+        - `palette`
+- `font`
+- `glyph`
 
-## Quick start
+      ### Rule types
 
-**Install the CLI:**
+        - `contrastRatio`
+- `fontPairing`
+- `forbiddenTreatment`
+- `numericRange`
 
-```sh
-brew install convergent-systems-co/tap/brandatom
-# or on Windows:
-scoop bucket add convergent-systems-co https://github.com/convergent-systems-co/scoop-bucket
-scoop install brandatom
-```
+      ### Runtime consumers
 
-**Browse from the terminal:**
+      `aish`, `olympus`
 
-```sh
-brandatom brands list
-brandatom brand anthropic@1.0.0 show | jq .
-```
+      ## How to consume
 
-**Apply a brand to your project:**
+      Machine-readable exports are published in [`exports/`](./exports/) on every release:
 
-```sh
-cd my-tailwind-app
-brandatom brand anthropic@1.0.0 apply
-```
+      - `exports/manifest.json` — lightweight discovery (name, version, counts)
+      - `exports/catalog.json` — full catalog dump (every atom, composition, rule)
 
-**Or fetch directly over HTTP — no install:**
+      Exports are deterministic, signed, and versioned. See [`ATOMS.yml`](./ATOMS.yml) for the manifest and the conformance spec.
 
-```sh
-curl https://brand-atoms.com/dist/brands/anthropic/1.0.0/css/tokens.css
-```
+      ## How to contribute
 
-For every consumer pattern (Next.js, vanilla CSS, iOS, Android, Figma, Style Dictionary, SCSS, …) see [How to use](https://brand-atoms.com/how-to-use).
+      1. Read [`ATOMS.yml`](./ATOMS.yml) to understand the catalog's atom types, compositions, and rules.
+      2. Add a new atom under `atoms/<type>/` or a composition under `brands/<name>/`.
+      3. Open a PR. CI validates the schema, references, and exports.
+      4. Larger structural changes go through the [XAIP process](https://github.com/convergent-systems-co/xaips).
 
-## What's in the catalog
+      ## Ecosystem
 
-The live counts are at `dist/index.json`. As of this writing the catalog covers brands across consumer products, enterprise SaaS, AI labs, design-system foundations, gaming, news, music, education, universities, government / civic identities, and OSS foundations. Each brand declares at least five typed-constraint rules grounded in published guidance.
+      - **Federation:** [xdao.co](https://xdao.co) · [github.com/convergent-systems-co/xdao](https://github.com/convergent-systems-co/xdao)
+      - **Spec:** [github.com/convergent-systems-co/atoms-spec](https://github.com/convergent-systems-co/atoms-spec)
+      - **Tools:** [github.com/convergent-systems-co/atoms-tools](https://github.com/convergent-systems-co/atoms-tools)
+      - **Umbrella:** [github.com/convergent-systems-co/atoms](https://github.com/convergent-systems-co/atoms) — all catalogs as submodules
+      - **Other catalogs:** brand-atoms, service-atoms, prompt-atoms, policy-atoms, identity-atoms, compliance-atoms, workflow-atoms, agent-atoms, knowledge-atoms, event-atoms, plugin-atoms
 
-## Repo layout
+      ## License
 
-```
-.
-├── brands/<slug>/<version>/brand.yaml      # brand atoms — palette + fonts + roles + rules
-├── palettes/<slug>/<version>/atom.yaml     # palette atoms — swatches + light/dark modes
-├── fonts/<slug>/<version>/atom.yaml        # font atoms — family + weights + CDN URLs
-├── tools/                                   # converter / validator / emitters (TypeScript)
-│   ├── schemas/                            # Zod schemas — the contract
-│   ├── emitters/                           # nine output emitters
-│   └── validate.ts / build.ts              # CI entry points
-├── src/brandatom/                          # Go CLI
-├── web/                                    # Astro site (brand-atoms.com)
-└── dist/                                   # emitter output — generated, also published as a CDN
-```
-
-For more depth, see [ARCHITECTURE.md](./ARCHITECTURE.md).
-
-## Contributing
-
-The catalog grows by typed YAML diffs. To add a brand, palette, or font:
-
-1. Read [CONTRIBUTING.md](./CONTRIBUTING.md) — required reading covers the schema, provenance, and trademark policy.
-2. Author the atom under the appropriate `brands/` / `palettes/` / `fonts/` directory.
-3. Run `pnpm validate` locally; open a PR; CI runs validate on every push and deploys on merge.
-
-Don't want to author yourself? Open a brand request at [/request-brand](https://brand-atoms.com/request-brand) — a maintainer triages by hand.
-
-## Security
-
-See [SECURITY.md](./SECURITY.md). Vulnerabilities go to the maintainers privately; do not file public issues for them.
-
-## Status & roadmap
-
-[HANDOFF.md](./HANDOFF.md) is the living roadmap: what's shipped, what's in flight, what's known-broken. Read it before you start non-trivial work.
+      Apache-2.0 — see [`LICENSE`](./LICENSE).
