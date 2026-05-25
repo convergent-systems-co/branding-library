@@ -10,7 +10,7 @@ terraform {
 
   backend "s3" {
     bucket = "cs-tfstate"
-    key    = "state-bucket/convergent-systems-co/brand-atoms/pages-project.tfstate"
+    key    = "state-bucket/convergent-systems-co/brand-atoms/cloudflare/pages-project.tfstate"
     region = "auto"
     endpoints = {
       s3 = "https://e1fe0f0ce8ff18da4edc118372c30022.r2.cloudflarestorage.com"
