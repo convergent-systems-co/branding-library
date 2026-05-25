@@ -1,37 +1,27 @@
 # ATOMS.yml — catalog manifest for brand-atoms
 #
-# See https://github.com/convergent-systems-co/atoms-spec for the canonical schema this conforms to.
+# Conforms to: https://schema-atoms.com/
+# spec_version: atoms-spec/v1.1.0
 
+spec_version: atoms-spec/v1.1.0
 name: brand-atoms
 version: 0.1.0
-spec: atoms-spec/v1
-domain: brand-atoms.com
-ecosystem:
-  federation: xdao.co
-  redirect: brand.xdao.co
-
-purpose: |
+canonical_domain: brand-atoms.com
+federation: convergent-systems.co
+description: |
   Brand guidelines, from PDFs into typed YAML — machine-consumable, composable atoms covering palettes, fonts, and glyph sets.
-
-atomTypes:
+atom_types:
   - palette
   - font
   - glyph
-
-compositionType: brands
-compositionDir: brands
-
-ruleTypes:
-  - contrastRatio
-  - fontPairing
-  - forbiddenTreatment
-  - numericRange
-
-runtimeConsumers:
+composition_type: brands
+composition_dir: brands
+runtime_consumers:
   - aish
   - olympus
-
-license: Apache-2.0
-maintainers:
-  - name: Convergent Systems
-    contact: maintainers@xdao.co
+lifecycle:
+  current: draft
+licensing:
+  code: Apache-2.0
+steward: convergent-systems-co
+infrastructure_operator: convergent-systems-co
