@@ -76,10 +76,44 @@ Every non-Convergent-Systems brand atom uses `assets: []`. We do not redistribut
 
 Convergent-Systems-owned atoms (jmfe, jma-group, jm-lexus, set-finance, set-distributors, world-omni, toyota under SET, etc.) MAY ship assets where the principal authorizes it.
 
+## Adding a shell brand composition
+
+Path: `brands/shell/<slug>.yaml`. Slug is lowercase-hyphenated, starts with a letter. The fastest path to contribution: fork an existing shell brand (e.g., `brands/shell/nord.yaml`) and adapt it.
+
+Required fields:
+
+```yaml
+id: <your-slug>                    # lowercase, hyphens only; matches filename stem
+name: <Human Readable Name>
+version: 1.0.0
+description: <one sentence>
+base_brand: <base brand id>        # optional — omit if fully standalone
+prompt_symbol: "❯"                 # your preferred prompt character
+separator_char: ""                 # Powerline glyph, plain "›", or "" for none
+ansi_256_support: true
+truecolor_support: true
+role_bindings:
+  primary: "#rrggbb"               # active prompt, cwd — all hex MUST be lowercase
+  accent: "#rrggbb"                # git branch, highlights
+  error: "#rrggbb"                 # non-zero exit, errors
+  warning: "#rrggbb"               # dirty git state, stash indicator
+  success: "#rrggbb"               # clean state, zero exit
+  muted: "#rrggbb"                 # timestamps, secondary info
+tags: [<your-theme-name>, dark]    # or light
+license: <license>                 # MIT, Apache-2.0, etc.
+```
+
+Rules:
+
+- All hex values MUST be lowercase (`#rrggbb`, not `#RRGGBB`).
+- Every required `role_bindings` key is mandatory — no omissions.
+- `base_brand` must reference a slug that exists in `brands/<slug>/`.
+- `id` must match the filename stem exactly.
+
 ## PR workflow
 
 1. `pnpm validate && pnpm build && pnpm test` locally — all must be green.
-2. Single logical change per commit. Conventional Commit prefixes: `feat:`, `fix:`, `refactor:`, `docs:`, `chore:`, `test:`. Catalog additions use `feat(brands):` / `feat(palettes):` / `feat(fonts):`.
+2. Single logical change per commit. Conventional Commit prefixes: `feat:`, `fix:`, `refactor:`, `docs:`, `chore:`, `test:`. Catalog additions use `feat(brands):` / `feat(palettes):` / `feat(fonts):` / `feat(brands/shell):`.
 3. Don't bundle a refactor and a brand addition in one commit. Don't bundle five unrelated brand additions either — one cluster per commit is the discipline.
 4. PR description names what changed, why, and how to verify. Link the issue if one exists.
 5. Merge to `main` triggers an auto-deploy to brand-atoms.com.
@@ -92,6 +126,9 @@ Convergent-Systems-owned atoms (jmfe, jma-group, jm-lexus, set-finance, set-dist
 - **No dark mode.** `modes.dark.roles` is required on every palette, not optional. Author a defensible dark variant even for a light-first brand.
 - **`assets: []` violated** on a non-Convergent-Systems brand without explicit authorization.
 - **Slug doesn't match the schema regex.** Lowercase letters, digits, and hyphens; must start with a letter. `37signals` → `thirty-seven-signals` (real example).
+- **Uppercase hex in shell brand.** All `role_bindings` hex values must be lowercase. `#88C0D0` → `#88c0d0`.
+- **Missing role_bindings key in shell brand.** All six keys (`primary`, `accent`, `error`, `warning`, `success`, `muted`) are required.
+- **Shell brand `id` doesn't match filename.** `id: nord` must live at `brands/shell/nord.yaml`.
 
 ## When to open an issue instead of a PR
 
