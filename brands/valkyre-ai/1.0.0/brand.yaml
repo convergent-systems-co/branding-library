@@ -1,0 +1,185 @@
+id: valkyre-ai
+version: 1.0.0
+name: Valkyre.ai
+description: >
+  Brand identity for valkyre.ai — a managed security operations platform
+  for AI-assisted red-team, blue-team, engagement, audit, and Mythos-defense
+  workflows. Built by Convergent Systems LLC. Norse mythology aesthetic;
+  dual crimson-red / electric-blue identity representing the offensive and
+  defensive sides of the platform.
+tags:
+  - dark
+  - security
+  - cybersecurity
+  - saas
+  - norse
+  - ai
+provenance:
+  source: https://valkyre.ai
+  license: proprietary
+  attribution: Convergent Systems LLC
+  importedDate: "2026-05-26"
+  notes: >
+    valkyre.ai is a Convergent Systems product but maintains its own independent
+    brand identity. Logo mark is a Valkyrie helmet split diagonally — left half
+    crimson red (red team / offense), right half electric blue (blue team /
+    defense) — with circuit-trace and Norse rune texture overlays. A violet glow
+    at the center split represents the AI cognitive engine.
+
+references:
+  palette: valkyre-ai@1.0.0
+  fonts:
+    heading: geist@1.0.0
+    body: inter@1.0.0
+    mono: jetbrainsmono-nerdfont@1.0.0
+
+roles:
+  colors:
+    identity: blue
+    on-identity: white
+    primary: blue
+    primary-hover: blue-bright
+    accent: red
+    accent-hover: red-bright
+    mark: violet
+    background-dark: black
+    surface-dark: surface
+    surface-elevated-dark: surface-elevated
+    text-primary-dark: white
+    text-secondary-dark: gray-100
+    text-tertiary-dark: gray-400
+    border-dark: border
+    success: success
+    warning: warning
+    error: error
+
+  typography:
+    display: heading
+    prose: body
+    code: mono
+
+assets: []
+
+rules:
+  - type: contrastRatio
+    target: roles.colors.text-primary-dark
+    against: roles.colors.background-dark
+    minRatio: 7
+    standard: WCAG-AAA
+    severity: error
+    rationale: >
+      White on pure black is the primary text combination. WCAG-AAA 7:1 minimum
+      is enforced — this is an operator-facing security tool where readability
+      under stress is critical.
+
+  - type: contrastRatio
+    target: roles.colors.primary
+    against: roles.colors.background-dark
+    minRatio: 3
+    standard: WCAG-AA-large
+    severity: error
+    rationale: >
+      Electric blue (#1b67e8) on black must meet WCAG-AA-large for interactive
+      elements rendered at 18px+ or bold 14px+.
+
+  - type: contrastRatio
+    target: roles.colors.accent
+    against: roles.colors.background-dark
+    minRatio: 3
+    standard: WCAG-AA-large
+    severity: error
+    rationale: >
+      Crimson red (#d41b2a) is used for destructive actions, critical findings,
+      and red-team indicators. Must be distinguishable from background at
+      large-text sizes.
+
+  - type: forbiddenTreatment
+    target: assets.logo-mark
+    treatments:
+      - recolored
+      - gradient-fill
+      - drop-shadow
+      - on-busy-photo
+    severity: error
+    rationale: >
+      The helmet mark's precise red/blue split is a core identity element.
+      Recoloring, gradient fills, or drop shadows destroy the dual-identity
+      meaning. Never render on a non-black or non-very-dark background.
+
+  - type: forbiddenTreatment
+    target: assets.logo-mark
+    treatments:
+      - stretched
+      - rotated
+    severity: error
+    rationale: >
+      The diamond-framed helmet is bilaterally specific — rotation or stretching
+      misaligns the red/blue split and breaks the visual metaphor.
+
+  - type: colorChoice
+    target: roles.colors.background-dark
+    allowed:
+      - black
+      - surface
+    forbidden:
+      - white
+      - gray-100
+    severity: error
+    rationale: >
+      valkyre.ai is a dark-first brand. There is no light mode. Backgrounds must
+      be black or near-black surface only.
+
+  - type: colorChoice
+    target: ui.cta-buttons
+    allowed:
+      - blue
+      - blue-bright
+      - red
+      - red-bright
+    severity: warning
+    rationale: >
+      CTAs are blue (primary actions) or red (destructive / offensive actions).
+      Do not use violet, gray, or white for button backgrounds.
+
+  - type: fontPairing
+    target: typography.display
+    requires: inter@1.0.0
+    minSizeRatio: 1.25
+    severity: recommendation
+    rationale: >
+      Geist display headings should be at minimum 1.25x the size of Inter body
+      text to maintain hierarchy. The wordmark uses rounded Geist; body copy
+      uses Inter for legibility at smaller sizes.
+
+  - type: contextRestriction
+    target: roles.colors.accent
+    forbiddenContexts:
+      - marketing-hero
+      - onboarding
+    severity: warning
+    rationale: >
+      Crimson red is the red-team / offense color. Using it in marketing heroes
+      or onboarding creates an adversarial first impression. Reserve for
+      in-product red-team views, critical findings, and destructive-action
+      confirmations.
+
+  - type: compositionConstraint
+    target: roles.colors.accent
+    doesNotPairWith:
+      - error
+    severity: warning
+    rationale: >
+      Brand red (#d41b2a) and error red (#dc2626) are visually similar but
+      semantically distinct — brand red means "offense / red-team", error red
+      means "system failure". Do not use them adjacent; rely on context and
+      iconography to differentiate when both must appear.
+
+  - type: accessibilityRequirement
+    target: ui.terminal-output
+    standard: WCAG-AA
+    criterion: "1.4.3"
+    severity: error
+    rationale: >
+      The secure remote terminal and all CLI/log output must meet WCAG-AA
+      contrast. Operators read terminal sessions under operational stress;
+      low contrast is a safety risk.
