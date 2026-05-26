@@ -144,7 +144,11 @@ for (const filePath of shellBrandFiles) {
     const raw = readFileSync(filePath, 'utf8');
     const data = parseYaml(raw) as Record<string, unknown>;
     const id = data.id as string;
-    assert.match(id, SLUG_REGEX, `${fileName}: id "${id}" does not match slug pattern ^[a-z0-9-]+$`);
+    assert.match(
+      id,
+      SLUG_REGEX,
+      `${fileName}: id "${id}" does not match slug pattern ^[a-z0-9-]+$`,
+    );
   });
 
   test(`${fileName} — version is semver`, () => {
