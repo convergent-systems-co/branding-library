@@ -1,0 +1,136 @@
+kind: palette
+id: valkyre-ai
+version: 1.0.0
+name: Valkyre.ai
+description: >
+  Dual red-and-blue palette for the valkyre.ai managed security operations
+  platform. Crimson red represents the offensive red-team side; electric blue
+  represents the defensive blue-team side. A violet accent marks the AI
+  cognitive layer where the two converge.
+tags:
+  - dark
+  - security
+  - cybersecurity
+  - dual-tone
+  - norse
+provenance:
+  source: https://valkyre.ai
+  license: proprietary
+  attribution: Convergent Systems LLC
+  importedDate: "2026-05-26"
+  notes: Colors extracted from the official valkyre.ai logo mark.
+
+swatches:
+  - id: black
+    name: Black
+    value: "#000000"
+    description: Pure black — primary background
+
+  - id: surface
+    name: Surface
+    value: "#0d0f14"
+    description: Near-black surface for cards and panels
+
+  - id: surface-elevated
+    name: Surface Elevated
+    value: "#161a22"
+    description: Slightly lighter surface for elevated components
+
+  - id: border
+    name: Border
+    value: "#1e2530"
+    description: Subtle border on dark backgrounds
+
+  - id: red
+    name: Red
+    value: "#d41b2a"
+    description: Crimson red — red team, offense, attack vectors
+
+  - id: red-bright
+    name: Red Bright
+    value: "#f02233"
+    description: Brighter red for hover and interactive states
+
+  - id: red-muted
+    name: Red Muted
+    value: "#7a1018"
+    description: Deep crimson for backgrounds and subtle indicators
+
+  - id: blue
+    name: Blue
+    value: "#1b67e8"
+    description: Electric blue — blue team, defense, monitoring
+
+  - id: blue-bright
+    name: Blue Bright
+    value: "#2e7af5"
+    description: Brighter blue for hover and interactive states
+
+  - id: blue-muted
+    name: Blue Muted
+    value: "#0f3d8a"
+    description: Deep blue for backgrounds and subtle indicators
+
+  - id: violet
+    name: Violet
+    value: "#7c3aed"
+    description: Violet — AI cognitive layer; the convergence of red and blue
+
+  - id: violet-bright
+    name: Violet Bright
+    value: "#9f5cf7"
+    description: Brighter violet for hover states
+
+  - id: white
+    name: White
+    value: "#ffffff"
+    description: Pure white — primary text
+
+  - id: gray-100
+    name: Gray 100
+    value: "#e6e8ee"
+    description: Near-white — headings and high-emphasis text
+
+  - id: gray-400
+    name: Gray 400
+    value: "#9ca3af"
+    description: Mid-gray — secondary text and metadata
+
+  - id: gray-600
+    name: Gray 600
+    value: "#4b5563"
+    description: Dark gray — muted text and disabled states
+
+  - id: success
+    name: Success
+    value: "#16a34a"
+    description: Green — engagement active, scan complete, finding resolved
+
+  - id: warning
+    name: Warning
+    value: "#d97706"
+    description: Amber — degraded device, expiring artifact, elevated risk
+
+  - id: error
+    name: Error
+    value: "#dc2626"
+    description: Red error — distinct from brand red; critical system failure
+
+modes:
+  dark:
+    roles:
+      background: black
+      surface: surface
+      surface-elevated: surface-elevated
+      text-primary: white
+      text-secondary: gray-100
+      text-tertiary: gray-400
+      primary: blue
+      primary-hover: blue-bright
+      accent: red
+      accent-hover: red-bright
+      mark: violet
+      warning: warning
+      error: error
+      success: success
+      border: border
